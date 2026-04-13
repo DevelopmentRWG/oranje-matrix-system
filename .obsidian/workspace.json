@@ -4,39 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "dfbbed8733a40bf7",
+        "id": "8c1d251fa0e0b8d3",
         "type": "tabs",
         "children": [
           {
-            "id": "13c4ff59f830a9a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Core/Módulos/Requisición.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Requisición"
-            }
-          },
-          {
-            "id": "acd474cceff1a9c3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hotel/Manager del Hotel.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Manager del Hotel"
-            }
-          },
-          {
-            "id": "659f24fecde9e0ff",
+            "id": "995c0363b280d8c9",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -45,8 +17,7 @@
               "title": "Vista gráfica"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,20 +176,27 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "659f24fecde9e0ff",
+  "active": "995c0363b280d8c9",
   "lastOpenFiles": [
-    "Hotel/Manager del Hotel.md",
+    "testr/asjdajsdjsajdasjdasjda.txt",
+    "testr/Nuevo Documento de texto.txt",
+    "testr",
+    "Nueva carpeta",
+    "Core/Módulos/Pool de Colaboradores.md",
+    "Reclutamiento/Manager de Reclutamiento.md",
+    "Core/Catálogos/Zonas.md",
+    "Core/Catálogos/Niveles de Inglés.md",
+    "Reclutamiento/Flujo de Reclutamiento.md",
     "Core/Módulos/Requisición.md",
-    "Core/Módulos/Semáforo del Colaborador.md",
+    "Hotel/Manager del Hotel.md",
     "Hotel/Hotel.md",
+    "Core/Módulos/Semáforo de Urgencia de Requisición.md",
+    "Core/Módulos/Semáforo del Colaborador.md",
     "Core/Módulos/Timesheet.md",
     "Hotel/Solicitante del Hotel.md",
     "Core/Módulos/Schedule.md",
     "Core/Módulos/Semáforo de Posiciones de la Requisición.md",
     "Core/Módulos/Semáforo de Requisición.md",
-    "Core/Módulos/Semáforo de Urgencia de Requisición.md",
-    "Reclutamiento/Flujo de Reclutamiento.md",
-    "Reclutamiento/Manager de Reclutamiento.md",
     "Reclutamiento/Reclutadora.md",
     "Reclutamiento/Reclutamiento.md",
     "Ventas/Ventas.md",
@@ -226,23 +204,16 @@
     "Manager del Hotel.md",
     "QA Inspector.md",
     "Blacklist.md",
-    "Core/Módulos/Pool de Colaboradores.md",
     "Reclutamiento.md",
     "Semáforo.md",
     "Schedule.md",
     "Core/Catálogos/Posiciones.md",
-    "Core/Catálogos/Modalidades de Contratación.md",
-    "Core/Módulos/Blacklist.md",
-    "Core/Catálogos/Niveles de Inglés.md",
     "Sin título.base",
     "Sin título.canvas",
     "Core/Reglas de Negocio",
     "Core/Catálogos",
     "Core/Módulos",
     "Colaborador",
-    "Contabilidad",
-    "Inspector",
-    "Hotel",
-    "Core"
+    "Contabilidad"
   ]
 }
