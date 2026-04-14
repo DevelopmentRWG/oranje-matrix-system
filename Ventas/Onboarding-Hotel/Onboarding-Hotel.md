@@ -11,7 +11,7 @@ aliases:
 Módulo que representa la fase comercial previa a que un hotel se convierta en cliente operativo de Oranje. Cubre el ciclo desde que el [[Business Developer]] identifica un hotel en su territorio hasta que el [[Business Developer Coordinator]] aprueba la conversión y el hotel queda habilitado para generar [[Requisición|requisiciones]].
 
 > [!info]
-> El hotel **solo habilita requisiciones** cuando alcanza el status [[Status - Naranja|Naranja]]. Antes de eso permanece como prospecto comercial gestionado por [[Ventas/Ventas|Ventas]].
+> El hotel **solo habilita requisiciones** cuando alcanza el status [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]]. Antes de eso permanece como prospecto comercial gestionado por [[Ventas/Ventas|Ventas]].
 
 ## Contenido del módulo
 
@@ -27,15 +27,15 @@ Módulo que representa la fase comercial previa a que un hotel se convierta en c
 
 ## Estados del onboarding
 
-- [[Status - Gris]] — Hotel identificado.
-- [[Status - Azul Claro]] — Contacto y recopilación de datos.
-- [[Status - Verde]] — Propuesta enviada.
-- [[Status - Amarillo]] — En seguimiento tras propuesta.
-- [[Status - Rosa]] — Negociación de términos.
-- [[Status - Naranja]] — Acuerdo firmado, hotel cliente activo.
-- [[Status - Café]] — Renegociación / desbloqueo.
-- [[Status - Rojo]] — Rechazo o no interés.
-- [[Status - Negro]] — Cliente pausado o inactivo.
+- [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] — Hotel identificado.
+- [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] — Contacto y recopilación de datos.
+- [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] — Propuesta enviada.
+- [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] — En seguimiento tras propuesta.
+- [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] — Negociación de términos.
+- [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] — Acuerdo firmado, hotel cliente activo.
+- [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] — Renegociación / desbloqueo.
+- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] — Rechazo o no interés.
+- [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] — Cliente pausado o inactivo.
 
 ## Conceptos clave
 

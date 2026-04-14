@@ -1,19 +1,12 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "sem",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
-    {
-      "query": "file:Requisición",
-      "color": {
-        "a": 1,
-        "rgb": 16724751
-      }
-    },
     {
       "query": "file:Colaborador",
       "color": {
@@ -22,31 +15,52 @@
       }
     },
     {
-      "query": "file:Recluta",
-      "color": {
-        "a": 1,
-        "rgb": 11392604
-      }
-    },
-    {
-      "query": "file:Inspector",
+      "query": "path:Inspector  ",
       "color": {
         "a": 1,
         "rgb": 11951318
       }
     },
     {
-      "query": "file:Black",
+      "query": "file:Blacklist",
       "color": {
         "a": 1,
         "rgb": 0
       }
     },
     {
-      "query": "hotel",
+      "query": "path:Ventas  ",
       "color": {
         "a": 1,
-        "rgb": 16580454
+        "rgb": 6053078
+      }
+    },
+    {
+      "query": "path:Reclutamiento  ",
+      "color": {
+        "a": 1,
+        "rgb": 6084202
+      }
+    },
+    {
+      "query": "path:Hotel  ",
+      "color": {
+        "a": 1,
+        "rgb": 13955642
+      }
+    },
+    {
+      "query": "path:Core/Módulos/Semáforos  ",
+      "color": {
+        "a": 1,
+        "rgb": 16759002
+      }
+    },
+    {
+      "query": "file:Requisición",
+      "color": {
+        "a": 1,
+        "rgb": 16715535
       }
     }
   ],
@@ -60,6 +74,6 @@
   "repelStrength": 20,
   "linkStrength": 0,
   "linkDistance": 500,
-  "scale": 0.6507250192804762,
-  "close": false
+  "scale": 0.9278491123813742,
+  "close": true
 }

@@ -24,12 +24,12 @@ Rol operativo del módulo de [[Onboarding-Hotel|Onboarding Hotel]]. Responsable 
 
 ## Status en los que participa
 
-- [[Status - Gris]] — Identificación del prospecto.
-- [[Status - Azul Claro]] — Contacto y recopilación de datos.
-- [[Status - Verde]] — Propuesta enviada.
-- [[Status - Amarillo]] — Seguimiento tras propuesta.
-- [[Status - Rosa]] — Negociación de términos (en conjunto con BDC).
-- [[Status - Rojo]] — Gestión del rechazo y posible reactivación.
+- [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] — Identificación del prospecto.
+- [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] — Contacto y recopilación de datos.
+- [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] — Propuesta enviada.
+- [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] — Seguimiento tras propuesta.
+- [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] — Negociación de términos (en conjunto con BDC).
+- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] — Gestión del rechazo y posible reactivación.
 
 ## Relacionado
 

@@ -10,14 +10,14 @@ aliases:
 
 Proceso comercial paso a paso para incorporar un hotel como cliente activo de Oranje. Cada etapa corresponde a un status del [[Semáforo Onboarding]].
 
-## Etapa 1 — [[Status - Gris]] Hotel identificado
+## Etapa 1 — [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] Hotel identificado
 
 **Responsable:** [[Business Developer]]
 **Acción única:** el BD identifica el hotel dentro de su territorio como posible cliente.
 
-**Avance →** cuando inicia contacto y recopilación de datos, mueve el status a [[Status - Azul Claro|Azul Claro]].
+**Avance →** cuando inicia contacto y recopilación de datos, mueve el status a [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 
-## Etapa 2 — [[Status - Azul Claro]] Contacto y recopilación de datos
+## Etapa 2 — [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] Contacto y recopilación de datos
 
 **Responsable:** [[Business Developer]]
 **Acciones durante este status:**
@@ -26,9 +26,9 @@ Proceso comercial paso a paso para incorporar un hotel como cliente activo de Or
 - Recopila datos: nombre del hotel, email, teléfono, nombre y cargo del contacto, necesidad del negocio.
 - Realiza visita en frío al hotel.
 
-**Avance →** al enviar la propuesta, el status cambia a [[Status - Verde|Verde]].
+**Avance →** al enviar la propuesta, el status cambia a [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]].
 
-## Etapa 3 — [[Status - Verde]] Propuesta enviada
+## Etapa 3 — [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] Propuesta enviada
 
 **Responsable:** [[Business Developer]]
 **Acciones:**
@@ -40,12 +40,12 @@ Proceso comercial paso a paso para incorporar un hotel como cliente activo de Or
 
 **Decisión: ¿El hotel responde con interés?**
 
-- **SÍ →** pasa a [[Status - Amarillo|Amarillo]].
-- **NO →** pasa a [[Status - Rojo|Rojo]].
+- **SÍ →** pasa a [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]].
+- **NO →** pasa a [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]].
 
-**Rama alterna:** si hay estancamiento, se activa [[Status - Café|Café]] y el [[Business Developer Coordinator]] investiga y da solución para retomar la propuesta → regresa a [[Status - Azul Claro|Azul Claro]].
+**Rama alterna:** si hay estancamiento, se activa [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] y el [[Business Developer Coordinator]] investiga y da solución para retomar la propuesta → regresa a [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 
-## Etapa 4 — [[Status - Amarillo]] En seguimiento tras propuesta
+## Etapa 4 — [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] En seguimiento tras propuesta
 
 **Responsable:** [[Business Developer]] (con apoyo del [[Business Developer Coordinator]])
 **Acciones durante este status:**
@@ -57,15 +57,15 @@ Proceso comercial paso a paso para incorporar un hotel como cliente activo de Or
   - Festivos
   - Calendario
 
-**Avance →** al iniciar negociación formal, pasa a [[Status - Rosa|Rosa]].
+**Avance →** al iniciar negociación formal, pasa a [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]].
 
-## Etapa 5 — [[Status - Rosa]] Negociación de términos
+## Etapa 5 — [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] Negociación de términos
 
 **Responsable:** [[Business Developer]] + [[Business Developer Coordinator]]
 
 **Decisión: ¿Se cierra el acuerdo?**
 
-- **NO →** vuelve al flujo (renegociación / [[Status - Café|Café]] / Fin).
+- **NO →** vuelve al flujo (renegociación / [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] / Fin).
 - **SÍ →** el BDC aprueba la conversión y se crea el [[Usuario del Hotel]] en el sistema.
 
 **Al crearse el usuario** se dispara el [[Trigger Automático de Conversión]] (en paralelo):
@@ -74,9 +74,9 @@ Proceso comercial paso a paso para incorporar un hotel como cliente activo de Or
 - Sistema notifica al BD asignado.
 - Hotel desaparece de la lista de prospectos.
 
-**Avance →** pasa a [[Status - Naranja|Naranja]].
+**Avance →** pasa a [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]].
 
-## Etapa 6 — [[Status - Naranja]] Hotel cliente activo
+## Etapa 6 — [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] Hotel cliente activo
 
 **Responsable operativo:** [[QA Inspector|Inspector]] + [[Reclutadora|Reclutadores]]
 **Estado:** el hotel ya tiene [[Usuario del Hotel|usuario creado]] y está trabajando con Oranje.
@@ -88,18 +88,18 @@ Proceso comercial paso a paso para incorporar un hotel como cliente activo de Or
 **Decisión: ¿El hotel deja de operar?**
 
 - **NO →** Fin (continúa activo).
-- **SÍ →** pasa a [[Status - Negro|Negro]].
+- **SÍ →** pasa a [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]].
 
-## Etapa 7 — [[Status - Rojo]] Hotel rechazó la propuesta / no interesado
+## Etapa 7 — [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] Hotel rechazó la propuesta / no interesado
 
 **Responsable:** [[Business Developer]]
 
 **Decisión: ¿Reactivar?**
 
 - **NO →** Fin.
-- **SÍ →** regresa a [[Status - Azul Claro|Azul Claro]].
+- **SÍ →** regresa a [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 
-## Etapa 8 — [[Status - Negro]] Cliente dejó de operar / relación pausada
+## Etapa 8 — [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] Cliente dejó de operar / relación pausada
 
 **Responsable:** [[Business Developer Coordinator]]
 **Motivos:** cierre del hotel, cambio de administración, pausa, disputa.
@@ -107,12 +107,12 @@ Proceso comercial paso a paso para incorporar un hotel como cliente activo de Or
 **Decisión: ¿Reactivar?**
 
 - **NO →** Fin.
-- **SÍ →** regresa a [[Status - Azul Claro|Azul Claro]].
+- **SÍ →** regresa a [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 
 ## Puntos clave
 
 - Todo cambio de status queda registrado con fecha, responsable y comentario.
-- [[Status - Naranja|Naranja]] es el único status que habilita al hotel para generar [[Requisición|requisiciones]].
-- El [[Usuario del Hotel]] se crea al aprobar la conversión en [[Status - Rosa|Rosa]], justo antes del [[Trigger Automático de Conversión|trigger automático]].
-- [[Status - Rojo|Rojo]], [[Status - Negro|Negro]] y [[Status - Café|Café]] siempre reactivan hacia [[Status - Azul Claro|Azul Claro]].
+- [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] es el único status que habilita al hotel para generar [[Requisición|requisiciones]].
+- El [[Usuario del Hotel]] se crea al aprobar la conversión en [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]], justo antes del [[Trigger Automático de Conversión|trigger automático]].
+- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]], [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] y [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] siempre reactivan hacia [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 - La aprobación final de conversión la da únicamente el [[Business Developer Coordinator]].
