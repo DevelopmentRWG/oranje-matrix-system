@@ -10,6 +10,9 @@ aliases:
 
 Alberca donde [[Reclutamiento/Reclutamiento|Reclutamiento]] manda a todos los reclutados que pasaron el filtro y fueron aprobados. Es el lugar donde se va ordenando la información de los colaboradores aprobados y del que las [[Reclutadora|reclutadoras]] pueden tomar candidatos para asignarlos a un hotel.
 
+> [!info] Punto de encuentro entre flujos
+> La pool es el punto de encuentro entre el [[Flujo de Reclutamiento]] (que la **alimenta** con colaboradores nuevos) y el [[Flujo de Requisición]] (que la **consume** para cubrir hoteles).
+
 ## Qué contiene
 
 - Solo entran los reclutados que **pasaron el filtro y fueron aprobados** por [[Reclutamiento/Reclutamiento|Reclutamiento]].
@@ -30,4 +33,5 @@ Alberca donde [[Reclutamiento/Reclutamiento|Reclutamiento]] manda a todos los re
 - [[Semáforo del Colaborador]]
 - [[Reclutadora]]
 - [[Flujo de Reclutamiento]]
+- [[Flujo de Requisición]]
 - [[Requisición]]

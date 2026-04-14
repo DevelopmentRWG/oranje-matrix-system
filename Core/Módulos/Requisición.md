@@ -65,21 +65,13 @@ Una requisición tiene varios estados visuales que aplican a distintas dimension
 - **[[Semáforo de Urgencia de Requisición]]** — nivel de urgencia basado en el tiempo.
 - **[[Semáforo de Posiciones de la Requisición]]** — porcentaje de cobertura por cada posición solicitada.
 
-## Flujo básico
+## Flujo
 
-1. El [[Hotel/Solicitante del Hotel|Solicitante del Hotel]] **crea** la requisición desde la app (estado **En elaboración**).
-2. El Solicitante la **envía** al [[Hotel/Manager del Hotel|Manager del Hotel]] para revisión (estado **Pendiente de aprobación**).
-3. El [[Hotel/Manager del Hotel|Manager del Hotel]] **revisa** la requisición:
-   - Si la **aprueba** → estado **Autorizada**. La requisición llega al [[Manager de Reclutamiento]].
-   - Si la **rechaza** → regresa a estado **En elaboración** con observaciones para el Solicitante.
-4. El [[Manager de Reclutamiento]] la recibe y la asigna a una [[Reclutadora]] (estado **En proceso**).
-5. La reclutadora busca match en la [[Pool de Colaboradores|pool]] de colaboradores disponibles.
-6. Si hay match → asigna un colaborador existente al hotel.
-7. Si no hay match → inicia proceso de reclutamiento nuevo. Ver [[Flujo de Reclutamiento]].
-8. Cierre: **Cubierta totalmente** o **Cubierta parcialmente**.
+Ver [[Flujo de Requisición]].
 
 ## Relacionado
 
+- [[Flujo de Requisición]]
 - [[Semáforo de Requisición]]
 - [[Semáforo de Urgencia de Requisición]]
 - [[Semáforo de Posiciones de la Requisición]]

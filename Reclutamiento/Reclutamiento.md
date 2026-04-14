@@ -22,7 +22,8 @@ Módulo encargado de:
 
 ### Procesos
 
-- [[Flujo de Reclutamiento]]
+- [[Flujo de Reclutamiento]] — alimenta la pool con colaboradores nuevos.
+- [[Flujo de Requisición]] — consume la pool para cubrir hoteles.
 
 ## Conceptos Core relacionados
 
