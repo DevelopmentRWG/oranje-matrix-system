@@ -10,7 +10,7 @@ aliases:
 
 # Documento de Términos y Condiciones
 
-Documento formal creado durante [[Status - Amarillo]] por el [[Business Developer]] o el [[Business Developer Coordinator]]. Establece las condiciones comerciales sobre las que se negocia el acuerdo final con el hotel.
+Documento formal creado durante [[Semáforo Onboarding|Status - Amarillo]] por el [[Business Developer]] o el [[Business Developer Coordinator]]. Establece las condiciones comerciales sobre las que se negocia el acuerdo final con el hotel.
 
 ## Contenido
 
@@ -22,8 +22,8 @@ Documento formal creado durante [[Status - Amarillo]] por el [[Business Develope
 
 ## Ciclo de vida
 
-- **Se crea en:** [[Status - Amarillo]].
-- **Se negocia en:** [[Status - Rosa]].
+- **Se crea en:** [[Semáforo Onboarding|Status - Amarillo]].
+- **Se negocia en:** [[Semáforo Onboarding|Status - Rosa]].
 - **Validación final:** [[Business Developer Coordinator]] antes del cierre del contrato.
 
 ## Relacionado

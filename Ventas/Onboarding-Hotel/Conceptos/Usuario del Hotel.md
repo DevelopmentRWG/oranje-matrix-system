@@ -8,12 +8,12 @@ aliases:
 
 # Usuario del Hotel
 
-Cuenta del hotel en el sistema Oranje. Se crea al aprobarse la conversión en [[Status - Rosa]], justo antes del [[Trigger Automático de Conversión]], y marca la transición del hotel de prospecto comercial a **cliente activo** en [[Status - Naranja]].
+Cuenta del hotel en el sistema Oranje. Se crea al aprobarse la conversión en [[Semáforo Onboarding|Status - Rosa]], justo antes del [[Trigger Automático de Conversión]], y marca la transición del hotel de prospecto comercial a **cliente activo** en [[Semáforo Onboarding|Status - Naranja]].
 
 ## Creación
 
 - **Responsable de la aprobación:** [[Business Developer Coordinator]].
-- **Momento:** al cerrarse el acuerdo en [[Status - Rosa]].
+- **Momento:** al cerrarse el acuerdo en [[Semáforo Onboarding|Status - Rosa]].
 - **Efecto inmediato:** dispara el [[Trigger Automático de Conversión]].
 
 ## Qué habilita
@@ -26,6 +26,6 @@ Cuenta del hotel en el sistema Oranje. Se crea al aprobarse la conversión en [[
 
 - [[Flujo de Onboarding]]
 - [[Hotel/Hotel|Hotel]]
-- [[Status - Rosa]]
-- [[Status - Naranja]]
+- [[Semáforo Onboarding|Status - Rosa]]
+- [[Semáforo Onboarding|Status - Naranja]]
 - [[Trigger Automático de Conversión]]
