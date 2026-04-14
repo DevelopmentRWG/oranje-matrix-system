@@ -16,12 +16,12 @@ Sistema de estados visuales que representa el ciclo de vida de una [[Requisició
 
 | Color         | Estado                  | Descripción                                                                              |
 | ------------- | ----------------------- | ---------------------------------------------------------------------------------------- |
-| Verde manzana | En elaboración          | Requisición en elaboración por el [[Hotel/Solicitante del Hotel\|Solicitante del Hotel]]. |
-| Naranja       | Pendiente de aprobación | Enviada al [[Hotel/Manager del Hotel\|Manager del Hotel]], esperando su revisión.         |
-| Verde         | Autorizada              | Aprobada por el [[Hotel/Manager del Hotel\|Manager del Hotel]].                           |
+| Verde manzana | En elaboración          | Requisición en elaboración por el hotel (GHC o GH).                                       |
+| Verde         | Autorizada              | Requisición autorizada por el [[Hotel/Manager del Hotel\|Gerente del Hotel]] (GH).        |
 | Amarillo      | En proceso              | En proceso de asignación de personal por el reclutador.                                   |
 | Azul claro    | Cubierta totalmente     | Requisición cubierta totalmente por el reclutador.                                        |
 | Rojo          | Cubierta parcialmente   | Requisición cubierta parcialmente por el reclutador.                                      |
+| Morado        | Eliminada               | Requisición eliminada físicamente.                                                        |
 
 ## Relacionado
 
