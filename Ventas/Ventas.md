@@ -8,20 +8,18 @@ aliases:
 
 # Ventas
 
-Módulo responsable de la incorporación de nuevos hoteles a la plataforma Oranje (onboarding).
+Módulo responsable de la incorporación de nuevos hoteles a la plataforma Oranje (onboarding) y la gestión comercial con clientes.
 
-> [!warning] En construcción
-> Los detalles del proceso de onboarding están pendientes de definición.
+## Roles
 
-## Contenido del módulo
+- [[Business Developer]] — Ciclo comercial con el hotel: contacta, propone y da seguimiento.
+- [[Business Developer Coordinator]] — Supervisa rutas y zonas, valida términos y aprueba la conversión.
 
-### Roles
+## Procesos
 
-- Por definir.
-
-### Procesos
-
-- Proceso de onboarding de hoteles — pendiente de detalle.
+- [[Onboarding-Hotel]] — Fase comercial desde la identificación de un hotel hasta su activación como cliente.
+- [[Flujo de Onboarding]] — Proceso paso a paso del onboarding.
+- [[Semáforo Onboarding]] — Estados de seguimiento de la negociación con el hotel.
 
 ## Conceptos Core relacionados
 
