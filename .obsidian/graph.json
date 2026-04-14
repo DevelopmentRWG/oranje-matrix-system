@@ -46,7 +46,14 @@
       "query": "hotel",
       "color": {
         "a": 1,
-        "rgb": 16580454
+        "rgb": 16775782
+      }
+    },
+    {
+      "query": "file:Onboarding-Hotel",
+      "color": {
+        "a": 1,
+        "rgb": 5395168
       }
     }
   ],
@@ -60,6 +67,6 @@
   "repelStrength": 20,
   "linkStrength": 0,
   "linkDistance": 500,
-  "scale": 0.8954702594913354,
+  "scale": 0.23178231865006618,
   "close": false
 }
