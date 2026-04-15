@@ -87,8 +87,8 @@ Si cumple:
 Se muestra el mensaje: "Al confirmar la eliminación de la requisición, las posiciones registradas y la requisición serán eliminadas físicamente".
 
 Si se confirma:
-- Por cada posición → **Status Purple** (eliminada físicamente) → journal posición.
-- La requisición → **Status Purple** (eliminada físicamente) → journal requisición.
+- Por cada posición → **Status Morado** (eliminada físicamente) → journal posición.
+- La requisición → **Status Morado** (eliminada físicamente) → journal requisición.
 
 ---
 

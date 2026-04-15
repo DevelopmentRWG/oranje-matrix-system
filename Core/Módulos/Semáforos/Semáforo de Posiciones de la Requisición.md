@@ -15,11 +15,14 @@ Estado visual del porcentaje de cobertura de cada posición dentro de una [[Requ
 
 ## Estados
 
-| Color    | Estado         | Descripción                                                           |
-| -------- | -------------- | --------------------------------------------------------------------- |
-| Verde    | 100% cubierta  | Posición de la requisición cubierta al 100% por el reclutador.        |
-| Amarillo | 75% cubierta   | Posición de la requisición cubierta al 75% por el reclutador.         |
-| Rojo     | < 75% cubierta | Posición de la requisición cubierta menos del 75% por el reclutador.  |
+| Color  | Estado              | Descripción                                                                        |
+| ------ | ------------------- | ---------------------------------------------------------------------------------- |
+| Gold   | En preparación      | Posición de la requisición en preparación por el hotel.                            |
+| Orange | Autorizada          | Posición de la requisición autorizada por el gerente del hotel.                    |
+| Green  | 100% cubierta       | Posición de la requisición cubierta al 100% por el reclutador.                     |
+| Yellow | Hasta 25% faltante  | Posición de la requisición con hasta 25% de personal faltante por el reclutador.   |
+| Red    | Más de 25% faltante | Posición de la requisición con más del 25% de personal faltante por el reclutador. |
+| Purple | Eliminada           | Posición de la requisición eliminada físicamente.                                  |
 
 ## Relacionado
 
