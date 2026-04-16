@@ -21,4 +21,7 @@ Thumbs.db
 .obsidian/cache
 
 # Claude Code
-.claude/
+.claude/*
+!.claude/agents/
+!.claude/skills/
+.claude/settings.local.json
