@@ -4,6 +4,9 @@ tags:
 aliases:
   - Semáforo de Urgencia de Requisición
   - Semáforo de Urgencia
+  - Status Urgencia Rojo
+  - Status Urgencia Amarillo
+  - Status Urgencia Verde fuerte
 ---
 
 # Semáforo de Urgencia de Requisición
@@ -21,8 +24,19 @@ Clasificación visual del nivel de urgencia con el que una [[Requisición]] nece
 | Amarillo     | Medio   | 72 – 120 hrs |
 | Verde fuerte | Normal  | > 120 hrs    |
 
+## Reglas clave
+
+- **Cálculo automático por sistema** al autorizar la requisición ([[Semáforo de Requisición#Verde — Autorizada|Verde]]).
+- **Parámetros:** `fecha de autorización de la requisición` vs `fecha de inicio de la posición`.
+- **Fórmula:**
+	- `> 120 hrs` → **Verde fuerte** (Normal)
+	- `72 – 120 hrs` → **Amarillo** (Medio)
+	- `< 72 hrs` → **Rojo** (Urgente)
+- **Sin intervención humana**: el sistema reevalúa automáticamente y ajusta el color conforme avanza el tiempo.
+
 ## Relacionado
 
 - [[Requisición]]
 - [[Semáforo de Requisición]]
 - [[Semáforo de Posiciones de la Requisición]]
+- [[Reclutadora]]

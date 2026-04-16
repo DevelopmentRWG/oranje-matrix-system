@@ -5,6 +5,8 @@ aliases:
   - Solicitante del Hotel
   - Solicitante
   - Hotel Requestor
+  - GHC
+  - Colaborador del Gerente del Hotel
 ---
 
 # Solicitante del Hotel

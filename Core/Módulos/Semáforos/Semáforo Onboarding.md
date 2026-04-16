@@ -4,33 +4,15 @@ tags:
 aliases:
   - Semáforo Onboarding
   - Semáforo de Onboarding Hotel
-  - Status - Gris
-  - Status - Azul Claro
-  - Status - Café
-  - Status - Verde
-  - Status - Amarillo
-  - Status - Rosa
-  - Status - Naranja
-  - Status - Rojo
-  - Status - Negro
-  - Gris
-  - Status Gris
-  - Azul Claro
-  - Status Azul Claro
-  - Café
-  - Status Café
-  - Verde
-  - Status Verde
-  - Amarillo
-  - Status Amarillo
-  - Rosa
-  - Status Rosa
-  - Naranja
-  - Status Naranja
-  - Rojo
-  - Status Rojo
-  - Negro
-  - Status Negro
+  - Status Onboarding Gris
+  - Status Onboarding Azul Claro
+  - Status Onboarding Café
+  - Status Onboarding Verde
+  - Status Onboarding Amarillo
+  - Status Onboarding Rosa
+  - Status Onboarding Naranja
+  - Status Onboarding Rojo
+  - Status Onboarding Negro
 ---
 
 # Semáforo Onboarding

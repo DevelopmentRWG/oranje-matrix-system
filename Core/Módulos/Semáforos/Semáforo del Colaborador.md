@@ -3,7 +3,17 @@ tags:
   - modulo/core
 aliases:
   - Semáforo del Colaborador
-  - Semáforo
+  - Status Colaborador Blanco
+  - Status Colaborador Verde manzana
+  - Status Colaborador Azul claro
+  - Status Colaborador Naranja
+  - Status Colaborador Verde fuerte
+  - Status Colaborador Amarillo
+  - Status Colaborador Café
+  - Status Colaborador Rosa
+  - Status Colaborador Morado
+  - Status Colaborador Rojo
+  - Status Colaborador Negro
 ---
 
 # Semáforo del Colaborador
@@ -31,13 +41,30 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 
 ## Reglas clave
 
+### Entradas al sistema
+
+- **→ Blanco**: al registrarse el colaborador con sus datos, aún sin asignación.
 - **Blanco → Verde manzana**: al ser asignado y asistir el día 1.
+
+### Progresión como fijo
+
+- **Verde manzana → Azul claro**: cuando poncha en la propiedad al tercer día.
+- **Azul claro → Naranja**: al completar 7 días (fijo por sistema).
+
+### Disponibilidad y asignaciones temporales
+
+- **Naranja → Verde fuerte**: cuando el colaborador queda libre (fin de asignación fija o reincorporado).
+- **Amarillo**: lo pone el colaborador (disponible voluntario durante un descanso).
+- **Verde fuerte ↔ Café**: la [[Reclutadora]] lo asigna temporalmente (→ Café); al terminar la jornada temporal, vuelve a `Verde fuerte` o `Naranja` según su estado previo.
+
+### Incidencias
+
+- **→ Morado**: el sistema lo marca cuando el colaborador no asiste sin justificación.
 - **3 inasistencias → Negro**: [[Core/Módulos/Blacklist|Blacklist]] automático por sistema.
-- **Rojo**: lo pone el hotel. Luego [[QA Inspector]] investiga el caso y el resultado lo lleva a:
+- **Rosa**: lo pone el hotel ([[Hotel/Manager del Hotel]]) cuando manda al colaborador a descansar (vacaciones, temporada baja).
+- **Rojo**: lo pone el hotel ([[Hotel/Manager del Hotel]]). Luego [[QA Inspector]] investiga el caso y el resultado lo lleva a:
 	- **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), o
 	- **Verde fuerte** (reincorporado).
-- **Rosa**: lo pone el hotel.
-- **Amarillo**: lo pone el colaborador.
 - **Casos de [[Core/Módulos/Blacklist|Blacklist]]**: revisados por el [[Manager de Reclutamiento]].
 
 ## Relacionado

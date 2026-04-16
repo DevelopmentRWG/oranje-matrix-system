@@ -4,6 +4,8 @@ tags:
 aliases:
   - Manager del Hotel
   - Gerente de Hotel
+  - Gerente del Hotel
+  - GH
   - HM
   - Hotel Manager
 ---

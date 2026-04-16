@@ -8,7 +8,7 @@ aliases:
 
 # Propuesta Personalizada
 
-Documento comercial que el [[Business Developer]] elabora y envía al hotel durante [[Semáforo Onboarding|Status - Verde]]. Presenta la oferta de Oranje adaptada a las necesidades específicas del hotel prospecto.
+Documento comercial que el [[Business Developer]] elabora y envía al hotel durante [[Semáforo Onboarding|Status Onboarding Verde]]. Presenta la oferta de Oranje adaptada a las necesidades específicas del hotel prospecto.
 
 ## Contenido
 
@@ -18,9 +18,9 @@ Documento comercial que el [[Business Developer]] elabora y envía al hotel dura
 
 ## Ciclo de vida
 
-- **Se elabora y envía en:** [[Semáforo Onboarding|Status - Verde]].
-- **Se da seguimiento en:** [[Semáforo Onboarding|Status - Verde]] (registro de intentos de contacto).
-- **Se ajusta/retoma desde:** [[Semáforo Onboarding|Status - Café]] cuando hay estancamiento.
+- **Se elabora y envía en:** [[Semáforo Onboarding|Status Onboarding Verde]].
+- **Se da seguimiento en:** [[Semáforo Onboarding|Status Onboarding Verde]] (registro de intentos de contacto).
+- **Se ajusta/retoma desde:** [[Semáforo Onboarding|Status Onboarding Café]] cuando hay estancamiento.
 
 ## Relacionado
 

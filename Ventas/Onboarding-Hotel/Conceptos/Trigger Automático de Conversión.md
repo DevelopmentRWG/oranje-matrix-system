@@ -9,7 +9,7 @@ aliases:
 
 # Trigger Automático de Conversión
 
-Conjunto de acciones automáticas que el sistema ejecuta **en paralelo** cuando el [[Business Developer Coordinator]] aprueba la conversión en [[Semáforo Onboarding|Status - Rosa]] y se crea el [[Usuario del Hotel]].
+Conjunto de acciones automáticas que el sistema ejecuta **en paralelo** cuando el [[Business Developer Coordinator]] aprueba la conversión en [[Semáforo Onboarding|Status Onboarding Rosa]] y se crea el [[Usuario del Hotel]].
 
 ## Acciones automáticas
 
@@ -19,13 +19,13 @@ Conjunto de acciones automáticas que el sistema ejecuta **en paralelo** cuando 
 
 ## Disparador
 
-- **Evento:** aprobación de la conversión en [[Semáforo Onboarding|Status - Rosa]].
+- **Evento:** aprobación de la conversión en [[Semáforo Onboarding|Status Onboarding Rosa]].
 - **Precondición:** creación del [[Usuario del Hotel]] en el sistema.
-- **Resultado:** el hotel pasa a [[Semáforo Onboarding|Status - Naranja]] y queda habilitado para generar [[Requisición|requisiciones]].
+- **Resultado:** el hotel pasa a [[Semáforo Onboarding|Status Onboarding Naranja]] y queda habilitado para generar [[Requisición|requisiciones]].
 
 ## Relacionado
 
 - [[Flujo de Onboarding]]
 - [[Usuario del Hotel]]
-- [[Semáforo Onboarding|Status - Rosa]]
-- [[Semáforo Onboarding|Status - Naranja]]
+- [[Semáforo Onboarding|Status Onboarding Rosa]]
+- [[Semáforo Onboarding|Status Onboarding Naranja]]
