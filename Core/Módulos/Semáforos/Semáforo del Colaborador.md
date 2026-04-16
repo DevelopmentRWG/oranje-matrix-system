@@ -25,30 +25,30 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 
 ## Estados
 
-| Color         | Estado                                | Descripción                                                                                     |
-| ------------- | ------------------------------------- | --------------------------------------------------------------------------------- |
-| Blanco        | Pre-asignación                        | Apenas subió sus datos, aún no ha sido asignado a ningún hotel.                                 |
-| Verde manzana | Día 1-2                               | Colaborador nuevo, primeros días, siempre que esté asistiendo.                                  |
-| Azul claro    | Día 3+                                | Ponchó en la propiedad al tercer día.                                                           |
-| Naranja       | Fijo                                  | Pasó una semana, listo para colaborar fijamente en el hotel.                                    |
-| Verde fuerte  | Disponible                            | Disponible para asignación (o reincorporado tras disputa a su favor).                           |
-| Amarillo      | Disponible voluntario                 | En descanso de un hotel, se pone disponible para asignación temporal.                           |
-| Café          | Asignación temporal                   | Asignado temporalmente a cubrir la jornada completa o una parte de la jornada.                  |
-| Rosa          | Stand-by                              | El hotel lo mandó a descansar (vacaciones, temporada baja).                                     |
-| Morado        | No regresó                            | No asistió por causa propia.                                                                    |
-| Rojo          | Reportado                             | El hotel lo reportó (o acumuló 3 inasistencias); [[QA Inspector]] revisa el caso.               |
-| Negro         | [[Core/Módulos/Blacklist\|Blacklist]] | Disputa resuelta a favor del hotel, colaborador bloqueado.                                      |
+| Color         | Estado                                | Descripción                                                                                                                 |
+| ------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Blanco        | Pre-asignación                        | Apenas subió sus datos, aún no ha sido asignado a ningún hotel.                                                             |
+| Verde manzana | Día 1-2                               | Colaborador nuevo, primeros días, siempre que esté asistiendo. El [[QA Inspector\|Inspector]] verifica su llegada el día 1. |
+| Azul claro    | Día 3+                                | Ponchó en la propiedad al tercer día. El [[QA Inspector\|Inspector]] le entrega su uniforme.                                |
+| Naranja       | Fijo                                  | Pasó una semana, listo para colaborar fijamente en el hotel.                                                                |
+| Verde fuerte  | Disponible                            | Disponible para asignación (o reincorporado tras disputa a su favor).                                                       |
+| Amarillo      | Disponible voluntario                 | En descanso de un hotel, se pone disponible para asignación temporal.                                                       |
+| Café          | Asignación temporal                   | Asignado temporalmente a cubrir la jornada completa o una parte de la jornada.                                              |
+| Rosa          | Stand-by                              | El hotel lo mandó a descansar (vacaciones, temporada baja).                                                                 |
+| Morado        | No regresó                            | No asistió por causa propia.                                                                                                |
+| Rojo          | Reportado                             | El hotel lo reportó (o acumuló 3 inasistencias); [[QA Inspector]] revisa el caso.                                           |
+| Negro         | [[Core/Módulos/Blacklist\|Blacklist]] | Disputa resuelta a favor del hotel, colaborador bloqueado.                                                                  |
 
 ## Reglas clave
 
 ### Entradas al sistema
 
 - **→ Blanco**: al registrarse el colaborador con sus datos, aún sin asignación.
-- **Blanco → Verde manzana**: al ser asignado y asistir el día 1.
+- **Blanco → Verde manzana**: al ser asignado y asistir el día 1. El [[QA Inspector|Inspector]] verifica su llegada en sitio.
 
 ### Progresión como fijo
 
-- **Verde manzana → Azul claro**: cuando poncha en la propiedad al tercer día.
+- **Verde manzana → Azul claro**: cuando poncha en la propiedad al tercer día. En este momento el [[QA Inspector|Inspector]] le entrega su uniforme.
 - **Azul claro → Naranja**: al completar 7 días (fijo por sistema).
 
 ### Disponibilidad y asignaciones temporales
