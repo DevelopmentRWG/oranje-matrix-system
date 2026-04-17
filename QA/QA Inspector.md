@@ -1,6 +1,6 @@
 ---
 tags:
-  - modulo/inspector
+  - departamento/qa
 aliases:
   - QA Inspector
   - Inspector
