@@ -20,7 +20,7 @@ Cuenta del hotel en el sistema Oranje. Se crea al aprobarse la conversión en [[
 
 - Acceso del hotel al sistema como cliente.
 - Capacidad de generar [[Requisición|requisiciones]] desde el módulo [[Hotel/Hotel|Hotel]].
-- Gestión del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de sus colaboradores asignados.
+- Gestión del [[Core/Módulos/Schedule|Schedule]] semanal, desde donde se administran las requisiciones, asignaciones y el [[Timesheet]] de sus colaboradores.
 
 ## Relacionado
 

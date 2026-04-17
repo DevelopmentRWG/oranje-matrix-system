@@ -7,25 +7,46 @@ aliases:
 
 # Schedule
 
-Formato de planeación semanal del personal asignado a un hotel. Define quién va a trabajar, qué día y cuándo, y es la base sobre la que se genera el [[Timesheet]] de cada colaborador.
+Tablero de planeación semanal del hotel. Es el **eje central de la operación**: en él convergen la demanda de personal ([[Requisición]]), la cobertura (asignación de colaboradores desde la [[Pool de Colaboradores]]) y el registro de tiempo trabajado ([[Timesheet]]). Cada semana del hotel tiene su propio schedule.
 
 ## Configuración inicial
 
 - El hotel define **inicio y fin de su semana** en el contrato.
 - Oranje ofrece un **formato de planeación semanal** basado en esa configuración.
 
-## Cómo se puebla
+## Qué contiene el schedule
 
-- Al asignar un colaborador al hotel (acción de la [[Reclutadora]]), el colaborador queda registrado en el schedule del hotel.
-- El hotel puede hacer la planeación de su personal desde la app, viendo lo que ya pidió.
+### Requisición (qué necesita el hotel)
+
+- Al crearse una [[Requisición]] con fecha de inicio dentro de la semana, sus posiciones quedan reflejadas en el schedule de esa semana.
+- El schedule muestra las posiciones solicitadas: puesto, cantidad de personas, horario, fechas e idioma.
+
+### Asignaciones (quién cubre las posiciones)
+
+- La [[Reclutadora]] consulta el schedule del hotel para ver el panorama completo: qué posiciones se pidieron y cuáles ya están cubiertas.
+- Al asignar un colaborador desde la [[Pool de Colaboradores]], este queda registrado en el schedule del hotel.
+
+### Timesheet (registro real de horas)
+
+- Cada colaborador inscrito en el schedule tiene su propio [[Timesheet]].
+- El schedule es la base sobre la que se genera el timesheet y se habilita el ponchado (entrada, lunch, salida).
+
+## Quién lo gestiona
+
+- **[[Hotel/Manager del Hotel|Manager del Hotel]]** — Administra el schedule semanal: distribuye y planea a su personal.
+- **[[Reclutadora]]** — Consulta el schedule para ver la demanda y registra colaboradores al asignarlos.
 
 ## Qué habilita
 
-- **Creación del [[Timesheet]] por colaborador**: el schedule abre la puerta a que cada colaborador tenga su timesheet asociado.
+- Vista unificada de la semana operativa del hotel (demanda + cobertura + registro).
+- Creación del [[Timesheet]] por colaborador.
+- Visibilidad para el hotel de lo que pidió vs. lo que tiene cubierto.
 
 ## Relacionado
 
+- [[Requisición]]
 - [[Timesheet]]
 - [[Reclutadora]]
-- [[Flujo de Reclutamiento]]
-- [[Requisición]]
+- [[Pool de Colaboradores]]
+- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Flujo de Requisición]]

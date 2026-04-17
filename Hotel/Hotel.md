@@ -8,7 +8,7 @@ aliases:
 
 # Hotel
 
-Módulo que representa al hotel como cliente de Oranje. El hotel solicita personal a través de [[Requisición|requisiciones]], gestiona sus colaboradores asignados mediante el [[Core/Módulos/Schedule|Schedule]] y el [[Timesheet]], y opera como contraparte del equipo de [[Reclutamiento/Reclutamiento|Reclutamiento]].
+Módulo que representa al hotel como cliente de Oranje. El hotel solicita personal a través de [[Requisición|requisiciones]] y gestiona su operación semanal desde el [[Core/Módulos/Schedule|Schedule]], que es el eje donde convergen la demanda de posiciones, la cobertura de colaboradores asignados y el registro de tiempo trabajado ([[Timesheet]]). Opera como contraparte del equipo de [[Reclutamiento/Reclutamiento|Reclutamiento]].
 
 ## Contenido del módulo
 
