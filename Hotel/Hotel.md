@@ -15,7 +15,7 @@ Módulo que representa al hotel como cliente de Oranje. El hotel solicita person
 ### Roles
 
 - [[Hotel/Manager del Hotel|Manager del Hotel]] — Aprueba o rechaza requisiciones; gestiona el personal asignado.
-- [[Hotel/Solicitante del Hotel|Solicitante del Hotel]] — Crea las requisiciones de personal.
+- [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] — Crea las requisiciones de personal.
 
 ### Procesos
 

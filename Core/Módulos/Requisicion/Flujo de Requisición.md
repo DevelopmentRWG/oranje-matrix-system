@@ -7,7 +7,7 @@ aliases:
 
 # Flujo de Requisición
 
-Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [[Hotel/Solicitante del Hotel|Solicitante del Hotel]] (GHC) o el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) la crean, hasta que queda **Cubierta** o es eliminada. Este flujo **consume** colaboradores de la [[Pool de Colaboradores]]; no los produce.
+Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] (GHC) o el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) la crean, hasta que queda **Cubierta** o es eliminada. Este flujo **consume** colaboradores de la [[Pool de Colaboradores]]; no los produce.
 
 > [!info] Punto de encuentro con el [[Flujo de Reclutamiento]]
 > La [[Pool de Colaboradores]] es el único punto donde ambos flujos se conectan. El [[Flujo de Reclutamiento]] corre de forma **continua** alimentando la pool (haya o no requisiciones); este flujo la **consume** cuando necesita cubrir posiciones.
@@ -162,7 +162,7 @@ Registra en el journal de posiciones: Número de requisición, Número de posici
 - [[Requisición]]
 - [[Pool de Colaboradores]]
 - [[Flujo de Reclutamiento]]
-- [[Hotel/Solicitante del Hotel|Solicitante del Hotel]] (GHC)
+- [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] (GHC)
 - [[Hotel/Manager del Hotel|Manager del Hotel]] (GH)
 - [[Manager de Reclutamiento]]
 - [[Reclutadora]]

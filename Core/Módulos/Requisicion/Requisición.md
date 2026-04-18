@@ -8,7 +8,7 @@ aliases:
 
 # Requisición
 
-Solicitud que el [[Hotel/Solicitante del Hotel|Solicitante del Hotel]] envía al equipo de [[Reclutamiento/Reclutamiento|Reclutamiento]] para cubrir una o más [[Posiciones]]. Una requisición está compuesta por **una cabecera** y **una o más posiciones solicitadas**.
+Solicitud que el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] envía al equipo de [[Reclutamiento/Reclutamiento|Reclutamiento]] para cubrir una o más [[Posiciones]]. Una requisición está compuesta por **una cabecera** y **una o más posiciones solicitadas**.
 
 ## Estructura
 
@@ -25,7 +25,7 @@ Datos generales que identifican la requisición:
 | -------------------- | -------------------------------------------------------------------------------------------- |
 | Número de requisición | Identificador único de la requisición.                                                      |
 | Hotel                | Hotel que solicita el personal.                                                              |
-| Solicitante          | [[Hotel/Solicitante del Hotel\|Solicitante del Hotel]] que creó la requisición.              |
+| GHC                  | [[Hotel/Colaborador del Gerente del Hotel\|Colaborador del Gerente del Hotel]] que creó la requisición.              |
 | HM (Hotel Manager)   | [[Hotel/Manager del Hotel\|Manager del Hotel]] responsable. También conocido como Gerente de Hotel. |
 | Reclutador           | [[Reclutadora]] asignada a atender la requisición.                                           |
 | Inspector            | [[QA Inspector]] correspondiente a la [[Zonas\|zona]] del hotel.                             |
@@ -82,6 +82,6 @@ Ver [[Flujo de Requisición]].
 - [[Zonas]]
 - [[QA Inspector]]
 - [[Hotel/Manager del Hotel|Manager del Hotel]]
-- [[Hotel/Solicitante del Hotel|Solicitante del Hotel]]
+- [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]
 - [[Reclutadora]]
 - [[Manager de Reclutamiento]]

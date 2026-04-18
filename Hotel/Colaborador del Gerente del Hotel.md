@@ -2,16 +2,13 @@
 tags:
   - modulo/hotel
 aliases:
-  - Solicitante del Hotel
-  - Solicitante
-  - Hotel Requestor
   - GHC
-  - Colaborador del Gerente del Hotel
+  - Colaborador del GH
 ---
 
-# Solicitante del Hotel
+# Colaborador del Gerente del Hotel
 
-Rol operativo del módulo de [[Hotel/Hotel|Hotel]]. Responsable de crear las [[Requisición|requisiciones]] de personal que el hotel necesita cubrir.
+Rol operativo del módulo de [[Hotel/Hotel|Hotel]], subordinado del [[Hotel/Manager del Hotel|Manager del Hotel]]. Responsable de crear las [[Requisición|requisiciones]] de personal que el hotel necesita cubrir.
 
 ## Responsabilidades
 
@@ -27,7 +24,7 @@ Rol operativo del módulo de [[Hotel/Hotel|Hotel]]. Responsable de crear las [[R
 - Envía la requisición al [[Hotel/Manager del Hotel|Manager del Hotel]] para su aprobación.
 
 > [!note] Sobre la autorización
-> El Solicitante del Hotel **no puede enviar** una requisición directamente a [[Reclutamiento/Reclutamiento|Reclutamiento]]. Toda requisición debe ser revisada y aprobada por el [[Hotel/Manager del Hotel|Manager del Hotel]] antes de llegar al equipo de reclutamiento.
+> El Colaborador del Gerente del Hotel **no puede enviar** una requisición directamente a [[Reclutamiento/Reclutamiento|Reclutamiento]]. Toda requisición debe ser revisada y aprobada por el [[Hotel/Manager del Hotel|Manager del Hotel]] antes de llegar al equipo de reclutamiento.
 
 ## Relacionado
 

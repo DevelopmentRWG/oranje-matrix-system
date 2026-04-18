@@ -19,7 +19,7 @@ aliases:
 
 # Semáforo de Requisición
 
-Sistema de estados visuales que representa el ciclo de vida de una [[Requisición]], desde que el [[Hotel/Solicitante del Hotel|Solicitante del Hotel]] comienza a elaborarla hasta que queda cubierta.
+Sistema de estados visuales que representa el ciclo de vida de una [[Requisición]], desde que el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] comienza a elaborarla hasta que queda cubierta.
 
 > [!info]
 > Este semáforo describe el **ciclo de vida general** de la requisición. Las otras dimensiones se manejan en semáforos separados: [[Semáforo de Urgencia de Requisición]] (clasificación por tiempo) y [[Semáforo de Posiciones de la Requisición]] (porcentaje de cobertura por posición). Para el estado del colaborador ver [[Semáforo del Colaborador]].
@@ -31,7 +31,7 @@ Sistema de estados visuales que representa el ciclo de vida de una [[Requisició
 
 | Color         | Estado                | Responsable                                                            | Descripción                                              |
 | ------------- | --------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------- |
-| Verde manzana | En elaboración        | [[Hotel/Solicitante del Hotel\|GHC]] o [[Hotel/Manager del Hotel\|GH]] | En elaboración por el hotel.                             |
+| Verde manzana | En elaboración        | [[Hotel/Colaborador del Gerente del Hotel\|GHC]] o [[Hotel/Manager del Hotel\|GH]] | En elaboración por el hotel.                             |
 | Verde         | Autorizada            | [[Hotel/Manager del Hotel\|GH]]                                        | Autorizada por el gerente del hotel.                     |
 | Amarillo      | En proceso            | [[Reclutadora]] (asignada por [[Manager de Reclutamiento]])            | En proceso de asignación de personal.                    |
 | Azul claro    | Cubierta totalmente   | [[Reclutadora]]                                                        | Requisición cubierta totalmente.                         |
@@ -41,7 +41,7 @@ Sistema de estados visuales que representa el ciclo de vida de una [[Requisició
 ## Detalle por estado
 
 ### Verde manzana — En elaboración
-**Responsable:** [[Hotel/Solicitante del Hotel|GHC]] o [[Hotel/Manager del Hotel|GH]]
+**Responsable:** [[Hotel/Colaborador del Gerente del Hotel|GHC]] o [[Hotel/Manager del Hotel|GH]]
 
 El hotel inicia la creación de la requisición y sus posiciones.
 
@@ -103,5 +103,5 @@ Estado transversal: se alcanza desde cualquier estado anterior cuando se elimina
 - [[Flujo de Reclutamiento]]
 - [[Reclutadora]]
 - [[Manager de Reclutamiento]]
-- [[Hotel/Solicitante del Hotel|Solicitante del Hotel]]
+- [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]
 - [[Hotel/Manager del Hotel|Manager del Hotel]]
