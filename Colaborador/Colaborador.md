@@ -14,7 +14,7 @@ Entidad central del sistema Oranje. Representa a la persona que es reclutada, as
 
 ## Datos del Colaborador
 
-Los datos del colaborador se capturan en dos fases.
+Los datos del colaborador se capturan en tres fases.
 
 ### Fase 1 — Entrevista inicial
 
@@ -42,9 +42,21 @@ Completada por el propio Colaborador:
 | Tipo de transporte | — |
 | Modalidad | [[Modalidades de Contratación]] |
 
+### Fase 3 — Datos de emergencia
+
+Completada por el propio Colaborador desde la app:
+
+| Campo | Descripción |
+|---|---|
+| Contacto de emergencia — nombre | Persona a contactar en caso de emergencia |
+| Contacto de emergencia — teléfono | Teléfono del contacto |
+| Contacto de emergencia — parentesco | Relación con el colaborador |
+| Tipo de sangre | Grupo sanguíneo |
+| Alergias o condiciones médicas | Información médica relevante |
+
 ## Ciclo de vida
 
-El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]], que define 11 estados posibles desde su ingreso al [[Pool de Colaboradores]] hasta su eventual salida o bloqueo en la [[Blacklist]].
+El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]], que define 12 estados posibles desde su ingreso al [[Pool de Colaboradores]] hasta su eventual salida o bloqueo en la [[Blacklist]].
 
 ## Roles que interactúan con el Colaborador
 
@@ -67,3 +79,4 @@ El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]
 - [[Timesheet]]
 - [[Flujo de Reclutamiento]]
 - [[Requisición]]
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]

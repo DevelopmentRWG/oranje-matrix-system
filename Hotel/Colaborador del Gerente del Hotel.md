@@ -22,6 +22,8 @@ Rol operativo del módulo de [[Hotel/Hotel|Hotel]], subordinado del [[Hotel/Mana
   - Nivel de urgencia (ver [[Semáforo de Urgencia de Requisición]]).
   - Notas adicionales.
 - Envía la requisición al [[Hotel/Manager del Hotel|Manager del Hotel]] para su aprobación.
+- Reporta [[Core/Módulos/Accidente Laboral/Accidente Laboral|accidentes laborales]] detectados en la propiedad (ver [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]], escenario B).
+- Acude físicamente al lugar del incidente y captura la información presencial en la tarjeta de accidente: ubicación exacta, circunstancias, testigos y atención inmediata brindada.
 
 > [!note] Sobre la autorización
 > El Colaborador del Gerente del Hotel **no puede enviar** una requisición directamente a [[Reclutamiento/Reclutamiento|Reclutamiento]]. Toda requisición debe ser revisada y aprobada por el [[Hotel/Manager del Hotel|Manager del Hotel]] antes de llegar al equipo de reclutamiento.
@@ -32,3 +34,5 @@ Rol operativo del módulo de [[Hotel/Hotel|Hotel]], subordinado del [[Hotel/Mana
 - [[Hotel/Hotel|Hotel]]
 - [[Requisición]]
 - [[Semáforo de Requisición]]
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
+- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]

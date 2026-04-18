@@ -13,6 +13,7 @@ aliases:
   - Status Colaborador Rosa
   - Status Colaborador Morado
   - Status Colaborador Rojo
+  - Status Colaborador Gris
   - Status Colaborador Negro
 ---
 
@@ -37,6 +38,7 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 | Rosa          | Stand-by                              | El hotel lo mandó a descansar (vacaciones, temporada baja).                                                                 |
 | Morado        | No regresó                            | No asistió por causa propia.                                                                                                |
 | Rojo          | Reportado                             | El hotel lo reportó (o acumuló 3 inasistencias); [[QA Inspector]] revisa el caso.                                           |
+| Gris          | Accidentado                           | El colaborador sufrió un [[Core/Módulos/Accidente Laboral/Accidente Laboral\|accidente laboral]] y está en incapacidad médica. Protegido de [[Core/Módulos/Blacklist\|Blacklist]]. |
 | Negro         | [[Core/Módulos/Blacklist\|Blacklist]] | Disputa resuelta a favor del hotel, colaborador bloqueado.                                                                  |
 
 ## Reglas clave
@@ -67,6 +69,12 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 	- **Verde fuerte** (reincorporado).
 - **Casos de [[Core/Módulos/Blacklist|Blacklist]]**: revisados por el [[Manager de Reclutamiento]].
 
+### Accidente laboral
+
+- **Cualquier estado activo → Gris**: cuando se genera un reporte de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]. El colaborador queda fuera de la operación por causa médica.
+- **Gris → Verde fuerte**: al recibir el alta médica y cerrarse la tarjeta de accidente. El colaborador queda disponible para reasignación.
+- **Protección de Blacklist**: mientras el colaborador esté en estado `Gris`, las inasistencias **no cuentan** para la regla de 3 inasistencias → Negro.
+
 ## Relacionado
 
 - [[Semáforo de Requisición]]
@@ -77,3 +85,4 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 - [[Reclutadora]]
 - [[QA Inspector]]
 - [[Core/Módulos/Blacklist|Blacklist]]
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
