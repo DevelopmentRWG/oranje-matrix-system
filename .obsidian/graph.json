@@ -8,10 +8,24 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "file:pool de Colaboradores",
+      "query": "file:Requisición",
+      "color": {
+        "a": 1,
+        "rgb": 16724751
+      }
+    },
+    {
+      "query": "file:Pool de Colaboradores",
       "color": {
         "a": 1,
         "rgb": 16749824
+      }
+    },
+    {
+      "query": "path:Reclutamiento  ",
+      "color": {
+        "a": 1,
+        "rgb": 11392604
       }
     },
     {
@@ -22,45 +36,38 @@
       }
     },
     {
-      "query": "file:Blacklist",
+      "query": "file:Black",
       "color": {
         "a": 1,
         "rgb": 0
       }
     },
     {
-      "query": "path:Ventas  ",
+      "query": "path:Hotel",
       "color": {
         "a": 1,
-        "rgb": 6053078
+        "rgb": 16580454
       }
     },
     {
-      "query": "path:Reclutamiento  ",
+      "query": "path:Ventas ",
       "color": {
         "a": 1,
-        "rgb": 6084202
-      }
-    },
-    {
-      "query": "path:Hotel  ",
-      "color": {
-        "a": 1,
-        "rgb": 13955642
+        "rgb": 5395168
       }
     },
     {
       "query": "path:Core/Módulos/Semáforos  ",
       "color": {
         "a": 1,
-        "rgb": 16759002
+        "rgb": 8453631
       }
     },
     {
-      "query": "file:Requisición",
+      "query": "path:Colaborador  ",
       "color": {
         "a": 1,
-        "rgb": 16715535
+        "rgb": 16753700
       }
     }
   ],
@@ -74,6 +81,6 @@
   "repelStrength": 20,
   "linkStrength": 0,
   "linkDistance": 500,
-  "scale": 0.726849796121093,
-  "close": true
+  "scale": 0.6572081056451029,
+  "close": false
 }
