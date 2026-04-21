@@ -78,7 +78,7 @@ Proceso comercial paso a paso para incorporar un hotel como cliente activo de Or
 
 ## Etapa 6 — [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] Hotel cliente activo
 
-**Responsable operativo:** [[QA Inspector|Inspector]] + [[Reclutadora|Reclutadores]]
+**Responsable operativo:** [[Inspector]] + [[Reclutadora|Reclutadores]]
 **Estado:** el hotel ya tiene [[Usuario del Hotel|usuario creado]] y está trabajando con Oranje.
 
 - Pasa a responsabilidad de [[Reclutadora|Reclutadores]].

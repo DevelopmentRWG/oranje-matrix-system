@@ -63,7 +63,7 @@ Oranje opera un sistema de staffing para hoteles. El vault contiene la fuente de
 - `Hotel/Manager del Hotel.md`, `Hotel/Colaborador del Gerente del Hotel.md`
 - `Reclutamiento/Reclutadora.md`, `Reclutamiento/Manager de Reclutamiento.md`
 - `Ventas/Roles/Business Developer.md`, `Ventas/Roles/Business Developer Coordinator.md`
-- `QA/QA Inspector.md`, `QA/QA Coordinator.md`
+- `Inspección/Inspector.md`, `Inspección/Coordinador.md`
 
 ### Hotel y Ventas
 - `Hotel/Hotel.md`

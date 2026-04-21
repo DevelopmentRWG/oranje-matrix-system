@@ -29,15 +29,15 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 | Color         | Estado                                | Descripción                                                                                                                 |
 | ------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Blanco        | Pre-asignación                        | Apenas subió sus datos, aún no ha sido asignado a ningún hotel.                                                             |
-| Verde manzana | Día 1-2                               | Colaborador nuevo, primeros días, siempre que esté asistiendo. El [[QA Inspector\|Inspector]] verifica su llegada el día 1. |
-| Azul claro    | Día 3+                                | Ponchó en la propiedad al tercer día. El [[QA Inspector\|Inspector]] le entrega su uniforme.                                |
+| Verde manzana | Día 1-2                               | Colaborador nuevo, primeros días, siempre que esté asistiendo. El [[Inspector]] verifica su llegada el día 1. |
+| Azul claro    | Día 3+                                | Ponchó en la propiedad al tercer día. El [[Inspector]] le entrega su uniforme.                                |
 | Naranja       | Fijo                                  | Pasó una semana, listo para colaborar fijamente en el hotel.                                                                |
 | Verde fuerte  | Disponible                            | Disponible para asignación (o reincorporado tras disputa a su favor).                                                       |
 | Amarillo      | Disponible voluntario                 | En descanso de un hotel, se pone disponible para asignación temporal.                                                       |
 | Café          | Asignación temporal                   | Asignado temporalmente a cubrir la jornada completa o una parte de la jornada.                                              |
 | Rosa          | Stand-by                              | El hotel lo mandó a descansar (vacaciones, temporada baja).                                                                 |
 | Morado        | No regresó                            | No asistió por causa propia.                                                                                                |
-| Rojo          | Reportado                             | El hotel lo reportó (o acumuló 3 inasistencias); [[QA Inspector]] revisa el caso.                                           |
+| Rojo          | Reportado                             | El hotel lo reportó (o acumuló 3 inasistencias); [[Inspector]] revisa el caso.                                           |
 | Gris          | Accidentado                           | El colaborador sufrió un [[Core/Módulos/Accidente Laboral/Accidente Laboral\|accidente laboral]] y está en incapacidad médica. Protegido de [[Core/Módulos/Blacklist\|Blacklist]]. |
 | Negro         | [[Core/Módulos/Blacklist\|Blacklist]] | Disputa resuelta a favor del hotel, colaborador bloqueado.                                                                  |
 
@@ -46,11 +46,11 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 ### Entradas al sistema
 
 - **→ Blanco**: al registrarse el colaborador con sus datos, aún sin asignación.
-- **Blanco → Verde manzana**: al ser asignado y asistir el día 1. El [[QA Inspector|Inspector]] verifica su llegada en sitio.
+- **Blanco → Verde manzana**: al ser asignado y asistir el día 1. El [[Inspector]] verifica su llegada en sitio.
 
 ### Progresión como fijo
 
-- **Verde manzana → Azul claro**: cuando poncha en la propiedad al tercer día. En este momento el [[QA Inspector|Inspector]] le entrega su uniforme.
+- **Verde manzana → Azul claro**: cuando poncha en la propiedad al tercer día. En este momento el [[Inspector]] le entrega su uniforme.
 - **Azul claro → Naranja**: al completar 7 días (fijo por sistema).
 
 ### Disponibilidad y asignaciones temporales
@@ -64,7 +64,7 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 - **→ Morado**: el sistema lo marca cuando el colaborador no asiste sin justificación.
 - **3 inasistencias → Negro**: [[Core/Módulos/Blacklist|Blacklist]] automático por sistema.
 - **Rosa**: lo pone el hotel ([[Hotel/Manager del Hotel]]) cuando manda al colaborador a descansar (vacaciones, temporada baja).
-- **Rojo**: lo pone el hotel ([[Hotel/Manager del Hotel]]). Luego [[QA Inspector]] investiga el caso y el resultado lo lleva a:
+- **Rojo**: lo pone el hotel ([[Hotel/Manager del Hotel]]). Luego [[Inspector]] investiga el caso y el resultado lo lleva a:
 	- **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), o
 	- **Verde fuerte** (reincorporado).
 - **Casos de [[Core/Módulos/Blacklist|Blacklist]]**: revisados por el [[Manager de Reclutamiento]].
@@ -83,6 +83,6 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 - [[Flujo de Reclutamiento]]
 - [[Manager de Reclutamiento]]
 - [[Reclutadora]]
-- [[QA Inspector]]
+- [[Inspector]]
 - [[Core/Módulos/Blacklist|Blacklist]]
 - [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]

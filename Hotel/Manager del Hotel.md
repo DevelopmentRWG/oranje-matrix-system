@@ -42,4 +42,4 @@ Rol de supervisión del módulo de [[Hotel/Hotel|Hotel]]. Responsable de aprobar
 - [[Core/Módulos/Schedule|Schedule]]
 - [[Semáforo de Requisición]]
 - [[Semáforo del Colaborador]]
-- [[QA Inspector]]
+- [[Inspector]]

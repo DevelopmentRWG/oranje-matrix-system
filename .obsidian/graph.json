@@ -32,7 +32,7 @@
       "query": "path:QA  ",
       "color": {
         "a": 1,
-        "rgb": 11951318
+        "rgb": 2207780
       }
     },
     {
@@ -69,6 +69,13 @@
         "a": 1,
         "rgb": 16753700
       }
+    },
+    {
+      "query": "path:Inspección ",
+      "color": {
+        "a": 1,
+        "rgb": 12463305
+      }
     }
   ],
   "collapse-display": true,
@@ -81,6 +88,6 @@
   "repelStrength": 20,
   "linkStrength": 0,
   "linkDistance": 500,
-  "scale": 0.6572081056451029,
-  "close": false
+  "scale": 0.6987286684779773,
+  "close": true
 }

@@ -28,11 +28,11 @@ Datos generales que identifican la requisición:
 | GHC                  | [[Hotel/Colaborador del Gerente del Hotel\|Colaborador del Gerente del Hotel]] que creó la requisición.              |
 | HM (Hotel Manager)   | [[Hotel/Manager del Hotel\|Manager del Hotel]] responsable. También conocido como Gerente de Hotel. |
 | Reclutador           | [[Reclutadora]] asignada a atender la requisición.                                           |
-| Inspector            | [[QA Inspector]] correspondiente a la [[Zonas\|zona]] del hotel.                             |
+| Inspector            | [[Inspector]] correspondiente a la [[Zonas\|zona]] del hotel.                             |
 | Status (color)       | Estado actual según el [[Semáforo de Requisición]].                                          |
 
 > [!note] Sobre el Inspector en la cabecera
-> Cada hotel pertenece a una [[Zonas|zona]] y a cada zona le corresponde un [[QA Inspector]]. Por cualquier disputa que suceda, el inspector de la zona del hotel debe enterarse y darle seguimiento — por eso queda registrado desde la cabecera.
+> Cada hotel pertenece a una [[Zonas|zona]] y a cada zona le corresponde un [[Inspector]]. Por cualquier disputa que suceda, el inspector de la zona del hotel debe enterarse y darle seguimiento — por eso queda registrado desde la cabecera.
 
 ## Posiciones solicitadas
 
@@ -80,7 +80,7 @@ Ver [[Flujo de Requisición]].
 - [[Modalidades de Contratación]]
 - [[Niveles de Inglés]]
 - [[Zonas]]
-- [[QA Inspector]]
+- [[Inspector]]
 - [[Hotel/Manager del Hotel|Manager del Hotel]]
 - [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]
 - [[Reclutadora]]

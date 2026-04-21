@@ -7,13 +7,13 @@ aliases:
 
 # Flujo de Accidente Laboral
 
-Ciclo de vida de un [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]: desde que se reporta el incidente hasta que el [[QA Inspector|Inspector de zona]] cierra la tarjeta con la información completa. El flujo tiene dos escenarios de origen según quién detecta primero el accidente.
+Ciclo de vida de un [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]: desde que se reporta el incidente hasta que el [[Inspector|Inspector de zona]] cierra la tarjeta con la información completa. El flujo tiene dos escenarios de origen según quién detecta primero el accidente.
 
 ## Actores
 
 - **Colaborador** — el accidentado. Solo origina el reporte (escenario A); el llenado posterior recae en los roles operativos.
 - **GHC — [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]** — captura la información presencial. Origina el reporte en escenario B.
-- **QA Inspector — [[QA Inspector|Inspector de zona]]** — complementa con seguimiento médico. Responsable final del cierre de la tarjeta.
+- **Inspector — [[Inspector|Inspector de zona]]** — complementa con seguimiento médico. Responsable final del cierre de la tarjeta.
 
 ---
 
@@ -26,7 +26,7 @@ Ocurre cuando el colaborador accidentado es quien detecta y reporta primero el i
 1. El **Colaborador** reporta el accidente desde la app.
 2. Se genera la tarjeta de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] con número de reporte automático.
 3. El **Colaborador** transita a **Gris — Accidentado** en el [[Semáforo del Colaborador]].
-4. La señal llega **simultáneamente** al GHC y al QA Inspector de zona asignado.
+4. La señal llega **simultáneamente** al GHC y al Inspector de zona asignado.
 
 ### 2. Captura presencial (GHC)
 
@@ -37,9 +37,9 @@ Ocurre cuando el colaborador accidentado es quien detecta y reporta primero el i
    - Testigos.
    - Atención inmediata brindada.
 
-### 3. Seguimiento médico (QA Inspector)
+### 3. Seguimiento médico (Inspector)
 
-7. El **QA Inspector** complementa la tarjeta con la información de seguimiento:
+7. El **Inspector** complementa la tarjeta con la información de seguimiento:
    - Traslado al centro médico (si aplica, cuál).
    - Diagnóstico recibido.
    - Días de incapacidad.
@@ -47,7 +47,7 @@ Ocurre cuando el colaborador accidentado es quien detecta y reporta primero el i
 
 ### 4. Cierre
 
-8. El **QA Inspector** cierra la tarjeta una vez que la información está completa.
+8. El **Inspector** cierra la tarjeta una vez que la información está completa.
 9. Al recibir el alta médica, el colaborador transita de `Gris → Verde fuerte` en el [[Semáforo del Colaborador]].
 
 ---
@@ -66,11 +66,11 @@ Ocurre cuando el [[Hotel/Colaborador del Gerente del Hotel|GHC]] detecta primero
    - Circunstancias del accidente.
    - Testigos.
    - Atención inmediata brindada.
-5. La señal llega al **QA Inspector** de zona asignado.
+5. La señal llega al **Inspector** de zona asignado.
 
-### 2. Seguimiento médico (QA Inspector)
+### 2. Seguimiento médico (Inspector)
 
-6. El **QA Inspector** complementa la tarjeta con la información de seguimiento:
+6. El **Inspector** complementa la tarjeta con la información de seguimiento:
    - Traslado al centro médico (si aplica, cuál).
    - Diagnóstico recibido.
    - Días de incapacidad.
@@ -78,7 +78,7 @@ Ocurre cuando el [[Hotel/Colaborador del Gerente del Hotel|GHC]] detecta primero
 
 ### 3. Cierre
 
-7. El **QA Inspector** cierra la tarjeta una vez que la información está completa.
+7. El **Inspector** cierra la tarjeta una vez que la información está completa.
 8. Al recibir el alta médica, el colaborador transita de `Gris → Verde fuerte` en el [[Semáforo del Colaborador]].
 
 ---
@@ -94,7 +94,7 @@ Mientras el colaborador esté en estado **Gris — Accidentado**, las inasistenc
 - [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
 - [[Semáforo del Colaborador]]
 - [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]
-- [[QA Inspector]]
+- [[Inspector]]
 - [[Colaborador]]
 - [[Hotel/Hotel|Hotel]]
 - [[Core/Módulos/Blacklist|Blacklist]]

@@ -29,7 +29,7 @@ A las [[Reclutadora|reclutadoras]] les sirve saber quién está en blacklist par
 Un colaborador pasa a estado **Negro** en el [[Semáforo del Colaborador]] por:
 
 - **3 inasistencias** → blacklist automático por sistema.
-- **Disputa resuelta a favor del hotel** → tras un reporte del hotel (estado Rojo) e investigación del [[QA Inspector]].
+- **Disputa resuelta a favor del hotel** → tras un reporte del hotel (estado Rojo) e investigación del [[Inspector]].
 
 ## Revisión de casos
 
@@ -40,5 +40,5 @@ El [[Manager de Reclutamiento]] revisa los casos de blacklist.
 - [[Semáforo del Colaborador]]
 - [[Manager de Reclutamiento]]
 - [[Reclutadora]]
-- [[QA Inspector]]
+- [[Inspector]]
 - [[Flujo de Reclutamiento]]

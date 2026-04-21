@@ -37,7 +37,7 @@ Módulo que representa al hotel como cliente de Oranje. El hotel solicita person
 - [[Modalidades de Contratación]]
 - [[Niveles de Inglés]]
 - [[Zonas]]
-- [[QA Inspector]]
+- [[Inspector]]
 
 ## Relación con otros módulos
 

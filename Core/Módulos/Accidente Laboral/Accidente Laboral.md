@@ -9,10 +9,10 @@ aliases:
 
 # Accidente Laboral
 
-Entidad que registra un incidente donde un [[Colaborador]] sufre una lesión o accidente mientras está asignado a un [[Hotel/Hotel|Hotel]]. La tarjeta se origina desde la app por el propio colaborador o por el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] (GHC), y se completa entre el GHC y el [[QA Inspector|Inspector de zona]].
+Entidad que registra un incidente donde un [[Colaborador]] sufre una lesión o accidente mientras está asignado a un [[Hotel/Hotel|Hotel]]. La tarjeta se origina desde la app por el propio colaborador o por el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] (GHC), y se completa entre el GHC y el [[Inspector|Inspector de zona]].
 
 > [!important] Responsable del cierre
-> El [[QA Inspector]] es siempre el responsable final del cierre de la tarjeta, una vez que la información presencial y de seguimiento médico está completa.
+> El [[Inspector]] es siempre el responsable final del cierre de la tarjeta, una vez que la información presencial y de seguimiento médico está completa.
 
 ## Datos de la tarjeta
 
@@ -40,7 +40,7 @@ Capturada por el [[Hotel/Colaborador del Gerente del Hotel|GHC]], quien acude f�
 
 ### Información de seguimiento
 
-Capturada por el [[QA Inspector|Inspector de zona]]:
+Capturada por el [[Inspector|Inspector de zona]]:
 
 | Campo | Descripción |
 |---|---|
@@ -62,7 +62,7 @@ Cada cambio de status en la tarjeta genera un registro en el journal con: Númer
 - [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
 - [[Semáforo del Colaborador]]
 - [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]
-- [[QA Inspector]]
+- [[Inspector]]
 - [[Colaborador]]
 - [[Hotel/Hotel|Hotel]]
 - [[Core/Módulos/Blacklist|Blacklist]]

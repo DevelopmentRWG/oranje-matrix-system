@@ -128,7 +128,7 @@ Se dispara el [[Trigger Automático de Conversión]] (en paralelo):
 
 ## Naranja — Acuerdo firmado, hotel cliente activo
 
-**Responsable operativo:** [[QA Inspector|Inspector]] + [[Reclutadora|Reclutadores]]
+**Responsable operativo:** [[Inspector]] + [[Reclutadora|Reclutadores]]
 **Responsable comercial:** [[Business Developer Coordinator]] (referente) · [[Business Developer]] (asignado)
 
 > [!important]

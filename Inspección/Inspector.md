@@ -1,12 +1,12 @@
 ---
 tags:
-  - departamento/qa
+  - departamento/inspeccion
 aliases:
-  - QA Inspector
   - Inspector
+  - Inspector de zona
 ---
 
-# QA Inspector
+# Inspector
 
 Rol operativo encargado de la supervisión en sitio de los colaboradores asignados a un hotel, de la verificación de llegadas, de la entrega del uniforme y de la investigación de casos reportados.
 
