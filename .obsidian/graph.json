@@ -6,88 +6,17 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "file:Requisición",
-      "color": {
-        "a": 1,
-        "rgb": 16724751
-      }
-    },
-    {
-      "query": "file:Pool de Colaboradores",
-      "color": {
-        "a": 1,
-        "rgb": 16749824
-      }
-    },
-    {
-      "query": "path:Reclutamiento  ",
-      "color": {
-        "a": 1,
-        "rgb": 11392604
-      }
-    },
-    {
-      "query": "path:QA  ",
-      "color": {
-        "a": 1,
-        "rgb": 2207780
-      }
-    },
-    {
-      "query": "file:Black",
-      "color": {
-        "a": 1,
-        "rgb": 0
-      }
-    },
-    {
-      "query": "path:Hotel",
-      "color": {
-        "a": 1,
-        "rgb": 16580454
-      }
-    },
-    {
-      "query": "path:Ventas ",
-      "color": {
-        "a": 1,
-        "rgb": 5395168
-      }
-    },
-    {
-      "query": "path:Core/Módulos/Semáforos  ",
-      "color": {
-        "a": 1,
-        "rgb": 8453631
-      }
-    },
-    {
-      "query": "path:Colaborador  ",
-      "color": {
-        "a": 1,
-        "rgb": 16753700
-      }
-    },
-    {
-      "query": "path:Inspección ",
-      "color": {
-        "a": 1,
-        "rgb": 12463305
-      }
-    }
-  ],
-  "collapse-display": true,
+  "colorGroups": [],
+  "collapse-display": false,
   "showArrow": true,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.23907986111111,
-  "lineSizeMultiplier": 2.13932725694444,
-  "collapse-forces": true,
-  "centerStrength": 0.605425347222222,
+  "nodeSizeMultiplier": 0.997905759162304,
+  "lineSizeMultiplier": 1.00032599031908,
+  "collapse-forces": false,
+  "centerStrength": 0,
   "repelStrength": 20,
-  "linkStrength": 0,
-  "linkDistance": 500,
-  "scale": 0.6987286684779773,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.6691477478134068,
   "close": true
 }
