@@ -44,7 +44,7 @@ Proceso: [[Onboarding-Hotel]]
 
 ### Procesos
 
-- [[Requisición]] — solicitud formal de personal por parte de un hotel.
+- [[Requisición]] — solicitud formal de personal por parte de un hotel. Ver [[Flujo de Requisición]].
 - [[Contrato]] — acuerdo legal entre Oranje y el colaborador.
 - [[Flujo de Reclutamiento]] — proceso de captación y alta de colaboradores nuevos.
 - [[Flujo de Onboarding]] — proceso de incorporación de un hotel nuevo como cliente.
@@ -58,7 +58,7 @@ Proceso: [[Onboarding-Hotel]]
 ### Control
 
 - [[Core/Módulos/Blacklist|Blacklist]] — registro de colaboradores bloqueados.
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] — gestión de incidentes en sitio.
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] — gestión de incidentes en sitio. Ver [[Flujo de Accidente Laboral]].
 - [[Reglas de Negocio]] — restricciones y condiciones operativas del sistema.
 
 ## Catálogos
