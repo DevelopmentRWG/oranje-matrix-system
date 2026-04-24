@@ -70,7 +70,7 @@ Oranje opera un sistema de staffing para hoteles. El vault contiene la fuente de
 - `Ventas/Ventas.md`, `Ventas/Onboarding-Hotel/Onboarding-Hotel.md`
 
 ### Reglas de negocio
-- `Core/Reglas de Negocio/` — directorio de reglas formalizadas
+- `Core/Módulos/Reglas de Negocio.md` — reglas de negocio centralizadas
 
 ## Workflow obligatorio
 

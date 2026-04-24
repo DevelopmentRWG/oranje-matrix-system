@@ -24,7 +24,7 @@ Documento formal creado durante [[Semáforo Onboarding|Status Onboarding Amarill
 
 - **Se crea en:** [[Semáforo Onboarding|Status Onboarding Amarillo]].
 - **Se negocia en:** [[Semáforo Onboarding|Status Onboarding Rosa]].
-- **Validación final:** [[Business Developer Coordinator]] antes del cierre del contrato.
+- **Validación final:** [[Business Developer Coordinator]] antes del cierre del [[Contrato]].
 
 ## Relacionado
 

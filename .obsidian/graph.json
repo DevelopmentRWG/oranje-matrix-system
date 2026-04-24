@@ -53,7 +53,7 @@
       "query": "path:Reclutamiento",
       "color": {
         "a": 1,
-        "rgb": 16777215
+        "rgb": 16497975
       }
     },
     {
@@ -71,16 +71,16 @@
       }
     }
   ],
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": true,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 0.997905759162304,
-  "lineSizeMultiplier": 1.00032599031908,
+  "textFadeMultiplier": -1.8,
+  "nodeSizeMultiplier": 3.07317330172215,
+  "lineSizeMultiplier": 2.19366129935131,
   "collapse-forces": false,
   "centerStrength": 0,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.4527154643641611,
-  "close": false
+  "scale": 0.35942734731161624,
+  "close": true
 }

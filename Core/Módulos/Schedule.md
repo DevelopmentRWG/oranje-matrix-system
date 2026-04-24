@@ -11,7 +11,7 @@ Tablero de planeación semanal del hotel. Es el **eje central de la operación**
 
 ## Configuración inicial
 
-- El hotel define **inicio y fin de su semana** en el contrato.
+- El hotel define **inicio y fin de su semana** en el [[Contrato]].
 - Oranje ofrece un **formato de planeación semanal** basado en esa configuración.
 
 ## Qué contiene el schedule

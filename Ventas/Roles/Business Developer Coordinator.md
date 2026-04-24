@@ -9,7 +9,7 @@ aliases:
 
 # Business Developer Coordinator
 
-Rol supervisor del módulo de [[Onboarding-Hotel|Onboarding Hotel]]. Supervisa todo el panorama de las rutas y zonas que tiene asignadas, hace seguimiento al [[Business Developer]] en su negociación con el hotel, valida los términos y condiciones antes del cierre de contrato; es el **sí final** de la negociación.
+Rol supervisor del módulo de [[Onboarding-Hotel|Onboarding Hotel]]. Supervisa todo el panorama de las rutas y zonas que tiene asignadas, hace seguimiento al [[Business Developer]] en su negociación con el hotel, valida los términos y condiciones antes del cierre del [[Contrato]]; es el **sí final** de la negociación.
 
 ## Responsabilidades
 
