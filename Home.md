@@ -8,31 +8,37 @@ Sistema de gestión organizacional para staffing de hoteles. Documenta los roles
 
 Búsqueda, entrevista y asignación de personal a hoteles.
 
-[[Reclutadora]] → [[Líder de Grupo de Reclutadoras]] → [[Manager de Reclutamiento]]
+- [[Manager de Reclutamiento]] — recibe requisiciones aprobadas y las distribuye a las reclutadoras.
+- [[Líder de Grupo de Reclutadoras]] — recluta y supervisa el desempeño de un grupo de reclutadoras.
+- [[Reclutadora]] — busca, entrevista, valida y asigna colaboradores.
 
 ### [[Hotel/Hotel|Hotel]]
 
 Operación diaria y gestión de personal en hoteles clientes.
 
-[[Colaborador del Gerente del Hotel]] → [[Manager del Hotel]]
+- [[Manager del Hotel]] — aprueba requisiciones, genera QR de ponchado y gestiona el schedule semanal.
+- [[Colaborador del Gerente del Hotel]] — crea requisiciones de personal y reporta accidentes laborales.
 
 ### Inspección
 
 Supervisión de colaboradores en sitio durante sus primeros días de asignación.
 
-[[Inspector]] → [[Coordinador]]
+- [[Coordinador]] — asigna inspectores a zonas y actúa como enlace con otros departamentos.
+- [[Inspector]] — supervisa colaboradores en sitio, verifica llegadas y cierra tarjetas de accidente.
 
 ### [[QA/QA|QA]]
 
 Control de calidad sobre todos los departamentos de Oranje.
 
-[[Operador de QA]] → [[Manager de QA]]
+- [[Manager de QA]] — define métricas y KPIs, supervisa operadores y presenta reportes a dirección.
+- [[Operador de QA]] — monitorea semáforos, mide métricas y emite observaciones por departamento.
 
 ### [[Ventas/Ventas|Ventas]]
 
 Desarrollo de negocio y onboarding de nuevos hoteles clientes.
 
-[[Business Developer]] → [[Business Developer Coordinator]]
+- [[Business Developer Coordinator]] — supervisa BDs en su territorio y da el visto bueno para convertir prospectos en clientes.
+- [[Business Developer]] — gestiona el ciclo comercial con hoteles prospectos.
 
 Proceso: [[Onboarding-Hotel]]
 
