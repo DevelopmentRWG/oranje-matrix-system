@@ -1,0 +1,80 @@
+# Oranje Matrix System
+
+Sistema de gestión organizacional para staffing de hoteles. Documenta los roles, procesos, reglas de negocio y módulos operativos que estructuran la operación de Oranje, desde el reclutamiento de personal hasta su asignación y seguimiento en hoteles clientes.
+
+## Departamentos y Roles
+
+### [[Reclutamiento/Reclutamiento|Reclutamiento]]
+
+Búsqueda, entrevista y asignación de personal a hoteles.
+
+[[Reclutadora]] → [[Líder de Grupo de Reclutadoras]] → [[Manager de Reclutamiento]]
+
+### [[Hotel/Hotel|Hotel]]
+
+Operación diaria y gestión de personal en hoteles clientes.
+
+[[Colaborador del Gerente del Hotel]] → [[Manager del Hotel]]
+
+### Inspección
+
+Supervisión de colaboradores en sitio durante sus primeros días de asignación.
+
+[[Inspector]] → [[Coordinador]]
+
+### [[QA/QA|QA]]
+
+Control de calidad sobre todos los departamentos de Oranje.
+
+[[Operador de QA]] → [[Manager de QA]]
+
+### [[Ventas/Ventas|Ventas]]
+
+Desarrollo de negocio y onboarding de nuevos hoteles clientes.
+
+[[Business Developer]] → [[Business Developer Coordinator]]
+
+Proceso: [[Onboarding-Hotel]]
+
+## Entidad Central
+
+- [[Colaborador/Colaborador|Colaborador]] — la persona que se recluta, asigna y opera en los hoteles. Su ciclo de vida es el eje del sistema.
+
+## Módulos Core
+
+### Procesos
+
+- [[Requisición]] — solicitud formal de personal por parte de un hotel.
+- [[Contrato]] — acuerdo legal entre Oranje y el colaborador.
+- [[Flujo de Reclutamiento]] — proceso de captación y alta de colaboradores nuevos.
+- [[Flujo de Onboarding]] — proceso de incorporación de un hotel nuevo como cliente.
+
+### Operación
+
+- [[Core/Módulos/Schedule|Schedule]] — asignación semanal de colaboradores a hoteles.
+- [[Timesheet]] — registro de horas trabajadas mediante ponches QR.
+- [[Pool de Colaboradores]] — repositorio de colaboradores disponibles para asignación.
+
+### Control
+
+- [[Core/Módulos/Blacklist|Blacklist]] — registro de colaboradores bloqueados.
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] — gestión de incidentes en sitio.
+- [[Reglas de Negocio]] — restricciones y condiciones operativas del sistema.
+
+## Catálogos
+
+- [[Posiciones]] — tipos de puesto que puede ocupar un colaborador.
+- [[Zonas]] — áreas geográficas de operación.
+- [[Niveles de Inglés]] — escala de competencia lingüística de colaboradores.
+- [[Modalidades de Contratación]] — formas de contrato disponibles.
+
+## Semáforos
+
+Indicadores de estado que reflejan la situación operativa de cada entidad en tiempo real.
+
+- [[Semáforo del Colaborador]] — estado del colaborador en su ciclo de vida.
+- [[Semáforo de Requisición]] — estado de una requisición en su proceso de cobertura.
+- [[Semáforo de Urgencia de Requisición]] — nivel de urgencia de una requisición abierta.
+- [[Semáforo de Posiciones de la Requisición]] — estado de cada posición dentro de una requisición.
+- [[Semáforo Onboarding]] — estado de la negociación con un hotel prospecto.
+- [[Indicador de Calidad]] — nivel de desempeño de un área supervisada por QA.
