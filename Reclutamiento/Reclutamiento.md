@@ -18,6 +18,7 @@ Módulo encargado de:
 ### Roles
 
 - [[Manager de Reclutamiento]]
+- [[Líder de Grupo de Reclutadoras]]
 - [[Reclutadora]]
 
 ### Procesos

@@ -30,4 +30,5 @@ Rol operativo del módulo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Ejec
 
 - [[Flujo de Reclutamiento]]
 - [[Manager de Reclutamiento]]
+- [[Líder de Grupo de Reclutadoras]]
 - [[Requisición]]

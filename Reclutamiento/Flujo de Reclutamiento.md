@@ -56,6 +56,7 @@ El colaborador aprobado **ingresa a la [[Pool de Colaboradores]]** con su [[Sem�
 - [[Pool de Colaboradores]]
 - [[Flujo de Requisición]]
 - [[Manager de Reclutamiento]]
+- [[Líder de Grupo de Reclutadoras]]
 - [[Reclutadora]]
 - [[Semáforo del Colaborador]]
 - [[Posiciones]]

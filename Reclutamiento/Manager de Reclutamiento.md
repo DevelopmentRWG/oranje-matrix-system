@@ -14,9 +14,11 @@ Rol responsable de coordinar la entrada de requisiciones y supervisar casos espe
 - Recibe [[Requisición|requisiciones]] aprobadas por el [[Hotel/Manager del Hotel|Manager del Hotel]].
 - Distribuye las requisiciones a las [[Reclutadora|reclutadoras]].
 - Revisa casos de [[Core/Módulos/Blacklist|Blacklist]].
+- Supervisa a las [[Líder de Grupo de Reclutadoras|Líderes de Grupo de Reclutadoras]].
 
 ## Relacionado
 
 - [[Flujo de Reclutamiento]]
 - [[Reclutadora]]
+- [[Líder de Grupo de Reclutadoras]]
 - [[Requisición]]
