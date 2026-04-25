@@ -14,7 +14,7 @@ Módulo que representa al hotel como cliente de Oranje. El hotel solicita person
 
 ### Roles
 
-- [[Hotel/Manager General|Manager General]] — Maxima autoridad en hoteles con jerarquia extendida. Supervisa a los Gerentes de Departamento.
+- [[Hotel/Manager General|Manager General]] — Máxima autoridad en hoteles con jerarquía extendida. Supervisa a los Gerentes de Departamento.
 - [[Hotel/Manager del Hotel|Manager del Hotel]] — Aprueba o rechaza requisiciones; gestiona el personal asignado.
 - [[Hotel/Supervisor|Supervisor]] — Crea las requisiciones de personal.
 
@@ -51,7 +51,7 @@ Manager General
 
 #### Departamentos del hotel
 
-- **Housekeeping** — Housekeeper, Hoseman, Laundry
+- **Housekeeping** — Housekeeper, Houseman, Laundry
 - **Alimentos** — Chef
 - **Mantenimiento**
 - **Front Desk**

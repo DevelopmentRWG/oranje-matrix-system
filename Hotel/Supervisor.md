@@ -3,9 +3,7 @@ tags:
   - modulo/hotel
 aliases:
   - SUP
-  - Colaborador del Gerente del Hotel
-  - GHC
-  - Colaborador del GH
+  - Supervisor
 ---
 
 # Supervisor
@@ -24,7 +22,6 @@ Rol operativo del módulo de [[Hotel/Hotel|Hotel]], subordinado del [[Hotel/Mana
   - Horario.
   - [[Modalidades de Contratación|Modalidad de contratación]].
   - Preferencia de [[Niveles de Inglés|nivel de inglés]].
-  - Nivel de urgencia (ver [[Semáforo de Urgencia de Requisición]]).
   - Notas adicionales.
 - Envía la requisición al [[Hotel/Manager del Hotel|Manager del Hotel]] para su aprobación.
 - Reporta [[Core/Módulos/Accidente Laboral/Accidente Laboral|accidentes laborales]] detectados en la propiedad (ver [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]], escenario B).

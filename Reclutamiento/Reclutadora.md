@@ -32,3 +32,8 @@ Rol operativo del módulo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Ejec
 - [[Manager de Reclutamiento]]
 - [[Líder de Grupo de Reclutadoras]]
 - [[Requisición]]
+- [[Pool de Colaboradores]]
+- [[Core/Módulos/Blacklist|Blacklist]]
+- [[Core/Módulos/Schedule|Schedule]]
+- [[Semáforo del Colaborador]]
+- [[Colaborador/Colaborador|Colaborador]]

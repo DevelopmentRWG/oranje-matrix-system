@@ -14,7 +14,7 @@ Catálogo de posiciones que los hoteles solicitan y Oranje recluta.
 ### [[Departamentos del Hotel|Housekeeping]]
 
 - Housekeeper
-- Hoseman
+- Houseman
 - Laundry
 
 ### [[Departamentos del Hotel|Alimentos]]
