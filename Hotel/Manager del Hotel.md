@@ -5,6 +5,8 @@ aliases:
   - Manager del Hotel
   - Gerente de Hotel
   - Gerente del Hotel
+  - Gerente de Departamento
+  - Manager de Departamento
   - GH
   - HM
   - Hotel Manager
@@ -12,16 +14,19 @@ aliases:
 
 # Manager del Hotel
 
-Rol de supervisión del módulo de [[Hotel/Hotel|Hotel]]. Responsable de aprobar o rechazar las [[Requisición|requisiciones]] creadas por el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]], y de gestionar a los colaboradores asignados al hotel.
+Rol de supervisión del módulo de [[Hotel/Hotel|Hotel]]. Responsable de aprobar o rechazar las [[Requisición|requisiciones]] creadas por el [[Hotel/Supervisor|Supervisor]], y de gestionar a los colaboradores asignados al hotel.
+
+> [!note] Jerarquía extendida
+> En hoteles con jerarquía extendida, este rol corresponde al **Gerente de Departamento** (uno por cada [[Departamentos del Hotel|departamento]]: Housekeeping, Alimentos, Mantenimiento, Front Desk), subordinado al [[Hotel/Manager General|Manager General]]. Las responsabilidades en plataforma son las mismas.
 
 ## Responsabilidades
 
 ### Aprobación de requisiciones
 
-- Recibe las [[Requisición|requisiciones]] creadas por el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] (estado **Pendiente de aprobación** en el [[Semáforo de Requisición]]).
+- Recibe las [[Requisición|requisiciones]] creadas por el [[Hotel/Supervisor|Supervisor]] (estado **Pendiente de aprobación** en el [[Semáforo de Requisición]]).
 - Revisa que la requisición sea correcta y justificada.
 - **Aprueba** la requisición (estado **Autorizada**), enviándola al [[Manager de Reclutamiento]].
-- **Rechaza** la requisición, regresándola al [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] con observaciones (estado **En elaboración**).
+- **Rechaza** la requisición, regresándola al [[Hotel/Supervisor|Supervisor]] con observaciones (estado **En elaboración**).
 
 > [!important] Capa de seguridad
 > Esta aprobación es una capa de seguridad para evitar que lleguen requisiciones falsas o incorrectas al equipo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Oranje solo recibe requisiciones que el Manager del Hotel ha validado.
@@ -35,8 +40,10 @@ Rol de supervisión del módulo de [[Hotel/Hotel|Hotel]]. Responsable de aprobar
 
 ## Relacionado
 
-- [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]
+- [[Hotel/Manager General|Manager General]]
+- [[Hotel/Supervisor|Supervisor]]
 - [[Hotel/Hotel|Hotel]]
+- [[Departamentos del Hotel]]
 - [[Requisición]]
 - [[Timesheet]]
 - [[Core/Módulos/Schedule|Schedule]]

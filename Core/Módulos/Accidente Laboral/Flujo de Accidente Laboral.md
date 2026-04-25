@@ -12,7 +12,7 @@ Ciclo de vida de un [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accident
 ## Actores
 
 - **Colaborador** — el accidentado. Solo origina el reporte (escenario A); el llenado posterior recae en los roles operativos.
-- **GHC — [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]** — captura la información presencial. Origina el reporte en escenario B.
+- **SUP — [[Hotel/Supervisor|Supervisor]]** — captura la información presencial. Origina el reporte en escenario B.
 - **Inspector — [[Inspector|Inspector de zona]]** — complementa con seguimiento médico. Responsable final del cierre de la tarjeta.
 
 ---
@@ -26,11 +26,11 @@ Ocurre cuando el colaborador accidentado es quien detecta y reporta primero el i
 1. El **Colaborador** reporta el accidente desde la app.
 2. Se genera la tarjeta de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] con número de reporte automático.
 3. El **Colaborador** transita a **Gris — Accidentado** en el [[Semáforo del Colaborador]].
-4. La señal llega **simultáneamente** al GHC y al Inspector de zona asignado.
+4. La señal llega **simultáneamente** al SUP y al Inspector de zona asignado.
 
-### 2. Captura presencial (GHC)
+### 2. Captura presencial (SUP)
 
-5. El **GHC** acude físicamente al lugar del incidente.
+5. El **SUP** acude físicamente al lugar del incidente.
 6. Captura la información presencial en la tarjeta:
    - Ubicación exacta dentro de la propiedad.
    - Circunstancias del accidente.
@@ -52,16 +52,16 @@ Ocurre cuando el colaborador accidentado es quien detecta y reporta primero el i
 
 ---
 
-## Escenario B — El GHC reporta
+## Escenario B — El SUP reporta
 
-Ocurre cuando el [[Hotel/Colaborador del Gerente del Hotel|GHC]] detecta primero el incidente (el colaborador no puede reportar por sí mismo o el GHC lo ve primero).
+Ocurre cuando el [[Hotel/Supervisor|SUP]] detecta primero el incidente (el colaborador no puede reportar por sí mismo o el SUP lo ve primero).
 
 ### 1. Reporte inicial con información presencial
 
-1. El **GHC** detecta el incidente y crea la tarjeta desde la app.
+1. El **SUP** detecta el incidente y crea la tarjeta desde la app.
 2. Se genera la tarjeta de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] con número de reporte automático.
 3. El **Colaborador** transita a **Gris — Accidentado** en el [[Semáforo del Colaborador]].
-4. El **GHC** captura directamente la información presencial:
+4. El **SUP** captura directamente la información presencial:
    - Ubicación exacta dentro de la propiedad.
    - Circunstancias del accidente.
    - Testigos.
@@ -93,7 +93,7 @@ Mientras el colaborador esté en estado **Gris — Accidentado**, las inasistenc
 
 - [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
 - [[Semáforo del Colaborador]]
-- [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]
+- [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]
 - [[Colaborador]]
 - [[Hotel/Hotel|Hotel]]

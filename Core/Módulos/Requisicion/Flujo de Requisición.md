@@ -7,7 +7,7 @@ aliases:
 
 # Flujo de Requisición
 
-Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] (GHC) o el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) la crean, hasta que queda **Cubierta** o es eliminada. Este flujo **consume** colaboradores de la [[Pool de Colaboradores]]; no los produce.
+Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [[Hotel/Supervisor|Supervisor]] (SUP) o el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) la crean, hasta que queda **Cubierta** o es eliminada. Este flujo **consume** colaboradores de la [[Pool de Colaboradores]]; no los produce.
 
 > [!info] Punto de encuentro con el [[Flujo de Reclutamiento]]
 > La [[Pool de Colaboradores]] es el único punto donde ambos flujos se conectan. El [[Flujo de Reclutamiento]] corre de forma **continua** alimentando la pool (haya o no requisiciones); este flujo la **consume** cuando necesita cubrir posiciones.
@@ -15,12 +15,12 @@ Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [
 ## Actores
 
 - **GH — [[Hotel/Manager del Hotel|Gerente del Hotel]]**: único autorizado para **autorizar** la requisición.
-- **GHC — Colaborador del Gerente del Hotel**: puede crear, modificar y preparar la requisición.
+- **SUP — [[Hotel/Supervisor|Supervisor]]**: puede crear, modificar y preparar la requisición.
 - **Reclutador — [[Reclutadora]]**: ejecuta la asignación de personal tras la autorización.
 
 ## Validación de acceso
 
-Al inicio el sistema valida si el usuario es GH o GHC.
+Al inicio el sistema valida si el usuario es GH o SUP.
 - **Sin acceso** → mensaje "No cuenta con acceso" → **FIN**.
 - **Con acceso** → continúa al menú de operaciones (crear, modificar, autorizar, eliminar).
 
@@ -68,7 +68,7 @@ Al confirmar eliminación → la posición pasa a **Status Purple** (eliminada f
 ### 2.1 Autorizar requisición
 
 Reglas:
-- **Solo el GH puede autorizar.** Si es GHC → mensaje "Solo el gerente del hotel puede autorizar la requisición".
+- **Solo el GH puede autorizar.** Si es SUP → mensaje "Solo el gerente del hotel puede autorizar la requisición".
 - Debe existir **al menos una posición registrada**. Si no → mensaje "No tiene posiciones registradas, registre al menos una posición e intente nuevamente".
 
 Si cumple:
@@ -162,7 +162,7 @@ Registra en el journal de posiciones: Número de requisición, Número de posici
 - [[Requisición]]
 - [[Pool de Colaboradores]]
 - [[Flujo de Reclutamiento]]
-- [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] (GHC)
+- [[Hotel/Supervisor|Supervisor]] (SUP)
 - [[Hotel/Manager del Hotel|Manager del Hotel]] (GH)
 - [[Manager de Reclutamiento]]
 - [[Reclutadora]]

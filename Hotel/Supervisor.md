@@ -2,13 +2,18 @@
 tags:
   - modulo/hotel
 aliases:
+  - SUP
+  - Colaborador del Gerente del Hotel
   - GHC
   - Colaborador del GH
 ---
 
-# Colaborador del Gerente del Hotel
+# Supervisor
 
 Rol operativo del módulo de [[Hotel/Hotel|Hotel]], subordinado del [[Hotel/Manager del Hotel|Manager del Hotel]]. Responsable de crear las [[Requisición|requisiciones]] de personal que el hotel necesita cubrir.
+
+> [!note] Jerarquía extendida
+> En hoteles con jerarquía extendida, este rol corresponde al Supervisor del [[Departamentos del Hotel|departamento]], subordinado al [[Hotel/Manager del Hotel|Gerente de Departamento]]. Las responsabilidades en plataforma son las mismas.
 
 ## Responsabilidades
 
@@ -26,12 +31,13 @@ Rol operativo del módulo de [[Hotel/Hotel|Hotel]], subordinado del [[Hotel/Mana
 - Acude físicamente al lugar del incidente y captura la información presencial en la tarjeta de accidente: ubicación exacta, circunstancias, testigos y atención inmediata brindada.
 
 > [!note] Sobre la autorización
-> El Colaborador del Gerente del Hotel **no puede enviar** una requisición directamente a [[Reclutamiento/Reclutamiento|Reclutamiento]]. Toda requisición debe ser revisada y aprobada por el [[Hotel/Manager del Hotel|Manager del Hotel]] antes de llegar al equipo de reclutamiento.
+> El Supervisor **no puede enviar** una requisición directamente a [[Reclutamiento/Reclutamiento|Reclutamiento]]. Toda requisición debe ser revisada y aprobada por el [[Hotel/Manager del Hotel|Manager del Hotel]] antes de llegar al equipo de reclutamiento.
 
 ## Relacionado
 
 - [[Hotel/Manager del Hotel|Manager del Hotel]]
 - [[Hotel/Hotel|Hotel]]
+- [[Departamentos del Hotel]]
 - [[Requisición]]
 - [[Semáforo de Requisición]]
 - [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]

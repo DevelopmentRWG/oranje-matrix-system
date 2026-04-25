@@ -15,6 +15,7 @@ Rol responsable de coordinar la entrada de requisiciones y supervisar casos espe
 - Distribuye las requisiciones a las [[Reclutadora|reclutadoras]].
 - Revisa casos de [[Core/Módulos/Blacklist|Blacklist]].
 - Supervisa a las [[Líder de Grupo de Reclutadoras|Líderes de Grupo de Reclutadoras]].
+- Tiene visibilidad del **Indicador de Lunch Extendido** en el [[Timesheet]] para evaluar patrones de comportamiento de colaboradores activos.
 
 ## Relacionado
 
@@ -22,3 +23,4 @@ Rol responsable de coordinar la entrada de requisiciones y supervisar casos espe
 - [[Reclutadora]]
 - [[Líder de Grupo de Reclutadoras]]
 - [[Requisición]]
+- [[Timesheet]]

@@ -60,22 +60,40 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Gris → Verde fuerte: requiere alta médica + cierre de tarjeta de accidente por el [[Inspector]]
 - Referencia: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
 
+## Estructura organizacional del hotel
+
+### Dos jerarquías soportadas
+- La plataforma soporta dos configuraciones jerárquicas para el hotel, según su tamaño y complejidad:
+  - **Jerarquía simple:** [[Hotel/Manager del Hotel|Manager del Hotel]] → [[Hotel/Supervisor|SUP]] → Colaboradores de Oranje
+  - **Jerarquía extendida:** [[Hotel/Manager General|Manager General]] → Gerente de Departamento → Supervisor → Colaboradores de Oranje
+- En la jerarquía extendida, el Gerente de Departamento tiene las mismas responsabilidades de plataforma que el [[Hotel/Manager del Hotel|Manager del Hotel]], y el Supervisor las mismas que el [[Hotel/Supervisor|SUP]]
+
+### Departamentos del hotel
+- Los [[Departamentos del Hotel]] son: Housekeeping, Alimentos, Mantenimiento y Front Desk
+- En la jerarquía extendida, cada departamento tiene su propio Gerente y Supervisor(es)
+- Las [[Posiciones]] solicitadas en las requisiciones corresponden a un departamento específico del hotel
+
+### Manager General
+- El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel en la jerarquía extendida
+- No aprueba requisiciones directamente; esa responsabilidad recae en los Gerentes de Departamento
+- Tiene visibilidad global del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de todos los departamentos
+
 ## Requisición y Autorización
 
 ### Acceso al sistema
-- Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) y el [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]] (GHC) tienen acceso al módulo de requisiciones
+- Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) y el [[Hotel/Supervisor|Supervisor]] (SUP) tienen acceso al módulo de requisiciones
 - Usuarios sin acceso reciben mensaje: "No cuenta con acceso"
 
 ### Creación y elaboración
-- El GHC crea la requisición (estado Verde manzana — En elaboración)
+- El SUP crea la requisición (estado Verde manzana — En elaboración)
 - El número de requisición se genera automáticamente: Año (4 dígitos) + Mes (2) + Día (2) + Hora (2, formato 24h) + Minutos (2) + Homoclave (2 caracteres alfanuméricos aleatorios). Ejemplo: `202604081632V1`
 - El mismo formato aplica para el número de posición
 
 ### Autorización de Requisición
 - Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) puede autorizar una requisición
-- El GHC recibe mensaje de bloqueo: "Solo el gerente del hotel puede autorizar la requisición"
+- El SUP recibe mensaje de bloqueo: "Solo el gerente del hotel puede autorizar la requisición"
 - Debe existir al menos una posición para poder autorizar; de lo contrario: "No tiene posiciones registradas, registre al menos una posición e intente nuevamente"
-- El rechazo regresa la requisición al GHC con observaciones (estado "En elaboración")
+- El rechazo regresa la requisición al SUP con observaciones (estado "En elaboración")
 
 ### Al autorizar
 - El sistema calcula automáticamente la urgencia de cada posición
@@ -133,8 +151,8 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ### Activación de estado Gris
 - El reporte de accidente activa estado Gris en [[Semáforo del Colaborador]] desde cualquier estado activo
-- **Escenario A:** el Colaborador reporta desde la app; la señal llega simultáneamente al GHC y al [[Inspector]] de zona asignado
-- **Escenario B:** el GHC ([[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]) reporta; la señal llega al Inspector
+- **Escenario A:** el Colaborador reporta desde la app; la señal llega simultáneamente al SUP y al [[Inspector]] de zona asignado
+- **Escenario B:** el SUP ([[Hotel/Supervisor|Supervisor]]) reporta; la señal llega al Inspector
 - Se genera un número de reporte automático (mismo patrón que requisición: fecha/hora + homoclave)
 
 ### Cierre de tarjeta
@@ -236,6 +254,28 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Los ponches válidos son exactamente tres: **Entrada**, **Lunch**, **Salida**
 - Esto contabiliza el tiempo trabajado del colaborador
 
+### Deducción de Lunch
+
+> [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada donde el tiempo trabajado supere las 6 horas.
+
+- Después de 6 horas de trabajo, el sistema deduce tiempo de lunch del [[Timesheet]] del colaborador:
+  - **Lunch menor a 30 min:** se deducen 30 minutos (mínimo obligatorio)
+  - **Lunch mayor a 30 min:** se deduce el tiempo real tomado
+  - **Sin ponche de Lunch:** se auto-deducen 30 minutos
+- La deducción de lunch impacta directamente el cómputo de horas pagables en el [[Timesheet]]
+
+> [!note] El mecanismo de ponchado actual registra un único ponche de **Lunch**. Para calcular la duración del lunch, el sistema debe capturar el inicio y fin del periodo de lunch (ya sea con dos ponches separados o con lógica de cálculo automático). Esto queda como consideración para el equipo de desarrollo.
+
+### Indicador de Lunch Extendido
+
+- El sistema identifica automáticamente a los colaboradores cuyo tiempo de lunch excede los 30 minutos
+- **Visibilidad restringida** — solo roles internos de Oranje:
+  - [[Inspector]]
+  - [[Inspección/Coordinador|Coordinador]]
+  - [[Manager de Reclutamiento]]
+- **No visible para el hotel:** el [[Hotel/Manager del Hotel|Manager del Hotel]] y el [[Hotel/Supervisor|Supervisor]] no tienen acceso a este indicador
+- **Propósito:** herramienta de supervisión interna para detectar patrones y tomar acciones operativas; no es punitivo de forma automática
+
 ## Inspección y Zonas
 
 ### Asignación por zona
@@ -269,7 +309,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - [[Core/Módulos/Schedule|Schedule]]
 - [[Timesheet]]
 - [[Hotel/Manager del Hotel|Manager del Hotel]]
-- [[Hotel/Colaborador del Gerente del Hotel|Colaborador del Gerente del Hotel]]
+- [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]
 - [[Inspección/Coordinador|Coordinador]]
 - [[Reclutadora]]

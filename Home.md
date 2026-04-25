@@ -16,8 +16,9 @@ Búsqueda, entrevista y asignación de personal a hoteles.
 
 Operación diaria y gestión de personal en hoteles clientes.
 
-- [[Manager del Hotel]] — aprueba requisiciones, genera QR de ponchado y gestiona el schedule semanal.
-- [[Colaborador del Gerente del Hotel]] — crea requisiciones de personal y reporta accidentes laborales.
+- [[Hotel/Manager General|Manager General]] — máxima autoridad en hoteles con jerarquía extendida.
+- [[Manager del Hotel]] — aprueba requisiciones, genera QR de ponchado y gestiona el schedule semanal. En jerarquía extendida: Gerente de Departamento.
+- [[Hotel/Supervisor|Supervisor]] — crea requisiciones de personal y reporta accidentes laborales.
 
 ### Inspección
 
@@ -72,6 +73,7 @@ Proceso: [[Onboarding-Hotel]]
 - [[Posiciones]] — tipos de puesto que puede ocupar un colaborador.
 - [[Zonas]] — áreas geográficas de operación.
 - [[Niveles de Inglés]] — escala de competencia lingüística de colaboradores.
+- [[Departamentos del Hotel]] — áreas operativas internas del hotel.
 - [[Modalidades de Contratación]] — formas de contrato disponibles.
 
 ## Semáforos

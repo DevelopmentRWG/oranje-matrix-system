@@ -24,6 +24,7 @@ Rol operativo encargado de la supervisión en sitio de los colaboradores asignad
 - Complementa la tarjeta de accidente con información de seguimiento médico: traslado, diagnóstico, días de incapacidad, observaciones.
 - Es el **responsable final del cierre** de la tarjeta de accidente, una vez que la información está completa.
 - Al cierre, gestiona la transición del colaborador de `Gris → Verde fuerte` en el [[Semáforo del Colaborador]] cuando recibe el alta médica.
+- Consulta el **Indicador de Lunch Extendido** en el [[Timesheet]] para identificar colaboradores cuyo lunch excede los 30 minutos en su zona.
 
 ## Relacionado
 
@@ -33,3 +34,4 @@ Rol operativo encargado de la supervisión en sitio de los colaboradores asignad
 - [[Manager de Reclutamiento]]
 - [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
 - [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
+- [[Timesheet]]
