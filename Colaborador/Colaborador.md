@@ -56,7 +56,7 @@ Completada por el propio Colaborador desde la app:
 
 ## Ciclo de vida
 
-El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]], que define 12 estados posibles desde su ingreso al [[Pool de Colaboradores]] hasta su eventual salida o bloqueo en la [[Blacklist]].
+El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]], que define 12 estados posibles desde su ingreso al [[Pool de Colaboradores]] hasta su eventual salida o bloqueo en la [[Core/Módulos/Blacklist|Blacklist]].
 
 ## Roles que interactúan con el Colaborador
 
@@ -67,16 +67,17 @@ El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]
 
 ## Operación diaria
 
-- Su asignación semanal se registra en el [[Schedule]].
+- Su asignación semanal se registra en el [[Core/Módulos/Schedule|Schedule]].
 - Sus horas trabajadas se registran en el [[Timesheet]] mediante ponches vía QR (Entrada, Lunch, Salida).
 
 ## Relacionado
 
+- [[Reglas del Colaborador]]
 - [[Pool de Colaboradores]]
 - [[Semáforo del Colaborador]]
-- [[Blacklist]]
-- [[Schedule]]
+- [[Core/Módulos/Blacklist|Blacklist]]
+- [[Core/Módulos/Schedule|Schedule]]
 - [[Timesheet]]
-- [[Flujo de Reclutamiento]]
-- [[Requisición]]
+- [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]]
+- [[Core/Módulos/Requisicion/Requisición|Requisición]]
 - [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]

@@ -30,7 +30,7 @@ En otra parte del panel, el hotel puede ver cuánto va a tener que pagar al fina
 
 ## Deducción de Lunch
 
-Después de 6 horas de trabajo, el sistema aplica una deducción de lunch al cómputo de horas del colaborador.
+El sistema aplica una deducción de lunch al cómputo de horas del colaborador en cada jornada. Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
 
 ### Regla de deducción
 
@@ -46,7 +46,7 @@ Después de 6 horas de trabajo, el sistema aplica una deducción de lunch al có
 
 - **Horas brutas** = Salida − Entrada
 - **Horas netas** = Horas brutas − Deducción de Lunch
-- Solo se aplica la deducción cuando las horas brutas superan 6 horas
+- La deducción de lunch aplica en cada jornada sin excepción
 
 > [!note] El mecanismo actual registra un único ponche de **Lunch**. Para calcular la duración real del lunch, el sistema necesita capturar inicio y fin del periodo (dos ponches o lógica automática). Consideración pendiente para desarrollo.
 
