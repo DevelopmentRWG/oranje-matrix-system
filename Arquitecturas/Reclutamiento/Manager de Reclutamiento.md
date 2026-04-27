@@ -112,8 +112,7 @@ SIDEBAR
    ├─ REQUISICIONES            (vista global, intervención excepcional)
    ├─ POOL DE COLABORADORES    (consulta + creación de apoyo)
    ├─ BLACKLIST                (CRUD completo — único rol con permiso de vetar)
-   ├─ MIS LÍDERES DE GRUPO     ← exclusivo del Manager
-   ├─ GESTIÓN DE EQUIPO        ← exclusivo del Manager (alta/edición de roles)
+   ├─ MI EQUIPO                ← exclusivo (Líderes + Reclutadoras: supervisión + gestión)
    ├─ INCIDENCIAS / DISPUTAS   ← recibe escalamientos
    ├─ REPORTES                 (recibe de Líderes + genera globales)
    ├─ SCHEDULE                 (consulta)
@@ -264,56 +263,57 @@ Mismo Pool que ven Reclutadoras y Líderes, con todos los estados del [[Semáfor
 
 ---
 
-## 👥 Módulo MIS LÍDERES DE GRUPO *(exclusivo del Manager)*
+## 👥 Módulo MI EQUIPO *(exclusivo del Manager — supervisión + gestión)*
 
-### Lista
-- Líder · zona · n° de reclutadoras a cargo · % cobertura del grupo
-- Ej.: Carla Méndez · Centro · 4 reclutadoras · 88%
-- Ej.: Pedro García · Norte · 3 reclutadoras · 75%
+Único módulo donde el Manager gestiona y supervisa a todo su equipo de Reclutamiento. Combina la administración del directorio (alta/baja/edición de usuarios) con la supervisión del desempeño (métricas, reportes, comunicación).
 
-### Filtros
-- Por zona
-- Por estado (activo / vacaciones / baja)
-- Por desempeño (alto / medio / bajo)
-- Buscar por nombre
+### Sub-vistas
 
-### Detalle (al click en un Líder)
-- Datos básicos
-- Reclutadoras a cargo (vista anidada)
-- Carga del grupo
-- Métricas: cobertura, tiempo promedio, casos escalados, distribución de carga
-- Reportes recibidos (histórico)
-- Comentarios de QA sobre el Líder
+**👥 Líderes de Grupo**
+- Lista: Líder · zona · n° de reclutadoras a cargo · % cobertura del grupo
+  - Ej.: Carla Méndez · Centro · 4 reclutadoras · 88%
+  - Ej.: Pedro García · Norte · 3 reclutadoras · 75%
+- Detalle (al click en un Líder):
+  - Datos básicos
+  - Reclutadoras a cargo (vista anidada)
+  - Carga del grupo
+  - Métricas: cobertura, tiempo promedio, casos escalados, distribución de carga
+  - Reportes recibidos (histórico)
+  - Comentarios de QA sobre el Líder
 
-### Acciones
-- Ver desempeño detallado
-- Reasignar Reclutadora entre Líderes (balanceo)
-- Comunicar (chat / nota interna)
-- Marcar disponibilidad
-- Solicitar reporte
-- Escalar caso a dirección (si aplica)
-
----
-
-## 👨‍💼 Módulo GESTIÓN DE EQUIPO *(exclusivo del Manager)*
-
-### Vistas
-- **Líderes de Grupo:** lista + detalle + estado
-- **Reclutadoras:** lista + detalle + estado + Líder al que pertenecen
+**🧑 Reclutadoras**
+- Lista: Reclutadora · zona · Líder al que pertenece · n° de requisiciones activas · % cobertura
+  - Ej.: Ana López · Centro · Líder Carla · 3 activas · 85%
+  - Ej.: Beatriz Cruz · Norte · Líder Pedro · 2 activas · 92%
+- Detalle (al click en una Reclutadora):
+  - Datos básicos
+  - Líder de Grupo al que pertenece
+  - Carga actual
+  - Métricas individuales (cobertura, tiempo promedio, casos)
+  - Historial de requisiciones cubiertas
 
 ### Filtros
 - Tipo (Líder / Reclutadora)
-- Estado (activo / vacaciones / baja)
-- Zona
+- Por zona
+- Por estado (activo / vacaciones / baja)
+- Por desempeño (alto / medio / bajo)
+- Por Líder de Grupo (cuando se filtran Reclutadoras)
 - Buscar por nombre / correo
 
-### Acciones (exclusivas del Manager)
+### Acciones de gestión (administración del directorio)
 - ➕ **Dar de alta Líder de Grupo** (modal: nombre, correo, teléfono, zona, grupo)
 - ➕ **Dar de alta Reclutadora** (modal: nombre, correo, teléfono, zona, Líder al que pertenece)
 - ✏️ **Editar usuario** (cambiar zona, cambiar de grupo, cambiar rol)
 - ⏸️ **Marcar como inactivo / vacaciones**
 - ❌ **Dar de baja** (eliminación lógica)
-- 🔁 **Mover Reclutadora a otro Líder** (reasignación organizacional)
+- 🔁 **Mover Reclutadora a otro Líder** (reasignación organizacional / balanceo)
+
+### Acciones de supervisión (seguimiento del desempeño)
+- 📊 Ver desempeño detallado (KPIs e histórico)
+- 💬 Comunicar (chat / nota interna)
+- 📝 Solicitar reporte a un Líder
+- 🚨 Escalar caso a Dirección
+- 📈 Comparar desempeño entre Líderes / Reclutadoras
 
 ---
 
@@ -433,8 +433,7 @@ Cubren con colaboradores del Pool
 |---|---|---|
 | Toma requisiciones | Sí (modelo self-pick) | Sí pero excepcional |
 | Pool, Schedule, Blacklist | Acceso (consulta + creación) | Acceso completo + CRUD Blacklist |
-| Mi Grupo | Ve sus Reclutadoras | Ve sus Líderes (anidado: Líderes → Reclutadoras) |
-| Gestión de equipo | ❌ | ✅ alta/edición de Líderes y Reclutadoras |
+| Mi Equipo | Ve sus Reclutadoras (Mi Grupo) | Ve Líderes + Reclutadoras + gestiona altas/bajas |
 | Aprobar/remover Blacklist | ❌ | ✅ exclusivo |
 | Resolver disputas | ❌ | ✅ decisión final |
 | Reportes | Genera y envía al Manager | Recibe + genera globales |
@@ -469,8 +468,7 @@ Cubren con colaboradores del Pool
 │ 📋 Requisic. │  Vista global · Tomar excepcional             │
 │ 🧑 Pool      │  Consulta + creación de apoyo                 │
 │ ⚫ Blacklist │  CRUD completo · Aprobar · Resolver           │
-│ 👥 Mis Líder │  Supervisión de Líderes y sus grupos          │
-│ 👨 Gestión   │  Alta/Baja/Edición de Líderes y Reclutadoras  │
+│ 👥 Mi Equipo │  Líderes + Reclutadoras · Gestión + Supervis. │
 │ ⚠️ Incidenc. │  Disputas · Casos · Resolver                  │
 │ 📈 Reportes  │  Recibe · Genera · Exporta                    │
 │ 📅 Schedule  │  Consulta global                              │
