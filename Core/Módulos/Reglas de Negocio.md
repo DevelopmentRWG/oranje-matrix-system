@@ -15,6 +15,8 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ## Colaborador
 
+> [!tip] Para la referencia completa, ver [[Reglas del Colaborador]].
+
 ### Captura de datos en 3 fases
 - **Fase 1 — Entrevista inicial:** la [[Reclutadora]] captura los datos básicos del candidato: nombre completo, edad, género, domicilio y teléfono
 - **Fase 2 — Alta en la app:** el propio Colaborador completa su información personal (SSN, ITIN, Posición, Nivel de inglés, Nivel de experiencia, Tipo de transporte, Modalidad)
@@ -49,7 +51,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Responsable: Sistema (automático)
 
 ### Resolución de Reportes (Rojo)
-- El hotel ([[Hotel/Manager del Hotel|Manager del Hotel]]) activa el estado Rojo (reportado); también se llega a Rojo por acumulación de 3 inasistencias
+- El hotel ([[Hotel/Manager del Hotel|Manager del Hotel]]) activa el estado Rojo (reportado)
 - El [[Inspector]] investiga el caso y resuelve hacia:
   - **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), si la disputa es a favor del hotel
   - **Verde fuerte** (reincorporado), si la disputa es a favor del colaborador
@@ -256,9 +258,10 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ### Deducción de Lunch
 
-> [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada donde el tiempo trabajado supere las 6 horas.
+> [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada.
 
-- Después de 6 horas de trabajo, el sistema deduce tiempo de lunch del [[Timesheet]] del colaborador:
+- El sistema deduce tiempo de lunch del [[Timesheet]] del colaborador:
+- Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
   - **Lunch menor a 30 min:** se deducen 30 minutos (mínimo obligatorio)
   - **Lunch mayor a 30 min:** se deduce el tiempo real tomado
   - **Sin ponche de Lunch:** se auto-deducen 30 minutos

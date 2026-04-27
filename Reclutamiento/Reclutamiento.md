@@ -33,6 +33,7 @@ Módulo encargado de:
 - [[Core/Módulos/Blacklist|Blacklist]]
 - [[Semáforo del Colaborador]]
 - [[Semáforo de Requisición]]
+- [[Semáforo de Posiciones de la Requisición]]
 - [[Core/Módulos/Schedule|Schedule]]
 - [[Posiciones]]
 - [[Modalidades de Contratación]]
