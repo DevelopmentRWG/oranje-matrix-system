@@ -37,7 +37,7 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 | Café          | Asignación temporal                   | Asignado temporalmente a cubrir la jornada completa o una parte de la jornada.                                              |
 | Rosa          | Stand-by                              | El hotel lo mandó a descansar (vacaciones, temporada baja).                                                                 |
 | Morado        | No regresó                            | No asistió por causa propia.                                                                                                |
-| Rojo          | Reportado                             | El hotel lo reportó (o acumuló 3 inasistencias); [[Inspector]] revisa el caso.                                           |
+| Rojo          | Reportado                             | El hotel lo reportó; [[Inspector]] revisa el caso.                                                                          |
 | Gris          | Accidentado                           | El colaborador sufrió un [[Core/Módulos/Accidente Laboral/Accidente Laboral\|accidente laboral]] y está en incapacidad médica. Protegido de [[Core/Módulos/Blacklist\|Blacklist]]. |
 | Negro         | [[Core/Módulos/Blacklist\|Blacklist]] | Disputa resuelta a favor del hotel, colaborador bloqueado.                                                                  |
 
@@ -63,7 +63,7 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 
 - **→ Morado**: el sistema lo marca cuando el colaborador no asiste sin justificación.
 - **3 inasistencias → Negro**: [[Core/Módulos/Blacklist|Blacklist]] automático por sistema.
-- **Rosa**: lo pone el hotel ([[Hotel/Manager del Hotel]]) cuando manda al colaborador a descansar (vacaciones, temporada baja).
+- **Rosa**: lo pone el hotel ([[Hotel/Manager del Hotel]]) cuando manda al colaborador a descansar (vacaciones, temporada baja). Al reactivarlo, regresa a **Verde fuerte**.
 - **Rojo**: lo pone el hotel ([[Hotel/Manager del Hotel]]). Luego [[Inspector]] investiga el caso y el resultado lo lleva a:
 	- **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), o
 	- **Verde fuerte** (reincorporado).
