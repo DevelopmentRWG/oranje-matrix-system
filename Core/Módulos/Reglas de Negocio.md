@@ -39,7 +39,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 ### Estado Rosa (Stand-by)
 - Solo el hotel ([[Hotel/Manager del Hotel|Manager del Hotel]]) puede poner a un colaborador en estado Rosa
 - Indica que el colaborador está en espera por decisión del hotel (vacaciones, temporada baja)
-- La posición no tiene fecha de fin; termina cuando el Manager del Hotel pone al colaborador en Rosa
+- La posición no tiene fecha de fin; termina cuando el Manager del Hotel retira al colaborador del estado Rosa. Al salir de Rosa, el colaborador regresa a Verde fuerte.
 
 ### Inasistencia (Morado)
 - El sistema marca Morado cuando el colaborador no asiste sin justificación

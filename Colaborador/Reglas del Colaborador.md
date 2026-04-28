@@ -69,7 +69,7 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 
 - Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] puede poner a un colaborador en Rosa.
 - Indica espera por decisión del hotel (vacaciones, temporada baja).
-- La posición no tiene fecha de fin; termina cuando el Manager del Hotel cambia el estado.
+- La posición no tiene fecha de fin; termina cuando el Manager del Hotel retira al colaborador del estado Rosa. Al salir, regresa a Verde fuerte.
 
 ## Reglas de incidencia
 
