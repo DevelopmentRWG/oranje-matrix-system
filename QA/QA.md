@@ -21,6 +21,10 @@ Departamento encargado de supervisar la calidad operativa de todos los departame
 - [[Manager de QA]]
 - [[Operador de QA]]
 
+### Reglas
+
+- [[QA/Reglas de QA|Reglas de QA]]
+
 ### Departamentos supervisados
 
 - [[Inspección/Inspector|Inspección]]
