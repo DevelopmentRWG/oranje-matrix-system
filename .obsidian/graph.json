@@ -11,7 +11,7 @@
       "query": "path:Ventas  ",
       "color": {
         "a": 1,
-        "rgb": 10864129
+        "rgb": 6692382
       }
     },
     {
@@ -74,13 +74,13 @@
   "collapse-display": false,
   "showArrow": true,
   "textFadeMultiplier": -1.8,
-  "nodeSizeMultiplier": 1.85289275247786,
+  "nodeSizeMultiplier": 1.50841318449735,
   "lineSizeMultiplier": 2.19366129935131,
   "collapse-forces": false,
   "centerStrength": 0,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.5515626786933643,
+  "scale": 0.8433051749465516,
   "close": true
 }
