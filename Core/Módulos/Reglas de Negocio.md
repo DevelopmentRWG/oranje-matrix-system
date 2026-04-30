@@ -118,8 +118,9 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Si alguna posición está en Amarillo o Rojo → Requisición en Rojo
 - Referencia: [[Semáforo de Posiciones de la Requisición]]
 
-### Asignación
-- El [[Manager de Reclutamiento]] recibe la requisición autorizada y la asigna a una [[Reclutadora]] → la requisición pasa a Amarillo (En proceso)
+### Asignación (Self-Pick)
+- La requisición autorizada queda en la bandeja compartida; una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la toma → la requisición pasa a Amarillo (En proceso)
+- Si lleva >24h sin ser tomada, el [[Manager de Reclutamiento]] recibe alerta y la asigna manualmente
 - Si no hay match en el [[Pool de Colaboradores]], la requisición queda en espera; el Flujo de Reclutamiento ya está siempre activo
 
 ### Ciclo de vida de la posición
@@ -227,9 +228,10 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - El [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] es continuo: Reclutamiento siempre está contratando, haya o no requisiciones abiertas
 - Las requisiciones sin match pueden acelerar o priorizar ciertas posiciones/zonas, pero no son condición para iniciar el flujo
 
-### Distribución de requisiciones
-- El [[Manager de Reclutamiento]] distribuye las requisiciones a las [[Reclutadora|reclutadoras]]
-- Las requisiciones no llegan directamente a las reclutadoras
+### Distribución de requisiciones (Self-Pick)
+- Las requisiciones autorizadas quedan disponibles en una bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]]
+- Las [[Reclutadora|Reclutadoras]] y [[Reclutamiento/Líder de Grupo de Reclutadoras|Líderes de Grupo]] toman libremente las requisiciones de la bandeja
+- Si una requisición lleva más de 24 horas sin ser tomada, el [[Manager de Reclutamiento]] recibe alerta y la asigna manualmente
 
 ### Aprobación del colaborador
 - La [[Reclutadora]] valida y aprueba al colaborador después de que completa su alta en la app
