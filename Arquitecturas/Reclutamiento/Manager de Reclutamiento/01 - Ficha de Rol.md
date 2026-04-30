@@ -10,14 +10,14 @@ aliases:
 
 ---
 
-| Campo | Contenido |
-|---|---|
-| **ID Rol** | ROL-03 |
-| **Nombre del Rol** | 🧑‍💼 Manager de Reclutamiento |
-| **Tipo** | Supervisor |
-| **Departamento** | Reclutamiento |
-| **Reporta a** | Director Oranje |
-| **Supervisa a** | Líderes de Grupo de Reclutadoras |
+| Campo              | Contenido                        |
+| ------------------ | -------------------------------- |
+| **ID Rol**         | ROL-03                           |
+| **Nombre del Rol** | 🧑‍💼 Manager de Reclutamiento   |
+| **Tipo**           | Supervisor                       |
+| **Departamento**   | Reclutamiento                    |
+| **Reporta a**      | Director Oranje                  |
+| **Supervisa a**    | Líderes de Grupo de Reclutadoras |
 
 ---
 

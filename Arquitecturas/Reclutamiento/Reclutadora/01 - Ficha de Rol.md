@@ -10,14 +10,14 @@ aliases:
 
 ---
 
-| Campo | Contenido |
-|---|---|
-| **ID Rol** | ROL-01 |
-| **Nombre del Rol** | 👤 Reclutadora |
-| **Tipo** | Operativo |
-| **Departamento** | Reclutamiento |
-| **Reporta a** | Líder de Grupo de Reclutadoras |
-| **Supervisa a** | — |
+| Campo              | Contenido                      |
+| ------------------ | ------------------------------ |
+| **ID Rol**         | ROL-01                         |
+| **Nombre del Rol** | 👤 Reclutadora                 |
+| **Tipo**           | Operativo                      |
+| **Departamento**   | Reclutamiento                  |
+| **Reporta a**      | Líder de Grupo de Reclutadoras |
+| **Supervisa a**    | —                              |
 
 ---
 

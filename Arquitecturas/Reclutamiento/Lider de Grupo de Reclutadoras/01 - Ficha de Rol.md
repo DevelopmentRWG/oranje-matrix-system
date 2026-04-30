@@ -10,14 +10,14 @@ aliases:
 
 ---
 
-| Campo | Contenido |
-|---|---|
-| **ID Rol** | ROL-02 |
+| Campo              | Contenido                            |
+| ------------------ | ------------------------------------ |
+| **ID Rol**         | ROL-02                               |
 | **Nombre del Rol** | 🧑‍🏫 Líder de Grupo de Reclutadoras |
-| **Tipo** | Intermedio |
-| **Departamento** | Reclutamiento |
-| **Reporta a** | Manager de Reclutamiento |
-| **Supervisa a** | Reclutadoras de su grupo |
+| **Tipo**           | Intermedio                           |
+| **Departamento**   | Reclutamiento                        |
+| **Reporta a**      | Manager de Reclutamiento             |
+| **Supervisa a**    | Reclutadoras de su grupo             |
 
 ---
 

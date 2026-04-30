@@ -13,16 +13,16 @@ aliases:
 
 ---
 
-| Campo | Contenido |
-|---|---|
-| **ID del PRD** | PRD-RECL-03 |
-| **Historia de Usuario** | HU-RECL-03 |
-| **Departamento** | Reclutamiento |
-| **Funcionalidad** | Operar como Reclutadora + supervisar grupo + reportar al Manager |
-| **Actor Principal** | Líder de Grupo de Reclutadoras |
-| **Dispositivo** | Web – Desktop / Tablet |
-| **Estado** | En definición |
-| **Versión** | 1.0 |
+| Campo                   | Contenido                                                        |
+| ----------------------- | ---------------------------------------------------------------- |
+| **ID del PRD**          | PRD-RECL-03                                                      |
+| **Historia de Usuario** | HU-RECL-03                                                       |
+| **Departamento**        | Reclutamiento                                                    |
+| **Funcionalidad**       | Operar como Reclutadora + supervisar grupo + reportar al Manager |
+| **Actor Principal**     | Líder de Grupo de Reclutadoras                                   |
+| **Dispositivo**         | Web – Desktop / Tablet                                           |
+| **Estado**              | En definición                                                    |
+| **Versión**             | 1.0                                                              |
 
 ---
 

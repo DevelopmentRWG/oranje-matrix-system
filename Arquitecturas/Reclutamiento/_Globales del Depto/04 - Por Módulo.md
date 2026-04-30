@@ -10,153 +10,147 @@ aliases:
 
 ---
 
-## 📥 Bandeja de Reclutamiento
+## 📊 Dashboard
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-01 | Recibir requisición entrante | 🔴 Alta | ⬜ Pendiente |
-| RF-02 | Tomar requisición (Self-Pick) | 🔴 Alta | ⬜ Pendiente |
-| RF-03 | Liberar requisición | 🟡 Media | ⬜ Pendiente |
-| RF-04 | Marcar requisición en proceso | 🔴 Alta | ⬜ Pendiente |
-| RF-05 | Marcar requisición como cubierta | 🔴 Alta | ⬜ Pendiente |
+| ID  | Requerimiento                                                            | Prioridad | Estado |
+| --- | ------------------------------------------------------------------------ | --------- | ------ |
+| —   | (KPIs y vistas resumen — sin RFs propios; todos vienen de otros módulos) | —         | —      |
 
 ---
 
-## 🧑‍🤝‍🧑 Pool de Colaboradores
+## 🧑‍🤝‍🧑 Reclutamiento
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-06 | Buscar candidatos en Pool | 🔴 Alta | ⬜ Pendiente |
-| RF-07 | Crear colaborador (Fase 1) | 🔴 Alta | ⬜ Pendiente |
-| RF-08 | Validar alta en app (Fase 2) | 🔴 Alta | ⬜ Pendiente |
-| RF-09 | Habilitar accesos | 🟡 Media | ⬜ Pendiente |
+Incluye Pool de Colaboradores, creación/entrevista de nuevos colaboradores, validación, asignación y manejo del Schedule del hotel.
+
+| ID    | Requerimiento                           | Prioridad | Estado      |
+| ----- | --------------------------------------- | --------- | ----------- |
+| RF-06 | Buscar candidatos en Pool               | 🔴 Alta   | ⬜ Pendiente |
+| RF-07 | Crear colaborador (Fase 1 — Entrevista) | 🔴 Alta   | ⬜ Pendiente |
+| RF-08 | Validar alta en app (Fase 2)            | 🔴 Alta   | ⬜ Pendiente |
+| RF-09 | Habilitar accesos                       | 🟡 Media  | ⬜ Pendiente |
+| RF-10 | Registrar entrevista                    | 🟡 Media  | ⬜ Pendiente |
+| RF-15 | Asignar colaborador a hotel             | 🔴 Alta   | ⬜ Pendiente |
+| RF-16 | Asignar al Schedule                     | 🔴 Alta   | ⬜ Pendiente |
+| RF-17 | Reasignar colaborador                   | 🟡 Media  | ⬜ Pendiente |
+| RF-18 | Desasignar colaborador                  | 🟡 Media  | ⬜ Pendiente |
 
 ---
 
-## 🎤 Entrevistas
+## 📋 Requisición
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-10 | Registrar entrevista | 🟡 Media | ⬜ Pendiente |
+Incluye recepción, toma libre (Self-Pick), gestión del estado de la requisición y los semáforos asociados (Urgencia, Posiciones).
+
+| ID    | Requerimiento                    | Prioridad | Estado      |
+| ----- | -------------------------------- | --------- | ----------- |
+| RF-01 | Recibir requisición entrante     | 🔴 Alta   | ⬜ Pendiente |
+| RF-02 | Tomar requisición (Self-Pick)    | 🔴 Alta   | ⬜ Pendiente |
+| RF-03 | Liberar requisición              | 🟡 Media  | ⬜ Pendiente |
+| RF-04 | Marcar requisición en proceso    | 🔴 Alta   | ⬜ Pendiente |
+| RF-05 | Marcar requisición como cubierta | 🔴 Alta   | ⬜ Pendiente |
+| RF-19 | Calcular Semáforo de Urgencia    | 🔴 Alta   | ⬜ Pendiente |
+| RF-20 | Calcular Semáforo de Posiciones  | 🔴 Alta   | ⬜ Pendiente |
+| RF-21 | Forzar cambio de semáforo        | 🟢 Baja   | ⬜ Pendiente |
 
 ---
 
 ## ⚫ Blacklist
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-11 | Consultar Blacklist | 🔴 Alta | ⬜ Pendiente |
-| RF-12 | Agregar a Blacklist | 🔴 Alta | ⬜ Pendiente |
-| RF-13 | Aprobar disputa de Blacklist | 🟡 Media | ⬜ Pendiente |
-| RF-14 | Remover de Blacklist | 🟢 Baja | ⬜ Pendiente |
+| ID    | Requerimiento                                   | Prioridad | Estado      |
+| ----- | ----------------------------------------------- | --------- | ----------- |
+| RF-11 | Consultar Blacklist                             | 🔴 Alta   | ⬜ Pendiente |
+| RF-12 | Agregar a Blacklist (todos los roles del depto) | 🔴 Alta   | ⬜ Pendiente |
+| RF-13 | Resolver disputa de Blacklist (Manager)         | 🟡 Media  | ⬜ Pendiente |
+| RF-14 | Remover de Blacklist (Manager)                  | 🟢 Baja   | ⬜ Pendiente |
 
 ---
 
-## 🏨 Asignación
+## 👥 Mi Grupo *(exclusivo Líder)*
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-15 | Asignar colaborador a hotel | 🔴 Alta | ⬜ Pendiente |
-| RF-16 | Asignar al Schedule | 🔴 Alta | ⬜ Pendiente |
-| RF-17 | Reasignar colaborador | 🟡 Media | ⬜ Pendiente |
-| RF-18 | Desasignar colaborador | 🟡 Media | ⬜ Pendiente |
+| ID    | Requerimiento                         | Prioridad | Estado      |
+| ----- | ------------------------------------- | --------- | ----------- |
+| RF-22 | Ver Reclutadoras del grupo            | 🔴 Alta   | ⬜ Pendiente |
+| RF-23 | Métricas individuales por Reclutadora | 🟡 Media  | ⬜ Pendiente |
 
 ---
 
-## 🚦 Semáforos
+## 📈 Reportes *(Líder y Manager)*
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-19 | Calcular Semáforo de Urgencia | 🔴 Alta | ⬜ Pendiente |
-| RF-20 | Calcular Semáforo de Posiciones | 🔴 Alta | ⬜ Pendiente |
-| RF-21 | Forzar cambio de semáforo | 🟢 Baja | ⬜ Pendiente |
-
----
-
-## 👥 Mi Grupo (exclusivo Líder)
-
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-22 | Ver Reclutadoras del grupo | 🔴 Alta | ⬜ Pendiente |
-| RF-23 | Métricas individuales por Reclutadora | 🟡 Media | ⬜ Pendiente |
+| ID    | Requerimiento             | Prioridad | Estado      |
+| ----- | ------------------------- | --------- | ----------- |
+| RF-24 | Generar reporte del grupo | 🟡 Media  | ⬜ Pendiente |
+| RF-25 | Enviar reporte al Manager | 🟡 Media  | ⬜ Pendiente |
+| RF-26 | Ver cobertura individual  | 🟢 Baja   | ⬜ Pendiente |
+| RF-27 | Ver cobertura por zona    | 🟡 Media  | ⬜ Pendiente |
+| RF-28 | Ver cobertura global      | 🟡 Media  | ⬜ Pendiente |
 
 ---
 
-## 📈 Reportes
+## 👨‍💼 Mi Equipo *(exclusivo Manager)*
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-24 | Generar reporte del grupo | 🟡 Media | ⬜ Pendiente |
-| RF-25 | Enviar reporte al Manager | 🟡 Media | ⬜ Pendiente |
-| RF-26 | Ver cobertura individual | 🟢 Baja | ⬜ Pendiente |
-| RF-27 | Ver cobertura por zona | 🟡 Media | ⬜ Pendiente |
-| RF-28 | Ver cobertura global | 🟡 Media | ⬜ Pendiente |
+| ID    | Requerimiento                     | Prioridad | Estado      |
+| ----- | --------------------------------- | --------- | ----------- |
+| RF-29 | Gestión de Líderes y Reclutadoras | 🔴 Alta   | ⬜ Pendiente |
 
 ---
 
-## 👨‍💼 Mi Equipo (exclusivo Manager)
+## ⚠️ Incidencias *(exclusivo Manager)*
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-29 | Gestión de Líderes y Reclutadoras | 🔴 Alta | ⬜ Pendiente |
-
----
-
-## ⚠️ Incidencias (exclusivo Manager)
-
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-30 | Resolver incidencia | 🟡 Media | ⬜ Pendiente |
-| RF-31 | Escalar a comercial | 🟡 Media | ⬜ Pendiente |
+| ID    | Requerimiento       | Prioridad | Estado      |
+| ----- | ------------------- | --------- | ----------- |
+| RF-30 | Resolver incidencia | 🟡 Media  | ⬜ Pendiente |
+| RF-31 | Escalar a comercial | 🟡 Media  | ⬜ Pendiente |
 
 ---
 
-## 🔔 Notificaciones
+## ⚙️ Sistema (transversal — NO es módulo del sidebar)
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RF-32 | Enviar notificaciones automáticas | 🔴 Alta | ⬜ Pendiente |
+| ID    | Requerimiento                     | Prioridad | Estado      |
+| ----- | --------------------------------- | --------- | ----------- |
+| RF-32 | Enviar notificaciones automáticas | 🔴 Alta   | ⬜ Pendiente |
 
 ---
 
-## ⚙️ Configuración (exclusivo Admin)
+## 🛠️ Configuración *(exclusivo Admin — EN PAUSA)*
+
+> [!warning] Admin en pausa
+> Estos requerimientos quedan documentados pero **no se aterrizan** en este alcance. Se retoman al final cuando las reglas de negocio estén estables.
 
 | ID | Requerimiento | Prioridad | Estado |
 |---|---|---|---|
-| RF-33 | Configurar alertas | 🟢 Baja | ⬜ Pendiente |
-| RF-34 | CRUD de usuarios | 🔴 Alta | ⬜ Pendiente |
-| RF-35 | Editar catálogos | 🟡 Media | ⬜ Pendiente |
+| RF-33 | Configurar alertas | 🟢 Baja | ⏸️ Admin en pausa |
+| RF-34 | CRUD de usuarios | 🔴 Alta | ⏸️ Admin en pausa |
+| RF-35 | Editar catálogos | 🟡 Media | ⏸️ Admin en pausa |
 
 ---
 
 ## ⚙️ No Funcionales (Transversal)
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RNF-01 | Tiempo de respuesta < 2s | 🔴 Alta | ⬜ Pendiente |
-| RNF-02 | Disponibilidad 99.5% | 🔴 Alta | ⬜ Pendiente |
-| RNF-03 | Cifrado de datos sensibles | 🔴 Alta | ⬜ Pendiente |
-| RNF-04 | Compatibilidad multi-dispositivo | 🟡 Media | ⬜ Pendiente |
+| ID     | Requerimiento                    | Prioridad | Estado      |
+| ------ | -------------------------------- | --------- | ----------- |
+| RNF-01 | Tiempo de respuesta < 2s         | 🔴 Alta   | ⬜ Pendiente |
+| RNF-02 | Disponibilidad 99.5%             | 🔴 Alta   | ⬜ Pendiente |
+| RNF-03 | Cifrado de datos sensibles       | 🔴 Alta   | ⬜ Pendiente |
+| RNF-04 | Compatibilidad multi-dispositivo | 🟡 Media  | ⬜ Pendiente |
 
 ---
 
 ## 📜 Reglas de Negocio
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RR-01 | Modelo Self-Pick | 🔴 Alta | ⬜ Pendiente |
-| RR-02 | Consulta obligatoria de Blacklist | 🔴 Alta | ⬜ Pendiente |
-| RR-03 | Solo Manager aprueba Blacklist | 🔴 Alta | ⬜ Pendiente |
-| RR-04 | Cobertura 100% para cierre | 🔴 Alta | ⬜ Pendiente |
+| ID    | Requerimiento                                 | Prioridad | Estado      |
+| ----- | --------------------------------------------- | --------- | ----------- |
+| RR-01 | Modelo Self-Pick                              | 🔴 Alta   | ⬜ Pendiente |
+| RR-02 | Consulta obligatoria de Blacklist             | 🔴 Alta   | ⬜ Pendiente |
+| RR-03 | Manager resuelve disputas y remueve Blacklist | 🔴 Alta   | ⬜ Pendiente |
+| RR-04 | Cobertura 100% para cierre                    | 🔴 Alta   | ⬜ Pendiente |
 
 ---
 
 ## 🔗 Integraciones
 
-| ID | Requerimiento | Prioridad | Estado |
-|---|---|---|---|
-| RI-01 | Integración con módulo Hotel | 🔴 Alta | ⬜ Pendiente |
-| RI-02 | Integración con Schedule | 🔴 Alta | ⬜ Pendiente |
-| RI-03 | Integración con Timesheet | 🟡 Media | ⬜ Pendiente |
-| RI-04 | Integración con app del colaborador | 🔴 Alta | ⬜ Pendiente |
-| RI-05 | Integración con Onboarding-Hotel | 🟡 Media | ⬜ Pendiente |
+| ID    | Requerimiento                       | Prioridad | Estado      |
+| ----- | ----------------------------------- | --------- | ----------- |
+| RI-01 | Integración con módulo Hotel        | 🔴 Alta   | ⬜ Pendiente |
+| RI-02 | Integración con Schedule            | 🔴 Alta   | ⬜ Pendiente |
+| RI-03 | Integración con Timesheet           | 🟡 Media  | ⬜ Pendiente |
+| RI-04 | Integración con app del colaborador | 🔴 Alta   | ⬜ Pendiente |
+| RI-05 | Integración con Onboarding-Hotel    | 🟡 Media  | ⬜ Pendiente |

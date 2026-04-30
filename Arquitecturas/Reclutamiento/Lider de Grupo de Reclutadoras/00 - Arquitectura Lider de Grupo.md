@@ -105,12 +105,11 @@ MÓDULOS / SIDEBAR
 ```
 SIDEBAR
    ├─ DASHBOARD
-   ├─ RECLUTAMIENTO            (Pool + Nuevo Colaborador)
-   ├─ REQUISICIONES            (Bandeja Autorizadas + Mis Tomadas — Self-Pick)
-   ├─ MI GRUPO DE RECLUTADORAS ← exclusivo del Líder (supervisión)
-   ├─ REPORTES                 ← módulo formal con su propia pantalla
-   ├─ SCHEDULE                 (consulta)
-   └─ BLACKLIST                (consulta)
+   ├─ RECLUTAMIENTO   (Pool + Crear/Entrevista + Validación + Asignación)
+   ├─ REQUISICIÓN     (Cola de Autorizadas + Mis Tomadas — Self-Pick)
+   ├─ BLACKLIST       (consulta + agregar)
+   ├─ MI GRUPO        ← exclusivo del Líder (supervisión)
+   └─ REPORTES        ← módulo formal con su propia pantalla
 ```
 
 ---

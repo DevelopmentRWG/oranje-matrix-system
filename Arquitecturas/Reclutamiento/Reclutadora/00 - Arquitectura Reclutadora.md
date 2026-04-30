@@ -110,10 +110,9 @@ MÓDULOS / SIDEBAR
 ```
 SIDEBAR
    ├─ DASHBOARD
-   ├─ RECLUTAMIENTO        (Pool + Nuevo Colaborador)
-   ├─ REQUISICIONES        (Bandeja disponibles + Mis tomadas)
-   ├─ SCHEDULE             (consulta)
-   └─ BLACKLIST            (consulta)
+   ├─ RECLUTAMIENTO   (Pool + Crear/Entrevista + Validación + Asignación)
+   ├─ REQUISICIÓN     (Cola de Autorizadas + Mis Tomadas — Self-Pick)
+   └─ BLACKLIST       (consulta + agregar)
 ```
 
 ---

@@ -18,36 +18,37 @@ RECLUTADORA
 │   ├── KPIs personales
 │   ├── Pool por posición (resumen)
 │   ├── Mis Requisiciones (resumen)
-│   ├── Bandeja de disponibles
+│   ├── Cola de Autorizadas (vista corta)
 │   └── Acciones rápidas
 │
-├── 🧑‍🤝‍🧑 Pool de Colaboradores
-│   ├── Lista (12 estados del Semáforo del Colaborador)
-│   ├── Filtros (posición · zona · modalidad · inglés)
-│   ├── Detalle del colaborador
-│   ├── Crear colaborador (Fase 1)
-│   ├── Validar alta en App (Fase 2)
-│   └── Habilitar accesos
-│
-├── 📋 Bandeja de Requisiciones (Self-Pick)
-│   ├── Bandeja de Autorizadas (disponibles)
+├── 📋 Requisición (Self-Pick + Semáforos)
+│   ├── Cola de Autorizadas (todas las disponibles)
 │   ├── Mis Requisiciones (tomadas)
 │   ├── Tomar requisición
-│   ├── Asignar colaborador
-│   ├── Marcar cubierta / parcial
-│   └── Liberar requisición
+│   ├── Marcar como cubierta / parcial
+│   ├── Liberar requisición
+│   ├── Semáforo de Urgencia (lectura)
+│   └── Semáforo de Posiciones (lectura)
 │
-├── 📅 Schedule (consulta)
-│   └── Vista del Schedule semanal del hotel
+├── 🧑‍🤝‍🧑 Reclutamiento (Pool + Crear + Asignación)
+│   ├── Pool de Colaboradores (lista, filtros, detalle)
+│   ├── Crear colaborador (Fase 1 — Entrevista)
+│   ├── Validar alta en App (Fase 2)
+│   ├── Habilitar accesos
+│   ├── Registrar entrevista
+│   ├── Asignar colaborador a hotel
+│   ├── Asignar al Schedule
+│   ├── Reasignar colaborador
+│   └── Desasignar colaborador
 │
-└── ⚫ Blacklist (consulta)
-    ├── Lista de vetados
-    └── Consulta obligatoria antes de asignar
+└── ⚫ Blacklist
+    ├── Consulta de vetados
+    └── Agregar a Blacklist (con motivo y evidencia)
 ```
 
 ---
 
-## Funcionalidades exclusivas de la Reclutadora
+## Funcionalidades de la Reclutadora
 
 | Feature | Permitido |
 |---|---|
@@ -55,6 +56,7 @@ RECLUTADORA
 | Crear colaboradores (Fase 1) | ✅ |
 | Validar alta en App | ✅ |
 | Asignar al Schedule | ✅ |
-| Distribuir requisiciones a otros | ❌ (no aplica el modelo) |
-| Aprobar Blacklist | ❌ (Manager exclusivo) |
+| Agregar colaborador a Blacklist | ✅ (con motivo y evidencia) |
+| Distribuir requisiciones a otros | ❌ (no aplica el modelo Self-Pick) |
+| Resolver disputas / Remover Blacklist | ❌ (Manager exclusivo) |
 | Supervisar a otros | ❌ (no tiene equipo) |

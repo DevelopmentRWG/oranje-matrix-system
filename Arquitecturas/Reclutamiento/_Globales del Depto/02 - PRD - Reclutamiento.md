@@ -60,10 +60,10 @@ Permitir al equipo de Reclutamiento captar, validar y habilitar colaboradores pa
 
 ## Actores
 
-| Actor | Tipo | Responsabilidad principal |
-|---|---|---|
-| Reclutadora | Operativo | Toma requisiciones y las cubre con colaboradores |
-| Líder de Grupo de Reclutadoras | Intermedio | Toma + supervisa al grupo |
-| Manager de Reclutamiento | Supervisor | Gestión del depto + casos especiales |
-| Sistema | Automatización | Cálculos automáticos, notificaciones, journals |
-| Administrador | Configuración | Usuarios, catálogos, permisos |
+| Actor                          | Tipo           | Responsabilidad principal                        |
+| ------------------------------ | -------------- | ------------------------------------------------ |
+| Reclutadora                    | Operativo      | Toma requisiciones y las cubre con colaboradores |
+| Líder de Grupo de Reclutadoras | Intermedio     | Toma + supervisa al grupo                        |
+| Manager de Reclutamiento       | Supervisor     | Gestión del depto + casos especiales             |
+| Sistema                        | Automatización | Cálculos automáticos, notificaciones, journals   |
+| Administrador                  | Configuración  | Usuarios, catálogos, permisos                    |

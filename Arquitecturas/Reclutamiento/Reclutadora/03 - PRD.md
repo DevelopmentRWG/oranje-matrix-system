@@ -13,16 +13,16 @@ aliases:
 
 ---
 
-| Campo | Contenido |
-|---|---|
-| **ID del PRD** | PRD-RECL-02 |
-| **Historia de Usuario** | HU-RECL-02 |
-| **Departamento** | Reclutamiento |
-| **Funcionalidad** | Gestionar el ciclo operativo de reclutamiento desde la perspectiva de la Reclutadora |
-| **Actor Principal** | Reclutadora |
-| **Dispositivo** | Web – Desktop / Tablet |
-| **Estado** | En definición |
-| **Versión** | 1.0 |
+| Campo                   | Contenido                                                                            |
+| ----------------------- | ------------------------------------------------------------------------------------ |
+| **ID del PRD**          | PRD-RECL-02                                                                          |
+| **Historia de Usuario** | HU-RECL-02                                                                           |
+| **Departamento**        | Reclutamiento                                                                        |
+| **Funcionalidad**       | Gestionar el ciclo operativo de reclutamiento desde la perspectiva de la Reclutadora |
+| **Actor Principal**     | Reclutadora                                                                          |
+| **Dispositivo**         | Web – Desktop / Tablet                                                               |
+| **Estado**              | En definición                                                                        |
+| **Versión**             | 1.0                                                                                  |
 
 ---
 

@@ -13,16 +13,16 @@ aliases:
 
 ---
 
-| Campo | Contenido |
-|---|---|
-| **ID del PRD** | PRD-RECL-04 |
-| **Historia de Usuario** | HU-RECL-04 |
-| **Departamento** | Reclutamiento |
-| **Funcionalidad** | Supervisar el depto, gestionar Blacklist, resolver escalamientos y manejar casos especiales |
-| **Actor Principal** | Manager de Reclutamiento |
-| **Dispositivo** | Web – Desktop |
-| **Estado** | En definición |
-| **Versión** | 1.0 |
+| Campo                   | Contenido                                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------- |
+| **ID del PRD**          | PRD-RECL-04                                                                                 |
+| **Historia de Usuario** | HU-RECL-04                                                                                  |
+| **Departamento**        | Reclutamiento                                                                               |
+| **Funcionalidad**       | Supervisar el depto, gestionar Blacklist, resolver escalamientos y manejar casos especiales |
+| **Actor Principal**     | Manager de Reclutamiento                                                                    |
+| **Dispositivo**         | Web – Desktop                                                                               |
+| **Estado**              | En definición                                                                               |
+| **Versión**             | 1.0                                                                                         |
 
 ---
 

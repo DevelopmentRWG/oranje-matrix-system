@@ -87,14 +87,12 @@ MÓDULOS / SIDEBAR
 ```
 SIDEBAR
    ├─ DASHBOARD
-   ├─ REQUISICIONES            (vista global, intervención excepcional)
-   ├─ POOL DE COLABORADORES    (consulta + creación de apoyo)
-   ├─ BLACKLIST                (CRUD completo — único rol)
-   ├─ MI EQUIPO                ← exclusivo (Líderes + Reclutadoras: supervisión + gestión)
-   ├─ INCIDENCIAS / DISPUTAS   ← recibe escalamientos
-   ├─ REPORTES                 (recibe de Líderes + genera globales)
-   ├─ SCHEDULE                 (consulta)
-   └─ CONFIGURACIÓN
+   ├─ RECLUTAMIENTO            (Pool + apoyo operativo)
+   ├─ REQUISICIÓN              (vista global + intervención excepcional + semáforos)
+   ├─ BLACKLIST                (consulta + agregar + resolver disputa + remover)
+   ├─ MI EQUIPO                ← exclusivo (Líderes + Reclutadoras: gestión + supervisión)
+   ├─ INCIDENCIAS              ← exclusivo (recibe escalamientos)
+   └─ REPORTES                 (recibe de Líderes + genera globales)
 ```
 
 ---
