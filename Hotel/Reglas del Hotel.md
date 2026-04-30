@@ -79,11 +79,11 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 | Acción | Efecto en [[Semáforo del Colaborador]] | Descripción |
 |---|---|---|
 | Generar código QR | — | Permite a los colaboradores ponchar en el [[Timesheet]] |
-| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando el Manager cambia el estado |
+| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando el Manager del Hotel o el Supervisor cambia el estado |
 | Reportar colaborador | → **Rojo** | Inicia investigación por parte del [[Inspector]] |
 | Gestionar Schedule semanal | — | Administra las asignaciones del [[Core/Módulos/Schedule\|Schedule]] del hotel |
 
-> [!important] **Solo** el [[Hotel/Manager del Hotel|Manager del Hotel]] puede poner a un colaborador en estado Rosa (Stand-by).
+> [!important] El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en estado Rosa (Stand-by).
 
 ## Timesheet y deducción de Lunch
 
@@ -97,7 +97,13 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 ### Ponchado
 
 - El colaborador poncha vía **QR** generado por el [[Hotel/Manager del Hotel|Manager del Hotel]].
-- Ponches válidos: **Entrada**, **Lunch**, **Salida** (exactamente tres).
+- Los ponches se registran por pares de entrada/salida para cada periodo (exactamente seis):
+  - **Entrada** — inicio de jornada
+  - **Salida Lunch** — sale a comer
+  - **Entrada Lunch** — regresa de comer
+  - **Salida Break** — sale a descanso
+  - **Entrada Break** — regresa de descanso
+  - **Salida** — fin de jornada
 
 ### Deducción de Lunch
 
@@ -110,7 +116,7 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 | Sin ponche de Lunch | 30 min (auto-deducción) |
 
 - **Horas brutas** = Salida − Entrada
-- **Horas netas** = Horas brutas − Deducción de Lunch
+- **Horas netas** = Horas brutas − Deducción de Lunch − Breaks reales
 - Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
 
 ## Indicador de Lunch Extendido
@@ -151,7 +157,7 @@ El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel e
 | Autorizar requisición | Sí (exclusivo) | No | No (Gerente Depto.) |
 | Rechazar requisición con observaciones | Sí | No | No |
 | Generar QR para ponchado | Sí | — | — |
-| Poner en Stand-by (Rosa) | Sí (exclusivo) | No | No |
+| Poner en Stand-by (Rosa) | Sí | Sí | No |
 | Reportar colaborador (Rojo) | Sí | — | — |
 | Gestionar Schedule semanal | Sí | — | Visibilidad global |
 | Reportar accidente laboral | — | Sí | No |

@@ -31,14 +31,28 @@ Un colaborador pasa a estado **Negro** en el [[Semáforo del Colaborador]] por:
 - **3 inasistencias** → blacklist automático por sistema.
 - **Disputa resuelta a favor del hotel** → tras un reporte del hotel (estado Rojo) e investigación del [[Inspector]].
 
-## Revisión de casos
+## Proceso de investigación
 
-El [[Manager de Reclutamiento]] revisa los casos de blacklist.
+Cuando un colaborador entra en estado Rojo (reporte del hotel), el [[Inspector]] de la zona investiga la disputa.
+
+> [!info] El Inspector tiene autoridad propia para decidir el resultado. No requiere escalamiento al Manager de Reclutamiento para emitir la resolución.
+
+- **Resolución a favor del hotel:** el colaborador pasa a **Negro** ([[Core/Módulos/Blacklist|Blacklist]]).
+- **Resolución a favor del colaborador:** el colaborador regresa a **Verde fuerte** (disponible).
+
+## Permanencia del estado Negro
+
+> [!warning] Negro es PERMANENTE. No existe proceso de rehabilitación ni instancia de apelación.
+
+El registro del colaborador se conserva en el sistema con las siguientes condiciones:
+
+- El colaborador **no se elimina** del sistema.
+- **No aparece en búsquedas activas** de reclutamiento.
+- El **historial se conserva** íntegro para consulta interna.
 
 ## Relacionado
 
 - [[Semáforo del Colaborador]]
-- [[Manager de Reclutamiento]]
 - [[Reclutadora]]
 - [[Inspector]]
 - [[Flujo de Reclutamiento]]

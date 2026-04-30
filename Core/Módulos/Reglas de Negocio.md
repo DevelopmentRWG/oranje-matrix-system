@@ -37,9 +37,9 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Al terminar la jornada temporal, vuelve a Verde fuerte o Naranja según su estado previo
 
 ### Estado Rosa (Stand-by)
-- Solo el hotel ([[Hotel/Manager del Hotel|Manager del Hotel]]) puede poner a un colaborador en estado Rosa
+- El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en estado Rosa
 - Indica que el colaborador está en espera por decisión del hotel (vacaciones, temporada baja)
-- La posición no tiene fecha de fin; termina cuando el Manager del Hotel retira al colaborador del estado Rosa. Al salir de Rosa, el colaborador regresa a Verde fuerte.
+- La posición no tiene fecha de fin; termina cuando el Manager del Hotel o el Supervisor retira al colaborador del estado Rosa. Al salir de Rosa, el colaborador regresa a Verde fuerte.
 
 ### Inasistencia (Morado)
 - El sistema marca Morado cuando el colaborador no asiste sin justificación
@@ -52,7 +52,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ### Resolución de Reportes (Rojo)
 - El hotel ([[Hotel/Manager del Hotel|Manager del Hotel]]) activa el estado Rojo (reportado)
-- El [[Inspector]] investiga el caso y resuelve hacia:
+- El [[Inspector]] de la zona investiga la disputa y tiene **autoridad propia para decidir** el resultado:
   - **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), si la disputa es a favor del hotel
   - **Verde fuerte** (reincorporado), si la disputa es a favor del colaborador
 
@@ -118,13 +118,14 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Si alguna posición está en Amarillo o Rojo → Requisición en Rojo
 - Referencia: [[Semáforo de Posiciones de la Requisición]]
 
-### Asignación
-- El [[Manager de Reclutamiento]] recibe la requisición autorizada y la asigna a una [[Reclutadora]] → la requisición pasa a Amarillo (En proceso)
+### Asignación (Self-Pick)
+- La requisición autorizada queda en la bandeja compartida; una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la toma → la requisición pasa a Amarillo (En proceso)
+- Si lleva >24h sin ser tomada, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El proceso es transparente (el [[Manager de Reclutamiento]] no recibe notificación)
 - Si no hay match en el [[Pool de Colaboradores]], la requisición queda en espera; el Flujo de Reclutamiento ya está siempre activo
 
 ### Ciclo de vida de la posición
 - La posición tiene fecha de inicio pero no fecha de fin definida
-- Termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] pone al colaborador en Stand-by (estado Rosa en el [[Semáforo del Colaborador]])
+- Termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en Stand-by (estado Rosa en el [[Semáforo del Colaborador]])
 
 ### Eliminación (Morado)
 - Estado transversal: se alcanza desde cualquier estado cuando se elimina la requisición
@@ -144,7 +145,12 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ### Blacklist manual
 - Disparado por disputa resuelta a favor del hotel (estado Rojo → investigación del [[Inspector]])
-- El [[Manager de Reclutamiento]] revisa los casos de blacklist
+- El [[Inspector]] de la zona decide con autoridad propia; no requiere validación del [[Manager de Reclutamiento]]
+
+### Permanencia del estado Negro
+- Negro es **PERMANENTE**: no existe rehabilitación ni apelación
+- El registro se conserva en el sistema marcado como Negro
+- El colaborador no aparece en búsquedas activas; el historial se conserva para consulta interna
 
 ### Consulta obligatoria
 - La [[Reclutadora]] debe consultar la [[Core/Módulos/Blacklist|Blacklist]] antes de reclutar a un candidato, para evitar volver a reclutar a alguien vetado
@@ -227,9 +233,10 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - El [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] es continuo: Reclutamiento siempre está contratando, haya o no requisiciones abiertas
 - Las requisiciones sin match pueden acelerar o priorizar ciertas posiciones/zonas, pero no son condición para iniciar el flujo
 
-### Distribución de requisiciones
-- El [[Manager de Reclutamiento]] distribuye las requisiciones a las [[Reclutadora|reclutadoras]]
-- Las requisiciones no llegan directamente a las reclutadoras
+### Distribución de requisiciones (Self-Pick)
+- Las requisiciones autorizadas quedan disponibles en una bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]]
+- Las [[Reclutadora|Reclutadoras]] y [[Reclutamiento/Líder de Grupo de Reclutadoras|Líderes de Grupo]] toman libremente las requisiciones de la bandeja
+- Si una requisición lleva más de 24 horas sin ser tomada, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El proceso es transparente (el [[Manager de Reclutamiento]] no recibe notificación)
 
 ### Aprobación del colaborador
 - La [[Reclutadora]] valida y aprueba al colaborador después de que completa su alta en la app
@@ -250,10 +257,17 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ### Dependencia del Timesheet
 - El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente
+- Si el [[Core/Módulos/Schedule|Schedule]] se modifica después de que el [[Timesheet]] fue creado, el Timesheet se actualiza automáticamente para reflejar los cambios
 
 ### Mecanismo de ponchado
 - El colaborador poncha vía QR que genera el [[Hotel/Manager del Hotel|Manager del Hotel]]
-- Los ponches válidos son exactamente tres: **Entrada**, **Lunch**, **Salida**
+- Los ponches se registran por pares de entrada/salida para cada periodo:
+  - **Entrada** — inicio de jornada
+  - **Salida Lunch** — sale a comer
+  - **Entrada Lunch** — regresa de comer
+  - **Salida Break** — sale a descanso
+  - **Entrada Break** — regresa de descanso
+  - **Salida** — fin de jornada
 - Esto contabiliza el tiempo trabajado del colaborador
 
 ### Deducción de Lunch
@@ -261,13 +275,20 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 > [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada.
 
 - El sistema deduce tiempo de lunch del [[Timesheet]] del colaborador:
-- Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
   - **Lunch menor a 30 min:** se deducen 30 minutos (mínimo obligatorio)
   - **Lunch mayor a 30 min:** se deduce el tiempo real tomado
   - **Sin ponche de Lunch:** se auto-deducen 30 minutos
 - La deducción de lunch impacta directamente el cómputo de horas pagables en el [[Timesheet]]
 
-> [!note] El mecanismo de ponchado actual registra un único ponche de **Lunch**. Para calcular la duración del lunch, el sistema debe capturar el inicio y fin del periodo de lunch (ya sea con dos ponches separados o con lógica de cálculo automático). Esto queda como consideración para el equipo de desarrollo.
+### Deducción de Breaks
+
+- Los breaks también se deducen del tiempo pagable en el [[Timesheet]]
+- El tiempo deducido es el tiempo real registrado con el par **Salida Break / Entrada Break**
+- La cantidad y duración de breaks la define cada hotel
+
+### Fórmula de horas pagables
+
+- **Horas netas** = (Salida − Entrada) − Lunch real − Breaks reales
 
 ### Indicador de Lunch Extendido
 
@@ -294,6 +315,19 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ### Coordinador
 - El [[Inspección/Coordinador|Coordinador]] asigna inspectores a las zonas geográficas y supervisa su trabajo en campo
+
+## Manejo de errores
+
+### Fallo de ponche
+- Si el sistema falla al registrar un ponche, el colaborador puede reintentar.
+- Si el fallo persiste, el sistema notifica al [[Hotel/Supervisor|Supervisor]] para que tome acción manual.
+
+### Colisión de IDs (homoclave)
+- Si al generar un número de requisición, posición o reporte se produce una colisión de homoclave (duplicado), el sistema regenera la homoclave automáticamente hasta obtener un valor único.
+
+### Desconexión durante operación
+- Si el usuario pierde conexión mientras realiza una operación (captura de datos, llenado de formulario, etc.), la operación se guarda como borrador automáticamente.
+- El borrador puede ser retomado y completado cuando se restablezca la conexión.
 
 ## Relacionado
 

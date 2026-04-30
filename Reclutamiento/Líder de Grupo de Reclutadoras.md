@@ -12,6 +12,8 @@ Rol intermedio del módulo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Eje
 
 ## Responsabilidades
 
+La Líder de Grupo ejecuta todas las responsabilidades operativas de una [[Reclutadora]], además de las siguientes funciones de supervisión:
+
 - Ejecuta todas las responsabilidades operativas de una [[Reclutadora]]: reclutamiento, entrevista, validación, aprobación y asignación de colaboradores.
 - Supervisa y monitorea el avance de las [[Reclutadora|Reclutadoras]] de su grupo.
 - Reporta al [[Manager de Reclutamiento]] el estatus y desempeño de su grupo.

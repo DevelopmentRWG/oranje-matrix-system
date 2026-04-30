@@ -33,7 +33,7 @@ Sistema de estados visuales que representa el ciclo de vida de una [[Requisició
 | ------------- | --------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------- |
 | Verde manzana | En elaboración        | [[Hotel/Supervisor\|SUP]] o [[Hotel/Manager del Hotel\|GH]] | En elaboración por el hotel.                             |
 | Verde         | Autorizada            | [[Hotel/Manager del Hotel\|GH]]                                        | Autorizada por el gerente del hotel.                     |
-| Amarillo      | En proceso            | [[Reclutadora]] (asignada por [[Manager de Reclutamiento]])            | En proceso de asignación de personal.                    |
+| Amarillo      | En proceso            | [[Reclutadora]] (toma de la bandeja compartida)                        | En proceso de asignación de personal.                    |
 | Azul claro    | Cubierta totalmente   | [[Reclutadora]]                                                        | Requisición cubierta totalmente.                         |
 | Rojo          | Cubierta parcialmente | [[Reclutadora]]                                                        | Requisición cubierta parcialmente.                       |
 | Morado        | Eliminada             | —                                                                      | Requisición eliminada físicamente.                       |
@@ -54,7 +54,7 @@ El hotel inicia la creación de la requisición y sus posiciones.
 
 La requisición queda lista para asignación. El sistema calcula automáticamente la urgencia (ver [[Semáforo de Urgencia de Requisición]]).
 
-**Avance →** el [[Manager de Reclutamiento]] recibe la requisición y la asigna a una [[Reclutadora]]; pasa a [[#Amarillo — En proceso|Amarillo]].
+**Avance →** una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] toma la requisición de la bandeja compartida; pasa a [[#Amarillo — En proceso|Amarillo]].
 
 ---
 

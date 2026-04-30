@@ -73,12 +73,22 @@ Reglas:
 
 Si cumple:
 1. La requisición cambia a **Status Green** (Requisición autorizada por el gerente del hotel) + fecha/hora.
-2. Se ejecuta [[#RUTINA - Journal Requisición]].
-3. **Por cada posición de la requisición**:
+2. El [[Inspector]] de la cabecera se asigna automáticamente según la [[Core/Catálogos/Zonas|zona]] del hotel.
+3. Se ejecuta [[#RUTINA - Journal Requisición]].
+4. **Por cada posición de la requisición**:
    - Se ejecuta [[#RUTINA - Prioridad de la posición automática]] usando la fecha de autorización y la fecha de inicio de la posición.
    - Se registra la prioridad calculada (Green / Yellow / Red — ver [[Semáforo de Urgencia de Requisición]]).
    - La posición cambia a **Status Orange** (Posición autorizada por el gerente del hotel) + fecha/hora.
    - Se ejecuta [[#RUTINA - Journal Posición]].
+
+### 2.2 Rechazar requisición (GH regresa al SUP)
+
+Si el GH rechaza la requisición:
+1. La requisición regresa a **Status Apple green** (En elaboración) con las observaciones del GH.
+2. Se ejecuta [[#RUTINA - Journal Requisición]].
+3. El [[Hotel/Supervisor|Supervisor]] corrige la **misma requisición** (mismo número/ID) y la reenvía para autorización.
+
+> [!important] No se genera una nueva requisición tras el rechazo. El SUP modifica y reenvía la requisición original con el mismo identificador.
 
 ---
 
@@ -101,7 +111,7 @@ Si se confirma:
 
 ## 5. Entrega a Reclutamiento (post-autorización)
 
-Una vez autorizada (Status Green), las posiciones de la requisición quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de la semana correspondiente a su fecha de inicio. La requisición llega al [[Manager de Reclutamiento]], que la asigna a una [[Reclutadora]]. El status pasa a **Yellow** (En proceso de asignación de personal por el reclutador).
+Una vez autorizada (Status Green), las posiciones de la requisición quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de la semana correspondiente a su fecha de inicio. La requisición queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]]. Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la toma de la bandeja y el status pasa a **Yellow** (En proceso de asignación de personal por el reclutador). Si ninguna la toma en 24 horas, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas.
 
 La reclutadora consulta el [[Core/Módulos/Schedule|Schedule]] del hotel para ver la demanda y las posiciones pendientes de cubrir, y busca match en la [[Pool de Colaboradores]]:
 - **Si hay match** → asigna el colaborador al hotel y lo registra en el [[Core/Módulos/Schedule|Schedule]].
@@ -137,8 +147,8 @@ Ver [[Semáforo de Urgencia de Requisición]]. Green (>120 h), Yellow (72–120 
 
 ### RUTINA - Número de requisición automática
 Genera el identificador tomando fecha/hora del día + homoclave aleatoria:
-- Año (4 dígitos) + Mes (2) + Día (2) + Hora (2, formato 24 h) + Minutos (2) + Homoclave (2 caracteres alfanuméricos aleatorios).
-- Ejemplo: `202604081632V1`.
+- Año (4 dígitos) + Mes (2) + Día (2) + Hora (2, formato 24 h) + Minutos (2) + Homoclave (2 caracteres alfanuméricos aleatorios: letras y/o dígitos).
+- Ejemplo: `202604081632V1` — donde `V1` es la homoclave.
 
 ### RUTINA - Número de posición automática
 Mismo formato que el número de requisición. Ejemplo: `202604081632V1`.

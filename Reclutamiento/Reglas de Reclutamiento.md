@@ -30,18 +30,32 @@ El proceso de reclutamiento de un colaborador consta de fases definidas en el [[
 
 - Colaborador aprobado ingresa al [[Pool de Colaboradores]] con [[Semáforo del Colaborador]] en estado **Blanco**.
 
-## Requisiciones — recepción y asignación
+## Requisiciones — recepción y asignación (Self-Pick)
 
 | Paso | Acción | Responsable |
 |---|---|---|
-| 1 | Recibe la requisición autorizada por el [[Hotel/Manager del Hotel\|Manager del Hotel]] | [[Manager de Reclutamiento]] |
-| 2 | Distribuye la requisición a una [[Reclutadora]] | [[Manager de Reclutamiento]] |
+| 1 | La requisición autorizada por el [[Hotel/Manager del Hotel\|Manager del Hotel]] queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] | Sistema |
+| 2 | Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] toma la requisición de la bandeja | [[Reclutadora]] / [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder]] |
 | 3 | La requisición pasa a **Amarillo** (En proceso) en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] | Sistema |
 | 4 | La [[Reclutadora]] consulta el [[Core/Módulos/Schedule\|Schedule]] del hotel para ver posiciones pendientes | [[Reclutadora]] |
 | 5 | Si hay match → asigna al colaborador y lo registra en el Schedule | [[Reclutadora]] |
-| 6 | Si no hay match → la requisición queda en espera | — |
+| 6 | Si no hay match → la [[Reclutadora]] busca activamente fuera del sistema (redes sociales, grupos externos, etc.) | [[Reclutadora]] |
 
-> [!important] Las requisiciones **nunca** llegan directamente a las Reclutadoras. Siempre pasan por el [[Manager de Reclutamiento]].
+> [!important] **Bandeja global con filtros** — todas las Reclutadoras ven todas las requisiciones disponibles. Pueden filtrar por zona, urgencia, posición y otros criterios. La bandeja no está segmentada por grupo ni por Reclutadora.
+
+> [!important] **Concurrencia: primera en confirmar gana** — si dos Reclutadoras intentan tomar la misma requisición simultáneamente, el sistema la bloquea para la primera en confirmar. La segunda recibe un mensaje indicando que la requisición ya fue tomada.
+
+> [!important] **Auto-asignación a las 24 horas** — si una requisición lleva más de **24 horas** sin ser tomada (contadas desde la autorización), el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El [[Manager de Reclutamiento]] no recibe notificación; el proceso es transparente.
+
+> [!warning] **Escalación al Líder de Grupo por timeout sin match** — cuando la [[Reclutadora]] no logra cubrir la requisición buscando dentro y fuera del sistema, aplica el siguiente plazo de escalación hacia el [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] según el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]]:
+>
+> | Color de urgencia | Condición | Plazo para escalar |
+> |---|---|---|
+> | Rojo | Menos de 72h para inicio | 24h sin cubrir |
+> | Amarillo | Entre 72h y 120h para inicio | 48h sin cubrir |
+> | Verde fuerte | Más de 120h para inicio | 72h sin cubrir |
+>
+> Durante todo este proceso la requisición permanece en estado **Amarillo** en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]].
 
 ## Cobertura de posiciones
 
@@ -93,8 +107,7 @@ Al asignar colaboradores del [[Pool de Colaboradores]] a las posiciones de una r
 | Entrevista inicial y captura de datos | Sí | Sí (hereda) | No |
 | Validar y aprobar colaborador | Sí | Sí (hereda) | No |
 | Habilitar acceso a paneles | Sí | Sí (hereda) | No |
-| Recibir requisición autorizada | No | No | Sí |
-| Distribuir requisiciones | No | No | Sí |
+| Tomar requisiciones de la bandeja | Sí | Sí (hereda) | Solo excepciones (balanceo, líder ausente, error de asignación) |
 | Consultar Blacklist | Sí (obligatorio) | Sí (hereda) | — |
 | Revisar casos de Blacklist | No | No | Sí |
 | Asignación temporal (Café) | Sí | Sí (hereda) | No |
