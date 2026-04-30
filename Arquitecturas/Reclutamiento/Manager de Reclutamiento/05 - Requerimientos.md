@@ -14,7 +14,6 @@ aliases:
 
 | ID     | Requerimiento                                 | Prioridad |
 | ------ | --------------------------------------------- | --------- |
-| RF-05  | Aprobar marcado como cubierta (cierre)        | 🔴 Alta   |
 | RF-06  | Buscar candidatos en Pool                     | 🔴 Alta   |
 | RF-12  | Agregar a Blacklist                           | 🔴 Alta   |
 | RF-13  | Aprobar disputa de Blacklist                  | 🟡 Media  |

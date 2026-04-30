@@ -17,7 +17,7 @@ aliases:
 | RF-02  | Tomar requisición (Self-Pick)         | 🔴 Alta   |
 | RF-03  | Liberar requisición                   | 🟡 Media  |
 | RF-04  | Marcar requisición en proceso         | 🔴 Alta   |
-| RF-05  | Marcar requisición como cubierta      | 🔴 Alta   |
+| RF-05  | Marcar requisición como cubierta + **Aprobar cierre del grupo** | 🔴 Alta   |
 | RF-06  | Buscar candidatos en Pool             | 🔴 Alta   |
 | RF-07  | Crear colaborador (Fase 1)            | 🔴 Alta   |
 | RF-08  | Validar alta en app (Fase 2)          | 🔴 Alta   |

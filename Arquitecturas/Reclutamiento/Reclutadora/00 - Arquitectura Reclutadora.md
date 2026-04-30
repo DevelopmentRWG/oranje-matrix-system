@@ -252,22 +252,12 @@ SIDEBAR
 
 ---
 
-## 📅 Módulo SCHEDULE *(consulta)*
-
-- Vista del [[Core/Módulos/Schedule|Schedule]] semanal del hotel.
-- Permite ver posiciones pendientes de cubrir y semana operativa del hotel antes de asignar un colaborador.
-- Útil para confirmar horarios y disponibilidad antes de hacer una asignación.
-- Sin acciones de gestión (eso lo hace el [[Hotel/Manager del Hotel|Manager del Hotel]]).
-
-**Cómo se usa:**
-1. Tomo una requisición.
-2. Reviso el Schedule del hotel para ver qué posiciones están vacantes en qué turnos.
-3. Voy al Pool y busco colaboradores que encajen.
-4. Asigno y la asignación queda registrada en el Schedule del hotel.
+> [!info]
+> **Schedule del Hotel** no es un módulo de la Reclutadora — es una vista contextual del módulo Hotel que se consulta durante el proceso de asignar (dentro del módulo Reclutamiento). Permite ver horarios y posiciones vacantes antes de asignar un colaborador.
 
 ---
 
-## ⚫ Módulo BLACKLIST *(solo consulta)*
+## ⚫ Módulo BLACKLIST
 
 ### Lista
 - Todos los vetados

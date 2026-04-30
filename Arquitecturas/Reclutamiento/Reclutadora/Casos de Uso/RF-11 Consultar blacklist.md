@@ -22,4 +22,4 @@ La consulta es obligatoria antes de cada asignación. Si el candidato está en B
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Módulo Pool / Asignación` → AUTOMATICO → `Sistema verifica si candidato está en Blacklist` → Si está → `Bloquea con alerta + Muestra motivo del veto` / Si no está → `Permite continuar con asignación`
+`Módulo Reclutamiento` (al asignar colaborador) → AUTOMATICO → `Sistema verifica si candidato está en Blacklist` → Si está → `Bloquea con alerta + Muestra motivo del veto` / Si no está → `Permite continuar con asignación`

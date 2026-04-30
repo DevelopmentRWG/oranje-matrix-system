@@ -164,29 +164,14 @@ Acciones de supervisión:
 
 ---
 
-## 📅 Módulo SCHEDULE (consulta global)
-
-- Vista del Schedule de cualquier hotel
-- Solo consulta — no acciones de gestión
-
----
-
-## ⚙️ Módulo CONFIGURACIÓN
-
-- Catálogos (consulta — CRUD pertenece al Admin)
-- Notificaciones: configurar tipos
-- Plantillas de reportes
-
----
-
 ## Diferencias clave vs Líder de Grupo
 
 | Aspecto | Líder de Grupo | Manager de Reclutamiento |
 |---|---|---|
-| Toma requisiciones | Sí (Self-Pick) | Sí pero excepcional |
-| Pool, Schedule | Acceso operativo | Acceso completo |
-| Blacklist | Solo consulta | CRUD completo + decisión final |
-| Mi Grupo / Mi Equipo | Ve Reclutadoras | Ve Líderes + Reclutadoras + gestión |
+| Toma requisiciones (Self-Pick) | Sí | Sí pero excepcional |
+| Reclutamiento (Pool + Asignación) | Acceso operativo | Acceso completo |
+| Blacklist | Consultar + Agregar | CRUD completo + decisión final |
+| Mi Grupo / Mi Equipo | Ve Reclutadoras del grupo | Ve Líderes + Reclutadoras + gestión |
 | Resolver disputas | ❌ | ✅ decisión final |
 | Reportes | Genera y envía | Recibe + genera globales |
 

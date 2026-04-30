@@ -18,7 +18,8 @@ aliases:
 | Requisición   | Tomar requisición (Self-Pick)   | ➕ Crear   | Toma libremente igual que Reclutadora                      |
 | Requisición   | Liberar requisición             | 📝 Editar | Devuelve a la cola si no puede cubrirla                    |
 | Requisición   | Marcar como en proceso          | 📝 Editar | Cambia estado a "en proceso"                               |
-| Requisición   | Marcar como cubierta            | 📝 Editar | Solicita cierre cuando posiciones al 100%                  |
+| Requisición   | Marcar como cubierta            | 📝 Editar | Cuando él/ella tomó la requisición y posiciones al 100%    |
+| Requisición   | **Aprobar cierre de cobertura** | ✓ Aprobar | **Aprueba cierres marcados por sus Reclutadoras** (semáforo Azul claro) |
 | Reclutamiento | Buscar candidatos en Pool       | 👁️ Ver   | Filtros por posición, zona, modalidad, inglés              |
 | Reclutamiento | Crear colaborador (Fase 1)      | ➕ Crear   | Alta tras entrevista                                       |
 | Reclutamiento | Editar colaborador              | 📝 Editar | Captura datos básicos                                      |

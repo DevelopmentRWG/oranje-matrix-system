@@ -315,16 +315,12 @@ SIDEBAR
 
 ---
 
-## 📅 Módulo SCHEDULE *(consulta)*
-
-- Vista del [[Core/Módulos/Schedule|Schedule]] semanal del hotel.
-- Permite ver posiciones pendientes de cubrir antes de asignar un colaborador.
-- Sin acciones de gestión (eso lo hace el [[Hotel/Manager del Hotel|Manager del Hotel]]).
-- Útil como contexto previo a distribuir o tomar una requisición.
+> [!info]
+> **Schedule del Hotel** no es un módulo del Líder — es una vista contextual del módulo Hotel que se consulta durante el proceso de asignar (dentro del módulo Reclutamiento). Útil como contexto previo a tomar o trabajar una requisición.
 
 ---
 
-## ⚫ Módulo BLACKLIST *(solo consulta)*
+## ⚫ Módulo BLACKLIST
 
 ### Lista
 - Todos los vetados
@@ -377,7 +373,7 @@ Reclutadora (o Líder) cubre con colaboradores del Pool
 ### Diferencias clave vs el Reclutador
 | Aspecto | Reclutador | Líder de Grupo |
 |---|---|---|
-| Pool, Requisiciones, Blacklist, Schedule | Acceso completo | Acceso completo (mismas funciones) |
+| Reclutamiento, Requisición, Blacklist | Acceso completo | Acceso completo (mismas funciones) |
 | KPIs Dashboard | Personales | Personales **+ del grupo** |
 | Distribuir requisiciones | ❌ | ✅ acción principal |
 | Tomar requisición para sí | ✅ (única opción) | ✅ (caso especial) |

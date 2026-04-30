@@ -22,4 +22,4 @@ La búsqueda devuelve resultados en menos de 2 segundos. Permite combinar al men
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Módulo Pool` → MANUAL → `Aplicar filtros` → AUTOMATICO → `Sistema filtra Pool en <2s` → `Lista de candidatos disponibles` → MANUAL → `Click en candidato` → `Vista de detalle del colaborador`
+`Módulo Reclutamiento → Pool` → MANUAL → `Aplicar filtros` → AUTOMATICO → `Sistema filtra Pool en <2s` → `Lista de candidatos disponibles` → MANUAL → `Click en candidato` → `Vista de detalle del colaborador`

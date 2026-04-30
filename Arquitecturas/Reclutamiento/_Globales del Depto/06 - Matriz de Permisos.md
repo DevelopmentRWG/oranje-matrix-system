@@ -21,7 +21,7 @@ aliases:
 | | 🎯 Tomar requisición (Self-Pick) | Crear | Crear | Crear | Auto | ⏸️ |
 | | 📝 Liberar requisición tomada | C · E | C · E | C · E | Auto | ⏸️ |
 | | 📝 Marcar requisición en proceso | C · E | C · E | — | Auto | ⏸️ |
-| | ✅ Marcar requisición como cubierta | C · E | C · E | C · E | Auto | ⏸️ |
+| | ✅ Marcar requisición como cubierta | C · E (solicita) | ✓ Aprobar (cierre) | Ver | Auto | ⏸️ |
 | | 👁️ Ver vista global | — | Ver | Ver | Auto | ⏸️ |
 | | ⚠️ Asignar manualmente (excepción) | — | — | C · E | — | ⏸️ |
 | | 🚦 Calcular Semáforo de Urgencia | — | — | — | Auto | ⏸️ |

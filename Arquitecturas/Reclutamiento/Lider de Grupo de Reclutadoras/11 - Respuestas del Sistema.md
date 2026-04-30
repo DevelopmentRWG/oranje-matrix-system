@@ -18,7 +18,8 @@ aliases:
 | Crea nuevo colaborador     | Mensaje de confirmación; redirige a lista                               |
 | Valida alta en App         | Habilita accesos automáticamente; notifica al colaborador               |
 | Asigna colaborador a hotel | Actualiza cobertura; refleja en Schedule; notifica al Manager del Hotel |
-| Marca requisición cubierta | Notifica al Manager para validar cierre                                 |
+| Marca requisición cubierta | Sistema cierra (Azul claro); semáforo del hotel notifica el cierre      |
+| Reclutadora del grupo marca cubierta | Llega solicitud al Líder para aprobar el cierre               |
 
 ---
 

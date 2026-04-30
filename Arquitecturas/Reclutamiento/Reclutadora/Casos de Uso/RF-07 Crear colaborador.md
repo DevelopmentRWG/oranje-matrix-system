@@ -22,4 +22,4 @@ El registro se crea con estado "Pendiente de alta en app". Se envía link al can
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Módulo Pool` → MANUAL → `Click en "Nuevo Colaborador"` → `Llena formulario Fase 1` → `Confirmar` → AUTOMATICO → `Crea registro + Envía link al candidato + Notifica a Reclutadora cuando completa Fase 2`
+`Módulo Reclutamiento → Pool` → MANUAL → `Click en "Nuevo Colaborador"` → `Llena formulario Fase 1` → `Confirmar` → AUTOMATICO → `Crea registro + Envía link al candidato + Notifica a Reclutadora cuando completa Fase 2`
