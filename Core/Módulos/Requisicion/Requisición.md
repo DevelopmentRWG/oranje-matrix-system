@@ -51,7 +51,7 @@ Cada requisición puede incluir una o más posiciones. Cada posición registra:
 | Notas                    | Aclaraciones adicionales del hotel.                                                  |
 
 > [!note] Sobre la fecha de fin
-> La posición tiene **fecha de inicio** pero **no fecha de fin** definida. La posición termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] manda al colaborador a descansar (estado **Rosa - Stand-by** en el [[Semáforo del Colaborador]]).
+> La posición tiene **fecha de inicio** pero **no fecha de fin** definida. La posición termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] manda al colaborador a descansar (estado **Rosa - Stand-by** en el [[Semáforo del Colaborador]]).
 
 ## Niveles de urgencia
 

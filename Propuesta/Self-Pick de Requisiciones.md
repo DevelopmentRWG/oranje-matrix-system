@@ -32,16 +32,29 @@ La Reclutadora cubre con colaboradores del Pool
 
 - **Sin límite de requisiciones simultáneas** — cada Reclutadora atiende todas las que le lleguen según la demanda.
 - **Sin restricciones por zona o idioma** — las Reclutadoras reciben candidatos de todas partes y los asignan según las [[Core/Módulos/Reglas de Negocio|Reglas de Negocio]].
-- **Alerta de 24 horas** — si una requisición lleva más de 24 horas sin ser tomada, el [[Manager de Reclutamiento]] recibe alerta y la asigna manualmente.
+- **Bandeja global con filtros** — todas las Reclutadoras ven todas las requisiciones disponibles. Pueden filtrar por zona, urgencia, posición y otros criterios, pero la bandeja no está segmentada por grupo ni por Reclutadora.
+- **Concurrencia: primera en confirmar gana** — si dos Reclutadoras intentan tomar la misma requisición al mismo tiempo, el sistema la bloquea para la primera en confirmar. La segunda recibe un mensaje indicando que la requisición ya fue tomada.
+- **Auto-asignación a las 24 horas** — si una requisición lleva más de 24 horas sin ser tomada (contadas desde la autorización), el sistema la asigna automáticamente a la Reclutadora con menor carga de requisiciones activas en ese momento. El [[Manager de Reclutamiento]] no recibe notificación; el proceso es transparente.
 
 ## Intervención del Manager
 
 El [[Manager de Reclutamiento]] solo interviene en casos excepcionales:
 
-- Requisición varada sin tomar (después de 24 horas)
 - Balanceo entre grupos
 - Líder ausente
 - Corrección de error de asignación
+
+## Escalación al Líder de Grupo
+
+Cuando la [[Reclutadora]] no encuentra match en el [[Pool de Colaboradores]] y ha buscado activamente fuera del sistema (redes sociales, grupos externos, etc.), aplica un timeout de escalación hacia el [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]]. El plazo depende del estado del [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia de Requisición]]:
+
+| Color de urgencia | Condición | Plazo para escalar |
+|---|---|---|
+| Rojo | Menos de 72h para inicio | 24h sin cubrir |
+| Amarillo | Entre 72h y 120h para inicio | 48h sin cubrir |
+| Verde fuerte | Más de 120h para inicio | 72h sin cubrir |
+
+> [!important] Durante todo este proceso la requisición permanece en estado **Amarillo** en el [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]]. La escalación va al [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]], no al [[Manager de Reclutamiento]].
 
 ## Documentos actualizados
 

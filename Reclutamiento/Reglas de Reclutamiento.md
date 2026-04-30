@@ -39,9 +39,23 @@ El proceso de reclutamiento de un colaborador consta de fases definidas en el [[
 | 3 | La requisición pasa a **Amarillo** (En proceso) en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] | Sistema |
 | 4 | La [[Reclutadora]] consulta el [[Core/Módulos/Schedule\|Schedule]] del hotel para ver posiciones pendientes | [[Reclutadora]] |
 | 5 | Si hay match → asigna al colaborador y lo registra en el Schedule | [[Reclutadora]] |
-| 6 | Si no hay match → la requisición queda en espera | — |
+| 6 | Si no hay match → la [[Reclutadora]] busca activamente fuera del sistema (redes sociales, grupos externos, etc.) | [[Reclutadora]] |
 
-> [!important] Si una requisición lleva más de **24 horas** sin ser tomada, el [[Manager de Reclutamiento]] recibe alerta y la asigna manualmente.
+> [!important] **Bandeja global con filtros** — todas las Reclutadoras ven todas las requisiciones disponibles. Pueden filtrar por zona, urgencia, posición y otros criterios. La bandeja no está segmentada por grupo ni por Reclutadora.
+
+> [!important] **Concurrencia: primera en confirmar gana** — si dos Reclutadoras intentan tomar la misma requisición simultáneamente, el sistema la bloquea para la primera en confirmar. La segunda recibe un mensaje indicando que la requisición ya fue tomada.
+
+> [!important] **Auto-asignación a las 24 horas** — si una requisición lleva más de **24 horas** sin ser tomada (contadas desde la autorización), el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El [[Manager de Reclutamiento]] no recibe notificación; el proceso es transparente.
+
+> [!warning] **Escalación al Líder de Grupo por timeout sin match** — cuando la [[Reclutadora]] no logra cubrir la requisición buscando dentro y fuera del sistema, aplica el siguiente plazo de escalación hacia el [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] según el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]]:
+>
+> | Color de urgencia | Condición | Plazo para escalar |
+> |---|---|---|
+> | Rojo | Menos de 72h para inicio | 24h sin cubrir |
+> | Amarillo | Entre 72h y 120h para inicio | 48h sin cubrir |
+> | Verde fuerte | Más de 120h para inicio | 72h sin cubrir |
+>
+> Durante todo este proceso la requisición permanece en estado **Amarillo** en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]].
 
 ## Cobertura de posiciones
 
@@ -93,7 +107,7 @@ Al asignar colaboradores del [[Pool de Colaboradores]] a las posiciones de una r
 | Entrevista inicial y captura de datos | Sí | Sí (hereda) | No |
 | Validar y aprobar colaborador | Sí | Sí (hereda) | No |
 | Habilitar acceso a paneles | Sí | Sí (hereda) | No |
-| Tomar requisiciones de la bandeja | Sí | Sí (hereda) | Solo excepciones (>24h sin tomar, balanceo) |
+| Tomar requisiciones de la bandeja | Sí | Sí (hereda) | Solo excepciones (balanceo, líder ausente, error de asignación) |
 | Consultar Blacklist | Sí (obligatorio) | Sí (hereda) | — |
 | Revisar casos de Blacklist | No | No | Sí |
 | Asignación temporal (Café) | Sí | Sí (hereda) | No |

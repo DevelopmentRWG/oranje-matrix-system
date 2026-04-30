@@ -62,14 +62,14 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 
 ### Disponibilidad y asignaciones
 
-- **Amarillo (Disponible voluntario):** lo activa el propio colaborador durante un descanso. Es el **único estado que el colaborador puede activar por sí mismo**.
-- **Café (Asignación temporal):** la [[Reclutadora]] asigna temporalmente al colaborador. Al terminar la jornada temporal, vuelve a Verde fuerte o Naranja según su estado previo.
+- **Amarillo (Disponible voluntario):** lo activa el propio colaborador **desde la app, sin aprobación de nadie**. Es autoservicio y el **único estado que el colaborador puede activar por sí mismo**.
+- **Café (Asignación temporal):** la [[Reclutadora]] asigna temporalmente al colaborador y define la duración (días asignados) al momento de la asignación. El estado se cierra automáticamente al vencer esos días; al cerrarse, vuelve a Verde fuerte o Naranja según su estado previo.
 
 ### Stand-by (Rosa)
 
-- Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] puede poner a un colaborador en Rosa.
+- El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en Rosa.
 - Indica espera por decisión del hotel (vacaciones, temporada baja).
-- La posición no tiene fecha de fin; termina cuando el Manager del Hotel retira al colaborador del estado Rosa. Al salir, regresa a Verde fuerte.
+- La posición no tiene fecha de fin; termina cuando el Manager del Hotel o el Supervisor retira al colaborador del estado Rosa. Al salir, regresa a Verde fuerte.
 
 ## Reglas de incidencia
 
@@ -105,7 +105,13 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 ### Mecanismo de ponchado
 
 - El colaborador poncha vía **QR** generado por el [[Hotel/Manager del Hotel|Manager del Hotel]].
-- Ponches válidos: **Entrada**, **Lunch**, **Salida** (exactamente tres).
+- Los ponches se registran por pares de entrada/salida para cada periodo (exactamente seis):
+  - **Entrada** — inicio de jornada
+  - **Salida Lunch** — sale a comer
+  - **Entrada Lunch** — regresa de comer
+  - **Salida Break** — sale a descanso
+  - **Entrada Break** — regresa de descanso
+  - **Salida** — fin de jornada
 - El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente.
 
 ### Deducción de Lunch
@@ -119,7 +125,7 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 | Sin ponche de Lunch | 30 min (auto-deducción) |
 
 - **Horas brutas** = Salida − Entrada
-- **Horas netas** = Horas brutas − Deducción de Lunch
+- **Horas netas** = Horas brutas − Deducción de Lunch − Breaks reales
 - Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
 
 ### Indicador de Lunch Extendido

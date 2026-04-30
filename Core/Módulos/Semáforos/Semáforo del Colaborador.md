@@ -56,14 +56,14 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 ### Disponibilidad y asignaciones temporales
 
 - **Naranja → Verde fuerte**: cuando el colaborador queda libre (fin de asignación fija o reincorporado).
-- **Amarillo**: lo pone el colaborador (disponible voluntario durante un descanso).
-- **Verde fuerte ↔ Café**: la [[Reclutadora]] lo asigna temporalmente (→ Café); al terminar la jornada temporal, vuelve a `Verde fuerte` o `Naranja` según su estado previo.
+- **Amarillo**: lo activa el propio colaborador desde la app, sin aprobación de nadie. Es autoservicio (disponible voluntario durante un descanso).
+- **Verde fuerte ↔ Café**: la [[Reclutadora]] lo asigna temporalmente (→ Café). La [[Reclutadora]] define la duración (días asignados) al momento de la asignación. El estado se cierra automáticamente al vencer esos días; al cerrarse, vuelve a `Verde fuerte` o `Naranja` según su estado previo.
 
 ### Incidencias
 
 - **→ Morado**: el sistema lo marca cuando el colaborador no asiste sin justificación.
 - **3 inasistencias → Negro**: [[Core/Módulos/Blacklist|Blacklist]] automático por sistema.
-- **Rosa**: lo pone el hotel ([[Hotel/Manager del Hotel]]) cuando manda al colaborador a descansar (vacaciones, temporada baja). Al reactivarlo, regresa a **Verde fuerte**.
+- **Rosa**: lo activa el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] cuando mandan al colaborador a descansar (vacaciones, temporada baja). Al reactivarlo, regresa a **Verde fuerte**.
 - **Rojo**: lo pone el hotel ([[Hotel/Manager del Hotel]]). Luego [[Inspector]] investiga el caso y el resultado lo lleva a:
 	- **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), o
 	- **Verde fuerte** (reincorporado).
