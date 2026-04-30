@@ -101,7 +101,7 @@ Si se confirma:
 
 ## 5. Entrega a Reclutamiento (post-autorización)
 
-Una vez autorizada (Status Green), las posiciones de la requisición quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de la semana correspondiente a su fecha de inicio. La requisición llega al [[Manager de Reclutamiento]], que la asigna a una [[Reclutadora]]. El status pasa a **Yellow** (En proceso de asignación de personal por el reclutador).
+Una vez autorizada (Status Green), las posiciones de la requisición quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de la semana correspondiente a su fecha de inicio. La requisición queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]]. Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la toma de la bandeja y el status pasa a **Yellow** (En proceso de asignación de personal por el reclutador). Si ninguna la toma en 24 horas, el [[Manager de Reclutamiento]] recibe alerta y la asigna manualmente.
 
 La reclutadora consulta el [[Core/Módulos/Schedule|Schedule]] del hotel para ver la demanda y las posiciones pendientes de cubrir, y busca match en la [[Pool de Colaboradores]]:
 - **Si hay match** → asigna el colaborador al hotel y lo registra en el [[Core/Módulos/Schedule|Schedule]].

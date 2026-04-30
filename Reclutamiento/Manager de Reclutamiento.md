@@ -11,8 +11,7 @@ Rol responsable de coordinar la entrada de requisiciones y supervisar casos espe
 
 ## Responsabilidades
 
-- Recibe [[Requisición|requisiciones]] aprobadas por el [[Hotel/Manager del Hotel|Manager del Hotel]].
-- Distribuye las requisiciones a las [[Reclutadora|reclutadoras]].
+- Monitorea la bandeja compartida de [[Requisición|requisiciones]] y asigna manualmente solo excepciones (requisiciones sin tomar >24h, balanceo de carga).
 - Revisa casos de [[Core/Módulos/Blacklist|Blacklist]].
 - Supervisa a las [[Líder de Grupo de Reclutadoras|Líderes de Grupo de Reclutadoras]].
 - Tiene visibilidad del **Indicador de Lunch Extendido** en el [[Timesheet]] para evaluar patrones de comportamiento de colaboradores activos.

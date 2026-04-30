@@ -11,7 +11,7 @@ Rol operativo del módulo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Ejec
 
 ## Responsabilidades
 
-- Recibe la [[Requisición]] asignada por el [[Manager de Reclutamiento]].
+- Toma [[Requisición|requisiciones]] de la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]].
 - Busca en la [[Pool de Colaboradores|pool]] a los colaboradores disponibles que cumplan la requisición.
 - Consulta la [[Core/Módulos/Blacklist|Blacklist]] cuando un candidato se postula, para evitar volver a reclutar a alguien vetado.
 - Realiza la entrevista inicial y captura la información básica del colaborador:
