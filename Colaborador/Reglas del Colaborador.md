@@ -89,7 +89,7 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 - El [[Inspector]] investiga el caso y resuelve hacia:
   - **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), si la disputa es a favor del hotel.
   - **Verde fuerte** (reincorporado), si la disputa es a favor del colaborador.
-- Los casos de Blacklist son revisados por el [[Manager de Reclutamiento]].
+- El [[Manager de Reclutamiento]] tiene visibilidad de los casos de Blacklist como supervisión posterior, pero la decisión la toma el [[Inspector]].
 
 ## Protección por Accidente Laboral (Gris)
 

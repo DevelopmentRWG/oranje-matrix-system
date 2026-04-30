@@ -33,8 +33,8 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Es el único estado que el colaborador puede activar por sí mismo
 
 ### Asignación temporal (Café)
-- La [[Reclutadora]] asigna temporalmente al colaborador (→ Café)
-- Al terminar la jornada temporal, vuelve a Verde fuerte o Naranja según su estado previo
+- La [[Reclutadora]] asigna temporalmente al colaborador (→ Café) y define la duración en días al momento de la asignación
+- El estado se cierra automáticamente al vencer los días asignados; al cerrarse, vuelve a Verde fuerte o Naranja según su estado previo
 
 ### Estado Rosa (Stand-by)
 - El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en estado Rosa

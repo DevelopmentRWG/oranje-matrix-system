@@ -15,7 +15,7 @@ Sistema de gestión organizacional para staffing de hoteles. Documenta los roles
 
 Búsqueda, entrevista y asignación de personal a hoteles.
 
-- [[Manager de Reclutamiento]] — monitorea la bandeja de requisiciones, asigna manualmente excepciones y supervisa casos de Blacklist.
+- [[Manager de Reclutamiento]] — monitorea la operación de reclutamiento e interviene solo en casos excepcionales: balanceo entre grupos, líder ausente o corrección de error de asignación.
 - [[Líder de Grupo de Reclutadoras]] — recluta y supervisa el desempeño de un grupo de reclutadoras.
 - [[Reclutadora]] — busca, entrevista, valida y asigna colaboradores.
 

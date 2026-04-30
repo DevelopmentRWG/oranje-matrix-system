@@ -63,7 +63,7 @@ Al autorizar una requisición, el sistema ejecuta automáticamente:
 ## Ciclo de vida de la posición
 
 - Cada posición tiene **fecha de inicio pero no fecha de fin** definida.
-- La posición termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] pone al colaborador en **Stand-by** (estado Rosa en el [[Semáforo del Colaborador]]).
+- La posición termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en **Stand-by** (estado Rosa en el [[Semáforo del Colaborador]]).
 
 ## Eliminación de requisición
 

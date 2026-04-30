@@ -68,7 +68,7 @@ El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]
 ## Operación diaria
 
 - Su asignación semanal se registra en el [[Core/Módulos/Schedule|Schedule]].
-- Sus horas trabajadas se registran en el [[Timesheet]] mediante ponches vía QR (Entrada, Lunch, Salida).
+- Sus horas trabajadas se registran en el [[Timesheet]] mediante ponches vía QR por pares de entrada/salida: Entrada, Salida Lunch, Entrada Lunch, Salida Break, Entrada Break, Salida.
 
 ## Relacionado
 

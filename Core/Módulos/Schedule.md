@@ -29,7 +29,7 @@ Tablero de planeación semanal del hotel. Es el **eje central de la operación**
 ### Timesheet (registro real de horas)
 
 - Cada colaborador inscrito en el schedule tiene su propio [[Timesheet]].
-- El schedule es la base sobre la que se genera el timesheet y se habilita el ponchado (entrada, lunch, salida).
+- El schedule es la base sobre la que se genera el timesheet y se habilita el ponchado por pares de entrada/salida (Entrada, Salida Lunch, Entrada Lunch, Salida Break, Entrada Break, Salida).
 - Si el schedule se modifica después de que el timesheet fue creado, el [[Timesheet]] se actualiza automáticamente para reflejar los cambios.
 
 ## Quién lo gestiona
