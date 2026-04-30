@@ -100,6 +100,13 @@ Al asignar colaboradores del [[Pool de Colaboradores]] a las posiciones de una r
 | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo de Reclutadoras]] | [[Reclutadora\|Reclutadoras]] de su grupo | [[Manager de Reclutamiento]] |
 | [[Reclutadora]] | — | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] |
 
+## Supervisión de Calidad (QA)
+
+- Un [[QA/Operador de QA|Operador de QA]] está asignado de forma fija al departamento de Reclutamiento.
+- QA **no ejecuta** la operación de Reclutamiento; solo observa, mide y retroalimenta.
+- Las métricas específicas que el Operador de QA monitorea para Reclutamiento están definidas en [[QA/Métricas y KPIs por Departamento#Reclutamiento|Métricas y KPIs — Reclutamiento]].
+- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+
 ## Resumen de responsabilidades por rol
 
 | Acción | [[Reclutadora]] | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] | [[Manager de Reclutamiento]] |

@@ -227,6 +227,11 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 ### Escalamiento
 - Departamento en Rojo sin mejora tras notificación → el [[QA/Manager de QA|Manager de QA]] escala a dirección
 
+### Métricas y KPIs por departamento
+- Cada departamento tiene entre 5 y 6 KPIs concretos que el [[QA/Operador de QA|Operador de QA]] monitorea
+- Cada KPI tiene umbrales definidos (Meta / En riesgo / Crítico) que alimentan el [[Indicador de Calidad]]
+- Referencia completa: [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]
+
 ## Reclutamiento y Pool
 
 ### Naturaleza del flujo

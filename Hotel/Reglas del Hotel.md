@@ -149,6 +149,13 @@ El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel e
 - Tiene **visibilidad global** del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de todos los departamentos.
 - **No aprueba requisiciones** directamente; esa responsabilidad recae en los Gerentes de Departamento.
 
+## Supervisión de Calidad (QA)
+
+- Un [[QA/Operador de QA|Operador de QA]] está asignado de forma fija al departamento de Hotel.
+- QA **no ejecuta** la operación del Hotel; solo observa, mide y retroalimenta.
+- Las métricas específicas que el Operador de QA monitorea para Hotel están definidas en [[QA/Métricas y KPIs por Departamento#Hotel|Métricas y KPIs — Hotel]].
+- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+
 ## Resumen de responsabilidades por rol
 
 | Acción | [[Hotel/Manager del Hotel\|Manager del Hotel]] | [[Hotel/Supervisor\|Supervisor]] | [[Hotel/Manager General\|Manager General]] |

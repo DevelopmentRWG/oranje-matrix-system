@@ -141,6 +141,13 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 - La [[Reclutadora]] debe consultar la [[Core/Módulos/Blacklist|Blacklist]] antes de reclutar a un candidato.
 - Colaborador aprobado ingresa al Pool con [[Semáforo del Colaborador]] en estado Blanco.
 
+## Supervisión de Calidad (QA)
+
+- Un [[QA/Operador de QA|Operador de QA]] está asignado de forma fija a la supervisión del ámbito Colaborador.
+- QA **no ejecuta** la gestión del Colaborador; solo observa métricas agregadas del pool y el ciclo de vida.
+- Las métricas específicas que el Operador de QA monitorea para Colaborador están definidas en [[QA/Métricas y KPIs por Departamento#Colaborador|Métricas y KPIs — Colaborador]].
+- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del ámbito Colaborador alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+
 ## Relacionado
 
 - [[Semáforo del Colaborador]]

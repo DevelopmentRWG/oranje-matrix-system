@@ -111,6 +111,7 @@ Una vez que el hotel alcanza el status **Naranja** en el [[Core/Módulos/Semáfo
 
 - Un [[QA/Operador de QA\|Operador de QA]] está asignado de forma fija al departamento de Inspección.
 - QA **no ejecuta** la operación de Inspección; solo observa, mide y retroalimenta.
+- Las métricas específicas que el Operador de QA monitorea para Inspección están definidas en [[QA/Métricas y KPIs por Departamento#Inspección|Métricas y KPIs — Inspección]].
 - Si el [[Core/Módulos/Semáforos/Indicador de Calidad\|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
 
 ## Resumen de responsabilidades por rol

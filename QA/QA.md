@@ -25,6 +25,14 @@ Departamento encargado de supervisar la calidad operativa de todos los departame
 
 - [[QA/Reglas de QA|Reglas de QA]]
 
+### Métricas
+
+- [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]
+
+### Dashboard
+
+- [[QA/Dashboard de QA|Dashboard de QA]]
+
 ### Departamentos supervisados
 
 - [[Inspección/Inspector|Inspección]]
