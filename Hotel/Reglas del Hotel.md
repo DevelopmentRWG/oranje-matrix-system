@@ -79,7 +79,7 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 | Acción | Efecto en [[Semáforo del Colaborador]] | Descripción |
 |---|---|---|
 | Generar código QR | — | Permite a los colaboradores ponchar en el [[Timesheet]] |
-| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando el Manager del Hotel o el Supervisor cambia el estado |
+| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando el Manager del Hotel o el Supervisor cambia el estado. El colaborador queda sin Schedule ni Timesheet y no puede ponchar |
 | Reportar colaborador | → **Rojo** | Inicia investigación por parte del [[Inspector]] |
 | Gestionar Schedule semanal | — | Administra las asignaciones del [[Core/Módulos/Schedule\|Schedule]] del hotel |
 

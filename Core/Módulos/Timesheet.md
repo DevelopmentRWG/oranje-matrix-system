@@ -14,6 +14,7 @@ Registro de tiempo trabajado por un colaborador en un hotel. Se crea a partir de
 - Cada colaborador inscrito en el [[Core/Módulos/Schedule|Schedule]] del hotel tiene su propio timesheet.
 - El schedule es el que abre la puerta a la creación del timesheet.
 - Si el [[Core/Módulos/Schedule|Schedule]] cambia después de que el timesheet fue creado, el timesheet se actualiza automáticamente para reflejar los cambios.
+- Solo los colaboradores con asignación activa (fija o temporal) aparecen en el [[Core/Módulos/Schedule|Schedule]]; sin Schedule no se genera Timesheet y sin Timesheet no es posible ponchar
 
 ## Jornada
 

@@ -282,6 +282,13 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
   - **Salida** — fin de jornada
 - Esto contabiliza el tiempo trabajado del colaborador
 
+### Restricción de ponchado por estado del colaborador
+
+- El ponchado solo es posible cuando el colaborador tiene un [[Timesheet]] activo, lo cual requiere estar inscrito en el [[Core/Módulos/Schedule|Schedule]] de un hotel
+- Sin asignación activa (fija o temporal) no hay Schedule, sin Schedule no hay Timesheet, y sin Timesheet no hay ponchado
+- Estados que **no permiten ponchado**: Rosa (Stand-by) y Amarillo (Disponible voluntario), porque en ninguno de los dos existe asignación activa
+- El único camino para que un colaborador en descanso registre horas es la ruta completa: **Rosa → Amarillo → Café**, donde la [[Reclutadora]] lo asigna temporalmente y se genera el Schedule/Timesheet correspondiente
+
 ### Deducción de Lunch
 
 > [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada.

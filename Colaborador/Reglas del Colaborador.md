@@ -114,6 +114,14 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
   - **Salida** — fin de jornada
 - El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente.
 
+### Restricción por estado del semáforo
+
+- El colaborador solo puede ponchar si tiene un [[Timesheet]] activo, lo cual requiere estar inscrito en el [[Core/Módulos/Schedule|Schedule]] de un hotel con una asignación activa (fija o temporal)
+- En estado **Rosa** (Stand-by): no hay asignación activa → no hay Schedule → no hay Timesheet → no puede ponchar
+- En estado **Amarillo** (Disponible voluntario): el colaborador declaró disponibilidad, pero aún no tiene asignación → no puede ponchar
+- En estado **Café** (Asignación temporal): la [[Reclutadora]] lo asignó, se genera Schedule y Timesheet → puede ponchar
+- El camino para trabajar durante un descanso es: **Rosa → Amarillo → Café**. Cada transición queda registrada en el journal del [[Semáforo del Colaborador]]
+
 ### Deducción de Lunch
 
 > [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada.
