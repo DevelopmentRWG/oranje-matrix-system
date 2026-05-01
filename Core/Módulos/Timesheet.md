@@ -15,6 +15,13 @@ Registro de tiempo trabajado por un colaborador en un hotel. Se crea a partir de
 - El schedule es el que abre la puerta a la creación del timesheet.
 - Si el [[Core/Módulos/Schedule|Schedule]] cambia después de que el timesheet fue creado, el timesheet se actualiza automáticamente para reflejar los cambios.
 
+## Jornada
+
+- La jornada diaria es de **8 horas**
+- La semana laboral es de 7 días: **5 de trabajo + 2 de descanso**
+- Total semanal bruto: **40 horas** (8 hrs × 5 días)
+- Total semanal neto pagable: **37.5 horas** (40 hrs − 30 min de lunch × 5 jornadas)
+
 ## Ponchado
 
 El colaborador poncha vía **QR** que genera el [[Hotel/Manager del Hotel|Manager del Hotel]]. Los ponches se registran por pares de entrada/salida para cada periodo:

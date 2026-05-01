@@ -94,6 +94,13 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 - El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente.
 - La semana del hotel está definida por el contrato (inicio y fin de semana).
 
+### Jornada
+
+- La jornada diaria es de **8 horas**
+- La semana laboral es de 7 días: **5 de trabajo + 2 de descanso**
+- Total semanal bruto: **40 horas** (8 hrs × 5 días)
+- Total semanal neto pagable: **37.5 horas** (40 hrs − 30 min de lunch × 5 jornadas)
+
 ### Ponchado
 
 - El colaborador poncha vía **QR** generado por el [[Hotel/Manager del Hotel|Manager del Hotel]].

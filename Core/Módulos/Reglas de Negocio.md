@@ -257,6 +257,13 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - La semana del hotel está definida por el contrato (inicio y fin de semana)
 - Al crearse una requisición con fecha de inicio dentro de la semana, sus posiciones quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de esa semana
 
+### Jornada laboral
+
+- La jornada diaria es de **8 horas**
+- La semana laboral es de 7 días: **5 de trabajo + 2 de descanso**
+- Total semanal bruto: **40 horas** (8 hrs × 5 días)
+- Total semanal neto pagable: **37.5 horas** (40 hrs − 30 min de lunch × 5 jornadas)
+
 ### Asignación en Schedule
 - Al asignar un colaborador desde el [[Pool de Colaboradores]], queda registrado en el schedule del hotel
 
