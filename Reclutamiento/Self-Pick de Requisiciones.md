@@ -3,7 +3,7 @@ tags:
   - propuesta
   - modulo/reclutamiento
 aliases:
-  - Propuesta Self-Pick
+  - Self-Pick
   - Self-Pick de Requisiciones
 status: aprobada
 ---
