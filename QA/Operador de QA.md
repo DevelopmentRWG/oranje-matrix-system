@@ -15,7 +15,7 @@ Rol operativo del departamento de [[QA/QA|QA]]. Cada operador está asignado de 
 
 Cada operador cubre uno de los siguientes departamentos:
 
-- [[Inspección/Inspector|Inspección]]
+- [[Inspección/Inspección|Inspección]]
 - [[Hotel/Hotel|Hotel]]
 - [[Colaborador/Colaborador|Colaborador]]
 - [[Ventas/Ventas|Ventas]]

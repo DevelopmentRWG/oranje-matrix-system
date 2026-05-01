@@ -35,7 +35,7 @@ Estos niveles alimentan el [[Indicador de Calidad]] existente:
 
 ## Inspección
 
-Operador asignado: Operador 1. Departamento supervisado: [[Inspección/Inspector|Inspección]].
+Operador asignado: Operador 1. Departamento supervisado: [[Inspección/Inspección|Inspección]].
 
 | # | KPI | Fórmula / cálculo | Fuente de datos | Meta | En riesgo | Crítico |
 |---|-----|-------------------|-----------------|------|-----------|---------|

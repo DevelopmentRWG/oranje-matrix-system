@@ -35,7 +35,7 @@ Departamento encargado de supervisar la calidad operativa de todos los departame
 
 ### Departamentos supervisados
 
-- [[Inspección/Inspector|Inspección]]
+- [[Inspección/Inspección|Inspección]]
 - [[Hotel/Hotel|Hotel]]
 - [[Colaborador/Colaborador|Colaborador]]
 - [[Ventas/Ventas|Ventas]]
