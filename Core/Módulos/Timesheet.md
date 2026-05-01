@@ -88,3 +88,4 @@ El sistema marca automáticamente a los colaboradores cuyo lunch excede 30 minut
 - [[Inspector]]
 - [[Inspección/Coordinador|Coordinador]]
 - [[Manager de Reclutamiento]]
+- [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]]

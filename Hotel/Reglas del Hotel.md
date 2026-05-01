@@ -130,6 +130,10 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 
 > [!note] El [[Hotel/Manager del Hotel|Manager del Hotel]] y el [[Hotel/Supervisor|Supervisor]] **no tienen acceso** al Indicador de Lunch Extendido. Es exclusivo de roles internos de Oranje ([[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]]).
 
+## Indicador de Cumplimiento del Timesheet
+
+El sistema calcula automáticamente un indicador semaforizado (Verde / Amarillo / Rojo) que compara el cumplimiento real del colaborador contra los parámetros contractuales del hotel, evaluado por semana. Ver referencia completa: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]].
+
 ## Accidente Laboral — responsabilidades del Supervisor
 
 El [[Hotel/Supervisor|Supervisor]] tiene un rol activo en el reporte y captura de accidentes laborales:

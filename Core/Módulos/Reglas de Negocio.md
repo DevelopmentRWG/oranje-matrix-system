@@ -312,6 +312,15 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - **No visible para el hotel:** el [[Hotel/Manager del Hotel|Manager del Hotel]] y el [[Hotel/Supervisor|Supervisor]] no tienen acceso a este indicador
 - **Propósito:** herramienta de supervisión interna para detectar patrones y tomar acciones operativas; no es punitivo de forma automática
 
+### Indicador de Cumplimiento del Timesheet
+
+- El sistema calcula automáticamente un indicador semaforizado que compara el cumplimiento real del colaborador contra los parámetros contractuales del hotel
+- **Input:** parámetros del [[Core/Módulos/Contrato|Contrato]] + datos del [[Timesheet]]
+- **Evaluación semanal:** la estructura es Año → Semanas (numeradas según calendario e inicio/fin de semana del hotel)
+- **Comparación:** días trabajados/requeridos, días de descanso, horas trabajadas/requeridas
+- **Ingreso a media semana:** el sistema prorratea automáticamente los días restantes del ciclo; los días previos al alta se marcan en Gris
+- Referencia completa: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]]
+
 ## Inspección y Zonas
 
 ### Asignación por zona
@@ -349,6 +358,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - [[Semáforo de Posiciones de la Requisición]]
 - [[Semáforo Onboarding]]
 - [[Indicador de Calidad]]
+- [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]]
 - [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]]
 - [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
 - [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]]
