@@ -57,7 +57,8 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 
 - **Naranja → Verde fuerte**: cuando el colaborador queda libre (fin de asignación fija o reincorporado).
 - **Amarillo**: lo activa el propio colaborador desde la app, sin aprobación de nadie. Es autoservicio (disponible voluntario durante un descanso).
-- **Verde fuerte ↔ Café**: la [[Reclutadora]] lo asigna temporalmente (→ Café). La [[Reclutadora]] define la duración (días asignados) al momento de la asignación. El estado se cierra automáticamente al vencer esos días; al cerrarse, vuelve a `Verde fuerte` o `Naranja` según su estado previo.
+- **Verde fuerte → Café**: la [[Reclutadora]] lo asigna temporalmente (→ Café). La [[Reclutadora]] define la duración (días asignados) al momento de la asignación. El estado se cierra automáticamente al vencer esos días; al cerrarse, vuelve a `Verde fuerte` o `Naranja` según su estado previo.
+- **Amarillo → Café**: mismo mecanismo de asignación temporal, pero el colaborador llegó al Pool por disponibilidad voluntaria. Al vencer los días asignados, regresa a `Amarillo` si sigue en periodo de descanso, o a `Verde fuerte` si ya no lo está.
 
 ### Incidencias
 
