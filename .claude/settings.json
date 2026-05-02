@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"Roles/Recruiter/Líder de Grupo.md\")",
+      "Bash(ls \"Roles/Inspection/\")",
+      "Bash(ls \"Contabilidad/Contabilidad.md\")",
+      "Bash(ls \"Customer Service/\")",
+      "Bash(ls \"Colaborador/Colaborador.md\")"
+    ]
+  }
+}
