@@ -69,6 +69,13 @@
         "a": 1,
         "rgb": 0
       }
+    },
+    {
+      "query": "path:Contabilidad  ",
+      "color": {
+        "a": 1,
+        "rgb": 14048348
+      }
     }
   ],
   "collapse-display": false,
@@ -81,6 +88,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.8253901608427864,
-  "close": true
+  "scale": 0.6449664216673001,
+  "close": false
 }

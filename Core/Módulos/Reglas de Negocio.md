@@ -328,6 +328,17 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - **Ingreso a media semana:** el sistema prorratea automáticamente los días restantes del ciclo; los días previos al alta se marcan en Gris
 - Referencia completa: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]]
 
+### Consolidado Semanal y Pago al Colaborador
+
+- El sistema genera automáticamente un [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]] por colaborador al cierre de cada semana
+- El consolidado agrupa los [[Timesheet|Timesheets]] de todos los hoteles donde el colaborador trabajó esa semana
+- El cálculo aplica el pay rate del [[Core/Módulos/Contrato|Contrato]] de cada hotel por separado
+- El overtime se calcula **por hotel**, según la política pactada en cada contrato
+- El periodo de pago es **semanal**
+- **Oranje paga al colaborador**; cada hotel paga a Oranje según su bill rate
+- **Contabilidad revisa y aprueba** el Consolidado antes de ejecutar el pago
+- El umbral de overtime es de **40 horas brutas semanales** por hotel
+
 ## Inspección y Zonas
 
 ### Asignación por zona

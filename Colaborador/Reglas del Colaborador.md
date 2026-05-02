@@ -143,6 +143,13 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 - **No visible para:** [[Hotel/Manager del Hotel|Manager del Hotel]], [[Hotel/Supervisor|Supervisor]].
 - Propósito: supervisión interna de Oranje; no es punitivo de forma automática.
 
+## Pago semanal
+
+- El colaborador recibe pago **semanal** por parte de Oranje
+- El monto se calcula a partir del [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]], que agrupa los [[Timesheet|Timesheets]] de todos los hoteles donde trabajó esa semana
+- Si trabajó en múltiples hoteles, cada hotel aporta sus horas con el pay rate de su [[Core/Módulos/Contrato|Contrato]]
+- El overtime se calcula por hotel, según la política de cada contrato
+
 ## Elegibilidad y Pool
 
 - Solo entran al [[Pool de Colaboradores]] los colaboradores que pasaron el filtro y fueron aprobados por Reclutamiento.

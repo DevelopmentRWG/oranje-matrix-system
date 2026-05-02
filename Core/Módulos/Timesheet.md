@@ -40,6 +40,11 @@ Esto contabiliza el tiempo trabajado del colaborador.
 
 En otra parte del panel, el hotel puede ver cuánto va a tener que pagar al finalizar la semana por todas las horas trabajadas registradas en los timesheets.
 
+## Consolidado semanal
+
+- Al cierre de la semana, los Timesheets del colaborador en todos los hoteles se agregan en el [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal del Colaborador]]
+- Si el colaborador trabajó en múltiples hoteles (vía asignación temporal), cada Timesheet aporta sus horas netas con el pay rate del contrato correspondiente
+
 ## Deducción de Lunch
 
 El sistema aplica una deducción de lunch al cómputo de horas del colaborador en cada jornada.
