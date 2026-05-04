@@ -87,7 +87,7 @@ MÓDULOS / SIDEBAR
 ```
 SIDEBAR
    ├─ DASHBOARD
-   ├─ RECLUTAMIENTO            (Pool + apoyo operativo)
+   ├─ RECLUTAMIENTO            (Pool + Entrevistas global del depto + apoyo operativo)
    ├─ REQUISICIÓN              (vista global + intervención excepcional + semáforos)
    ├─ BLACKLIST                (consulta + agregar + resolver disputa + remover)
    ├─ MI EQUIPO                ← exclusivo (Líderes + Reclutadoras: gestión + supervisión)
@@ -104,6 +104,80 @@ SIDEBAR
 - Top performers / Líderes con baja cobertura
 - Casos escalados pendientes
 - Indicador de Calidad
+
+---
+
+## 🧑‍🤝‍🧑 Módulo RECLUTAMIENTO (vista global del depto)
+
+### Pool de Colaboradores
+- Acceso completo a todo el Pool del depto (mismas pestañas/filtros que Reclutadora y Líder).
+- Filtros adicionales del Manager: por Líder de Grupo, por Reclutadora responsable.
+
+### 📝 Entrevistas (sub-vista — vista global con trazabilidad de "quién hizo qué")
+
+> [!info]
+> El Manager **rara vez recluta él mismo** (caso excepcional). Su uso principal de esta sub-vista es **auditar y supervisar todo el depto**: ver el historial completo de reclutamientos, identificar Reclutadoras o Líderes con candidatos atascados, detectar patrones (alto abandono en cierta zona, validaciones lentas, etc.).
+
+**Toggle superior**
+- 🌐 **Histórico Global del Depto** *(default)* — TODAS las entrevistas hechas por cualquier Reclutadora o Líder del depto.
+- 👤 **Mis Entrevistas** — solo las que el Manager hizo personalmente (caso especial — RF-EXC-01 cuando interviene directamente).
+
+**Pestañas internas (estado del candidato)**
+- 🟠 **Pendientes de App** — Fase 1 hecha, esperando que el colaborador complete Fase 2.
+- 🟡 **Pendientes de Validar** — el colaborador completó Fase 2 + Fase 3, esperando validación.
+- ⚪ **Borradores** — entrevistas iniciadas pero no guardadas.
+- ⚫ **Abandonados** — candidatos con >X días sin completar la app.
+- ✅ **Validados** — histórico de los que ya pasaron al Pool.
+
+**Filtros (transversales — más amplios que Líder/Reclutadora)**
+- **Líder de Grupo** — filtra por todo el grupo de un Líder específico.
+- **Reclutadora** — filtra por quién hizo la entrevista.
+- **Zona** ([[Core/Catálogos/Zonas|Zonas]])
+- **Posición** ([[Core/Catálogos/Posiciones|Posiciones]])
+- Modalidad prevista
+- Días en estado (slider)
+- Fecha de entrevista (rango)
+- Origen (referido / aplicación directa / reclutamiento activo)
+- Buscar por nombre / documento / teléfono
+
+**Detalle del candidato (al click)**
+- **Cabecera:** foto + nombre + teléfono + posición prevista + timeline visual `Fase 1 ✅ → Fase 2 🟡 → Fase 3 ⚪ → Validación`.
+- **Trazabilidad de responsables** (visible siempre):
+  - 👤 **Reclutadora responsable** (quién hizo la Fase 1).
+  - 🧑‍🏫 **Líder de Grupo** al que pertenece la Reclutadora.
+  - 👁️ **Validador** (quién validó / rechazó la Fase 2, si ya pasó).
+- **Días desde entrevista** con indicador de color (🟢 <3 · 🟡 3-7 · 🔴 >7).
+- **Tabs internos:**
+  1. **Datos Fase 1** — solo lectura (el Manager no edita rutinariamente — solo en intervención excepcional).
+  2. **Datos Fase 2** — completados por el colaborador en la app. Solo lectura.
+  3. **Datos Fase 3** — datos de emergencia. Solo lectura.
+  4. **Histórico de comunicación** — cuándo se envió el link, recordatorios, abrió la app.
+  5. **Documentos** — cédula, fotos, comprobantes.
+  6. **Bitácora del expediente** — todas las acciones (quién, cuándo, qué hizo).
+
+**Acciones (perfil supervisor)**
+- 👁️ **Ver detalle** del candidato.
+- 📊 **Ver desempeño del responsable** (Reclutadora o Líder — lleva a métricas individuales globales, RF-23).
+- 💬 **Comentar al expediente** (visible para Reclutadora y Líder responsables).
+- 🚨 **Solicitar acción** a la Reclutadora o al Líder (ej. "reenvía el link, lleva 8 días").
+- 📤 **Reasignar candidato a otra Reclutadora / otro grupo** (excepcional — Reclutadora o Líder no disponible, balanceo).
+- ✅ **Validar alta en intervención** (excepcional — RF-EXC, queda en log auditable).
+- ❌ **Rechazar alta** con motivo (excepcional).
+- 🚫 **Marcar como abandonado** (excepcional — normalmente lo hace la Reclutadora o Líder).
+- 📥 **Exportar** lista filtrada (CSV / PDF) para reportes a Dirección.
+
+**KPIs visibles en cabecera (vista global)**
+- Total candidatos en proceso (depto).
+- Tasa de conversión Fase 1 → Pool (mes en curso vs. mes anterior).
+- Promedio de días por etapa.
+- Top 3 Reclutadoras por candidatos validados.
+- Bottom 3 Reclutadoras con candidatos atascados (>7 días).
+
+### + Nuevo Colaborador (modal — apoyo operativo excepcional)
+Mismo formulario que Reclutadora / Líder. El Manager solo lo usa cuando interviene directamente (queda registrado como excepción).
+
+> [!important]
+> La validación / rechazo / edición rutinaria la hace la Reclutadora que originó la entrevista (o su Líder de Grupo en su ausencia). El Manager interviene solo como **auditor o ejecutor excepcional**, y cualquier acción suya queda en log auditable (regla RR-12).
 
 ---
 

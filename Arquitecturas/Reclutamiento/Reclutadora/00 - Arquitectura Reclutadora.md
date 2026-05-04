@@ -110,7 +110,7 @@ MÓDULOS / SIDEBAR
 ```
 SIDEBAR
    ├─ DASHBOARD
-   ├─ RECLUTAMIENTO   (Pool + Crear/Entrevista + Validación + Asignación)
+   ├─ RECLUTAMIENTO   (Pool + Entrevistas + Nuevo Colaborador)
    ├─ REQUISICIÓN     (Cola de Autorizadas + Mis Tomadas — Self-Pick)
    └─ BLACKLIST       (consulta + agregar)
 ```
@@ -191,6 +191,47 @@ SIDEBAR
 - Ver historial de asignaciones
 - Consultar si está en Blacklist
 
+### 📝 Entrevistas (sub-vista — candidatos en proceso)
+
+> [!info]
+> Esta sub-vista da seguimiento a los candidatos que **ya pasaron por entrevista (Fase 1)** pero que aún **no están en el Pool**. Resuelve la pregunta que antes solo respondía una notificación: *¿quiénes están en cola? ¿quién lleva días sin completar la app? ¿cuántos están listos para validar?*.
+
+**Pestañas internas (estado del candidato)**
+- 🟠 **Pendientes de App** — Fase 1 hecha, esperando que el colaborador descargue la app y complete Fase 2.
+- 🟡 **Pendientes de Validar** — el colaborador completó Fase 2 + Fase 3 en la app y está esperando que la Reclutadora valide (RF-08).
+- ⚪ **Borradores** — entrevistas iniciadas pero no guardadas (timeout / cierre accidental).
+- ⚫ **Abandonados** — candidatos con >X días sin completar la app (umbral configurable).
+- ✅ **Validados (últimos 30 días)** — histórico reciente de los que ya pasaron al Pool.
+
+**Filtros (transversales a todas las pestañas)**
+- Posición ([[Core/Catálogos/Posiciones|Posiciones]]: Housekeeper, Hoseman, Chef, Laundry)
+- Zona ([[Core/Catálogos/Zonas|Zonas]]: Centro, Sur, Este, Oeste, Noroeste, Sureste)
+- Modalidad prevista ([[Core/Catálogos/Modalidades de Contratación|Modalidades]])
+- Días en estado (slider: 1-3 / 4-7 / >7 — los de >7 con alerta visual)
+- Fecha de entrevista (rango)
+- Origen (referido / aplicación directa / reclutamiento activo)
+- Buscar por nombre / documento / teléfono
+
+**Detalle del candidato (al click)**
+- **Cabecera:** foto + nombre + teléfono + posición prevista + timeline visual `Fase 1 ✅ → Fase 2 🟡 → Fase 3 ⚪ → Validación`.
+- **Días desde entrevista** con indicador de color (🟢 <3 · 🟡 3-7 · 🔴 >7).
+- **Tabs internos:**
+  1. **Datos Fase 1** — capturados por la Reclutadora en la entrevista (editable).
+  2. **Datos Fase 2** — completados por el colaborador en la app (SSN, ITIN, posición, inglés, experiencia, transporte, modalidad). Solo lectura. Marca lo que falta.
+  3. **Datos Fase 3** — datos de emergencia (contacto, tipo de sangre, alergias). Solo lectura.
+  4. **Histórico de comunicación** — cuándo se envió el link, recordatorios, abrió la app, etc.
+  5. **Documentos** — cédula, fotos subidas, comprobantes.
+
+**Acciones**
+- ✏️ **Editar datos Fase 1** (corrección de captura).
+- 📩 **Reenviar link de App** (Pendientes de App).
+- 🔔 **Enviar recordatorio** (Pendientes de App con >3 días).
+- ✅ **Validar alta** (Pendientes de Validar — dispara RF-08, mueve al Pool con estado Verde fuerte).
+- ❌ **Rechazar alta** (Pendientes de Validar — con motivo obligatorio).
+- 🚫 **Marcar como abandonado** (Pendientes de App con >X días sin actividad).
+- 📞 **Llamar / Contactar** (cualquier pestaña).
+- 🗑️ **Eliminar borrador** (solo Borradores).
+
 ### + Nuevo Colaborador (modal form)
 **Datos capturados en entrevista inicial (Fase 1):**
 - Nombre completo
@@ -203,7 +244,7 @@ SIDEBAR
 - Cédula (subir)
 
 > [!info]
-> Tras crear el candidato, se le envía link para completar **Fase 2** (alta en App: SSN, ITIN, posición, inglés, experiencia, transporte, modalidad) y **Fase 3** (datos de emergencia: contacto, tipo de sangre, alergias). Cuando el candidato termina, llega notificación a la Reclutadora para validar.
+> Tras crear el candidato, se le envía link para completar **Fase 2** (alta en App: SSN, ITIN, posición, inglés, experiencia, transporte, modalidad) y **Fase 3** (datos de emergencia: contacto, tipo de sangre, alergias). El candidato queda visible en la sub-vista **Entrevistas → Pendientes de App** mientras completa el proceso, y migra a **Pendientes de Validar** cuando termina.
 
 ---
 
@@ -302,7 +343,9 @@ SIDEBAR
 6a. Si el candidato no existe:
       → Creo nuevo Colaborador (Fase 1: entrevista)
       → Le envío link para Fase 2 (alta en App)
-      → Cuando completa, valido y habilito accesos
+      → El candidato aparece en Entrevistas → Pendientes de App
+      → Cuando completa, migra a Pendientes de Validar y recibo notificación
+      → Voy a Entrevistas → Pendientes de Validar, valido y habilito accesos
    │
 6b. Si el candidato existe en Pool (Verde fuerte / Amarillo):
       → Lo asigno directamente a la posición
@@ -361,7 +404,7 @@ SIDEBAR
 │  SIDEBAR     │              ÁREA DE TRABAJO                  │
 │              │                                               │
 │ 📊 Dashboard │  KPIs personales · Pool · Mis req · Bandeja  │
-│ 🧑 Reclutam. │  Pool · Nuevo Colaborador (Fase 1)            │
+│ 🧑 Reclutam. │  Pool · Entrevistas · Nuevo Colaborador (F1)  │
 │ 📋 Requisic. │  Bandeja Autorizadas · Mis tomadas · Asignar  │
 │ 📅 Schedule  │  Consulta del Schedule del hotel              │
 │ ⚫ Blacklist │  Consulta · Motivos · Histórico               │

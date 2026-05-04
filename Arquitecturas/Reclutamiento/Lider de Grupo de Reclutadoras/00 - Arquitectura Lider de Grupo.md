@@ -105,7 +105,7 @@ MÓDULOS / SIDEBAR
 ```
 SIDEBAR
    ├─ DASHBOARD
-   ├─ RECLUTAMIENTO   (Pool + Crear/Entrevista + Validación + Asignación)
+   ├─ RECLUTAMIENTO   (Pool + Entrevistas — propias + del grupo)
    ├─ REQUISICIÓN     (Cola de Autorizadas + Mis Tomadas — Self-Pick)
    ├─ BLACKLIST       (consulta + agregar)
    ├─ MI GRUPO        ← exclusivo del Líder (supervisión)
@@ -189,6 +189,69 @@ SIDEBAR
 - Editar colaborador (Pendiente)
 - Ver historial de asignaciones
 - Consultar si está en Blacklist
+
+### 📝 Entrevistas (sub-vista — doble modo: operativo + supervisión)
+
+> [!info]
+> El Líder usa esta sub-vista de **dos formas**:
+> 1. **Modo operativo (minoría):** cuando él mismo recluta como apoyo, ve sus propios candidatos en proceso (igual que la Reclutadora).
+> 2. **Modo supervisión (mayoría):** ve el **historial completo de reclutamientos del grupo** con detalle de **quién** (qué Reclutadora) hizo cada uno. Es la herramienta principal para auditar y dar seguimiento.
+
+**Toggle superior**
+- 👤 **Mis Entrevistas** — solo las que el Líder hizo personalmente.
+- 👥 **Historial del Grupo** — TODAS las entrevistas hechas por el Líder + sus Reclutadoras.
+
+**Pestañas internas (estado del candidato — comunes a ambos modos)**
+- 🟠 **Pendientes de App** — Fase 1 hecha, esperando que el colaborador complete Fase 2.
+- 🟡 **Pendientes de Validar** — el colaborador completó Fase 2 + Fase 3, esperando validación.
+- ⚪ **Borradores** — entrevistas iniciadas pero no guardadas.
+- ⚫ **Abandonados** — candidatos con >X días sin completar la app.
+- ✅ **Validados** — histórico de los que ya pasaron al Pool (rango configurable).
+
+**Filtros (transversales)**
+- **Reclutadora del grupo** *(solo en modo Historial del Grupo)* — quién hizo la entrevista.
+- Posición ([[Core/Catálogos/Posiciones|Posiciones]])
+- Zona ([[Core/Catálogos/Zonas|Zonas]])
+- Modalidad prevista
+- Días en estado (slider)
+- Fecha de entrevista (rango)
+- Origen (referido / aplicación directa / reclutamiento activo)
+- Buscar por nombre / documento / teléfono
+
+**Detalle del candidato (al click)**
+- **Cabecera:** foto + nombre + teléfono + posición prevista + timeline visual `Fase 1 ✅ → Fase 2 🟡 → Fase 3 ⚪ → Validación`.
+- **Reclutadora responsable** (quién hizo la entrevista — Reclutadora del grupo o el propio Líder). 👈 *visible en modo Historial del Grupo*.
+- **Días desde entrevista** con indicador de color (🟢 <3 · 🟡 3-7 · 🔴 >7).
+- **Tabs internos:**
+  1. **Datos Fase 1** — capturados en la entrevista (editable solo por quien la hizo o por el Líder).
+  2. **Datos Fase 2** — completados por el colaborador en la app. Solo lectura.
+  3. **Datos Fase 3** — datos de emergencia. Solo lectura.
+  4. **Histórico de comunicación** — cuándo se envió el link, recordatorios, abrió la app.
+  5. **Documentos** — cédula, fotos, comprobantes.
+
+**Acciones**
+
+*Comunes a ambos modos:*
+- 👁️ **Ver detalle** del candidato.
+- 📞 **Llamar / Contactar** al candidato.
+- 📩 **Reenviar link de App** (si está en Pendientes de App).
+- 🔔 **Enviar recordatorio** (Pendientes de App con >3 días).
+
+*Modo "Mis Entrevistas" (operativas — Líder reclutando):*
+- ✏️ **Editar datos Fase 1** propios.
+- ✅ **Validar alta** de candidatos propios (RF-08).
+- ❌ **Rechazar alta** propia con motivo.
+- 🚫 **Marcar como abandonado** propio.
+
+*Modo "Historial del Grupo" (supervisión):*
+- 📊 **Ver desempeño** de la Reclutadora que hizo la entrevista (lleva a métricas individuales — RF-23).
+- 💬 **Comentar al expediente** (queda visible para la Reclutadora responsable).
+- 🚨 **Solicitar acción a la Reclutadora** (ej. "reenvía el link, lleva 5 días sin completar").
+- 📤 **Reasignar candidato a otra Reclutadora** del grupo (caso de Reclutadora ausente o sobrecargada).
+- ✅ **Validar alta en nombre del grupo** (excepcional — si la Reclutadora original no está disponible).
+
+> [!important]
+> El Líder puede **ver y supervisar** TODAS las entrevistas del grupo, pero la edición/validación rutinaria la hace la Reclutadora que originó la entrevista. La intervención del Líder es para casos de seguimiento, retraso o ausencia.
 
 ### + Nuevo Colaborador (modal form)
 - Nombre completo
@@ -406,7 +469,7 @@ Reclutadora (o Líder) cubre con colaboradores del Pool
 │  SIDEBAR     │              ÁREA DE TRABAJO                  │
 │              │                                               │
 │ 📊 Dashboard │  KPIs personales + del grupo                  │
-│ 🧑 Reclutam. │  Pool · Nuevo Colaborador                     │
+│ 🧑 Reclutam. │  Pool · Entrevistas (propias + grupo) · Nuevo │
 │ 📋 Requisic. │  Distribuir · Tomar · Asignar                 │
 │ 👥 Mi Grupo  │  Reclutadoras · Métricas · Reasignar          │
 │ 📈 Reportes  │  Generar · Enviar Manager · Histórico         │
