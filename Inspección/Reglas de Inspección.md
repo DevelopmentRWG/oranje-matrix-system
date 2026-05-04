@@ -25,6 +25,11 @@ Consolidación de todas las reglas de negocio que aplican al departamento de Ins
 
 > [!important] El [[Inspector]] de la zona del hotel es el responsable de darle seguimiento a cualquier disputa, accidente o verificación que ocurra en ese hotel.
 
+### Cobertura por indisponibilidad
+
+- Si el [[Inspector]] asignado a una zona no está disponible (enfermedad, vacaciones u otra causa), el [[Inspección/Coordinador|Coordinador]] reasigna temporalmente otro Inspector a esa zona.
+- La reasignación temporal no modifica la asignación permanente de zona; es una cobertura hasta que el Inspector titular retome.
+
 ## Verificación de llegada y entrega de uniforme
 
 El [[Inspector]] participa en dos transiciones clave del [[Semáforo del Colaborador]]:
@@ -106,6 +111,7 @@ Una vez que el hotel alcanza el status **Naranja** en el [[Core/Módulos/Semáfo
 
 - Un [[QA/Operador de QA\|Operador de QA]] está asignado de forma fija al departamento de Inspección.
 - QA **no ejecuta** la operación de Inspección; solo observa, mide y retroalimenta.
+- Las métricas específicas que el Operador de QA monitorea para Inspección están definidas en [[QA/Métricas y KPIs por Departamento#Inspección|Métricas y KPIs — Inspección]].
 - Si el [[Core/Módulos/Semáforos/Indicador de Calidad\|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
 
 ## Resumen de responsabilidades por rol
@@ -121,6 +127,7 @@ Una vez que el hotel alcanza el status **Naranja** en el [[Core/Módulos/Semáfo
 | Gestionar transición Gris → Verde fuerte | Sí | No |
 | Ver Indicador de Lunch Extendido | Sí | Sí |
 | Asignar Inspectores a zonas | No | Sí |
+| Reasignar Inspector por indisponibilidad | No | Sí |
 | Supervisar Inspectores | No | Sí |
 | Enlace interdepartamental | No | Sí |
 | Escalar casos especiales | No | Sí |

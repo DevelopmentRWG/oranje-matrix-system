@@ -62,14 +62,14 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 
 ### Disponibilidad y asignaciones
 
-- **Amarillo (Disponible voluntario):** lo activa el propio colaborador durante un descanso. Es el **único estado que el colaborador puede activar por sí mismo**.
-- **Café (Asignación temporal):** la [[Reclutadora]] asigna temporalmente al colaborador. Al terminar la jornada temporal, vuelve a Verde fuerte o Naranja según su estado previo.
+- **Amarillo (Disponible voluntario):** lo activa el propio colaborador **desde la app, sin aprobación de nadie**. Es autoservicio y el **único estado que el colaborador puede activar por sí mismo**.
+- **Café (Asignación temporal):** la [[Reclutadora]] asigna temporalmente al colaborador y define la duración (días asignados) al momento de la asignación. El estado se cierra automáticamente al vencer esos días; al cerrarse, vuelve a Verde fuerte o Naranja según su estado previo.
 
 ### Stand-by (Rosa)
 
-- Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] puede poner a un colaborador en Rosa.
+- El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en Rosa.
 - Indica espera por decisión del hotel (vacaciones, temporada baja).
-- La posición no tiene fecha de fin; termina cuando el Manager del Hotel cambia el estado.
+- La posición no tiene fecha de fin; termina cuando el Manager del Hotel o el Supervisor retira al colaborador del estado Rosa. Al salir, regresa a Verde fuerte.
 
 ## Reglas de incidencia
 
@@ -89,7 +89,7 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 - El [[Inspector]] investiga el caso y resuelve hacia:
   - **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), si la disputa es a favor del hotel.
   - **Verde fuerte** (reincorporado), si la disputa es a favor del colaborador.
-- Los casos de Blacklist son revisados por el [[Manager de Reclutamiento]].
+- El [[Manager de Reclutamiento]] tiene visibilidad de los casos de Blacklist como supervisión posterior, pero la decisión la toma el [[Inspector]].
 
 ## Protección por Accidente Laboral (Gris)
 
@@ -105,8 +105,22 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 ### Mecanismo de ponchado
 
 - El colaborador poncha vía **QR** generado por el [[Hotel/Manager del Hotel|Manager del Hotel]].
-- Ponches válidos: **Entrada**, **Lunch**, **Salida** (exactamente tres).
+- Los ponches se registran por pares de entrada/salida para cada periodo (exactamente seis):
+  - **Entrada** — inicio de jornada
+  - **Salida Lunch** — sale a comer
+  - **Entrada Lunch** — regresa de comer
+  - **Salida Break** — sale a descanso
+  - **Entrada Break** — regresa de descanso
+  - **Salida** — fin de jornada
 - El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente.
+
+### Restricción por estado del semáforo
+
+- El colaborador solo puede ponchar si tiene un [[Timesheet]] activo, lo cual requiere estar inscrito en el [[Core/Módulos/Schedule|Schedule]] de un hotel con una asignación activa (fija o temporal)
+- En estado **Rosa** (Stand-by): no hay asignación activa → no hay Schedule → no hay Timesheet → no puede ponchar
+- En estado **Amarillo** (Disponible voluntario): el colaborador declaró disponibilidad, pero aún no tiene asignación → no puede ponchar
+- En estado **Café** (Asignación temporal): la [[Reclutadora]] lo asignó, se genera Schedule y Timesheet → puede ponchar
+- El camino para trabajar durante un descanso es: **Rosa → Amarillo → Café**. Cada transición queda registrada en el journal del [[Semáforo del Colaborador]]
 
 ### Deducción de Lunch
 
@@ -119,7 +133,7 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 | Sin ponche de Lunch | 30 min (auto-deducción) |
 
 - **Horas brutas** = Salida − Entrada
-- **Horas netas** = Horas brutas − Deducción de Lunch
+- **Horas netas** = Horas brutas − Deducción de Lunch − Breaks reales
 - Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
 
 ### Indicador de Lunch Extendido
@@ -129,11 +143,25 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 - **No visible para:** [[Hotel/Manager del Hotel|Manager del Hotel]], [[Hotel/Supervisor|Supervisor]].
 - Propósito: supervisión interna de Oranje; no es punitivo de forma automática.
 
+## Pago semanal
+
+- El colaborador recibe pago **semanal** por parte de Oranje
+- El monto se calcula a partir del [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]], que agrupa los [[Timesheet|Timesheets]] de todos los hoteles donde trabajó esa semana
+- Si trabajó en múltiples hoteles, cada hotel aporta sus horas con el pay rate de su [[Core/Módulos/Contrato|Contrato]]
+- El overtime se calcula por hotel, según la política de cada contrato
+
 ## Elegibilidad y Pool
 
 - Solo entran al [[Pool de Colaboradores]] los colaboradores que pasaron el filtro y fueron aprobados por Reclutamiento.
 - La [[Reclutadora]] debe consultar la [[Core/Módulos/Blacklist|Blacklist]] antes de reclutar a un candidato.
 - Colaborador aprobado ingresa al Pool con [[Semáforo del Colaborador]] en estado Blanco.
+
+## Supervisión de Calidad (QA)
+
+- Un [[QA/Operador de QA|Operador de QA]] está asignado de forma fija a la supervisión del ámbito Colaborador.
+- QA **no ejecuta** la gestión del Colaborador; solo observa métricas agregadas del pool y el ciclo de vida.
+- Las métricas específicas que el Operador de QA monitorea para Colaborador están definidas en [[QA/Métricas y KPIs por Departamento#Colaborador|Métricas y KPIs — Colaborador]].
+- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del ámbito Colaborador alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
 
 ## Relacionado
 

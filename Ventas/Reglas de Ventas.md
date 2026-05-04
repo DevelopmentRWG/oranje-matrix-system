@@ -117,6 +117,7 @@ Al aprobar la conversión, el sistema ejecuta automáticamente tres acciones en 
 
 - Un [[QA/Operador de QA\|Operador de QA]] está asignado de forma fija al departamento de Ventas.
 - QA **no ejecuta** la operación de Ventas; solo observa, mide y retroalimenta.
+- Las métricas específicas que el Operador de QA monitorea para Ventas están definidas en [[QA/Métricas y KPIs por Departamento#Ventas|Métricas y KPIs — Ventas]].
 - Si el [[Core/Módulos/Semáforos/Indicador de Calidad\|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
 
 ## Resumen de responsabilidades por rol

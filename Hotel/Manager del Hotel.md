@@ -25,7 +25,7 @@ Rol de supervisión del módulo de [[Hotel/Hotel|Hotel]]. Responsable de aprobar
 
 - Recibe las [[Requisición|requisiciones]] creadas por el [[Hotel/Supervisor|Supervisor]] (estado **Verde manzana — En elaboración** en el [[Semáforo de Requisición]]).
 - Revisa que la requisición sea correcta y justificada.
-- **Aprueba** la requisición (estado **Autorizada**), enviándola al [[Manager de Reclutamiento]].
+- **Aprueba** la requisición (estado **Autorizada**), que queda disponible en la bandeja compartida de [[Reclutamiento/Reclutamiento|Reclutamiento]] para ser tomada por una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] (modelo [[Self-Pick de Requisiciones|Self-Pick]]).
 - **Rechaza** la requisición, regresándola al [[Hotel/Supervisor|Supervisor]] con observaciones (estado **En elaboración**).
 
 > [!important] Capa de seguridad

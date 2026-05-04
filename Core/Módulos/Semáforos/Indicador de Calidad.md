@@ -42,6 +42,10 @@ Indicador que refleja el nivel de calidad operativa de cada departamento, alimen
 > [!important]
 > Un departamento en estado **Rojo** requiere atención inmediata. El [[Manager de QA]] escala el caso a la dirección si no hay mejora tras la notificación.
 
+### Umbrales cuantitativos
+
+Los umbrales específicos que definen cuándo un KPI está en Meta, En riesgo o nivel Crítico — y cómo eso se traduce en transiciones de este indicador — están documentados en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
+
 ## Relacionado
 
 - [[QA/QA|QA]]

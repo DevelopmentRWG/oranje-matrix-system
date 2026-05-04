@@ -18,6 +18,7 @@ Rol de supervisión del departamento de Inspección. Es el jefe de los [[Inspect
 - Escala problemas o casos que requieran atención especial.
 - Enlace entre el departamento de Inspección y otros departamentos ([[Reclutamiento/Reclutamiento|Reclutamiento]], [[Hotel/Hotel|Hotel]]).
 - Tiene visibilidad del **Indicador de Lunch Extendido** en el [[Timesheet]] para supervisar patrones de lunch extendido en las zonas asignadas.
+- Cuando un [[Inspector]] no está disponible (enfermedad, vacaciones u otra causa), reasigna temporalmente otro Inspector a esa zona para garantizar la cobertura operativa.
 
 ## Relacionado
 

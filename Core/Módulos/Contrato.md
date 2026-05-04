@@ -12,7 +12,7 @@ Acuerdo formal entre Oranje y el hotel que resulta del cierre de negociación en
 
 ## Contenido
 
-- **Pay rate** — pago acordado al colaborador.
+- **Pay rate** — pago acordado al colaborador. Se aplica por hotel: si el colaborador trabaja en múltiples hoteles, cada uno tiene su propio pay rate según su contrato.
 - **Bill rate** — cobro acordado al hotel.
 - **Overtime** — política de horas extra pactada.
 - **Festivos** — manejo y recargos acordados.
@@ -31,3 +31,4 @@ Acuerdo formal entre Oranje y el hotel que resulta del cierre de negociación en
 - [[Schedule]]
 - [[Flujo de Onboarding]]
 - [[Business Developer Coordinator]]
+- [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal del Colaborador]]

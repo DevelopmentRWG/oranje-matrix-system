@@ -63,7 +63,7 @@ Al autorizar una requisición, el sistema ejecuta automáticamente:
 ## Ciclo de vida de la posición
 
 - Cada posición tiene **fecha de inicio pero no fecha de fin** definida.
-- La posición termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] pone al colaborador en **Stand-by** (estado Rosa en el [[Semáforo del Colaborador]]).
+- La posición termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en **Stand-by** (estado Rosa en el [[Semáforo del Colaborador]]).
 
 ## Eliminación de requisición
 
@@ -79,11 +79,11 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 | Acción | Efecto en [[Semáforo del Colaborador]] | Descripción |
 |---|---|---|
 | Generar código QR | — | Permite a los colaboradores ponchar en el [[Timesheet]] |
-| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando el Manager cambia el estado |
+| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando el Manager del Hotel o el Supervisor cambia el estado. El colaborador queda sin Schedule ni Timesheet y no puede ponchar |
 | Reportar colaborador | → **Rojo** | Inicia investigación por parte del [[Inspector]] |
 | Gestionar Schedule semanal | — | Administra las asignaciones del [[Core/Módulos/Schedule\|Schedule]] del hotel |
 
-> [!important] **Solo** el [[Hotel/Manager del Hotel|Manager del Hotel]] puede poner a un colaborador en estado Rosa (Stand-by).
+> [!important] El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en estado Rosa (Stand-by).
 
 ## Timesheet y deducción de Lunch
 
@@ -94,10 +94,23 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 - El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente.
 - La semana del hotel está definida por el contrato (inicio y fin de semana).
 
+### Jornada
+
+- La jornada diaria es de **8 horas**
+- La semana laboral es de 7 días: **5 de trabajo + 2 de descanso**
+- Total semanal bruto: **40 horas** (8 hrs × 5 días)
+- Total semanal neto pagable: **37.5 horas** (40 hrs − 30 min de lunch × 5 jornadas)
+
 ### Ponchado
 
 - El colaborador poncha vía **QR** generado por el [[Hotel/Manager del Hotel|Manager del Hotel]].
-- Ponches válidos: **Entrada**, **Lunch**, **Salida** (exactamente tres).
+- Los ponches se registran por pares de entrada/salida para cada periodo (exactamente seis):
+  - **Entrada** — inicio de jornada
+  - **Salida Lunch** — sale a comer
+  - **Entrada Lunch** — regresa de comer
+  - **Salida Break** — sale a descanso
+  - **Entrada Break** — regresa de descanso
+  - **Salida** — fin de jornada
 
 ### Deducción de Lunch
 
@@ -110,12 +123,16 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 | Sin ponche de Lunch | 30 min (auto-deducción) |
 
 - **Horas brutas** = Salida − Entrada
-- **Horas netas** = Horas brutas − Deducción de Lunch
+- **Horas netas** = Horas brutas − Deducción de Lunch − Breaks reales
 - Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
 
 ## Indicador de Lunch Extendido
 
 > [!note] El [[Hotel/Manager del Hotel|Manager del Hotel]] y el [[Hotel/Supervisor|Supervisor]] **no tienen acceso** al Indicador de Lunch Extendido. Es exclusivo de roles internos de Oranje ([[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]]).
+
+## Indicador de Cumplimiento del Timesheet
+
+El sistema calcula automáticamente un indicador semaforizado (Verde / Amarillo / Rojo) que compara el cumplimiento real del colaborador contra los parámetros contractuales del hotel, evaluado por semana. Ver referencia completa: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]].
 
 ## Accidente Laboral — responsabilidades del Supervisor
 
@@ -143,6 +160,13 @@ El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel e
 - Tiene **visibilidad global** del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de todos los departamentos.
 - **No aprueba requisiciones** directamente; esa responsabilidad recae en los Gerentes de Departamento.
 
+## Supervisión de Calidad (QA)
+
+- Un [[QA/Operador de QA|Operador de QA]] está asignado de forma fija al departamento de Hotel.
+- QA **no ejecuta** la operación del Hotel; solo observa, mide y retroalimenta.
+- Las métricas específicas que el Operador de QA monitorea para Hotel están definidas en [[QA/Métricas y KPIs por Departamento#Hotel|Métricas y KPIs — Hotel]].
+- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+
 ## Resumen de responsabilidades por rol
 
 | Acción | [[Hotel/Manager del Hotel\|Manager del Hotel]] | [[Hotel/Supervisor\|Supervisor]] | [[Hotel/Manager General\|Manager General]] |
@@ -151,7 +175,7 @@ El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel e
 | Autorizar requisición | Sí (exclusivo) | No | No (Gerente Depto.) |
 | Rechazar requisición con observaciones | Sí | No | No |
 | Generar QR para ponchado | Sí | — | — |
-| Poner en Stand-by (Rosa) | Sí (exclusivo) | No | No |
+| Poner en Stand-by (Rosa) | Sí | Sí | No |
 | Reportar colaborador (Rojo) | Sí | — | — |
 | Gestionar Schedule semanal | Sí | — | Visibilidad global |
 | Reportar accidente laboral | — | Sí | No |

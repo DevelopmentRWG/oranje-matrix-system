@@ -34,12 +34,16 @@ Existen **5 Operadores de QA**, cada uno asignado de forma fija a un departament
 
 > [!note] La asignación es fija: cada operador conoce a fondo la operación del departamento que supervisa.
 
+> [!note] Alcance de este documento
+> Las métricas y KPIs específicos por departamento están definidos en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]. Este documento cubre la estructura general del módulo de QA: roles, flujo de observaciones y escalación.
+
 ## Métricas y observaciones
 
 - El [[Operador de QA]] monitorea los semáforos del departamento asignado ([[Semáforo del Colaborador]], [[Semáforo de Requisición]], [[Semáforo Onboarding]], etc.) como fuente de contexto operativo.
 - Mide métricas de desempeño: tiempos de respuesta, tasas de éxito, frecuencia de errores y cumplimiento de procesos.
 - Emite **observaciones formales** al departamento con hallazgos específicos y recomendaciones de mejora.
 - Reporta al [[Manager de QA]] con los datos recopilados y el estado de calidad.
+- Las métricas concretas que cada operador monitorea están definidas en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
 
 ## Indicador de Calidad
 

@@ -13,7 +13,7 @@ Rol responsable de la estrategia de calidad y supervisión del equipo de operado
 
 ## Responsabilidades
 
-- **Define las métricas y KPIs** que cada [[Operador de QA]] debe monitorear por departamento.
+- **Define las métricas y KPIs** que cada [[Operador de QA]] debe monitorear por departamento. Ver [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
 - **Supervisa a los 5 operadores de QA**, uno por cada departamento: Inspección, Hotel, Colaborador, Ventas y Reclutamiento.
 - **Consolida las observaciones** de todos los operadores en una vista global de calidad operativa.
 - **Presenta reportes de calidad** a la dirección con hallazgos, tendencias y áreas de mejora.

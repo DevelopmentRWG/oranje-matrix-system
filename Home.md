@@ -15,7 +15,7 @@ Sistema de gestión organizacional para staffing de hoteles. Documenta los roles
 
 Búsqueda, entrevista y asignación de personal a hoteles.
 
-- [[Manager de Reclutamiento]] — recibe requisiciones aprobadas y las distribuye a las reclutadoras.
+- [[Manager de Reclutamiento]] — monitorea la operación de reclutamiento e interviene solo en casos excepcionales: balanceo entre grupos, líder ausente o corrección de error de asignación.
 - [[Líder de Grupo de Reclutadoras]] — recluta y supervisa el desempeño de un grupo de reclutadoras.
 - [[Reclutadora]] — busca, entrevista, valida y asigna colaboradores.
 
@@ -27,7 +27,7 @@ Operación diaria y gestión de personal en hoteles clientes.
 - [[Manager del Hotel]] — aprueba requisiciones, genera QR de ponchado y gestiona el schedule semanal. En jerarquía extendida: Gerente de Departamento.
 - [[Hotel/Supervisor|Supervisor]] — crea requisiciones de personal y reporta accidentes laborales.
 
-### Inspección
+### [[Inspección/Inspección|Inspección]]
 
 Supervisión de colaboradores en sitio durante sus primeros días de asignación.
 
@@ -93,3 +93,4 @@ Indicadores de estado que reflejan la situación operativa de cada entidad en ti
 - [[Semáforo de Posiciones de la Requisición]] — estado de cada posición dentro de una requisición.
 - [[Semáforo Onboarding]] — estado de la negociación con un hotel prospecto.
 - [[Indicador de Calidad]] — nivel de desempeño de un área supervisada por QA.
+- [[Indicador de Cumplimiento del Timesheet]] — comparación entre horas trabajadas y horas contractuales del colaborador.
