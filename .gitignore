@@ -28,3 +28,6 @@ Thumbs.db
 
 # Arquitecturas (trabajo personal — no se sube al repo)
 Arquitecturas/
+
+# Contexto externo (material de referencia local — legible por el agente de IA, no se sube al repo)
+contexto-externo/
