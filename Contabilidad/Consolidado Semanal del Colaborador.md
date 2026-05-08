@@ -37,37 +37,6 @@ Resumen semanal que agrupa todos los [[Timesheet|Timesheets]] de un colaborador 
 
 > [!info] **Festivos** — El [[Core/Módulos/Contrato|Contrato]] define el manejo y recargos por días festivos, pero la regla de cálculo de recargos por festivo aún no está definida. Al definirse, se integrará en esta sección.
 
-### Rate interno
-
-- El pay rate aplicado al colaborador puede ser **mayor** al rate pactado en el [[Core/Módulos/Contrato|Contrato]] del hotel (por acuerdo interno: experiencia, antigüedad o negociación con el colaborador)
-- Cuando existe un rate interno, el sistema lo usa para calcular el pago al colaborador en lugar del rate contractual
-- El rate interno **no se refleja** en la [[Facturación al Hotel|Factura al Hotel]] (esa siempre usa el bill rate contractual)
-- Visible solo para [[Contabilista|Contabilidad]]
-
-### Deducciones
-
-- Antes de liberar el pago, el sistema aplica las [[Deducciones]] activas del colaborador
-- Las deducciones (uniforme, comida, retención 16%) reducen el monto neto del cheque
-- Ver [[Deducciones]] para el detalle de cada tipo y sus condiciones
-
-### Múltiples posiciones en el mismo hotel
-
-- Un colaborador puede tener dos o más posiciones distintas en el mismo hotel durante la misma semana (ej. Breakfast + Housekeeper)
-- Cada posición tiene su propio rate
-- Se presentan como **líneas separadas** en el Consolidado, cada una con sus horas y subtotal independiente
-
-### Overtime autorizado parcialmente
-
-- El hotel puede autorizar solo una fracción del overtime trabajado
-- El sistema permite que [[Contabilista|Contabilidad]] ajuste las horas OT pagables según lo autorizado por el hotel
-- **Ejemplo:** colaborador trabajó 50 hrs (10 OT), hotel autoriza solo 5 OT → se pagan 5 OT al colaborador y se facturan 5 OT al hotel
-- Las horas OT no autorizadas quedan registradas pero no se facturan al hotel
-
-### Asignación del cheque
-
-- Cuando el colaborador trabajó en múltiples hoteles durante la semana, el cheque se asigna al hotel donde acumuló **mayor cantidad de horas**
-- Esta asignación es para efectos de impresión y entrega del cheque físico
-
 ## Periodo
 
 - El Consolidado Semanal se genera al cierre de cada semana
@@ -90,8 +59,3 @@ Resumen semanal que agrupa todos los [[Timesheet|Timesheets]] de un colaborador 
 - [[Core/Módulos/Contrato|Contrato]]
 - [[Core/Módulos/Schedule|Schedule]]
 - [[Semáforo del Colaborador]]
-- [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]
-- [[Contabilista]]
-- [[Deducciones]]
-- [[Facturación al Hotel]]
-- [[Vacaciones]]
