@@ -24,7 +24,7 @@ Búsqueda, entrevista y asignación de personal a hoteles.
 Operación diaria y gestión de personal en hoteles clientes.
 
 - [[Hotel/Manager General|Manager General]] — máxima autoridad en hoteles con jerarquía extendida.
-- [[Manager del Hotel]] — aprueba requisiciones, genera QR de ponchado y gestiona el schedule semanal. En jerarquía extendida: Gerente de Departamento.
+- [[Hotel/Manager de Área|Manager de Área]] — aprueba requisiciones, genera QR de ponchado y gestiona el schedule semanal. En jerarquía extendida: Gerente de Departamento.
 - [[Hotel/Supervisor|Supervisor]] — crea requisiciones de personal y reporta accidentes laborales.
 
 ### [[Inspección/Inspección|Inspección]]

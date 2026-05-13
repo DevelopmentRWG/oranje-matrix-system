@@ -25,7 +25,7 @@ Todos viven en `Core/Módulos/Semáforos/`:
 
 ### Roles que aparecen en transiciones
 
-`Business Developer (BD)`, `Business Developer Coordinator (BDC)`, `Reclutadora`, `Manager de Reclutamiento`, `Inspector`, `Coordinador`, `Hotel/Supervisor (SUP)`, `Hotel/Manager del Hotel (GH)`.
+`Business Developer (BD)`, `Business Developer Coordinator (BDC)`, `Reclutadora`, `Manager de Reclutamiento`, `Inspector`, `Coordinador`, `Hotel/Supervisor (SUP)`, `Hotel/Manager de Área (GH)`.
 
 ## Principios (no negociables)
 

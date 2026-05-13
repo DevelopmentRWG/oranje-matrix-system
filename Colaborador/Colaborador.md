@@ -62,7 +62,7 @@ El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]
 
 - [[Reclutadora]] — lo recluta, valida documentos y lo asigna a un hotel.
 - [[Manager de Reclutamiento]] — supervisa el proceso y revisa casos de Blacklist.
-- [[Hotel/Manager del Hotel|Manager del Hotel]] — genera su QR de acceso, gestiona descansos y reportes.
+- [[Hotel/Manager de Área|Manager de Área]] — genera su QR de acceso, gestiona descansos y reportes.
 - [[Inspector]] — verifica su llegada el Día 1, entrega uniforme en Día 3+, investiga casos Rojo.
 
 ## Operación diaria

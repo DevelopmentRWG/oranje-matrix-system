@@ -15,10 +15,10 @@ La plataforma soporta dos modelos organizacionales para el hotel:
 
 | Jerarquía | Estructura |
 |---|---|
-| **Simple** | [[Hotel/Manager del Hotel\|Manager del Hotel]] → [[Hotel/Supervisor\|SUP]] → Colaboradores de Oranje |
-| **Extendida** | [[Hotel/Manager General\|Manager General]] → Gerente de Departamento → [[Hotel/Supervisor\|Supervisor]] → Colaboradores de Oranje |
+| **Simple** | [[Hotel/Manager General\|Manager General]] (también opera como [[Hotel/Manager de Área\|Manager de Área]]) → [[Hotel/Supervisor\|SUP]] → Colaboradores de Oranje |
+| **Extendida** | [[Hotel/Manager General\|Manager General]] → [[Hotel/Manager de Área\|Manager de Área]] → [[Hotel/Supervisor\|Supervisor]] → Colaboradores de Oranje |
 
-- En la jerarquía extendida, el **Gerente de Departamento** tiene las mismas responsabilidades de plataforma que el [[Hotel/Manager del Hotel|Manager del Hotel]].
+- En la jerarquía simple, el [[Hotel/Manager General|Manager General]] también opera como [[Hotel/Manager de Área|Manager de Área]] (misma persona, dos roles).
 - Los departamentos del hotel son: **Housekeeping, Alimentos, Mantenimiento y Front Desk** (ver [[Core/Catálogos/Departamentos del Hotel|Departamentos del Hotel]]).
 - En la jerarquía extendida, cada departamento tiene su propio Gerente y Supervisor(es).
 
@@ -32,22 +32,22 @@ La plataforma soporta dos modelos organizacionales para el hotel:
 
 ### Acceso al módulo
 
-- Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] y el [[Hotel/Supervisor|Supervisor]] tienen acceso al módulo de requisiciones.
+- El [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] y el [[Hotel/Supervisor|Supervisor]] tienen acceso al módulo de requisiciones.
 - Usuarios sin acceso reciben el mensaje: **"No cuenta con acceso"**.
 
-### Creación (Supervisor)
+### Creación
 
-- El [[Hotel/Supervisor|Supervisor]] crea la requisición (estado **Verde manzana** — En elaboración en el [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]]).
+- Cualquier rol del hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]]) crea la requisición (estado **Verde manzana** — En elaboración en el [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]]).
 - El número de requisición se genera automáticamente: `Año (4) + Mes (2) + Día (2) + Hora (2, 24h) + Minutos (2) + Homoclave (2 alfanuméricos)`. Ejemplo: `202604081632V1`.
 
-### Autorización (Manager del Hotel)
+### Autorización
 
-> [!important] **Solo** el [[Hotel/Manager del Hotel|Manager del Hotel]] puede autorizar una requisición. Si el [[Hotel/Supervisor|Supervisor]] intenta hacerlo, el sistema bloquea la acción con el mensaje: **"Solo el gerente del hotel puede autorizar la requisición"**.
+> [!important] Solo el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Manager General|Manager General]] pueden autorizar una requisición. Si el [[Hotel/Supervisor|Supervisor]] intenta hacerlo, el sistema bloquea la acción con el mensaje: **"Solo el gerente del hotel puede autorizar la requisición"**.
 
 - Para autorizar debe existir **al menos una posición** registrada. Si no: **"No tiene posiciones registradas, registre al menos una posición e intente nuevamente"**.
-- El rechazo regresa la requisición al [[Hotel/Supervisor|Supervisor]] con observaciones (estado **En elaboración**).
+- El rechazo regresa la requisición al creador con observaciones (estado **En elaboración**).
 
-> [!info] La autorización del [[Hotel/Manager del Hotel|Manager del Hotel]] es una **capa de seguridad** para evitar que lleguen requisiciones falsas o incorrectas a Reclutamiento.
+> [!info] La autorización del [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Manager General|Manager General]] es una **capa de seguridad** para evitar que lleguen requisiciones falsas o incorrectas a Reclutamiento.
 
 ## Efectos automáticos al autorizar
 
@@ -63,7 +63,7 @@ Al autorizar una requisición, el sistema ejecuta automáticamente:
 ## Ciclo de vida de la posición
 
 - Cada posición tiene **fecha de inicio pero no fecha de fin** definida.
-- La posición termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en **Stand-by** (estado Rosa en el [[Semáforo del Colaborador]]).
+- La posición termina cuando el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en **Stand-by** (estado Rosa en el [[Semáforo del Colaborador]]).
 
 ## Eliminación de requisición
 
@@ -74,16 +74,16 @@ Al autorizar una requisición, el sistema ejecuta automáticamente:
 
 ## Gestión de personal asignado
 
-Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] sobre los colaboradores asignados:
+Responsabilidades sobre los colaboradores asignados (todos los roles del hotel):
 
 | Acción | Efecto en [[Semáforo del Colaborador]] | Descripción |
 |---|---|---|
 | Generar código QR | — | Permite a los colaboradores ponchar en el [[Timesheet]] |
-| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando el Manager del Hotel o el Supervisor cambia el estado. El colaborador queda sin Schedule ni Timesheet y no puede ponchar |
+| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando cualquier rol del hotel cambia el estado. El colaborador queda sin Schedule ni Timesheet y no puede ponchar |
 | Reportar colaborador | → **Rojo** | Inicia investigación por parte del [[Inspector]] |
 | Gestionar Schedule semanal | — | Administra las asignaciones del [[Core/Módulos/Schedule\|Schedule]] del hotel |
 
-> [!important] El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en estado Rosa (Stand-by).
+> [!important] Todos los roles del hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] y [[Hotel/Supervisor|Supervisor]]) pueden poner a un colaborador en estado Rosa (Stand-by).
 
 ## Timesheet y deducción de Lunch
 
@@ -103,7 +103,7 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 
 ### Ponchado
 
-- El colaborador poncha vía **QR** generado por el [[Hotel/Manager del Hotel|Manager del Hotel]].
+- El colaborador poncha vía **QR** generado por el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Manager General|Manager General]].
 - Los ponches se registran por pares de entrada/salida para cada periodo (exactamente seis):
   - **Entrada** — inicio de jornada
   - **Salida Lunch** — sale a comer
@@ -128,7 +128,7 @@ Responsabilidades exclusivas del [[Hotel/Manager del Hotel|Manager del Hotel]] s
 
 ## Indicador de Lunch Extendido
 
-> [!note] El [[Hotel/Manager del Hotel|Manager del Hotel]] y el [[Hotel/Supervisor|Supervisor]] **no tienen acceso** al Indicador de Lunch Extendido. Es exclusivo de roles internos de Oranje ([[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]]).
+> [!note] El [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] y el [[Hotel/Supervisor|Supervisor]] **no tienen acceso** al Indicador de Lunch Extendido. Es exclusivo de roles internos de Oranje ([[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]]).
 
 ## Indicador de Cumplimiento del Timesheet
 
@@ -153,12 +153,15 @@ El [[Hotel/Supervisor|Supervisor]] tiene un rol activo en el reporte y captura d
 - En ambos escenarios, el colaborador pasa a estado **Gris** en el [[Semáforo del Colaborador]] (protección contra la regla de 3 inasistencias).
 - Referencia: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]].
 
-## Manager General (jerarquía extendida)
+## Manager General
 
-El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel en la jerarquía extendida:
+El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel y **siempre existe** en ambas jerarquías:
 
 - Tiene **visibilidad global** del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de todos los departamentos.
-- **No aprueba requisiciones** directamente; esa responsabilidad recae en los Gerentes de Departamento.
+- Puede crear, autorizar y rechazar requisiciones.
+- Puede generar QR, poner Stand-by, reportar colaboradores y reportar accidentes laborales.
+- En jerarquía simple, también opera como [[Hotel/Manager de Área|Manager de Área]] (misma persona).
+- Punto de contacto principal con Oranje a nivel directivo.
 
 ## Supervisión de Calidad (QA)
 
@@ -169,25 +172,23 @@ El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel e
 
 ## Resumen de responsabilidades por rol
 
-| Acción | [[Hotel/Manager del Hotel\|Manager del Hotel]] | [[Hotel/Supervisor\|Supervisor]] | [[Hotel/Manager General\|Manager General]] |
+| Acción | [[Hotel/Manager General\|Manager General]] | [[Hotel/Manager de Área\|Manager de Área]] | [[Hotel/Supervisor\|Supervisor]] |
 |---|---|---|---|
-| Crear requisición | No | Sí | No |
-| Autorizar requisición | Sí (exclusivo) | No | No (Gerente Depto.) |
-| Rechazar requisición con observaciones | Sí | No | No |
-| Generar QR para ponchado | Sí | — | — |
-| Poner en Stand-by (Rosa) | Sí | Sí | No |
-| Reportar colaborador (Rojo) | Sí | — | — |
-| Gestionar Schedule semanal | Sí | — | Visibilidad global |
-| Reportar accidente laboral | — | Sí | No |
+| Crear requisición | Sí | Sí | Sí |
+| Autorizar requisición | Sí | Sí | No |
+| Rechazar requisición | Sí | Sí | No |
+| Generar QR para ponchado | Sí | Sí | No |
+| Poner en Stand-by (Rosa) | Sí | Sí | Sí |
+| Reportar colaborador (Rojo) | Sí | Sí | Sí |
+| Reportar accidente laboral | Sí | Sí | Sí |
+| Gestionar Schedule semanal | Visibilidad global | Sí (su departamento) | No |
 | Ver Indicador de Lunch Extendido | No | No | No |
-| Visibilidad global Schedule/Timesheet | No | No | Sí |
-
-> [!info] En la jerarquía extendida, el **Gerente de Departamento** hereda las responsabilidades de plataforma del [[Hotel/Manager del Hotel|Manager del Hotel]] para su departamento.
+| Visibilidad global Schedule/Timesheet | Sí | No | Sí (su departamento) |
 
 ## Relacionado
 
 - [[Reglas de Negocio]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Hotel/Manager General|Manager General]]
 - [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]]

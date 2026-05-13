@@ -67,9 +67,9 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 
 ### Stand-by (Rosa)
 
-- El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en Rosa.
+- El [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en Rosa.
 - Indica espera por decisión del hotel (vacaciones, temporada baja).
-- La posición no tiene fecha de fin; termina cuando el Manager del Hotel o el Supervisor retira al colaborador del estado Rosa. Al salir, regresa a Verde fuerte.
+- La posición no tiene fecha de fin; termina cuando el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] retira al colaborador del estado Rosa. Al salir, regresa a Verde fuerte.
 
 ## Reglas de incidencia
 
@@ -85,7 +85,7 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 
 ### Reporte del hotel (Rojo)
 
-- El [[Hotel/Manager del Hotel|Manager del Hotel]] activa el estado Rojo (reportado).
+- El [[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]] activa el estado Rojo (reportado).
 - El [[Inspector]] investiga el caso y resuelve hacia:
   - **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), si la disputa es a favor del hotel.
   - **Verde fuerte** (reincorporado), si la disputa es a favor del colaborador.
@@ -104,7 +104,7 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 
 ### Mecanismo de ponchado
 
-- El colaborador poncha vía **QR** generado por el [[Hotel/Manager del Hotel|Manager del Hotel]].
+- El colaborador poncha vía **QR** generado por el [[Hotel/Manager General|Manager General]] o el [[Hotel/Manager de Área|Manager de Área]].
 - Los ponches se registran por pares de entrada/salida para cada periodo (exactamente seis):
   - **Entrada** — inicio de jornada
   - **Salida Lunch** — sale a comer
@@ -140,7 +140,7 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 
 - El sistema marca automáticamente a los colaboradores cuyo lunch excede 30 minutos.
 - **Visible para:** [[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]].
-- **No visible para:** [[Hotel/Manager del Hotel|Manager del Hotel]], [[Hotel/Supervisor|Supervisor]].
+- **No visible para:** [[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], [[Hotel/Supervisor|Supervisor]].
 - Propósito: supervisión interna de Oranje; no es punitivo de forma automática.
 
 ## Pago semanal
@@ -177,7 +177,8 @@ El [[Semáforo del Colaborador]] define 12 estados. A continuación se documenta
 - [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]]
 - [[Reclutadora]]
 - [[Manager de Reclutamiento]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager General|Manager General]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]
 - [[Inspección/Coordinador|Coordinador]]

@@ -34,7 +34,7 @@ El proceso de reclutamiento de un colaborador consta de fases definidas en el [[
 
 | Paso | Acción | Responsable |
 |---|---|---|
-| 1 | La requisición autorizada por el [[Hotel/Manager del Hotel\|Manager del Hotel]] queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] | Sistema |
+| 1 | La requisición autorizada por el [[Hotel/Manager General\|Manager General]] o el [[Hotel/Manager de Área\|Manager de Área]] queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] | Sistema |
 | 2 | Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] toma la requisición de la bandeja | [[Reclutadora]] / [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder]] |
 | 3 | La requisición pasa a **Amarillo** (En proceso) en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] | Sistema |
 | 4 | La [[Reclutadora]] consulta el [[Core/Módulos/Schedule\|Schedule]] del hotel para ver posiciones pendientes | [[Reclutadora]] |
@@ -89,7 +89,7 @@ Al asignar colaboradores del [[Pool de Colaboradores]] a las posiciones de una r
 
 - El [[Manager de Reclutamiento]] tiene visibilidad del Indicador de Lunch Extendido en el [[Timesheet]].
 - Se activa cuando el tiempo de lunch de un colaborador excede 30 minutos.
-- **No es visible** para el [[Hotel/Manager del Hotel|Manager del Hotel]] ni el [[Hotel/Supervisor|Supervisor]].
+- **No es visible** para el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] ni el [[Hotel/Supervisor|Supervisor]].
 - Propósito: supervisión interna de Oranje; no es punitivo de forma automática.
 
 ### Jerarquía de supervisión

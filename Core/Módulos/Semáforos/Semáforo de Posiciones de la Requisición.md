@@ -32,8 +32,8 @@ Estado visual del porcentaje de cobertura de cada posición dentro de una [[Requ
 
 | Color    | Estado              | Responsable                                                           | Descripción                                                                                         |
 | -------- | ------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Dorado   | En preparación      | [[Hotel/Supervisor\|SUP]] o [[Hotel/Manager del Hotel\|GH]] | Posición en preparación por el hotel.                                                               |
-| Naranja  | Autorizada          | [[Hotel/Manager del Hotel\|GH]]                                       | Posición autorizada por el gerente del hotel. El sistema calcula prioridad ([[Semáforo de Urgencia de Requisición]]). |
+| Dorado   | En preparación      | [[Hotel/Manager General\|GM]], [[Hotel/Manager de Área\|GH]] o [[Hotel/Supervisor\|SUP]] | Posición en preparación por el hotel.                                                               |
+| Naranja  | Autorizada          | [[Hotel/Manager General\|GM]] o [[Hotel/Manager de Área\|GH]]                                       | Posición autorizada por el hotel. El sistema calcula prioridad ([[Semáforo de Urgencia de Requisición]]). |
 | Verde    | 100% cubierta       | [[Reclutadora]]                                                       | Posición cubierta al 100%.                                                                          |
 | Amarillo | Hasta 25% faltante  | [[Reclutadora]]                                                       | Hasta 25% de personal faltante.                                                                     |
 | Rojo     | Más de 25% faltante | [[Reclutadora]]                                                       | Más del 25% de personal faltante.                                                                   |
@@ -42,16 +42,16 @@ Estado visual del porcentaje de cobertura de cada posición dentro de una [[Requ
 ## Detalle por estado
 
 ### Dorado — En preparación
-**Responsable:** [[Hotel/Supervisor|SUP]] o [[Hotel/Manager del Hotel|GH]]
+**Responsable:** [[Hotel/Manager General|GM]], [[Hotel/Manager de Área|GH]] o [[Hotel/Supervisor|SUP]]
 
 La posición se crea junto con la requisición y se prepara con sus datos (perfil, cantidad, fecha de inicio).
 
-**Avance →** cuando el [[Hotel/Manager del Hotel|GH]] autoriza la requisición completa, cada posición pasa a [[#Naranja — Autorizada|Naranja]] y el sistema calcula su prioridad.
+**Avance →** cuando el [[Hotel/Manager General|GM]] o el [[Hotel/Manager de Área|GH]] autoriza la requisición completa, cada posición pasa a [[#Naranja — Autorizada|Naranja]] y el sistema calcula su prioridad.
 
 ---
 
 ### Naranja — Autorizada
-**Responsable:** [[Hotel/Manager del Hotel|GH]]
+**Responsable:** [[Hotel/Manager General|GM]] o [[Hotel/Manager de Área|GH]]
 
 La posición queda lista para asignación. El sistema asocia automáticamente un nivel de urgencia (ver [[Semáforo de Urgencia de Requisición]]).
 

@@ -43,7 +43,7 @@ El [[Inspector]] participa en dos transiciones clave del [[Semáforo del Colabor
 
 ### Origen del estado Rojo
 
-- El [[Hotel/Manager del Hotel\|Manager del Hotel]] activa el estado **Rojo** (Reportado) en el [[Semáforo del Colaborador]].
+- El [[Hotel/Manager General\|Manager General]], [[Hotel/Manager de Área\|Manager de Área]] o [[Hotel/Supervisor\|Supervisor]] activa el estado **Rojo** (Reportado) en el [[Semáforo del Colaborador]].
 - La acumulación de 3 inasistencias **no** pasa por Rojo; va directo a **Negro** ([[Core/Módulos/Blacklist|Blacklist]]) de forma automática.
 
 ### Investigación y resolución
@@ -96,7 +96,7 @@ El [[Inspector]] complementa la tarjeta de accidente con:
 ## Indicador de Lunch Extendido
 
 - **Visible para:** [[Inspector]] y [[Inspección/Coordinador\|Coordinador]].
-- **No visible para:** [[Hotel/Manager del Hotel\|Manager del Hotel]] ni [[Hotel/Supervisor\|Supervisor]].
+- **No visible para:** [[Hotel/Manager General\|Manager General]], [[Hotel/Manager de Área\|Manager de Área]] ni [[Hotel/Supervisor\|Supervisor]].
 - Muestra: colaborador, hotel, fecha, tiempo de lunch real.
 - Se activa automáticamente cuando el tiempo de lunch excede 30 minutos.
 - Propósito: supervisión interna de Oranje; no es punitivo de forma automática.
@@ -149,6 +149,7 @@ Una vez que el hotel alcanza el status **Naranja** en el [[Core/Módulos/Semáfo
 - [[Core/Módulos/Schedule|Schedule]]
 - [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]]
 - [[Manager de Reclutamiento]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager General|Manager General]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Pool de Colaboradores]]
