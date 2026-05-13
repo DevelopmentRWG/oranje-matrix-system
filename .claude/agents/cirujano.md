@@ -48,7 +48,7 @@ aliases:
 
 ### Wikilinks
 - Siempre usa `[[Nombre de la Nota]]` para referencias internas.
-- Usa pipe-alias para legibilidad: `[[Hotel/Manager del Hotel|Manager del Hotel]]`.
+- Usa pipe-alias para legibilidad: `[[Hotel/Manager de Área|Manager de Área]]`.
 - Si la nota está en subdirectorio, incluye la ruta: `[[Core/Módulos/Blacklist|Blacklist]]`.
 
 ### Estructura de notas de rol

@@ -64,8 +64,8 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 
 - **→ Morado**: el sistema lo marca cuando el colaborador no asiste sin justificación.
 - **3 inasistencias → Negro**: [[Core/Módulos/Blacklist|Blacklist]] automático por sistema.
-- **Rosa**: lo activa el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] cuando mandan al colaborador a descansar (vacaciones, temporada baja). El colaborador no tiene asignación activa, por lo tanto no tiene [[Core/Módulos/Schedule|Schedule]] ni [[Timesheet]] y no puede ponchar. Al reactivarlo, regresa a **Verde fuerte**.
-- **Rojo**: lo pone el hotel ([[Hotel/Manager del Hotel]]). Luego [[Inspector]] investiga el caso y el resultado lo lleva a:
+- **Rosa**: lo activa el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] cuando mandan al colaborador a descansar (vacaciones, temporada baja). El colaborador no tiene asignación activa, por lo tanto no tiene [[Core/Módulos/Schedule|Schedule]] ni [[Timesheet]] y no puede ponchar. Al reactivarlo, regresa a **Verde fuerte**.
+- **Rojo**: lo pone el hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]]). Luego [[Inspector]] investiga el caso y el resultado lo lleva a:
 	- **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), o
 	- **Verde fuerte** (reincorporado).
 - **Casos de [[Core/Módulos/Blacklist|Blacklist]]**: revisados por el [[Manager de Reclutamiento]].

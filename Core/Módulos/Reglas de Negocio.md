@@ -37,9 +37,9 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - El estado se cierra automáticamente al vencer los días asignados; al cerrarse, vuelve a Verde fuerte o Naranja según su estado previo
 
 ### Estado Rosa (Stand-by)
-- El [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en estado Rosa
+- El [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en estado Rosa
 - Indica que el colaborador está en espera por decisión del hotel (vacaciones, temporada baja)
-- La posición no tiene fecha de fin; termina cuando el Manager del Hotel o el Supervisor retira al colaborador del estado Rosa. Al salir de Rosa, el colaborador regresa a Verde fuerte.
+- La posición no tiene fecha de fin; termina cuando el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] retira al colaborador del estado Rosa. Al salir de Rosa, el colaborador regresa a Verde fuerte.
 
 ### Inasistencia (Morado)
 - El sistema marca Morado cuando el colaborador no asiste sin justificación
@@ -51,7 +51,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Responsable: Sistema (automático)
 
 ### Resolución de Reportes (Rojo)
-- El hotel ([[Hotel/Manager del Hotel|Manager del Hotel]]) activa el estado Rojo (reportado)
+- El hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]]) activa el estado Rojo (reportado)
 - El [[Inspector]] de la zona investiga la disputa y tiene **autoridad propia para decidir** el resultado:
   - **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), si la disputa es a favor del hotel
   - **Verde fuerte** (reincorporado), si la disputa es a favor del colaborador
@@ -66,9 +66,8 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ### Dos jerarquías soportadas
 - La plataforma soporta dos configuraciones jerárquicas para el hotel, según su tamaño y complejidad:
-  - **Jerarquía simple:** [[Hotel/Manager del Hotel|Manager del Hotel]] → [[Hotel/Supervisor|SUP]] → Colaboradores de Oranje
-  - **Jerarquía extendida:** [[Hotel/Manager General|Manager General]] → Gerente de Departamento → Supervisor → Colaboradores de Oranje
-- En la jerarquía extendida, el Gerente de Departamento tiene las mismas responsabilidades de plataforma que el [[Hotel/Manager del Hotel|Manager del Hotel]], y el Supervisor las mismas que el [[Hotel/Supervisor|SUP]]
+  - **Jerarquía simple:** [[Hotel/Manager General|Manager General]] (también opera como [[Hotel/Manager de Área|Manager de Área]]) → [[Hotel/Supervisor|SUP]] → Colaboradores de Oranje
+  - **Jerarquía extendida:** [[Hotel/Manager General|Manager General]] → [[Hotel/Manager de Área|Manager de Área]] → [[Hotel/Supervisor|Supervisor]] → Colaboradores de Oranje
 
 ### Departamentos del hotel
 - Los [[Departamentos del Hotel]] son: Housekeeping, Alimentos, Mantenimiento y Front Desk
@@ -76,26 +75,29 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Las [[Posiciones]] solicitadas en las requisiciones corresponden a un departamento específico del hotel
 
 ### Manager General
-- El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel en la jerarquía extendida
-- No aprueba requisiciones directamente; esa responsabilidad recae en los Gerentes de Departamento
+- El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel y **siempre existe** en ambas jerarquías
+- En jerarquía simple, también opera como [[Hotel/Manager de Área|Manager de Área]] (misma persona, dos roles)
+- Puede crear, autorizar y rechazar requisiciones
+- Puede generar QR para ponchado
 - Tiene visibilidad global del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de todos los departamentos
+- Punto de contacto principal con Oranje a nivel directivo
 
 ## Requisición y Autorización
 
 ### Acceso al sistema
-- Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) y el [[Hotel/Supervisor|Supervisor]] (SUP) tienen acceso al módulo de requisiciones
+- El [[Hotel/Manager General|Manager General]] (GM), el [[Hotel/Manager de Área|Manager de Área]] (GH) y el [[Hotel/Supervisor|Supervisor]] (SUP) tienen acceso al módulo de requisiciones
 - Usuarios sin acceso reciben mensaje: "No cuenta con acceso"
 
 ### Creación y elaboración
-- El SUP crea la requisición (estado Verde manzana — En elaboración)
+- Cualquier rol del hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]]) crea la requisición (estado Verde manzana — En elaboración)
 - El número de requisición se genera automáticamente: Año (4 dígitos) + Mes (2) + Día (2) + Hora (2, formato 24h) + Minutos (2) + Homoclave (2 caracteres alfanuméricos aleatorios). Ejemplo: `202604081632V1`
 - El mismo formato aplica para el número de posición
 
 ### Autorización de Requisición
-- Solo el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) puede autorizar una requisición
+- Solo el [[Hotel/Manager General|Manager General]] (GM) o el [[Hotel/Manager de Área|Manager de Área]] (GH) pueden autorizar una requisición
 - El SUP recibe mensaje de bloqueo: "Solo el gerente del hotel puede autorizar la requisición"
 - Debe existir al menos una posición para poder autorizar; de lo contrario: "No tiene posiciones registradas, registre al menos una posición e intente nuevamente"
-- El rechazo regresa la requisición al SUP con observaciones (estado "En elaboración")
+- El rechazo regresa la requisición al creador con observaciones (estado "En elaboración")
 
 ### Al autorizar
 - El sistema calcula automáticamente la urgencia de cada posición
@@ -125,7 +127,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 
 ### Ciclo de vida de la posición
 - La posición tiene fecha de inicio pero no fecha de fin definida
-- Termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en Stand-by (estado Rosa en el [[Semáforo del Colaborador]])
+- Termina cuando el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en Stand-by (estado Rosa en el [[Semáforo del Colaborador]])
 
 ### Eliminación (Morado)
 - Estado transversal: se alcanza desde cualquier estado cuando se elimina la requisición
@@ -134,7 +136,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Al eliminar una requisición con posiciones → cada posición también pasa a Morado con journal individual
 
 ### Journals automáticos
-- **RUTINA Journal Requisición:** registra Requisición, Hotel, Gerente Hotel, Reclutador, Inspector, Status, Nota, Fecha y hora del status
+- **RUTINA Journal Requisición:** registra Requisición, Hotel, Manager General / Manager de Área, Reclutador, Inspector, Status, Nota, Fecha y hora del status
 - **RUTINA Journal Posición:** registra Número de requisición, Número de posición, Posición, Cantidad de personas, Fecha de inicio, Fecha fin, Status, Fecha y hora del status
 
 ## Blacklist
@@ -272,7 +274,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Si el [[Core/Módulos/Schedule|Schedule]] se modifica después de que el [[Timesheet]] fue creado, el Timesheet se actualiza automáticamente para reflejar los cambios
 
 ### Mecanismo de ponchado
-- El colaborador poncha vía QR que genera el [[Hotel/Manager del Hotel|Manager del Hotel]]
+- El colaborador poncha vía QR que genera el [[Hotel/Manager General|Manager General]] o el [[Hotel/Manager de Área|Manager de Área]]
 - Los ponches se registran por pares de entrada/salida para cada periodo:
   - **Entrada** — inicio de jornada
   - **Salida Lunch** — sale a comer
@@ -316,7 +318,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
   - [[Inspector]]
   - [[Inspección/Coordinador|Coordinador]]
   - [[Manager de Reclutamiento]]
-- **No visible para el hotel:** el [[Hotel/Manager del Hotel|Manager del Hotel]] y el [[Hotel/Supervisor|Supervisor]] no tienen acceso a este indicador
+- **No visible para el hotel:** el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] y el [[Hotel/Supervisor|Supervisor]] no tienen acceso a este indicador
 - **Propósito:** herramienta de supervisión interna para detectar patrones y tomar acciones operativas; no es punitivo de forma automática
 
 ### Indicador de Cumplimiento del Timesheet
@@ -385,7 +387,8 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - [[Pool de Colaboradores]]
 - [[Core/Módulos/Schedule|Schedule]]
 - [[Timesheet]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager General|Manager General]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]
 - [[Inspección/Coordinador|Coordinador]]

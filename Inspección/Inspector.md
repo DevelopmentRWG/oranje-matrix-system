@@ -15,7 +15,7 @@ Rol operativo encargado de la supervisión en sitio de los colaboradores asignad
 - **Verifica la llegada del colaborador el día 1** en la propiedad (transición `Blanco → Verde manzana` en el [[Semáforo del Colaborador]]).
 - **Entrega del uniforme** al colaborador cuando transita a `Azul claro` (Día 3+) en el [[Semáforo del Colaborador]].
 - Supervisa en sitio la operación de los colaboradores en el hotel.
-- Investiga los casos de colaboradores en estado `Rojo` (reportados por el [[Hotel/Manager del Hotel]]) en el [[Semáforo del Colaborador]].
+- Investiga los casos de colaboradores en estado `Rojo` (reportados por el [[Hotel/Manager de Área|Manager de Área]]) en el [[Semáforo del Colaborador]].
 - **Tiene autoridad propia para decidir** el resultado de la investigación, sin necesidad de escalamiento:
   - `Negro` ([[Core/Módulos/Blacklist|Blacklist]]) — si la disputa se resuelve a favor del hotel.
   - `Verde fuerte` (reincorporado) — si la disputa se resuelve a favor del colaborador.
@@ -30,7 +30,7 @@ Rol operativo encargado de la supervisión en sitio de los colaboradores asignad
 
 - [[Semáforo del Colaborador]]
 - [[Core/Módulos/Blacklist|Blacklist]]
-- [[Hotel/Manager del Hotel]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Manager de Reclutamiento]]
 - [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
 - [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]

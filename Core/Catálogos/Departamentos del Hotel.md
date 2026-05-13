@@ -21,4 +21,4 @@ Catálogo de los departamentos internos del hotel para los que Oranje recluta co
 
 - [[Posiciones]]
 - [[Hotel/Hotel|Hotel]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager de Área|Manager de Área]]

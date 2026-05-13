@@ -19,7 +19,7 @@ aliases:
 
 # Semáforo de Requisición
 
-Sistema de estados visuales que representa el ciclo de vida de una [[Requisición]], desde que el [[Hotel/Supervisor|Supervisor]] comienza a elaborarla hasta que queda cubierta.
+Sistema de estados visuales que representa el ciclo de vida de una [[Requisición]], desde que el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] comienzan a elaborarla hasta que queda cubierta.
 
 > [!info]
 > Este semáforo describe el **ciclo de vida general** de la requisición. Las otras dimensiones se manejan en semáforos separados: [[Semáforo de Urgencia de Requisición]] (clasificación por tiempo) y [[Semáforo de Posiciones de la Requisición]] (porcentaje de cobertura por posición). Para el estado del colaborador ver [[Semáforo del Colaborador]].
@@ -29,28 +29,28 @@ Sistema de estados visuales que representa el ciclo de vida de una [[Requisició
 
 ## Estados
 
-| Color         | Estado                | Responsable                                                            | Descripción                                              |
-| ------------- | --------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------- |
-| Verde manzana | En elaboración        | [[Hotel/Supervisor\|SUP]] o [[Hotel/Manager del Hotel\|GH]] | En elaboración por el hotel.                             |
-| Verde         | Autorizada            | [[Hotel/Manager del Hotel\|GH]]                                        | Autorizada por el gerente del hotel.                     |
-| Amarillo      | En proceso            | [[Reclutadora]] (toma de la bandeja compartida)                        | En proceso de asignación de personal.                    |
-| Azul claro    | Cubierta totalmente   | [[Reclutadora]]                                                        | Requisición cubierta totalmente.                         |
-| Rojo          | Cubierta parcialmente | [[Reclutadora]]                                                        | Requisición cubierta parcialmente.                       |
-| Morado        | Eliminada             | —                                                                      | Requisición eliminada físicamente.                       |
+| Color         | Estado                | Responsable                                                 | Descripción                           |
+| ------------- | --------------------- | ----------------------------------------------------------- | ------------------------------------- |
+| Verde manzana | En elaboración        | [[Hotel/Manager General\|GM]], [[Hotel/Manager de Área\|GH]] o [[Hotel/Supervisor\|SUP]] | En elaboración por el hotel.          |
+| Verde         | Autorizada            | [[Hotel/Manager General\|GM]] o [[Hotel/Manager de Área\|GH]]                             | Autorizada por el hotel.  |
+| Amarillo      | En proceso            | [[Reclutadora]] (toma de la bandeja compartida)             | En proceso de asignación de personal. |
+| Azul claro    | Cubierta totalmente   | [[Reclutadora]]                                             | Requisición cubierta totalmente.      |
+| Rojo          | Cubierta parcialmente | [[Reclutadora]]                                             | Requisición cubierta parcialmente.    |
+| Morado        | Eliminada             | —                                                           | Requisición eliminada físicamente.    |
 
 ## Detalle por estado
 
 ### Verde manzana — En elaboración
-**Responsable:** [[Hotel/Supervisor|SUP]] o [[Hotel/Manager del Hotel|GH]]
+**Responsable:** [[Hotel/Manager General|GM]], [[Hotel/Manager de Área|GH]] o [[Hotel/Supervisor|SUP]]
 
 El hotel inicia la creación de la requisición y sus posiciones.
 
-**Avance →** cuando el [[Hotel/Manager del Hotel|GH]] autoriza la requisición, pasa a [[#Verde — Autorizada|Verde]]. Solo el GH puede autorizar; si lo intenta el SUP, el sistema bloquea la acción.
+**Avance →** cuando el [[Hotel/Manager General|GM]] o el [[Hotel/Manager de Área|GH]] autoriza la requisición, pasa a [[#Verde — Autorizada|Verde]]. Solo el GM o GH pueden autorizar; si lo intenta el SUP, el sistema bloquea la acción.
 
 ---
 
 ### Verde — Autorizada
-**Responsable:** [[Hotel/Manager del Hotel|GH]]
+**Responsable:** [[Hotel/Manager General|GM]] o [[Hotel/Manager de Área|GH]]
 
 La requisición queda lista para asignación. El sistema calcula automáticamente la urgencia (ver [[Semáforo de Urgencia de Requisición]]).
 
@@ -103,5 +103,6 @@ Estado transversal: se alcanza desde cualquier estado anterior cuando se elimina
 - [[Flujo de Reclutamiento]]
 - [[Reclutadora]]
 - [[Manager de Reclutamiento]]
+- [[Hotel/Manager General|Manager General]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
