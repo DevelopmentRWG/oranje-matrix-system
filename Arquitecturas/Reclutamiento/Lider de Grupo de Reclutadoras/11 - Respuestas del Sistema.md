@@ -17,7 +17,7 @@ aliases:
 | Líder toma requisición     | Mueve a "Mis Requisiciones"; semáforo a Amarillo                        |
 | Crea nuevo colaborador     | Mensaje de confirmación; redirige a lista                               |
 | Valida alta en App         | Habilita accesos automáticamente; notifica al colaborador               |
-| Asigna colaborador a hotel | Actualiza cobertura; refleja en Schedule; notifica al Manager del Hotel |
+| Asigna colaborador a hotel | Actualiza cobertura; refleja en Schedule; notifica al Manager de Área |
 | Marca requisición cubierta | Sistema cierra (Azul claro); semáforo del hotel notifica el cierre      |
 | Reclutadora del grupo marca cubierta | Llega solicitud al Líder para aprobar el cierre               |
 

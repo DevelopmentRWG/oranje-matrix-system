@@ -365,7 +365,7 @@ Después de que el BDC aprueba la conversión (Rosa → Naranja), el prospecto d
 
 **Qué NO puede hacer (RR-V-12):**
 - ❌ Crear requisiciones (lo hace el Supervisor del hotel)
-- ❌ Editar el hotel (lo hace el Manager del Hotel)
+- ❌ Editar el hotel (lo hace el Manager de Área)
 - ❌ Gestionar personal asignado (lo hace Reclutamiento)
 - ❌ Autorizar nada
 

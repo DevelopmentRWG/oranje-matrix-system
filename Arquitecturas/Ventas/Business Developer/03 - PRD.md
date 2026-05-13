@@ -87,5 +87,5 @@ Permitir al Business Developer **identificar, contactar, proponer y dar seguimie
 | 7   | Ver prospectos fuera de su territorio  | Alcance limitado a rutas y zonas asignadas        | BDC (vista global) / otros BDs en sus zonas |
 | 8   | Ver métricas individuales de otros BDs | Sin acceso a desempeño ajeno                      | BDC                                         |
 | 9   | Generar reportes ejecutivos            | Sin acceso al módulo Reportes                     | BDC                                         |
-| 10  | Editar el hotel post-Naranja           | RR-V-12 — referente comercial sin operación       | Manager del Hotel / Reclutamiento           |
-| 11  | Crear requisiciones                    | Operación post-Naranja exclusiva del módulo Hotel | Supervisor / Manager del Hotel              |
+| 10  | Editar el hotel post-Naranja           | RR-V-12 — referente comercial sin operación       | Manager de Área / Reclutamiento           |
+| 11  | Crear requisiciones                    | Operación post-Naranja exclusiva del módulo Hotel | Supervisor / Manager de Área              |

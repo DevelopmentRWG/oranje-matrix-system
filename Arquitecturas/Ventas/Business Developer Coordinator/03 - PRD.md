@@ -84,7 +84,7 @@ Permitir al BDC **validar la calidad** de cada T&C antes del cierre, **aprobar l
 | 2   | Elaborar Propuesta Personalizada                | Acción exclusiva del BD (RR-V-09 — solo en Verde)  | BD                                 |
 | 3   | Marcar prospecto como Rojo                      | RR-V-06 — gestión de rechazo exclusiva del BD      | BD                                 |
 | 4   | Reactivar prospecto desde Rojo                  | Pertenece al ciclo del BD                          | BD                                 |
-| 5   | Editar el hotel post-Naranja                    | RR-V-12 — referente comercial sin operación        | Manager del Hotel / Reclutamiento  |
-| 6   | Crear requisiciones                             | Operación post-Naranja, exclusiva del módulo Hotel | Supervisor / Manager del Hotel     |
+| 5   | Editar el hotel post-Naranja                    | RR-V-12 — referente comercial sin operación        | Manager de Área / Reclutamiento  |
+| 6   | Crear requisiciones                             | Operación post-Naranja, exclusiva del módulo Hotel | Supervisor / Manager de Área     |
 | 7   | Dar de alta / baja a BDs                        | Gestión de usuarios es exclusiva del Administrador | Administrador *(en pausa)*         |
 | 8   | Operar el ciclo operativo (Schedule, Timesheet) | Fuera del alcance del depto Ventas                 | Hotel + Reclutamiento + Inspección |

@@ -18,7 +18,7 @@ aliases:
 | Reclutadora valida alta en app                | Notifica al sistema que el colaborador está habilitado; propaga accesos automáticamente                  |
 | Habilitación de accesos                       | Crea registro en log; envía credenciales al colaborador por email/SMS                                    |
 | Candidato en Blacklist                        | Bloquea envío y registra el intento en el histórico                                                      |
-| Asignación exitosa de colaborador a hotel     | Actualiza % de cobertura de la requisición; refleja en Schedule del hotel; notifica al Manager del Hotel |
+| Asignación exitosa de colaborador a hotel     | Actualiza % de cobertura de la requisición; refleja en Schedule del hotel; notifica al Manager de Área |
 | Marcar requisición como cubierta              | Notifica al **Líder de Grupo** para validar cierre                                                       |
 | Liberar requisición                           | Devuelve a la bandeja de Autorizadas; notifica disponibilidad                                            |
 | Reclutadora reporta problema                  | Escala al Líder de Grupo con contexto del caso                                                           |

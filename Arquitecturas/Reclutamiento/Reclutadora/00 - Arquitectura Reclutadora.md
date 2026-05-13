@@ -253,7 +253,7 @@ SIDEBAR
 ### Sub-vistas
 
 **🟢 Bandeja de Autorizadas (disponibles para tomar)**
-- Listado de todas las requisiciones que el [[Hotel/Manager del Hotel|Manager del Hotel]] aprobó y aún nadie ha tomado.
+- Listado de todas las requisiciones que el [[Hotel/Manager de Área|Manager de Área]] aprobó y aún nadie ha tomado.
 - Cualquier Reclutadora o Líder puede tomar la que quiera (modelo self-pick).
 - Ordenadas por urgencia (Red primero) y antigüedad en cola.
 

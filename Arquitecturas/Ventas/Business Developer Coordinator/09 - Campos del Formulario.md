@@ -30,7 +30,7 @@ aliases:
 | Hotel             | Auto          | SÍ          | Pre-llenado desde el prospecto                | Hotel destino                   |
 | Email del usuario | Email         | SÍ          | Formato válido y único en el sistema          | Email del responsable del hotel |
 | Nombre completo   | Text          | SÍ          | Mín. 3 caracteres                             | Persona del hotel               |
-| Rol asignado      | Select        | SÍ          | Catálogo: Manager del Hotel / Manager General | Rol que tendrá en la plataforma |
+| Rol asignado      | Select        | SÍ          | Catálogo: Manager de Área / Manager General | Rol que tendrá en la plataforma |
 | Teléfono          | Text          | NO          | Formato válido                                | Contacto                        |
 | Notas             | Textarea      | NO          | Máx. 500 caracteres                           | Observaciones                   |
 

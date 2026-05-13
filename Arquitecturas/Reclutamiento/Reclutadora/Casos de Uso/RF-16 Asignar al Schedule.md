@@ -22,4 +22,4 @@ La entrada en Schedule se genera en menos de 10s tras la asignación. Aparece en
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Asignación de colaborador (RF-15)` → AUTOMATICO → `Sistema genera entrada en Schedule del hotel` → `Refleja en Schedule personal del colaborador` → `Notifica al Manager del Hotel`
+`Asignación de colaborador (RF-15)` → AUTOMATICO → `Sistema genera entrada en Schedule del hotel` → `Refleja en Schedule personal del colaborador` → `Notifica al Manager de Área`

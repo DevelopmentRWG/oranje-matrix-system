@@ -51,7 +51,7 @@ aliases:
 
 | Rol externo                                        | Cuándo interviene                                                                        |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| **[[Hotel/Manager del Hotel\|Manager del Hotel]]** | Recibe el sistema activo post-Naranja; crea requisiciones.                               |
+| **[[Hotel/Manager de Área\|Manager de Área]]** | Recibe el sistema activo post-Naranja; crea requisiciones.                               |
 | **[[Hotel/Supervisor\|Supervisor del Hotel]]**     | Recibe el sistema activo post-Naranja; crea requisiciones.                               |
 | **[[Reclutadora]]**                                | Recibe el hotel activo para empezar a cubrir requisiciones.                              |
 | **[[Inspector]]**                                  | Asignado automáticamente al hotel al activarse (por zona).                               |

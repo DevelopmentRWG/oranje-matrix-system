@@ -14,7 +14,7 @@ aliases:
 
 | Dependencia                      | Descripción                                                                                                                                        |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Módulo Hotel**                 | El depto Reclutamiento recibe las requisiciones autorizadas por el Manager del Hotel. Sin requisiciones aprobadas no hay flujo de cobertura.       |
+| **Módulo Hotel**                 | El depto Reclutamiento recibe las requisiciones autorizadas por el Manager de Área. Sin requisiciones aprobadas no hay flujo de cobertura.       |
 | **Módulo Schedule**              | Al asignar un colaborador, se genera automáticamente la entrada en el Schedule del hotel. Bidireccional: Reclutamiento escribe, Schedule consulta. |
 | **Módulo Timesheet**             | El Timesheet lee a los colaboradores asignados. El Manager de Reclutamiento ve el indicador de Lunch Extendido.                                    |
 | **Módulo Pool de Colaboradores** | Es el repositorio central donde Reclutamiento alimenta nuevos colaboradores y desde donde consume para cubrir requisiciones.                       |
@@ -50,7 +50,7 @@ aliases:
 
 | Rol externo                                              | Cuándo interviene                                            |
 | -------------------------------------------------------- | ------------------------------------------------------------ |
-| **Manager del Hotel**                                    | Autoriza las requisiciones que llegan al depto.              |
+| **Manager de Área**                                    | Autoriza las requisiciones que llegan al depto.              |
 | **Colaborador del Gerente del Hotel (GHC)**              | Crea las requisiciones en el módulo Hotel.                   |
 | **Inspector** *(módulo Inspección)*                      | Investiga disputas de Blacklist y casos Rojo.                |
 | **Business Developer / BDC** *(módulo Onboarding-Hotel)* | Recibe escalamientos comerciales del Manager.                |
