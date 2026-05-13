@@ -83,12 +83,12 @@ Ramas alternas:
 
 ## Actores
 
-| Actor                            | Tipo           | Responsabilidad principal                                          |
-| -------------------------------- | -------------- | ------------------------------------------------------------------ |
-| Business Developer (BD)          | Operativo      | Identifica, propone, da seguimiento, gestiona rechazos             |
-| Business Developer Coordinator   | Supervisor     | Valida T&C, aprueba conversión, gestiona Café y Negro              |
-| Sistema                          | Automatización | Trigger automático, trazabilidad, notificaciones, semáforos        |
-| Administrador *(en pausa)*       | Configuración  | Usuarios, catálogos, permisos                                      |
+| Actor                          | Tipo           | Responsabilidad principal                                   |
+| ------------------------------ | -------------- | ----------------------------------------------------------- |
+| Business Developer (BD)        | Operativo      | Identifica, propone, da seguimiento, gestiona rechazos      |
+| Business Developer Coordinator | Supervisor     | Valida T&C, aprueba conversión, gestiona Café y Negro       |
+| Sistema                        | Automatización | Trigger automático, trazabilidad, notificaciones, semáforos |
+| Administrador *(en pausa)*     | Configuración  | Usuarios, catálogos, permisos                               |
 
 ---
 
@@ -106,14 +106,14 @@ Ver [[07 - Reglas de Negocio]] para el detalle. Las más importantes:
 
 ## Integraciones (RI)
 
-| ID       | Integración                            | Descripción                                                                          |
-| -------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
-| RI-V-01  | Ventas ↔ Hotel                         | Al alcanzar Naranja, el hotel se habilita en el módulo Hotel (genera requisiciones). |
-| RI-V-02  | Ventas ↔ Reclutamiento                 | El hotel cliente activo recibe Reclutadoras y Líderes para cubrir requisiciones.    |
-| RI-V-03  | Ventas ↔ Inspección                    | Al activarse, el hotel queda asignado a un Inspector por zona.                       |
-| RI-V-04  | Ventas ↔ Contrato                      | El cierre en Rosa genera el Contrato con T&C validado.                               |
-| RI-V-05  | Ventas ↔ Sistema de Email              | Trigger automático envía email de bienvenida al hotel.                              |
-| RI-V-06  | Ventas ↔ QA                            | Operador de QA fijo asignado al depto. Métricas e Indicador de Calidad.             |
+| ID      | Integración               | Descripción                                                                          |
+| ------- | ------------------------- | ------------------------------------------------------------------------------------ |
+| RI-V-01 | Ventas ↔ Hotel            | Al alcanzar Naranja, el hotel se habilita en el módulo Hotel (genera requisiciones). |
+| RI-V-02 | Ventas ↔ Reclutamiento    | El hotel cliente activo recibe Reclutadoras y Líderes para cubrir requisiciones.     |
+| RI-V-03 | Ventas ↔ Inspección       | Al activarse, el hotel queda asignado a un Inspector por zona.                       |
+| RI-V-04 | Ventas ↔ Contrato         | El cierre en Rosa genera el Contrato con T&C validado.                               |
+| RI-V-05 | Ventas ↔ Sistema de Email | Trigger automático envía email de bienvenida al hotel.                               |
+| RI-V-06 | Ventas ↔ QA               | Operador de QA fijo asignado al depto. Métricas e Indicador de Calidad.              |
 
 ---
 

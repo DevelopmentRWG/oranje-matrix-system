@@ -29,9 +29,9 @@ aliases:
 
 ## ROLES EN ESTE DOCUMENTO
 
-| ID           | Rol                                          |
-| ------------ | -------------------------------------------- |
-| **ROL-V-01** | 🤝 Business Developer (BD)                   |
-| **ROL-V-02** | 🧑‍💼 Business Developer Coordinator (BDC)    |
-| **ROL-V-03** | ⚙️ Sistema                                   |
-| **ROL-V-04** | 🛠️ Administrador *(en pausa)*                |
+| ID           | Rol                                        |
+| ------------ | ------------------------------------------ |
+| **ROL-V-01** | 🤝 Business Developer (BD)                 |
+| **ROL-V-02** | 🧑‍💼 Business Developer Coordinator (BDC) |
+| **ROL-V-03** | ⚙️ Sistema                                 |
+| **ROL-V-04** | 🛠️ Administrador *(en pausa)*             |

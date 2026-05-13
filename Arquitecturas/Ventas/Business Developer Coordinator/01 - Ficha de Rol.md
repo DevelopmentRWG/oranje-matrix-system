@@ -11,14 +11,14 @@ aliases:
 
 ---
 
-| Campo              | Contenido                                       |
-| ------------------ | ----------------------------------------------- |
-| **ID Rol**         | ROL-V-02                                        |
-| **Nombre del Rol** | 🧑‍💼 Business Developer Coordinator (BDC)       |
-| **Tipo**           | Supervisor — Comercial                          |
-| **Departamento**   | Ventas                                          |
-| **Reporta a**      | Dirección                                       |
-| **Supervisa a**    | Business Developers (BDs) de su territorio      |
+| Campo              | Contenido                                  |
+| ------------------ | ------------------------------------------ |
+| **ID Rol**         | ROL-V-02                                   |
+| **Nombre del Rol** | 🧑‍💼 Business Developer Coordinator (BDC) |
+| **Tipo**           | Supervisor — Comercial                     |
+| **Departamento**   | Ventas                                     |
+| **Reporta a**      | Dirección                                  |
+| **Supervisa a**    | Business Developers (BDs) de su territorio |
 
 ---
 

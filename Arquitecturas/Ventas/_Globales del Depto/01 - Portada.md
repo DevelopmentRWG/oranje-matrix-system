@@ -13,24 +13,24 @@ aliases:
 
 ---
 
-| Campo            | Contenido                          |
-| ---------------- | ---------------------------------- |
-| **Documento**    | Plantilla de Roles – Ventas        |
-| **Departamento** | Ventas                             |
-| **Relacionado**  | PRD-VENTAS-01 · HU-VENTAS-01       |
-| **Versión**      | 1.0                                |
-| **Estado**       | En definición                      |
+| Campo            | Contenido                    |
+| ---------------- | ---------------------------- |
+| **Documento**    | Plantilla de Roles – Ventas  |
+| **Departamento** | Ventas                       |
+| **Relacionado**  | PRD-VENTAS-01 · HU-VENTAS-01 |
+| **Versión**      | 1.0                          |
+| **Estado**       | En definición                |
 
 ---
 
 ## ROLES DEFINIDOS EN ESTE DOCUMENTO
 
-| ID           | Rol · Descripción breve                                                                                                                                                |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **ROL-V-01** | 🤝 **Business Developer (BD)** — Ejecutor comercial en campo. Identifica prospectos, elabora propuestas, hace seguimiento, gestiona rechazos.                          |
+| ID           | Rol · Descripción breve                                                                                                                                                   |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ROL-V-01** | 🤝 **Business Developer (BD)** — Ejecutor comercial en campo. Identifica prospectos, elabora propuestas, hace seguimiento, gestiona rechazos.                             |
 | **ROL-V-02** | 🧑‍💼 **Business Developer Coordinator (BDC)** — Supervisa rutas y zonas. Valida términos, aprueba conversiones, gestiona estancamientos y clientes pausados. *Sí final.* |
-| **ROL-V-03** | ⚙️ **Sistema** — Automatización: Trigger Automático de Conversión (3 acciones paralelas), trazabilidad de cambios de status, notificaciones, semáforos.                 |
-| **ROL-V-04** | 🛠️ **Administrador** — Gestión total del sistema: usuarios, catálogos, permisos. *(En pausa hasta que se estabilicen reglas de negocio.)*                              |
+| **ROL-V-03** | ⚙️ **Sistema** — Automatización: Trigger Automático de Conversión (3 acciones paralelas), trazabilidad de cambios de status, notificaciones, semáforos.                   |
+| **ROL-V-04** | 🛠️ **Administrador** — Gestión total del sistema: usuarios, catálogos, permisos. *(En pausa hasta que se estabilicen reglas de negocio.)*                                |
 
 ---
 

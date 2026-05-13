@@ -134,6 +134,14 @@ SIDEBAR
 - ➕ Elaborar nueva Propuesta
 - 📞 Registrar intento de contacto
 
+### 🔄 Cómo se usa este módulo
+
+Al iniciar sesión, el BD llega aquí. Lo primero que mira son los KPIs personales del mes para tener contexto de cómo va su desempeño (cuántos prospectos identificó, cuántas propuestas envió, cuántas se convirtieron, su tasa de conversión).
+
+Luego revisa **"Próximos seguimientos"** — el sistema le muestra los prospectos que requieren contacto hoy (basado en su último contacto y el status). Si ve alertas rojas de prospectos sin actividad >7 días, entra directo al detalle desde aquí.
+
+Si no hay nada urgente, decide qué hacer con las **acciones rápidas**: identificar un nuevo prospecto, registrar un intento de contacto que hizo offline, o empezar a elaborar una propuesta. El Dashboard es su **punto de entrada diario** — desde aquí se mueve a Pipeline, Mi Territorio o Propuestas según lo que necesite.
+
 ---
 
 ## 📋 Módulo PIPELINE (Mis Prospectos)
@@ -178,6 +186,25 @@ SIDEBAR
 > [!warning]
 > El BD **NO** puede aprobar conversión, validar T&C, crear Usuario del Hotel, desbloquear Café, marcar/reactivar Negro. Todo eso es del BDC.
 
+### 🔄 Cómo se usa este módulo
+
+Pipeline es el **centro de operaciones** del BD. Aquí gestiona todos sus prospectos a lo largo del Semáforo Onboarding.
+
+**Cuando el prospecto es nuevo (Gris):** el BD entra al detalle del hotel y llena el perfil — email, teléfono, contacto, cargo, necesidad del negocio. Al guardar, el sistema cambia el status a **Azul Claro** automáticamente y notifica al BDC. La línea de tiempo registra el cambio con autor y fecha.
+
+**Cuando el prospecto está en Azul Claro:** el BD registra visitas en frío e intentos de contacto cada vez que llama o visita al hotel. Cada intento queda en el histórico de contactos del prospecto. Cuando ya tiene suficiente información y el contacto está caliente, sale del Pipeline y se mueve al módulo Propuestas para elaborar la Propuesta Personalizada.
+
+**Cuando el prospecto está en Verde (propuesta enviada):** el BD espera respuesta del hotel y hace seguimiento. Si el hotel responde con interés, click **"Avanzar a Amarillo"** → ingresa motivo y comentario obligatorio → el status cambia y notifica al BDC.
+
+**Si el hotel rechaza:** click **"Marcar Rojo"** → selecciona motivo del catálogo (No le interesó / No tiene presupuesto / Otra empresa / Otro) + comentario obligatorio mín. 30 caracteres. Puede marcar "Reactivar más adelante" si cree que el contacto puede revivirse. Más tarde, desde la sub-vista Rojo, puede hacer click en **"Reactivar"** → el status regresa automáticamente a Azul Claro (regla RR-V-07, NUNCA vuelve a Gris).
+
+**Si el prospecto se estanca** (sin respuesta tras múltiples intentos, cambio de contacto, indecisión): click **"Marcar Café"** → motivo + notas para el BDC (mín. 30 caracteres, son el contexto que el BDC necesita para investigar). A partir de ahí, **el BD pierde el control** del prospecto: el caso pasa a la bandeja Café del BDC, que investiga, da solución y reactiva (regresa a Azul Claro). Solo entonces el BD recupera el caso.
+
+**Cuando llega a Rosa:** el BD ya envió el T&C y está negociando junto al BDC. Si el BDC aprueba la conversión, el prospecto pasa a Naranja y desaparece del Pipeline (entra a Clientes Activos).
+
+> [!note]
+> Cada cambio de status registra **fecha, responsable y comentario** en la línea de tiempo del prospecto (regla RR-V-11). Nada se mueve "en silencio".
+
 ---
 
 ## 🗺️ Módulo MI TERRITORIO
@@ -197,6 +224,21 @@ SIDEBAR
 - 👁️ Ver detalle del prospecto
 - ➕ Identificar nuevo prospecto en el mapa
 - 📍 Marcar ruta del día (planeación de visitas)
+
+### 🔄 Cómo se usa este módulo
+
+Mi Territorio es el módulo que el BD usa **cuando sale a campo**. Lo abre principalmente desde mobile.
+
+Lo primero que ve es el **mapa con sus rutas y zonas asignadas**, con pines de colores según el status del prospecto en cada ubicación (Gris = recién identificado, Azul Claro = contacto en curso, Verde = propuesta enviada, etc.).
+
+**Al inicio del día** el BD usa **"Marcar ruta del día"** para planear las visitas: selecciona los prospectos que va a visitar y el sistema le sugiere un orden eficiente de recorrido. Esto le ayuda a optimizar el tiempo y no olvidarse de ninguno.
+
+**Durante la visita**, si detecta un **hotel nuevo** que no estaba registrado, hace click directo en el mapa en esa ubicación → el sistema captura **geolocalización automáticamente** y abre el formulario de "Identificar prospecto" con la zona pre-llenada. Llena nombre y datos mínimos → el prospecto queda en Gris listo para ser trabajado luego.
+
+**Si quiere ver el detalle** de un prospecto existente (para refrescar la información antes de tocar la puerta), hace click en su pin → entra al detalle del prospecto desde Pipeline. Desde ahí puede registrar el intento de contacto que va a hacer en ese momento.
+
+> [!info]
+> Mi Territorio y Pipeline están sincronizados: cualquier cambio de status hecho desde Pipeline se refleja en el mapa, y cualquier prospecto identificado en el mapa aparece en Pipeline.
 
 ---
 
@@ -227,6 +269,20 @@ SIDEBAR
 > [!info]
 > La Propuesta Personalizada se elabora exclusivamente en status **Verde** (RR-V-09). Si el prospecto está estancado (Café), el BDC tomará el caso para desbloquear y habilitar una nueva propuesta.
 
+### 🔄 Cómo se usa este módulo
+
+Cuando un prospecto está listo (Azul Claro con perfil completo y contactos previos hechos), el BD se mueve a Propuestas para construir la oferta comercial formal.
+
+**Crear la propuesta:** click **"➕ Elaborar Propuesta Personalizada"** → selecciona el hotel destino de la lista de sus prospectos en Azul Claro (los hoteles en otros status no aparecen) → llena los servicios propuestos del catálogo → fija precios por servicio → escribe condiciones generales (mín. 100 caracteres con los términos comerciales) → define vigencia (fecha futura). Puede adjuntar PDFs o documentos de soporte. Guarda como **borrador** y puede editarlo libremente cuantas veces quiera.
+
+**Enviar al hotel:** cuando el BD está conforme con la propuesta, click **"📤 Enviar al hotel"** → el sistema valida que esté completa (servicios + precios + condiciones + vigencia) → envía email al hotel con la propuesta adjunta → cambia el status del prospecto a **Verde** automáticamente → bloquea esa versión de la propuesta para edición (queda como histórico) → notifica al BD y al BDC.
+
+**Reutilizar propuestas:** si el BD quiere armar una propuesta similar para otro hotel, usa **"📋 Duplicar"** sobre una existente. El sistema crea una copia con los datos pre-llenados, y el BD solo ajusta lo que sea diferente para el nuevo prospecto. Esto acelera muchísimo el trabajo cuando hay propuestas estándar.
+
+**Si el hotel responde con interés:** ese flujo se gestiona desde Pipeline (avanzar a Amarillo). En Propuestas el BD solo ve que la propuesta cambió de estado a "Aceptada".
+
+**Si el hotel rechaza:** desde Pipeline el BD marca Rojo. En Propuestas la propuesta queda como "Rechazada" en el histórico — puede consultarse o duplicarse si se reactiva el prospecto más adelante.
+
 ---
 
 ## 📄 Módulo DOCUMENTOS T&C
@@ -245,16 +301,38 @@ SIDEBAR
 
 ### Campos obligatorios del T&C (RR-V-10)
 
-| Campo |
-|---|
-| Pay rate |
-| Bill rate |
-| Overtime |
-| Festivos |
+| Campo      |
+| ---------- |
+| Pay rate   |
+| Bill rate  |
+| Overtime   |
+| Festivos   |
 | Calendario |
 
 > [!warning]
 > El BD **NO** valida ni aprueba el T&C. Solo lo crea y edita. La validación final es del BDC (RR-V-15).
+
+### 🔄 Cómo se usa este módulo
+
+Una vez el hotel responde con interés a la Propuesta (status Amarillo), el BD construye el documento formal que sienta las bases legales y económicas del acuerdo: el Documento de Términos y Condiciones.
+
+**Crear el T&C:** click **"➕ Crear Documento de T&C"** → llena los **5 campos obligatorios** (regla RR-V-10):
+1. **Pay rate** — tarifa de pago al colaborador
+2. **Bill rate** — tarifa de facturación al hotel
+3. **Overtime** — reglas de tiempo extra
+4. **Festivos** — días festivos pagados
+5. **Calendario** — inicio y fin de semana laboral
+
+Opcionalmente: vigencia, renovación, adjuntos. El T&C queda como **borrador editable** mientras el BD lo construye. Si tiene dudas, le puede pedir **apoyo al BDC** desde el detalle del documento (el BDC entra y co-edita).
+
+**Enviar al BDC para validación:** cuando el T&C está completo, click **"📤 Enviar al BDC para validación"** → el sistema valida que los 5 campos obligatorios estén llenos → cambia el documento a estado "Pendiente de validación BDC" → **bloquea la edición del BD** mientras está pendiente → notifica al BDC en su bandeja.
+
+**Esperar decisión del BDC:**
+- **Si el BDC valida:** el BD recibe notificación *"Tu T&C fue validado"* → el documento queda como "Validado" → el BD ya puede avanzar el prospecto a **Rosa** (negociación formal) desde Pipeline.
+- **Si el BDC rechaza con observaciones:** el BD recibe notificación con las observaciones del BDC → el T&C vuelve a editable → el BD corrige según el feedback y lo reenvía.
+
+> [!important]
+> Sin T&C validado, el BD NO puede iniciar Rosa, y por lo tanto el prospecto NO puede llegar a conversión. El T&C validado es **prerequisito obligatorio** para todo el flujo de cierre.
 
 ---
 
@@ -277,43 +355,23 @@ SIDEBAR
 > [!important]
 > Post-Naranja, BD y BDC son **referentes comerciales** sin permisos operativos (RR-V-12). NO crean requisiciones, NO editan el hotel, NO gestionan personal — eso es del depto Hotel y Reclutamiento.
 
----
+### 🔄 Cómo se usa este módulo
 
-## Flujo operativo del Business Developer
+Después de que el BDC aprueba la conversión (Rosa → Naranja), el prospecto desaparece del Pipeline del BD y **aparece automáticamente en Clientes Activos**. A partir de ahí el hotel ya NO es prospecto: es cliente y opera con Reclutamiento, Inspección y el depto Hotel. El BD pasa a ser **referente comercial** — el contacto humano de Oranje con el cliente.
 
-```
-1. Login → Dashboard (mis KPIs y próximos seguimientos)
-   │
-   ▼
-2. Identifico nuevo prospecto en mi territorio (Gris)
-   │
-   ▼
-3. Visita en frío → Recopilo datos → Azul Claro
-   │
-   ▼
-4. Elaboro Propuesta Personalizada → Envío → Verde
-   │
-   ▼
-5. ¿Hotel responde con interés?
-      ├─ SÍ → Avanzo a Amarillo
-      ├─ NO → Marco Rojo (rechazo)
-      └─ Estancado → Marco Café (BDC se encarga)
-   │
-   ▼
-6. Amarillo: Creo Documento de T&C (con apoyo del BDC)
-   │
-   ▼
-7. Envío T&C al BDC para validación
-   │
-   ▼
-8. Iniciamos negociación (Rosa) — BD + BDC
-   │
-   ▼
-9. BDC aprueba conversión → Naranja
-   │
-   ▼
-10. Hotel cliente activo → BD queda como referente comercial
-```
+**Qué hace el BD aquí:**
+- **Consultar el cliente:** ve datos comerciales (cuándo se convirtió, T&C aplicable, vigencia del contrato, BD originario, histórico del onboarding). Solo lectura del lado operativo.
+- **Registrar contacto comercial:** click **"📞 Registrar contacto comercial"** → documenta visitas de cortesía, llamadas de follow-up o reuniones para mantener relación. Queda en histórico del cliente.
+
+**Qué NO puede hacer (RR-V-12):**
+- ❌ Crear requisiciones (lo hace el Supervisor del hotel)
+- ❌ Editar el hotel (lo hace el Manager del Hotel)
+- ❌ Gestionar personal asignado (lo hace Reclutamiento)
+- ❌ Autorizar nada
+
+**Si el cliente cae a Negro:** si el BDC marca el cliente como Negro (cierre, pausa, disputa), el BD recibe notificación: *"Tu cliente X pasó a Negro"*. **El BD no interviene en la gestión** — eso es exclusivo del BDC (RR-V-05). Solo se entera.
+
+**Si el cliente se reactiva desde Negro:** vuelve al ciclo desde Azul Claro como prospecto (RR-V-07). Si el BDC le reasigna ese caso, el BD lo recupera en su Pipeline y vuelve a empezar el ciclo de Ventas.
 
 ---
 
