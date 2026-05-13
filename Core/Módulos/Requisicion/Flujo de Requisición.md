@@ -7,20 +7,21 @@ aliases:
 
 # Flujo de Requisición
 
-Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [[Hotel/Supervisor|Supervisor]] (SUP) o el [[Hotel/Manager del Hotel|Manager del Hotel]] (GH) la crean, hasta que queda **Cubierta** o es eliminada. Este flujo **consume** colaboradores de la [[Pool de Colaboradores]]; no los produce.
+Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [[Hotel/Manager General|Manager General]] (GM), el [[Hotel/Manager de Área|Manager de Área]] (GH) o el [[Hotel/Supervisor|Supervisor]] (SUP) la crean, hasta que queda **Cubierta** o es eliminada. Este flujo **consume** colaboradores de la [[Pool de Colaboradores]]; no los produce.
 
 > [!info] Punto de encuentro con el [[Flujo de Reclutamiento]]
 > La [[Pool de Colaboradores]] es el único punto donde ambos flujos se conectan. El [[Flujo de Reclutamiento]] corre de forma **continua** alimentando la pool (haya o no requisiciones); este flujo la **consume** cuando necesita cubrir posiciones.
 
 ## Actores
 
-- **GH — [[Hotel/Manager del Hotel|Gerente del Hotel]]**: único autorizado para **autorizar** la requisición.
-- **SUP — [[Hotel/Supervisor|Supervisor]]**: puede crear, modificar y preparar la requisición.
+- **GM — [[Hotel/Manager General|Manager General]]**: máxima autoridad del hotel. Puede crear, autorizar y rechazar requisiciones.
+- **GH — [[Hotel/Manager de Área|Manager de Área]]**: puede crear, autorizar y rechazar requisiciones.
+- **SUP — [[Hotel/Supervisor|Supervisor]]**: puede crear, modificar y preparar la requisición. No puede autorizar.
 - **Reclutador — [[Reclutadora]]**: ejecuta la asignación de personal tras la autorización.
 
 ## Validación de acceso
 
-Al inicio el sistema valida si el usuario es GH o SUP.
+Al inicio el sistema valida si el usuario es GM, GH o SUP.
 - **Sin acceso** → mensaje "No cuenta con acceso" → **FIN**.
 - **Con acceso** → continúa al menú de operaciones (crear, modificar, autorizar, eliminar).
 
@@ -29,7 +30,7 @@ Al inicio el sistema valida si el usuario es GH o SUP.
 ## 1. Creación de requisición
 
 1. Se genera **Número de requisición** (ver [[#RUTINA - Número de requisición automática]]).
-2. Se registran datos de cabecera: Número de requisición, Hotel, GH, **Status Apple green** (Requisición en elaboración por el hotel), fecha y hora del status.
+2. Se registran datos de cabecera: Número de requisición, Hotel, GM/GH, **Status Apple green** (Requisición en elaboración por el hotel), fecha y hora del status.
 3. Se ejecuta [[#RUTINA - Journal Requisición]].
 
 ### 1.1 Agregar posiciones
@@ -68,27 +69,27 @@ Al confirmar eliminación → la posición pasa a **Status Purple** (eliminada f
 ### 2.1 Autorizar requisición
 
 Reglas:
-- **Solo el GH puede autorizar.** Si es SUP → mensaje "Solo el gerente del hotel puede autorizar la requisición".
+- **Solo el GM o GH pueden autorizar.** Si es SUP → mensaje "Solo el gerente del hotel puede autorizar la requisición".
 - Debe existir **al menos una posición registrada**. Si no → mensaje "No tiene posiciones registradas, registre al menos una posición e intente nuevamente".
 
 Si cumple:
-1. La requisición cambia a **Status Green** (Requisición autorizada por el gerente del hotel) + fecha/hora.
+1. La requisición cambia a **Status Green** (Requisición autorizada) + fecha/hora.
 2. El [[Inspector]] de la cabecera se asigna automáticamente según la [[Core/Catálogos/Zonas|zona]] del hotel.
 3. Se ejecuta [[#RUTINA - Journal Requisición]].
 4. **Por cada posición de la requisición**:
    - Se ejecuta [[#RUTINA - Prioridad de la posición automática]] usando la fecha de autorización y la fecha de inicio de la posición.
    - Se registra la prioridad calculada (Green / Yellow / Red — ver [[Semáforo de Urgencia de Requisición]]).
-   - La posición cambia a **Status Orange** (Posición autorizada por el gerente del hotel) + fecha/hora.
+   - La posición cambia a **Status Orange** (Posición autorizada) + fecha/hora.
    - Se ejecuta [[#RUTINA - Journal Posición]].
 
-### 2.2 Rechazar requisición (GH regresa al SUP)
+### 2.2 Rechazar requisición
 
-Si el GH rechaza la requisición:
-1. La requisición regresa a **Status Apple green** (En elaboración) con las observaciones del GH.
+Si el GM o GH rechaza la requisición:
+1. La requisición regresa a **Status Apple green** (En elaboración) con las observaciones.
 2. Se ejecuta [[#RUTINA - Journal Requisición]].
-3. El [[Hotel/Supervisor|Supervisor]] corrige la **misma requisición** (mismo número/ID) y la reenvía para autorización.
+3. El creador corrige la **misma requisición** (mismo número/ID) y la reenvía para autorización.
 
-> [!important] No se genera una nueva requisición tras el rechazo. El SUP modifica y reenvía la requisición original con el mismo identificador.
+> [!important] No se genera una nueva requisición tras el rechazo. Se modifica y reenvía la requisición original con el mismo identificador.
 
 ---
 
@@ -132,7 +133,7 @@ Ver [[Semáforo de Requisición]]. Estados: Apple green → Green → Yellow →
 
 ### Posición (ciclo de vida)
 - **Gold** — En preparación/elaboración por el hotel.
-- **Orange** — Autorizada por el gerente del hotel.
+- **Orange** — Autorizada.
 - **Purple** — Eliminada físicamente.
 
 ### Posición — cobertura
@@ -160,7 +161,7 @@ Parámetros: Fecha de autorización de la requisición + Fecha de inicio de la p
 - `< 72 horas` → **Red**.
 
 ### RUTINA - Journal Requisición
-Registra en el journal de requisiciones: Requisición, Hotel, Gerente Hotel, Reclutador, Inspector, Status, Nota, Fecha y hora del status.
+Registra en el journal de requisiciones: Requisición, Hotel, Manager General / Manager de Área, Reclutador, Inspector, Status, Nota, Fecha y hora del status.
 
 ### RUTINA - Journal Posición
 Registra en el journal de posiciones: Número de requisición, Número de posición, Posición, Cantidad de personas, Fecha de inicio, Fecha fin, Status, Fecha y hora del status.
@@ -172,8 +173,9 @@ Registra en el journal de posiciones: Número de requisición, Número de posici
 - [[Requisición]]
 - [[Pool de Colaboradores]]
 - [[Flujo de Reclutamiento]]
+- [[Hotel/Manager General|Manager General]] (GM)
+- [[Hotel/Manager de Área|Manager de Área]] (GH)
 - [[Hotel/Supervisor|Supervisor]] (SUP)
-- [[Hotel/Manager del Hotel|Manager del Hotel]] (GH)
 - [[Manager de Reclutamiento]]
 - [[Reclutadora]]
 - [[Core/Módulos/Schedule|Schedule]]

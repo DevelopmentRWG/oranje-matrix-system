@@ -14,8 +14,8 @@ Módulo que representa al hotel como cliente de Oranje. El hotel solicita person
 
 ### Roles
 
-- [[Hotel/Manager General|Manager General]] — Máxima autoridad en hoteles con jerarquía extendida. Supervisa a los Gerentes de Departamento.
-- [[Hotel/Manager del Hotel|Manager del Hotel]] — Aprueba o rechaza requisiciones; gestiona el personal asignado.
+- [[Hotel/Manager General|Manager General]] — Máxima autoridad del hotel. Siempre existe en ambas jerarquías.
+- [[Hotel/Manager de Área|Manager de Área]] — Rol operativo por departamento. Aprueba o rechaza requisiciones; gestiona el personal asignado.
 - [[Hotel/Supervisor|Supervisor]] — Crea las requisiciones de personal.
 
 ### Estructura organizacional
@@ -24,10 +24,10 @@ Dependiendo del tamaño y complejidad del hotel, la plataforma soporta dos confi
 
 #### Jerarquía simple
 
-Para hoteles pequeños o con estructura plana.
+Para hoteles pequeños o con estructura plana. El Manager General también opera como Manager de Área (misma persona, dos roles).
 
 ```
-Manager del Hotel → SUP → Colaboradores de Oranje
+Manager General (GM) → SUP → Colaboradores de Oranje
 ```
 
 #### Jerarquía extendida
@@ -35,8 +35,8 @@ Manager del Hotel → SUP → Colaboradores de Oranje
 Para hoteles grandes con múltiples [[Departamentos del Hotel|departamentos]] operativos.
 
 ```
-Manager General
-  └── Gerente de Departamento (uno por departamento)
+Manager General (GM)
+  └── Manager de Área (uno por departamento)
        └── Supervisor(es)
             └── Colaboradores de Oranje
 ```
@@ -45,9 +45,9 @@ Manager General
 
 | Jerarquía simple | Jerarquía extendida | Responsabilidades en plataforma |
 |---|---|---|
-| [[Hotel/Manager del Hotel\|Manager del Hotel]] | Gerente de Departamento | Aprueba requisiciones, gestiona schedule, genera QR, reporta colaboradores |
-| [[Hotel/Supervisor\|SUP]] | Supervisor | Crea requisiciones, reporta accidentes laborales |
-| *(no aplica)* | [[Hotel/Manager General\|Manager General]] | Supervisión general, visibilidad global |
+| [[Hotel/Manager General\|Manager General]] | [[Hotel/Manager General\|Manager General]] | Supervisión general, visibilidad global, todas las acciones operativas |
+| [[Hotel/Manager General\|Manager General]] (mismo rol) | [[Hotel/Manager de Área\|Manager de Área]] | Aprueba requisiciones, gestiona schedule, genera QR, reporta colaboradores |
+| [[Hotel/Supervisor\|SUP]] | [[Hotel/Supervisor\|Supervisor]] | Crea requisiciones, reporta colaboradores, reporta accidentes laborales |
 
 #### Departamentos del hotel
 

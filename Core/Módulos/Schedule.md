@@ -34,7 +34,7 @@ Tablero de planeación semanal del hotel. Es el **eje central de la operación**
 
 ## Quién lo gestiona
 
-- **[[Hotel/Manager del Hotel|Manager del Hotel]]** — Administra el schedule semanal: distribuye y planea a su personal.
+- **[[Hotel/Manager de Área|Manager de Área]]** — Administra el schedule semanal: distribuye y planea a su personal.
 - **[[Reclutadora]]** — Consulta el schedule para ver la demanda y registra colaboradores al asignarlos.
 
 ## Qué habilita
@@ -56,5 +56,5 @@ Tablero de planeación semanal del hotel. Es el **eje central de la operación**
 - [[Timesheet]]
 - [[Reclutadora]]
 - [[Pool de Colaboradores]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Flujo de Requisición]]

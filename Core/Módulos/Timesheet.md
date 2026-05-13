@@ -16,7 +16,7 @@ Registro de tiempo trabajado por un colaborador en un hotel. Se crea a partir de
 
 ## Ponchado
 
-El colaborador poncha vía **QR** que genera el [[Hotel/Manager del Hotel|Manager del Hotel]]. Los ponches registrados son:
+El colaborador poncha vía **QR** que genera el [[Hotel/Manager de Área|Manager de Área]]. Los ponches se registran por pares de entrada/salida para cada periodo:
 
 - **Entrada**
 - **Lunch**
@@ -55,7 +55,7 @@ El sistema aplica una deducción de lunch al cómputo de horas del colaborador e
 El sistema marca automáticamente a los colaboradores cuyo lunch excede 30 minutos.
 
 - **Quién lo ve:** [[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]]
-- **Quién NO lo ve:** [[Hotel/Manager del Hotel|Manager del Hotel]], [[Hotel/Supervisor|Supervisor]]
+- **Quién NO lo ve:** [[Hotel/Manager de Área|Manager de Área]], [[Hotel/Supervisor|Supervisor]]
 - **Qué muestra:** colaborador, hotel, fecha, tiempo de lunch real
 - **Cuándo se activa:** cuando el tiempo de lunch registra más de 30 minutos
 
@@ -64,7 +64,7 @@ El sistema marca automáticamente a los colaboradores cuyo lunch excede 30 minut
 ## Relacionado
 
 - [[Core/Módulos/Schedule|Schedule]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Reclutadora]]
 - [[Reglas de Negocio]]
 - [[Inspector]]

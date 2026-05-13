@@ -26,7 +26,7 @@ Datos generales que identifican la requisición:
 | Número de requisición | Identificador único de la requisición.                                                      |
 | Hotel                | Hotel que solicita el personal.                                                              |
 | SUP                  | [[Hotel/Supervisor\|Supervisor]] que creó la requisición.              |
-| HM (Hotel Manager)   | [[Hotel/Manager del Hotel\|Manager del Hotel]] responsable. También conocido como Gerente de Hotel. |
+| GH (Manager de Área) | [[Hotel/Manager de Área\|Manager de Área]] responsable.                                             |
 | Reclutador           | [[Reclutadora]] asignada a atender la requisición.                                           |
 | Inspector            | [[Inspector]] correspondiente a la [[Zonas\|zona]] del hotel.                             |
 | Status (color)       | Estado actual según el [[Semáforo de Requisición]].                                          |
@@ -51,7 +51,7 @@ Cada requisición puede incluir una o más posiciones. Cada posición registra:
 | Notas                    | Aclaraciones adicionales del hotel.                                                  |
 
 > [!note] Sobre la fecha de fin
-> La posición tiene **fecha de inicio** pero **no fecha de fin** definida. La posición termina cuando el [[Hotel/Manager del Hotel|Manager del Hotel]] o el [[Hotel/Supervisor|Supervisor]] manda al colaborador a descansar (estado **Rosa - Stand-by** en el [[Semáforo del Colaborador]]).
+> La posición tiene **fecha de inicio** pero **no fecha de fin** definida. La posición termina cuando el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] manda al colaborador a descansar (estado **Rosa - Stand-by** en el [[Semáforo del Colaborador]]).
 
 ## Niveles de urgencia
 
@@ -81,7 +81,7 @@ Ver [[Flujo de Requisición]].
 - [[Niveles de Inglés]]
 - [[Zonas]]
 - [[Inspector]]
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Reclutadora]]
 - [[Manager de Reclutamiento]]

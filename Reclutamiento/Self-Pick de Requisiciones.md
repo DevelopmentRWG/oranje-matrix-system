@@ -15,7 +15,7 @@ Modelo de asignación de requisiciones en el módulo de [[Reclutamiento/Reclutam
 ## Flujo
 
 ```
-Manager del Hotel autoriza requisición
+Manager de Área autoriza requisición
       ↓
 Llega al sistema y queda en cola "Autorizadas" (visible a todo Reclutamiento)
       ↓

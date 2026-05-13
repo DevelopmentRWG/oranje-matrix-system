@@ -18,11 +18,11 @@ Definición de las métricas concretas que cada [[Operador de QA]] monitorea en 
 
 Cada KPI tiene tres niveles de evaluación:
 
-| Nivel | Significado |
-|---|---|
-| **Meta** | Desempeño esperado; el departamento opera dentro de parámetros |
+| Nivel         | Significado                                                                 |
+| ------------- | --------------------------------------------------------------------------- |
+| **Meta**      | Desempeño esperado; el departamento opera dentro de parámetros              |
 | **En riesgo** | Desempeño por debajo de lo esperado; requiere atención y observación formal |
-| **Crítico** | Desempeño inaceptable; requiere acción correctiva inmediata |
+| **Crítico**   | Desempeño inaceptable; requiere acción correctiva inmediata                 |
 
 Estos niveles alimentan el [[Indicador de Calidad]] existente:
 
