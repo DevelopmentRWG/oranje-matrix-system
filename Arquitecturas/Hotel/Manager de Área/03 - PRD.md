@@ -1,15 +1,15 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
 aliases:
-  - PRD Manager del Hotel
+  - PRD Manager de Área
 ---
 
 # DOCUMENTO DE REQUISITOS DE PRODUCTO
-## PRD – MANAGER DEL HOTEL
+## PRD – MANAGER DE ÁREA
 
-**Sistema de Gestión de Personal · Rol Manager del Hotel / Gerente de Departamento**
+**Sistema de Gestión de Personal · Rol Manager de Área / Gerente de Departamento**
 
 ---
 
@@ -19,7 +19,7 @@ aliases:
 | **Historia de Usuario** | HU-HOTEL-03                                                                          |
 | **Departamento**        | Hotel                                                                                |
 | **Funcionalidad**       | Autorizar requisiciones, gestionar Schedule y Timesheet, administrar personal asignado |
-| **Actor Principal**     | Manager del Hotel / Gerente de Departamento                                          |
+| **Actor Principal**     | Manager de Área / Gerente de Departamento                                          |
 | **Dispositivo**         | Web – Desktop / Tablet                                                               |
 | **Estado**              | En definición                                                                        |
 | **Versión**             | 1.0                                                                                  |
@@ -28,7 +28,7 @@ aliases:
 
 ## Objetivo
 
-Permitir al Manager del Hotel **revisar y autorizar** las requisiciones que crea el Supervisor (capa de seguridad antes de Reclutamiento), **gestionar el Schedule y Timesheet** del depto, **generar el QR de ponchado**, y **administrar a los colaboradores asignados** (Stand-by, Reportar).
+Permitir al Manager de Área **revisar y autorizar** las requisiciones que crea el Supervisor (capa de seguridad antes de Reclutamiento), **gestionar el Schedule y Timesheet** del depto, **generar el QR de ponchado**, y **administrar a los colaboradores asignados** (Stand-by, Reportar).
 
 ---
 
@@ -57,10 +57,10 @@ Permitir al Manager del Hotel **revisar y autorizar** las requisiciones que crea
 
 ## Reglas de Negocio Aplicables
 
-- **RR-H-02:** Solo el Manager del Hotel puede autorizar requisiciones (capa de seguridad).
+- **RR-H-02:** Solo el Manager de Área puede autorizar requisiciones (capa de seguridad).
 - **RR-H-03:** La requisición debe tener ≥1 posición para autorizar.
-- **RR-H-09:** Generación de QR exclusiva del Manager del Hotel.
-- **RR-H-10:** Reporte de colaborador (Rojo) exclusivo del Manager del Hotel.
+- **RR-H-09:** Generación de QR exclusiva del Manager de Área.
+- **RR-H-10:** Reporte de colaborador (Rojo) exclusivo del Manager de Área.
 - **RR-H-11:** Stand-by (Rosa) compartido con el Supervisor.
 - **RR-H-15:** Sin acceso al Indicador de Lunch Extendido.
 

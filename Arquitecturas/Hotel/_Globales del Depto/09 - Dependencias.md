@@ -14,9 +14,9 @@ aliases:
 
 | Dependencia                       | Descripción                                                                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Módulo Reclutamiento**          | Recibe las requisiciones autorizadas por el Manager del Hotel mediante modelo Self-Pick. Sin Reclutamiento, las requisiciones no se cubren con colaboradores. |
+| **Módulo Reclutamiento**          | Recibe las requisiciones autorizadas por el Manager de Área mediante modelo Self-Pick. Sin Reclutamiento, las requisiciones no se cubren con colaboradores. |
 | **Módulo Schedule**               | Las posiciones autorizadas se reflejan automáticamente en el Schedule del hotel. El Schedule es el eje del módulo: sobre él se construye el Timesheet.        |
-| **Módulo Timesheet**              | Construido sobre el Schedule. Registra ponches vía QR generado por el Manager del Hotel. Calcula Indicador de Cumplimiento.                                  |
+| **Módulo Timesheet**              | Construido sobre el Schedule. Registra ponches vía QR generado por el Manager de Área. Calcula Indicador de Cumplimiento.                                  |
 | **Módulo Inspección**             | Asignación automática de Inspector por zona al autorizar requisición. Investiga reportes de colaborador (Rojo) y accidentes (Gris).                          |
 | **Módulo Onboarding-Hotel**       | Habilitación del hotel al alcanzar status Naranja en Semáforo Onboarding. Antes, el hotel es prospecto comercial gestionado por Ventas.                      |
 | **Módulo QA**                     | Operador de QA fijo asignado al depto Hotel. Métricas e Indicador de Calidad. QA observa, mide y retroalimenta sin operar.                                   |
@@ -30,7 +30,7 @@ aliases:
 | Dependencia                     | Descripción                                                                                                                                  |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | **App del Supervisor**          | El Supervisor opera desde mobile para crear requisiciones y reportar accidentes laborales presenciales (RNF-H-04).                          |
-| **App del Colaborador**         | El colaborador poncha vía QR generado por el Manager del Hotel. También reporta accidentes (Escenario A) desde la app.                       |
+| **App del Colaborador**         | El colaborador poncha vía QR generado por el Manager de Área. También reporta accidentes (Escenario A) desde la app.                       |
 | **Sistema de Notificaciones**   | Envía notificaciones automáticas a los roles del Hotel ante eventos relevantes (autorización, asignación, cobertura, accidente).             |
 | **Sistema de Auditoría / Logs** | Registra journals de requisiciones, posiciones, ponches corregidos y acciones excepcionales. Trazabilidad obligatoria (RNF-H-03).            |
 

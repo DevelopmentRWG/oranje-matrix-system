@@ -14,7 +14,7 @@ aliases:
 | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | Crear nueva requisición                                  | Sistema asigna número auto (AAAAMMDDHHMM + Homoclave) · Estado Verde manzana — En elaboración (borrador) |
 | Editar borrador / requisición rechazada                  | Cambios persisten · Estado se mantiene                                                                    |
-| Enviar requisición a autorización                        | Envío al Manager del Hotel · Estado pasa a Verde manzana — pendiente de autorización · Notificación      |
+| Enviar requisición a autorización                        | Envío al Manager de Área · Estado pasa a Verde manzana — pendiente de autorización · Notificación      |
 | Eliminar borrador                                        | Eliminación física automática sin journal (RR-H-07)                                                      |
 | Sugerir refuerzo de personal                             | Modal de nueva requisición pre-llenado con datos de la posición vacante                                  |
 | Reportar accidente — Escenario A                         | Captura presencial · Tarjeta con datos, testigos, atención · Notifica al Inspector                       |

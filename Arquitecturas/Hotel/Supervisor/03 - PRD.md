@@ -28,13 +28,13 @@ aliases:
 
 ## Objetivo
 
-Permitir al Supervisor **formalizar la necesidad de personal del hotel** mediante requisiciones que el Manager del Hotel autorizará para que Reclutamiento las cubra. Además, dar al Supervisor las herramientas para **reportar accidentes laborales en escenarios A y B** con captura presencial.
+Permitir al Supervisor **formalizar la necesidad de personal del hotel** mediante requisiciones que el Manager de Área autorizará para que Reclutamiento las cubra. Además, dar al Supervisor las herramientas para **reportar accidentes laborales en escenarios A y B** con captura presencial.
 
 ---
 
 ## Flujo General
 
-**Detecta necesidad de personal → Crea requisición (mobile) → Envía a Manager del Hotel → Espera autorización → Si rechazo, corrige y reenvía → Una vez autorizada, queda en manos de Reclutamiento → Operación diaria: consulta Schedule, Timesheet, reporta accidentes**
+**Detecta necesidad de personal → Crea requisición (mobile) → Envía a Manager de Área → Espera autorización → Si rechazo, corrige y reenvía → Una vez autorizada, queda en manos de Reclutamiento → Operación diaria: consulta Schedule, Timesheet, reporta accidentes**
 
 ---
 
@@ -60,8 +60,8 @@ Permitir al Supervisor **formalizar la necesidad de personal del hotel** mediant
 
 - **RR-H-02:** El Supervisor NO puede autorizar requisiciones (capa de seguridad).
 - **RR-H-03:** La requisición debe tener ≥1 posición para enviar a autorización.
-- **RR-H-11:** Stand-by (Rosa) compartido con Manager del Hotel.
-- **RR-H-12:** Acceso al módulo de requisiciones restringido al Supervisor y Manager del Hotel.
+- **RR-H-11:** Stand-by (Rosa) compartido con Manager de Área.
+- **RR-H-12:** Acceso al módulo de requisiciones restringido al Supervisor y Manager de Área.
 - **RR-H-15:** Sin acceso al Indicador de Lunch Extendido.
 - **RR-H-19:** Reporte de accidentes en escenarios A y B.
 - **RR-H-20:** Colaborador en accidente pasa a Gris (protección 3 inasistencias).

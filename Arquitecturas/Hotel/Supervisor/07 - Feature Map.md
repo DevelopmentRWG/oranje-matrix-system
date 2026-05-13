@@ -23,7 +23,7 @@ SUPERVISOR (SUP)
 ├── 📋 Requisiciones
 │   ├── Borradores
 │   ├── Pendientes de autorización (Verde manzana)
-│   ├── Rechazadas (con observaciones del Manager del Hotel)
+│   ├── Rechazadas (con observaciones del Manager de Área)
 │   ├── Autorizadas (en Reclutamiento)
 │   ├── En proceso (Reclutamiento asignando)
 │   ├── Cubiertas (100%)
@@ -46,7 +46,7 @@ SUPERVISOR (SUP)
 ├── 👥 Mi Personal
 │   ├── Lista de colaboradores asignados
 │   ├── Semáforo del Colaborador visible
-│   ├── 🩷 Poner en Stand-by (Rosa) — compartido con Manager del Hotel
+│   ├── 🩷 Poner en Stand-by (Rosa) — compartido con Manager de Área
 │   ├── 📞 Contactar al colaborador
 │   └── Ver historial
 │
@@ -70,14 +70,14 @@ SUPERVISOR (SUP)
 | Enviar a autorización | ✅ |
 | Eliminar borrador | ✅ |
 | Reportar accidentes (Escenarios A y B) | ✅ acción principal |
-| Poner en Stand-by (Rosa) | ✅ compartido con Manager del Hotel |
+| Poner en Stand-by (Rosa) | ✅ compartido con Manager de Área |
 | Sugerir refuerzo de personal | ✅ |
 | Consultar Schedule / Timesheet | ✅ (solo lectura) |
 | Consultar Blacklist | ✅ (solo lectura) |
 | Autorizar requisición | ❌ (capa de seguridad RR-H-02) |
 | Generar QR del Timesheet | ❌ (RR-H-09) |
-| Corregir ponche | ❌ (RR-H-09 → solo Manager del Hotel) |
+| Corregir ponche | ❌ (RR-H-09 → solo Manager de Área) |
 | Reportar colaborador (Rojo) | ❌ (RR-H-10) |
-| Editar Schedule | ❌ (solo Manager del Hotel) |
+| Editar Schedule | ❌ (solo Manager de Área) |
 | Ver Indicador de Lunch Extendido | ❌ (RR-H-15) |
 | Visibilidad global del hotel | ❌ (solo Manager General) |

@@ -1,12 +1,12 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
 aliases:
-  - Respuestas Sistema Manager del Hotel
+  - Respuestas Sistema Manager de Área
 ---
 
-# 7. RESPUESTAS DEL SISTEMA — MANAGER DEL HOTEL
+# 7. RESPUESTAS DEL SISTEMA — MANAGER DE ÁREA
 
 ---
 
@@ -23,11 +23,11 @@ aliases:
 | Manager quita Stand-by                                 | Estado vuelve a estado anterior · Reactivación en Schedule y Timesheet                                              |
 | Manager reporta colaborador (Rojo)                    | Estado a Rojo · Notifica al Inspector de zona · Inicia investigación · Queda en log auditable                       |
 | Sistema asigna Inspector por zona automáticamente     | Notifica al Inspector con datos del hotel y la requisición · Visible en el detalle de la requisición                 |
-| Reclutamiento toma una requisición autorizada         | Notifica al Manager del Hotel: *"Tu requisición fue tomada por [Reclutadora]"* · Cambia estado a En proceso          |
-| Reclutamiento asigna colaborador                      | Notifica al Manager del Hotel · Colaborador aparece en Schedule semanal · Actualiza % de cobertura                  |
-| Requisición queda cubierta al 100%                    | Notifica al Manager del Hotel: *"Tu requisición fue cubierta al 100%"* · Cambia estado a Cubierta                    |
-| Colaborador completa su jornada con cumplimiento Rojo | Alerta visible en Dashboard · Notifica al Manager del Hotel · Sugerencia de corrección                              |
-| Indicador de Cumplimiento del depto cae a Rojo        | Notifica al Manager del Hotel y al Manager General (jerarquía extendida)                                            |
+| Reclutamiento toma una requisición autorizada         | Notifica al Manager de Área: *"Tu requisición fue tomada por [Reclutadora]"* · Cambia estado a En proceso          |
+| Reclutamiento asigna colaborador                      | Notifica al Manager de Área · Colaborador aparece en Schedule semanal · Actualiza % de cobertura                  |
+| Requisición queda cubierta al 100%                    | Notifica al Manager de Área: *"Tu requisición fue cubierta al 100%"* · Cambia estado a Cubierta                    |
+| Colaborador completa su jornada con cumplimiento Rojo | Alerta visible en Dashboard · Notifica al Manager de Área · Sugerencia de corrección                              |
+| Indicador de Cumplimiento del depto cae a Rojo        | Notifica al Manager de Área y al Manager General (jerarquía extendida)                                            |
 | Sesión iniciada                                        | Redirige a Dashboard con KPIs cargados                                                                                |
 | Sesión expirada                                        | Redirige a login                                                                                                       |
 | Error en validación de formulario                     | Muestra mensajes de error claros junto a cada campo inválido                                                          |

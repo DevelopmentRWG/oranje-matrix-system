@@ -27,7 +27,7 @@ aliases:
 | Evidencia >10 MB                                            | Rechaza archivo; muestra: *"Tamaño máximo de evidencia: 10 MB"*                                                              |
 | Stand-by sin motivo seleccionado                           | Bloquea envío; muestra: *"Seleccione el motivo del Stand-by"*                                                                |
 | Stand-by a colaborador ya en Stand-by                      | Bloquea acción; muestra: *"El colaborador ya se encuentra en Stand-by"*                                                     |
-| Intentar reportar colaborador (Rojo)                       | Acción no disponible (solo Manager del Hotel); el botón no aparece                                                          |
+| Intentar reportar colaborador (Rojo)                       | Acción no disponible (solo Manager de Área); el botón no aparece                                                          |
 | Intentar generar QR del Timesheet                          | Acción no disponible; el botón no aparece                                                                                    |
 | Intentar editar Schedule                                    | Acceso solo lectura; los botones de edición no aparecen                                                                     |
 | Acceder a Indicador de Lunch Extendido                     | Sin acceso; el módulo no aparece en la interfaz (RR-H-15)                                                                    |

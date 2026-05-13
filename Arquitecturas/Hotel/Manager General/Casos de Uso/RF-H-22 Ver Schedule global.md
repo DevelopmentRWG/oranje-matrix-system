@@ -11,7 +11,7 @@ aliases:
 🏷️ **Nombre:** Ver Schedule global del hotel
 
 **Historia:**
-El Manager General consulta el Schedule **consolidado de todos los departamentos** del hotel (Housekeeping, Alimentos, Mantenimiento, Front Desk). Le permite identificar desbalances de cobertura, días con vacantes críticas y oportunidades de balanceo entre deptos. A diferencia del Manager del Hotel — que ve solo su depto — el Manager General tiene visibilidad consolidada.
+El Manager General consulta el Schedule **consolidado de todos los departamentos** del hotel (Housekeeping, Alimentos, Mantenimiento, Front Desk). Le permite identificar desbalances de cobertura, días con vacantes críticas y oportunidades de balanceo entre deptos. A diferencia del Manager de Área — que ve solo su depto — el Manager General tiene visibilidad consolidada.
 
 **Criterios de aceptación:**
 Vista exclusiva del Manager General (solo jerarquía extendida). Calendario semanal consolidado del hotel con vista por depto + agregada. Drill-down hasta posición / colaborador. Filtros por depto, posición, estado de cobertura, semana. Heatmap de cobertura por día. Sin acceso a edición — solo lectura.

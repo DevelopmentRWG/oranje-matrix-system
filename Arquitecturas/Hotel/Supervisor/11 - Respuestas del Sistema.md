@@ -13,9 +13,9 @@ aliases:
 | Evento                                                | Respuesta del Sistema                                                                                                |
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | Supervisor crea requisición                            | Asigna número auto (AAAAMMDDHHMM + Homoclave) · Estado borrador (Verde manzana) · Permite editar libremente            |
-| Supervisor envía requisición a autorización            | Estado pasa a Verde manzana — pendiente de autorización · Notifica al Manager del Hotel · Visible en su bandeja      |
-| Manager del Hotel autoriza                            | Notifica al Supervisor: *"Tu requisición fue autorizada y enviada a Reclutamiento"* · Estado cambia a Autorizada     |
-| Manager del Hotel rechaza con observaciones           | Notifica al Supervisor: *"Tu requisición fue rechazada"* · Observaciones visibles en el detalle · Estado vuelve a En elaboración |
+| Supervisor envía requisición a autorización            | Estado pasa a Verde manzana — pendiente de autorización · Notifica al Manager de Área · Visible en su bandeja      |
+| Manager de Área autoriza                            | Notifica al Supervisor: *"Tu requisición fue autorizada y enviada a Reclutamiento"* · Estado cambia a Autorizada     |
+| Manager de Área rechaza con observaciones           | Notifica al Supervisor: *"Tu requisición fue rechazada"* · Observaciones visibles en el detalle · Estado vuelve a En elaboración |
 | Supervisor edita borrador o rechazada                 | Cambios persisten · Estado se mantiene                                                                                |
 | Supervisor elimina borrador                            | Eliminación física automática sin journal · Sin confirmación necesaria                                                |
 | Sistema elimina físicamente requisición vacía          | Sin journal · Automático al salir del editor                                                                          |
@@ -26,7 +26,7 @@ aliases:
 | Supervisor reporta accidente — Escenario B            | Tarjeta creada · Notifica al Inspector · Estado del colaborador a Gris                                                |
 | Inspector inicia investigación del accidente          | Notifica al Supervisor del avance del caso                                                                            |
 | Caso de accidente cerrado                              | Notifica al Supervisor con resolución                                                                                  |
-| Supervisor pone colaborador en Stand-by (Rosa)        | Estado a Rosa · Sin Schedule ni Timesheet · Notifica al colaborador y al Manager del Hotel                            |
+| Supervisor pone colaborador en Stand-by (Rosa)        | Estado a Rosa · Sin Schedule ni Timesheet · Notifica al colaborador y al Manager de Área                            |
 | Supervisor sugiere refuerzo de personal               | Modal de nueva requisición pre-llenado con datos de la posición vacante                                              |
 | Supervisor consulta Schedule                          | Vista calendario semanal con asignaciones del depto                                                                    |
 | Supervisor consulta Timesheet                         | Tabla semanal con ponches del depto                                                                                    |

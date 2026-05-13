@@ -1,18 +1,18 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
 aliases:
-  - Resumen Rápido Manager del Hotel
+  - Resumen Rápido Manager de Área
 ---
 
-# RESUMEN RÁPIDO — MANAGER DEL HOTEL
+# RESUMEN RÁPIDO — MANAGER DE ÁREA
 
 ---
 
 | Campo                    | Contenido                                                                                  |
 | ------------------------ | ------------------------------------------------------------------------------------------ |
-| **Rol**                  | 🧑‍💼 Manager del Hotel / Gerente de Departamento                                           |
+| **Rol**                  | 🧑‍💼 Manager de Área / Gerente de Departamento                                           |
 | **Objetivo**             | Autorizar requisiciones, gestionar Schedule y Timesheet, administrar personal asignado    |
 | **Permisos Clave**       | Crear · Ver · Editar · Aprobar · Rechazar · Reportar                                      |
 | **Dispositivo**          | Desktop / Tablet                                                                            |

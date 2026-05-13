@@ -19,7 +19,7 @@ aliases:
 | **Historia de Usuario** | HU-HOTEL-01 |
 | **Departamento** | Hotel |
 | **Funcionalidad** | Gestionar el ciclo del hotel como cliente: solicitud de personal, aprobación, gestión del Schedule semanal, registro de Timesheet y reporte de incidencias |
-| **Actor Principal** | Manager del Hotel · Supervisor · Manager General (jerarquía extendida) |
+| **Actor Principal** | Manager de Área · Supervisor · Manager General (jerarquía extendida) |
 | **Dispositivo** | Web – Desktop / Tablet / Mobile (app del Supervisor) |
 | **Estado** | En definición |
 | **Versión** | 1.0 |
@@ -28,7 +28,7 @@ aliases:
 
 ## Objetivo
 
-Permitir al hotel **solicitar personal a Oranje** mediante requisiciones, **gestionar el Schedule semanal** y el **Timesheet** de los colaboradores asignados, y **reportar incidencias** (accidentes laborales, colaboradores con problemas). El depto Hotel actúa como contraparte del depto Reclutamiento bajo el modelo de capa de seguridad: **el Supervisor crea, el Manager del Hotel autoriza, Reclutamiento toma vía Self-Pick**.
+Permitir al hotel **solicitar personal a Oranje** mediante requisiciones, **gestionar el Schedule semanal** y el **Timesheet** de los colaboradores asignados, y **reportar incidencias** (accidentes laborales, colaboradores con problemas). El depto Hotel actúa como contraparte del depto Reclutamiento bajo el modelo de capa de seguridad: **el Supervisor crea, el Manager de Área autoriza, Reclutamiento toma vía Self-Pick**.
 
 ---
 
@@ -37,9 +37,9 @@ Permitir al hotel **solicitar personal a Oranje** mediante requisiciones, **gest
 **Incluye:**
 - Habilitación del hotel post-onboarding (status Naranja en Semáforo Onboarding).
 - Creación de requisiciones por el Supervisor.
-- Autorización / rechazo por el Manager del Hotel (capa de seguridad).
+- Autorización / rechazo por el Manager de Área (capa de seguridad).
 - Gestión semanal del Schedule.
-- Generación de QR del Timesheet (Manager del Hotel).
+- Generación de QR del Timesheet (Manager de Área).
 - Registro de ponches y cálculo de Indicador de Cumplimiento del Timesheet.
 - Stand-by (Rosa) y reporte (Rojo) de colaboradores.
 - Reporte de accidentes laborales por el Supervisor (escenarios A y B).
@@ -57,7 +57,7 @@ Permitir al hotel **solicitar personal a Oranje** mediante requisiciones, **gest
 
 ## Flujo General
 
-**Supervisor crea requisición → Manager del Hotel autoriza → Reclutamiento la toma (Self-Pick) → Colaboradores asignados aparecen en el Schedule del hotel → Manager del Hotel genera QR → Colaboradores ponchan en Timesheet → Cálculo de Indicador de Cumplimiento → Pago semanal**
+**Supervisor crea requisición → Manager de Área autoriza → Reclutamiento la toma (Self-Pick) → Colaboradores asignados aparecen en el Schedule del hotel → Manager de Área genera QR → Colaboradores ponchan en Timesheet → Cálculo de Indicador de Cumplimiento → Pago semanal**
 
 ```
 HOTEL                                          ORANJE                          
@@ -65,7 +65,7 @@ HOTEL                                          ORANJE
 Supervisor crea requisición
         │
         ▼
-Manager del Hotel autoriza ─────────────────►  Bandeja de Autorizadas
+Manager de Área autoriza ─────────────────►  Bandeja de Autorizadas
                                                        │
                                                        ▼
                                                Reclutadora/Líder toma (Self-Pick)
@@ -77,7 +77,7 @@ Manager del Hotel autoriza ─────────────────�
 Schedule del hotel ←── colaboradores asignados
         │
         ▼
-Manager del Hotel genera QR
+Manager de Área genera QR
         │
         ▼
 Timesheet (ponches diarios) ─────────────────► Indicador de Cumplimiento
@@ -93,7 +93,7 @@ Stand-by (Rosa) / Reportar (Rojo) / Accidente (Gris) ──► Inspector / Inves
 | Actor                      | Tipo           | Responsabilidad principal                                        |
 | -------------------------- | -------------- | ---------------------------------------------------------------- |
 | Supervisor (SUP)           | Operativo      | Crea requisiciones · Reporta accidentes laborales                |
-| Manager del Hotel          | Supervisor     | Autoriza requisiciones · Gestiona Schedule y Timesheet · Genera QR |
+| Manager de Área          | Supervisor     | Autoriza requisiciones · Gestiona Schedule y Timesheet · Genera QR |
 | Manager General (GM)       | Ejecutivo      | Visibilidad global · Supervisión de Gerentes · Reportes ejecutivos |
 | Sistema                    | Automatización | Numeración, semáforos, asignación de Inspector, journals, notificaciones |
 | Administrador *(en pausa)* | Configuración  | Usuarios, catálogos, permisos                                    |
@@ -105,10 +105,10 @@ Stand-by (Rosa) / Reportar (Rojo) / Accidente (Gris) ──► Inspector / Inves
 Ver [[07 - Reglas de Negocio]] para el detalle. Las más importantes:
 
 - **RR-H-01:** El hotel solo opera tras alcanzar status Naranja en el Semáforo Onboarding.
-- **RR-H-02:** Solo el Manager del Hotel autoriza requisiciones (capa de seguridad).
-- **RR-H-09:** Solo el Manager del Hotel genera QR del Timesheet.
-- **RR-H-10:** Solo el Manager del Hotel reporta colaborador (Rojo).
-- **RR-H-11:** Stand-by (Rosa) compartido entre Manager del Hotel y Supervisor.
+- **RR-H-02:** Solo el Manager de Área autoriza requisiciones (capa de seguridad).
+- **RR-H-09:** Solo el Manager de Área genera QR del Timesheet.
+- **RR-H-10:** Solo el Manager de Área reporta colaborador (Rojo).
+- **RR-H-11:** Stand-by (Rosa) compartido entre Manager de Área y Supervisor.
 - **RR-H-13:** Sistema soporta jerarquía simple y extendida.
 
 ---

@@ -13,13 +13,12 @@ aliases:
 Wireframe de la plataforma Oranje para el rol [[Hotel/Manager General|Manager General]]. Define el flujo de entrada, header global, sidebar de módulos y el detalle de cada módulo al que tiene acceso.
 
 > [!info]
-> El Manager General es el rol de **máxima autoridad del lado del hotel**, **solo en jerarquía extendida**. Supervisa a los Gerentes de Departamento (Manager del Hotel de cada depto) y tiene visibilidad global del Schedule y Timesheet de todo el hotel.
+> El Manager General es el rol de **máxima autoridad del lado del hotel**. **Siempre existe**, tanto en jerarquía simple como extendida.
+> - **Jerarquía simple:** opera también como Manager de Área (misma persona, dos roles). Ejecuta todas las acciones operativas + supervisión.
+> - **Jerarquía extendida:** supervisa a los Managers de Área (uno por depto). Mantiene visibilidad global y puede ejecutar acciones operativas cuando interviene puntualmente.
 
 > [!important]
-> El Manager General **NO autoriza requisiciones directamente** — esa responsabilidad recae en cada Gerente de Departamento. Su rol es de **supervisión, visibilidad global y reporte directivo**, no operativo.
-
-> [!warning]
-> Este rol **NO existe** en jerarquía simple. En hoteles pequeños, el Manager del Hotel es la máxima autoridad.
+> **El Manager General SÍ tiene operación** además de supervisión. Puede crear/autorizar requisiciones, generar QR, editar Schedule, corregir ponches, reportar colaboradores (Rojo) y reportar accidentes. Adicionalmente, tiene **funciones exclusivas ejecutivas:** visibilidad global del hotel, reportes ejecutivos a dirección, supervisión de Managers de Área.
 
 ## N0 — Inicio
 
@@ -102,16 +101,18 @@ MÓDULOS / SIDEBAR
 ```
 SIDEBAR
    ├─ DASHBOARD
-   ├─ SCHEDULE GLOBAL      (todos los deptos — consulta)
-   ├─ TIMESHEET GLOBAL     (todos los deptos — consulta)
-   ├─ REQUISICIONES        (vista global — consulta + supervisión)
-   ├─ MI EQUIPO DEL HOTEL  (Gerentes de Depto + Supervisores)
+   ├─ REQUISICIONES        (crear / autorizar / rechazar / vista global)
+   ├─ SCHEDULE             (gestión + visibilidad global de todos los deptos)
+   ├─ TIMESHEET            (revisar ponches + generar QR + visibilidad global)
+   ├─ MI PERSONAL          (gestionar colaboradores — Stand-by / Reportar)
+   ├─ ACCIDENTES           (reportar y dar seguimiento)
+   ├─ MI EQUIPO DEL HOTEL  (Managers de Área + Supervisores)
    ├─ REPORTES             (consolidados + envío a dirección)
    └─ BLACKLIST            (consulta)
 ```
 
 > [!note]
-> El Manager General NO tiene módulo de "Mi Personal" operativo, NO genera QR, NO autoriza requisiciones, NO pone Stand-by. Su sidebar está orientado a **consulta global y reportes ejecutivos**, no a operación diaria.
+> El Manager General tiene **operación + supervisión**. Puede ejecutar todas las acciones operativas (mismas que el Manager de Área: crear/autorizar requisiciones, generar QR, editar Schedule, corregir ponches, Stand-by, Reportar Rojo, reportar accidentes) **más** las funciones exclusivas ejecutivas (visibilidad global del hotel, supervisión de Managers de Área, reportes ejecutivos a dirección).
 
 ---
 
@@ -334,9 +335,9 @@ SIDEBAR
 
 ---
 
-## Diferencias clave vs Supervisor y Manager del Hotel
+## Diferencias clave vs Supervisor y Manager de Área
 
-| Aspecto | Supervisor | Manager del Hotel | Manager General |
+| Aspecto | Supervisor | Manager de Área | Manager General |
 |---|---|---|---|
 | Crear requisición | ✅ | ❌ | ❌ |
 | Autorizar requisición | ❌ | ✅ exclusivo | ❌ |
@@ -389,7 +390,7 @@ SIDEBAR
 ## Relacionado
 
 - [[Hotel/Manager General|Manager General]] (definición del rol)
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Hotel/Hotel|Hotel]]
 - [[Hotel/Reglas del Hotel|Reglas del Hotel]]

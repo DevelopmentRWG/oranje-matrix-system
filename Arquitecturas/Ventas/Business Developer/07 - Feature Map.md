@@ -10,82 +10,64 @@ aliases:
 
 ---
 
-## Mapa de funcionalidades por módulo
-
 ```
-BUSINESS DEVELOPER (BD)
-├── 📊 Dashboard
-│   ├── KPIs personales (prospectos por status, conversiones)
-│   ├── Próximos seguimientos
-│   ├── Alertas (sin actividad >X días)
-│   └── Acciones rápidas
+DEPARTAMENTO DE VENTAS — BUSINESS DEVELOPER
 │
-├── 📋 Pipeline (Mis prospectos por status del Semáforo Onboarding)
-│   ├── ⚪ Gris · 🔵 Azul Claro · 🟢 Verde · 🟡 Amarillo · 🩷 Rosa
-│   ├── 🟠 Naranja · 🔴 Rojo · ⚫ Negro · 🟤 Café · 📂 Toda
-│   ├── ➕ Identificar prospecto
-│   ├── ✏️ Crear / Editar perfil del hotel
-│   ├── ➕ Registrar visita en frío
-│   ├── ➕ Registrar intento de contacto
-│   ├── ✏️ Avanzar status (Gris → Azul Claro → Verde → Amarillo → Rosa)
-│   ├── 🔴 Marcar Rojo
-│   ├── ↩️ Reactivar desde Rojo (a Azul Claro)
-│   └── ☕ Marcar Café (BDC desbloquea)
+├── PRIMARIAS
+│   │
+│   ├── 📊 Dashboard
+│   │   ├── KPIs personales (prospectos por status, conversiones)
+│   │   ├── Próximos seguimientos
+│   │   ├── Alertas (sin actividad >X días)
+│   │   └── Acciones rápidas
+│   │
+│   ├── 📋 Pipeline
+│   │   ├── Identificar prospecto (Gris)
+│   │   ├── Crear / Editar perfil del hotel (Azul Claro)
+│   │   ├── Registrar visita en frío
+│   │   ├── Registrar intento de contacto
+│   │   ├── Avanzar status (Gris → Azul Claro → Verde → Amarillo → Rosa)
+│   │   ├── Marcar Rojo (rechazo)
+│   │   ├── Reactivar desde Rojo (a Azul Claro)
+│   │   └── Marcar Café (BDC desbloquea)
+│   │
+│   ├── 🗺️ Mi Territorio
+│   │   ├── Mapa con rutas y zonas asignadas
+│   │   ├── Pines por status del prospecto
+│   │   ├── Filtros por ruta / zona / status
+│   │   ├── Lista lateral de prospectos
+│   │   └── Planeador de ruta del día
+│   │
+│   ├── 📝 Propuestas
+│   │   ├── Elaborar Propuesta Personalizada (Verde)
+│   │   ├── Enviar al hotel
+│   │   ├── Editar borrador
+│   │   └── Ver borradores / enviadas / aceptadas / rechazadas / histórico
+│   │
+│   ├── 📄 Documentos T&C
+│   │   ├── Crear Documento de T&C (Amarillo)
+│   │   ├── Editar borrador del T&C
+│   │   ├── Enviar al BDC para validación
+│   │   └── Ver borradores / pendientes / validados
+│   │
+│   └── 🏨 Clientes Activos (post-Naranja)
+│       ├── Ver lista de clientes activos
+│       ├── Ver datos comerciales (referente, sin operación)
+│       ├── Ver histórico del onboarding
+│       └── Registrar contacto comercial (visita de cortesía / follow-up)
 │
-├── 🗺️ Mi Territorio
-│   ├── Mapa con rutas y zonas asignadas
-│   ├── Pines por status del prospecto
-│   ├── Filtros por ruta / zona / status
-│   ├── Lista lateral de prospectos
-│   └── Planeador de ruta del día
-│
-├── 📝 Propuestas
-│   ├── Borradores
-│   ├── Enviadas
-│   ├── Aceptadas / Rechazadas
-│   ├── Histórico
-│   ├── ➕ Elaborar Propuesta Personalizada (Verde)
-│   ├── 📤 Enviar al hotel
-│   ├── ✏️ Editar borrador
-│   ├── 📥 Exportar PDF
-│   └── 📋 Duplicar como plantilla
-│
-├── 📄 Documentos T&C
-│   ├── Borradores
-│   ├── Pendientes de validación BDC
-│   ├── Validados
-│   ├── ➕ Crear Documento de T&C (Amarillo)
-│   ├── ✏️ Editar borrador
-│   └── 📤 Enviar al BDC
-│
-└── 🏨 Clientes Activos
-    ├── Lista de clientes (post-Naranja)
-    ├── Datos comerciales (no operativos)
-    ├── Histórico del onboarding
-    └── 📞 Registrar contacto comercial
+└── SECUNDARIAS
+    │
+    ├── 📈 Análisis
+    │   ├── Métricas personales (mes en curso)
+    │   ├── Tasa de conversión personal
+    │   ├── Tiempo promedio por status
+    │   └── Histórico de prospectos cerrados
+    │
+    └── 🛠️ Utilidades
+        ├── Exportar Propuesta (PDF)
+        ├── Duplicar propuesta como plantilla
+        ├── Exportar lista de prospectos (Excel)
+        ├── Notificaciones (recibir)
+        └── Soporte
 ```
-
----
-
-## Funcionalidades del Business Developer
-
-| Feature | Permitido |
-|---|---|
-| Identificar prospecto (Gris) | ✅ |
-| Crear perfil (Azul Claro) | ✅ |
-| Registrar visita en frío | ✅ |
-| Elaborar Propuesta Personalizada | ✅ exclusivo |
-| Enviar propuesta | ✅ |
-| Crear Documento de T&C | ✅ (compartido con BDC) |
-| Negociar (Rosa) | ✅ (junto al BDC) |
-| Marcar Rojo | ✅ |
-| Reactivar desde Rojo | ✅ |
-| Marcar Café | ✅ |
-| Validar T&C | ❌ (BDC) |
-| Crear Usuario del Hotel | ❌ (BDC) |
-| Aprobar conversión | ❌ (RR-V-01) |
-| Desbloquear Café | ❌ (RR-V-04) |
-| Marcar/Reactivar Negro | ❌ (RR-V-05) |
-| Mi Equipo (BDs a cargo) | ❌ (BDC) |
-| Generar reportes ejecutivos | ❌ (BDC) |
-| Visibilidad global del depto | ❌ (solo mi territorio) |

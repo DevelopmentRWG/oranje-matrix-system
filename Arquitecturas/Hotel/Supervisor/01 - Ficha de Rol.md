@@ -16,14 +16,14 @@ aliases:
 | **Nombre del Rol** | 🦺 Supervisor (SUP)                                |
 | **Tipo**           | Operativo                                          |
 | **Departamento**   | Hotel                                              |
-| **Reporta a**      | Manager del Hotel / Gerente de Departamento        |
+| **Reporta a**      | Manager de Área / Gerente de Departamento        |
 | **Supervisa a**    | Colaboradores asignados al depto (consulta)        |
 
 ---
 
 ## Descripción
 
-Rol operativo del módulo Hotel. Subordinado del Manager del Hotel / Gerente de Departamento. Su tarea principal es **crear las requisiciones de personal** que el hotel necesita y enviarlas al Manager del Hotel para autorización. También **reporta accidentes laborales** detectados en la propiedad y consulta el Schedule y Timesheet del depto.
+Rol operativo del módulo Hotel. Subordinado del Manager de Área / Gerente de Departamento. Su tarea principal es **crear las requisiciones de personal** que el hotel necesita y enviarlas al Manager de Área para autorización. También **reporta accidentes laborales** detectados en la propiedad y consulta el Schedule y Timesheet del depto.
 
 ---
 
@@ -40,14 +40,15 @@ Captar la necesidad operativa de personal del hotel y formalizarla mediante requ
 - Enviar requisición a autorización
 - Sugerir refuerzo de personal (prefill desde Schedule)
 - Reportar accidentes laborales (Escenarios A y B)
-- Poner colaborador en Stand-by (Rosa) — compartido con Manager del Hotel
+- Poner colaborador en Stand-by (Rosa) — compartido con Manager de Área y Manager General
+- **Reportar colaborador (Rojo)** *(NUEVO — compartido con Manager de Área y Manager General)*
 - Consultar Schedule y Timesheet del depto
 
 ---
 
 ## Permisos Clave
 
-Crear · Ver · Editar (sin eliminar excepto borradores) · Reportar accidentes
+Crear · Ver · Editar (sin eliminar excepto borradores) · Reportar (Rojo + Accidentes)
 
 ---
 

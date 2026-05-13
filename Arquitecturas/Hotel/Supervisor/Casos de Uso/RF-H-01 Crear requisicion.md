@@ -11,7 +11,7 @@ aliases:
 🏷️ **Nombre:** Crear requisición
 
 **Historia:**
-Cuando el hotel detecta una necesidad de personal (cobertura de turnos, refuerzo en temporada, reemplazo por baja), el Supervisor crea una nueva requisición desde la app. Captura las posiciones, cantidad, modalidad, nivel de inglés, horarios, fecha de inicio y notas adicionales. La requisición queda como **borrador** (Verde manzana — En elaboración) hasta que el Supervisor la envía a autorización del Manager del Hotel.
+Cuando el hotel detecta una necesidad de personal (cobertura de turnos, refuerzo en temporada, reemplazo por baja), el Supervisor crea una nueva requisición desde la app. Captura las posiciones, cantidad, modalidad, nivel de inglés, horarios, fecha de inicio y notas adicionales. La requisición queda como **borrador** (Verde manzana — En elaboración) hasta que el Supervisor la envía a autorización del Manager de Área.
 
 **Criterios de aceptación:**
 El sistema asigna automáticamente el número de requisición con formato `AAAAMMDDHHMM + Homoclave` (RR-H-04). Una requisición puede tener múltiples posiciones. La fecha de inicio debe ser futura. Si la requisición no tiene posiciones al salir del editor, se elimina físicamente (RR-H-07). El Supervisor puede crear desde mobile (RNF-H-04) o desktop.

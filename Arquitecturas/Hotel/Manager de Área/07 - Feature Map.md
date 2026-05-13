@@ -1,19 +1,19 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
 aliases:
-  - Feature Map Manager del Hotel
+  - Feature Map Manager de Área
 ---
 
-# FEATURE MAP — MANAGER DEL HOTEL
+# FEATURE MAP — MANAGER DE ÁREA
 
 ---
 
 ## Mapa de funcionalidades por módulo
 
 ```
-MANAGER DEL HOTEL / GERENTE DE DEPARTAMENTO
+MANAGER DE ÁREA / GERENTE DE DEPARTAMENTO
 ├── 📊 Dashboard
 │   ├── KPIs del depto (cobertura, requisiciones pendientes, accidentes, cumplimiento)
 │   ├── Bandeja de requisiciones pendientes (CTA "Revisar")
@@ -59,7 +59,7 @@ MANAGER DEL HOTEL / GERENTE DE DEPARTAMENTO
 
 ---
 
-## Funcionalidades del Manager del Hotel
+## Funcionalidades del Manager de Área
 
 | Feature | Permitido |
 |---|---|

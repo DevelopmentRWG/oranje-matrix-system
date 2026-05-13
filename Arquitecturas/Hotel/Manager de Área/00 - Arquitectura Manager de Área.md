@@ -3,20 +3,20 @@ tags:
   - arquitectura
   - modulo/hotel
 aliases:
-  - Arquitectura Manager del Hotel
-  - Wireframe Manager del Hotel
+  - Arquitectura Manager de Área
+  - Wireframe Manager de Área
   - Arquitectura Gerente de Departamento
 ---
 
-# Arquitectura — Manager del Hotel (Gerente de Departamento)
+# Arquitectura — Manager de Área (Gerente de Departamento)
 
-Wireframe de la plataforma Oranje para el rol [[Hotel/Manager del Hotel|Manager del Hotel]]. Define el flujo de entrada, header global, sidebar de módulos y el detalle de cada módulo al que tiene acceso.
+Wireframe de la plataforma Oranje para el rol [[Hotel/Manager de Área|Manager de Área]]. Define el flujo de entrada, header global, sidebar de módulos y el detalle de cada módulo al que tiene acceso.
 
 > [!info]
 > En **jerarquía simple** este rol es la máxima autoridad del lado del hotel. En **jerarquía extendida**, este rol corresponde al **Gerente de Departamento** (uno por departamento: Housekeeping, Alimentos, Mantenimiento, Front Desk), subordinado al [[Hotel/Manager General|Manager General]]. Las responsabilidades en plataforma son las mismas; solo cambia el alcance (todo el hotel vs. su departamento).
 
 > [!important]
-> **Capa de seguridad:** este rol es el único que puede **autorizar** requisiciones (regla del Hotel). El Supervisor crea, pero solo el Manager del Hotel envía la requisición a Reclutamiento.
+> **Capa de seguridad:** este rol es el único que puede **autorizar** requisiciones (regla del Hotel). El Supervisor crea, pero solo el Manager de Área envía la requisición a Reclutamiento.
 
 ## N0 — Inicio
 
@@ -27,7 +27,7 @@ PLATAFORMA ORANGE
 LOGIN / AUTORIZACIÓN
         │
         ▼
-ROL IDENTIFICADO / MANAGER DEL HOTEL (o GERENTE DE DEPARTAMENTO)
+ROL IDENTIFICADO / MANAGER DE ÁREA (o GERENTE DE DEPARTAMENTO)
         │
         ▼
 MÓDULOS / SIDEBAR
@@ -42,7 +42,7 @@ MÓDULOS / SIDEBAR
 **Mi información**
 - Nombre completo + foto
 - Correo + teléfono
-- Rol: Manager del Hotel / Gerente de Departamento
+- Rol: Manager de Área / Gerente de Departamento
 
 **Mi hotel / departamento**
 - Nombre del hotel
@@ -90,20 +90,21 @@ MÓDULOS / SIDEBAR
 
 ---
 
-## N1 — SIDEBAR (Módulos del Manager del Hotel)
+## N1 — SIDEBAR (Módulos del Manager de Área)
 
 ```
 SIDEBAR
    ├─ DASHBOARD
-   ├─ REQUISICIONES        (autorizar / rechazar / ver historial del depto)
+   ├─ REQUISICIONES        (crear / autorizar / rechazar / ver historial del depto)
    ├─ SCHEDULE             (gestión semanal)
    ├─ TIMESHEET            (revisar ponches + generar QR)
    ├─ MI PERSONAL          (colaboradores asignados — Stand-by / Reportar)
+   ├─ ACCIDENTES           (reportar y dar seguimiento)
    └─ BLACKLIST            (consulta)
 ```
 
 > [!note]
-> El Manager del Hotel **NO** tiene módulo de Pool de Colaboradores ni de Reclutamiento — esos son del lado de Oranje. Solo ve los colaboradores asignados a su hotel/depto.
+> El Manager de Área **NO** tiene módulo de Pool de Colaboradores ni de Reclutamiento — esos son del lado de Oranje. Solo ve los colaboradores asignados a su hotel/depto.
 
 ---
 
@@ -157,14 +158,17 @@ SIDEBAR
 - **Cobertura actual** ([[Semáforo de Posiciones de la Requisición]]).
 - **Colaboradores asignados** (cuando Reclutamiento ya empezó).
 
-### Acciones (exclusivas del Manager del Hotel)
+### Acciones
+- ➕ **Crear requisición** *(el Manager de Área también puede crear, no solo el Supervisor)*.
+- ✏️ **Editar borrador** de mis requisiciones.
+- 📤 **Enviar a autorización** (si la creo yo, puedo autorizarla yo mismo o que la apruebe el Manager General).
 - ✅ **Autorizar requisición** *(envía a Reclutamiento — modelo Self-Pick)*.
-- ❌ **Rechazar con observaciones** *(devuelve al Supervisor en estado En elaboración)*.
+- ❌ **Rechazar con observaciones** *(devuelve al creador en estado En elaboración)*.
 - 👁️ **Ver historial / journal** de la requisición.
-- 🗑️ **Eliminar requisición** *(solo si aún no está autorizada)*.
+- 🗑️ **Eliminar requisición** *(con justificación si tiene posiciones)*.
 
 > [!important]
-> Si el Supervisor intenta autorizar, el sistema bloquea con: **"Solo el gerente del hotel puede autorizar la requisición"**. Si la requisición no tiene posiciones: **"No tiene posiciones registradas, registre al menos una posición e intente nuevamente"**.
+> **Autorización compartida con Manager General.** Solo el Manager de Área o el Manager General pueden autorizar. Si el Supervisor intenta autorizar, el sistema bloquea con: *"Solo el gerente del hotel puede autorizar la requisición"*. Si la requisición no tiene posiciones: *"No tiene posiciones registradas, registre al menos una posición e intente nuevamente"*.
 
 ### Efectos automáticos al autorizar
 | Efecto | Resultado |
@@ -185,7 +189,7 @@ SIDEBAR
 - Celdas: colaborador asignado + horario, o "Vacante" en rojo.
 
 ### Filtros
-- Departamento *(solo Manager General; el Manager del Hotel ve solo el suyo)*.
+- Departamento *(solo Manager General; el Manager de Área ve solo el suyo)*.
 - Posición.
 - Estado de cobertura (cubierta / parcial / vacante).
 - Semana (selector).
@@ -216,13 +220,13 @@ SIDEBAR
 - Estado del Indicador de Cumplimiento
 
 ### Acciones
-- 📷 **Generar / Renovar código QR** del depto *(exclusivo del Manager del Hotel)* — para que los colaboradores ponchen.
+- 📷 **Generar / Renovar código QR** del depto *(exclusivo del Manager de Área)* — para que los colaboradores ponchen.
 - 👁️ **Ver detalle de jornada** de un colaborador.
 - ✏️ **Corregir ponche** (con justificación obligatoria — queda en log auditable).
 - 📤 **Exportar Timesheet** semanal (PDF/CSV).
 
 > [!warning]
-> El Manager del Hotel **NO tiene acceso** al Indicador de Lunch Extendido — ese es exclusivo de roles internos de Oranje (Inspector, Coordinador de Inspección, Manager de Reclutamiento).
+> El Manager de Área **NO tiene acceso** al Indicador de Lunch Extendido — ese es exclusivo de roles internos de Oranje (Inspector, Coordinador de Inspección, Manager de Reclutamiento).
 
 ### Reglas de deducción de Lunch (visibles en cada jornada)
 | Escenario | Deducción aplicada |
@@ -257,13 +261,52 @@ SIDEBAR
 - Estado actual del semáforo.
 
 ### Acciones
-- 🩷 **Poner en Stand-by (Rosa)** *(Manager del Hotel y Supervisor)* — sin Schedule ni Timesheet hasta que se cambie el estado.
-- 🔴 **Reportar colaborador (Rojo)** *(exclusivo del Manager del Hotel)* — inicia investigación del Inspector.
+- 🩷 **Poner en Stand-by (Rosa)** *(Manager de Área y Supervisor)* — sin Schedule ni Timesheet hasta que se cambie el estado.
+- 🔴 **Reportar colaborador (Rojo)** *(exclusivo del Manager de Área)* — inicia investigación del Inspector.
 - 👁️ **Ver historial** de incidencias / asignaciones.
 - 📞 **Contactar al colaborador** (teléfono / mensaje).
 
 > [!important]
-> Tanto el Manager del Hotel como el Supervisor pueden poner en Stand-by. Solo el Manager del Hotel puede reportar (Rojo).
+> Manager de Área, Manager General y Supervisor pueden poner en Stand-by (Rosa) y pueden reportar al colaborador (Rojo).
+
+---
+
+## 🚨 Módulo ACCIDENTES LABORALES
+
+> [!info]
+> El Manager de Área también participa en el reporte de accidentes laborales (junto al Supervisor y al Manager General). Cuando detecta un accidente en su departamento, crea la tarjeta de accidente con captura presencial.
+
+### Sub-vistas
+- 🟢 **Activos** — accidentes en proceso de investigación por el Inspector.
+- ✅ **Cerrados** — casos resueltos (último mes).
+- 📂 **Histórico** — todos los accidentes del depto.
+
+### Detalle del accidente
+- Datos del colaborador afectado.
+- Fecha, hora, ubicación exacta.
+- Circunstancias y testigos.
+- Atención inmediata brindada.
+- Estado del colaborador (pasa a **Gris (Accidentado)** en el Semáforo del Colaborador — protección contra la regla de 3 inasistencias).
+- Inspector de zona asignado automáticamente.
+
+### Acciones
+
+#### Escenario A — Colaborador reporta desde la app
+1. Notificación simultánea al Supervisor, Manager de Área e Inspector.
+2. Si el Manager de Área acude físicamente (o si el Supervisor no está disponible), captura la información presencial: ubicación exacta, circunstancias, testigos, atención inmediata.
+
+#### Escenario B — El propio Manager de Área detecta el accidente
+1. Crea la tarjeta de accidente desde la app:
+   - 📝 Datos del accidente
+   - 📷 Adjunta fotos / evidencia
+   - 👤 Identifica al colaborador afectado
+2. La señal llega al Inspector de zona automáticamente.
+
+### Filtros
+- Estado del caso (Activo / Cerrado)
+- Colaborador afectado
+- Inspector asignado
+- Rango de fechas
 
 ---
 
@@ -284,11 +327,11 @@ SIDEBAR
 - Fecha de ingreso
 
 > [!warning]
-> El Manager del Hotel **NO** puede agregar ni remover de Blacklist — esa acción es del depto Reclutamiento (todos los roles del depto pueden agregar; solo el Manager de Reclutamiento resuelve disputas y remueve).
+> El Manager de Área **NO** puede agregar ni remover de Blacklist — esa acción es del depto Reclutamiento (todos los roles del depto pueden agregar; solo el Manager de Reclutamiento resuelve disputas y remueve).
 
 ---
 
-## Flujo operativo del Manager del Hotel
+## Flujo operativo del Manager de Área
 
 ```
 1. Login → Dashboard
@@ -324,7 +367,7 @@ SIDEBAR
 
 ## Diferencias clave vs Supervisor y Manager General
 
-| Aspecto | Supervisor | Manager del Hotel | Manager General |
+| Aspecto | Supervisor | Manager de Área | Manager General |
 |---|---|---|---|
 | Crear requisición | ✅ | ❌ | ❌ |
 | Autorizar requisición | ❌ | ✅ exclusivo | ❌ |
@@ -348,7 +391,7 @@ SIDEBAR
 ║                   LOGIN / AUTORIZACIÓN                        ║
 ║                              │                                ║
 ║                              ▼                                ║
-║         ROL: MANAGER DEL HOTEL / GERENTE DE DEPTO             ║
+║         ROL: MANAGER DE ÁREA / GERENTE DE DEPTO             ║
 ╚══════════════════════════════════════════════════════════════╝
                                 │
                                 ▼
@@ -373,7 +416,7 @@ SIDEBAR
 
 ## Relacionado
 
-- [[Hotel/Manager del Hotel|Manager del Hotel]] (definición del rol)
+- [[Hotel/Manager de Área|Manager de Área]] (definición del rol)
 - [[Hotel/Supervisor|Supervisor]]
 - [[Hotel/Manager General|Manager General]]
 - [[Hotel/Hotel|Hotel]]

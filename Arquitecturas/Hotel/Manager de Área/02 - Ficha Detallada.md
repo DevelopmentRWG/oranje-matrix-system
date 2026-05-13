@@ -1,19 +1,19 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
 aliases:
-  - Ficha Detallada Manager del Hotel
+  - Ficha Detallada Manager de Área
 ---
 
-# FICHA DETALLADA — MANAGER DEL HOTEL
+# FICHA DETALLADA — MANAGER DE ÁREA
 
 ---
 
 | Campo                          | Contenido                                                                                                                                                                                                                                              |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **ID Rol**                     | ROL-H-02                                                                                                                                                                                                                                               |
-| **Nombre del Rol**             | 🧑‍💼 Manager del Hotel / Gerente de Departamento                                                                                                                                                                                                       |
+| **Nombre del Rol**             | 🧑‍💼 Manager de Área / Gerente de Departamento                                                                                                                                                                                                       |
 | **Descripción**                | Rol de supervisión del lado del hotel. Autoriza/rechaza requisiciones del Supervisor (capa de seguridad), gestiona Schedule y Timesheet, genera QR de ponchado y administra a los colaboradores asignados.                                            |
 | **Objetivo en el Sistema**     | Validar las solicitudes de personal, gestionar el Schedule y Timesheet del depto, y mantener la operación diaria.                                                                                                                                      |
 | **Módulos que Usa**            | Dashboard · Requisiciones · Schedule · Timesheet · Mi Personal · Blacklist (consulta) · Notificaciones                                                                                                                                                  |

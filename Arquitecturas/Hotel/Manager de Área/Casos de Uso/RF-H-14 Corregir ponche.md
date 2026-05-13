@@ -1,7 +1,7 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
   - caso-de-uso
 aliases:
   - CU RF-H-14
@@ -11,13 +11,13 @@ aliases:
 🏷️ **Nombre:** Corregir ponche del Timesheet
 
 **Historia:**
-Cuando un colaborador olvida ponchar, poncha mal o tiene un problema técnico con el QR, el Manager del Hotel corrige manualmente el ponche. Es una acción excepcional con **justificación obligatoria** que queda en log auditable. Solo el Manager del Hotel puede hacerlo (no el Supervisor, no el Manager General).
+Cuando un colaborador olvida ponchar, poncha mal o tiene un problema técnico con el QR, el Manager de Área corrige manualmente el ponche. Es una acción excepcional con **justificación obligatoria** que queda en log auditable. Solo el Manager de Área puede hacerlo (no el Supervisor, no el Manager General).
 
 **Criterios de aceptación:**
 La justificación es obligatoria (mín. 20 caracteres). El cambio queda en log auditable con autor, fecha, motivo, valor anterior y valor nuevo. Notifica al colaborador del cambio. Si la hora corregida está fuera del rango de la jornada del colaborador, el sistema muestra advertencia y solicita confirmación adicional. Recalcula horas brutas, deducción de Lunch y horas netas.
 
 **Documentación:**
-- PRD: PRD-HOTEL-03 Manager del Hotel
+- PRD: PRD-HOTEL-03 Manager de Área
 - Flow: Corrección de ponche
 - Prototipo: (link de Figma)
 

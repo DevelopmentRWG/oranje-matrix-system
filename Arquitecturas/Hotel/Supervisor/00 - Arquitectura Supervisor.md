@@ -13,10 +13,10 @@ aliases:
 Wireframe de la plataforma Oranje para el rol [[Hotel/Supervisor|Supervisor]]. Define el flujo de entrada, header global, sidebar de módulos y el detalle de cada módulo al que tiene acceso.
 
 > [!info]
-> El Supervisor es el **rol operativo base** del lado del hotel. Su tarea principal es **crear requisiciones de personal** y enviarlas al [[Hotel/Manager del Hotel|Manager del Hotel]] para que las autorice. También reporta accidentes laborales en la propiedad.
+> El Supervisor es el **rol operativo base** del lado del hotel. Su tarea principal es **crear requisiciones de personal** y enviarlas al [[Hotel/Manager de Área|Manager de Área]] para que las autorice. También reporta accidentes laborales en la propiedad.
 
 > [!important]
-> El Supervisor **NO** puede autorizar requisiciones — esa acción es exclusiva del Manager del Hotel (capa de seguridad de la plataforma).
+> El Supervisor **NO** puede autorizar requisiciones — esa acción es exclusiva del Manager de Área (capa de seguridad de la plataforma).
 
 ## N0 — Inicio
 
@@ -47,7 +47,7 @@ MÓDULOS / SIDEBAR
 **Mi hotel / departamento**
 - Nombre del hotel
 - Departamento al que reporta *(en jerarquía extendida — ej. Housekeeping)*
-- Manager del Hotel / Gerente de Departamento al que reporta
+- Manager de Área / Gerente de Departamento al que reporta
 
 **Mis métricas (mes en curso)**
 - Requisiciones creadas
@@ -75,7 +75,7 @@ MÓDULOS / SIDEBAR
 ### 🔔 NOTIFICACIONES (campanita con badge)
 
 **Por tipo de evento**
-- ✅ Mi requisición fue autorizada por el Manager del Hotel
+- ✅ Mi requisición fue autorizada por el Manager de Área
 - ❌ Mi requisición fue rechazada con observaciones (necesita correcciones)
 - 👤 Reclutamiento asignó un colaborador a una de mis requisiciones
 - 🟢 Una de mis requisiciones quedó cubierta al 100%
@@ -109,7 +109,7 @@ SIDEBAR
 
 ### KPIs personales
 - Requisiciones que creé este mes
-- Mis requisiciones pendientes de autorización (esperando al Manager del Hotel)
+- Mis requisiciones pendientes de autorización (esperando al Manager de Área)
 - Mis requisiciones autorizadas en proceso
 - Mis requisiciones rechazadas (necesitan corrección)
 - Accidentes laborales activos en el depto
@@ -132,8 +132,8 @@ SIDEBAR
 ### Sub-vistas
 
 - ✏️ **Borradores** — requisiciones que estoy editando (sin enviar a autorización aún).
-- 🟢 **Pendientes de autorización** *(Verde manzana — En elaboración)* — enviadas al Manager del Hotel, esperando su decisión.
-- ❌ **Rechazadas** — devueltas con observaciones del Manager del Hotel; debo corregir y reenviar.
+- 🟢 **Pendientes de autorización** *(Verde manzana — En elaboración)* — enviadas al Manager de Área, esperando su decisión.
+- ❌ **Rechazadas** — devueltas con observaciones del Manager de Área; debo corregir y reenviar.
 - 🟠 **Autorizadas** — ya en manos de Reclutamiento (solo lectura para mí).
 - 🟡 **En proceso** — Reclutamiento asignando colaboradores.
 - 🔵 **Cubiertas** — al 100%.
@@ -149,12 +149,12 @@ SIDEBAR
 - **Cabecera:** ID, número (auto-generado: `AAAAMMDDHHMMxx`), fecha, estado.
 - **Posiciones:** cantidad, posición, modalidad, nivel de inglés, horario, fecha de inicio.
 - **Notas adicionales.**
-- **Observaciones del Manager del Hotel** *(visible solo si fue rechazada)*.
+- **Observaciones del Manager de Área** *(visible solo si fue rechazada)*.
 
 ### Acciones
 - ➕ **Crear nueva requisición** *(formulario completo — ver módulo abajo)*.
 - ✏️ **Editar borrador** o **requisición rechazada**.
-- 📤 **Enviar al Manager del Hotel para autorización** *(cambia estado a Verde manzana — En elaboración)*.
+- 📤 **Enviar al Manager de Área para autorización** *(cambia estado a Verde manzana — En elaboración)*.
 - 🗑️ **Eliminar borrador** o **requisición sin posiciones** *(eliminación física automática si no tiene posiciones)*.
 - 👁️ **Ver journal** de la requisición.
 
@@ -176,7 +176,7 @@ SIDEBAR
 - Adjuntos (PDF / imagen)
 
 **Validaciones:**
-- Al menos 1 posición registrada (sin esto el Manager del Hotel NO podrá autorizar — sale el mensaje "No tiene posiciones registradas").
+- Al menos 1 posición registrada (sin esto el Manager de Área NO podrá autorizar — sale el mensaje "No tiene posiciones registradas").
 - Fecha de inicio en el futuro.
 - Cantidad > 0.
 
@@ -185,7 +185,7 @@ SIDEBAR
 ## 📅 Módulo SCHEDULE (consulta)
 
 ### Vista principal
-- **Calendario semanal** del hotel/depto (igual al del Manager del Hotel).
+- **Calendario semanal** del hotel/depto (igual al del Manager de Área).
 - Filas: posiciones; columnas: días; celdas: colaborador asignado o "Vacante".
 
 ### Filtros
@@ -196,10 +196,10 @@ SIDEBAR
 ### Acciones (limitadas — consulta)
 - 👁️ Ver detalle de asignación.
 - 📥 Exportar Schedule de la semana (PDF/CSV).
-- 🔔 **Sugerir refuerzo al Manager del Hotel** (genera prefill de nueva requisición si una posición está vacante por mucho tiempo).
+- 🔔 **Sugerir refuerzo al Manager de Área** (genera prefill de nueva requisición si una posición está vacante por mucho tiempo).
 
 > [!note]
-> El Supervisor **NO edita** el Schedule. Si detecta que falta cobertura, crea una nueva requisición o avisa al Manager del Hotel.
+> El Supervisor **NO edita** el Schedule. Si detecta que falta cobertura, crea una nueva requisición o avisa al Manager de Área.
 
 ---
 
@@ -219,7 +219,7 @@ SIDEBAR
 - 📤 Exportar Timesheet semanal.
 
 > [!warning]
-> El Supervisor **NO genera QR** (eso es exclusivo del Manager del Hotel). **NO corrige ponches** (eso también es exclusivo del Manager del Hotel). **NO ve el Indicador de Lunch Extendido** (exclusivo de roles de Oranje).
+> El Supervisor **NO genera QR** (eso es exclusivo del Manager de Área). **NO corrige ponches** (eso también es exclusivo del Manager de Área). **NO ve el Indicador de Lunch Extendido** (exclusivo de roles de Oranje).
 
 ---
 
@@ -237,12 +237,13 @@ SIDEBAR
 - Timesheet semanal (resumen).
 
 ### Acciones
-- 🩷 **Poner en Stand-by (Rosa)** *(compartido con Manager del Hotel)* — colaborador queda sin Schedule ni Timesheet.
+- 🩷 **Poner en Stand-by (Rosa)** *(compartido con Manager de Área y Manager General)* — colaborador queda sin Schedule ni Timesheet.
+- 🔴 **Reportar colaborador (Rojo)** *(NUEVO — compartido con Manager de Área y Manager General)* — inicia investigación del Inspector con motivo y evidencia.
 - 👁️ **Ver historial** de incidencias / asignaciones.
 - 📞 **Contactar al colaborador**.
 
-> [!warning]
-> El Supervisor **NO puede reportar** colaborador (Rojo) — eso es exclusivo del Manager del Hotel. Si detecta una falta grave, debe avisar al Manager del Hotel.
+> [!info]
+> Los 3 roles del Hotel pueden reportar colaborador (Rojo) y poner Stand-by (Rosa). El reporte de colaborador dispara investigación del Inspector de zona automáticamente.
 
 ---
 
@@ -309,7 +310,7 @@ SIDEBAR
       • Notas adicionales si aplica
    │
    ▼
-4. Envío al Manager del Hotel para autorización
+4. Envío al Manager de Área para autorización
    │
    ├─→ Autoriza → pasa a Reclutamiento (Self-Pick)
    └─→ Rechaza → corrijo según observaciones y reenvío
@@ -326,14 +327,14 @@ SIDEBAR
    ▼
 7. Si una posición se queda vacante o termina:
       • Genero nueva requisición
-      • Sugiero refuerzo al Manager del Hotel
+      • Sugiero refuerzo al Manager de Área
 ```
 
 ---
 
-## Diferencias clave vs Manager del Hotel y Manager General
+## Diferencias clave vs Manager de Área y Manager General
 
-| Aspecto | Supervisor | Manager del Hotel | Manager General |
+| Aspecto | Supervisor | Manager de Área | Manager General |
 |---|---|---|---|
 | Crear requisición | ✅ acción principal | ❌ | ❌ |
 | Autorizar requisición | ❌ | ✅ exclusivo | ❌ |
@@ -383,7 +384,7 @@ SIDEBAR
 ## Relacionado
 
 - [[Hotel/Supervisor|Supervisor]] (definición del rol)
-- [[Hotel/Manager del Hotel|Manager del Hotel]]
+- [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Manager General|Manager General]]
 - [[Hotel/Hotel|Hotel]]
 - [[Hotel/Reglas del Hotel|Reglas del Hotel]]

@@ -1,15 +1,15 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
 aliases:
-  - Campos Formulario Manager del Hotel
+  - Campos Formulario Manager de Área
 ---
 
-# 3. CAMPOS DEL FORMULARIO — MANAGER DEL HOTEL
+# 3. CAMPOS DEL FORMULARIO — MANAGER DE ÁREA
 
 > [!info]
-> El Manager del Hotel **no llena formularios de creación**, pero sí completa varios formularios de acciones (rechazo, eliminación con posiciones, corrección de ponche, reporte de colaborador, etc.). A continuación los campos requeridos por acción.
+> El Manager de Área **no llena formularios de creación**, pero sí completa varios formularios de acciones (rechazo, eliminación con posiciones, corrección de ponche, reporte de colaborador, etc.). A continuación los campos requeridos por acción.
 
 ---
 

@@ -10,78 +10,73 @@ aliases:
 
 ---
 
-## Mapa de funcionalidades por módulo
-
 ```
-BUSINESS DEVELOPER COORDINATOR (BDC)
-├── 📊 Dashboard
-│   ├── Embudo de conversión
-│   ├── Heatmap por zona
-│   ├── Ranking de BDs
-│   ├── Casos críticos (T&C pendientes, Café, alertas calidad)
-│   └── Acciones rápidas
+DEPARTAMENTO DE VENTAS — BUSINESS DEVELOPER COORDINATOR
 │
-├── 📋 Pipeline (vista global del territorio)
-│   ├── Todos los status (Gris → Naranja + Rojo / Negro / Café)
-│   ├── Filtros por BD / ruta / zona / status / días en status
-│   ├── 💬 Comentar al expediente
-│   ├── 📤 Reasignar prospecto a otro BD
-│   └── Bandeja Café (sub-vista dedicada)
+├── PRIMARIAS
+│   │
+│   ├── 📊 Dashboard
+│   │   ├── Embudo de conversión
+│   │   ├── Heatmap por zona
+│   │   ├── Ranking de BDs
+│   │   ├── Casos críticos (T&C pendientes, Café, alertas calidad)
+│   │   └── Acciones rápidas
+│   │
+│   ├── 📋 Pipeline (vista global del territorio)
+│   │   ├── Ver Pipeline global de todos los BDs
+│   │   ├── Filtros por BD / ruta / zona / status / días en status
+│   │   ├── Comentar al expediente del prospecto
+│   │   ├── Reasignar prospecto a otro BD
+│   │   ├── Bandeja Café (sub-vista dedicada)
+│   │   ├── Desbloquear estancamiento (Café)
+│   │   ├── Reactivar desde Café (a Azul Claro)
+│   │   └── Marcar Café (compartido con BD)
+│   │
+│   ├── 📄 Documentos T&C
+│   │   ├── Validar T&C (sí final)
+│   │   ├── Rechazar T&C con observaciones
+│   │   ├── Crear Documento de T&C (apoyo al BD)
+│   │   ├── Comentar al BD sobre el T&C
+│   │   └── Ver pendientes / validados / rechazados / histórico
+│   │
+│   ├── ✅ Conversión
+│   │   ├── Ver listos para conversión (Rosa + T&C validado)
+│   │   ├── Crear Usuario del Hotel (precondición)
+│   │   ├── Aprobar conversión (dispara Trigger Automático)
+│   │   └── Ver convertidos (últimos 30 días)
+│   │
+│   ├── 👥 Mi Equipo
+│   │   ├── Ver BDs a cargo con métricas
+│   │   ├── Ver métricas individuales por BD
+│   │   ├── Comunicar con BD (chat / nota)
+│   │   └── Solicitar reporte específico a un BD
+│   │
+│   └── 🏨 Clientes Activos
+│       ├── Ver clientes activos (referente comercial)
+│       ├── Marcar cliente Negro
+│       ├── Reactivar desde Negro (a Azul Claro)
+│       └── Ver sub-vista Negro (pausados / inactivos)
 │
-├── 📄 Documentos T&C
-│   ├── Pendientes de validación (badge >24h)
-│   ├── Validados / Rechazados
-│   ├── ✓ Validar T&C (sí final)
-│   ├── ✗ Rechazar con observaciones
-│   └── 💬 Comentar al BD
-│
-├── ✅ Conversión
-│   ├── Listos para conversión (Rosa + T&C validado)
-│   ├── ➕ Crear Usuario del Hotel (precondición)
-│   ├── ✓ Aprobar conversión (sí final)
-│   └── Convertidos (últimos 30 días)
-│
-├── 👥 Mi Equipo
-│   ├── BDs a cargo con métricas
-│   ├── Detalle individual (cobertura, tiempos, casos)
-│   ├── 💬 Comunicar
-│   └── 📊 Solicitar reporte específico
-│
-├── 🏨 Clientes Activos
-│   ├── Activos (Naranja)
-│   ├── ⚫ Negro (pausados)
-│   ├── Marcar Negro (exclusivo)
-│   └── Reactivar desde Negro
-│
-└── 📈 Reportes
-    ├── Pipeline · Conversión · Desempeño · Café · Negro · Calidad · Ejecutivo
-    ├── 📥 Exportar (CSV / PDF / Excel)
-    ├── 📤 Enviar a dirección
-    ├── 📅 Programar envío recurrente
-    └── Histórico de envíos
+└── SECUNDARIAS
+    │
+    ├── 📈 Análisis
+    │   ├── Métricas del territorio (cobertura, conversión, tiempos)
+    │   ├── Embudo y heatmap (vista ejecutiva)
+    │   ├── Ranking de desempeño de BDs
+    │   └── Comparativa contra periodo anterior
+    │
+    ├── 📊 Reportes
+    │   ├── Generar reporte (Pipeline / Conversión / Desempeño / Café / Negro / Calidad / Ejecutivo)
+    │   ├── Enviar a dirección
+    │   ├── Programar envío recurrente
+    │   └── Ver histórico de envíos
+    │
+    ├── 🛠️ Utilidades
+    │   ├── Exportar reportes (CSV / PDF / Excel)
+    │   ├── Exportar Pipeline (Excel)
+    │   ├── Notificaciones (recibir)
+    │   └── Soporte
+    │
+    └── ⚫ Blacklist
+        └── Consultar Blacklist (solo lectura)
 ```
-
----
-
-## Funcionalidades del BDC
-
-| Feature | Permitido |
-|---|---|
-| Validar T&C | ✅ exclusivo |
-| Crear Usuario del Hotel | ✅ exclusivo |
-| Aprobar conversión | ✅ exclusivo (RR-V-01) |
-| Desbloquear Café | ✅ exclusivo (RR-V-04) |
-| Reactivar desde Café | ✅ exclusivo |
-| Marcar Negro | ✅ exclusivo (RR-V-05) |
-| Reactivar desde Negro | ✅ exclusivo |
-| Negociar (Rosa) | ✅ junto al BD |
-| Crear Documento de T&C | ✅ compartido |
-| Comentar al expediente | ✅ |
-| Reasignar prospecto a otro BD | ✅ |
-| Mi Equipo (BDs a cargo) | ✅ exclusivo |
-| Generar reportes ejecutivos | ✅ exclusivo |
-| Enviar a dirección | ✅ exclusivo |
-| Identificar prospecto | ❌ (rol del BD) |
-| Elaborar Propuesta | ❌ (rol del BD) |
-| Marcar Rojo | ❌ (RR-V-06 — BD exclusivo) |
-| Operación post-Naranja | ❌ (RR-V-12 — depto Hotel y Reclutamiento) |

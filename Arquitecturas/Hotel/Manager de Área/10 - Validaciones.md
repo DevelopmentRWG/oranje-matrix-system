@@ -1,12 +1,12 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
 aliases:
-  - Validaciones Manager del Hotel
+  - Validaciones Manager de Área
 ---
 
-# 4. VALIDACIONES — MANAGER DEL HOTEL
+# 4. VALIDACIONES — MANAGER DE ÁREA
 
 ---
 

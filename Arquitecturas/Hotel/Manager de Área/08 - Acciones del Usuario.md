@@ -1,12 +1,12 @@
 ---
 tags:
   - arquitectura
-  - rol/manager-del-hotel
+  - rol/manager-de-area
 aliases:
-  - Acciones Manager del Hotel
+  - Acciones Manager de Área
 ---
 
-# 6. ACCIONES DEL USUARIO — MANAGER DEL HOTEL
+# 6. ACCIONES DEL USUARIO — MANAGER DE ÁREA
 
 ---
 
