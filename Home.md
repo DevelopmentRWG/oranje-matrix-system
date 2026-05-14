@@ -50,6 +50,15 @@ Desarrollo de negocio y onboarding de nuevos hoteles clientes.
 
 Proceso: [[Onboarding-Hotel]]
 
+### Contabilidad
+
+Validación financiera semanal, gestión de pagos al colaborador y facturación al hotel.
+
+- [[Manager de Contabilidad]] — supervisa, aprueba y autoriza los procesos financieros semanales.
+- [[Contadora]] — ejecuta la validación, configuración y conciliación del ciclo de nómina.
+
+Proceso: [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]
+
 ## Entidad Central
 
 - [[Colaborador/Colaborador|Colaborador]] — la persona que se recluta, asigna y opera en los hoteles. Su ciclo de vida es el eje del sistema.
@@ -75,6 +84,13 @@ Proceso: [[Onboarding-Hotel]]
 - [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] — gestión de incidentes en sitio. Ver [[Flujo de Accidente Laboral]].
 - [[Reglas de Negocio]] — restricciones y condiciones operativas del sistema.
 
+### Contabilidad
+
+- [[Consolidado Semanal del Colaborador]] — resumen semanal de timesheets y cálculo de pago.
+- [[Deducciones]] — descuentos automáticos al cheque del colaborador.
+- [[Facturación al Hotel]] — documento fiscal semanal de cobro al hotel.
+- [[Vacaciones]] — cálculo de pago vacacional basado en promedio de 52 semanas.
+
 ## Catálogos
 
 - [[Posiciones]] — tipos de puesto que puede ocupar un colaborador.
@@ -94,3 +110,15 @@ Indicadores de estado que reflejan la situación operativa de cada entidad en ti
 - [[Semáforo Onboarding]] — estado de la negociación con un hotel prospecto.
 - [[Indicador de Calidad]] — nivel de desempeño de un área supervisada por QA.
 - [[Indicador de Cumplimiento del Timesheet]] — comparación entre horas trabajadas y horas contractuales del colaborador.
+
+## Simulaciones
+
+Recorridos narrativos que ilustran cómo opera el sistema desde la perspectiva de cada departamento.
+
+- [[Simulación de Reclutamiento]]
+- [[Simulación - Ciclo de Vida del Colaborador]]
+- [[Simulación - Punto de Vista del Hotel]]
+- [[Simulación - Punto de Vista de Inspección]]
+- [[Simulación - Punto de Vista de QA]]
+- [[Simulación - Punto de Vista de Ventas]]
+- [[Simulación - Punto de Vista de Contabilidad]]

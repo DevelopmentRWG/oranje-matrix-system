@@ -9,7 +9,7 @@ aliases:
 
 # Flujo de Nómina
 
-Proceso semanal semi-automatizado que transforma los [[Timesheet|Timesheets]] aprobados en pagos al colaborador y facturas al hotel. El sistema automatiza el cálculo; [[Contabilista|Contabilidad]] valida y autoriza.
+Proceso semanal semi-automatizado que transforma los [[Timesheet|Timesheets]] aprobados en pagos al colaborador y facturas al hotel. El sistema automatiza el cálculo; la [[Contadora]] valida y el [[Manager de Contabilidad]] autoriza.
 
 ## Pasos del flujo
 
@@ -34,7 +34,7 @@ Proceso semanal semi-automatizado que transforma los [[Timesheet|Timesheets]] ap
 
 ### 3. Validación humana
 
-- [[Contabilista|Contabilidad]] revisa el Pre-Payroll generado
+- La [[Contadora]] revisa el Pre-Payroll generado
 - Verifica por cada línea:
   - ID del colaborador correcto
   - Nombre/apellidos coinciden con el ID
@@ -45,7 +45,7 @@ Proceso semanal semi-automatizado que transforma los [[Timesheet|Timesheets]] ap
   - Hotel correcto si trabaja en múltiples
 - Aprueba, corrige o rechaza líneas individuales
 
-> [!warning] **Semi-automatizado** — Requiere aprobación de Contabilidad.
+> [!warning] **Semi-automatizado** — Requiere validación de la [[Contadora]].
 
 ### 4. Generación automática de la Factura al Hotel
 
@@ -66,18 +66,18 @@ Proceso semanal semi-automatizado que transforma los [[Timesheet|Timesheets]] ap
 ### 6. Conciliación
 
 - El proveedor devuelve la confirmación de los cheques generados
-- [[Contabilista|Contabilidad]] valida que lo devuelto coincida con lo enviado
+- La [[Contadora]] valida que lo devuelto coincida con lo enviado
 - Identifica discrepancias y las resuelve antes de autorizar
 
-> [!warning] **Semi-automatizado** — Requiere validación de Contabilidad.
+> [!warning] **Semi-automatizado** — Requiere validación de la [[Contadora]].
 
 ### 7. Autorización final
 
-- [[Contabilista|Contabilidad]] libera la nómina
+- El [[Manager de Contabilidad]] libera la nómina
 - Los pagos se ejecutan
 - El sistema registra la fecha y responsable de la autorización
 
-> [!warning] **Semi-automatizado** — Requiere autorización de Contabilidad.
+> [!warning] **Semi-automatizado** — Requiere autorización del [[Manager de Contabilidad]].
 
 ## Resumen de automatización
 
@@ -85,16 +85,17 @@ Proceso semanal semi-automatizado que transforma los [[Timesheet|Timesheets]] ap
 | ---- | ----------- | -------------- |
 | 1 | Generación del Consolidado Semanal | Automático |
 | 2 | Cálculo del Pre-Payroll | Automático |
-| 3 | Validación del Pre-Payroll | Semi-automático (Contabilidad aprueba) |
+| 3 | Validación del Pre-Payroll | Semi-automático ([[Contadora]] valida) |
 | 4 | Generación de Factura al Hotel | Automático |
 | 5 | Exportación a proveedor de cheques | Automático |
-| 6 | Conciliación | Semi-automático (Contabilidad valida) |
-| 7 | Autorización final | Semi-automático (Contabilidad libera) |
+| 6 | Conciliación | Semi-automático ([[Contadora]] valida) |
+| 7 | Autorización final | Semi-automático ([[Manager de Contabilidad]] libera) |
 
 ## Relacionado
 
 - [[Consolidado Semanal del Colaborador]]
-- [[Contabilista]]
+- [[Manager de Contabilidad]]
+- [[Contadora]]
 - [[Deducciones]]
 - [[Facturación al Hotel]]
 - [[Vacaciones]]

@@ -15,7 +15,7 @@ Documento fiscal generado automáticamente por el sistema al cierre del periodo 
 
 - El sistema genera la Factura automáticamente al finalizar la semana (paso 4 del [[Contabilidad/Flujo de Nómina|Flujo de Nómina]])
 - Se genera una factura **por hotel por semana**
-- [[Contabilista|Contabilidad]] aprueba la factura antes de enviarla al hotel
+- El [[Manager de Contabilidad]] aprueba la factura antes de enviarla al hotel
 
 ## Cálculo
 
@@ -57,6 +57,7 @@ Documento fiscal generado automáticamente por el sistema al cierre del periodo 
 
 - [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]
 - [[Consolidado Semanal del Colaborador]]
-- [[Contabilista]]
+- [[Manager de Contabilidad]]
+- [[Contadora]]
 - [[Deducciones]]
 - [[Core/Módulos/Contrato|Contrato]]

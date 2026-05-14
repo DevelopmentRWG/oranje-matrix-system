@@ -39,7 +39,7 @@ Descuentos monetarios que el sistema aplica automáticamente al cheque del colab
 | Monto | 16% del monto total del cheque |
 | Disparador | Campo del [[Colaborador/Colaborador\|Colaborador]]: "Tiene SSN/TaxID: no" |
 | Activación | Automática al registrar al colaborador sin documentos fiscales |
-| Desactivación | [[Contabilista]] la desactiva manualmente cuando el colaborador entrega documentos |
+| Desactivación | La [[Contadora]] la desactiva manualmente cuando el colaborador entrega documentos |
 | Reembolso | Al desactivar, el sistema permite generar el reembolso del monto acumulado retenido |
 
 > [!important] La retención 16% es reembolsable. El sistema debe mantener un registro histórico del monto acumulado retenido para poder generar el reembolso cuando corresponda.
@@ -48,14 +48,14 @@ Descuentos monetarios que el sistema aplica automáticamente al cheque del colab
 
 - Las deducciones se aplican en el paso 2 del [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] (cálculo del Pre-Payroll)
 - Reducen el monto neto del cheque del colaborador
-- [[Contabilista|Contabilidad]] verifica que las deducciones estén correctamente aplicadas en el paso 3 (validación)
+- La [[Contadora]] verifica que las deducciones estén correctamente aplicadas en el paso 3 (validación)
 - El sistema mantiene un historial de deducciones aplicadas por colaborador/semana
 
 ## Relacionado
 
 - [[Consolidado Semanal del Colaborador]]
 - [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]
-- [[Contabilista]]
+- [[Contadora]]
 - [[Facturación al Hotel]]
 - [[Inspección/Inspector|Inspector]]
 - [[Core/Módulos/Contrato|Contrato]]

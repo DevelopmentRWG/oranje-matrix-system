@@ -35,7 +35,7 @@ Cuando el colaborador trabajó con distintos rates durante el periodo (distintos
 
 ## Funcionalidad en el sistema
 
-- [[Contabilista|Contabilidad]] selecciona el colaborador y el periodo
+- La [[Contadora]] selecciona el colaborador y el periodo
 - El sistema calcula automáticamente sin intervención manual
 - Presenta el resultado con desglose por rate/hotel/posición
 - Permite ajustar el rango de semanas si se requiere un cálculo parcial
@@ -43,6 +43,7 @@ Cuando el colaborador trabajó con distintos rates durante el periodo (distintos
 ## Relacionado
 
 - [[Consolidado Semanal del Colaborador]]
-- [[Contabilista]]
+- [[Manager de Contabilidad]]
+- [[Contadora]]
 - [[Core/Módulos/Contrato|Contrato]]
 - [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]

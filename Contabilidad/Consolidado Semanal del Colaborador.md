@@ -42,7 +42,7 @@ Resumen semanal que agrupa todos los [[Timesheet|Timesheets]] de un colaborador 
 - El pay rate aplicado al colaborador puede ser **mayor** al rate pactado en el [[Core/Módulos/Contrato|Contrato]] del hotel (por acuerdo interno: experiencia, antigüedad o negociación con el colaborador)
 - Cuando existe un rate interno, el sistema lo usa para calcular el pago al colaborador en lugar del rate contractual
 - El rate interno **no se refleja** en la [[Facturación al Hotel|Factura al Hotel]] (esa siempre usa el bill rate contractual)
-- Visible solo para [[Contabilista|Contabilidad]]
+- Visible solo para Contabilidad ([[Manager de Contabilidad]] y [[Contadora]])
 
 ### Deducciones
 
@@ -59,7 +59,7 @@ Resumen semanal que agrupa todos los [[Timesheet|Timesheets]] de un colaborador 
 ### Overtime autorizado parcialmente
 
 - El hotel puede autorizar solo una fracción del overtime trabajado
-- El sistema permite que [[Contabilista|Contabilidad]] ajuste las horas OT pagables según lo autorizado por el hotel
+- El sistema permite que el [[Manager de Contabilidad]] ajuste las horas OT pagables según lo autorizado por el hotel
 - **Ejemplo:** colaborador trabajó 50 hrs (10 OT), hotel autoriza solo 5 OT → se pagan 5 OT al colaborador y se facturan 5 OT al hotel
 - Las horas OT no autorizadas quedan registradas pero no se facturan al hotel
 
@@ -81,8 +81,8 @@ Resumen semanal que agrupa todos los [[Timesheet|Timesheets]] de un colaborador 
 ## Validación
 
 - El sistema genera el Consolidado automáticamente al finalizar cada semana
-- **Contabilidad revisa y aprueba** el Consolidado antes de ejecutar el pago al colaborador
-- El pago no se ejecuta sin la validación de Contabilidad
+- La [[Contadora]] revisa el Consolidado y el [[Manager de Contabilidad]] lo aprueba antes de ejecutar el pago al colaborador
+- El pago no se ejecuta sin la aprobación del [[Manager de Contabilidad]]
 
 ## Relacionado
 
@@ -91,7 +91,8 @@ Resumen semanal que agrupa todos los [[Timesheet|Timesheets]] de un colaborador 
 - [[Core/Módulos/Schedule|Schedule]]
 - [[Semáforo del Colaborador]]
 - [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]
-- [[Contabilista]]
+- [[Manager de Contabilidad]]
+- [[Contadora]]
 - [[Deducciones]]
 - [[Facturación al Hotel]]
 - [[Vacaciones]]

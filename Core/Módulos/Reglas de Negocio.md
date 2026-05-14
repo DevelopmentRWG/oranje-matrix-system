@@ -338,7 +338,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - El overtime se calcula **por hotel**, según la política pactada en cada contrato
 - El periodo de pago es **semanal**
 - **Oranje paga al colaborador**; cada hotel paga a Oranje según su bill rate
-- **Contabilidad revisa y aprueba** el Consolidado antes de ejecutar el pago
+- La [[Contadora]] revisa y el [[Manager de Contabilidad]] aprueba el Consolidado antes de ejecutar el pago
 - El umbral de overtime es de **40 horas brutas semanales** por hotel
 
 ## Inspección y Zonas

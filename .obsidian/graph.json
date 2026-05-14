@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "hotel",
+  "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -71,7 +71,7 @@
       }
     },
     {
-      "query": "path:Contabilidad  ",
+      "query": "path:Contabilidad",
       "color": {
         "a": 1,
         "rgb": 14048348
@@ -88,6 +88,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.8797188758887216,
-  "close": false
+  "scale": 0.6586600406820571,
+  "close": true
 }
