@@ -18,26 +18,26 @@ Especificación de las visualizaciones y gráficas que la aplicación debe prove
 
 | Rol | Paneles visibles |
 |---|---|
-| [[Manager de QA]] | Panel global + los 5 paneles por departamento |
+| [[Manager de QA]] | Panel global + los 6 paneles por departamento |
 | [[Operador de QA]] | Solo el panel de su departamento asignado |
 
 ## Panel global — Manager de QA
 
-Vista consolidada de los 5 departamentos supervisados. Permite al [[Manager de QA]] identificar rápidamente qué departamentos requieren atención.
+Vista consolidada de los 6 departamentos supervisados. Permite al [[Manager de QA]] identificar rápidamente qué departamentos requieren atención.
 
 ### Gráficas del panel global
 
 | # | Gráfica | Tipo de visualización | Datos | Actualización |
 |---|---------|----------------------|-------|---------------|
-| 1 | **Estado actual de los 5 departamentos** | Tarjetas resumen (1 por departamento) | [[Indicador de Calidad]] de cada departamento + conteo de KPIs en Meta / En riesgo / Crítico | Tiempo real |
+| 1 | **Estado actual de los 6 departamentos** | Tarjetas resumen (1 por departamento) | [[Indicador de Calidad]] de cada departamento + conteo de KPIs en Meta / En riesgo / Crítico | Tiempo real |
 | 2 | **Tendencia del Indicador de Calidad** | Gráfica de líneas (1 línea por departamento) | Historial de cambios del [[Indicador de Calidad]] por departamento. Eje X = semanas | Semanal |
 | 3 | **KPIs en estado Crítico** | Tabla con alertas | Lista de KPIs que están en nivel Crítico en cualquier departamento, con nombre del KPI, departamento y valor actual | Tiempo real |
 
 ## Panel por departamento — Operador de QA
 
-Cada departamento tiene un panel detallado con las siguientes gráficas estándar, alimentadas por los KPIs definidos en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
+Cada uno de los 6 departamentos tiene un panel detallado con las siguientes gráficas estándar, alimentadas por los KPIs definidos en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
 
-### Gráficas estándar (aplican a los 5 departamentos)
+### Gráficas estándar (aplican a los 6 departamentos)
 
 | # | Gráfica | Tipo de visualización | Datos | Actualización |
 |---|---------|----------------------|-------|---------------|
@@ -79,6 +79,11 @@ Además de las gráficas estándar, cada departamento tiene visualizaciones part
 |---------|----------------------|-------|
 | **Embudo de reclutamiento** | Gráfica de embudo | Candidatos entrevistados → aprobados → ingresados al [[Pool de Colaboradores]] → asignados a posición |
 | **Heatmap de tiempo de toma por urgencia** | Mapa de calor | Tiempo de toma de requisición (eje Y) vs nivel de urgencia del [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]] (eje X). Intensidad = cantidad de requisiciones |
+
+#### Customer Service
+
+> [!note]
+> Las gráficas específicas de Customer Service se definirán una vez que los KPIs del departamento estén establecidos. Ver [[QA/Métricas y KPIs por Departamento#Customer Service|Métricas y KPIs — Customer Service]].
 
 ## Relacionado
 

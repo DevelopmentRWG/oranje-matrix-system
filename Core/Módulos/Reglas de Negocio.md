@@ -210,7 +210,7 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - [[QA/QA|QA]] no ejecuta la operación de ningún departamento; solo observa, mide y retroalimenta
 
 ### Estructura del equipo
-- Existen 5 [[QA/Operador de QA|Operadores de QA]], uno por cada departamento supervisado: Inspección, Hotel, Colaborador, Ventas y Reclutamiento
+- Existen 6 [[QA/Operador de QA|Operadores de QA]], uno por cada departamento supervisado: Inspección, Hotel, Colaborador, Ventas, Reclutamiento y [[Customer Service/Customer Service|Customer Service]]
 - Cada operador está asignado de forma fija a un único departamento
 
 ### Actualización del Indicador

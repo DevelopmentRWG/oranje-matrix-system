@@ -50,6 +50,13 @@ Desarrollo de negocio y onboarding de nuevos hoteles clientes.
 
 Proceso: [[Onboarding-Hotel]]
 
+### [[Customer Service/Customer Service|Customer Service]]
+
+Atención post-onboarding al hotel cliente activo: consultas, quejas, seguimiento de incidencias y coordinación interdepartamental.
+
+- [[Customer Service/Customer Service Manager|Customer Service Manager]] — supervisa agentes, gestiona escalamientos y reporta métricas de satisfacción.
+- [[Customer Service/Agente de Customer Service|Agente de Customer Service]] — recibe, documenta y da seguimiento a solicitudes del hotel.
+
 ### Contabilidad
 
 Validación financiera semanal, gestión de pagos al colaborador y facturación al hotel.
