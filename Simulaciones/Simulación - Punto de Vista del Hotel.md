@@ -561,5 +561,5 @@ Verde fuerte → Blanco → Verde manzana → Azul claro → Naranja → Rosa (S
 
 - [[Simulación - Punto de Vista de Ventas]] — Detalla el proceso comercial de onboarding desde la perspectiva del BD y BDC hasta la conversión del hotel a cliente activo.
 - [[Simulación - Punto de Vista de Inspección]] — Muestra la operación de campo del Inspector: verificación Día 1, Día 3, reportes y accidentes desde su perspectiva.
-- [[Simulación de Reclutamiento]] — Cubre el proceso de reclutamiento y asignación de personal que el hotel solicita mediante requisiciones.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Cubre el proceso de reclutamiento y asignación de personal que el hotel solicita mediante requisiciones.
 - [[Simulación - Ciclo de Vida del Colaborador]] — Narra la experiencia completa del colaborador asignado al hotel, incluyendo estados y transiciones que afectan la operación diaria.

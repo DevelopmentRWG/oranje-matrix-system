@@ -615,5 +615,5 @@ graph TD
 - [[Simulación - Punto de Vista de Ventas]] — Narra el ciclo comercial del Hotel Costa Esmeralda desde la prospección hasta la conversión a cliente activo. Los términos contractuales (pay rate, bill rate, overtime) negociados en esa simulación son los que aquí se usan para calcular pagos y facturas.
 - [[Simulación - Punto de Vista de Inspección]] — Cubre la operación de campo del Inspector Daniel Ortega, incluyendo la entrega de uniformes en Día 3 que dispara la deducción de uniforme procesada en esta simulación.
 - [[Simulación - Punto de Vista del Hotel]] — Muestra la facturación semanal desde la perspectiva del hotel, complementando la vista interna de Contabilidad presentada aquí.
-- [[Simulación de Reclutamiento]] — Incluye el cierre de semana con generación del Consolidado y Pre-Payroll para los colaboradores reclutados, conectando con el flujo de nómina aquí detallado.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Incluye el cierre de semana con generación del Consolidado y Pre-Payroll para los colaboradores reclutados, conectando con el flujo de nómina aquí detallado.
 - [[Simulación - Ciclo de Vida del Colaborador]] — Recorre los 12 estados del semáforo del colaborador e incluye ejemplos de cálculo de cheque con deducciones, overtime y rate interno que se alinean con los escenarios de esta simulación.

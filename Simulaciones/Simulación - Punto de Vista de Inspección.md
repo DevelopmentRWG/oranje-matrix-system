@@ -459,5 +459,5 @@ graph LR
 
 - [[Simulación - Punto de Vista de Ventas]] — Narra cómo el Hotel Costa Esmeralda llegó a ser cliente activo, con los mismos personajes (Daniel Ortega, Mariana Vega, Carlos Navarro) desde la perspectiva comercial.
 - [[Simulación - Punto de Vista del Hotel]] — Muestra el ciclo completo del hotel incluyendo la operación diaria que el Inspector supervisa.
-- [[Simulación de Reclutamiento]] — Detalla el proceso de asignación de colaboradores que el Inspector luego verifica en Día 1 y Día 3.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Detalla el proceso de asignación de colaboradores que el Inspector luego verifica en Día 1 y Día 3.
 - [[Simulación - Ciclo de Vida del Colaborador]] — Recorre los estados del colaborador que el Inspector monitorea: reportes, accidentes, Blacklist y reincorporación.

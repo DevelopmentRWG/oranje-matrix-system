@@ -457,5 +457,5 @@ graph LR
 
 - [[Simulación - Punto de Vista de Inspección]] — Continúa la historia del Hotel Costa Esmeralda desde la perspectiva del Inspector Daniel Ortega, quien recibe el handoff operativo tras la conversión a cliente.
 - [[Simulación - Punto de Vista del Hotel]] — Narra el ciclo completo de un hotel como cliente, incluyendo las fases comerciales que aquí se detallan desde Ventas.
-- [[Simulación de Reclutamiento]] — Cubre el proceso de staffing que se activa una vez que el hotel genera su primera requisición en status Naranja.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Cubre el proceso de staffing que se activa una vez que el hotel genera su primera requisición en status Naranja.
 - [[Simulación - Ciclo de Vida del Colaborador]] — Recorre los estados del colaborador asignado al hotel, desde su ingreso al Pool hasta su operación diaria.

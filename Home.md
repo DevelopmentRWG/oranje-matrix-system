@@ -115,7 +115,7 @@ Indicadores de estado que reflejan la situación operativa de cada entidad en ti
 
 Recorridos narrativos que ilustran cómo opera el sistema desde la perspectiva de cada departamento.
 
-- [[Simulación de Reclutamiento]]
+- [[Simulación - Punto de Vista de Reclutamiento]]
 - [[Simulación - Ciclo de Vida del Colaborador]]
 - [[Simulación - Punto de Vista del Hotel]]
 - [[Simulación - Punto de Vista de Inspección]]
