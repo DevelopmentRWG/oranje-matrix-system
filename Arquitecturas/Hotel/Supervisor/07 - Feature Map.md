@@ -10,53 +10,60 @@ aliases:
 
 ---
 
-## Mapa de funcionalidades por módulo
+## Mapa de funcionalidades (Primarias / Secundarias)
 
 ```
-SUPERVISOR (SUP)
-├── 📊 Dashboard
-│   ├── KPIs personales (mis requisiciones, accidentes activos)
-│   ├── Requisiciones rechazadas (necesitan corrección)
-│   ├── Posiciones críticas del Schedule
-│   └── Acciones rápidas
+HOTEL — SUPERVISOR (SUP)
 │
-├── 📋 Requisiciones
-│   ├── Borradores
-│   ├── Pendientes de autorización (Verde manzana)
-│   ├── Rechazadas (con observaciones del Manager de Área)
-│   ├── Autorizadas (en Reclutamiento)
-│   ├── En proceso (Reclutamiento asignando)
-│   ├── Cubiertas (100%)
-│   ├── ➕ Crear nueva requisición
-│   ├── ✏️ Editar borrador / requisición rechazada
-│   ├── 📤 Enviar a autorización
-│   └── 🗑️ Eliminar borrador
+├── PRIMARIAS
+│   │
+│   ├── Requisiciones
+│   │   ├── Borradores
+│   │   ├── Pendientes de autorización (Verde manzana)
+│   │   ├── Rechazadas (con observaciones del Manager de Área)
+│   │   ├── Autorizadas (en Reclutamiento)
+│   │   ├── En proceso (Reclutamiento asignando)
+│   │   ├── Cubiertas (100%)
+│   │   ├── Crear nueva requisición
+│   │   ├── Editar borrador / requisición rechazada
+│   │   ├── Enviar a autorización
+│   │   └── Eliminar borrador
+│   │
+│   ├── Schedule (consulta)
+│   │   ├── Calendario semanal del depto
+│   │   ├── Filtros por posición / cobertura / semana
+│   │   └── Sugerir refuerzo (prefill nueva requisición)
+│   │
+│   ├── Timesheet (consulta)
+│   │   ├── Tabla semanal × colaborador
+│   │   └── Indicador de Cumplimiento (Verde / Amarillo / Rojo)
+│   │
+│   ├── Mi Personal
+│   │   ├── Lista de colaboradores asignados
+│   │   ├── Semáforo del Colaborador visible
+│   │   ├── Poner en Stand-by (Rosa) — compartido con Manager de Área
+│   │   ├── Contactar al colaborador
+│   │   └── Ver historial
+│   │
+│   └── Accidentes Laborales
+│       ├── Casos activos (en investigación por Inspector)
+│       ├── Casos cerrados (último mes)
+│       ├── Histórico
+│       ├── Reportar accidente — Escenario A (acudir tras notificación)
+│       ├── Reportar accidente — Escenario B (detectar primero)
+│       └── Captura presencial (foto, evidencia, testigos)
 │
-├── 📅 Schedule (consulta)
-│   ├── Calendario semanal del depto
-│   ├── Filtros por posición / cobertura / semana
-│   ├── 🔔 Sugerir refuerzo (prefill nueva requisición)
-│   └── Exportar Schedule semanal
-│
-├── ⏱️ Timesheet (consulta)
-│   ├── Tabla semanal × colaborador
-│   ├── Indicador de Cumplimiento (Verde / Amarillo / Rojo)
-│   └── Exportar Timesheet
-│
-├── 👥 Mi Personal
-│   ├── Lista de colaboradores asignados
-│   ├── Semáforo del Colaborador visible
-│   ├── 🩷 Poner en Stand-by (Rosa) — compartido con Manager de Área
-│   ├── 📞 Contactar al colaborador
-│   └── Ver historial
-│
-└── 🚨 Accidentes Laborales
-    ├── Casos activos (en investigación por Inspector)
-    ├── Casos cerrados (último mes)
-    ├── Histórico
-    ├── ➕ Reportar accidente — Escenario A (acudir tras notificación)
-    ├── ➕ Reportar accidente — Escenario B (detectar primero)
-    └── 📷 Captura presencial (foto, evidencia, testigos)
+└── SECUNDARIAS
+    │
+    ├── Análisis
+    │   ├── Dashboard — KPIs personales (mis requisiciones, accidentes activos)
+    │   ├── Dashboard — Requisiciones rechazadas (necesitan corrección)
+    │   └── Dashboard — Posiciones críticas del Schedule
+    │
+    └── Utilidades
+        ├── Dashboard — Acciones rápidas
+        ├── Schedule — Exportar Schedule semanal
+        └── Timesheet — Exportar Timesheet
 ```
 
 ---

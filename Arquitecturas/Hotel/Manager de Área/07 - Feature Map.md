@@ -10,51 +10,58 @@ aliases:
 
 ---
 
-## Mapa de funcionalidades por módulo
+## Mapa de funcionalidades (Primarias / Secundarias)
 
 ```
-MANAGER DE ÁREA / GERENTE DE DEPARTAMENTO
-├── 📊 Dashboard
-│   ├── KPIs del depto (cobertura, requisiciones pendientes, accidentes, cumplimiento)
-│   ├── Bandeja de requisiciones pendientes (CTA "Revisar")
-│   ├── Schedule de la semana (resumen)
-│   ├── Posiciones críticas (sin colaborador asignado)
-│   └── Acciones rápidas
+HOTEL — MANAGER DE ÁREA / GERENTE DE DEPARTAMENTO
 │
-├── 📋 Requisiciones
-│   ├── Pendientes de autorización (Verde manzana)
-│   ├── Autorizadas (Reclutamiento las tiene)
-│   ├── En proceso (asignando colaboradores)
-│   ├── Cubiertas (100%)
-│   ├── Rechazadas (devueltas al Supervisor)
-│   ├── ✓ Autorizar requisición
-│   ├── ✗ Rechazar con observaciones
-│   ├── 🗑️ Eliminar con posiciones (journal)
-│   └── Ver historial / journal
+├── PRIMARIAS
+│   │
+│   ├── Requisiciones
+│   │   ├── Pendientes de autorización (Verde manzana)
+│   │   ├── Autorizadas (Reclutamiento las tiene)
+│   │   ├── En proceso (asignando colaboradores)
+│   │   ├── Cubiertas (100%)
+│   │   ├── Rechazadas (devueltas al Supervisor)
+│   │   ├── Autorizar requisición
+│   │   ├── Rechazar con observaciones
+│   │   ├── Eliminar con posiciones (journal)
+│   │   └── Ver historial / journal
+│   │
+│   ├── Schedule
+│   │   ├── Calendario semanal del depto
+│   │   ├── Editar asignaciones (reordenar turnos, mover entre días)
+│   │   ├── Marcar día de descanso
+│   │   └── Solicitar refuerzo a Reclutamiento
+│   │
+│   ├── Timesheet
+│   │   ├── Tabla semanal × colaborador con 6 ponches
+│   │   ├── Indicador de Cumplimiento (Verde / Amarillo / Rojo)
+│   │   ├── Generar / Renovar QR (exclusivo)
+│   │   └── Corregir ponche con justificación
+│   │
+│   ├── Mi Personal
+│   │   ├── Lista de colaboradores asignados
+│   │   ├── Semáforo del Colaborador visible
+│   │   ├── Poner en Stand-by (Rosa) — compartido con Supervisor
+│   │   ├── Reportar colaborador (Rojo) — exclusivo
+│   │   └── Ver historial de incidencias
+│   │
+│   └── Blacklist
+│       └── Consulta de vetados (sin acción)
 │
-├── 📅 Schedule
-│   ├── Calendario semanal del depto
-│   ├── Editar asignaciones (reordenar turnos, mover entre días)
-│   ├── Marcar día de descanso
-│   ├── Solicitar refuerzo a Reclutamiento
-│   └── Exportar Schedule semanal
-│
-├── ⏱️ Timesheet
-│   ├── Tabla semanal × colaborador con 6 ponches
-│   ├── Indicador de Cumplimiento (Verde / Amarillo / Rojo)
-│   ├── 📷 Generar / Renovar QR (exclusivo)
-│   ├── Corregir ponche con justificación
-│   └── Exportar Timesheet semanal
-│
-├── 👥 Mi Personal
-│   ├── Lista de colaboradores asignados
-│   ├── Semáforo del Colaborador visible
-│   ├── 🩷 Poner en Stand-by (Rosa) — compartido con Supervisor
-│   ├── 🔴 Reportar colaborador (Rojo) — exclusivo
-│   └── Ver historial de incidencias
-│
-└── ⚫ Blacklist
-    └── Consulta de vetados (sin acción)
+└── SECUNDARIAS
+    │
+    ├── Análisis
+    │   ├── Dashboard — KPIs del depto (cobertura, requisiciones pendientes, accidentes, cumplimiento)
+    │   ├── Dashboard — Bandeja de requisiciones pendientes (CTA "Revisar")
+    │   ├── Dashboard — Schedule de la semana (resumen)
+    │   └── Dashboard — Posiciones críticas (sin colaborador asignado)
+    │
+    └── Utilidades
+        ├── Dashboard — Acciones rápidas
+        ├── Schedule — Exportar Schedule semanal
+        └── Timesheet — Exportar Timesheet semanal
 ```
 
 ---

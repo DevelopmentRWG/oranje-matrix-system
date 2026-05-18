@@ -10,56 +10,61 @@ aliases:
 
 ---
 
-## Mapa de funcionalidades por módulo
+## Mapa de funcionalidades (Primarias / Secundarias)
 
 ```
-MANAGER GENERAL (GM) — solo jerarquía extendida
-├── 📊 Dashboard
-│   ├── KPIs globales del hotel (cobertura, cumplimiento, calidad)
-│   ├── Heatmap por depto y día
-│   ├── Ranking de Gerentes (autorización, cobertura)
-│   ├── Alertas críticas (cobertura <70%, accidentes, calidad Rojo)
-│   └── Acciones rápidas
+HOTEL — MANAGER GENERAL (GM, solo jerarquía extendida)
 │
-├── 📅 Schedule Global (consulta)
-│   ├── Calendario consolidado del hotel
-│   ├── Vista por depto + agregada
-│   ├── Drill-down a posiciones / colaboradores
-│   ├── Filtros por depto / posición / cobertura / semana
-│   └── Exportar Schedule consolidado
+├── PRIMARIAS
+│   │
+│   ├── Schedule Global (consulta)
+│   │   ├── Calendario consolidado del hotel
+│   │   ├── Vista por depto + agregada
+│   │   ├── Drill-down a posiciones / colaboradores
+│   │   └── Filtros por depto / posición / cobertura / semana
+│   │
+│   ├── Timesheet Global (consulta)
+│   │   ├── Tabla consolidada del hotel
+│   │   ├── Indicador de Cumplimiento por colaborador y depto
+│   │   ├── Resumen por depto (horas pagables, brutas, deducciones)
+│   │   └── Drill-down a jornadas individuales
+│   │
+│   ├── Requisiciones (vista global, supervisión)
+│   │   ├── Todos los estados (pendientes, autorizadas, en proceso, cubiertas, rechazadas)
+│   │   ├── Filtros por depto / Gerente / urgencia / posición
+│   │   ├── Comentar al expediente (visible para Gerente)
+│   │   └── Escalar requisición demorada a Reclutamiento
+│   │
+│   ├── Mi Equipo del Hotel
+│   │   ├── Gerentes de Departamento
+│   │   ├── Supervisores
+│   │   ├── Métricas individuales
+│   │   └── Comunicar (chat / nota)
+│   │
+│   └── Blacklist (consulta)
+│       └── Consulta global con filtros
 │
-├── ⏱️ Timesheet Global (consulta)
-│   ├── Tabla consolidada del hotel
-│   ├── Indicador de Cumplimiento por colaborador y depto
-│   ├── Resumen por depto (horas pagables, brutas, deducciones)
-│   ├── Drill-down a jornadas individuales
-│   └── Exportar Timesheet consolidado
-│
-├── 📋 Requisiciones (vista global, supervisión)
-│   ├── Todos los estados (pendientes, autorizadas, en proceso, cubiertas, rechazadas)
-│   ├── Filtros por depto / Gerente / urgencia / posición
-│   ├── 💬 Comentar al expediente (visible para Gerente)
-│   ├── 🚨 Escalar requisición demorada a Reclutamiento
-│   └── 📊 Generar reporte de tiempos de autorización por Gerente
-│
-├── 👥 Mi Equipo del Hotel
-│   ├── 🧑‍💼 Gerentes de Departamento
-│   ├── 🦺 Supervisores
-│   ├── Métricas individuales
-│   ├── 💬 Comunicar (chat / nota)
-│   └── 📊 Solicitar reporte específico
-│
-├── 📈 Reportes
-│   ├── Plantillas: Cobertura · Desempeño · Cumplimiento · Calidad · Accidentes · Indicadores
-│   ├── Filtros (rango fechas / depto / tipo)
-│   ├── Vista previa
-│   ├── 📤 Exportar (CSV / PDF / Excel)
-│   ├── 📤 Enviar a dirección
-│   ├── 📅 Programar envío recurrente
-│   └── Histórico de reportes enviados
-│
-└── ⚫ Blacklist (consulta)
-    └── Consulta global con filtros
+└── SECUNDARIAS
+    │
+    ├── Análisis
+    │   ├── Dashboard — KPIs globales del hotel (cobertura, cumplimiento, calidad)
+    │   ├── Dashboard — Heatmap por depto y día
+    │   ├── Dashboard — Ranking de Gerentes (autorización, cobertura)
+    │   ├── Dashboard — Alertas críticas (cobertura <70%, accidentes, calidad Rojo)
+    │   ├── Reportes — Plantillas: Cobertura · Desempeño · Cumplimiento · Calidad · Accidentes · Indicadores
+    │   └── Reportes — Vista previa
+    │
+    └── Utilidades
+        ├── Dashboard — Acciones rápidas
+        ├── Schedule Global — Exportar Schedule consolidado
+        ├── Timesheet Global — Exportar Timesheet consolidado
+        ├── Requisiciones — Generar reporte de tiempos de autorización por Gerente
+        ├── Mi Equipo del Hotel — Solicitar reporte específico
+        ├── Reportes — Filtros (rango fechas / depto / tipo)
+        ├── Reportes — Exportar (CSV / PDF / Excel)
+        ├── Reportes — Enviar a dirección
+        ├── Reportes — Programar envío recurrente
+        └── Reportes — Histórico de reportes enviados
 ```
 
 ---

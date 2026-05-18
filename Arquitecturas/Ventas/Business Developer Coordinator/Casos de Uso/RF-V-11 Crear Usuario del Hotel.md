@@ -6,7 +6,7 @@ tags:
 aliases:
   - CU RF-V-11
 ---
-
+H
 # 🪪 ID: RF-V-11
 🏷️ **Nombre:** Crear Usuario del Hotel
 

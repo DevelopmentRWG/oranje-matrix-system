@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "hotel",
+  "search": "manager general",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -88,6 +88,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.8797188758887216,
-  "close": false
+  "scale": 0.08317427835927532,
+  "close": true
 }

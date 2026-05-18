@@ -22,4 +22,4 @@ Solo el BDC puede validar (acción exclusiva). Al aprobar, el T&C queda como "Va
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Bandeja "T&C pendientes de validación"` → MANUAL → `Click en T&C` → `Revisa los 5 campos obligatorios + condiciones generales` → MANUAL → `Decisión: Aprobar o Rechazar` → Si Aprueba → `Comentario opcional` → `Confirmar` → AUTOMATICO → `T&C queda como Validado + Notifica al BD + Permite avanzar a Rosa + Log auditable` / Si Rechaza → `Observaciones obligatorias (mín. 30 caracteres)` → `Confirmar` → AUTOMATICO → `T&C vuelve a editable por el BD + Notifica al BD con observaciones + Log auditable`
+`Bandeja "T&C pendientes de validación"` → MANUAL → `Click en T&C` → `Revisa los 5 campos obligatorios + condiciones generales` → HMANUAL → `Decisión: Aprobar o Rechazar` → Si Aprueba → `Comentario opcional` → `Confirmar` → AUTOMATICO → `T&C queda como Validado + Notifica al BD + Permite avanzar a Rosa + Log auditable` / Si Rechaza → `Observaciones obligatorias (mín. 30 caracteres)` → `Confirmar` → AUTOMATICO → `T&C vuelve a editable por el BD + Notifica al BD con observaciones + Log auditable`
