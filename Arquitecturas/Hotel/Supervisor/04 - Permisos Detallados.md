@@ -41,5 +41,4 @@ aliases:
 | Accidentes            | Reportar accidente — Escenario B                    | ➕ Crear     | Crea tarjeta cuando detecta primero                               |
 | Accidentes            | Capturar evidencia presencial                       | 📝 C · E    | Foto / video / notas                                              |
 | **Dashboard**         | Ver KPIs personales                                  | 👁️ Ver     | Mis requisiciones, accidentes reportados                          |
-| **Blacklist**         | Consultar Blacklist                                  | 👁️ Ver     | Solo lectura                                                      |
 | **Sistema** (transv.) | Recibir notificación                                 | 👁️ Ver     | Alertas y notificaciones                                          |

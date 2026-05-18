@@ -28,7 +28,6 @@ aliases:
 | RF-H-18    | Reportar colaborador (Rojo)                          | 🔴 Alta   |
 | RF-H-20    | **Reportar accidente — Escenario A** *(NUEVO)*       | 🔴 Alta   |
 | RF-H-21    | **Reportar accidente — Escenario B** *(NUEVO)*       | 🔴 Alta   |
-| RF-H-29    | Consultar Blacklist                                  | 🟡 Media  |
 | RNF-H-02   | Disponibilidad 99.5%                                 | 🔴 Alta   |
 | RNF-H-03   | Trazabilidad de acciones                             | 🔴 Alta   |
 | RR-H-02    | Capa de seguridad — autorización compartida (M.Área + M.General) | 🔴 Alta |

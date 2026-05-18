@@ -26,5 +26,4 @@ aliases:
 | Enviar reporte a dirección                          | Email / link interno · Queda en histórico con destinatario y estado                                  |
 | Programar envío recurrente                          | Configura periodicidad (semanal / mensual) y destinatarios                                           |
 | Reabrir reporte del histórico                       | Carga reporte previo como plantilla                                                                  |
-| Consultar Blacklist                                 | Vista lectura con filtros                                                                            |
 | Cancelar acción                                     | Cambios no se guardan                                                                                 |

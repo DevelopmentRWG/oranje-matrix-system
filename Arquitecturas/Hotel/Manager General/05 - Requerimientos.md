@@ -39,7 +39,6 @@ aliases:
 | RF-H-26    | Comentar al expediente de requisición                  | 🟢 Baja   |
 | RF-H-27    | Escalar requisición demorada                           | 🟡 Media  |
 | RF-H-28    | Solicitar reporte a Manager de Área                    | 🟢 Baja   |
-| RF-H-29    | Consultar Blacklist                                    | 🟡 Media  |
 | **No funcionales y reglas**                                                               |
 | RNF-H-02   | Disponibilidad 99.5%                                   | 🔴 Alta   |
 | RNF-H-03   | Trazabilidad de acciones                               | 🔴 Alta   |

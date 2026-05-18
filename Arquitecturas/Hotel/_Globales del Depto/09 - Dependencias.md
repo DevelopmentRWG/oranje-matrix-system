@@ -20,7 +20,6 @@ aliases:
 | **Módulo Inspección**             | Asignación automática de Inspector por zona al autorizar requisición. Investiga reportes de colaborador (Rojo) y accidentes (Gris).                          |
 | **Módulo Onboarding-Hotel**       | Habilitación del hotel al alcanzar status Naranja en Semáforo Onboarding. Antes, el hotel es prospecto comercial gestionado por Ventas.                      |
 | **Módulo QA**                     | Operador de QA fijo asignado al depto Hotel. Métricas e Indicador de Calidad. QA observa, mide y retroalimenta sin operar.                                   |
-| **Módulo Blacklist**              | Consulta global desde el Hotel. Las acciones de agregar / resolver disputa / remover son exclusivas del depto Reclutamiento.                                 |
 | **Módulo Pool de Colaboradores**  | Indirecto — los colaboradores asignados al hotel provienen del Pool. El Hotel ve solo los asignados, no el Pool completo.                                    |
 
 ---

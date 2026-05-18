@@ -52,7 +52,6 @@ Permitir al Supervisor **formalizar la necesidad de personal del hotel** mediant
 | RF-H-19 | Sugerir refuerzo de personal | 🟢 Baja |
 | RF-H-20 | Reportar accidente — Escenario A | 🔴 Alta |
 | RF-H-21 | Reportar accidente — Escenario B | 🔴 Alta |
-| RF-H-29 | Consultar Blacklist | 🟡 Media |
 
 ---
 
@@ -75,4 +74,3 @@ Permitir al Supervisor **formalizar la necesidad de personal del hotel** mediant
 - NO puede corregir ponches.
 - NO puede reportar colaborador (Rojo).
 - NO puede editar Schedule (solo consulta).
-- NO puede agregar/remover de Blacklist.

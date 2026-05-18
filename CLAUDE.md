@@ -228,6 +228,8 @@ entregar el resultado:
 | Fecha | Cambio | Por |
 |---|---|---|
 | 2026-05-18 | Creación de CLAUDE.md tras análisis completo del vault (250 .md, 5 departamentos, 7 semáforos, 3 subagentes, metodología de Arquitecturas). | Claude |
+| 2026-05-18 | Reestructurados los `07 - Feature Map` de Reclutamiento/Líder de Grupo y de los 3 roles de Hotel al formato PRIMARIAS/SECUNDARIAS del _GUIA. | Claude |
+| 2026-05-18 | Eliminado el módulo Blacklist del depto Hotel (RF-H-29, RI-H-07 y referencias en 26 archivos de Arquitecturas/Hotel); arquitectura alineada con la fuente de verdad. `Core/` y Reclutamiento/Inspección sin cambios. | Claude |
 
 <!--
 Mantén esta tabla en orden cronológico inverso o directo (directo aquí).

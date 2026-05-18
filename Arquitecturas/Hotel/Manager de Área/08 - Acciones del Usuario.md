@@ -27,5 +27,4 @@ aliases:
 | Quitar Stand-by (vuelve a estado anterior)          | Reactiva al colaborador en Schedule y Timesheet                                                      |
 | Reportar colaborador (Rojo)                         | Estado pasa a Rojo · Notifica al Inspector · Inicia investigación                                    |
 | Solicitar refuerzo de personal                      | Sugerencia de nueva requisición prefilled (la crea el Supervisor)                                    |
-| Consultar Blacklist                                  | Vista lectura con motivo y fecha del veto                                                            |
 | Cancelar acción                                     | Cambios no se guardan                                                                                |

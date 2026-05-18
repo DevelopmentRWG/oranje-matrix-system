@@ -67,8 +67,6 @@ MÓDULOS / SIDEBAR
 - Requisiciones por ID o número
 - Colaboradores asignados (por nombre / posición)
 - Posiciones del Schedule (por día / posición)
-- Vetados en [[Core/Módulos/Blacklist|Blacklist]] (consulta)
-
 **Cómo funciona**
 - Resultados en vivo agrupados por tipo
 - Atajo: `/` o `Ctrl+K`
@@ -99,8 +97,7 @@ SIDEBAR
    ├─ SCHEDULE             (gestión semanal)
    ├─ TIMESHEET            (revisar ponches + generar QR)
    ├─ MI PERSONAL          (colaboradores asignados — Stand-by / Reportar)
-   ├─ ACCIDENTES           (reportar y dar seguimiento)
-   └─ BLACKLIST            (consulta)
+   └─ ACCIDENTES           (reportar y dar seguimiento)
 ```
 
 > [!note]
@@ -310,27 +307,6 @@ SIDEBAR
 
 ---
 
-## ⚫ Módulo BLACKLIST (consulta)
-
-### Lista
-- Colaboradores vetados (visible solo como consulta).
-- Por motivo (3 inasistencias, disputa, falta grave).
-
-### Filtros
-- Buscar por nombre / documento
-- Por motivo
-- Por fecha de ingreso
-
-### Detalle
-- Info del colaborador
-- Motivo del veto
-- Fecha de ingreso
-
-> [!warning]
-> El Manager de Área **NO** puede agregar ni remover de Blacklist — esa acción es del depto Reclutamiento (todos los roles del depto pueden agregar; solo el Manager de Reclutamiento resuelve disputas y remueve).
-
----
-
 ## Flujo operativo del Manager de Área
 
 ```
@@ -408,7 +384,6 @@ SIDEBAR
 │ 📅 Schedule  │  Calendario semanal · Editar · Exportar       │
 │ ⏱️ Timesheet │  Ponches · Generar QR · Cumplimiento          │
 │ 👥 Personal  │  Mis colaboradores · Stand-by · Reportar      │
-│ ⚫ Blacklist │  Consulta · Motivos · Histórico               │
 └──────────────┴───────────────────────────────────────────────┘
 ```
 
@@ -427,6 +402,5 @@ SIDEBAR
 - [[Timesheet]]
 - [[Semáforo de Requisición]]
 - [[Semáforo del Colaborador]]
-- [[Core/Módulos/Blacklist|Blacklist]]
 - [[Departamentos del Hotel]]
 - [[Inspector]]

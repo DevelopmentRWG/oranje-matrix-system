@@ -73,8 +73,6 @@ MÓDULOS / SIDEBAR
 - Colaboradores asignados (cualquier depto)
 - Schedule por posición / día
 - Gerentes de Departamento y Supervisores del hotel
-- Vetados en [[Core/Módulos/Blacklist|Blacklist]] (consulta)
-
 **Cómo funciona**
 - Resultados en vivo agrupados por tipo
 - Atajo: `/` o `Ctrl+K`
@@ -107,8 +105,7 @@ SIDEBAR
    ├─ MI PERSONAL          (gestionar colaboradores — Stand-by / Reportar)
    ├─ ACCIDENTES           (reportar y dar seguimiento)
    ├─ MI EQUIPO DEL HOTEL  (Managers de Área + Supervisores)
-   ├─ REPORTES             (consolidados + envío a dirección)
-   └─ BLACKLIST            (consulta)
+   └─ REPORTES             (consolidados + envío a dirección)
 ```
 
 > [!note]
@@ -281,28 +278,6 @@ SIDEBAR
 
 ---
 
-## ⚫ Módulo BLACKLIST (consulta)
-
-### Lista
-- Colaboradores vetados (consulta global).
-- Por motivo (3 inasistencias, disputa, falta grave).
-
-### Filtros
-- Buscar por nombre / documento
-- Por motivo
-- Por fecha de ingreso
-
-### Detalle
-- Info del colaborador
-- Motivo del veto
-- Fecha de ingreso
-- Quién lo propuso
-
-> [!warning]
-> El Manager General NO puede agregar ni remover de Blacklist. Solo consulta.
-
----
-
 ## Flujo operativo del Manager General
 
 ```
@@ -381,7 +356,6 @@ SIDEBAR
 │ 📋 Requisic. │  Vista global · Supervisión · Escalamiento   │
 │ 👥 Equipo    │  Gerentes de Depto · Supervisores · Métricas  │
 │ 📈 Reportes  │  Generar · Enviar dirección · Programar       │
-│ ⚫ Blacklist │  Consulta global                              │
 └──────────────┴───────────────────────────────────────────────┘
 ```
 
@@ -401,4 +375,3 @@ SIDEBAR
 - [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]]
 - [[QA/QA|QA]]
 - [[Semáforo de Requisición]]
-- [[Core/Módulos/Blacklist|Blacklist]]

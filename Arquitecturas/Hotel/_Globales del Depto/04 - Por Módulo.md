@@ -89,14 +89,6 @@ Agrupación de los RFs definidos en [[03 - Tabla de Requerimientos]] según el m
 
 ---
 
-## ⚫ BLACKLIST
-
-| RF | Nombre | Rol(es) | Prioridad |
-|---|---|---|---|
-| RF-H-29 | Consultar Blacklist | Todos los roles del Hotel | 🟡 Media |
-
----
-
 ## 📊 DASHBOARD
 
 | RF | Nombre | Rol(es) | Prioridad |

@@ -24,5 +24,4 @@ aliases:
 | Quitar Stand-by                                           | Reactiva al colaborador en Schedule y Timesheet                                                          |
 | Consultar Schedule del depto                             | Vista calendario semanal con asignaciones                                                                |
 | Consultar Timesheet del depto                            | Tabla semanal × colaborador con ponches y horas netas                                                    |
-| Consultar Blacklist                                      | Vista lectura con motivo y fecha del veto                                                                |
 | Cancelar acción                                          | Cambios no se guardan                                                                                     |

@@ -35,14 +35,11 @@ HOTEL — MANAGER GENERAL (GM, solo jerarquía extendida)
 │   │   ├── Comentar al expediente (visible para Gerente)
 │   │   └── Escalar requisición demorada a Reclutamiento
 │   │
-│   ├── Mi Equipo del Hotel
-│   │   ├── Gerentes de Departamento
-│   │   ├── Supervisores
-│   │   ├── Métricas individuales
-│   │   └── Comunicar (chat / nota)
-│   │
-│   └── Blacklist (consulta)
-│       └── Consulta global con filtros
+│   └── Mi Equipo del Hotel
+│       ├── Gerentes de Departamento
+│       ├── Supervisores
+│       ├── Métricas individuales
+│       └── Comunicar (chat / nota)
 │
 └── SECUNDARIAS
     │
@@ -81,7 +78,6 @@ HOTEL — MANAGER GENERAL (GM, solo jerarquía extendida)
 | Generar reporte ejecutivo | ✅ exclusivo |
 | Enviar a dirección | ✅ exclusivo |
 | Programar envío recurrente | ✅ |
-| Consultar Blacklist | ✅ (solo lectura) |
 | Crear / Autorizar requisición | ❌ (RR-H-14) |
 | Generar QR / Corregir ponche | ❌ |
 | Editar Schedule | ❌ |

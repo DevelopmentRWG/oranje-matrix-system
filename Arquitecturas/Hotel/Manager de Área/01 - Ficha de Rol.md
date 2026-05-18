@@ -44,7 +44,6 @@ Operar el ciclo de personal del departamento end-to-end: crear y validar las sol
 - Reportar colaborador (Rojo)
 - **Reportar accidentes laborales** *(NUEVO — Escenarios A y B)*
 - Eliminar requisición con posiciones (con journal)
-- Consultar Blacklist
 
 ---
 

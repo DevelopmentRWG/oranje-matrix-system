@@ -24,7 +24,6 @@ aliases:
 | RF-H-19    | Sugerir refuerzo de personal                   | 🟢 Baja   |
 | RF-H-20    | Reportar accidente — Escenario A               | 🔴 Alta   |
 | RF-H-21    | Reportar accidente — Escenario B               | 🔴 Alta   |
-| RF-H-29    | Consultar Blacklist                             | 🟡 Media  |
 | RNF-H-02   | Disponibilidad 99.5%                            | 🔴 Alta   |
 | RNF-H-04   | Mobile para Supervisor                          | 🔴 Alta   |
 | RR-H-02    | Capa de seguridad — autorización exclusiva     | 🔴 Alta   |

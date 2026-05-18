@@ -51,7 +51,6 @@ Permitir al Manager de Área **revisar y autorizar** las requisiciones que crea 
 | RF-H-15 | Consultar Timesheet | 🔴 Alta |
 | RF-H-17 | Poner colaborador en Stand-by (Rosa) | 🔴 Alta |
 | RF-H-18 | Reportar colaborador (Rojo) | 🔴 Alta |
-| RF-H-29 | Consultar Blacklist | 🟡 Media |
 
 ---
 
@@ -70,5 +69,4 @@ Permitir al Manager de Área **revisar y autorizar** las requisiciones que crea 
 
 - NO puede crear requisiciones (eso es del Supervisor).
 - NO accede al Indicador de Lunch Extendido.
-- NO puede agregar / remover de Blacklist (eso es del depto Reclutamiento).
 - NO puede dar de alta usuarios (eso es del Administrador).

@@ -63,9 +63,6 @@ aliases:
 | | 📤 Enviar a dirección | — | — | Crear | — | ⏸️ |
 | | 📅 Programar envío recurrente | — | — | C · E | — | ⏸️ |
 | | 👁️ Ver histórico de reportes | — | — | Ver | Auto | ⏸️ |
-| **BLACKLIST** | 👁️ Consultar Blacklist | Ver | Ver | Ver | Auto | ⏸️ |
-| | ➕ Agregar a Blacklist | — | — | — | — | ⏸️ |
-| | 📝 Remover de Blacklist | — | — | — | — | ⏸️ |
 | **DASHBOARD** | 👁️ Ver KPIs personales | Ver | Ver | Ver | Auto | ⏸️ |
 | | 👁️ Ver KPIs del depto | — | Ver | Ver | Auto | ⏸️ |
 | | 👁️ Ver KPIs globales del hotel | — | — | Ver | Auto | ⏸️ |
@@ -87,6 +84,5 @@ aliases:
 - **Stand-by / Rosa (RR-H-11):** compartido entre los **3 roles**.
 - **Reportar accidentes (RR-H-19):** los **3 roles** pueden reportar (Escenarios A y B).
 - **Indicador de Lunch Extendido (RR-H-15):** restringido para todos los roles del Hotel — solo lo ven Inspector, Coordinador de Inspección y Manager de Reclutamiento.
-- **Blacklist:** consulta global. Las acciones de Crear / Resolver disputa / Remover son exclusivas del depto Reclutamiento (no del Hotel).
 - **Manager General:** tiene **operación + supervisión**. Comparte todas las acciones operativas con Manager de Área, más funciones exclusivas ejecutivas (visibilidad global, reportes a dirección, supervisión de Managers de Área).
 - **En jerarquía simple:** Manager General opera también como Manager de Área (misma persona, dos roles).

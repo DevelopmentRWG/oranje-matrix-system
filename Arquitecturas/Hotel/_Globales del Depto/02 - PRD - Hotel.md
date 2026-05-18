@@ -123,8 +123,6 @@ Ver [[07 - Reglas de Negocio]] para el detalle. Las más importantes:
 | RI-H-04  | Hotel ↔ Inspección                     | Asignación automática de Inspector por zona al autorizar. Investigación de Rojo y Gris. |
 | RI-H-05  | Hotel ↔ QA                             | Operador de QA fijo asignado al depto Hotel. Métricas e Indicador de Calidad.     |
 | RI-H-06  | Hotel ↔ Onboarding-Hotel               | Habilitación del hotel al alcanzar status Naranja en Semáforo Onboarding.         |
-| RI-H-07  | Hotel ↔ Blacklist                      | Consulta global (sin permisos de edición desde el Hotel).                         |
-
 ---
 
 ## Dependencias

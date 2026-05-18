@@ -101,7 +101,7 @@ SIDEBAR
 ```
 
 > [!note]
-> El Supervisor **NO** tiene acceso a Blacklist ni a generación de QR. Su Schedule y Timesheet son **solo consulta** (no edita asignaciones).
+> El Supervisor **NO** tiene acceso a generación de QR. Su Schedule y Timesheet son **solo consulta** (no edita asignaciones).
 
 ---
 

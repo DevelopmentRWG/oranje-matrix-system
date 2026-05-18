@@ -80,7 +80,6 @@ HOTEL — SUPERVISOR (SUP)
 | Poner en Stand-by (Rosa) | ✅ compartido con Manager de Área |
 | Sugerir refuerzo de personal | ✅ |
 | Consultar Schedule / Timesheet | ✅ (solo lectura) |
-| Consultar Blacklist | ✅ (solo lectura) |
 | Autorizar requisición | ❌ (capa de seguridad RR-H-02) |
 | Generar QR del Timesheet | ❌ (RR-H-09) |
 | Corregir ponche | ❌ (RR-H-09 → solo Manager de Área) |

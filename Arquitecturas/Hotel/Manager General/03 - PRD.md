@@ -49,7 +49,6 @@ Permitir al Manager General **supervisar el hotel completo** con visibilidad con
 | RF-H-26 | Comentar al expediente de requisición | 🟢 Baja |
 | RF-H-27 | Escalar requisición demorada | 🟡 Media |
 | RF-H-28 | Solicitar reporte a Gerente de Departamento | 🟢 Baja |
-| RF-H-29 | Consultar Blacklist | 🟡 Media |
 
 ---
 

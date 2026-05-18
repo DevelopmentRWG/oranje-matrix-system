@@ -40,15 +40,12 @@ HOTEL — MANAGER DE ÁREA / GERENTE DE DEPARTAMENTO
 │   │   ├── Generar / Renovar QR (exclusivo)
 │   │   └── Corregir ponche con justificación
 │   │
-│   ├── Mi Personal
-│   │   ├── Lista de colaboradores asignados
-│   │   ├── Semáforo del Colaborador visible
-│   │   ├── Poner en Stand-by (Rosa) — compartido con Supervisor
-│   │   ├── Reportar colaborador (Rojo) — exclusivo
-│   │   └── Ver historial de incidencias
-│   │
-│   └── Blacklist
-│       └── Consulta de vetados (sin acción)
+│   └── Mi Personal
+│       ├── Lista de colaboradores asignados
+│       ├── Semáforo del Colaborador visible
+│       ├── Poner en Stand-by (Rosa) — compartido con Supervisor
+│       ├── Reportar colaborador (Rojo) — exclusivo
+│       └── Ver historial de incidencias
 │
 └── SECUNDARIAS
     │
@@ -78,9 +75,7 @@ HOTEL — MANAGER DE ÁREA / GERENTE DE DEPARTAMENTO
 | Poner colaborador en Stand-by (Rosa) | ✅ compartido con Supervisor |
 | Reportar colaborador (Rojo) | ✅ exclusivo |
 | Eliminar requisición con posiciones | ✅ (journal individual por posición) |
-| Consultar Blacklist | ✅ (solo lectura) |
 | Crear requisición | ❌ (eso es del Supervisor) |
 | Ver Indicador de Lunch Extendido | ❌ (RR-H-15) |
-| Agregar / Remover Blacklist | ❌ (depto Reclutamiento) |
 | Ver Schedule global del hotel | ❌ (eso es del Manager General) |
 | Reportar accidente laboral | ❌ (eso es del Supervisor) |
