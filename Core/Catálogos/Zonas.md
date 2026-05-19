@@ -1,34 +1,34 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Zonas
-  - Zona
+  - Zones
+  - Zone
 ---
 
-# Zonas
+# Zones
 
-División geográfica del estado en áreas operativas. Cada zona es la base de asignación de [[Inspector|inspectores]] a los hoteles.
+Geographic division of the state into operational areas. Each zone is the basis for assigning [[Inspector|inspectors]] to hotels.
 
-## Lista
+## List
 
-- Centro
-- Sur
-- Este
-- Oeste
-- Noroeste
-- Sureste
+- Central
+- South
+- East
+- West
+- Northwest
+- Southeast
 
 > [!note]
-> Lista basada en los puntos cardinales y sus derivados. Puede incluir otras combinaciones cardinales no listadas explícitamente aquí.
+> List based on cardinal directions and their combinations. May include other cardinal combinations not explicitly listed here.
 
-## Uso
+## Usage
 
-- **Cada hotel pertenece a una zona.**
-- **A cada zona le corresponde un [[Inspector]].**
-- Por esta relación, el inspector de la zona del hotel es responsable de darle seguimiento a cualquier disputa que ocurra en ese hotel — razón por la que el Inspector aparece en la cabecera de la [[Requisición]].
+- **Each hotel belongs to a zone.**
+- **Each zone is assigned an [[Inspector]].**
+- Because of this relationship, the inspector for the hotel's zone is responsible for following up on any dispute that occurs at that hotel — which is why the Inspector appears in the header of the [[Requisición]].
 
-## Relacionado
+## Related
 
 - [[Inspector]]
 - [[Requisición]]

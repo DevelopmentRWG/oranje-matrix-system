@@ -1,15 +1,15 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Posiciones
+  - Positions
 ---
 
-# Posiciones
+# Positions
 
-Catálogo de posiciones que los hoteles solicitan y Oranje recluta.
+Catalog of positions that hotels request and Oranje recruits for.
 
-## Lista por departamento
+## List by Department
 
 ### [[Departamentos del Hotel|Housekeeping]]
 
@@ -17,14 +17,14 @@ Catálogo de posiciones que los hoteles solicitan y Oranje recluta.
 - Houseman
 - Laundry
 
-### [[Departamentos del Hotel|Alimentos]]
+### [[Departamentos del Hotel|Food & Beverage]]
 
 - Chef
 
 > [!note]
-> Lista no exhaustiva. Existen otras posiciones y departamentos además de los listados.
+> Non-exhaustive list. Other positions and departments exist beyond those listed.
 
-## Relacionado
+## Related
 
 - [[Departamentos del Hotel]]
 - [[Requisición]]

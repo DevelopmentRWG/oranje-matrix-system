@@ -1,23 +1,23 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Niveles de Inglés
-  - Nivel de Inglés
+  - English Levels
+  - English Level
 ---
 
-# Niveles de Inglés
+# English Levels
 
-Niveles de dominio del inglés usados en Oranje. Aplican tanto a la **preferencia** que el hotel indica en la [[Requisición]] como al nivel declarado por el colaborador en su alta.
+English proficiency levels used at Oranje. They apply both to the **preference** the hotel specifies in the [[Requisición]] and to the level declared by the associate upon registration.
 
-## Niveles
+## Levels
 
-- Básico
-- Intermedio
-- Avanzado
-- Conversacional
+- Basic
+- Intermediate
+- Advanced
+- Conversational
 
-## Relacionado
+## Related
 
 - [[Requisición]]
 - [[Flujo de Reclutamiento]]

@@ -1,24 +1,24 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Departamentos del Hotel
-  - Departamentos
+  - Hotel Departments
+  - Departments
 ---
 
-# Departamentos del Hotel
+# Hotel Departments
 
-Catálogo de los departamentos internos del hotel para los que Oranje recluta colaboradores.
+Catalog of the hotel's internal departments for which Oranje recruits associates.
 
-## Lista
+## List
 
-- **Housekeeping** — Limpieza y mantenimiento de habitaciones y áreas públicas.
-- **Alimentos** — Preparación y servicio de alimentos y bebidas.
-- **Mantenimiento** — Reparaciones, instalaciones y conservación de la propiedad.
-- **Front Desk** — Recepción, atención al huésped y operaciones de lobby.
+- **Housekeeping** — Cleaning and maintenance of rooms and public areas.
+- **Food & Beverage** — Food and beverage preparation and service.
+- **Maintenance** — Repairs, installations, and property upkeep.
+- **Front Desk** — Reception, guest service, and lobby operations.
 
-## Relacionado
+## Related
 
 - [[Posiciones]]
 - [[Hotel/Hotel|Hotel]]
-- [[Hotel/Manager de Área|Manager de Área]]
+- [[Hotel/Manager de Área|Area Manager]]

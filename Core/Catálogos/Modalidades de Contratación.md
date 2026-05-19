@@ -1,23 +1,23 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Modalidades de Contratación
-  - Modalidad
+  - Employment Types
+  - Employment Type
 ---
 
-# Modalidades de Contratación
+# Employment Types
 
-Modalidades bajo las cuales se puede contratar a un colaborador.
+Employment modalities under which an associate can be hired.
 
-## Lista
+## List
 
-- Tiempo completo
-- Medio tiempo
-- Temporal
-- Según solicitud
+- Full-time
+- Part-time
+- Temporary
+- On-demand
 
-## Relacionado
+## Related
 
 - [[Requisición]]
 - [[Posiciones]]
