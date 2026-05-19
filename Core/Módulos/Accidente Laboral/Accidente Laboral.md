@@ -1,65 +1,65 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Accidente Laboral
-  - Reporte de Accidente
-  - Tarjeta de Accidente
+  - Work Accident
+  - Accident Report
+  - Accident Card
 ---
 
-# Accidente Laboral
+# Work Accident
 
-Entidad que registra un incidente donde un [[Colaborador]] sufre una lesión o accidente mientras está asignado a un [[Hotel/Hotel|Hotel]]. La tarjeta se origina desde la app por el propio colaborador o por el [[Hotel/Supervisor|Supervisor]] (SUP), y se completa entre el SUP y el [[Inspector|Inspector de zona]].
+Entity that records an incident where an [[Colaborador]] suffers an injury or accident while assigned to a [[Hotel/Hotel|Hotel]]. The card originates from the app by the associate themselves or by the [[Hotel/Supervisor|Supervisor]] (SUP), and is completed between the SUP and the [[Inspector|zone Inspector]].
 
-> [!important] Responsable del cierre
-> El [[Inspector]] es siempre el responsable final del cierre de la tarjeta, una vez que la información presencial y de seguimiento médico está completa.
+> [!important] Responsible for closure
+> The [[Inspector]] is always the final person responsible for closing the card, once the on-site and medical follow-up information is complete.
 
-## Datos de la tarjeta
+## Card Data
 
-### Cabecera
+### Header
 
-| Campo | Descripción |
+| Field | Description |
 |---|---|
-| Número de reporte | Automático (mismo patrón que [[Requisición]]: fecha/hora + homoclave) |
-| Hotel | [[Hotel/Hotel\|Hotel]] donde ocurrió el incidente |
-| Colaborador accidentado | [[Colaborador]] afectado |
-| Reportado por | Quien origina el reporte: el Colaborador o el SUP |
-| Fecha y hora del incidente | Momento en que ocurrió el accidente |
-| Status | Estado actual de la tarjeta |
+| Report number | Automatic (same pattern as [[Requisición]]: date/time + homoclave) |
+| Hotel | [[Hotel/Hotel\|Hotel]] where the incident occurred |
+| Injured associate | [[Colaborador]] affected |
+| Reported by | Who originates the report: the Associate or the SUP |
+| Incident date and time | When the accident occurred |
+| Status | Current card status |
 
-### Información presencial
+### On-Site Information
 
-Capturada por el [[Hotel/Supervisor|SUP]], quien acude físicamente al lugar del incidente:
+Captured by the [[Hotel/Supervisor|SUP]], who physically goes to the incident location:
 
-| Campo | Descripción |
+| Field | Description |
 |---|---|
-| Ubicación exacta | Lugar dentro de la propiedad donde ocurrió |
-| Circunstancias | Descripción de cómo ocurrió el accidente |
-| Testigos | Personas presentes al momento del incidente |
-| Atención inmediata | Primeros auxilios o atención brindada en sitio |
+| Exact location | Place within the property where it occurred |
+| Circumstances | Description of how the accident happened |
+| Witnesses | People present at the time of the incident |
+| Immediate care | First aid or care provided on-site |
 
-### Información de seguimiento
+### Follow-Up Information
 
-Capturada por el [[Inspector|Inspector de zona]]:
+Captured by the [[Inspector|zone Inspector]]:
 
-| Campo | Descripción |
+| Field | Description |
 |---|---|
-| Traslado a centro médico | Si fue trasladado y a qué centro |
-| Diagnóstico | Diagnóstico médico recibido |
-| Días de incapacidad | Días otorgados de incapacidad médica |
-| Observaciones médicas | Notas adicionales del seguimiento médico |
+| Transfer to medical facility | Whether they were transferred and to which facility |
+| Diagnosis | Medical diagnosis received |
+| Disability days | Days of medical disability granted |
+| Medical observations | Additional notes from medical follow-up |
 
-## Efecto en el Semáforo del Colaborador
+## Effect on the Associate Status Indicator
 
-Al generarse un reporte de accidente laboral, el [[Colaborador]] transita a **Gris — Accidentado** en el [[Semáforo del Colaborador]]. Este estado lo protege de la regla de 3 inasistencias → [[Blacklist]] mientras dure su incapacidad. Al recibir el alta médica y cerrarse la tarjeta, transita a `Verde fuerte` (Disponible).
+When a work accident report is generated, the [[Colaborador]] transitions to **Gray — Injured** in the [[Semáforo del Colaborador]]. This status protects them from the 3 absences rule → [[Blacklist]] while their disability lasts. Upon receiving medical clearance and closing the card, they transition to `Dark Green` (Available).
 
 ## Journal
 
-Cada cambio de status en la tarjeta genera un registro en el journal con: Número de reporte, Hotel, Colaborador, Reportado por, Status, Nota, Fecha y hora del status.
+Each status change on the card generates a journal entry with: Report number, Hotel, Associate, Reported by, Status, Note, Date and time of status.
 
-## Relacionado
+## Related
 
-- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
+- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Work Accident Flow]]
 - [[Semáforo del Colaborador]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]

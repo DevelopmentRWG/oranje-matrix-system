@@ -1,60 +1,60 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
   - Schedule
 ---
 
 # Schedule
 
-Tablero de planeación semanal del hotel. Es el **eje central de la operación**: en él convergen la demanda de personal ([[Requisición]]), la cobertura (asignación de colaboradores desde la [[Pool de Colaboradores]]) y el registro de tiempo trabajado ([[Timesheet]]). Cada semana del hotel tiene su propio schedule.
+The hotel's weekly planning board. It is the **central axis of operations**: it brings together personnel demand ([[Requisición]]), coverage (associate assignment from the [[Pool de Colaboradores]]), and time tracking ([[Timesheet]]). Each hotel week has its own schedule.
 
-## Configuración inicial
+## Initial Setup
 
-- El hotel define **inicio y fin de su semana** en el [[Contrato]].
-- Oranje ofrece un **formato de planeación semanal** basado en esa configuración.
+- The hotel defines its **week start and end** in the [[Contrato]].
+- Oranje provides a **weekly planning format** based on that configuration.
 
-## Qué contiene el schedule
+## What the Schedule Contains
 
-### Requisición (qué necesita el hotel)
+### Requisition (what the hotel needs)
 
-- Al crearse una [[Requisición]] con fecha de inicio dentro de la semana, sus posiciones quedan reflejadas en el schedule de esa semana.
-- El schedule muestra las posiciones solicitadas: puesto, cantidad de personas, horario, fechas e idioma.
+- When a [[Requisición]] is created with a start date within the week, its positions are reflected in that week's schedule.
+- The schedule shows the requested positions: role, headcount, schedule, dates, and language.
 
-### Asignaciones (quién cubre las posiciones)
+### Assignments (who covers the positions)
 
-- La [[Reclutadora]] consulta el schedule del hotel para ver el panorama completo: qué posiciones se pidieron y cuáles ya están cubiertas.
-- Al asignar un colaborador desde la [[Pool de Colaboradores]], este queda registrado en el schedule del hotel.
+- The [[Reclutadora]] checks the hotel's schedule to see the full picture: which positions were requested and which are already covered.
+- When assigning an associate from the [[Pool de Colaboradores]], they are registered in the hotel's schedule.
 
-### Timesheet (registro real de horas)
+### Timesheet (actual hours record)
 
-- Cada colaborador inscrito en el schedule tiene su propio [[Timesheet]].
-- El schedule es la base sobre la que se genera el timesheet y se habilita el ponchado por pares de entrada/salida (Entrada, Salida Lunch, Entrada Lunch, Salida Break, Entrada Break, Salida).
-- Si el schedule se modifica después de que el timesheet fue creado, el [[Timesheet]] se actualiza automáticamente para reflejar los cambios.
+- Each associate enrolled in the schedule has their own [[Timesheet]].
+- The schedule is the basis for generating the timesheet and enabling punch-in/out by entry/exit pairs (Clock In, Lunch Out, Lunch In, Break Out, Break In, Clock Out).
+- If the schedule is modified after the timesheet was created, the [[Timesheet]] is automatically updated to reflect the changes.
 
-## Quién lo gestiona
+## Who Manages It
 
-- **[[Hotel/Manager de Área|Manager de Área]]** — Administra el schedule semanal: distribuye y planea a su personal.
-- **[[Reclutadora]]** — Consulta el schedule para ver la demanda y registra colaboradores al asignarlos.
+- **[[Hotel/Manager de Área|Area Manager]]** — Manages the weekly schedule: distributes and plans their staff.
+- **[[Reclutadora]]** — Checks the schedule to see demand and registers associates when assigning them.
 
-## Qué habilita
+## What It Enables
 
-- Vista unificada de la semana operativa del hotel (demanda + cobertura + registro).
-- Creación del [[Timesheet]] por colaborador.
-- Visibilidad para el hotel de lo que pidió vs. lo que tiene cubierto.
+- Unified view of the hotel's operational week (demand + coverage + records).
+- Creation of the [[Timesheet]] per associate.
+- Visibility for the hotel of what was requested vs. what is covered.
 
-## Días festivos
+## Holidays
 
-- Los días festivos se registran en el sistema como datos de la operación.
-- Su propósito es el análisis del comportamiento operativo en fechas especiales y la alimentación del módulo de forecast.
+- Holidays are recorded in the system as operational data.
+- Their purpose is to analyze operational behavior on special dates and feed the forecast module.
 
-> [!info] El módulo de forecast está pendiente de definición. Los días festivos quedan registrados en el sistema como insumo para ese módulo cuando sea implementado.
+> [!info] The forecast module is pending definition. Holidays are recorded in the system as input for that module when it is implemented.
 
-## Relacionado
+## Related
 
 - [[Requisición]]
 - [[Timesheet]]
 - [[Reclutadora]]
 - [[Pool de Colaboradores]]
-- [[Hotel/Manager de Área|Manager de Área]]
+- [[Hotel/Manager de Área|Area Manager]]
 - [[Flujo de Requisición]]

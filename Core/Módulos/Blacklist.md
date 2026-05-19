@@ -1,56 +1,55 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
   - Blacklist
-  - Lista Negra
 ---
 
 # Blacklist
 
-Lista de colaboradores vetados que no pueden volver a ser reclutados.
+List of banned associates who cannot be recruited again.
 
-## Qué es
+## What It Is
 
-Registro de personas que han sido bloqueadas por:
+A registry of individuals who have been blocked due to:
 
-- Inasistencias.
-- Faltas graves cometidas en el hotel.
+- Absences.
+- Serious misconduct committed at the hotel.
 
-## Uso en Reclutamiento
+## Use in Recruitment
 
-A las [[Reclutadora|reclutadoras]] les sirve saber quién está en blacklist para:
+[[Reclutadora|Recruiters]] need to know who is on the blacklist to:
 
-- **Evitar volver a reclutar** a alguien vetado cuando se postula.
-- **Tener un registro** de colaboradores bloqueados.
+- **Avoid re-recruiting** someone who has been banned when they reapply.
+- **Maintain a record** of blocked associates.
 
-## Cómo se entra a la blacklist
+## How an Associate Gets Blacklisted
 
-Un colaborador pasa a estado **Negro** en el [[Semáforo del Colaborador]] por:
+An associate transitions to **Black** status in the [[Semáforo del Colaborador]] due to:
 
-- **3 inasistencias** → blacklist automático por sistema.
-- **Disputa resuelta a favor del hotel** → tras un reporte del hotel (estado Rojo) e investigación del [[Inspector]].
+- **3 absences** — automatic blacklist by system.
+- **Dispute resolved in favor of the hotel** — after a hotel report (Red status) and investigation by the [[Inspector]].
 
-## Proceso de investigación
+## Investigation Process
 
-Cuando un colaborador entra en estado Rojo (reporte del hotel), el [[Inspector]] de la zona investiga la disputa.
+When an associate enters Red status (hotel report), the [[Inspector]] for that zone investigates the dispute.
 
-> [!info] El Inspector tiene autoridad propia para decidir el resultado. No requiere escalamiento al Manager de Reclutamiento para emitir la resolución.
+> [!info] The Inspector has independent authority to decide the outcome. Escalation to the Recruitment Manager is not required to issue a resolution.
 
-- **Resolución a favor del hotel:** el colaborador pasa a **Negro** ([[Core/Módulos/Blacklist|Blacklist]]).
-- **Resolución a favor del colaborador:** el colaborador regresa a **Verde fuerte** (disponible).
+- **Resolution in favor of the hotel:** the associate transitions to **Black** ([[Core/Módulos/Blacklist|Blacklist]]).
+- **Resolution in favor of the associate:** the associate returns to **Dark Green** (available).
 
-## Permanencia del estado Negro
+## Permanence of Black Status
 
-> [!warning] Negro es PERMANENTE. No existe proceso de rehabilitación ni instancia de apelación.
+> [!warning] Black is PERMANENT. There is no rehabilitation process or appeals mechanism.
 
-El registro del colaborador se conserva en el sistema con las siguientes condiciones:
+The associate's record is preserved in the system under the following conditions:
 
-- El colaborador **no se elimina** del sistema.
-- **No aparece en búsquedas activas** de reclutamiento.
-- El **historial se conserva** íntegro para consulta interna.
+- The associate **is not deleted** from the system.
+- **Does not appear in active recruitment** searches.
+- The **full history is preserved** for internal reference.
 
-## Relacionado
+## Related
 
 - [[Semáforo del Colaborador]]
 - [[Reclutadora]]

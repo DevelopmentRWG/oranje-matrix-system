@@ -1,34 +1,34 @@
 ---
 tags:
-  - modulo/core
-  - concepto
+  - module/core
+  - concept
 aliases:
-  - Contrato
+  - Contract
 ---
 
-# Contrato
+# Contract
 
-Acuerdo formal entre Oranje y el hotel que resulta del cierre de negociación en [[Semáforo Onboarding|Status Onboarding Rosa]]. Formaliza las condiciones pactadas en el [[Documento de Términos y Condiciones]] y define los parámetros operativos de la relación.
+Formal agreement between Oranje and the hotel resulting from the negotiation closure at [[Semáforo Onboarding|Onboarding Status Pink]]. It formalizes the conditions agreed upon in the [[Documento de Términos y Condiciones]] and defines the operational parameters of the relationship.
 
-## Contenido
+## Contents
 
-- **Pay rate** — pago acordado al colaborador. Se aplica por hotel: si el colaborador trabaja en múltiples hoteles, cada uno tiene su propio pay rate según su contrato.
-- **Bill rate** — cobro acordado al hotel.
-- **Overtime** — política de horas extra pactada.
-- **Festivos** — manejo y recargos acordados.
-- **Inicio y fin de semana** — configuración semanal del hotel para el [[Schedule]].
-- **Vigencia** — período de validez del contrato.
-- **Renovación** — condiciones de renovación.
+- **Pay rate** — agreed payment to the associate. Applied per hotel: if the associate works at multiple hotels, each has its own pay rate per its contract.
+- **Bill rate** — agreed charge to the hotel.
+- **Overtime** — agreed overtime policy.
+- **Holidays** — agreed handling and surcharges.
+- **Week start and end** — hotel's weekly configuration for the [[Schedule]].
+- **Term** — contract validity period.
+- **Renewal** — renewal conditions.
 
-## Ciclo de vida
+## Lifecycle
 
-- **Se formaliza en:** [[Semáforo Onboarding|Status Onboarding Rosa]] tras validación del [[Business Developer Coordinator]].
-- **Insumo previo:** [[Documento de Términos y Condiciones]].
+- **Formalized at:** [[Semáforo Onboarding|Onboarding Status Pink]] after validation by the [[Business Developer Coordinator]].
+- **Prior input:** [[Documento de Términos y Condiciones]].
 
-## Relacionado
+## Related
 
 - [[Documento de Términos y Condiciones]]
 - [[Schedule]]
 - [[Flujo de Onboarding]]
 - [[Business Developer Coordinator]]
-- [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal del Colaborador]]
+- [[Contabilidad/Consolidado Semanal del Colaborador|Weekly Associate Summary]]

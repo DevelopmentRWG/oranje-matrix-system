@@ -1,376 +1,375 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Reglas de Negocio
   - Business Rules
-  - Reglas del Sistema
+  - System Rules
 ---
 
-# Reglas de Negocio
+# Business Rules
 
-Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje. Cada regla referencia el módulo donde se aplica y los roles involucrados.
+Centralized document with the business rules that govern the Oranje system. Each rule references the module where it applies and the roles involved.
 
-> [!info] Las reglas aquí documentadas son la fuente de verdad. Los semáforos y flujos implementan estas reglas, pero este archivo las define.
+> [!info] The rules documented here are the source of truth. The status indicators and flows implement these rules, but this file defines them.
 
-## Colaborador
+## Associate
 
-> [!tip] Para la referencia completa, ver [[Reglas del Colaborador]].
+> [!tip] For the complete reference, see [[Reglas del Colaborador]].
 
-### Captura de datos en 3 fases
-- **Fase 1 — Entrevista inicial:** la [[Reclutadora]] captura los datos básicos del candidato: nombre completo, edad, género, domicilio y teléfono
-- **Fase 2 — Alta en la app:** el propio Colaborador completa su información personal (SSN, ITIN, Posición, Nivel de inglés, Nivel de experiencia, Tipo de transporte, Modalidad)
-- **Fase 3 — Datos de emergencia:** el Colaborador completa desde la app: contacto de emergencia (nombre, teléfono, parentesco), tipo de sangre y alergias o condiciones médicas
+### 3-Phase Data Capture
+- **Phase 1 — Initial interview:** the [[Reclutadora]] captures the candidate's basic data: full name, age, gender, address, and phone number
+- **Phase 2 — App registration:** the Associate completes their personal information (SSN, ITIN, Position, English level, Experience level, Transportation type, Employment type)
+- **Phase 3 — Emergency data:** the Associate completes from the app: emergency contact (name, phone, relationship), blood type, and allergies or medical conditions
 
-### Progresión del colaborador (Semáforo)
-- **Blanco → Verde manzana:** al ser asignado y asistir el Día 1. El [[Inspector]] verifica su llegada en sitio
-- **Verde manzana → Azul claro:** cuando poncha en la propiedad al tercer día. El [[Inspector]] le entrega su uniforme
-- **Azul claro → Naranja:** al completar 7 días (automático por sistema)
-- **Naranja → Verde fuerte:** cuando el colaborador queda libre (fin de asignación fija o reincorporado)
+### Associate Progression (Status Indicator)
+- **White → Apple Green:** upon being assigned and attending Day 1. The [[Inspector]] verifies their arrival on-site
+- **Apple Green → Light Blue:** when they punch in at the property on the third day. The [[Inspector]] delivers their uniform
+- **Light Blue → Orange:** upon completing 7 days (automatic by system)
+- **Orange → Dark Green:** when the associate becomes available (end of fixed assignment or reinstated)
 
-### Estado Amarillo (Disponible voluntario)
-- Lo activa el propio colaborador durante un descanso
-- Es el único estado que el colaborador puede activar por sí mismo
+### Yellow Status (Voluntary Available)
+- Activated by the associate themselves during a rest period
+- It is the only status the associate can activate on their own
 
-### Asignación temporal (Café)
-- La [[Reclutadora]] asigna temporalmente al colaborador (→ Café) y define la duración en días al momento de la asignación
-- El estado se cierra automáticamente al vencer los días asignados; al cerrarse, vuelve a Verde fuerte o Naranja según su estado previo
+### Temporary Assignment (Brown)
+- The [[Reclutadora]] temporarily assigns the associate (→ Brown) and defines the duration in days at the time of assignment
+- The status closes automatically when the assigned days expire; upon closing, returns to Dark Green or Orange depending on their prior state
 
-### Estado Rosa (Stand-by)
-- El [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en estado Rosa
-- Indica que el colaborador está en espera por decisión del hotel (vacaciones, temporada baja)
-- La posición no tiene fecha de fin; termina cuando el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] retira al colaborador del estado Rosa. Al salir de Rosa, el colaborador regresa a Verde fuerte.
+### Pink Status (Stand-by)
+- The [[Hotel/Manager General|General Manager]], the [[Hotel/Manager de Área|Area Manager]], or the [[Hotel/Supervisor|Supervisor]] can put an associate in Pink status
+- Indicates the associate is on hold by hotel decision (vacation, low season)
+- The position has no end date; it ends when the [[Hotel/Manager General|General Manager]], the [[Hotel/Manager de Área|Area Manager]], or the [[Hotel/Supervisor|Supervisor]] removes the associate from Pink status. Upon leaving Pink, the associate returns to Dark Green.
 
-### Inasistencia (Morado)
-- El sistema marca Morado cuando el colaborador no asiste sin justificación
-- Cada inasistencia se registra individualmente
+### Absence (Purple)
+- The system marks Purple when the associate does not attend without justification
+- Each absence is recorded individually
 
-### Regla de 3 inasistencias
-- 3 inasistencias acumuladas → [[Core/Módulos/Blacklist|Blacklist]] automático (estado Negro)
-- Aplica al [[Semáforo del Colaborador]]
-- Responsable: Sistema (automático)
+### 3-Absence Rule
+- 3 accumulated absences → automatic [[Core/Módulos/Blacklist|Blacklist]] (Black status)
+- Applies to the [[Semáforo del Colaborador]]
+- Responsible: System (automatic)
 
-### Resolución de Reportes (Rojo)
-- El hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]]) activa el estado Rojo (reportado)
-- El [[Inspector]] de la zona investiga la disputa y tiene **autoridad propia para decidir** el resultado:
-  - **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), si la disputa es a favor del hotel
-  - **Verde fuerte** (reincorporado), si la disputa es a favor del colaborador
+### Report Resolution (Red)
+- The hotel ([[Hotel/Manager General|General Manager]], [[Hotel/Manager de Área|Area Manager]], or [[Hotel/Supervisor|Supervisor]]) activates Red status (reported)
+- The [[Inspector]] for the zone investigates the dispute and has **independent authority to decide** the outcome:
+  - **Black** ([[Core/Módulos/Blacklist|Blacklist]]), if the dispute favors the hotel
+  - **Dark Green** (reinstated), if the dispute favors the associate
 
-### Protección por Accidente Laboral (Gris)
-- Cualquier estado activo → Gris cuando se genera un reporte de accidente laboral
-- Protege al colaborador de la regla de 3 inasistencias; las inasistencias durante incapacidad no cuentan
-- Gris → Verde fuerte: requiere alta médica + cierre de tarjeta de accidente por el [[Inspector]]
-- Referencia: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
+### Work Accident Protection (Gray)
+- Any active status → Gray when a work accident report is generated
+- Protects the associate from the 3-absence rule; absences during disability do not count
+- Gray → Dark Green: requires medical clearance + accident card closure by the [[Inspector]]
+- Reference: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Work Accident Flow]]
 
-## Estructura organizacional del hotel
+## Hotel Organizational Structure
 
-### Dos jerarquías soportadas
-- La plataforma soporta dos configuraciones jerárquicas para el hotel, según su tamaño y complejidad:
-  - **Jerarquía simple:** [[Hotel/Manager General|Manager General]] (también opera como [[Hotel/Manager de Área|Manager de Área]]) → [[Hotel/Supervisor|SUP]] → Colaboradores de Oranje
-  - **Jerarquía extendida:** [[Hotel/Manager General|Manager General]] → [[Hotel/Manager de Área|Manager de Área]] → [[Hotel/Supervisor|Supervisor]] → Colaboradores de Oranje
+### Two Supported Hierarchies
+- The platform supports two hierarchical configurations for the hotel, based on its size and complexity:
+  - **Simple hierarchy:** [[Hotel/Manager General|General Manager]] (also operates as [[Hotel/Manager de Área|Area Manager]]) → [[Hotel/Supervisor|SUP]] → Oranje Associates
+  - **Extended hierarchy:** [[Hotel/Manager General|General Manager]] → [[Hotel/Manager de Área|Area Manager]] → [[Hotel/Supervisor|Supervisor]] → Oranje Associates
 
-### Departamentos del hotel
-- Los [[Departamentos del Hotel]] son: Housekeeping, Alimentos, Mantenimiento y Front Desk
-- En la jerarquía extendida, cada departamento tiene su propio Gerente y Supervisor(es)
-- Las [[Posiciones]] solicitadas en las requisiciones corresponden a un departamento específico del hotel
+### Hotel Departments
+- The [[Departamentos del Hotel]] are: Housekeeping, Food & Beverage, Maintenance, and Front Desk
+- In the extended hierarchy, each department has its own Manager and Supervisor(s)
+- The [[Posiciones]] requested in requisitions correspond to a specific hotel department
 
-### Manager General
-- El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel y **siempre existe** en ambas jerarquías
-- En jerarquía simple, también opera como [[Hotel/Manager de Área|Manager de Área]] (misma persona, dos roles)
-- Puede crear, autorizar y rechazar requisiciones
-- Puede generar QR para ponchado
-- Tiene visibilidad global del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de todos los departamentos
-- Punto de contacto principal con Oranje a nivel directivo
+### General Manager
+- The [[Hotel/Manager General|General Manager]] is the highest authority at the hotel and **always exists** in both hierarchies
+- In the simple hierarchy, also operates as [[Hotel/Manager de Área|Area Manager]] (same person, two roles)
+- Can create, authorize, and reject requisitions
+- Can generate QR for punching
+- Has global visibility of the [[Core/Módulos/Schedule|Schedule]] and [[Timesheet]] across all departments
+- Primary point of contact with Oranje at the executive level
 
-## Requisición y Autorización
+## Requisition and Authorization
 
-### Acceso al sistema
-- El [[Hotel/Manager General|Manager General]] (GM), el [[Hotel/Manager de Área|Manager de Área]] (GH) y el [[Hotel/Supervisor|Supervisor]] (SUP) tienen acceso al módulo de requisiciones
-- Usuarios sin acceso reciben mensaje: "No cuenta con acceso"
+### System Access
+- The [[Hotel/Manager General|General Manager]] (GM), the [[Hotel/Manager de Área|Area Manager]] (GH), and the [[Hotel/Supervisor|Supervisor]] (SUP) have access to the requisition module
+- Users without access receive the message: "No access available"
 
-### Creación y elaboración
-- Cualquier rol del hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]]) crea la requisición (estado Verde manzana — En elaboración)
-- El número de requisición se genera automáticamente: Año (4 dígitos) + Mes (2) + Día (2) + Hora (2, formato 24h) + Minutos (2) + Homoclave (2 caracteres alfanuméricos aleatorios). Ejemplo: `202604081632V1`
-- El mismo formato aplica para el número de posición
+### Creation and Drafting
+- Any hotel role ([[Hotel/Manager General|General Manager]], [[Hotel/Manager de Área|Area Manager]], or [[Hotel/Supervisor|Supervisor]]) creates the requisition (Apple Green status — Being drafted by the hotel)
+- The requisition number is generated automatically: Year (4 digits) + Month (2) + Day (2) + Hour (2, 24h format) + Minutes (2) + Homoclave (2 random alphanumeric characters). Example: `202604081632V1`
+- The same format applies for the position number
 
-### Autorización de Requisición
-- Solo el [[Hotel/Manager General|Manager General]] (GM) o el [[Hotel/Manager de Área|Manager de Área]] (GH) pueden autorizar una requisición
-- El SUP recibe mensaje de bloqueo: "Solo el gerente del hotel puede autorizar la requisición"
-- Debe existir al menos una posición para poder autorizar; de lo contrario: "No tiene posiciones registradas, registre al menos una posición e intente nuevamente"
-- El rechazo regresa la requisición al creador con observaciones (estado "En elaboración")
+### Requisition Authorization
+- Only the [[Hotel/Manager General|General Manager]] (GM) or the [[Hotel/Manager de Área|Area Manager]] (GH) can authorize a requisition
+- The SUP receives a blocking message: "Only the hotel manager can authorize the requisition"
+- At least one position must exist to authorize; otherwise: "No positions registered, register at least one position and try again"
+- Rejection returns the requisition to the creator with observations (status "Being drafted")
 
-### Al autorizar
-- El sistema calcula automáticamente la urgencia de cada posición
-- Cada posición pasa de Dorado a Naranja y el sistema calcula su prioridad
-- Las posiciones autorizadas quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de la semana correspondiente a su fecha de inicio
-- El [[Inspector]] en la cabecera se asigna automáticamente según la [[Core/Catálogos/Zonas|zona]] del hotel
+### Upon Authorization
+- The system automatically calculates the urgency of each position
+- Each position transitions from Gold to Orange and the system calculates its priority
+- Authorized positions are reflected in the [[Core/Módulos/Schedule|Schedule]] for the week corresponding to their start date
+- The [[Inspector]] in the header is automatically assigned according to the hotel's [[Core/Catálogos/Zonas|zone]]
 
-### Fórmula de Urgencia
-- Se calcula por posición: `fecha de autorización de la requisición` vs `fecha de inicio de la posición`
-- `> 120 horas` → Verde fuerte (Normal)
-- `72 – 120 horas` → Amarillo (Medio)
-- `< 72 horas` → Rojo (Urgente)
-- El sistema reevalúa automáticamente y ajusta el color conforme avanza el tiempo
-- Referencia: [[Semáforo de Urgencia de Requisición]]
+### Urgency Formula
+- Calculated per position: `requisition authorization date` vs `position start date`
+- `> 120 hours` → Dark Green (Normal)
+- `72 - 120 hours` → Yellow (Medium)
+- `< 72 hours` → Red (Urgent)
+- The system automatically re-evaluates and adjusts the color as time progresses
+- Reference: [[Semáforo de Urgencia de Requisición]]
 
-### Cobertura de Posiciones
-- Requisición = Azul claro solo si TODAS las posiciones están en Verde (100% cubierta)
-- Posición en Amarillo: hasta 25% faltante
-- Posición en Rojo: más del 25% faltante
-- Si alguna posición está en Amarillo o Rojo → Requisición en Rojo
-- Referencia: [[Semáforo de Posiciones de la Requisición]]
+### Position Coverage
+- Requisition = Light Blue only if ALL positions are Green (100% covered)
+- Position in Yellow: up to 25% missing
+- Position in Red: more than 25% missing
+- If any position is in Yellow or Red → Requisition in Red
+- Reference: [[Semáforo de Posiciones de la Requisición]]
 
-### Asignación (Self-Pick)
-- La requisición autorizada queda en la bandeja compartida; una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la toma → la requisición pasa a Amarillo (En proceso)
-- Si lleva >24h sin ser tomada, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El proceso es transparente (el [[Manager de Reclutamiento]] no recibe notificación)
-- Si no hay match en el [[Pool de Colaboradores]], la requisición queda en espera; el Flujo de Reclutamiento ya está siempre activo
+### Assignment (Self-Pick)
+- The authorized requisition is placed in the shared queue; a [[Reclutadora]] or [[Reclutamiento/Líder de Grupo de Reclutadoras|Team Lead]] picks it → the requisition transitions to Yellow (In process)
+- If it has been more than 24h without being picked, the system automatically assigns it to the [[Reclutadora]] with the lowest active requisition load. The process is transparent (the [[Manager de Reclutamiento]] does not receive a notification)
+- If there is no match in the [[Pool de Colaboradores]], the requisition remains on hold; the Recruitment Flow is always active
 
-### Ciclo de vida de la posición
-- La posición tiene fecha de inicio pero no fecha de fin definida
-- Termina cuando el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en Stand-by (estado Rosa en el [[Semáforo del Colaborador]])
+### Position Lifecycle
+- The position has a start date but no defined end date
+- It ends when the [[Hotel/Manager de Área|Area Manager]] or the [[Hotel/Supervisor|Supervisor]] puts the associate on Stand-by (Pink status in the [[Semáforo del Colaborador]])
 
-### Eliminación (Morado)
-- Estado transversal: se alcanza desde cualquier estado cuando se elimina la requisición
-- Requisición sin posiciones al salir del editor → eliminación física automática
-- El sistema ejecuta RUTINA Journal Requisición en toda eliminación
-- Al eliminar una requisición con posiciones → cada posición también pasa a Morado con journal individual
+### Deletion (Purple)
+- Cross-cutting status: reached from any status when the requisition is deleted
+- Requisition with no positions upon exiting the editor → automatic physical deletion
+- The system executes ROUTINE Requisition Journal on every deletion
+- When deleting a requisition with positions → each position also transitions to Purple with an individual journal entry
 
-### Journals automáticos
-- **RUTINA Journal Requisición:** registra Requisición, Hotel, Manager General / Manager de Área, Reclutador, Inspector, Status, Nota, Fecha y hora del status
-- **RUTINA Journal Posición:** registra Número de requisición, Número de posición, Posición, Cantidad de personas, Fecha de inicio, Fecha fin, Status, Fecha y hora del status
+### Automatic Journals
+- **ROUTINE Requisition Journal:** records Requisition, Hotel, General Manager / Area Manager, Recruiter, Inspector, Status, Note, Date and time of status
+- **ROUTINE Position Journal:** records Requisition number, Position number, Position, Headcount, Start date, End date, Status, Date and time of status
 
 ## Blacklist
 
-### Blacklist automático
-- Disparado por regla de 3 inasistencias
-- Estado: Negro en [[Semáforo del Colaborador]]
+### Automatic Blacklist
+- Triggered by the 3-absence rule
+- Status: Black in [[Semáforo del Colaborador]]
 
-### Blacklist manual
-- Disparado por disputa resuelta a favor del hotel (estado Rojo → investigación del [[Inspector]])
-- El [[Inspector]] de la zona decide con autoridad propia; no requiere validación del [[Manager de Reclutamiento]]
+### Manual Blacklist
+- Triggered by a dispute resolved in favor of the hotel (Red status → [[Inspector]] investigation)
+- The [[Inspector]] for the zone decides with independent authority; no validation from the [[Manager de Reclutamiento]] is required
 
-### Permanencia del estado Negro
-- Negro es **PERMANENTE**: no existe rehabilitación ni apelación
-- El registro se conserva en el sistema marcado como Negro
-- El colaborador no aparece en búsquedas activas; el historial se conserva para consulta interna
+### Permanence of Black Status
+- Black is **PERMANENT**: there is no rehabilitation or appeal
+- The record is preserved in the system marked as Black
+- The associate does not appear in active searches; history is preserved for internal reference
 
-### Consulta obligatoria
-- La [[Reclutadora]] debe consultar la [[Core/Módulos/Blacklist|Blacklist]] antes de reclutar a un candidato, para evitar volver a reclutar a alguien vetado
+### Mandatory Check
+- The [[Reclutadora]] must check the [[Core/Módulos/Blacklist|Blacklist]] before recruiting a candidate, to avoid re-recruiting someone who has been banned
 
-## Accidente Laboral
+## Work Accident
 
-### Activación de estado Gris
-- El reporte de accidente activa estado Gris en [[Semáforo del Colaborador]] desde cualquier estado activo
-- **Escenario A:** el Colaborador reporta desde la app; la señal llega simultáneamente al SUP y al [[Inspector]] de zona asignado
-- **Escenario B:** el SUP ([[Hotel/Supervisor|Supervisor]]) reporta; la señal llega al Inspector
-- Se genera un número de reporte automático (mismo patrón que requisición: fecha/hora + homoclave)
+### Gray Status Activation
+- The accident report activates Gray status in [[Semáforo del Colaborador]] from any active status
+- **Scenario A:** the Associate reports from the app; the notification reaches the SUP and the assigned zone [[Inspector]] simultaneously
+- **Scenario B:** the SUP ([[Hotel/Supervisor|Supervisor]]) reports; the notification reaches the Inspector
+- An automatic report number is generated (same pattern as requisition: date/time + homoclave)
 
-### Cierre de tarjeta
-- El [[Inspector]] es siempre el responsable final del cierre de la tarjeta de accidente
-- Gris → Verde fuerte: requiere alta médica + cierre de tarjeta por el Inspector
-- El colaborador queda disponible para reasignación tras el cierre
+### Card Closure
+- The [[Inspector]] is always the final person responsible for closing the accident card
+- Gray → Dark Green: requires medical clearance + card closure by the Inspector
+- The associate becomes available for reassignment after closure
 
-### Journal de accidente
-- Cada cambio de status genera registro con: Número de reporte, Hotel, Colaborador, Reportado por, Status, Nota, Fecha y hora del status
+### Accident Journal
+- Each status change generates a record with: Report number, Hotel, Associate, Reported by, Status, Note, Date and time of status
 
-## Onboarding y Ventas
+## Onboarding and Sales
 
-### Habilitación del hotel
-- El hotel solo puede generar requisiciones cuando alcanza el Status Naranja en el [[Semáforo Onboarding]]
-- Antes de Naranja, el hotel es un prospecto comercial gestionado por [[Ventas/Ventas|Ventas]]
+### Hotel Enablement
+- The hotel can only generate requisitions when it reaches Orange Status in the [[Semáforo Onboarding]]
+- Before Orange, the hotel is a commercial prospect managed by [[Ventas/Ventas|Sales]]
 
-### Conversión de prospecto a cliente
-- Solo el [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]] (BDC) puede aprobar la conversión
-- **Precondición:** creación del [[Ventas/Onboarding-Hotel/Conceptos/Usuario del Hotel|Usuario del Hotel]] en el sistema
-- Al aprobar, se dispara el [[Ventas/Onboarding-Hotel/Conceptos/Trigger Automático de Conversión|Trigger Automático de Conversión]] con acciones en paralelo:
-  - Sistema envía email de bienvenida al hotel
-  - Sistema notifica al Business Developer asignado
-  - Hotel desaparece de la lista de prospectos
+### Prospect-to-Client Conversion
+- Only the [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]] (BDC) can approve the conversion
+- **Precondition:** creation of the [[Ventas/Onboarding-Hotel/Conceptos/Usuario del Hotel|Hotel User Account]] in the system
+- Upon approval, the [[Ventas/Onboarding-Hotel/Conceptos/Trigger Automático de Conversión|Automatic Conversion Trigger]] fires with parallel actions:
+  - System sends welcome email to the hotel
+  - System notifies the assigned Business Developer
+  - Hotel disappears from the prospect list
 
-### Documento de Términos y Condiciones
-- Se crea en Status Onboarding Amarillo por el BD o el BDC
-- Se negocia en Status Onboarding Rosa
-- Contenido: Pay rate, Bill rate, Overtime, Festivos, Calendario
-- Validación final: [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]] antes del cierre del [[Contrato]]
+### Terms and Conditions Document
+- Created at Onboarding Yellow Status by the BD or the BDC
+- Negotiated at Onboarding Pink Status
+- Contents: Pay rate, Bill rate, Overtime, Holidays, Calendar
+- Final validation: [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]] before closing the [[Contrato]]
 
-### Propuesta Personalizada
-- Se elabora y envía en Status Onboarding Verde
-- Se ajusta/retoma desde Status Onboarding Café cuando hay estancamiento
+### Customized Proposal
+- Prepared and sent at Onboarding Green Status
+- Adjusted/resumed from Onboarding Brown Status when there is stagnation
 
-### Reactivación de estados
-- Rojo, Negro y Café siempre reactivan hacia Azul Claro
-- Café no es un status terminal: es un puente de desbloqueo operado por el BDC
+### Status Reactivation
+- Red, Black, and Brown always reactivate toward Light Blue
+- Brown is not a terminal status: it is an unblocking bridge operated by the BDC
 
-### Trazabilidad
-- Todo cambio de status en Onboarding queda registrado con fecha, responsable y comentario
+### Traceability
+- Every status change in Onboarding is recorded with date, responsible party, and comment
 
-## Indicador de Calidad / QA
+## Quality Indicator / QA
 
-### Principio fundamental
-- [[QA/QA|QA]] no ejecuta la operación de ningún departamento; solo observa, mide y retroalimenta
+### Fundamental Principle
+- [[QA/QA|QA]] does not execute the operations of any department; it only observes, measures, and provides feedback
 
-### Estructura del equipo
-- Existen 6 [[QA/Operador de QA|Operadores de QA]], uno por cada departamento supervisado: Inspección, Hotel, Colaborador, Ventas, Reclutamiento y [[Customer Service/Customer Service|Customer Service]]
-- Cada operador está asignado de forma fija a un único departamento
+### Team Structure
+- There are 6 [[QA/Operador de QA|QA Operators]], one per supervised department: Inspection, Hotel, Associate, Sales, Recruitment, and [[Customer Service/Customer Service|Customer Service]]
+- Each operator is permanently assigned to a single department
 
-### Actualización del Indicador
-- El [[QA/Operador de QA|Operador de QA]] propone el cambio de estado con base en métricas
-- El [[QA/Manager de QA|Manager de QA]] valida y aprueba la actualización
-- Solo el Manager de QA puede actualizar formalmente el [[Indicador de Calidad]] de cada departamento
-- Cada departamento tiene su propio Indicador independiente; estado inicial es Verde
+### Indicator Update
+- The [[QA/Operador de QA|QA Operator]] proposes the status change based on metrics
+- The [[QA/Manager de QA|QA Manager]] validates and approves the update
+- Only the QA Manager can formally update each department's [[Indicador de Calidad]]
+- Each department has its own independent Indicator; initial status is Green
 
-### Transiciones del Indicador
-- **→ Verde:** estado inicial cuando QA comienza a supervisar un departamento
-- **Verde → Amarillo:** cuando el Operador detecta métricas fuera de rango o emite observaciones no atendidas
-- **Amarillo → Rojo:** cuando las observaciones persisten sin atención o las métricas se deterioran significativamente
-- **Rojo → Amarillo:** cuando el departamento comienza a atender observaciones y muestra mejora
-- **Amarillo → Verde:** cuando todas las observaciones están resueltas y las métricas regresan a parámetros
+### Indicator Transitions
+- **→ Green:** initial status when QA begins supervising a department
+- **Green → Yellow:** when the Operator detects out-of-range metrics or issues unaddressed observations
+- **Yellow → Red:** when observations persist without attention or metrics deteriorate significantly
+- **Red → Yellow:** when the department begins addressing observations and shows improvement
+- **Yellow → Green:** when all observations are resolved and metrics return to parameters
 
-### Escalamiento
-- Departamento en Rojo sin mejora tras notificación → el [[QA/Manager de QA|Manager de QA]] escala a dirección
+### Escalation
+- Department in Red with no improvement after notification → the [[QA/Manager de QA|QA Manager]] escalates to management
 
-### Métricas y KPIs por departamento
-- Cada departamento tiene entre 5 y 6 KPIs concretos que el [[QA/Operador de QA|Operador de QA]] monitorea
-- Cada KPI tiene umbrales definidos (Meta / En riesgo / Crítico) que alimentan el [[Indicador de Calidad]]
-- Referencia completa: [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]
+### Metrics and KPIs by Department
+- Each department has between 5 and 6 concrete KPIs that the [[QA/Operador de QA|QA Operator]] monitors
+- Each KPI has defined thresholds (Target / At Risk / Critical) that feed the [[Indicador de Calidad]]
+- Full reference: [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
 
-## Reclutamiento y Pool
+## Recruitment and Pool
 
-### Naturaleza del flujo
-- El [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] es continuo: Reclutamiento siempre está contratando, haya o no requisiciones abiertas
-- Las requisiciones sin match pueden acelerar o priorizar ciertas posiciones/zonas, pero no son condición para iniciar el flujo
+### Nature of the Flow
+- The [[Reclutamiento/Flujo de Reclutamiento|Recruitment Flow]] is continuous: Recruitment is always hiring, whether or not there are open requisitions
+- Requisitions without a match may accelerate or prioritize certain positions/zones, but they are not a condition to start the flow
 
-### Distribución de requisiciones (Self-Pick)
-- Las requisiciones autorizadas quedan disponibles en una bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]]
-- Las [[Reclutadora|Reclutadoras]] y [[Reclutamiento/Líder de Grupo de Reclutadoras|Líderes de Grupo]] toman libremente las requisiciones de la bandeja
-- Si una requisición lleva más de 24 horas sin ser tomada, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El proceso es transparente (el [[Manager de Reclutamiento]] no recibe notificación)
+### Requisition Distribution (Self-Pick)
+- Authorized requisitions are made available in a shared queue, prioritized by the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Urgency Indicator]]
+- [[Reclutadora|Recruiters]] and [[Reclutamiento/Líder de Grupo de Reclutadoras|Team Leads]] freely pick requisitions from the queue
+- If a requisition has been in the queue for more than 24 hours without being picked, the system automatically assigns it to the [[Reclutadora]] with the lowest active requisition load. The process is transparent (the [[Manager de Reclutamiento]] does not receive a notification)
 
-### Aprobación del colaborador
-- La [[Reclutadora]] valida y aprueba al colaborador después de que completa su alta en la app
-- La Reclutadora habilita el acceso del colaborador a los paneles
-- Colaborador aprobado ingresa al [[Pool de Colaboradores]] con [[Semáforo del Colaborador]] en estado Blanco
+### Associate Approval
+- The [[Reclutadora]] validates and approves the associate after they complete their app registration
+- The Recruiter enables the associate's access to the panels
+- An approved associate enters the [[Pool de Colaboradores]] with [[Semáforo del Colaborador]] in White status
 
-### Elegibilidad del Pool
-- Solo entran al Pool colaboradores que pasaron el filtro y fueron aprobados por Reclutamiento
+### Pool Eligibility
+- Only associates who passed the screening and were approved by Recruitment enter the Pool
 
-## Schedule y Timesheet
+## Schedule and Timesheet
 
-### Configuración del Schedule
-- La semana del hotel está definida por el contrato (inicio y fin de semana)
-- Al crearse una requisición con fecha de inicio dentro de la semana, sus posiciones quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de esa semana
+### Schedule Configuration
+- The hotel's week is defined by the contract (week start and end)
+- When a requisition is created with a start date within the week, its positions are reflected in the [[Core/Módulos/Schedule|Schedule]] for that week
 
-### Jornada laboral
+### Work Day
 
-- La jornada diaria es de **8 horas**
-- La semana laboral es de 7 días: **5 de trabajo + 2 de descanso**
-- Total semanal bruto: **40 horas** (8 hrs × 5 días)
-- Total semanal neto pagable: **37.5 horas** (40 hrs − 30 min de lunch × 5 jornadas)
+- The daily shift is **8 hours**
+- The work week is 7 days: **5 working + 2 rest**
+- Gross weekly total: **40 hours** (8 hrs x 5 days)
+- Net payable weekly total: **37.5 hours** (40 hrs - 30 min lunch x 5 shifts)
 
-### Asignación en Schedule
-- Al asignar un colaborador desde el [[Pool de Colaboradores]], queda registrado en el schedule del hotel
+### Schedule Assignment
+- When assigning an associate from the [[Pool de Colaboradores]], they are registered in the hotel's schedule
 
-### Dependencia del Timesheet
-- El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente
-- Si el [[Core/Módulos/Schedule|Schedule]] se modifica después de que el [[Timesheet]] fue creado, el Timesheet se actualiza automáticamente para reflejar los cambios
+### Timesheet Dependency
+- The [[Timesheet]] is created from the [[Core/Módulos/Schedule|Schedule]]; it cannot exist independently
+- If the [[Core/Módulos/Schedule|Schedule]] is modified after the [[Timesheet]] was created, the Timesheet is automatically updated to reflect the changes
 
-### Mecanismo de ponchado
-- El colaborador poncha vía QR que genera el [[Hotel/Manager General|Manager General]] o el [[Hotel/Manager de Área|Manager de Área]]
-- Los ponches se registran por pares de entrada/salida para cada periodo:
-  - **Entrada** — inicio de jornada
-  - **Salida Lunch** — sale a comer
-  - **Entrada Lunch** — regresa de comer
-  - **Salida Break** — sale a descanso
-  - **Entrada Break** — regresa de descanso
-  - **Salida** — fin de jornada
-- Esto contabiliza el tiempo trabajado del colaborador
+### Punching Mechanism
+- The associate punches via QR generated by the [[Hotel/Manager General|General Manager]] or the [[Hotel/Manager de Área|Area Manager]]
+- Punches are recorded in entry/exit pairs for each period:
+  - **Clock In** — shift start
+  - **Lunch Out** — leaves for lunch
+  - **Lunch In** — returns from lunch
+  - **Break Out** — leaves for break
+  - **Break In** — returns from break
+  - **Clock Out** — shift end
+- This tracks the associate's worked time
 
-### Restricción de ponchado por estado del colaborador
+### Punching Restriction by Associate Status
 
-- El ponchado solo es posible cuando el colaborador tiene un [[Timesheet]] activo, lo cual requiere estar inscrito en el [[Core/Módulos/Schedule|Schedule]] de un hotel
-- Sin asignación activa (fija o temporal) no hay Schedule, sin Schedule no hay Timesheet, y sin Timesheet no hay ponchado
-- Estados que **no permiten ponchado**: Rosa (Stand-by) y Amarillo (Disponible voluntario), porque en ninguno de los dos existe asignación activa
-- El único camino para que un colaborador en descanso registre horas es la ruta completa: **Rosa → Amarillo → Café**, donde la [[Reclutadora]] lo asigna temporalmente y se genera el Schedule/Timesheet correspondiente
+- Punching is only possible when the associate has an active [[Timesheet]], which requires being enrolled in a hotel's [[Core/Módulos/Schedule|Schedule]]
+- Without an active assignment (fixed or temporary) there is no Schedule, without a Schedule there is no Timesheet, and without a Timesheet there is no punching
+- Statuses that **do not allow punching**: Pink (Stand-by) and Yellow (Voluntary Available), because neither has an active assignment
+- The only path for a resting associate to log hours is the complete route: **Pink → Yellow → Brown**, where the [[Reclutadora]] temporarily assigns them and the corresponding Schedule/Timesheet is generated
 
-### Deducción de Lunch
+### Lunch Deduction
 
-> [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada.
+> [!important] This rule applies to **all** associates without exception, every shift.
 
-- El sistema deduce tiempo de lunch del [[Timesheet]] del colaborador:
-  - **Lunch menor a 30 min:** se deducen 30 minutos (mínimo obligatorio)
-  - **Lunch mayor a 30 min:** se deduce el tiempo real tomado
-  - **Sin ponche de Lunch:** se auto-deducen 30 minutos
-- La deducción de lunch impacta directamente el cómputo de horas pagables en el [[Timesheet]]
+- The system deducts lunch time from the associate's [[Timesheet]]:
+  - **Lunch less than 30 min:** 30 minutes deducted (mandatory minimum)
+  - **Lunch more than 30 min:** actual time taken is deducted
+  - **No Lunch punch:** 30 minutes auto-deducted
+- The lunch deduction directly impacts the payable hours computation in the [[Timesheet]]
 
-### Deducción de Breaks
+### Break Deduction
 
-- Los breaks también se deducen del tiempo pagable en el [[Timesheet]]
-- El tiempo deducido es el tiempo real registrado con el par **Salida Break / Entrada Break**
-- La cantidad y duración de breaks la define cada hotel
+- Breaks are also deducted from payable time in the [[Timesheet]]
+- The deducted time is the actual time recorded with the **Break Out / Break In** pair
+- The number and duration of breaks is defined by each hotel
 
-### Fórmula de horas pagables
+### Payable Hours Formula
 
-- **Horas netas** = (Salida − Entrada) − Lunch real − Breaks reales
+- **Net hours** = (Clock Out - Clock In) - Actual lunch - Actual breaks
 
-### Indicador de Lunch Extendido
+### Extended Lunch Indicator
 
-- El sistema identifica automáticamente a los colaboradores cuyo tiempo de lunch excede los 30 minutos
-- **Visibilidad restringida** — solo roles internos de Oranje:
+- The system automatically identifies associates whose lunch time exceeds 30 minutes
+- **Restricted visibility** — internal Oranje roles only:
   - [[Inspector]]
-  - [[Inspección/Coordinador|Coordinador]]
+  - [[Inspección/Coordinador|Coordinator]]
   - [[Manager de Reclutamiento]]
-- **No visible para el hotel:** el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] y el [[Hotel/Supervisor|Supervisor]] no tienen acceso a este indicador
-- **Propósito:** herramienta de supervisión interna para detectar patrones y tomar acciones operativas; no es punitivo de forma automática
+- **Not visible to the hotel:** the [[Hotel/Manager General|General Manager]], the [[Hotel/Manager de Área|Area Manager]], and the [[Hotel/Supervisor|Supervisor]] do not have access to this indicator
+- **Purpose:** internal supervision tool for detecting patterns and taking operational actions; it is not automatically punitive
 
-### Indicador de Cumplimiento del Timesheet
+### Timesheet Compliance Indicator
 
-- El sistema calcula automáticamente un indicador semaforizado que compara el cumplimiento real del colaborador contra los parámetros contractuales del hotel
-- **Input:** parámetros del [[Core/Módulos/Contrato|Contrato]] + datos del [[Timesheet]]
-- **Evaluación semanal:** la estructura es Año → Semanas (numeradas según calendario e inicio/fin de semana del hotel)
-- **Comparación:** días trabajados/requeridos, días de descanso, horas trabajadas/requeridas
-- **Ingreso a media semana:** el sistema prorratea automáticamente los días restantes del ciclo; los días previos al alta se marcan en Gris
-- Referencia completa: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]]
+- The system automatically calculates a color-coded indicator that compares the associate's actual compliance against the hotel's contractual parameters
+- **Input:** [[Core/Módulos/Contrato|Contract]] parameters + [[Timesheet]] data
+- **Weekly evaluation:** the structure is Year → Weeks (numbered per calendar and hotel's week start/end)
+- **Comparison:** days worked/required, rest days, hours worked/required
+- **Mid-week entry:** the system automatically prorates the remaining days of the cycle; days prior to registration are marked in Gray
+- Full reference: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Timesheet Compliance Indicator]]
 
-### Consolidado Semanal y Pago al Colaborador
+### Weekly Summary and Associate Payment
 
-- El sistema genera automáticamente un [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]] por colaborador al cierre de cada semana
-- El consolidado agrupa los [[Timesheet|Timesheets]] de todos los hoteles donde el colaborador trabajó esa semana
-- El cálculo aplica el pay rate del [[Core/Módulos/Contrato|Contrato]] de cada hotel por separado
-- El overtime se calcula **por hotel**, según la política pactada en cada contrato
-- El periodo de pago es **semanal**
-- **Oranje paga al colaborador**; cada hotel paga a Oranje según su bill rate
-- La [[Contadora]] revisa y el [[Manager de Contabilidad]] aprueba el Consolidado antes de ejecutar el pago
-- El umbral de overtime es de **40 horas brutas semanales** por hotel
+- The system automatically generates a [[Contabilidad/Consolidado Semanal del Colaborador|Weekly Summary]] per associate at the end of each week
+- The summary aggregates [[Timesheet|Timesheets]] from all hotels where the associate worked that week
+- The calculation applies the pay rate from each hotel's [[Core/Módulos/Contrato|Contract]] separately
+- Overtime is calculated **per hotel**, according to the policy agreed in each contract
+- The pay period is **weekly**
+- **Oranje pays the associate**; each hotel pays Oranje according to its bill rate
+- The [[Contadora]] reviews and the [[Manager de Contabilidad]] approves the Summary before executing payment
+- The overtime threshold is **40 gross weekly hours** per hotel
 
-## Inspección y Zonas
+## Inspection and Zones
 
-### Asignación por zona
-- Cada hotel pertenece a una [[Core/Catálogos/Zonas|zona]] geográfica
-- A cada zona le corresponde un [[Inspector]] asignado por el [[Inspección/Coordinador|Coordinador]]
-- El Inspector de la zona del hotel es responsable de darle seguimiento a cualquier disputa en ese hotel
+### Zone Assignment
+- Each hotel belongs to a geographic [[Core/Catálogos/Zonas|zone]]
+- Each zone has a corresponding [[Inspector]] assigned by the [[Inspección/Coordinador|Coordinator]]
+- The Inspector for the hotel's zone is responsible for following up on any dispute at that hotel
 
-### Responsabilidades del Inspector
-- **Día 1:** verifica la llegada del colaborador en la propiedad (transición Blanco → Verde manzana)
-- **Día 3:** entrega el uniforme al colaborador (transición → Azul claro)
-- **Reportes:** investiga disputas (estado Rojo) y resuelve hacia Negro o Verde fuerte
-- **Accidentes:** responsable final del cierre de la tarjeta de accidente; gestiona transición Gris → Verde fuerte
+### Inspector Responsibilities
+- **Day 1:** verifies the associate's arrival at the property (White → Apple Green transition)
+- **Day 3:** delivers the uniform to the associate (→ Light Blue transition)
+- **Reports:** investigates disputes (Red status) and resolves toward Black or Dark Green
+- **Accidents:** final person responsible for closing the accident card; manages the Gray → Dark Green transition
 
-### Coordinador
-- El [[Inspección/Coordinador|Coordinador]] asigna inspectores a las zonas geográficas y supervisa su trabajo en campo
+### Coordinator
+- The [[Inspección/Coordinador|Coordinator]] assigns inspectors to geographic zones and supervises their fieldwork
 
-## Manejo de errores
+## Error Handling
 
-### Fallo de ponche
-- Si el sistema falla al registrar un ponche, el colaborador puede reintentar.
-- Si el fallo persiste, el sistema notifica al [[Hotel/Supervisor|Supervisor]] para que tome acción manual.
+### Punch Failure
+- If the system fails to record a punch, the associate can retry.
+- If the failure persists, the system notifies the [[Hotel/Supervisor|Supervisor]] to take manual action.
 
-### Colisión de IDs (homoclave)
-- Si al generar un número de requisición, posición o reporte se produce una colisión de homoclave (duplicado), el sistema regenera la homoclave automáticamente hasta obtener un valor único.
+### ID Collision (homoclave)
+- If generating a requisition, position, or report number produces a homoclave collision (duplicate), the system automatically regenerates the homoclave until a unique value is obtained.
 
-### Desconexión durante operación
-- Si el usuario pierde conexión mientras realiza una operación (captura de datos, llenado de formulario, etc.), la operación se guarda como borrador automáticamente.
-- El borrador puede ser retomado y completado cuando se restablezca la conexión.
+### Disconnection During Operation
+- If the user loses connection while performing an operation (data entry, form filling, etc.), the operation is automatically saved as a draft.
+- The draft can be resumed and completed when the connection is restored.
 
-## Relacionado
+## Related
 
 - [[Semáforo del Colaborador]]
 - [[Semáforo de Requisición]]
@@ -378,27 +377,27 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - [[Semáforo de Posiciones de la Requisición]]
 - [[Semáforo Onboarding]]
 - [[Indicador de Calidad]]
-- [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]]
-- [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]]
-- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
-- [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]]
-- [[Ventas/Onboarding-Hotel/Flujo de Onboarding|Flujo de Onboarding]]
+- [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Timesheet Compliance Indicator]]
+- [[Core/Módulos/Requisicion/Flujo de Requisición|Requisition Flow]]
+- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Work Accident Flow]]
+- [[Reclutamiento/Flujo de Reclutamiento|Recruitment Flow]]
+- [[Ventas/Onboarding-Hotel/Flujo de Onboarding|Onboarding Flow]]
 - [[Core/Módulos/Blacklist|Blacklist]]
 - [[Pool de Colaboradores]]
 - [[Core/Módulos/Schedule|Schedule]]
 - [[Timesheet]]
-- [[Hotel/Manager General|Manager General]]
-- [[Hotel/Manager de Área|Manager de Área]]
+- [[Hotel/Manager General|General Manager]]
+- [[Hotel/Manager de Área|Area Manager]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]
-- [[Inspección/Coordinador|Coordinador]]
+- [[Inspección/Coordinador|Coordinator]]
 - [[Reclutadora]]
 - [[Manager de Reclutamiento]]
 - [[QA/QA|QA]]
-- [[QA/Manager de QA|Manager de QA]]
-- [[QA/Operador de QA|Operador de QA]]
+- [[QA/Manager de QA|QA Manager]]
+- [[QA/Operador de QA|QA Operator]]
 - [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]]
-- [[Ventas/Onboarding-Hotel/Conceptos/Usuario del Hotel|Usuario del Hotel]]
-- [[Ventas/Onboarding-Hotel/Conceptos/Trigger Automático de Conversión|Trigger Automático de Conversión]]
-- [[Ventas/Onboarding-Hotel/Conceptos/Documento de Términos y Condiciones|Documento de Términos y Condiciones]]
-- [[Core/Catálogos/Zonas|Zonas]]
+- [[Ventas/Onboarding-Hotel/Conceptos/Usuario del Hotel|Hotel User Account]]
+- [[Ventas/Onboarding-Hotel/Conceptos/Trigger Automático de Conversión|Automatic Conversion Trigger]]
+- [[Ventas/Onboarding-Hotel/Conceptos/Documento de Términos y Condiciones|Terms and Conditions Document]]
+- [[Core/Catálogos/Zonas|Zones]]

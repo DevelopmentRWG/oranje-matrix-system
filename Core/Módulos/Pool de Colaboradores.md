@@ -1,48 +1,48 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Pool de Colaboradores
+  - Associate Pool
   - Pool
 ---
 
-# Pool de Colaboradores
+# Associate Pool
 
-Alberca donde [[Reclutamiento/Reclutamiento|Reclutamiento]] manda a todos los reclutados que pasaron el filtro y fueron aprobados. Es el lugar donde se va ordenando la información de los colaboradores aprobados y del que las [[Reclutadora|reclutadoras]] pueden tomar candidatos para asignarlos a un hotel.
+A pool where [[Reclutamiento/Reclutamiento|Recruitment]] sends all recruits that passed the screening and were approved. It is where approved associates' information is organized, and from which [[Reclutadora|recruiters]] can pick candidates to assign them to a hotel.
 
-> [!info] Punto de encuentro entre flujos
-> La pool es el punto de encuentro entre el [[Flujo de Reclutamiento]] (que la **alimenta** con colaboradores nuevos) y el [[Flujo de Requisición]] (que la **consume** para cubrir hoteles).
+> [!info] Meeting point between flows
+> The pool is the meeting point between the [[Flujo de Reclutamiento]] (which **feeds** it with new associates) and the [[Flujo de Requisición]] (which **consumes** it to fill hotel positions).
 
-## Qué contiene
+## What It Contains
 
-- Solo entran los reclutados que **pasaron el filtro y fueron aprobados** por [[Reclutamiento/Reclutamiento|Reclutamiento]].
-- Contiene el **registro del colaborador**.
+- Only recruits that **passed the screening and were approved** by [[Reclutamiento/Reclutamiento|Recruitment]] enter the pool.
+- Contains the **associate's record**.
 
-## Dinámica
+## Dynamics
 
-- El **registro del colaborador queda guardado** en la pool.
-- Lo que **va cambiando es su estatus**, que corresponde a su estado en el [[Semáforo del Colaborador]].
-- El estatus es **dinámico**.
+- The **associate's record stays** in the pool.
+- What **changes is their status**, which corresponds to their state in the [[Semáforo del Colaborador]].
+- The status is **dynamic**.
 
-## Uso por Reclutamiento
+## Use by Recruitment
 
-- Las [[Reclutadora|reclutadoras]] toman colaboradores de la pool para asignarlos a un hotel cuando hay match con una [[Requisición]].
+- [[Reclutadora|Recruiters]] pick associates from the pool to assign them to a hotel when there is a match with a [[Requisición]].
 
-## Búsqueda y filtros
+## Search and Filters
 
-La [[Reclutadora]] puede filtrar colaboradores en la pool combinando los siguientes criterios:
+The [[Reclutadora]] can filter associates in the pool by combining the following criteria:
 
-| Filtro | Descripción |
+| Filter | Description |
 |---|---|
-| Posición | Housekeeper, Houseman, etc. Permite encontrar colaboradores con el perfil que la requisición requiere |
-| Zona | Zona geográfica del colaborador. Facilita la asignación a hoteles cercanos |
-| Idioma | Preferencia de idioma del colaborador |
-| Modalidad de contratación | Temporal o Permanente |
-| Disponibilidad | Estado actual del [[Semáforo del Colaborador]]: solo los colaboradores en estado disponible son candidatos para asignación |
+| Position | Housekeeper, Houseman, etc. Finds associates matching the position the requisition requires |
+| Zone | Associate's geographic zone. Facilitates assignment to nearby hotels |
+| Language | Associate's language preference |
+| Employment type | Temporary or Permanent |
+| Availability | Current [[Semáforo del Colaborador]] status: only associates in an available state are candidates for assignment |
 
-> [!info] El filtro de disponibilidad se basa directamente en el estado del [[Semáforo del Colaborador]] de cada registro en la pool.
+> [!info] The availability filter is based directly on each record's [[Semáforo del Colaborador]] status in the pool.
 
-## Relacionado
+## Related
 
 - [[Semáforo del Colaborador]]
 - [[Reclutadora]]

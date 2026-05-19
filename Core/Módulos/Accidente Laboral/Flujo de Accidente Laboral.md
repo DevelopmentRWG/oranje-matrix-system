@@ -1,97 +1,97 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Flujo de Accidente Laboral
+  - Work Accident Flow
 ---
 
-# Flujo de Accidente Laboral
+# Work Accident Flow
 
-Ciclo de vida de un [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]: desde que se reporta el incidente hasta que el [[Inspector|Inspector de zona]] cierra la tarjeta con la información completa. El flujo tiene dos escenarios de origen según quién detecta primero el accidente.
+Lifecycle of a [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]]: from when the incident is reported until the [[Inspector|zone Inspector]] closes the card with complete information. The flow has two origin scenarios depending on who detects the accident first.
 
-## Actores
+## Actors
 
-- **Colaborador** — el accidentado. Solo origina el reporte (escenario A); el llenado posterior recae en los roles operativos.
-- **SUP — [[Hotel/Supervisor|Supervisor]]** — captura la información presencial. Origina el reporte en escenario B.
-- **Inspector — [[Inspector|Inspector de zona]]** — complementa con seguimiento médico. Responsable final del cierre de la tarjeta.
-
----
-
-## Escenario A — El colaborador reporta
-
-Ocurre cuando el colaborador accidentado es quien detecta y reporta primero el incidente.
-
-### 1. Reporte inicial
-
-1. El **Colaborador** reporta el accidente desde la app.
-2. Se genera la tarjeta de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] con número de reporte automático.
-3. El **Colaborador** transita a **Gris — Accidentado** en el [[Semáforo del Colaborador]].
-4. La señal llega **simultáneamente** al SUP y al Inspector de zona asignado.
-
-### 2. Captura presencial (SUP)
-
-5. El **SUP** acude físicamente al lugar del incidente.
-6. Captura la información presencial en la tarjeta:
-   - Ubicación exacta dentro de la propiedad.
-   - Circunstancias del accidente.
-   - Testigos.
-   - Atención inmediata brindada.
-
-### 3. Seguimiento médico (Inspector)
-
-7. El **Inspector** complementa la tarjeta con la información de seguimiento:
-   - Traslado al centro médico (si aplica, cuál).
-   - Diagnóstico recibido.
-   - Días de incapacidad.
-   - Observaciones médicas.
-
-### 4. Cierre
-
-8. El **Inspector** cierra la tarjeta una vez que la información está completa.
-9. Al recibir el alta médica, el colaborador transita de `Gris → Verde fuerte` en el [[Semáforo del Colaborador]].
+- **Associate** — the injured party. Only originates the report (Scenario A); subsequent documentation falls on operational roles.
+- **SUP — [[Hotel/Supervisor|Supervisor]]** — captures on-site information. Originates the report in Scenario B.
+- **Inspector — [[Inspector|zone Inspector]]** — supplements with medical follow-up. Final person responsible for closing the card.
 
 ---
 
-## Escenario B — El SUP reporta
+## Scenario A — The Associate Reports
 
-Ocurre cuando el [[Hotel/Supervisor|SUP]] detecta primero el incidente (el colaborador no puede reportar por sí mismo o el SUP lo ve primero).
+Occurs when the injured associate is the one who first detects and reports the incident.
 
-### 1. Reporte inicial con información presencial
+### 1. Initial Report
 
-1. El **SUP** detecta el incidente y crea la tarjeta desde la app.
-2. Se genera la tarjeta de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] con número de reporte automático.
-3. El **Colaborador** transita a **Gris — Accidentado** en el [[Semáforo del Colaborador]].
-4. El **SUP** captura directamente la información presencial:
-   - Ubicación exacta dentro de la propiedad.
-   - Circunstancias del accidente.
-   - Testigos.
-   - Atención inmediata brindada.
-5. La señal llega al **Inspector** de zona asignado.
+1. The **Associate** reports the accident from the app.
+2. A [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]] card is generated with an automatic report number.
+3. The **Associate** transitions to **Gray — Injured** in the [[Semáforo del Colaborador]].
+4. The notification reaches the SUP and the assigned zone Inspector **simultaneously**.
 
-### 2. Seguimiento médico (Inspector)
+### 2. On-Site Capture (SUP)
 
-6. El **Inspector** complementa la tarjeta con la información de seguimiento:
-   - Traslado al centro médico (si aplica, cuál).
-   - Diagnóstico recibido.
-   - Días de incapacidad.
-   - Observaciones médicas.
+5. The **SUP** physically goes to the incident location.
+6. Captures the on-site information on the card:
+   - Exact location within the property.
+   - Circumstances of the accident.
+   - Witnesses.
+   - Immediate care provided.
 
-### 3. Cierre
+### 3. Medical Follow-Up (Inspector)
 
-7. El **Inspector** cierra la tarjeta una vez que la información está completa.
-8. Al recibir el alta médica, el colaborador transita de `Gris → Verde fuerte` en el [[Semáforo del Colaborador]].
+7. The **Inspector** supplements the card with follow-up information:
+   - Transfer to medical facility (if applicable, which one).
+   - Diagnosis received.
+   - Disability days.
+   - Medical observations.
 
----
+### 4. Closure
 
-## Regla de protección
-
-Mientras el colaborador esté en estado **Gris — Accidentado**, las inasistencias **no cuentan** para la regla de 3 inasistencias → [[Core/Módulos/Blacklist|Blacklist]] del [[Semáforo del Colaborador]]. El colaborador está fuera de la operación activa por causa médica.
+8. The **Inspector** closes the card once the information is complete.
+9. Upon receiving medical clearance, the associate transitions from `Gray → Dark Green` in the [[Semáforo del Colaborador]].
 
 ---
 
-## Relacionado
+## Scenario B — The SUP Reports
 
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
+Occurs when the [[Hotel/Supervisor|SUP]] detects the incident first (the associate cannot self-report or the SUP sees it first).
+
+### 1. Initial Report with On-Site Information
+
+1. The **SUP** detects the incident and creates the card from the app.
+2. A [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]] card is generated with an automatic report number.
+3. The **Associate** transitions to **Gray — Injured** in the [[Semáforo del Colaborador]].
+4. The **SUP** directly captures the on-site information:
+   - Exact location within the property.
+   - Circumstances of the accident.
+   - Witnesses.
+   - Immediate care provided.
+5. The notification reaches the assigned zone **Inspector**.
+
+### 2. Medical Follow-Up (Inspector)
+
+6. The **Inspector** supplements the card with follow-up information:
+   - Transfer to medical facility (if applicable, which one).
+   - Diagnosis received.
+   - Disability days.
+   - Medical observations.
+
+### 3. Closure
+
+7. The **Inspector** closes the card once the information is complete.
+8. Upon receiving medical clearance, the associate transitions from `Gray → Dark Green` in the [[Semáforo del Colaborador]].
+
+---
+
+## Protection Rule
+
+While the associate is in **Gray — Injured** status, absences **do not count** toward the 3 absences rule → [[Core/Módulos/Blacklist|Blacklist]] of the [[Semáforo del Colaborador]]. The associate is out of active operations for medical reasons.
+
+---
+
+## Related
+
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]]
 - [[Semáforo del Colaborador]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]

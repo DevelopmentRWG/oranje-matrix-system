@@ -1,180 +1,180 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Flujo de Requisición
+  - Requisition Flow
 ---
 
-# Flujo de Requisición
+# Requisition Flow
 
-Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [[Hotel/Manager General|Manager General]] (GM), el [[Hotel/Manager de Área|Manager de Área]] (GH) o el [[Hotel/Supervisor|Supervisor]] (SUP) la crean, hasta que queda **Cubierta** o es eliminada. Este flujo **consume** colaboradores de la [[Pool de Colaboradores]]; no los produce.
+Operational lifecycle of a [[Requisición]] and its positions: from the moment the [[Hotel/Manager General|General Manager]] (GM), the [[Hotel/Manager de Área|Area Manager]] (GH), or the [[Hotel/Supervisor|Supervisor]] (SUP) creates it, until it is **Covered** or deleted. This flow **consumes** associates from the [[Pool de Colaboradores]]; it does not produce them.
 
-> [!info] Punto de encuentro con el [[Flujo de Reclutamiento]]
-> La [[Pool de Colaboradores]] es el único punto donde ambos flujos se conectan. El [[Flujo de Reclutamiento]] corre de forma **continua** alimentando la pool (haya o no requisiciones); este flujo la **consume** cuando necesita cubrir posiciones.
+> [!info] Meeting point with the [[Flujo de Reclutamiento]]
+> The [[Pool de Colaboradores]] is the only point where both flows connect. The [[Flujo de Reclutamiento]] runs **continuously** feeding the pool (whether or not there are requisitions); this flow **consumes** from it when it needs to fill positions.
 
-## Actores
+## Actors
 
-- **GM — [[Hotel/Manager General|Manager General]]**: máxima autoridad del hotel. Puede crear, autorizar y rechazar requisiciones.
-- **GH — [[Hotel/Manager de Área|Manager de Área]]**: puede crear, autorizar y rechazar requisiciones.
-- **SUP — [[Hotel/Supervisor|Supervisor]]**: puede crear, modificar y preparar la requisición. No puede autorizar.
-- **Reclutador — [[Reclutadora]]**: ejecuta la asignación de personal tras la autorización.
+- **GM — [[Hotel/Manager General|General Manager]]**: highest authority at the hotel. Can create, authorize, and reject requisitions.
+- **GH — [[Hotel/Manager de Área|Area Manager]]**: can create, authorize, and reject requisitions.
+- **SUP — [[Hotel/Supervisor|Supervisor]]**: can create, modify, and prepare the requisition. Cannot authorize.
+- **Recruiter — [[Reclutadora]]**: executes personnel assignment after authorization.
 
-## Validación de acceso
+## Access Validation
 
-Al inicio el sistema valida si el usuario es GM, GH o SUP.
-- **Sin acceso** → mensaje "No cuenta con acceso" → **FIN**.
-- **Con acceso** → continúa al menú de operaciones (crear, modificar, autorizar, eliminar).
-
----
-
-## 1. Creación de requisición
-
-1. Se genera **Número de requisición** (ver [[#RUTINA - Número de requisición automática]]).
-2. Se registran datos de cabecera: Número de requisición, Hotel, GM/GH, **Status Apple green** (Requisición en elaboración por el hotel), fecha y hora del status.
-3. Se ejecuta [[#RUTINA - Journal Requisición]].
-
-### 1.1 Agregar posiciones
-
-Por cada posición que se agregue:
-1. Se genera **Número de posición** automático (ver [[#RUTINA - Número de posición automática]]).
-2. Se capturan los datos de la posición:
-   - Posición (Housekeeper, Houseman, etc.)
-   - Tipo (Temporal / Permanente)
-   - Cantidad de personas
-   - Fecha de inicio
-   - Fecha fin
-   - Horario
-   - Preferencia de idioma
-   - Notas
-3. Se asigna **Status Gold** — Posición en preparación/elaboración por el hotel, con fecha y hora del status.
-4. Se ejecuta [[#RUTINA - Journal Posición]].
-
-### 1.2 Modificar posición (antes de autorizar)
-
-Seleccionar la posición y modificar cualquiera de los campos anteriores. Re-journal.
-
-### 1.3 Eliminar posición (antes de autorizar)
-
-Al confirmar eliminación → la posición pasa a **Status Purple** (eliminada físicamente) y se ejecuta el journal.
+At the start, the system validates whether the user is a GM, GH, or SUP.
+- **No access** → message "No access available" → **END**.
+- **With access** → continues to the operations menu (create, modify, authorize, delete).
 
 ---
 
-## 2. Modificar / Autorizar requisición existente
+## 1. Requisition Creation
 
-1. Se muestran todas las requisiciones con **Status Apple green** (En elaboración por el hotel).
-2. Se selecciona la requisición en elaboración.
-3. Se muestran sus posiciones.
-4. Se elige una acción: **Modificar posición**, **Eliminar posición**, **Autorizar requisición** o **Eliminar requisición**.
+1. A **Requisition number** is generated (see [[#ROUTINE - Automatic requisition number]]).
+2. Header data is recorded: Requisition number, Hotel, GM/GH, **Status Apple Green** (Requisition being drafted by the hotel), date and time of status.
+3. [[#ROUTINE - Requisition Journal]] is executed.
 
-### 2.1 Autorizar requisición
+### 1.1 Add Positions
 
-Reglas:
-- **Solo el GM o GH pueden autorizar.** Si es SUP → mensaje "Solo el gerente del hotel puede autorizar la requisición".
-- Debe existir **al menos una posición registrada**. Si no → mensaje "No tiene posiciones registradas, registre al menos una posición e intente nuevamente".
+For each position added:
+1. An automatic **Position number** is generated (see [[#ROUTINE - Automatic position number]]).
+2. Position data is captured:
+   - Position (Housekeeper, Houseman, etc.)
+   - Type (Temporary / Permanent)
+   - Headcount
+   - Start date
+   - End date
+   - Schedule
+   - Language preference
+   - Notes
+3. **Status Gold** is assigned — Position being prepared/drafted by the hotel, with date and time of status.
+4. [[#ROUTINE - Position Journal]] is executed.
 
-Si cumple:
-1. La requisición cambia a **Status Green** (Requisición autorizada) + fecha/hora.
-2. El [[Inspector]] de la cabecera se asigna automáticamente según la [[Core/Catálogos/Zonas|zona]] del hotel.
-3. Se ejecuta [[#RUTINA - Journal Requisición]].
-4. **Por cada posición de la requisición**:
-   - Se ejecuta [[#RUTINA - Prioridad de la posición automática]] usando la fecha de autorización y la fecha de inicio de la posición.
-   - Se registra la prioridad calculada (Green / Yellow / Red — ver [[Semáforo de Urgencia de Requisición]]).
-   - La posición cambia a **Status Orange** (Posición autorizada) + fecha/hora.
-   - Se ejecuta [[#RUTINA - Journal Posición]].
+### 1.2 Modify Position (before authorization)
 
-### 2.2 Rechazar requisición
+Select the position and modify any of the above fields. Re-journal.
 
-Si el GM o GH rechaza la requisición:
-1. La requisición regresa a **Status Apple green** (En elaboración) con las observaciones.
-2. Se ejecuta [[#RUTINA - Journal Requisición]].
-3. El creador corrige la **misma requisición** (mismo número/ID) y la reenvía para autorización.
+### 1.3 Delete Position (before authorization)
 
-> [!important] No se genera una nueva requisición tras el rechazo. Se modifica y reenvía la requisición original con el mismo identificador.
+Upon confirming deletion → the position transitions to **Status Purple** (physically deleted) and the journal is executed.
 
 ---
 
-## 3. Eliminar requisición
+## 2. Modify / Authorize Existing Requisition
 
-Se muestra el mensaje: "Al confirmar la eliminación de la requisición, las posiciones registradas y la requisición serán eliminadas físicamente".
+1. All requisitions with **Status Apple Green** (Being drafted by the hotel) are displayed.
+2. The requisition being drafted is selected.
+3. Its positions are displayed.
+4. An action is chosen: **Modify position**, **Delete position**, **Authorize requisition**, or **Delete requisition**.
 
-Si se confirma:
-- Por cada posición → **Status Morado** (eliminada físicamente) → journal posición.
-- La requisición → **Status Morado** (eliminada físicamente) → journal requisición.
+### 2.1 Authorize Requisition
 
----
+Rules:
+- **Only the GM or GH can authorize.** If SUP → message "Only the hotel manager can authorize the requisition".
+- There must be **at least one registered position**. If not → message "No positions registered, register at least one position and try again".
 
-## 4. Salir de la requisición
+If conditions are met:
+1. The requisition changes to **Status Green** (Requisition authorized) + date/time.
+2. The [[Inspector]] in the header is automatically assigned according to the hotel's [[Core/Catálogos/Zonas|zone]].
+3. [[#ROUTINE - Requisition Journal]] is executed.
+4. **For each position in the requisition**:
+   - [[#ROUTINE - Automatic position priority]] is executed using the authorization date and the position's start date.
+   - The calculated priority is recorded (Green / Yellow / Red — see [[Semáforo de Urgencia de Requisición]]).
+   - The position changes to **Status Orange** (Position authorized) + date/time.
+   - [[#ROUTINE - Position Journal]] is executed.
 
-- Si tiene **una o más posiciones registradas** → se conserva y sale.
-- Si **no tiene** posiciones → la requisición se elimina físicamente (Status Purple) → journal.
+### 2.2 Reject Requisition
 
----
+If the GM or GH rejects the requisition:
+1. The requisition returns to **Status Apple Green** (Being drafted) with observations.
+2. [[#ROUTINE - Requisition Journal]] is executed.
+3. The creator corrects the **same requisition** (same number/ID) and resubmits for authorization.
 
-## 5. Entrega a Reclutamiento (post-autorización)
-
-Una vez autorizada (Status Green), las posiciones de la requisición quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de la semana correspondiente a su fecha de inicio. La requisición queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]]. Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la toma de la bandeja y el status pasa a **Yellow** (En proceso de asignación de personal por el reclutador). Si ninguna la toma en 24 horas, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas.
-
-La reclutadora consulta el [[Core/Módulos/Schedule|Schedule]] del hotel para ver la demanda y las posiciones pendientes de cubrir, y busca match en la [[Pool de Colaboradores]]:
-- **Si hay match** → asigna el colaborador al hotel y lo registra en el [[Core/Módulos/Schedule|Schedule]].
-- **Si no hay match** → la requisición queda en espera. El [[Flujo de Reclutamiento]] corre de forma continua alimentando la pool; puede escalarse prioridad por zona/posición, pero no se "lanza" el reclutamiento — ya está siempre activo.
-
-Cierre:
-- **Status Light Blue** — Cubierta totalmente por el reclutador.
-- **Status Red** — Cubierta parcialmente por el reclutador.
-
----
-
-## Estados (semáforos)
-
-La requisición y sus posiciones se rigen por múltiples semáforos:
-
-### Requisición (ciclo de vida)
-Ver [[Semáforo de Requisición]]. Estados: Apple green → Green → Yellow → Light blue / Red. Purple = eliminada físicamente.
-
-### Posición (ciclo de vida)
-- **Gold** — En preparación/elaboración por el hotel.
-- **Orange** — Autorizada.
-- **Purple** — Eliminada físicamente.
-
-### Posición — cobertura
-Ver [[Semáforo de Posiciones de la Requisición]]. Green (100%), Yellow (75%), Red (<75%).
-
-### Posición — prioridad (tiempo)
-Ver [[Semáforo de Urgencia de Requisición]]. Green (>120 h), Yellow (72–120 h), Red (<72 h).
+> [!important] A new requisition is not generated after rejection. The original requisition with the same identifier is modified and resubmitted.
 
 ---
 
-## Rutinas auxiliares
+## 3. Delete Requisition
 
-### RUTINA - Número de requisición automática
-Genera el identificador tomando fecha/hora del día + homoclave aleatoria:
-- Año (4 dígitos) + Mes (2) + Día (2) + Hora (2, formato 24 h) + Minutos (2) + Homoclave (2 caracteres alfanuméricos aleatorios: letras y/o dígitos).
-- Ejemplo: `202604081632V1` — donde `V1` es la homoclave.
+The message is displayed: "Upon confirming the deletion of the requisition, the registered positions and the requisition will be physically deleted".
 
-### RUTINA - Número de posición automática
-Mismo formato que el número de requisición. Ejemplo: `202604081632V1`.
-
-### RUTINA - Prioridad de la posición automática
-Parámetros: Fecha de autorización de la requisición + Fecha de inicio de la posición.
-- `> 120 horas` → **Green**.
-- `72 – 120 horas` → **Yellow**.
-- `< 72 horas` → **Red**.
-
-### RUTINA - Journal Requisición
-Registra en el journal de requisiciones: Requisición, Hotel, Manager General / Manager de Área, Reclutador, Inspector, Status, Nota, Fecha y hora del status.
-
-### RUTINA - Journal Posición
-Registra en el journal de posiciones: Número de requisición, Número de posición, Posición, Cantidad de personas, Fecha de inicio, Fecha fin, Status, Fecha y hora del status.
+If confirmed:
+- For each position → **Status Purple** (physically deleted) → position journal.
+- The requisition → **Status Purple** (physically deleted) → requisition journal.
 
 ---
 
-## Relacionado
+## 4. Exit Requisition
+
+- If it has **one or more registered positions** → it is saved and exited.
+- If it has **no** positions → the requisition is physically deleted (Status Purple) → journal.
+
+---
+
+## 5. Handoff to Recruitment (post-authorization)
+
+Once authorized (Status Green), the requisition's positions are reflected in the [[Core/Módulos/Schedule|Schedule]] for the week corresponding to their start date. The requisition becomes available in the shared queue, prioritized by the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Urgency Indicator]]. A [[Reclutadora]] or [[Reclutamiento/Líder de Grupo de Reclutadoras|Team Lead]] picks it from the queue and the status changes to **Yellow** (Personnel assignment in process by recruiter). If no one picks it within 24 hours, the system automatically assigns it to the [[Reclutadora]] with the lowest active requisition load.
+
+The recruiter checks the hotel's [[Core/Módulos/Schedule|Schedule]] to see demand and positions pending coverage, and searches for a match in the [[Pool de Colaboradores]]:
+- **If there is a match** → assigns the associate to the hotel and registers them in the [[Core/Módulos/Schedule|Schedule]].
+- **If there is no match** → the requisition remains on hold. The [[Flujo de Reclutamiento]] runs continuously feeding the pool; priority can be escalated by zone/position, but recruitment is not "launched" — it is always active.
+
+Closure:
+- **Status Light Blue** — Fully covered by the recruiter.
+- **Status Red** — Partially covered by the recruiter.
+
+---
+
+## Statuses (status indicators)
+
+The requisition and its positions are governed by multiple status indicators:
+
+### Requisition (lifecycle)
+See [[Semáforo de Requisición]]. Statuses: Apple Green → Green → Yellow → Light Blue / Red. Purple = physically deleted.
+
+### Position (lifecycle)
+- **Gold** — Being prepared/drafted by the hotel.
+- **Orange** — Authorized.
+- **Purple** — Physically deleted.
+
+### Position — coverage
+See [[Semáforo de Posiciones de la Requisición]]. Green (100%), Yellow (75%), Red (<75%).
+
+### Position — priority (time)
+See [[Semáforo de Urgencia de Requisición]]. Green (>120 h), Yellow (72-120 h), Red (<72 h).
+
+---
+
+## Auxiliary Routines
+
+### ROUTINE - Automatic requisition number
+Generates the identifier using the date/time of the day + random homoclave:
+- Year (4 digits) + Month (2) + Day (2) + Hour (2, 24h format) + Minutes (2) + Homoclave (2 random alphanumeric characters: letters and/or digits).
+- Example: `202604081632V1` — where `V1` is the homoclave.
+
+### ROUTINE - Automatic position number
+Same format as the requisition number. Example: `202604081632V1`.
+
+### ROUTINE - Automatic position priority
+Parameters: Requisition authorization date + Position start date.
+- `> 120 hours` → **Green**.
+- `72 - 120 hours` → **Yellow**.
+- `< 72 hours` → **Red**.
+
+### ROUTINE - Requisition Journal
+Records in the requisition journal: Requisition, Hotel, General Manager / Area Manager, Recruiter, Inspector, Status, Note, Date and time of status.
+
+### ROUTINE - Position Journal
+Records in the position journal: Requisition number, Position number, Position, Headcount, Start date, End date, Status, Date and time of status.
+
+---
+
+## Related
 
 - [[Requisición]]
 - [[Pool de Colaboradores]]
 - [[Flujo de Reclutamiento]]
-- [[Hotel/Manager General|Manager General]] (GM)
-- [[Hotel/Manager de Área|Manager de Área]] (GH)
+- [[Hotel/Manager General|General Manager]] (GM)
+- [[Hotel/Manager de Área|Area Manager]] (GH)
 - [[Hotel/Supervisor|Supervisor]] (SUP)
 - [[Manager de Reclutamiento]]
 - [[Reclutadora]]
