@@ -1,582 +1,582 @@
 ---
-tipo: simulación
-perspectiva: qa
-hotel_ficticio: Hotel Costa Esmeralda
-zona: Noroeste
-jerarquía: operativa
+type: simulation
+perspective: qa
+fictional_hotel: Hotel Costa Esmeralda
+zone: Northwest
+hierarchy: operational
 tags:
-  - simulación
+  - simulation
   - qa
-  - ciclo-completo
+  - full-cycle
 aliases:
-  - Simulación QA
+  - Simulation QA
 ---
 
-# Simulación completa — Punto de vista de QA
+# Full Simulation — QA Point of View
 
-> [!abstract] Propósito
-> Esta simulación narra el ciclo completo de supervisión de calidad dentro del sistema Oranje, desde la perspectiva del departamento de QA: el [[Manager de QA]] y los 5 [[Operador de QA|Operadores de QA]]. Recorre todas las etapas del trabajo de QA — monitoreo rutinario, detección de anomalías, emisión de observaciones formales, transiciones del [[Indicador de Calidad]], escalación a dirección y resolución — a lo largo de tres semanas operativas. QA nunca ejecuta la operación de ningún departamento; su función es exclusivamente **observar, medir y retroalimentar**. Todos los datos son ficticios, pero cada acción, transición y regla respeta fielmente la documentación del vault.
+> [!abstract] Purpose
+> This simulation narrates the full quality supervision cycle within the Oranje system, from the perspective of the QA department: the [[Manager de QA]] and the 5 [[Operador de QA|QA Operators]]. It covers every stage of QA work — routine monitoring, anomaly detection, issuance of formal observations, [[Indicador de Calidad]] transitions, escalation to management, and resolution — across three operational weeks. QA never executes the operations of any department; its function is exclusively to **observe, measure, and provide feedback**. All data is fictional, but every action, transition, and rule faithfully follows the vault documentation.
 
-## Personajes de la simulación
+## Simulation Characters
 
-| Personaje | Rol | Departamento |
+| Character | Role | Department |
 |---|---|---|
 | Alejandra Duarte | [[Manager de QA]] | QA — Oranje |
-| Operador 1 | [[Operador de QA]] (asignado a Inspección) | QA — Oranje |
-| Operador 2 | [[Operador de QA]] (asignado a Hotel) | QA — Oranje |
-| Operador 3 | [[Operador de QA]] (asignado a Colaborador) | QA — Oranje |
-| Operador 4 | [[Operador de QA]] (asignado a Ventas) | QA — Oranje |
-| Operador 5 | [[Operador de QA]] (asignado a Reclutamiento) | QA — Oranje |
-| Daniel Ortega | [[Inspector]] (zona Noroeste) | Inspección — Oranje |
-| Raúl Méndez | [[Inspección/Coordinador\|Coordinador]] | Inspección — Oranje |
+| Operator 1 | [[Operador de QA]] (assigned to Inspection) | QA — Oranje |
+| Operator 2 | [[Operador de QA]] (assigned to Hotel) | QA — Oranje |
+| Operator 3 | [[Operador de QA]] (assigned to Associate) | QA — Oranje |
+| Operator 4 | [[Operador de QA]] (assigned to Sales) | QA — Oranje |
+| Operator 5 | [[Operador de QA]] (assigned to Recruitment) | QA — Oranje |
+| Daniel Ortega | [[Inspector]] (Northwest zone) | Inspection — Oranje |
+| Raúl Méndez | [[Inspección/Coordinador\|Coordinator]] | Inspection — Oranje |
 | Mariana Vega | [[Hotel/Supervisor\|Supervisor]] | Hotel Costa Esmeralda |
-| Sofía Méndez | [[Business Developer]] (BD) | Ventas — Oranje |
-| Ricardo Fuentes | [[Business Developer Coordinator]] (BDC) | Ventas — Oranje |
-| Daniela Ríos | [[Reclutadora]] | Reclutamiento — Oranje |
-| Fernando Ortiz | [[Reclutamiento/Manager de Reclutamiento\|Manager de Reclutamiento]] | Reclutamiento — Oranje |
+| Sofía Méndez | [[Business Developer]] (BD) | Sales — Oranje |
+| Ricardo Fuentes | [[Business Developer Coordinator]] (BDC) | Sales — Oranje |
+| Daniela Ríos | [[Reclutadora]] | Recruitment — Oranje |
+| Fernando Ortiz | [[Reclutamiento/Manager de Reclutamiento\|Recruitment Manager]] | Recruitment — Oranje |
 
 ---
 
-## Fase 1 — Línea base y monitoreo de rutina
+## Phase 1 — Baseline and Routine Monitoring
 
-> Referencia: [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]] · [[QA/Dashboard de QA|Dashboard de QA]] · [[QA/Reglas de QA|Reglas de QA]]
+> Reference: [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]] · [[QA/Dashboard de QA|QA Dashboard]] · [[QA/Reglas de QA|QA Rules]]
 
-### 1.1 — Apertura semanal del Dashboard global (lunes 4 de agosto de 2026)
+### 1.1 — Weekly Dashboard Opening (Monday, August 4, 2026)
 
-Es lunes 4 de agosto de 2026. Alejandra Duarte, [[Manager de QA]], abre el panel global del [[QA/Dashboard de QA|Dashboard de QA]] para iniciar la semana. Revisa las 5 tarjetas resumen — una por cada departamento supervisado — y confirma que todos se encuentran en **Verde** (Calidad óptima).
+It is Monday, August 4, 2026. Alejandra Duarte, [[Manager de QA]], opens the global panel of the [[QA/Dashboard de QA|QA Dashboard]] to start the week. She reviews the 5 summary cards — one per supervised department — and confirms that all are at **Green** (Optimal quality).
 
-La gráfica de tendencia del [[Indicador de Calidad]] muestra 4 semanas consecutivas en Verde para los 5 departamentos. La tabla de KPIs en estado Crítico está vacía.
+The [[Indicador de Calidad]] trend chart shows 4 consecutive weeks at Green for all 5 departments. The Critical KPI table is empty.
 
-| Departamento | KPIs en Meta | KPIs en Riesgo | KPIs Crítico | Indicador de Calidad |
+| Department | KPIs On Target | KPIs At Risk | KPIs Critical | Quality Status Indicator |
 |---|---|---|---|---|
-| Inspección | 5/5 | 0 | 0 | Verde |
-| Hotel | 5/5 | 0 | 0 | Verde |
-| Colaborador | 5/5 | 0 | 0 | Verde |
-| Ventas | 5/5 | 0 | 0 | Verde |
-| Reclutamiento | 6/6 | 0 | 0 | Verde |
+| Inspection | 5/5 | 0 | 0 | Green |
+| Hotel | 5/5 | 0 | 0 | Green |
+| Associate | 5/5 | 0 | 0 | Green |
+| Sales | 5/5 | 0 | 0 | Green |
+| Recruitment | 6/6 | 0 | 0 | Green |
 
 > [!tip] QA — Dashboard
-> Alejandra revisa el panel global: 5 tarjetas resumen, todas en Verde. La gráfica de tendencia muestra 4 semanas consecutivas sin alertas. La tabla de KPIs Críticos está vacía. — [[QA/Dashboard de QA|Dashboard de QA]]
+> Alejandra reviews the global panel: 5 summary cards, all at Green. The trend chart shows 4 consecutive weeks without alerts. The Critical KPIs table is empty. — [[QA/Dashboard de QA|QA Dashboard]]
 
-> [!warning] Regla de negocio
-> El [[Manager de QA]] tiene acceso al panel global + los 5 paneles por departamento. Cada [[Operador de QA]] solo ve el panel de su departamento asignado. — [[QA/Dashboard de QA|Dashboard de QA]]
+> [!warning] Business Rule
+> The [[Manager de QA]] has access to the global panel + the 5 department panels. Each [[Operador de QA]] only sees the panel for their assigned department. — [[QA/Dashboard de QA|QA Dashboard]]
 
-### 1.2 — Revisión de cada Operador en su panel
+### 1.2 — Each Operator Reviews Their Panel
 
-Cada Operador revisa los KPIs de la semana anterior (terminada el 3 de agosto) en su panel individual. El monitoreo de rutina confirma que todos los departamentos operan dentro de parámetros:
+Each Operator reviews the previous week's KPIs (ended August 3) in their individual panel. Routine monitoring confirms that all departments are operating within parameters:
 
-**Operador 1 — Inspección:**
+**Operator 1 — Inspection:**
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Tasa de verificación Día 1 | 96% | ≥ 95% | En meta |
-| 2 | Tasa de entrega de uniforme Día 3 | 100% | ≥ 95% | En meta |
-| 3 | Tiempo promedio de resolución de reportes | 1.2 días | ≤ 3 días | En meta |
-| 4 | Tiempo promedio de cierre de accidente | 5 días | ≤ 7 días | En meta |
-| 5 | Cobertura de zonas | 6/6 (100%) | 6/6 (100%) | En meta |
+| 1 | Day 1 verification rate | 96% | ≥ 95% | On target |
+| 2 | Day 3 uniform delivery rate | 100% | ≥ 95% | On target |
+| 3 | Average report resolution time | 1.2 days | ≤ 3 days | On target |
+| 4 | Average accident closure time | 5 days | ≤ 7 days | On target |
+| 5 | Zone coverage | 6/6 (100%) | 6/6 (100%) | On target |
 
-Operador 1 revisa el mapa de cobertura de zonas: las 6 [[Zonas|zonas]] (Centro, Sur, Este, Oeste, Noroeste, Sureste) tienen [[Inspector]] asignado y activo.
+Operator 1 reviews the zone coverage map: all 6 [[Zonas|zones]] (Central, South, East, West, Northwest, Southeast) have an assigned and active [[Inspector]].
 
-**Operador 2 — Hotel:**
+**Operator 2 — Hotel:**
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Autorización oportuna de requisiciones | 92% | ≥ 90% | En meta |
-| 2 | Tasa de rechazo de requisiciones | 8% | ≤ 10% | En meta |
-| 3 | Cumplimiento de ponchado | 93% | ≥ 90% | En meta |
-| 4 | Generación oportuna de QR | 97% | ≥ 95% | En meta |
-| 5 | Tasa de Stand-by prolongado | 5% | ≤ 10% | En meta |
+| 1 | Timely requisition authorization | 92% | ≥ 90% | On target |
+| 2 | Requisition rejection rate | 8% | ≤ 10% | On target |
+| 3 | Punch compliance | 93% | ≥ 90% | On target |
+| 4 | Timely QR generation | 97% | ≥ 95% | On target |
+| 5 | Prolonged Stand-by rate | 5% | ≤ 10% | On target |
 
-Operador 2 revisa el ranking de hoteles por cumplimiento de ponchado. El Hotel Costa Esmeralda aparece en el tercio superior.
+Operator 2 reviews the hotel ranking by punch compliance. Hotel Costa Esmeralda appears in the top third.
 
-**Operador 3 — Colaborador:**
+**Operator 3 — Associate:**
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Tasa de inasistencia | 4% | ≤ 5% | En meta |
-| 2 | Tasa de Blacklist | 1.5% | ≤ 2% | En meta |
-| 3 | Salud del Pool | 65% | ≥ 60% | En meta |
-| 4 | Tasa de Lunch Extendido | 8% | ≤ 10% | En meta |
-| 5 | Completitud de datos | 96% | ≥ 95% | En meta |
+| 1 | Absenteeism rate | 4% | ≤ 5% | On target |
+| 2 | Blacklist rate | 1.5% | ≤ 2% | On target |
+| 3 | Pool Health | 65% | ≥ 60% | On target |
+| 4 | Extended Lunch rate | 8% | ≤ 10% | On target |
+| 5 | Data completeness | 96% | ≥ 95% | On target |
 
-Operador 3 revisa la gráfica de dona con la distribución del [[Semáforo del Colaborador]]. La mayoría de los colaboradores se concentra en Verde fuerte y Amarillo.
+Operator 3 reviews the donut chart showing the distribution of the [[Semáforo del Colaborador]]. The majority of associates are concentrated in Dark Green and Yellow.
 
-**Operador 4 — Ventas:**
+**Operator 4 — Sales:**
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Tasa de conversión | 28% | ≥ 25% | En meta |
-| 2 | Ciclo promedio de onboarding | 38 días | ≤ 45 días | En meta |
-| 3 | Tasa de estancamiento | 7% | ≤ 10% | En meta |
-| 4 | Tasa de pérdida | 18% | ≤ 20% | En meta |
-| 5 | Tasa de reactivación exitosa | 45% | ≥ 40% | En meta |
+| 1 | Conversion rate | 28% | ≥ 25% | On target |
+| 2 | Average onboarding cycle | 38 days | ≤ 45 days | On target |
+| 3 | Stagnation rate | 7% | ≤ 10% | On target |
+| 4 | Loss rate | 18% | ≤ 20% | On target |
+| 5 | Successful reactivation rate | 45% | ≥ 40% | On target |
 
-Operador 4 revisa el funnel del [[Semáforo Onboarding]]. La distribución es saludable: pocos hoteles estancados en etapas intermedias.
+Operator 4 reviews the [[Semáforo Onboarding]] funnel. The distribution is healthy: few hotels stalled at intermediate stages.
 
-**Operador 5 — Reclutamiento:**
+**Operator 5 — Recruitment:**
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Cobertura total de requisiciones | 88% | ≥ 85% | En meta |
-| 2 | Tiempo promedio de toma de requisición | 5h | ≤ 8h | En meta |
-| 3 | Tasa de auto-asignación por timeout | 3% | ≤ 5% | En meta |
-| 4 | Tasa de escalación por timeout | 8% | ≤ 10% | En meta |
-| 5 | Cumplimiento de consulta de Blacklist | 100% | 100% | En meta |
-| 6 | Tasa de ingreso al Pool | 65% | ≥ 60% | En meta |
+| 1 | Total requisition coverage | 88% | ≥ 85% | On target |
+| 2 | Average requisition pickup time | 5h | ≤ 8h | On target |
+| 3 | Timeout auto-assignment rate | 3% | ≤ 5% | On target |
+| 4 | Timeout escalation rate | 8% | ≤ 10% | On target |
+| 5 | Blacklist check compliance | 100% | 100% | On target |
+| 6 | Pool entry rate | 65% | ≥ 60% | On target |
 
-Operador 5 revisa el embudo de reclutamiento y el heatmap de tiempo de toma por urgencia. Sin anomalías visibles.
+Operator 5 reviews the recruitment funnel and the pickup-time heatmap by urgency. No visible anomalies.
 
-> [!warning] Regla de negocio
-> QA no ejecuta la operación de ningún departamento. Su función es **observar, medir y retroalimentar** para que cada área mantenga su calidad dentro de los estándares definidos. — [[QA/Reglas de QA|Reglas de QA]]
+> [!warning] Business Rule
+> QA does not execute the operations of any department. Its function is to **observe, measure, and provide feedback** so that each area maintains its quality within defined standards. — [[QA/Reglas de QA|QA Rules]]
 
-### 1.3 — Primeras señales en Reclutamiento (miércoles 6 de agosto)
+### 1.3 — First Signals in Recruitment (Wednesday, August 6)
 
-Miércoles 6 de agosto. Operador 5 revisa la actividad de la semana en curso y detecta una anomalía:
+Wednesday, August 6. Operator 5 reviews the current week's activity and detects an anomaly:
 
-- **Requisición del Hotel Costa Esmeralda** (reemplazo de 1 Housekeeper que pasó a Stand-by): autorizada el martes 5 de agosto a las 09:00. Ninguna [[Reclutadora]] la tomó del [[Self-Pick de Requisiciones]]. A las 24 horas, el sistema la auto-asignó a Daniela Ríos.
-- **Requisición de otro hotel** (2 Housemen): autorizada miércoles 6 de agosto a las 14:00. Tomada a las 22:00 — 8 horas después, justo en el límite.
+- **Hotel Costa Esmeralda Requisition** (replacement for 1 Housekeeper who went to Stand-by): authorized Tuesday, August 5 at 09:00. No [[Reclutadora]] picked it up from the [[Self-Pick de Requisiciones]]. After 24 hours, the system auto-assigned it to Daniela Ríos.
+- **Another hotel requisition** (2 Housemen): authorized Wednesday, August 6 at 14:00. Picked up at 22:00 — 8 hours later, right at the limit.
 
-Operador 5 registra los datos en las líneas de tendencia de su panel. La tasa de auto-asignación de esta semana ya está en 1 de 4 requisiciones (25%), muy por encima de la meta de ≤ 5%. Sin embargo, una sola semana no confirma un patrón.
+Operator 5 records the data in the trend lines of their panel. This week's auto-assignment rate is already 1 out of 4 requisitions (25%), far above the ≤ 5% target. However, a single week does not confirm a pattern.
 
-> [!tip] QA — Operador 5 observa
-> Tasa de auto-asignación por timeout esta semana: 1/4 = 25%. Meta: ≤ 5%. Estado puntual: **Crítico** (> 15%). Operador 5 decide esperar confirmación la siguiente semana antes de emitir observación formal — una semana aislada no constituye patrón. — [[QA/Métricas y KPIs por Departamento|KPI 3 de Reclutamiento]]
+> [!tip] QA — Operator 5 Observes
+> Timeout auto-assignment rate this week: 1/4 = 25%. Target: ≤ 5%. Spot status: **Critical** (> 15%). Operator 5 decides to wait for confirmation next week before issuing a formal observation — one isolated week does not constitute a pattern. — [[QA/Métricas y KPIs por Departamento|Recruitment KPI 3]]
 
 ---
 
-## Fase 2 — Detección de anomalías
+## Phase 2 — Anomaly Detection
 
-> Referencia: [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]] · [[Indicador de Calidad]] · [[QA/Reglas de QA|Reglas de QA]]
+> Reference: [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]] · [[Indicador de Calidad]] · [[QA/Reglas de QA|QA Rules]]
 
-### 2.1 — Reclutamiento se deteriora (lunes 11 — miércoles 13 de agosto)
+### 2.1 — Recruitment Deteriorates (Monday August 11 — Wednesday August 13)
 
-La segunda semana confirma el patrón. Tres nuevas requisiciones llegan al sistema:
+The second week confirms the pattern. Three new requisitions arrive in the system:
 
-**Requisición A** — Hotel Costa Esmeralda, 3 Housekeepers, urgencia **Rojo** según el [[Semáforo de Urgencia de Requisición]]:
-- Autorizada lunes 11 de agosto a las 08:00.
-- Ninguna reclutadora la toma. El sistema la auto-asigna a las 24 horas.
-- La reclutadora asignada solo logra cubrir 2 de 3 posiciones antes del viernes.
-- La requisición cierra en **Rojo** del [[Semáforo de Requisición]] — cobertura parcial (67%).
+**Requisition A** — Hotel Costa Esmeralda, 3 Housekeepers, urgency **Red** per the [[Semáforo de Urgencia de Requisición]]:
+- Authorized Monday, August 11 at 08:00.
+- No recruiter picks it up. The system auto-assigns it after 24 hours.
+- The assigned recruiter only manages to cover 2 of 3 positions before Friday.
+- The requisition closes at **Red** on the [[Semáforo de Requisición]] — partial coverage (67%).
 
-**Requisición B** — otro hotel, 2 Housemen, urgencia **Amarillo**:
-- Autorizada martes 12 de agosto a las 10:00.
-- Tomada a las 19:00 (9 horas — fuera de meta de ≤ 8h).
-- Cubierta al 100%. Cierra en **Azul claro**.
+**Requisition B** — another hotel, 2 Housemen, urgency **Yellow**:
+- Authorized Tuesday, August 12 at 10:00.
+- Picked up at 19:00 (9 hours — outside the ≤ 8h target).
+- Covered 100%. Closes at **Light Blue**.
 
-**Requisición C** — otro hotel, 1 Laundry, urgencia **Verde fuerte**:
-- Autorizada miércoles 13 de agosto.
-- No tomada en 24 horas. Auto-asignada por timeout.
-- Cubierta eventualmente.
+**Requisition C** — another hotel, 1 Laundry, urgency **Dark Green**:
+- Authorized Wednesday, August 13.
+- Not picked up in 24 hours. Auto-assigned by timeout.
+- Eventually covered.
 
-Operador 5 consolida los KPIs de la Semana 2:
+Operator 5 consolidates the Week 2 KPIs:
 
-| # | KPI | Resultado Semana 2 | Meta | Estado |
+| # | KPI | Week 2 Result | Target | Status |
 |---|---|---|---|---|
-| 1 | Cobertura total de requisiciones | 2/3 cerradas completas = 67% | ≥ 85% | **Crítico** (< 70%) |
-| 2 | Tiempo promedio de toma de requisición | ~17h | ≤ 8h | **En riesgo** (9–24h) |
-| 3 | Tasa de auto-asignación por timeout | 2/3 = 67% | ≤ 5% | **Crítico** (> 15%) |
-| 4 | Tasa de escalación por timeout | 1/3 = 33% | ≤ 10% | **Crítico** (> 20%) |
-| 5 | Cumplimiento de consulta de Blacklist | 100% | 100% | En meta |
-| 6 | Tasa de ingreso al Pool | 60% | ≥ 60% | En meta |
+| 1 | Total requisition coverage | 2/3 fully closed = 67% | ≥ 85% | **Critical** (< 70%) |
+| 2 | Average requisition pickup time | ~17h | ≤ 8h | **At risk** (9–24h) |
+| 3 | Timeout auto-assignment rate | 2/3 = 67% | ≤ 5% | **Critical** (> 15%) |
+| 4 | Timeout escalation rate | 1/3 = 33% | ≤ 10% | **Critical** (> 20%) |
+| 5 | Blacklist check compliance | 100% | 100% | On target |
+| 6 | Pool entry rate | 60% | ≥ 60% | On target |
 
-El patrón de la Semana 1 se confirmó. Tres KPIs están en nivel Crítico y uno más en nivel En riesgo.
+The Week 1 pattern has been confirmed. Three KPIs are at Critical level and one more is at risk.
 
-> [!tip] QA — Operador 5 observa
-> Tres KPIs en nivel Crítico (Cobertura, Auto-asignación, Escalación) y uno En riesgo (Tiempo de toma) por segunda semana consecutiva. El patrón se confirma. Operador 5 procede a emitir observación formal al departamento de [[Reclutamiento/Reclutamiento|Reclutamiento]]. — [[QA/Métricas y KPIs por Departamento|Reclutamiento]]
+> [!tip] QA — Operator 5 Observes
+> Three KPIs at Critical level (Coverage, Auto-assignment, Escalation) and one At risk (Pickup time) for the second consecutive week. The pattern is confirmed. Operator 5 proceeds to issue a formal observation to the [[Reclutamiento/Reclutamiento|Recruitment]] department. — [[QA/Métricas y KPIs por Departamento|Recruitment]]
 
-### 2.2 — Operador 5 emite observación formal (jueves 14 de agosto)
+### 2.2 — Operator 5 Issues a Formal Observation (Thursday, August 14)
 
-Operador 5 prepara y envía una observación formal al departamento de Reclutamiento:
+Operator 5 prepares and sends a formal observation to the Recruitment department:
 
-> **Observación Formal QA-REC-2026-08-001**
+> **Formal Observation QA-REC-2026-08-001**
 >
-> | Campo | Detalle |
+> | Field | Detail |
 > |---|---|
-> | Fecha | 2026-08-14 |
-> | Departamento | [[Reclutamiento/Reclutamiento\|Reclutamiento]] |
-> | Emite | Operador 5 ([[Operador de QA]]) |
-> | KPIs afectados | #1 Cobertura (67%), #3 Auto-asignación (67%), #4 Escalación (33%) |
-> | Hallazgo | Fallo persistente en el sistema de [[Self-Pick de Requisiciones]]. Las reclutadoras no están tomando requisiciones de forma proactiva. Las tasas de auto-asignación y escalación superan ampliamente los umbrales por dos semanas consecutivas. |
-> | Impacto | La requisición 202608110800A3 del Hotel Costa Esmeralda cerró en Rojo con solo 67% de cobertura. El hotel no recibió el staffing completo solicitado. |
-> | Recomendación | Revisar la distribución de carga del equipo de reclutamiento. Evaluar si el equipo está subdimensionado. Reforzar la disciplina del modelo Self-Pick. |
+> | Date | 2026-08-14 |
+> | Department | [[Reclutamiento/Reclutamiento\|Recruitment]] |
+> | Issued by | Operator 5 ([[Operador de QA]]) |
+> | Affected KPIs | #1 Coverage (67%), #3 Auto-assignment (67%), #4 Escalation (33%) |
+> | Finding | Persistent failure in the [[Self-Pick de Requisiciones]] system. Recruiters are not proactively picking up requisitions. Auto-assignment and escalation rates far exceed thresholds for two consecutive weeks. |
+> | Impact | Requisition 202608110800A3 for Hotel Costa Esmeralda closed at Red with only 67% coverage. The hotel did not receive the full requested staffing. |
+> | Recommendation | Review recruitment team workload distribution. Evaluate whether the team is understaffed. Reinforce Self-Pick model discipline. |
 
-> [!warning] Regla de negocio
-> Si **cualquier KPI** alcanza nivel Crítico, el [[Operador de QA]] debe proponer que el [[Indicador de Calidad]] del departamento pase al menos a **Amarillo**. — [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]
+> [!warning] Business Rule
+> If **any KPI** reaches Critical level, the [[Operador de QA]] must propose that the department's [[Indicador de Calidad]] moves to at least **Yellow**. — [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
 
-### 2.3 — Indicador de Calidad: Reclutamiento pasa a Amarillo
+### 2.3 — Quality Status Indicator: Recruitment Moves to Yellow
 
-Operador 5 reporta a Alejandra Duarte (Manager de QA) con los datos consolidados y la observación formal emitida. Alejandra revisa:
+Operator 5 reports to Alejandra Duarte (QA Manager) with the consolidated data and the formal observation issued. Alejandra reviews:
 
-- 3 KPIs en nivel Crítico y 1 en nivel En riesgo por 2 semanas consecutivas.
-- Observación formal emitida y pendiente de respuesta del departamento.
+- 3 KPIs at Critical level and 1 at risk for 2 consecutive weeks.
+- Formal observation issued and awaiting department response.
 
-Alejandra valida la propuesta y aprueba la transición.
+Alejandra validates the proposal and approves the transition.
 
-> [!info] Indicador de Calidad
-> Reclutamiento: Verde → **Amarillo** — Calidad en riesgo
-> **Fecha:** 2026-08-14 · **Propone:** Operador 5 · **Aprueba:** Alejandra Duarte (Manager de QA) · **Comentario:** "3 KPIs en nivel Crítico por 2 semanas consecutivas: Cobertura (67%), Auto-asignación (67%), Escalación (33%). Tiempo de toma en En riesgo (17h). Observación formal QA-REC-2026-08-001 emitida."
+> [!info] Quality Status Indicator
+> Recruitment: Green → **Yellow** — Quality at risk
+> **Date:** 2026-08-14 · **Proposed by:** Operator 5 · **Approved by:** Alejandra Duarte (QA Manager) · **Comment:** "3 KPIs at Critical level for 2 consecutive weeks: Coverage (67%), Auto-assignment (67%), Escalation (33%). Pickup time At risk (17h). Formal observation QA-REC-2026-08-001 issued."
 
-> [!warning] Regla de negocio
-> Solo el [[Manager de QA]] puede actualizar formalmente el [[Indicador de Calidad]] de cada departamento. El [[Operador de QA]] propone el cambio; el Manager valida y aprueba. — [[QA/Reglas de QA|Reglas de QA]]
+> [!warning] Business Rule
+> Only the [[Manager de QA]] can formally update each department's [[Indicador de Calidad]]. The [[Operador de QA]] proposes the change; the Manager validates and approves. — [[QA/Reglas de QA|QA Rules]]
 
-### 2.4 — Inspección muestra un dip (semana del 11 de agosto)
+### 2.4 — Inspection Shows a Dip (Week of August 11)
 
-Mientras tanto, Operador 1 detecta un problema en Inspección:
+Meanwhile, Operator 1 detects a problem in Inspection:
 
-Daniel Ortega, [[Inspector]] titular de la zona Noroeste, estuvo ausente el lunes 11 y martes 12 de agosto por razones personales. El [[Inspección/Coordinador|Coordinador]] Raúl Méndez activó el protocolo de cobertura temporal y asignó a otro Inspector para cubrir la zona. Sin embargo, el Inspector sustituto llegó tarde a la propiedad el lunes 11, cuando un grupo de 6 nuevos colaboradores comenzaba en el Hotel Costa Esmeralda.
+Daniel Ortega, lead [[Inspector]] for the Northwest zone, was absent Monday August 11 and Tuesday August 12 for personal reasons. [[Inspección/Coordinador|Coordinator]] Raúl Méndez activated the temporary coverage protocol and assigned another Inspector to cover the zone. However, the substitute Inspector arrived late to the property on Monday August 11, when a group of 6 new associates was starting at Hotel Costa Esmeralda.
 
-Resultado: el Inspector sustituto solo pudo verificar 4 de los 6 colaboradores en su Día 1.
+Result: the substitute Inspector was only able to verify 4 of the 6 associates on their Day 1.
 
-| # | KPI | Resultado Semana 2 | Meta | Estado |
+| # | KPI | Week 2 Result | Target | Status |
 |---|---|---|---|---|
-| 1 | Tasa de verificación Día 1 | 4/6 = 67% | ≥ 95% | **Crítico** (< 85%) |
-| 2 | Tasa de entrega de uniforme Día 3 | 6/6 = 100% | ≥ 95% | En meta |
-| 3 | Tiempo promedio de resolución de reportes | 2 días | ≤ 3 días | En meta |
-| 4 | Tiempo promedio de cierre de accidente | 5 días | ≤ 7 días | En meta |
-| 5 | Cobertura de zonas | 6/6 (100%) | 6/6 (100%) | En meta |
+| 1 | Day 1 verification rate | 4/6 = 67% | ≥ 95% | **Critical** (< 85%) |
+| 2 | Day 3 uniform delivery rate | 6/6 = 100% | ≥ 95% | On target |
+| 3 | Average report resolution time | 2 days | ≤ 3 days | On target |
+| 4 | Average accident closure time | 5 days | ≤ 7 days | On target |
+| 5 | Zone coverage | 6/6 (100%) | 6/6 (100%) | On target |
 
-> [!tip] QA — Operador 1 observa
-> Tasa de verificación Día 1 esta semana: 4/6 = 67%. Meta: ≥ 95%. Estado: **Crítico** (< 85%). Causa identificada: Inspector titular ausente, Inspector de cobertura llegó tarde a la propiedad. — [[QA/Métricas y KPIs por Departamento|KPI 1 de Inspección]]
+> [!tip] QA — Operator 1 Observes
+> Day 1 verification rate this week: 4/6 = 67%. Target: ≥ 95%. Status: **Critical** (< 85%). Identified cause: lead Inspector absent, coverage Inspector arrived late to the property. — [[QA/Métricas y KPIs por Departamento|Inspection KPI 1]]
 
-Operador 1 emite una observación al departamento de Inspección señalando el riesgo sistémico: cuando el Inspector titular se ausenta, el protocolo de cobertura no garantiza la verificación oportuna.
+Operator 1 issues an observation to the Inspection department pointing out the systemic risk: when the lead Inspector is absent, the coverage protocol does not guarantee timely verification.
 
-Operador 1 propone transición del Indicador de Calidad a Amarillo. Alejandra revisa: 1 KPI en Crítico, causa claramente identificada (no es sistémico, pero sí revela una debilidad en el protocolo de cobertura). Aprueba la transición.
+Operator 1 proposes a transition of the Quality Status Indicator to Yellow. Alejandra reviews: 1 KPI at Critical, clearly identified cause (not systemic, but reveals a weakness in the coverage protocol). Approves the transition.
 
-> [!info] Indicador de Calidad
-> Inspección: Verde → **Amarillo** — Calidad en riesgo
-> **Fecha:** 2026-08-15 · **Propone:** Operador 1 · **Aprueba:** Alejandra Duarte (Manager de QA) · **Comentario:** "KPI 1 (Verificación Día 1) en Crítico: 67%. Inspector titular ausente 2 días, protocolo de cobertura insuficiente."
+> [!info] Quality Status Indicator
+> Inspection: Green → **Yellow** — Quality at risk
+> **Date:** 2026-08-15 · **Proposed by:** Operator 1 · **Approved by:** Alejandra Duarte (QA Manager) · **Comment:** "KPI 1 (Day 1 Verification) at Critical: 67%. Lead Inspector absent 2 days, coverage protocol insufficient."
 
-### 2.5 — Hotel, Ventas y Colaborador se mantienen estables
+### 2.5 — Hotel, Sales, and Associate Remain Stable
 
-**Operador 2 — Hotel:** El cumplimiento de ponchado del Hotel Costa Esmeralda baja a 88% esta semana — consecuencia indirecta del staffing incompleto por la requisición fallida de Reclutamiento. Esto ubica el KPI 3 en "En riesgo" (75–89%), pero no en Crítico. Operador 2 registra la nota sin emitir observación formal. Los demás KPIs se mantienen en meta.
+**Operator 2 — Hotel:** Hotel Costa Esmeralda's punch compliance drops to 88% this week — an indirect consequence of incomplete staffing from the failed Recruitment requisition. This places KPI 3 in "At risk" (75–89%), but not Critical. Operator 2 logs the note without issuing a formal observation. All other KPIs remain on target.
 
-**Operador 3 — Colaborador:** La salud del Pool baja a 58% ("En riesgo": 40–59%) porque varios colaboradores pasaron a Stand-by. La tasa de inasistencia sube a 6% ("En riesgo": 6–10%). Operador 3 registra ambas tendencias. Ningún KPI llega a Crítico, así que no emite observación formal aún.
+**Operator 3 — Associate:** Pool Health drops to 58% ("At risk": 40–59%) because several associates moved to Stand-by. The absenteeism rate rises to 6% ("At risk": 6–10%). Operator 3 logs both trends. No KPI reaches Critical, so no formal observation is issued yet.
 
-**Operador 4 — Ventas:** Los 5 KPIs se mantienen en meta. Sin observaciones. El funnel del [[Semáforo Onboarding]] muestra flujo saludable.
+**Operator 4 — Sales:** All 5 KPIs remain on target. No observations. The [[Semáforo Onboarding]] funnel shows healthy flow.
 
-### 2.6 — Alejandra consolida el reporte semanal (viernes 15 de agosto)
+### 2.6 — Alejandra Consolidates the Weekly Report (Friday, August 15)
 
-Alejandra revisa el panel global del Dashboard. El panorama ha cambiado:
+Alejandra reviews the Dashboard's global panel. The picture has changed:
 
-| Departamento | Indicador de Calidad | KPIs Crítico | Cambio vs semana anterior |
+| Department | Quality Status Indicator | Critical KPIs | Change vs. prior week |
 |---|---|---|---|
-| Inspección | **Amarillo** | 1 | Era Verde |
-| Hotel | Verde | 0 | Sin cambio (1 KPI en Riesgo) |
-| Colaborador | Verde | 0 | Sin cambio (2 KPIs en Riesgo) |
-| Ventas | Verde | 0 | Sin cambio |
-| Reclutamiento | **Amarillo** | 3 | Era Verde |
+| Inspection | **Yellow** | 1 | Was Green |
+| Hotel | Green | 0 | No change (1 KPI At Risk) |
+| Associate | Green | 0 | No change (2 KPIs At Risk) |
+| Sales | Green | 0 | No change |
+| Recruitment | **Yellow** | 3 | Was Green |
 
-La gráfica de tendencia ahora muestra una ruptura en la línea de Reclutamiento e Inspección: ambos departamentos caen de Verde a Amarillo. La tabla de KPIs Críticos lista los 4 KPIs afectados (3 de Reclutamiento, 1 de Inspección).
+The trend chart now shows a break in the Recruitment and Inspection lines: both departments fall from Green to Yellow. The Critical KPIs table lists the 4 affected KPIs (3 from Recruitment, 1 from Inspection).
 
-Alejandra comunica a ambos departamentos la expectativa de respuesta a las observaciones emitidas.
+Alejandra notifies both departments of the expected response to the observations issued.
 
 ---
 
-## Fase 3 — Escalación: Reclutamiento llega a Rojo
+## Phase 3 — Escalation: Recruitment Reaches Red
 
-> Referencia: [[QA/Reglas de QA|Reglas de QA]] · [[Indicador de Calidad]] · [[Manager de QA]]
+> Reference: [[QA/Reglas de QA|QA Rules]] · [[Indicador de Calidad]] · [[Manager de QA]]
 
-### 3.1 — Reclutamiento no responde (lunes 18 de agosto)
+### 3.1 — Recruitment Does Not Respond (Monday, August 18)
 
-Lunes 18 de agosto. Ha pasado una semana desde que Operador 5 emitió la observación formal QA-REC-2026-08-001. Operador 5 revisa el estado:
+Monday, August 18. One week has passed since Operator 5 issued formal observation QA-REC-2026-08-001. Operator 5 reviews the status:
 
-- La observación **no ha sido atendida**. No hay respuesta formal del departamento de Reclutamiento.
-- Los datos de la nueva semana agravan la situación: otra requisición fue auto-asignada por timeout, y una requisición de 5 posiciones para un hotel nuevo cerró en **Rojo** (solo 3 de 5 posiciones cubiertas — 60%).
+- The observation **has not been addressed**. There is no formal response from the Recruitment department.
+- New week data worsens the situation: another requisition was auto-assigned by timeout, and a requisition for 5 positions at a new hotel closed at **Red** (only 3 of 5 positions covered — 60%).
 
-KPIs acumulados (rolling 2 semanas):
+Rolling KPIs (2-week cumulative):
 
-| # | KPI | Resultado rolling | Meta | Estado |
+| # | KPI | Rolling Result | Target | Status |
 |---|---|---|---|---|
-| 1 | Cobertura total | 4/7 = 57% | ≥ 85% | **Crítico** |
-| 2 | Tiempo promedio de toma | ~19h | ≤ 8h | **En riesgo** |
-| 3 | Tasa de auto-asignación | 4/7 = 57% | ≤ 5% | **Crítico** |
-| 4 | Tasa de escalación | 3/7 = 43% | ≤ 10% | **Crítico** |
-| 5 | Cumplimiento de consulta de Blacklist | 100% | 100% | En meta |
-| 6 | Tasa de ingreso al Pool | 55% | ≥ 60% | **En riesgo** |
+| 1 | Total coverage | 4/7 = 57% | ≥ 85% | **Critical** |
+| 2 | Average pickup time | ~19h | ≤ 8h | **At risk** |
+| 3 | Auto-assignment rate | 4/7 = 57% | ≤ 5% | **Critical** |
+| 4 | Escalation rate | 3/7 = 43% | ≤ 10% | **Critical** |
+| 5 | Blacklist check compliance | 100% | 100% | On target |
+| 6 | Pool entry rate | 55% | ≥ 60% | **At risk** |
 
-> [!warning] Regla de negocio
-> Si **2 o más KPIs** están en nivel Crítico, o la situación persiste sin mejora, el [[Operador de QA]] debe proponer escalar el [[Indicador de Calidad]] a **Rojo**. — [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]
+> [!warning] Business Rule
+> If **2 or more KPIs** are at Critical level, or the situation persists without improvement, the [[Operador de QA]] must propose escalating the [[Indicador de Calidad]] to **Red**. — [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
 
-### 3.2 — Indicador de Calidad: Reclutamiento pasa a Rojo (martes 19 de agosto)
+### 3.2 — Quality Status Indicator: Recruitment Moves to Red (Tuesday, August 19)
 
-Operador 5 presenta el caso a Alejandra:
+Operator 5 presents the case to Alejandra:
 
-- 3 KPIs en Crítico persistente, 2 adicionales en Riesgo.
-- Observación formal emitida hace 5 días sin respuesta.
-- Tendencia en las líneas del Dashboard: deterioro sostenido.
+- 3 KPIs in persistent Critical, 2 additional At risk.
+- Formal observation issued 5 days ago with no response.
+- Dashboard trend lines: sustained deterioration.
 
-Alejandra valida y aprueba la transición a Rojo.
+Alejandra validates and approves the transition to Red.
 
-> [!info] Indicador de Calidad
-> Reclutamiento: Amarillo → **Rojo** — Calidad crítica
-> **Fecha:** 2026-08-19 · **Propone:** Operador 5 · **Aprueba:** Alejandra Duarte (Manager de QA) · **Comentario:** "3 KPIs en nivel Crítico persistente (Cobertura 57%, Auto-asignación 57%, Escalación 43%). Observación formal QA-REC-2026-08-001 sin atender tras 5 días. La situación se deteriora."
+> [!info] Quality Status Indicator
+> Recruitment: Yellow → **Red** — Critical quality
+> **Date:** 2026-08-19 · **Proposed by:** Operator 5 · **Approved by:** Alejandra Duarte (QA Manager) · **Comment:** "3 KPIs in persistent Critical (Coverage 57%, Auto-assignment 57%, Escalation 43%). Formal observation QA-REC-2026-08-001 unaddressed after 5 days. Situation is deteriorating."
 
-### 3.3 — Alejandra escala a Dirección (miércoles 20 de agosto)
+### 3.3 — Alejandra Escalates to Management (Wednesday, August 20)
 
-Alejandra Duarte prepara un reporte formal de escalación y lo presenta al Director de Operaciones de Oranje.
+Alejandra Duarte prepares a formal escalation report and presents it to the Oranje Director of Operations.
 
-> [!warning] Regla de negocio
-> Departamento en estado **Rojo** sin mejora tras notificación → el [[Manager de QA]] escala el caso a dirección. — [[QA/Reglas de QA|Reglas de QA]]
+> [!warning] Business Rule
+> Department at **Red** status with no improvement after notification → the [[Manager de QA]] escalates the case to management. — [[QA/Reglas de QA|QA Rules]]
 
-El reporte incluye:
+The report includes:
 
-| Sección | Contenido |
+| Section | Content |
 |---|---|
-| Tendencia histórica | Gráfica del Dashboard mostrando la caída de Verde → Amarillo → Rojo en 5 días |
-| KPIs afectados | 3 en Crítico (#1, #3, #4), 2 en Riesgo (#2, #6) |
-| Impacto operativo | Hotel Costa Esmeralda recibió staffing parcial (67%), forzando reducción temporal de estándares de limpieza. Otro hotel recibió 60% de cobertura. |
-| Observaciones emitidas | QA-REC-2026-08-001 (2026-08-14) — sin respuesta |
-| Acciones correctivas recomendadas | Revisar niveles de staffing del equipo de reclutamiento. Implementar SLAs obligatorios de toma de requisiciones. Redistribuir carga temporalmente. |
+| Historical trend | Dashboard chart showing the drop from Green → Yellow → Red over 5 days |
+| Affected KPIs | 3 Critical (#1, #3, #4), 2 At risk (#2, #6) |
+| Operational impact | Hotel Costa Esmeralda received partial staffing (67%), forcing a temporary reduction in cleaning standards. Another hotel received 60% coverage. |
+| Observations issued | QA-REC-2026-08-001 (2026-08-14) — no response |
+| Recommended corrective actions | Review recruitment team staffing levels. Implement mandatory SLAs for requisition pickup. Temporarily redistribute workload. |
 
-El Director de Operaciones convoca una reunión urgente con Fernando Ortiz ([[Reclutamiento/Manager de Reclutamiento|Manager de Reclutamiento]]) y Alejandra Duarte.
+The Director of Operations calls an urgent meeting with Fernando Ortiz ([[Reclutamiento/Manager de Reclutamiento|Recruitment Manager]]) and Alejandra Duarte.
 
-Fernando reconoce el problema: una reclutadora dejó el equipo recientemente y no ha sido reemplazada. Las reclutadoras restantes están sobrecargadas y no logran tomar requisiciones dentro de las ventanas esperadas.
+Fernando acknowledges the problem: a recruiter recently left the team and has not been replaced. The remaining recruiters are overloaded and unable to pick up requisitions within the expected windows.
 
-Fernando se compromete a acciones correctivas inmediatas:
+Fernando commits to immediate corrective actions:
 
-1. Redistribuir la carga de requisiciones entre las reclutadoras activas.
-2. Asignar a la [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] para co-gestionar la bandeja de [[Self-Pick de Requisiciones]] y tomar requisiciones cuando ninguna reclutadora las tome en 4 horas.
-3. Priorizar la contratación de una reclutadora de reemplazo.
-4. Responder formalmente a la observación de QA en las próximas 24 horas.
+1. Redistribute the requisition workload among active recruiters.
+2. Assign the [[Reclutamiento/Líder de Grupo de Reclutadoras|Recruiter Team Lead]] to co-manage the [[Self-Pick de Requisiciones]] inbox and pick up requisitions when no recruiter takes them within 4 hours.
+3. Prioritize hiring a replacement recruiter.
+4. Formally respond to the QA observation within the next 24 hours.
 
-> [!tip] QA — Escalación
-> Este es el mecanismo de última instancia de QA: cuando un departamento no responde a las observaciones formales y el [[Indicador de Calidad]] alcanza Rojo, el [[Manager de QA]] escala a dirección para forzar la intervención. QA no ejecuta las acciones correctivas — el departamento las ejecuta, QA verifica que se implementen.
+> [!tip] QA — Escalation
+> This is QA's last-resort mechanism: when a department does not respond to formal observations and the [[Indicador de Calidad]] reaches Red, the [[Manager de QA]] escalates to management to force intervention. QA does not execute the corrective actions — the department does; QA verifies that they are implemented.
 
 ---
 
-## Fase 4 — Resolución de Inspección
+## Phase 4 — Inspection Resolution
 
-> Referencia: [[Inspección/Inspección|Inspección]] · [[Reglas de Inspección]] · [[Indicador de Calidad]]
+> Reference: [[Inspección/Inspección|Inspection]] · [[Reglas de Inspección]] · [[Indicador de Calidad]]
 
-### 4.1 — Inspección responde rápidamente (lunes 18 de agosto)
+### 4.1 — Inspection Responds Quickly (Monday, August 18)
 
-Mientras Reclutamiento permanecía sin respuesta, el departamento de Inspección actuó de inmediato tras recibir la observación de QA.
+While Recruitment remained unresponsive, the Inspection department acted immediately upon receiving the QA observation.
 
-El [[Inspección/Coordinador|Coordinador]] Raúl Méndez:
-- Revisó el protocolo de cobertura para ausencias del Inspector titular.
-- Estableció una regla operativa adicional: el Inspector sustituto debe presentarse en la propiedad al menos 30 minutos antes de la hora esperada del primer colaborador.
-- Daniel Ortega regresó de su ausencia y verificó personalmente un nuevo grupo de 4 colaboradores que llegaron al Hotel Costa Esmeralda el lunes 18 de agosto — **4/4 verificados (100%)**.
+[[Inspección/Coordinador|Coordinator]] Raúl Méndez:
+- Reviewed the coverage protocol for lead Inspector absences.
+- Established an additional operational rule: the substitute Inspector must arrive at the property at least 30 minutes before the expected arrival time of the first associate.
+- Daniel Ortega returned from his absence and personally verified a new group of 4 associates who arrived at Hotel Costa Esmeralda on Monday, August 18 — **4/4 verified (100%)**.
 
-### 4.2 — Operador 1 confirma la corrección
+### 4.2 — Operator 1 Confirms the Correction
 
-Operador 1 mide los KPIs de la Semana 3 para Inspección:
+Operator 1 measures Week 3 KPIs for Inspection:
 
-| # | KPI | Resultado Semana 3 | Meta | Estado |
+| # | KPI | Week 3 Result | Target | Status |
 |---|---|---|---|---|
-| 1 | Tasa de verificación Día 1 | 4/4 = 100% | ≥ 95% | En meta |
-| 2 | Tasa de entrega de uniforme Día 3 | 4/4 = 100% | ≥ 95% | En meta |
-| 3 | Tiempo promedio de resolución de reportes | 1.5 días | ≤ 3 días | En meta |
-| 4 | Tiempo promedio de cierre de accidente | 4 días | ≤ 7 días | En meta |
-| 5 | Cobertura de zonas | 6/6 (100%) | 6/6 (100%) | En meta |
+| 1 | Day 1 verification rate | 4/4 = 100% | ≥ 95% | On target |
+| 2 | Day 3 uniform delivery rate | 4/4 = 100% | ≥ 95% | On target |
+| 3 | Average report resolution time | 1.5 days | ≤ 3 days | On target |
+| 4 | Average accident closure time | 4 days | ≤ 7 days | On target |
+| 5 | Zone coverage | 6/6 (100%) | 6/6 (100%) | On target |
 
-Todos los KPIs están en meta. La observación fue atendida con una acción correctiva concreta (protocolo de cobertura mejorado).
+All KPIs are on target. The observation was addressed with a concrete corrective action (improved coverage protocol).
 
-### 4.3 — Indicador de Calidad: Inspección regresa a Verde (miércoles 20 de agosto)
+### 4.3 — Quality Status Indicator: Inspection Returns to Green (Wednesday, August 20)
 
-Operador 1 propone el retorno a Verde. Alejandra revisa:
-- El KPI que disparó la transición a Amarillo (Verificación Día 1) regresó a meta (100%).
-- La observación fue atendida con una mejora de proceso documentada.
-- No hay otros KPIs fuera de rango.
+Operator 1 proposes the return to Green. Alejandra reviews:
+- The KPI that triggered the transition to Yellow (Day 1 Verification) returned to target (100%).
+- The observation was addressed with a documented process improvement.
+- No other KPIs are out of range.
 
-Alejandra aprueba.
+Alejandra approves.
 
-> [!info] Indicador de Calidad
-> Inspección: Amarillo → **Verde** — Calidad óptima
-> **Fecha:** 2026-08-20 · **Propone:** Operador 1 · **Aprueba:** Alejandra Duarte (Manager de QA) · **Comentario:** "KPI 1 regresó a meta (100%). Coordinador implementó protocolo de cobertura mejorado. Observación atendida y cerrada."
+> [!info] Quality Status Indicator
+> Inspection: Yellow → **Green** — Optimal quality
+> **Date:** 2026-08-20 · **Proposed by:** Operator 1 · **Approved by:** Alejandra Duarte (QA Manager) · **Comment:** "KPI 1 returned to target (100%). Coordinator implemented improved coverage protocol. Observation addressed and closed."
 
-> [!tip] QA — Ciclo ideal
-> Este es el ciclo ideal de QA: **detección → observación → respuesta del departamento → corrección → retorno a Verde**. Tiempo total en Amarillo: 5 días. El departamento de Inspección demostró capacidad de reacción rápida.
+> [!tip] QA — Ideal Cycle
+> This is the ideal QA cycle: **detection → observation → department response → correction → return to Green**. Total time at Yellow: 5 days. The Inspection department demonstrated a rapid response capability.
 
 ---
 
-## Fase 5 — Reclutamiento comienza a mejorar
+## Phase 5 — Recruitment Begins to Improve
 
-> Referencia: [[Indicador de Calidad]] · [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]
+> Reference: [[Indicador de Calidad]] · [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
 
-### 5.1 — Fernando Ortiz implementa cambios (jueves 21 de agosto)
+### 5.1 — Fernando Ortiz Implements Changes (Thursday, August 21)
 
-Fernando Ortiz responde formalmente a la observación QA-REC-2026-08-001 y reporta las acciones implementadas:
+Fernando Ortiz formally responds to observation QA-REC-2026-08-001 and reports the implemented actions:
 
-| Acción | Estado |
+| Action | Status |
 |---|---|
-| Redistribución de carga de requisiciones | Implementada |
-| [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] co-gestionando bandeja de Self-Pick | Activa desde miércoles 20 |
-| Contratación de reclutadora de reemplazo | En proceso — candidata identificada |
-| Respuesta formal a observación QA | Entregada |
+| Requisition workload redistribution | Implemented |
+| [[Reclutamiento/Líder de Grupo de Reclutadoras\|Recruiter Team Lead]] co-managing Self-Pick inbox | Active since Wednesday August 20 |
+| Hiring a replacement recruiter | In progress — candidate identified |
+| Formal response to QA observation | Delivered |
 
-Los resultados son inmediatos:
-- **Requisición D** (Hotel Costa Esmeralda, 2 Housekeepers para completar la cobertura parcial anterior): autorizada jueves 21 a las 08:00, tomada a las 10:30 (2.5 horas). Ambas posiciones cubiertas al 100%. Cierra en **Azul claro**.
-- **Requisición E** (otro hotel, 1 Houseman): autorizada jueves 21 a las 14:00, tomada a las 17:00 (3 horas). Cubierta al 100%.
+Results are immediate:
+- **Requisition D** (Hotel Costa Esmeralda, 2 Housekeepers to complete the previous partial coverage): authorized Thursday August 21 at 08:00, picked up at 10:30 (2.5 hours). Both positions covered 100%. Closes at **Light Blue**.
+- **Requisition E** (another hotel, 1 Houseman): authorized Thursday August 21 at 14:00, picked up at 17:00 (3 hours). Covered 100%.
 
-### 5.2 — Operador 5 mide la mejora (viernes 22 de agosto)
+### 5.2 — Operator 5 Measures the Improvement (Friday, August 22)
 
-KPIs de la Semana 3 (parcial, jueves-viernes):
+Week 3 KPIs (partial, Thursday–Friday):
 
-| # | KPI | Resultado Semana 3 | Tendencia | Estado |
+| # | KPI | Week 3 Result | Trend | Status |
 |---|---|---|---|---|
-| 1 | Cobertura total | 2/2 = 100% | Mejoró | En meta |
-| 2 | Tiempo promedio de toma | 3h | Mejoró | En meta |
-| 3 | Tasa de auto-asignación | 0/2 = 0% | Mejoró | En meta |
-| 4 | Tasa de escalación | 0/2 = 0% | Mejoró | En meta |
-| 5 | Cumplimiento de consulta de Blacklist | 100% | Estable | En meta |
-| 6 | Tasa de ingreso al Pool | 65% | Mejoró | En meta |
+| 1 | Total coverage | 2/2 = 100% | Improved | On target |
+| 2 | Average pickup time | 3h | Improved | On target |
+| 3 | Auto-assignment rate | 0/2 = 0% | Improved | On target |
+| 4 | Escalation rate | 0/2 = 0% | Improved | On target |
+| 5 | Blacklist check compliance | 100% | Stable | On target |
+| 6 | Pool entry rate | 65% | Improved | On target |
 
-Los datos rolling (acumulado multi-semana) aún reflejan el impacto de las semanas anteriores, pero la tendencia semanal es positiva.
+The rolling data (multi-week cumulative) still reflects the impact of prior weeks, but the weekly trend is positive.
 
-### 5.3 — Indicador de Calidad: Reclutamiento baja a Amarillo
+### 5.3 — Quality Status Indicator: Recruitment Drops to Yellow
 
-Operador 5 propone la transición de Rojo a Amarillo. La justificación:
-- El departamento atendió la observación formal con acciones concretas.
-- Los KPIs de esta semana muestran mejora significativa.
-- Sin embargo, el rolling multi-semana aún está impactado — el retorno a Verde requiere al menos 1 semana adicional de datos estables.
+Operator 5 proposes the transition from Red to Yellow. The justification:
+- The department addressed the formal observation with concrete actions.
+- This week's KPIs show significant improvement.
+- However, the multi-week rolling data is still impacted — the return to Green requires at least 1 additional week of stable data.
 
-Alejandra aprueba.
+Alejandra approves.
 
-> [!info] Indicador de Calidad
-> Reclutamiento: Rojo → **Amarillo** — Calidad en riesgo (mejorando)
-> **Fecha:** 2026-08-22 · **Propone:** Operador 5 · **Aprueba:** Alejandra Duarte (Manager de QA) · **Comentario:** "Departamento atendió observación formal. Acciones correctivas implementadas. KPIs de la semana en meta. Se requiere al menos 1 semana adicional de datos estables para proponer retorno a Verde."
+> [!info] Quality Status Indicator
+> Recruitment: Red → **Yellow** — Quality at risk (improving)
+> **Date:** 2026-08-22 · **Proposed by:** Operator 5 · **Approved by:** Alejandra Duarte (QA Manager) · **Comment:** "Department addressed formal observation. Corrective actions implemented. This week's KPIs on target. At least 1 additional week of stable data required before proposing return to Green."
 
-> [!warning] Regla de negocio
-> **Rojo → Amarillo**: cuando el departamento comienza a atender las observaciones y muestra mejora en métricas. — [[Indicador de Calidad]]
+> [!warning] Business Rule
+> **Red → Yellow**: when the department begins to address observations and shows improvement in metrics. — [[Indicador de Calidad]]
 
 ---
 
-## Fase 6 — Consolidación final del Manager de QA
+## Phase 6 — QA Manager Final Consolidation
 
-> Referencia: [[QA/Dashboard de QA|Dashboard de QA]] · [[Manager de QA]]
+> Reference: [[QA/Dashboard de QA|QA Dashboard]] · [[Manager de QA]]
 
-### 6.1 — Dashboard global al cierre de la tercera semana (viernes 22 de agosto)
+### 6.1 — Global Dashboard at the Close of the Third Week (Friday, August 22)
 
-Alejandra revisa el panel global del Dashboard. Estado final del periodo:
+Alejandra reviews the Dashboard's global panel. Final status for the period:
 
-| Departamento | Indicador de Calidad | Tendencia | Notas |
+| Department | Quality Status Indicator | Trend | Notes |
 |---|---|---|---|
-| Inspección | **Verde** | Recuperado | Estuvo en Amarillo 5 días. Corregido. |
-| Hotel | **Verde** | Estable | KPI de ponchado se normalizó al mejorar el staffing. |
-| Colaborador | **Verde** | Vigilancia | 2 KPIs en "En riesgo" (Salud del Pool 58%, Inasistencia 6%). |
-| Ventas | **Verde** | Estable | Todos los KPIs en meta. |
-| Reclutamiento | **Amarillo** | Recuperándose | Estuvo en Rojo 3 días. Mejorando tras escalación. |
+| Inspection | **Green** | Recovered | Was at Yellow for 5 days. Corrected. |
+| Hotel | **Green** | Stable | Punch KPI normalized after staffing improved. |
+| Associate | **Green** | Watch | 2 KPIs "At risk" (Pool Health 58%, Absenteeism 6%). |
+| Sales | **Green** | Stable | All KPIs on target. |
+| Recruitment | **Yellow** | Recovering | Was at Red for 3 days. Improving after escalation. |
 
-### 6.2 — Nota preventiva sobre Colaborador
+### 6.2 — Preventive Note on Associate
 
-Aunque el departamento de Colaborador se mantiene en Verde, Alejandra detecta que 2 de sus 5 KPIs están en nivel "En riesgo":
+Although the Associate department remains at Green, Alejandra detects that 2 of its 5 KPIs are at "At risk" level:
 
-| KPI | Valor actual | Umbral "En riesgo" | Meta |
+| KPI | Current value | "At risk" threshold | Target |
 |---|---|---|---|
-| Salud del Pool | 58% | 40–59% | ≥ 60% |
-| Tasa de inasistencia | 6% | 6–10% | ≤ 5% |
+| Pool Health | 58% | 40–59% | ≥ 60% |
+| Absenteeism rate | 6% | 6–10% | ≤ 5% |
 
-Alejandra instruye a Operador 3 para incrementar la frecuencia de monitoreo sobre estos dos KPIs. Si alguno alcanza nivel Crítico la siguiente semana, debe emitir observación formal de inmediato.
+Alejandra instructs Operator 3 to increase monitoring frequency for these two KPIs. If either reaches Critical level the following week, a formal observation must be issued immediately.
 
-> [!tip] QA — Proactividad
-> El [[Manager de QA]] no espera a que los KPIs lleguen a Crítico para actuar. Al detectar 2 KPIs en "En riesgo" en Colaborador, incrementa la frecuencia de monitoreo como medida preventiva. Esto es coherente con el principio de mejora continua de QA.
+> [!tip] QA — Proactivity
+> The [[Manager de QA]] does not wait for KPIs to reach Critical before acting. Upon detecting 2 KPIs "At risk" in Associate, monitoring frequency is increased as a preventive measure. This is consistent with QA's continuous improvement principle.
 
-### 6.3 — Reporte consolidado a dirección
+### 6.3 — Consolidated Report to Management
 
-Alejandra prepara el reporte semanal consolidado para el Director de Operaciones:
+Alejandra prepares the consolidated weekly report for the Director of Operations:
 
-| Departamento | Resumen ejecutivo |
+| Department | Executive Summary |
 |---|---|
-| **Inspección** | Ciclo completo Verde → Amarillo → Verde en 5 días. KPI de Verificación Día 1 cayó a 67% por ausencia del Inspector titular. Coordinador implementó protocolo de cobertura mejorado. Observación cerrada. |
-| **Hotel** | Sin novedades. Operación dentro de parámetros. |
-| **Colaborador** | En observación preventiva. 2 KPIs en riesgo (Salud del Pool, Inasistencia). Se incrementó frecuencia de monitoreo. |
-| **Ventas** | Sin novedades. Operación dentro de parámetros. |
-| **Reclutamiento** | Escalación formal ejecutada (20 agosto). Departamento respondió con acciones correctivas. Indicador bajó de Rojo a Amarillo. Se monitorea consolidación — se espera retorno a Verde si los KPIs se mantienen en meta la próxima semana. |
+| **Inspection** | Full cycle Green → Yellow → Green in 5 days. Day 1 Verification KPI dropped to 67% due to lead Inspector absence. Coordinator implemented improved coverage protocol. Observation closed. |
+| **Hotel** | No news. Operations within parameters. |
+| **Associate** | Under preventive monitoring. 2 KPIs at risk (Pool Health, Absenteeism). Monitoring frequency increased. |
+| **Sales** | No news. Operations within parameters. |
+| **Recruitment** | Formal escalation executed (August 20). Department responded with corrective actions. Indicator dropped from Red to Yellow. Consolidation being monitored — return to Green expected if KPIs remain on target next week. |
 
-> [!warning] Regla de negocio
-> El [[Manager de QA]] presenta reportes de calidad a la dirección con hallazgos, tendencias y áreas de mejora. — [[QA/Reglas de QA|Reglas de QA]]
+> [!warning] Business Rule
+> The [[Manager de QA]] presents quality reports to management with findings, trends, and areas for improvement. — [[QA/Reglas de QA|QA Rules]]
 
 ---
 
-## Resumen de transiciones del Indicador de Calidad
+## Summary of Quality Status Indicator Transitions
 
-| Fecha | Departamento | Transición | Propone | Aprueba | Motivo |
+| Date | Department | Transition | Proposed by | Approved by | Reason |
 |---|---|---|---|---|---|
-| 14 ago 2026 | Reclutamiento | Verde → **Amarillo** | Operador 5 | Alejandra Duarte | 3 KPIs en Crítico por 2 semanas |
-| 15 ago 2026 | Inspección | Verde → **Amarillo** | Operador 1 | Alejandra Duarte | KPI 1 en Crítico (67%) por ausencia |
-| 19 ago 2026 | Reclutamiento | Amarillo → **Rojo** | Operador 5 | Alejandra Duarte | 3 KPIs Crítico persistente, observación sin atender |
-| 20 ago 2026 | Inspección | Amarillo → **Verde** | Operador 1 | Alejandra Duarte | KPI corregido, observación atendida |
-| 22 ago 2026 | Reclutamiento | Rojo → **Amarillo** | Operador 5 | Alejandra Duarte | Departamento respondió, mejora visible |
+| Aug 14, 2026 | Recruitment | Green → **Yellow** | Operator 5 | Alejandra Duarte | 3 KPIs Critical for 2 weeks |
+| Aug 15, 2026 | Inspection | Green → **Yellow** | Operator 1 | Alejandra Duarte | KPI 1 Critical (67%) due to absence |
+| Aug 19, 2026 | Recruitment | Yellow → **Red** | Operator 5 | Alejandra Duarte | 3 KPIs persistently Critical, observation unaddressed |
+| Aug 20, 2026 | Inspection | Yellow → **Green** | Operator 1 | Alejandra Duarte | KPI corrected, observation addressed |
+| Aug 22, 2026 | Recruitment | Red → **Yellow** | Operator 5 | Alejandra Duarte | Department responded, improvement visible |
 
 ---
 
-## KPIs finales por departamento (Semana 3)
+## Final KPIs by Department (Week 3)
 
-### Inspección
+### Inspection
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Tasa de verificación Día 1 | 100% | ≥ 95% | En meta |
-| 2 | Tasa de entrega de uniforme Día 3 | 100% | ≥ 95% | En meta |
-| 3 | Tiempo promedio de resolución de reportes | 1.5 días | ≤ 3 días | En meta |
-| 4 | Tiempo promedio de cierre de accidente | 4 días | ≤ 7 días | En meta |
-| 5 | Cobertura de zonas | 6/6 (100%) | 6/6 (100%) | En meta |
+| 1 | Day 1 verification rate | 100% | ≥ 95% | On target |
+| 2 | Day 3 uniform delivery rate | 100% | ≥ 95% | On target |
+| 3 | Average report resolution time | 1.5 days | ≤ 3 days | On target |
+| 4 | Average accident closure time | 4 days | ≤ 7 days | On target |
+| 5 | Zone coverage | 6/6 (100%) | 6/6 (100%) | On target |
 
 ### Hotel
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Autorización oportuna de requisiciones | 91% | ≥ 90% | En meta |
-| 2 | Tasa de rechazo de requisiciones | 9% | ≤ 10% | En meta |
-| 3 | Cumplimiento de ponchado | 90% | ≥ 90% | En meta |
-| 4 | Generación oportuna de QR | 96% | ≥ 95% | En meta |
-| 5 | Tasa de Stand-by prolongado | 7% | ≤ 10% | En meta |
+| 1 | Timely requisition authorization | 91% | ≥ 90% | On target |
+| 2 | Requisition rejection rate | 9% | ≤ 10% | On target |
+| 3 | Punch compliance | 90% | ≥ 90% | On target |
+| 4 | Timely QR generation | 96% | ≥ 95% | On target |
+| 5 | Prolonged Stand-by rate | 7% | ≤ 10% | On target |
 
-### Colaborador
+### Associate
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Tasa de inasistencia | 6% | ≤ 5% | **En riesgo** |
-| 2 | Tasa de Blacklist | 1.8% | ≤ 2% | En meta |
-| 3 | Salud del Pool | 58% | ≥ 60% | **En riesgo** |
-| 4 | Tasa de Lunch Extendido | 9% | ≤ 10% | En meta |
-| 5 | Completitud de datos | 95% | ≥ 95% | En meta |
+| 1 | Absenteeism rate | 6% | ≤ 5% | **At risk** |
+| 2 | Blacklist rate | 1.8% | ≤ 2% | On target |
+| 3 | Pool Health | 58% | ≥ 60% | **At risk** |
+| 4 | Extended Lunch rate | 9% | ≤ 10% | On target |
+| 5 | Data completeness | 95% | ≥ 95% | On target |
 
-### Ventas
+### Sales
 
-| # | KPI | Valor | Meta | Estado |
+| # | KPI | Value | Target | Status |
 |---|---|---|---|---|
-| 1 | Tasa de conversión | 27% | ≥ 25% | En meta |
-| 2 | Ciclo promedio de onboarding | 41 días | ≤ 45 días | En meta |
-| 3 | Tasa de estancamiento | 8% | ≤ 10% | En meta |
-| 4 | Tasa de pérdida | 17% | ≤ 20% | En meta |
-| 5 | Tasa de reactivación exitosa | 42% | ≥ 40% | En meta |
+| 1 | Conversion rate | 27% | ≥ 25% | On target |
+| 2 | Average onboarding cycle | 41 days | ≤ 45 days | On target |
+| 3 | Stagnation rate | 8% | ≤ 10% | On target |
+| 4 | Loss rate | 17% | ≤ 20% | On target |
+| 5 | Successful reactivation rate | 42% | ≥ 40% | On target |
 
-### Reclutamiento
+### Recruitment
 
-| # | KPI | Valor (Semana 3) | Rolling multi-semana | Estado rolling |
+| # | KPI | Value (Week 3) | Multi-week Rolling | Rolling Status |
 |---|---|---|---|---|
-| 1 | Cobertura total | 100% | 75% | En riesgo |
-| 2 | Tiempo promedio de toma | 3h | 12h | En riesgo |
-| 3 | Tasa de auto-asignación | 0% | 33% | Crítico |
-| 4 | Tasa de escalación | 0% | 25% | Crítico |
-| 5 | Cumplimiento de consulta de Blacklist | 100% | 100% | En meta |
-| 6 | Tasa de ingreso al Pool | 65% | 60% | En meta |
+| 1 | Total coverage | 100% | 75% | At risk |
+| 2 | Average pickup time | 3h | 12h | At risk |
+| 3 | Auto-assignment rate | 0% | 33% | Critical |
+| 4 | Escalation rate | 0% | 25% | Critical |
+| 5 | Blacklist check compliance | 100% | 100% | On target |
+| 6 | Pool entry rate | 65% | 60% | On target |
 
 ---
 
 ```mermaid
 graph TD
     subgraph Reclutamiento
-        R_V[Verde] -->|3 KPIs Crítico<br>14 ago| R_A[Amarillo]
-        R_A -->|Obs. sin atender + deterioro<br>19 ago| R_R[Rojo]
-        R_R -->|Escalación a dirección + mejora<br>22 ago| R_A2[Amarillo]
+        R_V[Green] -->|3 KPIs Critical<br>Aug 14| R_A[Yellow]
+        R_A -->|Obs. unaddressed + deterioration<br>Aug 19| R_R[Red]
+        R_R -->|Escalation to mgmt + improvement<br>Aug 22| R_A2[Yellow]
     end
 
     subgraph Inspección
-        I_V[Verde] -->|1 KPI Crítico<br>15 ago| I_A[Amarillo]
-        I_A -->|KPI corregido en 5 días<br>20 ago| I_V2[Verde]
+        I_V[Green] -->|1 KPI Critical<br>Aug 15| I_A[Yellow]
+        I_A -->|KPI corrected in 5 days<br>Aug 20| I_V2[Green]
     end
 
     subgraph Hotel
-        H_V[Verde — estable]
+        H_V[Green — stable]
     end
 
     subgraph Ventas
-        V_V[Verde — estable]
+        V_V[Green — stable]
     end
 
     subgraph Colaborador
-        C_V[Verde — vigilancia preventiva]
+        C_V[Green — preventive watch]
     end
 
     style R_V fill:#228B22,color:#fff
@@ -593,30 +593,30 @@ graph TD
 
 ---
 
-## Módulos y conceptos referenciados
+## Referenced Modules and Concepts
 
-| Módulo | Referencia |
+| Module | Reference |
 |---|---|
-| QA | [[QA/QA\|QA]] · [[QA/Reglas de QA\|Reglas de QA]] |
-| Roles de QA | [[Manager de QA]] · [[Operador de QA]] |
-| Indicador de Calidad | [[Indicador de Calidad]] |
-| Métricas | [[QA/Métricas y KPIs por Departamento\|Métricas y KPIs por Departamento]] |
-| Dashboard | [[QA/Dashboard de QA\|Dashboard de QA]] |
-| Inspección | [[Inspección/Inspección\|Inspección]] · [[Reglas de Inspección]] · [[Inspector]] · [[Inspección/Coordinador\|Coordinador]] |
+| QA | [[QA/QA\|QA]] · [[QA/Reglas de QA\|QA Rules]] |
+| QA Roles | [[Manager de QA]] · [[Operador de QA]] |
+| Quality Status Indicator | [[Indicador de Calidad]] |
+| Metrics | [[QA/Métricas y KPIs por Departamento\|Metrics and KPIs by Department]] |
+| Dashboard | [[QA/Dashboard de QA\|QA Dashboard]] |
+| Inspection | [[Inspección/Inspección\|Inspection]] · [[Reglas de Inspección]] · [[Inspector]] · [[Inspección/Coordinador\|Coordinator]] |
 | Hotel | [[Hotel/Hotel\|Hotel]] · [[Reglas del Hotel]] · [[Hotel/Supervisor\|Supervisor]] |
-| Colaborador | [[Colaborador/Colaborador\|Colaborador]] · [[Pool de Colaboradores]] |
-| Ventas | [[Ventas/Ventas\|Ventas]] · [[Reglas de Ventas]] · [[Business Developer]] · [[Business Developer Coordinator]] |
-| Reclutamiento | [[Reclutamiento/Reclutamiento\|Reclutamiento]] · [[Reglas de Reclutamiento]] · [[Reclutadora]] · [[Reclutamiento/Manager de Reclutamiento\|Manager de Reclutamiento]] · [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo de Reclutadoras]] |
-| Semáforos | [[Semáforo del Colaborador]] · [[Semáforo de Requisición]] · [[Semáforo Onboarding]] · [[Semáforo de Urgencia de Requisición]] · [[Semáforo de Posiciones de la Requisición]] |
-| Requisiciones | [[Requisición]] · [[Flujo de Requisición]] · [[Self-Pick de Requisiciones]] |
-| Catálogos | [[Zonas]] · [[Posiciones]] |
+| Associate | [[Colaborador/Colaborador\|Associate]] · [[Pool de Colaboradores]] |
+| Sales | [[Ventas/Ventas\|Sales]] · [[Reglas de Ventas]] · [[Business Developer]] · [[Business Developer Coordinator]] |
+| Recruitment | [[Reclutamiento/Reclutamiento\|Recruitment]] · [[Reglas de Reclutamiento]] · [[Reclutadora]] · [[Reclutamiento/Manager de Reclutamiento\|Recruitment Manager]] · [[Reclutamiento/Líder de Grupo de Reclutadoras\|Recruiter Team Lead]] |
+| Status Indicators | [[Semáforo del Colaborador]] · [[Semáforo de Requisición]] · [[Semáforo Onboarding]] · [[Semáforo de Urgencia de Requisición]] · [[Semáforo de Posiciones de la Requisición]] |
+| Requisitions | [[Requisición]] · [[Flujo de Requisición]] · [[Self-Pick de Requisiciones]] |
+| Catalogs | [[Zonas]] · [[Posiciones]] |
 
 ---
 
-## Simulaciones relacionadas
+## Related Simulations
 
-- [[Simulación - Punto de Vista de Inspección]] — Narra la semana operativa del Inspector Daniel Ortega en la zona Noroeste. En esta simulación de QA, una falla en la cobertura por ausencia de Daniel dispara la transición del Indicador a Amarillo y su rápida corrección.
-- [[Simulación - Punto de Vista del Hotel]] — Muestra el ciclo del hotel como cliente. QA monitorea KPIs del departamento Hotel (autorización, ponchado, QR, Stand-by) que en esta simulación se mantienen estables.
-- [[Simulación - Punto de Vista de Ventas]] — Detalla el proceso comercial narrado desde Ventas. QA supervisa tasas de conversión, ciclo de onboarding y reactivación, todos en meta durante esta simulación.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Cubre el proceso de staffing. En esta simulación de QA, los fallos persistentes de Reclutamiento (requisiciones sin tomar, auto-asignaciones, cobertura parcial) disparan la crisis que lleva al departamento a Rojo y requiere escalación a dirección.
-- [[Simulación - Ciclo de Vida del Colaborador]] — Recorre los estados del colaborador. QA monitorea métricas agregadas del Pool (inasistencia, Blacklist, salud del Pool) que aquí aparecen como señales preventivas bajo vigilancia.
+- [[Simulación - Punto de Vista de Inspección]] — Narrates the operational week of Inspector Daniel Ortega in the Northwest zone. In this QA simulation, a coverage failure due to Daniel's absence triggers the Indicator's transition to Yellow and its swift correction.
+- [[Simulación - Punto de Vista del Hotel]] — Shows the hotel's cycle as a client. QA monitors Hotel department KPIs (authorization, punching, QR, Stand-by) that remain stable throughout this simulation.
+- [[Simulación - Punto de Vista de Ventas]] — Details the commercial process narrated from Sales. QA supervises conversion rates, onboarding cycle, and reactivation, all on target during this simulation.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Covers the staffing process. In this QA simulation, Recruitment's persistent failures (unpicked requisitions, auto-assignments, partial coverage) trigger the crisis that brings the department to Red and requires escalation to management.
+- [[Simulación - Ciclo de Vida del Colaborador]] — Traces the associate's states. QA monitors aggregate Associate Pool metrics (absenteeism, Blacklist, Pool Health) that appear here as preventive signals under watch.

@@ -1,51 +1,51 @@
 ---
-tipo: simulación
-perspectiva: contabilidad
-hotel_ficticio: Hotel Costa Esmeralda
-zona: Noroeste
-jerarquía: comercial
+type: simulation
+perspective: accounting
+fictional_hotel: Hotel Costa Esmeralda
+zone: Northwest
+hierarchy: commercial
 tags:
-  - simulación
-  - contabilidad
-  - ciclo-completo
+  - simulation
+  - accounting
+  - full-cycle
 aliases:
-  - Simulación Contabilidad
+  - Simulation Accounting
 ---
 
-# Simulación completa — Punto de vista de Contabilidad
+# Full Simulation — Accounting Point of View
 
-> [!abstract] Propósito
-> Esta simulación narra un ciclo semanal completo de nómina dentro del sistema Oranje, desde la perspectiva de la [[Contadora]] y el [[Manager de Contabilidad]]. Recorre los 7 pasos del [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] — desde la generación automática del [[Consolidado Semanal del Colaborador]] hasta la autorización final del pago — e incluye escenarios de overtime parcial, multi-hotel, rate interno, los tres tipos de [[Deducciones]], [[Facturación al Hotel|factura partida por cruce de mes]], desactivación de retención 16% y [[Vacaciones|cálculo de vacaciones]]. Todos los datos son ficticios, pero cada acción, cálculo y regla respeta fielmente la documentación del vault.
+> [!abstract] Purpose
+> This simulation narrates a complete weekly payroll cycle within the Oranje system, from the perspective of the [[Contadora]] and the [[Manager de Contabilidad]]. It covers the 7 steps of the [[Contabilidad/Flujo de Nómina|Payroll Flow]] — from the automatic generation of the [[Consolidado Semanal del Colaborador]] through to the final payment authorization — and includes scenarios for partial overtime, multi-hotel, internal rate, all three types of [[Deducciones]], [[Facturación al Hotel|split invoice for month crossover]], 16% withholding deactivation, and [[Vacaciones|vacation pay calculation]]. All data is fictional, but every action, calculation, and rule faithfully follows the vault documentation.
 
-## Personajes de la simulación
+## Simulation Characters
 
-| Personaje | Rol | Departamento |
+| Character | Role | Department |
 |---|---|---|
-| Patricia Solano | [[Contadora]] (protagonista) | Contabilidad — Oranje |
-| Irene | [[Manager de Contabilidad]] | Contabilidad — Oranje |
-| María López | [[Posiciones\|Housekeeper]] | Colaboradora — Hotel Costa Esmeralda |
-| Juan Hernández | [[Posiciones\|Houseman]] | Colaborador — Hotel Costa Esmeralda |
-| Elena Cruz | [[Posiciones\|Housekeeper]] | Colaboradora — Hotel Costa Esmeralda + Hotel Playa del Sol |
-| Roberto Fuentes | [[Posiciones\|Housekeeper]] | Colaborador — Hotel Costa Esmeralda |
-| Ana Castillo | [[Posiciones\|Laundry]] | Colaboradora — Hotel Costa Esmeralda |
-| Carmen Delgado | [[Posiciones\|Housekeeper]] veterana | Colaboradora — 52+ semanas de antigüedad |
-| Daniel Ortega | [[Inspección/Inspector\|Inspector]] (zona Noroeste) | Inspección — Oranje |
+| Patricia Solano | [[Contadora]] (protagonist) | Accounting — Oranje |
+| Irene | [[Manager de Contabilidad]] | Accounting — Oranje |
+| María López | [[Posiciones\|Housekeeper]] | Associate — Hotel Costa Esmeralda |
+| Juan Hernández | [[Posiciones\|Houseman]] | Associate — Hotel Costa Esmeralda |
+| Elena Cruz | [[Posiciones\|Housekeeper]] | Associate — Hotel Costa Esmeralda + Hotel Playa del Sol |
+| Roberto Fuentes | [[Posiciones\|Housekeeper]] | Associate — Hotel Costa Esmeralda |
+| Ana Castillo | [[Posiciones\|Laundry]] | Associate — Hotel Costa Esmeralda |
+| Carmen Delgado | [[Posiciones\|Housekeeper]] veteran | Associate — 52+ weeks of seniority |
+| Daniel Ortega | [[Inspección/Inspector\|Inspector]] (Northwest zone) | Inspection — Oranje |
 
 ---
 
-## Fase 0 — Contexto y condiciones iniciales
+## Phase 0 — Context and Initial Conditions
 
-> Referencia: [[Contadora]] · [[Manager de Contabilidad]] · [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] · [[Core/Módulos/Contrato|Contrato]]
+> Reference: [[Contadora]] · [[Manager de Contabilidad]] · [[Contabilidad/Flujo de Nómina|Payroll Flow]] · [[Core/Módulos/Contrato|Contract]]
 
-### 0.1 — Situación
+### 0.1 — Situation
 
-Es lunes 21 de julio de 2026. El **Hotel Costa Esmeralda** fue convertido a cliente activo (status **Naranja** en el [[Semáforo Onboarding]]) el 11 de julio — como se narra en la [[Simulación - Punto de Vista de Ventas]]. La primera [[Requisición]] fue cubierta por Reclutamiento, y hoy los primeros colaboradores se presentan a trabajar.
+It is Monday, July 21, 2026. **Hotel Costa Esmeralda** was converted to an active client (**Orange** status on the [[Semáforo Onboarding]]) on July 11 — as narrated in the [[Simulación - Punto de Vista de Ventas]]. The first [[Requisición]] was filled by Recruitment, and today the first associates report to work.
 
-Patricia Solano, [[Contadora]] de Oranje, es la responsable de ejecutar toda la operación financiera semanal: validación del Pre-Payroll, conciliación con el proveedor de cheques, gestión de deducciones y cálculo de vacaciones. Irene, [[Manager de Contabilidad]], supervisa el trabajo de Patricia y es quien aprueba las facturas y autoriza la liberación de la nómina. Juntas son los dos actores humanos en el [[Contabilidad/Flujo de Nómina|Flujo de Nómina]].
+Patricia Solano, Oranje's [[Contadora]], is responsible for executing the entire weekly financial operation: Pre-Payroll validation, reconciliation with the check provider, deduction management, and vacation pay calculation. Irene, [[Manager de Contabilidad]], oversees Patricia's work and is the one who approves invoices and authorizes payroll release. Together they are the two human actors in the [[Contabilidad/Flujo de Nómina|Payroll Flow]].
 
-### 0.2 — Términos contractuales del Hotel Costa Esmeralda
+### 0.2 — Hotel Costa Esmeralda Contract Terms
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
 | Pay rate (Housekeeper) | $12.50/hr |
 | Pay rate (Houseman) | $11.00/hr |
@@ -53,56 +53,56 @@ Patricia Solano, [[Contadora]] de Oranje, es la responsable de ejecutar toda la 
 | Bill rate (Housekeeper) | $18.25/hr |
 | Bill rate (Houseman) | $16.50/hr |
 | Bill rate (Laundry) | $17.00/hr |
-| Overtime | 1.5x después de 40 hrs brutas semanales por hotel |
-| Festivos | 2x bill rate en días festivos federales |
-| Inicio de semana | Lunes |
-| Fin de semana | Domingo |
-| Deduce comida | Sí ($3 USD/día laborado) |
-| Factura partida por mes | Sí |
+| Overtime | 1.5x after 40 gross weekly hours per hotel |
+| Holidays | 2x bill rate on federal holidays |
+| Week start | Monday |
+| Week end | Sunday |
+| Meal deduction | Yes ($3 USD/day worked) |
+| Split invoice by month | Yes |
 
-> [!warning] Regla de negocio
-> El overtime se calcula **por hotel**, no de forma global. Si un colaborador trabaja en dos hoteles, cada hotel tiene su umbral de 40 horas brutas semanales independiente. — [[Consolidado Semanal del Colaborador#Cálculo]]
+> [!warning] Business Rule
+> Overtime is calculated **per hotel**, not globally. If an associate works at two hotels, each hotel has its own independent 40 gross weekly hours threshold. — [[Consolidado Semanal del Colaborador#Cálculo]]
 
-### 0.3 — Colaboradores y sus condiciones
+### 0.3 — Associates and Their Conditions
 
-| Colaborador | Posición | Hotel(es) | Pay rate | Escenario contable |
+| Associate | Position | Hotel(s) | Pay rate | Accounting scenario |
 |---|---|---|---|---|
-| María López | HK | Costa Esmeralda | $12.50 | Estándar + deducción uniforme |
-| Juan Hernández | HM | Costa Esmeralda | $11.00 | Overtime parcial (5 OT, hotel autoriza 3) |
-| Elena Cruz | HK | Costa Esmeralda + Playa del Sol | $12.50 / $13.00 | Multi-hotel, cheque al hotel con más horas |
-| Roberto Fuentes | HK | Costa Esmeralda | $14.00 (rate interno) | Rate interno + retención 16% (sin SSN) |
-| Ana Castillo | LN | Costa Esmeralda | $11.50 | Deducción de comida |
+| María López | HK | Costa Esmeralda | $12.50 | Standard + uniform deduction |
+| Juan Hernández | HM | Costa Esmeralda | $11.00 | Partial overtime (5 OT, hotel authorizes 3) |
+| Elena Cruz | HK | Costa Esmeralda + Playa del Sol | $12.50 / $13.00 | Multi-hotel, check issued to hotel with most hours |
+| Roberto Fuentes | HK | Costa Esmeralda | $14.00 (internal rate) | Internal rate + 16% withholding (no SSN) |
+| Ana Castillo | LN | Costa Esmeralda | $11.50 | Meal deduction |
 
-> [!tip] Rate interno — Roberto Fuentes
-> Roberto tiene un acuerdo interno con Oranje por experiencia previa: su pay rate real es **$14.00/hr**, mayor al rate contractual del hotel ($12.50/hr). Este rate interno es visible **solo** para Contabilidad. La [[Facturación al Hotel|Factura al Hotel]] siempre usa el bill rate del [[Core/Módulos/Contrato|Contrato]] ($18.25/hr). La diferencia la absorbe Oranje. — [[Consolidado Semanal del Colaborador#Rate interno]]
+> [!tip] Internal rate — Roberto Fuentes
+> Roberto has an internal arrangement with Oranje due to prior experience: his actual pay rate is **$14.00/hr**, higher than the hotel's contractual rate ($12.50/hr). This internal rate is visible **only** to Accounting. The [[Facturación al Hotel|Hotel Invoice]] always uses the [[Core/Módulos/Contrato|Contract]] bill rate ($18.25/hr). The difference is absorbed by Oranje. — [[Consolidado Semanal del Colaborador#Rate interno]]
 
-### 0.4 — Nota sobre QA
+### 0.4 — Note on QA
 
-> [!info] Contabilidad y QA
-> El departamento de Contabilidad **no tiene** [[Operador de QA]] asignado ni KPIs definidos en el sistema. Los 5 operadores de QA cubren Inspección, Hotel, Colaborador, Ventas y Reclutamiento. — [[Métricas y KPIs por Departamento]]
+> [!info] Accounting and QA
+> The Accounting department **does not have** an assigned [[Operador de QA]] or defined KPIs in the system. The 5 QA operators cover Inspection, Hotel, Associate, Sales, and Recruitment. — [[Métricas y KPIs por Departamento]]
 
 ---
 
-## Fase 1 — La semana laboral (Lun 21 – Dom 27 julio 2026)
+## Phase 1 — The Work Week (Mon July 21 – Sun July 27, 2026)
 
-> Referencia: [[Timesheet]] · [[Core/Módulos/Schedule|Schedule]] · [[Inspección/Inspector|Inspector]] · [[Deducciones#Uniforme]]
+> Reference: [[Timesheet]] · [[Core/Módulos/Schedule|Schedule]] · [[Inspección/Inspector|Inspector]] · [[Deducciones#Uniforme]]
 
-### 1.1 — Resumen operativo de la semana
+### 1.1 — Operational Summary of the Week
 
-Los 5 colaboradores asignados al Hotel Costa Esmeralda se presentan el lunes 21 de julio (Día 1). Daniel Ortega, [[Inspección/Inspector|Inspector]] de la zona Noroeste, verifica su llegada en la propiedad — transición Blanco → Verde manzana en el [[Semáforo del Colaborador]].
+All 5 associates assigned to Hotel Costa Esmeralda report on Monday, July 21 (Day 1). Daniel Ortega, [[Inspección/Inspector|Inspector]] for the Northwest zone, verifies their arrival at the property — White → Apple Green transition on the [[Semáforo del Colaborador]].
 
-El miércoles 23 de julio (Día 3), Daniel entrega uniformes a los 5 colaboradores y registra cada entrega en el sistema. Esto dispara la [[Deducciones#Uniforme|deducción de uniforme]] ($15 USD por persona) que se aplicará al próximo [[Consolidado Semanal del Colaborador|Consolidado Semanal]].
+On Wednesday, July 23 (Day 3), Daniel delivers uniforms to all 5 associates and logs each delivery in the system. This triggers the [[Deducciones#Uniforme|uniform deduction]] ($15 USD per person) to be applied to the next [[Consolidado Semanal del Colaborador|Weekly Summary]].
 
-> [!warning] Regla de negocio
-> La deducción de uniforme se aplica automáticamente al siguiente [[Consolidado Semanal del Colaborador|Consolidado Semanal]] tras el registro de entrega por el [[Inspección/Inspector|Inspector]]. — [[Deducciones#Uniforme]]
+> [!warning] Business Rule
+> The uniform deduction is automatically applied to the next [[Consolidado Semanal del Colaborador|Weekly Summary]] following the delivery registration by the [[Inspección/Inspector|Inspector]]. — [[Deducciones#Uniforme]]
 
-Elena Cruz trabaja en Costa Esmeralda de lunes a miércoles (3 días). El jueves, su [[Reclutadora]] la asigna temporalmente ([[Semáforo del Colaborador|Café]]) al **Hotel Playa del Sol** (pay rate HK: $13.00/hr, bill rate HK: $17.50/hr), donde trabaja jueves y viernes.
+Elena Cruz works at Costa Esmeralda Monday through Wednesday (3 days). On Thursday, her [[Reclutadora]] temporarily assigns her ([[Semáforo del Colaborador|Brown]]) to **Hotel Playa del Sol** (HK pay rate: $13.00/hr, HK bill rate: $17.50/hr), where she works Thursday and Friday.
 
-Juan Hernández trabaja jornadas extendidas de 9 horas brutas por día (1 hora extra diaria), acumulando 45 horas brutas en la semana — 5 horas por encima del umbral de overtime.
+Juan Hernández works extended 9-hour gross shifts per day (1 extra hour daily), accumulating 45 gross hours in the week — 5 hours above the overtime threshold.
 
-### 1.2 — Horas registradas por colaborador
+### 1.2 — Hours Recorded by Associate
 
-| Colaborador | Hotel | Días | Hrs brutas/día | Hrs brutas total | Lunch (30 min × días) | Hrs netas |
+| Associate | Hotel | Days | Gross hrs/day | Total gross hrs | Lunch (30 min × days) | Net hrs |
 |---|---|---|---|---|---|---|
 | María López | Costa Esmeralda | 5 | 8.0 | 40.0 | 2.5 | 37.5 |
 | Juan Hernández | Costa Esmeralda | 5 | 9.0 | 45.0 | 2.5 | 37.5 + 5.0 OT |
@@ -111,114 +111,114 @@ Juan Hernández trabaja jornadas extendidas de 9 horas brutas por día (1 hora e
 | Roberto Fuentes | Costa Esmeralda | 5 | 8.0 | 40.0 | 2.5 | 37.5 |
 | Ana Castillo | Costa Esmeralda | 5 | 8.0 | 40.0 | 2.5 | 37.5 |
 
-> [!info] Overtime de Juan Hernández
-> Juan acumuló 45 hrs brutas en Costa Esmeralda. El umbral es 40 hrs brutas → 5 hrs de overtime. El hotel autoriza **solo 3 de las 5 horas**. Las 2 horas no autorizadas quedan registradas pero no se pagan ni se facturan. — [[Consolidado Semanal del Colaborador#Overtime autorizado parcialmente]]
+> [!info] Juan Hernández Overtime
+> Juan accumulated 45 gross hours at Costa Esmeralda. The threshold is 40 gross hours → 5 overtime hours. The hotel authorizes **only 3 of the 5 hours**. The 2 unauthorized hours are recorded but not paid or billed. — [[Consolidado Semanal del Colaborador#Overtime autorizado parcialmente]]
 
 ---
 
-## Fase 2 — Generación automática del Consolidado Semanal
+## Phase 2 — Automatic Generation of the Weekly Summary
 
-> Referencia: [[Consolidado Semanal del Colaborador]] · [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] paso 1
+> Reference: [[Consolidado Semanal del Colaborador]] · [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 1
 
-Domingo 27 de julio, al cierre de la semana. El sistema genera automáticamente el [[Consolidado Semanal del Colaborador|Consolidado Semanal]] de cada colaborador, agrupando sus [[Timesheet|Timesheets]] por hotel y aplicando el pay rate correspondiente.
+Sunday, July 27, at the close of the week. The system automatically generates the [[Consolidado Semanal del Colaborador|Weekly Summary]] for each associate, grouping their [[Timesheet|Timesheets]] by hotel and applying the corresponding pay rate.
 
-> [!success] **Paso 1 del Flujo de Nómina** — Automático. No requiere intervención humana.
+> [!success] **Payroll Flow Step 1** — Automatic. No human intervention required.
 
-### 2.1 — Consolidado: María López (estándar)
+### 2.1 — Summary: María López (standard)
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Colaborador | María López |
-| Semana | Sem 30 — 21 al 27 de julio 2026 |
+| Associate | María López |
+| Week | Week 30 — July 21–27, 2026 |
 
-| Hotel | Posición | Hrs netas | Pay rate | Subtotal regular | Hrs OT | Tasa OT | Subtotal OT |
+| Hotel | Position | Net hrs | Pay rate | Regular subtotal | OT hrs | OT rate | OT subtotal |
 |---|---|---|---|---|---|---|---|
 | Costa Esmeralda | HK | 37.5 | $12.50 | $468.75 | 0 | — | $0.00 |
 
-| **Total a pagar** | **$468.75** |
+| **Total payable** | **$468.75** |
 |---|---|
 
-### 2.2 — Consolidado: Juan Hernández (overtime parcial)
+### 2.2 — Summary: Juan Hernández (partial overtime)
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Colaborador | Juan Hernández |
-| Semana | Sem 30 — 21 al 27 de julio 2026 |
+| Associate | Juan Hernández |
+| Week | Week 30 — July 21–27, 2026 |
 
-| Hotel | Posición | Hrs netas | Pay rate | Subtotal regular | Hrs OT autorizadas | Tasa OT | Subtotal OT |
+| Hotel | Position | Net hrs | Pay rate | Regular subtotal | Authorized OT hrs | OT rate | OT subtotal |
 |---|---|---|---|---|---|---|---|
 | Costa Esmeralda | HM | 37.5 | $11.00 | $412.50 | 3 | $16.50 | $49.50 |
 
-| **Total a pagar** | **$462.00** |
+| **Total payable** | **$462.00** |
 |---|---|
 
-> [!warning] Regla de negocio
-> El hotel autorizó solo 3 de las 5 horas de overtime. El [[Manager de Contabilidad]] ajusta las horas OT pagables según lo autorizado. Las 2 horas restantes quedan registradas pero no se pagan al colaborador ni se facturan al hotel. — [[Consolidado Semanal del Colaborador#Overtime autorizado parcialmente]]
+> [!warning] Business Rule
+> The hotel authorized only 3 of the 5 overtime hours. The [[Manager de Contabilidad]] adjusts payable OT hours per what was authorized. The remaining 2 hours are recorded but not paid to the associate or billed to the hotel. — [[Consolidado Semanal del Colaborador#Overtime autorizado parcialmente]]
 
-### 2.3 — Consolidado: Elena Cruz (multi-hotel)
+### 2.3 — Summary: Elena Cruz (multi-hotel)
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Colaborador | Elena Cruz |
-| Semana | Sem 30 — 21 al 27 de julio 2026 |
+| Associate | Elena Cruz |
+| Week | Week 30 — July 21–27, 2026 |
 
-| Hotel | Posición | Hrs netas | Pay rate | Subtotal regular | Hrs OT | Tasa OT | Subtotal OT |
+| Hotel | Position | Net hrs | Pay rate | Regular subtotal | OT hrs | OT rate | OT subtotal |
 |---|---|---|---|---|---|---|---|
 | Costa Esmeralda | HK | 22.5 | $12.50 | $281.25 | 0 | — | $0.00 |
 | Playa del Sol | HK | 15.0 | $13.00 | $195.00 | 0 | — | $0.00 |
 
-| **Total a pagar** | **$476.25** |
+| **Total payable** | **$476.25** |
 |---|---|
 
-> [!info] Asignación del cheque
-> Elena trabajó en dos hoteles. El cheque se asigna al **Hotel Costa Esmeralda** (22.5 hrs > 15.0 hrs) — el hotel donde acumuló mayor cantidad de horas. — [[Consolidado Semanal del Colaborador#Asignación del cheque]]
+> [!info] Check Assignment
+> Elena worked at two hotels. The check is assigned to **Hotel Costa Esmeralda** (22.5 hrs > 15.0 hrs) — the hotel where she accumulated the most hours. — [[Consolidado Semanal del Colaborador#Asignación del cheque]]
 
-### 2.4 — Consolidado: Roberto Fuentes (rate interno)
+### 2.4 — Summary: Roberto Fuentes (internal rate)
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Colaborador | Roberto Fuentes |
-| Semana | Sem 30 — 21 al 27 de julio 2026 |
+| Associate | Roberto Fuentes |
+| Week | Week 30 — July 21–27, 2026 |
 
-| Hotel | Posición | Hrs netas | Pay rate | Subtotal regular | Hrs OT | Tasa OT | Subtotal OT |
+| Hotel | Position | Net hrs | Pay rate | Regular subtotal | OT hrs | OT rate | OT subtotal |
 |---|---|---|---|---|---|---|---|
 | Costa Esmeralda | HK | 37.5 | **$14.00*** | $525.00 | 0 | — | $0.00 |
 
-\* Rate interno — superior al rate contractual ($12.50). Visible solo para Contabilidad ([[Manager de Contabilidad]] y [[Contadora]]).
+\* Internal rate — higher than the contractual rate ($12.50). Visible only to Accounting ([[Manager de Contabilidad]] and [[Contadora]]).
 
-| **Total a pagar** | **$525.00** |
+| **Total payable** | **$525.00** |
 |---|---|
 
-### 2.5 — Consolidado: Ana Castillo (estándar)
+### 2.5 — Summary: Ana Castillo (standard)
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Colaborador | Ana Castillo |
-| Semana | Sem 30 — 21 al 27 de julio 2026 |
+| Associate | Ana Castillo |
+| Week | Week 30 — July 21–27, 2026 |
 
-| Hotel | Posición | Hrs netas | Pay rate | Subtotal regular | Hrs OT | Tasa OT | Subtotal OT |
+| Hotel | Position | Net hrs | Pay rate | Regular subtotal | OT hrs | OT rate | OT subtotal |
 |---|---|---|---|---|---|---|---|
 | Costa Esmeralda | LN | 37.5 | $11.50 | $431.25 | 0 | — | $0.00 |
 
-| **Total a pagar** | **$431.25** |
+| **Total payable** | **$431.25** |
 |---|---|
 
-> [!important] Visibilidad
-> El [[Consolidado Semanal del Colaborador|Consolidado Semanal]] es de uso exclusivo del departamento de Contabilidad. El hotel y el colaborador **no tienen acceso** a este documento. — [[Consolidado Semanal del Colaborador#Visibilidad]]
+> [!important] Visibility
+> The [[Consolidado Semanal del Colaborador|Weekly Summary]] is for exclusive use by the Accounting department. The hotel and the associate **do not have access** to this document. — [[Consolidado Semanal del Colaborador#Visibilidad]]
 
 ---
 
-## Fase 3 — Cálculo automático del Pre-Payroll
+## Phase 3 — Automatic Pre-Payroll Calculation
 
-> Referencia: [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] paso 2 · [[Deducciones]]
+> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 2 · [[Deducciones]]
 
-Lunes 28 de julio por la mañana. El sistema genera el Pre-Payroll a partir de los Consolidados: aplica el rate interno donde corresponde, las [[Deducciones]] activas de cada colaborador y el overtime autorizado.
+Monday, July 28, morning. The system generates the Pre-Payroll from the Summaries: it applies the internal rate where applicable, the active [[Deducciones]] for each associate, and the authorized overtime.
 
-> [!success] **Paso 2 del Flujo de Nómina** — Automático. No requiere intervención humana.
+> [!success] **Payroll Flow Step 2** — Automatic. No human intervention required.
 
-### 3.1 — Deducciones aplicadas
+### 3.1 — Deductions Applied
 
-| Colaborador | Uniforme | Comida | Retención 16% | Total deducciones |
+| Associate | Uniform | Meal | 16% Withholding | Total deductions |
 |---|---|---|---|---|
 | María López | $15.00 | $15.00 | — | $30.00 |
 | Juan Hernández | $15.00 | $15.00 | — | $30.00 |
@@ -226,14 +226,14 @@ Lunes 28 de julio por la mañana. El sistema genera el Pre-Payroll a partir de l
 | Roberto Fuentes | $15.00 | $15.00 | $84.00 | $114.00 |
 | Ana Castillo | $15.00 | $15.00 | — | $30.00 |
 
-> [!warning] Reglas de Deducciones
-> - **Uniforme** ($15/persona): el [[Inspección/Inspector|Inspector]] registró la entrega el 23 de julio (Día 3). Se aplica al Consolidado de esta semana. — [[Deducciones#Uniforme]]
-> - **Comida** ($3/día laborado): configurada en el [[Core/Módulos/Contrato|Contrato]] de Costa Esmeralda. Se aplica solo en días con [[Timesheet]] registrado. Elena trabajó 3 días en Costa Esmeralda ($9) y 2 en Playa del Sol (donde **no** está configurada). — [[Deducciones#Comida]]
-> - **Retención 16%** ($84.00): Roberto Fuentes no tiene SSN/TaxID registrado. 16% × $525.00 = $84.00. Activa automáticamente hasta que la [[Contadora]] la desactive al recibir documentos. — [[Deducciones#Retención 16%]]
+> [!warning] Deduction Rules
+> - **Uniform** ($15/person): the [[Inspección/Inspector|Inspector]] registered delivery on July 23 (Day 3). Applied to this week's Summary. — [[Deducciones#Uniforme]]
+> - **Meal** ($3/day worked): configured in the Costa Esmeralda [[Core/Módulos/Contrato|Contract]]. Applied only on days with a recorded [[Timesheet]]. Elena worked 3 days at Costa Esmeralda ($9) and 2 at Playa del Sol (where it is **not** configured). — [[Deducciones#Comida]]
+> - **16% Withholding** ($84.00): Roberto Fuentes does not have an SSN/TaxID registered. 16% × $525.00 = $84.00. Activates automatically until the [[Contadora]] deactivates it upon receiving documents. — [[Deducciones#Retención 16%]]
 
-### 3.2 — Pre-Payroll completo
+### 3.2 — Full Pre-Payroll
 
-| # | Colaborador | Hotel(es) | Posición | Hrs reg | Hrs OT | Rate | Tasa OT | Bruto reg | Bruto OT | **Bruto total** | Deducciones | **Neto** |
+| # | Associate | Hotel(s) | Position | Reg hrs | OT hrs | Rate | OT rate | Reg gross | OT gross | **Total gross** | Deductions | **Net** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | María López | CE | HK | 37.5 | 0 | $12.50 | — | $468.75 | $0.00 | **$468.75** | $30.00 | **$438.75** |
 | 2 | Juan Hernández | CE | HM | 37.5 | 3 | $11.00 | $16.50 | $412.50 | $49.50 | **$462.00** | $30.00 | **$432.00** |
@@ -241,75 +241,75 @@ Lunes 28 de julio por la mañana. El sistema genera el Pre-Payroll a partir de l
 | 4 | Roberto Fuentes | CE | HK | 37.5 | 0 | $14.00* | — | $525.00 | $0.00 | **$525.00** | $114.00 | **$411.00** |
 | 5 | Ana Castillo | CE | LN | 37.5 | 0 | $11.50 | — | $431.25 | $0.00 | **$431.25** | $30.00 | **$401.25** |
 
-\* Rate interno. CE = Costa Esmeralda, PdS = Playa del Sol.
+\* Internal rate. CE = Costa Esmeralda, PdS = Playa del Sol.
 
-| **Total nómina** | **$2,363.25** | **Total deducciones** | **$228.00** | **Total neto** | **$2,135.25** |
+| **Total payroll** | **$2,363.25** | **Total deductions** | **$228.00** | **Total net** | **$2,135.25** |
 |---|---|---|---|---|---|
 
 ---
 
-## Fase 4 — Validación humana por Contabilidad
+## Phase 4 — Human Validation by Accounting
 
-> Referencia: [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] paso 3 · [[Contadora]]
+> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 3 · [[Contadora]]
 
-Lunes 28 de julio, media mañana. Patricia Solano abre el Pre-Payroll generado por el sistema y comienza la validación línea por línea.
+Monday, July 28, mid-morning. Patricia Solano opens the system-generated Pre-Payroll and begins line-by-line validation.
 
-> [!warning] **Paso 3 del Flujo de Nómina** — Semi-automatizado. Requiere aprobación de Contabilidad.
+> [!warning] **Payroll Flow Step 3** — Semi-automated. Requires Accounting approval.
 
-### 4.1 — Checklist de validación
+### 4.1 — Validation Checklist
 
-Por cada línea del Pre-Payroll, Patricia verifica:
+For each Pre-Payroll line, Patricia verifies:
 
-- [ ] ID del colaborador correcto
-- [ ] Nombre/apellidos coinciden con el ID
-- [ ] Horas correctas según [[Timesheet]] aprobado
-- [ ] Rate correcto (interno o contractual según corresponda)
-- [ ] Descuentos aplicados correctamente
-- [ ] Posiciones correctas si tiene múltiples
-- [ ] Hotel correcto si trabaja en múltiples
+- [ ] Correct associate ID
+- [ ] Name/last name matches the ID
+- [ ] Correct hours per approved [[Timesheet]]
+- [ ] Correct rate (internal or contractual as applicable)
+- [ ] Deductions correctly applied
+- [ ] Correct positions if multiple
+- [ ] Correct hotel if working at multiple
 
-### 4.2 — Discrepancia detectada
+### 4.2 — Discrepancy Detected
 
-Patricia revisa la línea 4 (Roberto Fuentes) y detecta un error: el sistema aplicó el rate contractual ($12.50/hr) en lugar del rate interno ($14.00/hr).
+Patricia reviews line 4 (Roberto Fuentes) and detects an error: the system applied the contractual rate ($12.50/hr) instead of the internal rate ($14.00/hr).
 
-| Campo | Valor en Pre-Payroll | Valor correcto |
+| Field | Value in Pre-Payroll | Correct value |
 |---|---|---|
-| Rate de Roberto Fuentes | $12.50/hr (contractual) | $14.00/hr (rate interno) |
-| Bruto regular | $468.75 | $525.00 |
-| Retención 16% | $75.00 | $84.00 |
-| Total deducciones | $105.00 | $114.00 |
-| Neto | $363.75 | $411.00 |
+| Roberto Fuentes rate | $12.50/hr (contractual) | $14.00/hr (internal rate) |
+| Regular gross | $468.75 | $525.00 |
+| 16% withholding | $75.00 | $84.00 |
+| Total deductions | $105.00 | $114.00 |
+| Net | $363.75 | $411.00 |
 
-Patricia corrige el rate en el sistema. El Pre-Payroll se recalcula automáticamente para la línea afectada.
+Patricia corrects the rate in the system. The Pre-Payroll recalculates automatically for the affected line.
 
-> [!warning] Regla de negocio
-> Cuando existe un rate interno, el sistema debe usarlo para calcular el pago al colaborador en lugar del rate contractual. El rate interno **no se refleja** en la [[Facturación al Hotel|Factura al Hotel]]. — [[Consolidado Semanal del Colaborador#Rate interno]]
+> [!warning] Business Rule
+> When an internal rate exists, the system must use it to calculate the associate's payment instead of the contractual rate. The internal rate **is not reflected** in the [[Facturación al Hotel|Hotel Invoice]]. — [[Consolidado Semanal del Colaborador#Rate interno]]
 
-### 4.3 — Aprobación
+### 4.3 — Approval
 
-Patricia confirma que las 5 líneas restantes son correctas: IDs coinciden con nombres, horas coinciden con los [[Timesheet|Timesheets]] aprobados, deducciones aplicadas correctamente, posiciones y hoteles correctos.
+Patricia confirms that the remaining 5 lines are correct: IDs match names, hours match approved [[Timesheet|Timesheets]], deductions correctly applied, positions and hotels correct.
 
-**Patricia aprueba el Pre-Payroll.**
+**Patricia approves the Pre-Payroll.**
 
 ---
 
-## Fase 5 — Generación automática de la Factura al Hotel
+## Phase 5 — Automatic Hotel Invoice Generation
 
-> Referencia: [[Facturación al Hotel]] · [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] paso 4 · [[Core/Módulos/Contrato|Contrato]]
+> Reference: [[Facturación al Hotel]] · [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 4 · [[Core/Módulos/Contrato|Contract]]
 
-Lunes 28 de julio. Tras la aprobación del Pre-Payroll, el sistema genera automáticamente las facturas a cada hotel.
+Monday, July 28. After Pre-Payroll approval, the system automatically generates invoices for each hotel.
 
-> [!success] **Paso 4 del Flujo de Nómina** — Automático. No requiere intervención humana.
+> [!success] **Payroll Flow Step 4** — Automatic. No human intervention required.
 
-### 5.1 — Factura al Hotel Costa Esmeralda
+### 5.1 — Invoice to Hotel Costa Esmeralda
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
 | Hotel | Hotel Costa Esmeralda |
-| Periodo | 21 al 27 de julio 2026 |
+| Period | July 21–27, 2026 |
 | Folio | ORJ-2026-S30-CE001 |
 
-| Colaborador | Posición | Hrs regulares | Bill rate | Subtotal regular | Hrs OT aut. | Tasa OT | Subtotal OT | **Total línea** |
+| Associate | Position | Regular hrs | Bill rate | Regular subtotal | Auth. OT hrs | OT rate | OT subtotal | **Line total** |
 |---|---|---|---|---|---|---|---|---|
 | María López | HK | 37.5 | $18.25 | $684.38 | 0 | — | $0.00 | **$684.38** |
 | Juan Hernández | HM | 37.5 | $16.50 | $618.75 | 3 | $24.75 | $74.25 | **$693.00** |
@@ -317,75 +317,75 @@ Lunes 28 de julio. Tras la aprobación del Pre-Payroll, el sistema genera autom�
 | Roberto Fuentes | HK | 37.5 | $18.25 | $684.38 | 0 | — | $0.00 | **$684.38** |
 | Ana Castillo | LN | 37.5 | $17.00 | $637.50 | 0 | — | $0.00 | **$637.50** |
 
-| | Monto |
+| | Amount |
 |---|---|
-| Subtotal servicios | $3,109.89 |
-| Acreditación comida (5 colaboradores × días laborados × $3) | −$69.00 |
-| **Total a cobrar** | **$3,040.89** |
+| Services subtotal | $3,109.89 |
+| Meal credit (5 associates × days worked × $3) | −$69.00 |
+| **Total due** | **$3,040.89** |
 
-> [!warning] Reglas de la Factura
-> - La Factura usa exclusivamente el **bill rate** del [[Core/Módulos/Contrato|Contrato]]. El rate interno de Roberto Fuentes ($14.00) **nunca** aparece en la Factura — se usa $18.25. — [[Facturación al Hotel]]
-> - Solo se factura el overtime **autorizado** por el hotel (3 horas de Juan). Las 2 horas no autorizadas no se incluyen. — [[Facturación al Hotel#Overtime autorizado]]
-> - La deducción de comida ($3/día) se acredita al hotel. 5 colaboradores × días con [[Timesheet]]: (5+5+3+5+5) = 23 días × $3 = $69.00. — [[Deducciones#Comida]]
+> [!warning] Invoice Rules
+> - The Invoice uses exclusively the **bill rate** from the [[Core/Módulos/Contrato|Contract]]. Roberto Fuentes's internal rate ($14.00) **never** appears on the Invoice — $18.25 is used. — [[Facturación al Hotel]]
+> - Only the **authorized** overtime is billed (3 hours for Juan). The 2 unauthorized hours are not included. — [[Facturación al Hotel#Overtime autorizado]]
+> - The meal deduction ($3/day) is credited to the hotel. 5 associates × days with [[Timesheet]]: (5+5+3+5+5) = 23 days × $3 = $69.00. — [[Deducciones#Comida]]
 
-### 5.2 — Factura al Hotel Playa del Sol
+### 5.2 — Invoice to Hotel Playa del Sol
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
 | Hotel | Hotel Playa del Sol |
-| Periodo | 24 al 25 de julio 2026 |
+| Period | July 24–25, 2026 |
 | Folio | ORJ-2026-S30-PS001 |
 
-| Colaborador | Posición | Hrs regulares | Bill rate | Subtotal regular | Hrs OT | Tasa OT | Subtotal OT | **Total línea** |
+| Associate | Position | Regular hrs | Bill rate | Regular subtotal | OT hrs | OT rate | OT subtotal | **Line total** |
 |---|---|---|---|---|---|---|---|---|
 | Elena Cruz | HK | 15.0 | $17.50 | $262.50 | 0 | — | $0.00 | **$262.50** |
 
-| | Monto |
+| | Amount |
 |---|---|
-| Subtotal servicios | $262.50 |
-| Acreditaciones | $0.00 |
-| **Total a cobrar** | **$262.50** |
+| Services subtotal | $262.50 |
+| Credits | $0.00 |
+| **Total due** | **$262.50** |
 
-> [!info] Hotel Playa del Sol no tiene configurada la deducción de comida en su [[Core/Módulos/Contrato|Contrato]].
+> [!info] Hotel Playa del Sol does not have the meal deduction configured in its [[Core/Módulos/Contrato|Contract]].
 
-### 5.3 — Aprobación de facturas
+### 5.3 — Invoice Approval
 
-Patricia revisa ambas facturas, verifica que los bill rates coinciden con los contratos, que solo el overtime autorizado está incluido, y que las acreditaciones de comida están correctas. Envía la validación a Irene.
+Patricia reviews both invoices, verifies that bill rates match the contracts, that only authorized overtime is included, and that meal credits are correct. She submits the validation to Irene.
 
-**Irene aprueba las facturas.**
+**Irene approves the invoices.**
 
 ---
 
-## Fase 6 — Exportación al proveedor de cheques
+## Phase 6 — Export to Check Provider
 
-> Referencia: [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] paso 5
+> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 5
 
-Lunes 28 de julio, tarde. El sistema genera el archivo de exportación con los datos de pago para el proveedor externo de cheques.
+Monday, July 28, afternoon. The system generates the export file with payment data for the external check provider.
 
-> [!success] **Paso 5 del Flujo de Nómina** — Automático. No requiere intervención humana.
+> [!success] **Payroll Flow Step 5** — Automatic. No human intervention required.
 
-| Colaborador | Monto neto | Hotel de entrega del cheque |
+| Associate | Net amount | Check delivery hotel |
 |---|---|---|
 | María López | $438.75 | Costa Esmeralda |
 | Juan Hernández | $432.00 | Costa Esmeralda |
-| Elena Cruz | $452.25 | Costa Esmeralda (más horas) |
+| Elena Cruz | $452.25 | Costa Esmeralda (most hours) |
 | Roberto Fuentes | $411.00 | Costa Esmeralda |
 | Ana Castillo | $401.25 | Costa Esmeralda |
-| **Total exportado** | **$2,135.25** | |
+| **Total exported** | **$2,135.25** | |
 
 ---
 
-## Fase 7 — Conciliación
+## Phase 7 — Reconciliation
 
-> Referencia: [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] paso 6 · [[Contadora]]
+> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 6 · [[Contadora]]
 
-Martes 29 de julio por la mañana. El proveedor de cheques devuelve la confirmación de los 5 cheques generados. Patricia inicia la conciliación: compara lo enviado contra lo devuelto.
+Tuesday, July 29, morning. The check provider returns confirmation of the 5 checks generated. Patricia initiates the reconciliation: she compares what was sent against what was returned.
 
-> [!warning] **Paso 6 del Flujo de Nómina** — Semi-automatizado. Requiere validación de Contabilidad.
+> [!warning] **Payroll Flow Step 6** — Semi-automated. Requires Accounting validation.
 
-### 7.1 — Discrepancia detectada
+### 7.1 — Discrepancy Detected
 
-| Colaborador | Monto enviado | Monto del proveedor | Diferencia |
+| Associate | Amount sent | Provider amount | Difference |
 |---|---|---|---|
 | María López | $438.75 | $438.75 | $0.00 ✓ |
 | Juan Hernández | $432.00 | $432.00 | $0.00 ✓ |
@@ -393,173 +393,173 @@ Martes 29 de julio por la mañana. El proveedor de cheques devuelve la confirmac
 | Roberto Fuentes | $411.00 | $411.50 | **+$0.50** ✗ |
 | Ana Castillo | $401.25 | $401.25 | $0.00 ✓ |
 
-Patricia identifica una discrepancia de $0.50 en el cheque de Roberto Fuentes. Investiga: el proveedor redondeó un cálculo intermedio de forma diferente. Patricia solicita corrección al proveedor. El cheque corregido ($411.00) es confirmado.
+Patricia identifies a $0.50 discrepancy in Roberto Fuentes's check. She investigates: the provider rounded an intermediate calculation differently. Patricia requests a correction from the provider. The corrected check ($411.00) is confirmed.
 
-### 7.2 — Conciliación aprobada
+### 7.2 — Reconciliation Approved
 
-Patricia valida que los 5 cheques coinciden con los montos del Pre-Payroll aprobado.
+Patricia validates that all 5 checks match the approved Pre-Payroll amounts.
 
-**Patricia aprueba la conciliación.**
+**Patricia approves the reconciliation.**
 
 ---
 
-## Fase 8 — Autorización final y liberación de pagos
+## Phase 8 — Final Authorization and Payment Release
 
-> Referencia: [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] paso 7 · [[Manager de Contabilidad]]
+> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 7 · [[Manager de Contabilidad]]
 
-Martes 29 de julio, mediodía. Irene autoriza la liberación de la nómina semanal.
+Tuesday, July 29, midday. Irene authorizes the release of the weekly payroll.
 
-> [!warning] **Paso 7 del Flujo de Nómina** — Semi-automatizado. Requiere autorización del [[Manager de Contabilidad]].
+> [!warning] **Payroll Flow Step 7** — Semi-automated. Requires [[Manager de Contabilidad]] authorization.
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Fecha de autorización | 29 julio 2026, 12:15 PM |
-| Autorizado por | Irene — [[Manager de Contabilidad]] |
-| Total nómina liberada | $2,135.25 (5 cheques) |
-| Status | Pagos ejecutados |
+| Authorization date | July 29, 2026, 12:15 PM |
+| Authorized by | Irene — [[Manager de Contabilidad]] |
+| Total payroll released | $2,135.25 (5 checks) |
+| Status | Payments executed |
 
-> [!tip] Registro del sistema
-> El sistema registra la fecha, hora y responsable de la autorización final. Este registro es la trazabilidad de auditoría del ciclo de pago semanal.
+> [!tip] System Record
+> The system logs the date, time, and responsible party for the final authorization. This record is the audit trail for the weekly payment cycle.
 
-Los colaboradores recibirán sus cheques en el hotel asignado (todos en Costa Esmeralda para esta semana).
+Associates will receive their checks at the assigned hotel (all at Costa Esmeralda this week).
 
 ---
 
-## Fase 9 — Factura partida por cruce de mes
+## Phase 9 — Split Invoice for Month Crossover
 
-> Referencia: [[Facturación al Hotel#Factura partida por cruce de mes]] · [[Core/Módulos/Contrato|Contrato]]
+> Reference: [[Facturación al Hotel#Factura partida por cruce de mes]] · [[Core/Módulos/Contrato|Contract]]
 
-### 9.1 — Contexto: semana del 28 de julio al 3 de agosto
+### 9.1 — Context: Week of July 28 – August 3
 
-La siguiente semana laboral (Sem 31) cruza dos meses calendario:
-- **Julio:** lunes 28, martes 29, miércoles 30, jueves 31 (4 días laborales)
-- **Agosto:** viernes 1 (1 día laboral) + sábado 2 y domingo 3 (descanso)
+The next work week (Week 31) crosses two calendar months:
+- **July:** Monday July 28, Tuesday July 29, Wednesday July 30, Thursday July 31 (4 work days)
+- **August:** Friday August 1 (1 work day) + Saturday August 2 and Sunday August 3 (rest)
 
-El [[Core/Módulos/Contrato|Contrato]] del Hotel Costa Esmeralda tiene configurado "Factura partida por mes: Sí". Esto obliga al sistema a generar **dos facturas separadas** cuando la semana cruza la frontera mensual.
+The [[Core/Módulos/Contrato|Contract]] for Hotel Costa Esmeralda has "Split invoice by month: Yes" configured. This requires the system to generate **two separate invoices** when the week crosses the monthly boundary.
 
-### 9.2 — Ejemplo: María López en la semana partida
+### 9.2 — Example: María López in the Split Week
 
-**Factura 1 — Porción julio (28–31 julio)**
+**Invoice 1 — July portion (July 28–31)**
 
-| Colaborador | Posición | Hrs regulares | Bill rate | Subtotal |
+| Associate | Position | Regular hrs | Bill rate | Subtotal |
 |---|---|---|---|---|
 | María López | HK | 30.0 | $18.25 | $547.50 |
 
-**Factura 2 — Porción agosto (1 agosto)**
+**Invoice 2 — August portion (August 1)**
 
-| Colaborador | Posición | Hrs regulares | Bill rate | Subtotal |
+| Associate | Position | Regular hrs | Bill rate | Subtotal |
 |---|---|---|---|---|
 | María López | HK | 7.5 | $18.25 | $136.88 |
 
-> [!warning] Regla de negocio
-> Cuando una semana abarca dos meses calendario y el [[Core/Módulos/Contrato|Contrato]] tiene "Factura partida por mes: Sí", el sistema genera dos facturas separadas: una por los días del mes que termina y otra por los días del mes nuevo. — [[Facturación al Hotel#Factura partida por cruce de mes]]
+> [!warning] Business Rule
+> When a week spans two calendar months and the [[Core/Módulos/Contrato|Contract]] has "Split invoice by month: Yes", the system generates two separate invoices: one for the days of the ending month and another for the days of the new month. — [[Facturación al Hotel#Factura partida por cruce de mes]]
 
-El sistema genera las dos facturas completas (con todos los colaboradores) de forma automática. Patricia las valida y aprueba como parte del ciclo normal del [[Contabilidad/Flujo de Nómina|Flujo de Nómina]].
+The system automatically generates both complete invoices (with all associates). Patricia validates and approves them as part of the normal [[Contabilidad/Flujo de Nómina|Payroll Flow]] cycle.
 
 ---
 
-## Fase 10 — Desactivación de retención 16%
+## Phase 10 — 16% Withholding Deactivation
 
-> Referencia: [[Deducciones#Retención 16%]] · [[Contadora]]
+> Reference: [[Deducciones#Retención 16%]] · [[Contadora]]
 
-### 10.1 — Roberto Fuentes entrega documentos
+### 10.1 — Roberto Fuentes Delivers Documents
 
-Lunes 4 de agosto de 2026. Roberto Fuentes entrega su SSN al departamento de Recursos Humanos. La información se actualiza en su perfil del sistema (campo "Tiene SSN/TaxID: sí").
+Monday, August 4, 2026. Roberto Fuentes delivers his SSN to the Human Resources department. The information is updated in his system profile (field "Has SSN/TaxID: yes").
 
-### 10.2 — Desactivación manual
+### 10.2 — Manual Deactivation
 
-Patricia Solano recibe la notificación de que Roberto ya tiene SSN registrado. Accede al módulo de [[Deducciones]] y **desactiva manualmente** la retención 16% para Roberto Fuentes.
+Patricia Solano receives the notification that Roberto now has a registered SSN. She accesses the [[Deducciones]] module and **manually deactivates** the 16% withholding for Roberto Fuentes.
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Colaborador | Roberto Fuentes |
-| Deducción | Retención 16% |
-| Status anterior | Activa |
-| Status nuevo | Desactivada |
-| Fecha de desactivación | 4 agosto 2026 |
-| Responsable | Patricia Solano — [[Contadora]] |
+| Associate | Roberto Fuentes |
+| Deduction | 16% Withholding |
+| Previous status | Active |
+| New status | Deactivated |
+| Deactivation date | August 4, 2026 |
+| Responsible | Patricia Solano — [[Contadora]] |
 
-### 10.3 — Monto acumulado retenido
+### 10.3 — Cumulative Withheld Amount
 
-El sistema muestra el historial de retenciones acumuladas:
+The system displays the accumulated withholding history:
 
-| Semana | Monto bruto | Retención 16% |
+| Week | Gross amount | 16% Withholding |
 |---|---|---|
-| Sem 30 (21–27 jul) | $525.00 | $84.00 |
-| Sem 31 (28 jul – 3 ago) | $525.00 | $84.00 |
-| **Total acumulado** | | **$168.00** |
+| Week 30 (Jul 21–27) | $525.00 | $84.00 |
+| Week 31 (Jul 28 – Aug 3) | $525.00 | $84.00 |
+| **Total accumulated** | | **$168.00** |
 
-> [!important] Reembolso
-> La retención 16% es **reembolsable**. Al desactivar, el sistema permite generar el reembolso del monto acumulado retenido ($168.00). Patricia puede programar el reembolso en el siguiente ciclo de nómina o fraccionarlo según la política interna de Oranje. — [[Deducciones#Retención 16%]]
+> [!important] Refund
+> The 16% withholding is **refundable**. Upon deactivation, the system allows generating a refund for the accumulated withheld amount ($168.00). Patricia can schedule the refund in the next payroll cycle or split it according to Oranje's internal policy. — [[Deducciones#Retención 16%]]
 
-A partir de la semana 32, el cheque de Roberto ya no incluirá la retención 16%.
+Starting from week 32, Roberto's check will no longer include the 16% withholding.
 
 ---
 
-## Fase 11 — Cálculo de vacaciones
+## Phase 11 — Vacation Pay Calculation
 
-> Referencia: [[Vacaciones]] · [[Contadora]] · [[Consolidado Semanal del Colaborador]]
+> Reference: [[Vacaciones]] · [[Contadora]] · [[Consolidado Semanal del Colaborador]]
 
-### 11.1 — Contexto
+### 11.1 — Context
 
-Julio 2027 — un año después. Carmen Delgado, [[Posiciones|Housekeeper]] veterana, solicita el cálculo de sus vacaciones. Carmen ha trabajado 52 semanas completas en dos hoteles:
+July 2027 — one year later. Carmen Delgado, a veteran [[Posiciones|Housekeeper]], requests her vacation pay calculation. Carmen has worked 52 complete weeks at two hotels:
 
-| Hotel | Posición | Semanas | Pay rate |
+| Hotel | Position | Weeks | Pay rate |
 |---|---|---|---|
 | Costa Esmeralda | HK | 35 | $12.50 |
 | Playa del Sol | HK | 17 | $13.00 |
 
-### 11.2 — Cálculo
+### 11.2 — Calculation
 
-Patricia selecciona a Carmen Delgado y el periodo de 52 semanas en el sistema. El cálculo se ejecuta automáticamente.
+Patricia selects Carmen Delgado and the 52-week period in the system. The calculation runs automatically.
 
-**Fórmula:** Promedio de horas = Σ horas netas pagadas ÷ semanas trabajadas (por hotel)
+**Formula:** Average hours = Σ net hours paid ÷ weeks worked (per hotel)
 
-| Hotel | Total hrs netas (52 sem) | Semanas | Promedio hrs/semana | Pay rate | Valor semanal |
+| Hotel | Total net hrs (52 wks) | Weeks | Avg hrs/week | Pay rate | Weekly value |
 |---|---|---|---|---|---|
 | Costa Esmeralda | 1,295.0 | 35 | 37.0 | $12.50 | $462.50 |
 | Playa del Sol | 612.0 | 17 | 36.0 | $13.00 | $468.00 |
 | **Total** | **1,907.0** | **52** | | | **$930.50** |
 
-### 11.3 — Desglose presentado por el sistema
+### 11.3 — Breakdown Presented by the System
 
-| Desglose | Promedio hrs/sem | Rate | Valor |
+| Breakdown | Avg hrs/wk | Rate | Value |
 |---|---|---|---|
-| Por hotel — Costa Esmeralda (HK) | 37.0 | $12.50 | $462.50 |
-| Por hotel — Playa del Sol (HK) | 36.0 | $13.00 | $468.00 |
-| **Pago de vacaciones (equivalente semanal)** | | | **$930.50** |
+| Per hotel — Costa Esmeralda (HK) | 37.0 | $12.50 | $462.50 |
+| Per hotel — Playa del Sol (HK) | 36.0 | $13.00 | $468.00 |
+| **Vacation Pay (weekly equivalent)** | | | **$930.50** |
 
-> [!warning] Regla de negocio
-> Cuando el colaborador trabajó con distintos rates, el sistema separa las semanas/horas por rate, calcula el promedio por cada rate independientemente y presenta el desglose por hotel, posición y rate. — [[Vacaciones#Complejidad por múltiples rates]]
+> [!warning] Business Rule
+> When the associate worked at different rates, the system separates the weeks/hours by rate, calculates the average for each rate independently, and presents the breakdown by hotel, position, and rate. — [[Vacaciones#Complejidad por múltiples rates]]
 
-> [!info] Si Carmen tuviera menos de 52 semanas de antigüedad, el sistema promediar ía sobre las semanas disponibles. — [[Vacaciones#Fórmula]]
+> [!info] If Carmen had fewer than 52 weeks of seniority, the system would average over the available weeks. — [[Vacaciones#Fórmula]]
 
 ---
 
-## Resumen del Flujo de Nómina ejecutado
+## Summary of Payroll Flow Executed
 
-| Paso | Descripción | Automatización | Fecha | Responsable |
+| Step | Description | Automation | Date | Responsible |
 |---|---|---|---|---|
-| 1 | Generación del [[Consolidado Semanal del Colaborador\|Consolidado Semanal]] | Automático | 27 jul (dom noche) | Sistema |
-| 2 | Cálculo del Pre-Payroll | Automático | 28 jul (lun AM) | Sistema |
-| 3 | Validación del Pre-Payroll | Semi-automático | 28 jul (lun mañana) | Patricia Solano |
-| 4 | Generación de [[Facturación al Hotel\|Factura al Hotel]] | Automático | 28 jul (lun) | Sistema |
-| 5 | Exportación a proveedor de cheques | Automático | 28 jul (lun tarde) | Sistema |
-| 6 | Conciliación | Semi-automático | 29 jul (mar AM) | Patricia Solano |
-| 7 | Autorización final y pago | Semi-automático | 29 jul (mar mediodía) | Patricia Solano |
+| 1 | [[Consolidado Semanal del Colaborador\|Weekly Summary]] generation | Automatic | Jul 27 (Sun night) | System |
+| 2 | Pre-Payroll calculation | Automatic | Jul 28 (Mon AM) | System |
+| 3 | Pre-Payroll validation | Semi-automatic | Jul 28 (Mon morning) | Patricia Solano |
+| 4 | [[Facturación al Hotel\|Hotel Invoice]] generation | Automatic | Jul 28 (Mon) | System |
+| 5 | Export to check provider | Automatic | Jul 28 (Mon afternoon) | System |
+| 6 | Reconciliation | Semi-automatic | Jul 29 (Tue AM) | Patricia Solano |
+| 7 | Final authorization and payment | Semi-automatic | Jul 29 (Tue midday) | Patricia Solano |
 
 ```mermaid
 graph TD
-    T[Timesheets aprobados<br/>Dom noche] -->|Paso 1 — Automático| CS[Consolidado Semanal<br/>por colaborador]
-    CS -->|Paso 2 — Automático| PP[Pre-Payroll<br/>rate interno + deducciones + OT]
-    PP -->|Paso 3 — Semi-automático| VAL{Contadora<br/>valida}
-    VAL -->|Aprueba| FH[Factura al Hotel<br/>Paso 4 — Automático]
-    VAL -->|Corrige| PP
-    FH --> EXP[Exportación a proveedor<br/>Paso 5 — Automático]
-    EXP --> CONC{Conciliación<br/>Paso 6 — Semi-automático}
-    CONC -->|OK| AUTH[Autorización final<br/>Paso 7 — Semi-automático]
-    CONC -->|Discrepancia| FIX[Resolución] --> CONC
-    AUTH --> PAGO[Pagos ejecutados]
+    T[Approved Timesheets<br/>Sun night] -->|Step 1 — Automatic| CS[Weekly Summary<br/>per associate]
+    CS -->|Step 2 — Automatic| PP[Pre-Payroll<br/>internal rate + deductions + OT]
+    PP -->|Step 3 — Semi-automatic| VAL{Accountant<br/>validates}
+    VAL -->|Approves| FH[Hotel Invoice<br/>Step 4 — Automatic]
+    VAL -->|Corrects| PP
+    FH --> EXP[Export to provider<br/>Step 5 — Automatic]
+    EXP --> CONC{Reconciliation<br/>Step 6 — Semi-automatic}
+    CONC -->|OK| AUTH[Final authorization<br/>Step 7 — Semi-automatic]
+    CONC -->|Discrepancy| FIX[Resolution] --> CONC
+    AUTH --> PAGO[Payments executed]
 
     style T fill:#4CAF50,color:#fff
     style CS fill:#4CAF50,color:#fff
@@ -575,45 +575,45 @@ graph TD
 
 ---
 
-## Escenarios contables cubiertos
+## Accounting Scenarios Covered
 
-| # | Escenario | Colaborador | Fase | Módulo principal |
+| # | Scenario | Associate | Phase | Main Module |
 |---|---|---|---|---|
-| 1 | Caso estándar (horas regulares, sin OT) | María López | 2–8 | [[Consolidado Semanal del Colaborador]] |
-| 2 | Overtime autorizado parcialmente (5 OT, hotel aprueba 3) | Juan Hernández | 2–8 | [[Consolidado Semanal del Colaborador]] |
-| 3 | Multi-hotel con cheque al hotel de más horas | Elena Cruz | 2–8 | [[Consolidado Semanal del Colaborador]] |
-| 4 | Rate interno (mayor al contractual) | Roberto Fuentes | 2–5 | [[Consolidado Semanal del Colaborador]] |
-| 5 | Retención 16% (sin SSN) + desactivación + reembolso | Roberto Fuentes | 3, 10 | [[Deducciones]] |
-| 6 | Deducción de uniforme (Día 3) | Todos | 3 | [[Deducciones]] |
-| 7 | Deducción de comida + acreditación al hotel | Todos (Costa Esmeralda) | 3, 5 | [[Deducciones]] · [[Facturación al Hotel]] |
-| 8 | Factura partida por cruce de mes | Todos (Costa Esmeralda) | 9 | [[Facturación al Hotel]] |
-| 9 | Cálculo de vacaciones multi-hotel | Carmen Delgado | 11 | [[Vacaciones]] |
-| 10 | Discrepancia en Pre-Payroll (rate incorrecto) | Roberto Fuentes | 4 | [[Contadora]] |
-| 11 | Discrepancia en conciliación (proveedor) | Roberto Fuentes | 7 | [[Contadora]] |
+| 1 | Standard case (regular hours, no OT) | María López | 2–8 | [[Consolidado Semanal del Colaborador]] |
+| 2 | Partially authorized overtime (5 OT, hotel approves 3) | Juan Hernández | 2–8 | [[Consolidado Semanal del Colaborador]] |
+| 3 | Multi-hotel with check at hotel with most hours | Elena Cruz | 2–8 | [[Consolidado Semanal del Colaborador]] |
+| 4 | Internal rate (higher than contractual) | Roberto Fuentes | 2–5 | [[Consolidado Semanal del Colaborador]] |
+| 5 | 16% withholding (no SSN) + deactivation + refund | Roberto Fuentes | 3, 10 | [[Deducciones]] |
+| 6 | Uniform deduction (Day 3) | All | 3 | [[Deducciones]] |
+| 7 | Meal deduction + hotel credit | All (Costa Esmeralda) | 3, 5 | [[Deducciones]] · [[Facturación al Hotel]] |
+| 8 | Split invoice for month crossover | All (Costa Esmeralda) | 9 | [[Facturación al Hotel]] |
+| 9 | Multi-hotel vacation pay calculation | Carmen Delgado | 11 | [[Vacaciones]] |
+| 10 | Pre-Payroll discrepancy (incorrect rate) | Roberto Fuentes | 4 | [[Contadora]] |
+| 11 | Reconciliation discrepancy (provider) | Roberto Fuentes | 7 | [[Contadora]] |
 
 ---
 
-## Módulos y conceptos referenciados
+## Referenced Modules and Concepts
 
-| Módulo | Referencia |
+| Module | Reference |
 |---|---|
-| Contabilidad | [[Manager de Contabilidad]] · [[Contadora]] · [[Contabilidad/Flujo de Nómina\|Flujo de Nómina]] |
-| Consolidado y pago | [[Consolidado Semanal del Colaborador]] · [[Deducciones]] |
-| Facturación | [[Facturación al Hotel]] |
-| Vacaciones | [[Vacaciones]] |
-| Core | [[Core/Módulos/Contrato\|Contrato]] · [[Timesheet]] · [[Core/Módulos/Schedule\|Schedule]] |
-| Semáforos | [[Semáforo del Colaborador]] · [[Semáforo Onboarding]] |
-| Catálogos | [[Posiciones]] · [[Zonas]] |
-| Inspección | [[Inspección/Inspector\|Inspector]] |
-| Reclutamiento | [[Reclutadora]] |
-| Calidad | [[Operador de QA]] · [[Métricas y KPIs por Departamento]] |
+| Accounting | [[Manager de Contabilidad]] · [[Contadora]] · [[Contabilidad/Flujo de Nómina\|Payroll Flow]] |
+| Summary and payment | [[Consolidado Semanal del Colaborador]] · [[Deducciones]] |
+| Billing | [[Facturación al Hotel]] |
+| Vacation Pay | [[Vacaciones]] |
+| Core | [[Core/Módulos/Contrato\|Contract]] · [[Timesheet]] · [[Core/Módulos/Schedule\|Schedule]] |
+| Status Indicators | [[Semáforo del Colaborador]] · [[Semáforo Onboarding]] |
+| Catalogs | [[Posiciones]] · [[Zonas]] |
+| Inspection | [[Inspección/Inspector\|Inspector]] |
+| Recruitment | [[Reclutadora]] |
+| Quality | [[Operador de QA]] · [[Métricas y KPIs por Departamento]] |
 
 ---
 
-## Simulaciones relacionadas
+## Related Simulations
 
-- [[Simulación - Punto de Vista de Ventas]] — Narra el ciclo comercial del Hotel Costa Esmeralda desde la prospección hasta la conversión a cliente activo. Los términos contractuales (pay rate, bill rate, overtime) negociados en esa simulación son los que aquí se usan para calcular pagos y facturas.
-- [[Simulación - Punto de Vista de Inspección]] — Cubre la operación de campo del Inspector Daniel Ortega, incluyendo la entrega de uniformes en Día 3 que dispara la deducción de uniforme procesada en esta simulación.
-- [[Simulación - Punto de Vista del Hotel]] — Muestra la facturación semanal desde la perspectiva del hotel, complementando la vista interna de Contabilidad presentada aquí.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Incluye el cierre de semana con generación del Consolidado y Pre-Payroll para los colaboradores reclutados, conectando con el flujo de nómina aquí detallado.
-- [[Simulación - Ciclo de Vida del Colaborador]] — Recorre los 12 estados del semáforo del colaborador e incluye ejemplos de cálculo de cheque con deducciones, overtime y rate interno que se alinean con los escenarios de esta simulación.
+- [[Simulación - Punto de Vista de Ventas]] — Narrates the commercial cycle of Hotel Costa Esmeralda from prospecting through conversion to active client. The contractual terms (pay rate, bill rate, overtime) negotiated in that simulation are the ones used here to calculate payments and invoices.
+- [[Simulación - Punto de Vista de Inspección]] — Covers the field operations of Inspector Daniel Ortega, including the Day 3 uniform delivery that triggers the uniform deduction processed in this simulation.
+- [[Simulación - Punto de Vista del Hotel]] — Shows the weekly billing from the hotel's perspective, complementing the internal Accounting view presented here.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Includes the week-end close with Weekly Summary and Pre-Payroll generation for the recruited associates, connecting to the payroll flow detailed here.
+- [[Simulación - Ciclo de Vida del Colaborador]] — Traces the 12 states of the associate status indicator and includes check calculation examples with deductions, overtime, and internal rate that align with the scenarios in this simulation.

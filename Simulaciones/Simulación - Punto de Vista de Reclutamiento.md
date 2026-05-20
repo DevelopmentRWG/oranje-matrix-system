@@ -1,830 +1,830 @@
 ---
-tipo: simulación
-perspectiva: reclutamiento
-hotel_ficticio: Hotel Coral Bay / Hotel Sierra Alta
-zona: Sur / Centro
+type: simulation
+perspective: recruitment
+fictional_hotel: Hotel Coral Bay / Hotel Sierra Alta
+zone: South / Center
 tags:
-  - simulación
-  - reclutamiento
-  - ciclo-completo
+  - simulation
+  - recruitment
+  - full-cycle
 aliases:
-  - Simulación Reclutamiento
-  - Simulación de Reclutamiento
+  - Simulation Recruitment
+  - Recruitment Simulation
 ---
 
-# Simulación completa — Punto de vista de Reclutamiento
+# Full Simulation — Recruitment Perspective
 
-> [!abstract] Propósito
-> Esta simulación narra una semana operativa completa desde la perspectiva del departamento de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Recorre todas las responsabilidades del equipo: captación de candidatos, consulta de Blacklist, self-pick de requisiciones, asignación al Pool, progresión del colaborador, cobertura parcial con escalación por timeout, auto-asignación por sistema, asignación temporal (Café), gestión de incidencias (inasistencias y reportes), y entrada al sistema de pago. El ciclo se cierra con la supervisión de calidad (QA) y la medición de los KPIs del departamento. Todos los datos son ficticios, pero cada acción, transición y regla respeta fielmente la documentación del vault.
+> [!abstract] Purpose
+> This simulation narrates a complete operational week from the perspective of the [[Reclutamiento/Reclutamiento|Reclutamiento]] department. It covers all team responsibilities: candidate sourcing, Blacklist lookup, requisition self-pick, Pool assignment, associate progression, partial coverage with timeout escalation, system auto-assignment, temporary assignment (Brown), incident management (absences and reports), and entry into the payroll system. The cycle closes with quality supervision (QA) and measurement of the department's KPIs. All data is fictional, but every action, transition, and rule faithfully reflects the vault documentation.
 
-## Personajes de la simulación
+## Simulation Characters
 
-| Personaje | Rol | Departamento |
+| Character | Role | Department |
 |---|---|---|
-| Daniela Ríos | [[Reclutamiento/Reclutadora\|Reclutadora]] | Reclutamiento — Oranje (Grupo A) |
-| Valeria Soto | [[Reclutamiento/Reclutadora\|Reclutadora]] | Reclutamiento — Oranje (Grupo A) |
-| Lucía Méndez | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] | Reclutamiento — Oranje (Grupo A) |
-| Fernando Ortiz | [[Reclutamiento/Manager de Reclutamiento\|Manager de Reclutamiento]] | Reclutamiento — Oranje |
-| Operador 5 | [[Operador de QA]] (asignado fijo a Reclutamiento) | QA — Oranje |
-| Marco Duarte | [[Hotel/Supervisor\|Supervisor]] | Hotel Coral Bay · Zona Sur |
-| Andrea Fuentes | [[Hotel/Manager de Área\|Manager de Área]] | Hotel Coral Bay · Zona Sur |
-| Roberto Lara | [[Hotel/Manager General\|Manager General]] | Hotel Coral Bay · Zona Sur |
-| Patricia Nava | [[Hotel/Supervisor\|Supervisor]] | Hotel Sierra Alta · Zona Centro |
-| Carmen López | [[Hotel/Manager de Área\|Manager de Área]] | Hotel Sierra Alta · Zona Centro |
-| Javier Torres | [[Inspección/Inspector\|Inspector]] | Zona Sur |
-| Elena Rojas | [[Inspección/Inspector\|Inspector]] | Zona Centro |
-| Sofía Cruz | Candidata nueva | — |
-| Miguel Ángel Paredes | Candidato nuevo | — |
-| Luis Gerardo Vega | Candidato en [[Core/Módulos/Blacklist\|Blacklist]] | — |
-| Ana Belén Herrera | Colaboradora existente (Verde fuerte) | Zona Sur |
-| Carlos Rivera | Colaborador existente (Amarillo) | Zona Centro |
-| Diana Morales | Colaboradora existente (Naranja, fija) | Zona Sur |
-| Pedro Jiménez | Colaborador existente (incidencia posterior) | Zona Sur |
-
----
-
-## Estado inicial del sistema — Lunes 19 de mayo, 08:00
-
-> [!info] Convenciones de la simulación
-> - Los nombres de personas y hoteles son ficticios.
-> - Las fechas están basadas en la semana del **lunes 19 de mayo al domingo 25 de mayo de 2026**.
-> - Los números de requisición siguen el formato documentado en [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]].
-> - Cada transición de semáforo cita la regla correspondiente.
-
-### Pool de Colaboradores
-
-| Estado en [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] | Cantidad | Ejemplo |
-|---|---|---|
-| Blanco (Pre-asignación) | 0 | — |
-| Verde fuerte (Disponible) | 12 | Ana Belén Herrera + 11 más |
-| Amarillo (Disponible voluntario) | 3 | Carlos Rivera + 2 más |
-| Naranja (Fijo) | 8 | Diana Morales + 7 más |
-| Rosa (Stand-by) | 2 | — |
-| Café (Asignación temporal) | 1 | — |
-
-### KPIs de la semana anterior
-
-Todos dentro de meta según [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
-
-| KPI | Meta | Resultado semana anterior |
-|---|---|---|
-| Cobertura total de requisiciones | ≥ 85% | 90% |
-| Tiempo promedio de toma | ≤ 8h | 4h |
-| Tasa de auto-asignación | ≤ 5% | 0% |
-| Tasa de escalación | ≤ 10% | 5% |
-| Consulta de Blacklist | 100% | 100% |
-| Tasa de ingreso al Pool | ≥ 60% | 75% |
-
-### Bandeja de requisiciones
-
-Vacía. No hay requisiciones pendientes al inicio de la semana.
+| Daniela Ríos | [[Reclutamiento/Reclutadora\|Reclutadora]] | Recruitment — Oranje (Group A) |
+| Valeria Soto | [[Reclutamiento/Reclutadora\|Reclutadora]] | Recruitment — Oranje (Group A) |
+| Lucía Méndez | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] | Recruitment — Oranje (Group A) |
+| Fernando Ortiz | [[Reclutamiento/Manager de Reclutamiento\|Manager de Reclutamiento]] | Recruitment — Oranje |
+| Operator 5 | [[Operador de QA]] (fixed assignment to Recruitment) | QA — Oranje |
+| Marco Duarte | [[Hotel/Supervisor\|Supervisor]] | Hotel Coral Bay · South Zone |
+| Andrea Fuentes | [[Hotel/Manager de Área\|Manager de Área]] | Hotel Coral Bay · South Zone |
+| Roberto Lara | [[Hotel/Manager General\|Manager General]] | Hotel Coral Bay · South Zone |
+| Patricia Nava | [[Hotel/Supervisor\|Supervisor]] | Hotel Sierra Alta · Center Zone |
+| Carmen López | [[Hotel/Manager de Área\|Manager de Área]] | Hotel Sierra Alta · Center Zone |
+| Javier Torres | [[Inspección/Inspector\|Inspector]] | South Zone |
+| Elena Rojas | [[Inspección/Inspector\|Inspector]] | Center Zone |
+| Sofía Cruz | New candidate | — |
+| Miguel Ángel Paredes | New candidate | — |
+| Luis Gerardo Vega | Candidate on [[Core/Módulos/Blacklist\|Blacklist]] | — |
+| Ana Belén Herrera | Existing associate (Dark Green) | South Zone |
+| Carlos Rivera | Existing associate (Yellow) | Center Zone |
+| Diana Morales | Existing associate (Orange, fixed) | South Zone |
+| Pedro Jiménez | Existing associate (subsequent incident) | South Zone |
 
 ---
 
-## Fase 1 — Reclutamiento continuo (caso feliz)
+## Initial System State — Monday May 19, 08:00
 
-> Referencia: [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] · [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] · [[Core/Módulos/Blacklist|Blacklist]]
+> [!info] Simulation Conventions
+> - Character and hotel names are fictional.
+> - Dates are based on the week of **Monday May 19 through Sunday May 25, 2026**.
+> - Requisition numbers follow the format documented in [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]].
+> - Each status indicator transition cites the corresponding rule.
 
-**Protagonistas:** Daniela Ríos (Reclutadora) y Sofía Cruz (candidata nueva).
+### Associate Pool
 
-El [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] es continuo: siempre está activo, haya o no requisiciones abiertas.
+| Status in [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] | Count | Example |
+|---|---|---|
+| White (Pre-assignment) | 0 | — |
+| Dark Green (Available) | 12 | Ana Belén Herrera + 11 more |
+| Yellow (Voluntary available) | 3 | Carlos Rivera + 2 more |
+| Orange (Fixed) | 8 | Diana Morales + 7 more |
+| Pink (Stand-by) | 2 | — |
+| Brown (Temporary assignment) | 1 | — |
 
-### 1.1 — Lunes 19 mayo, 09:00 — Entrevista inicial (Fase 1 del flujo)
+### KPIs from the previous week
 
-Daniela recibe a Sofía Cruz como candidata. Antes de iniciar cualquier proceso:
+All within target according to [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
 
-1. Daniela **consulta la [[Core/Módulos/Blacklist|Blacklist]]** → Sofía **no aparece** (resultado negativo).
+| KPI | Target | Prior week result |
+|---|---|---|
+| Total requisition coverage | ≥ 85% | 90% |
+| Average time to pick | ≤ 8h | 4h |
+| Auto-assignment rate | ≤ 5% | 0% |
+| Escalation rate | ≤ 10% | 5% |
+| Blacklist lookup | 100% | 100% |
+| Pool entry rate | ≥ 60% | 75% |
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "La Reclutadora debe consultar la Blacklist antes de reclutar a cualquier candidato."
+### Requisition queue
 
-2. Daniela procede con la entrevista inicial y captura los datos de la Fase 1:
+Empty. No pending requisitions at the start of the week.
 
-| Campo | Valor |
+---
+
+## Phase 1 — Ongoing Recruitment (happy path)
+
+> Reference: [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] · [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] · [[Core/Módulos/Blacklist|Blacklist]]
+
+**Main characters:** Daniela Ríos (Recruiter) and Sofía Cruz (new candidate).
+
+The [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] is continuous: it is always active, regardless of whether requisitions are open.
+
+### 1.1 — Monday May 19, 09:00 — Initial interview (Flow Phase 1)
+
+Daniela receives Sofía Cruz as a candidate. Before starting any process:
+
+1. Daniela **looks up the [[Core/Módulos/Blacklist|Blacklist]]** → Sofía **does not appear** (negative result).
+
+> [!warning] Business Rule
+> [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "The Recruiter must check the Blacklist before recruiting any candidate."
+
+2. Daniela proceeds with the initial interview and captures the Phase 1 data:
+
+| Field | Value |
 |---|---|
-| Nombre completo | Sofía Cruz Mendoza |
-| Edad | 24 años |
-| Género | Femenino |
-| Domicilio | Zona Sur |
-| Teléfono | (555) 012-3456 |
+| Full name | Sofía Cruz Mendoza |
+| Age | 24 years old |
+| Gender | Female |
+| Address | South Zone |
+| Phone | (555) 012-3456 |
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] — Fase 1: Entrevista inicial. Responsable: Reclutadora.
+> [!warning] Business Rule
+> [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] — Phase 1: Initial interview. Responsible: Recruiter.
 
-### 1.2 — Lunes 19 mayo, 09:30 — Alta en la app (Fase 2 del flujo)
+### 1.2 — Monday May 19, 09:30 — App registration (Flow Phase 2)
 
-Sofía descarga la app y completa sus datos:
+Sofía downloads the app and completes her profile:
 
-| Campo | Valor | Catálogo |
+| Field | Value | Catalog |
 |---|---|---|
 | SSN | XXX-XX-1234 | — |
 | ITIN | — | — |
-| Posición | Housekeeper | [[Core/Catálogos/Posiciones\|Posiciones]] |
-| Nivel de inglés | Intermedio | [[Core/Catálogos/Niveles de Inglés\|Niveles de Inglés]] |
-| Nivel de experiencia | 2 años | — |
-| Tipo de transporte | Auto propio | — |
-| Modalidad | Tiempo completo | [[Core/Catálogos/Modalidades de Contratación\|Modalidades de Contratación]] |
+| Position | Housekeeper | [[Core/Catálogos/Posiciones\|Posiciones]] |
+| English level | Intermediate | [[Core/Catálogos/Niveles de Inglés\|Niveles de Inglés]] |
+| Experience level | 2 years | — |
+| Transportation | Own car | — |
+| Modality | Full time | [[Core/Catálogos/Modalidades de Contratación\|Modalidades de Contratación]] |
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] — Fase 2: Alta en la app. Responsable: el propio Colaborador.
+> [!warning] Business Rule
+> [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] — Phase 2: App registration. Responsible: the Associate themselves.
 
-### 1.3 — Lunes 19 mayo, 10:00 — Datos de emergencia (Fase 3 del flujo)
+### 1.3 — Monday May 19, 10:00 — Emergency data (Flow Phase 3)
 
-Sofía completa desde la app:
+Sofía completes from the app:
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Contacto de emergencia | María Cruz (madre), (555) 098-7654 |
-| Tipo de sangre | O+ |
-| Alergias o condiciones | Ninguna |
+| Emergency contact | María Cruz (mother), (555) 098-7654 |
+| Blood type | O+ |
+| Allergies or conditions | None |
 
-> [!warning] Regla de negocio
-> [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]] — Fase 3: Datos de emergencia. Responsable: el propio Colaborador desde la app.
+> [!warning] Business Rule
+> [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]] — Phase 3: Emergency data. Responsible: the Associate themselves via the app.
 
-### 1.4 — Lunes 19 mayo, 10:15 — Validación y aprobación (Fase 4 del flujo)
+### 1.4 — Monday May 19, 10:15 — Validation and approval (Flow Phase 4)
 
-Daniela revisa toda la información capturada en las tres fases. Todo es correcto.
+Daniela reviews all the information captured across the three phases. Everything is correct.
 
-- Daniela **aprueba** a Sofía Cruz.
-- Habilita el acceso de Sofía a los paneles del sistema.
-- **Sofía Cruz ingresa al [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]].**
+- Daniela **approves** Sofía Cruz.
+- Enables Sofía's access to the system panels.
+- **Sofía Cruz enters the [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]].**
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] — Fase 4: Validación, aprobación y habilitación. Responsable: Reclutadora.
+> [!warning] Business Rule
+> [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] — Phase 4: Validation, approval, and enablement. Responsible: Recruiter.
 
-> [!info] Semáforo del Colaborador
-> **—** → **Blanco** — Aprobada e ingresa al Pool
-> **Fecha:** 2026-05-19 · **Responsable:** Daniela Ríos (Reclutadora) · **Comentario:** "Sofía Cruz aprueba las 4 fases del Flujo de Reclutamiento. Blacklist negativa confirmada."
+> [!info] Associate Status Indicator
+> **—** → **White** — Approved and enters the Pool
+> **Date:** 2026-05-19 · **Responsible:** Daniela Ríos (Recruiter) · **Comment:** "Sofía Cruz passes all 4 phases of the Recruitment Flow. Blacklist negative confirmed."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Al ser aprobado e ingresar al Pool, el colaborador entra en estado Blanco."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Upon approval and entry into the Pool, the associate enters White status."
 
-> [!tip] QA — Operador 5 observa
-> Sofía Cruz ingresa al Pool. La consulta de Blacklist fue realizada antes de iniciar el proceso. Tasa de ingreso al Pool: en seguimiento. Meta: ≥ 60% (aprobados / entrevistados). — [[QA/Métricas y KPIs por Departamento|KPI: Tasa de ingreso al Pool]]
+> [!tip] QA — Operator 5 observes
+> Sofía Cruz enters the Pool. The Blacklist lookup was performed before starting the process. Pool entry rate: being tracked. Target: ≥ 60% (approved / interviewed). — [[QA/Métricas y KPIs por Departamento|KPI: Pool entry rate]]
 
 ---
 
-## Fase 2 — Candidato en Blacklist
+## Phase 2 — Candidate on Blacklist
 
-> Referencia: [[Core/Módulos/Blacklist|Blacklist]] · [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]]
+> Reference: [[Core/Módulos/Blacklist|Blacklist]] · [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]]
 
-**Protagonistas:** Daniela Ríos (Reclutadora) y Luis Gerardo Vega (candidato vetado).
+**Main characters:** Daniela Ríos (Recruiter) and Luis Gerardo Vega (blacklisted candidate).
 
-### 2.1 — Lunes 19 mayo, 11:00 — Consulta de Blacklist (resultado positivo)
+### 2.1 — Monday May 19, 11:00 — Blacklist lookup (positive result)
 
-Luis Gerardo Vega se presenta como candidato. Daniela inicia el protocolo estándar:
+Luis Gerardo Vega presents as a candidate. Daniela initiates the standard protocol:
 
-1. **Consulta la [[Core/Módulos/Blacklist|Blacklist]]** → Luis Gerardo **aparece en estado Negro**.
-   - Motivo registrado: 3 inasistencias (Blacklist automático por sistema).
+1. **Looks up the [[Core/Módulos/Blacklist|Blacklist]]** → Luis Gerardo **appears in Black status**.
+   - Recorded reason: 3 absences (automatic Blacklist by system).
 
-> [!warning] Resultado
-> Luis Gerardo Vega está en la Blacklist. El proceso se detiene. No es posible reclutarlo.
+> [!warning] Result
+> Luis Gerardo Vega is on the Blacklist. The process stops. He cannot be recruited.
 
-- Luis Gerardo no aparece en búsquedas activas de la [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]].
-- Su historial se conserva para consulta interna.
+- Luis Gerardo does not appear in active searches of the [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]].
+- His history is preserved for internal review.
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Blacklist|Blacklist]] — "3 inasistencias → Blacklist automático por sistema."
+> [!warning] Business Rule
+> [[Core/Módulos/Blacklist|Blacklist]] — "3 absences → automatic Blacklist by system."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Blacklist|Blacklist]] — "Negro es PERMANENTE. No existe proceso de rehabilitación ni apelación."
+> [!warning] Business Rule
+> [[Core/Módulos/Blacklist|Blacklist]] — "Black is PERMANENT. No rehabilitation or appeal process exists."
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "La Reclutadora debe consultar la Blacklist antes de reclutar."
+> [!warning] Business Rule
+> [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "The Recruiter must check the Blacklist before recruiting."
 
-**No hay transición de semáforo. El candidato no entra al sistema.**
+**No status indicator transition. The candidate does not enter the system.**
 
 ---
 
-## Fase 3 — Self-Pick de requisición (cobertura 100%)
+## Phase 3 — Requisition Self-Pick (100% coverage)
 
-> Referencia: [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] · [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] · [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]] · [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia de Requisición]]
+> Reference: [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] · [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] · [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]] · [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia de Requisición]]
 
-**Protagonistas:** Daniela Ríos (Reclutadora), Andrea Fuentes (GH Hotel Coral Bay), Marco Duarte (SUP).
+**Main characters:** Daniela Ríos (Recruiter), Andrea Fuentes (GH Hotel Coral Bay), Marco Duarte (SUP).
 
-### 3.1 — Lunes 19 mayo, 14:00 — Creación de requisición por el hotel
+### 3.1 — Monday May 19, 14:00 — Requisition created by the hotel
 
-Marco Duarte (Supervisor) crea una requisición en el sistema:
+Marco Duarte (Supervisor) creates a requisition in the system:
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Número de requisición | `202605191400K3` |
+| Requisition number | `202605191400K3` |
 | Hotel | Coral Bay |
-| Zona | Sur |
-| Estado | Verde manzana (En elaboración) |
+| Zone | South |
+| Status | Apple Green (In preparation) |
 
-Posición solicitada:
+Requested position:
 
-| Posición | Modalidad | Cantidad | Fecha de inicio | Preferencia de idioma |
+| Position | Modality | Quantity | Start date | Language preference |
 |---|---|---|---|---|
-| Housekeeper | Tiempo completo | 4 | Miércoles 21 de mayo | Intermedio |
+| Housekeeper | Full time | 4 | Wednesday May 21 | Intermediate |
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] — "GM, GH o SUP crea la requisición con al menos una posición."
+> [!warning] Business Rule
+> [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] — "GM, GH or SUP creates the requisition with at least one position."
 
-> [!info] Semáforo de Requisición
-> **—** → **Verde manzana** — En elaboración
-> **Fecha:** 2026-05-19 14:00 · **Responsable:** Marco Duarte (Supervisor)
+> [!info] Requisition Status Indicator
+> **—** → **Apple Green** — In preparation
+> **Date:** 2026-05-19 14:00 · **Responsible:** Marco Duarte (Supervisor)
 
-> [!info] Semáforo de Posiciones de la Requisición
-> **—** → **Dorado** — En preparación (Housekeeper x4)
-> **Fecha:** 2026-05-19 14:00 · **Responsable:** Sistema
+> [!info] Requisition Positions Status Indicator
+> **—** → **Gold** — In preparation (Housekeeper ×4)
+> **Date:** 2026-05-19 14:00 · **Responsible:** System
 
-### 3.2 — Lunes 19 mayo, 14:30 — Autorización
+### 3.2 — Monday May 19, 14:30 — Authorization
 
-Andrea Fuentes (Manager de Área) revisa y **autoriza** la requisición.
+Andrea Fuentes (Area Manager) reviews and **authorizes** the requisition.
 
-El sistema calcula la urgencia automáticamente:
-- Fecha de autorización: 19 mayo, 14:30
-- Fecha de inicio de la posición: 21 mayo
-- Diferencia: ≈ 42 horas → **Rojo** (Urgente, < 72h)
+The system automatically calculates urgency:
+- Authorization date: May 19, 14:30
+- Position start date: May 21
+- Difference: ≈ 42 hours → **Red** (Urgent, < 72h)
 
-El Inspector de la zona se asigna automáticamente: **Javier Torres** (Zona Sur).
+The zone inspector is automatically assigned: **Javier Torres** (South Zone).
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] — "Solo GM o GH pueden autorizar; el SUP no puede."
+> [!warning] Business Rule
+> [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] — "Only GM or GH can authorize; SUP cannot."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia de Requisición]] — "< 72 horas = Rojo (Urgente)."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia de Requisición]] — "< 72 hours = Red (Urgent)."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] — "Al autorizar, el Inspector de la zona del hotel se asigna automáticamente."
+> [!warning] Business Rule
+> [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] — "Upon authorization, the zone inspector for the hotel is automatically assigned."
 
-> [!info] Semáforo de Requisición
-> **Verde manzana** → **Verde** — Autorizada
-> **Fecha:** 2026-05-19 14:30 · **Responsable:** Andrea Fuentes (Manager de Área)
+> [!info] Requisition Status Indicator
+> **Apple Green** → **Green** — Authorized
+> **Date:** 2026-05-19 14:30 · **Responsible:** Andrea Fuentes (Area Manager)
 
-> [!info] Semáforo de Posiciones de la Requisición
-> **Dorado** → **Naranja** — Autorizada (Housekeeper x4)
-> **Fecha:** 2026-05-19 14:30 · **Responsable:** Sistema · **Comentario:** "Urgencia: Rojo (< 72h)"
+> [!info] Requisition Positions Status Indicator
+> **Gold** → **Orange** — Authorized (Housekeeper ×4)
+> **Date:** 2026-05-19 14:30 · **Responsible:** System · **Comment:** "Urgency: Red (< 72h)"
 
-### 3.3 — Lunes 19 mayo, 14:35 — Self-Pick
+### 3.3 — Monday May 19, 14:35 — Self-Pick
 
-La requisición aparece en la bandeja compartida "Autorizadas", visible a todo el departamento de Reclutamiento. Está priorizada en la parte superior por su urgencia Roja.
+The requisition appears in the shared "Authorized" queue, visible to the entire Recruitment department. It is prioritized at the top due to its Red urgency.
 
-Daniela Ríos la ve y **la toma** (primera en confirmar).
+Daniela Ríos sees it and **picks it up** (first to confirm).
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] — "Concurrencia: primera en confirmar gana. Si dos Reclutadoras toman la misma al mismo tiempo, el sistema la bloquea para la primera en confirmar."
+> [!warning] Business Rule
+> [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] — "Concurrency: first to confirm wins. If two Recruiters pick the same one simultaneously, the system locks it for the first to confirm."
 
-> [!info] Semáforo de Requisición
-> **Verde** → **Amarillo** — En proceso
-> **Fecha:** 2026-05-19 14:35 · **Responsable:** Daniela Ríos (Reclutadora)
+> [!info] Requisition Status Indicator
+> **Green** → **Yellow** — In process
+> **Date:** 2026-05-19 14:35 · **Responsible:** Daniela Ríos (Recruiter)
 
-### 3.4 — Lunes 19 mayo, 14:40 — Búsqueda en Pool y asignación
+### 3.4 — Monday May 19, 14:40 — Pool search and assignment
 
-Daniela consulta el [[Core/Módulos/Schedule|Schedule]] del Hotel Coral Bay y busca en la [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]] con los siguientes filtros:
+Daniela checks the [[Core/Módulos/Schedule|Schedule]] for Hotel Coral Bay and searches the [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]] with the following filters:
 
-| Filtro | Valor |
+| Filter | Value |
 |---|---|
-| Posición | Housekeeper |
-| Zona | Sur |
-| Idioma | Intermedio o superior |
-| Disponibilidad | Verde fuerte o Blanco |
+| Position | Housekeeper |
+| Zone | South |
+| Language | Intermediate or above |
+| Availability | Dark Green or White |
 
-Resultados del match:
+Match results:
 
-| # | Colaborador | Estado actual | Zona | Idioma |
+| # | Associate | Current status | Zone | Language |
 |---|---|---|---|---|
-| 1 | Ana Belén Herrera | Verde fuerte | Sur | Intermedio |
-| 2 | Sofía Cruz | Blanco | Sur | Intermedio |
-| 3 | Laura Estrada | Verde fuerte | Sur | Avanzado |
-| 4 | Fernanda Ríos | Verde fuerte | Sur | Intermedio |
+| 1 | Ana Belén Herrera | Dark Green | South | Intermediate |
+| 2 | Sofía Cruz | White | South | Intermediate |
+| 3 | Laura Estrada | Dark Green | South | Advanced |
+| 4 | Fernanda Ríos | Dark Green | South | Intermediate |
 
-Daniela asigna a las 4 colaboradoras al Hotel Coral Bay y las registra en el [[Core/Módulos/Schedule|Schedule]].
+Daniela assigns all 4 associates to Hotel Coral Bay and registers them in the [[Core/Módulos/Schedule|Schedule]].
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Reclutadora|Reclutadora]] — "Asigna al colaborador al hotel y lo registra en su Schedule."
+> [!warning] Business Rule
+> [[Reclutamiento/Reclutadora|Reclutadora]] — "Assigns the associate to the hotel and registers them in their Schedule."
 
-> [!info] Semáforo de Posiciones de la Requisición
-> **Naranja** → **Verde** — 100% cubierta (Housekeeper x4)
-> **Fecha:** 2026-05-19 14:40 · **Responsable:** Daniela Ríos (Reclutadora)
+> [!info] Requisition Positions Status Indicator
+> **Orange** → **Green** — 100% covered (Housekeeper ×4)
+> **Date:** 2026-05-19 14:40 · **Responsible:** Daniela Ríos (Recruiter)
 
-> [!info] Semáforo de Requisición
-> **Amarillo** → **Azul claro** — Cubierta totalmente
-> **Fecha:** 2026-05-19 14:40 · **Responsable:** Sistema · **Comentario:** "Todas las posiciones llegaron a Verde."
+> [!info] Requisition Status Indicator
+> **Yellow** → **Light Blue** — Fully covered
+> **Date:** 2026-05-19 14:40 · **Responsible:** System · **Comment:** "All positions reached Green."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición|Semáforo de Posiciones de la Requisición]] — "Verde: 100% cubierta. Todos los colaboradores asignados confirmados."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición|Semáforo de Posiciones de la Requisición]] — "Green: 100% covered. All assigned associates confirmed."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]] — "Azul claro: Cubierta totalmente. Solo si TODAS las posiciones llegan a Verde."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]] — "Light Blue: Fully covered. Only if ALL positions reach Green."
 
-> [!tip] QA — Operador 5 observa
-> REQ 202605191400K3 cubierta al 100% en menos de 1 hora desde el self-pick. Tiempo de toma: ~5 minutos desde que apareció en bandeja. Contribuye positivamente al KPI de tiempo promedio de toma (meta: ≤ 8h). — [[QA/Métricas y KPIs por Departamento|KPI: Tiempo promedio de toma]]
+> [!tip] QA — Operator 5 observes
+> REQ 202605191400K3 covered 100% in under 1 hour from self-pick. Time to pick: ~5 minutes from when it appeared in the queue. Contributes positively to the average time-to-pick KPI (target: ≤ 8h). — [[QA/Métricas y KPIs por Departamento|KPI: Average time to pick]]
 
 ---
 
-## Fase 4 — Progresión del colaborador e Inspección
+## Phase 4 — Associate Progression and Inspection
 
-> Referencia: [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] · [[Core/Módulos/Timesheet|Timesheet]] · [[Core/Módulos/Reglas de Negocio|Reglas de Negocio]]
+> Reference: [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] · [[Core/Módulos/Timesheet|Timesheet]] · [[Core/Módulos/Reglas de Negocio|Reglas de Negocio]]
 
-**Protagonistas:** Sofía Cruz (colaboradora nueva), Javier Torres (Inspector Zona Sur).
+**Main characters:** Sofía Cruz (new associate), Javier Torres (Inspector, South Zone).
 
-Se narra la progresión de Sofía Cruz tras ser asignada al Hotel Coral Bay.
+This section narrates Sofía Cruz's progression after being assigned to Hotel Coral Bay.
 
-### 4.1 — Miércoles 21 mayo — Día 1: Verificación de llegada
+### 4.1 — Wednesday May 21 — Day 1: Arrival verification
 
-Sofía Cruz se presenta en el Hotel Coral Bay a las 06:45.
+Sofía Cruz arrives at Hotel Coral Bay at 06:45.
 
-**Javier Torres** (Inspector Zona Sur) se presenta en el hotel y verifica la llegada de Sofía y las demás colaboradoras nuevas asignadas.
+**Javier Torres** (Inspector, South Zone) arrives at the hotel and verifies the arrival of Sofía and the other newly assigned associates.
 
-> [!info] Semáforo del Colaborador
-> **Blanco** → **Verde manzana** — Día 1 verificado
-> **Fecha:** 2026-05-21 · **Responsable:** Javier Torres (Inspector) · **Comentario:** "Sofía Cruz verificada en sitio. Primer día en Hotel Coral Bay."
+> [!info] Associate Status Indicator
+> **White** → **Apple Green** — Day 1 verified
+> **Date:** 2026-05-21 · **Responsible:** Javier Torres (Inspector) · **Comment:** "Sofía Cruz verified on site. First day at Hotel Coral Bay."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Blanco → Verde manzana: al ser asignado y asistir el Día 1. El Inspector verifica su llegada en sitio."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "White → Apple Green: when assigned and present on Day 1. The Inspector verifies arrival on site."
 
-Sofía poncha por primera vez vía QR generado por Andrea Fuentes (GH):
+Sofía clocks in for the first time via QR generated by Andrea Fuentes (GH):
 
-| Evento | Hora |
+| Event | Time |
 |---|---|
-| Entrada | 07:00 |
-| Salida Lunch | 12:00 |
-| Entrada Lunch | 12:28 |
-| Salida Break | 15:00 |
-| Entrada Break | 15:15 |
-| Salida | 15:30 |
+| Clock In | 07:00 |
+| Lunch Out | 12:00 |
+| Lunch In | 12:28 |
+| Break Out | 15:00 |
+| Break In | 15:15 |
+| Clock Out | 15:30 |
 
-Cálculo del día:
-- Horas brutas: 8h 30min
-- Lunch real: 28 min → deducción mínima de **30 min**
+Day calculation:
+- Gross hours: 8h 30min
+- Actual lunch: 28 min → minimum deduction of **30 min**
 - Break: 15 min
-- **Horas netas: 7h 45min**
+- **Net hours: 7h 45min**
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Timesheet|Timesheet]] — "6 eventos de ponchado por jornada."
+> [!warning] Business Rule
+> [[Core/Módulos/Timesheet|Timesheet]] — "6 punch events per shift."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Reglas de Negocio|Reglas de Negocio]] — "Deducción de lunch: mínimo 30 minutos siempre, incluso si se toma menos."
+> [!warning] Business Rule
+> [[Core/Módulos/Reglas de Negocio|Reglas de Negocio]] — "Lunch deduction: minimum 30 minutes always, even if less is taken."
 
-### 4.2 — Viernes 23 mayo — Día 3: Entrega de uniforme
+### 4.2 — Friday May 23 — Day 3: Uniform delivery
 
-Sofía poncha su tercer día consecutivo en el Hotel Coral Bay.
+Sofía clocks in for her third consecutive day at Hotel Coral Bay.
 
-Javier Torres se presenta nuevamente y **entrega el uniforme** a Sofía Cruz.
+Javier Torres arrives again and **delivers the uniform** to Sofía Cruz.
 
-> [!info] Semáforo del Colaborador
-> **Verde manzana** → **Azul claro** — Día 3, uniforme entregado
-> **Fecha:** 2026-05-23 · **Responsable:** Javier Torres (Inspector) · **Comentario:** "Sofía Cruz ponchó 3 días consecutivos. Uniforme entregado."
+> [!info] Associate Status Indicator
+> **Apple Green** → **Light Blue** — Day 3, uniform delivered
+> **Date:** 2026-05-23 · **Responsible:** Javier Torres (Inspector) · **Comment:** "Sofía Cruz clocked in 3 consecutive days. Uniform delivered."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Verde manzana → Azul claro: cuando poncha en la propiedad al tercer día. El Inspector le entrega su uniforme."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Apple Green → Light Blue: when the associate clocks in at the property on the third day. The Inspector delivers the uniform."
 
-### 4.3 — Miércoles 28 mayo — Día 7: Fijo
+### 4.3 — Wednesday May 28 — Day 7: Fixed
 
-Sofía completa 7 días en el Hotel Coral Bay. El sistema ejecuta la transición automáticamente.
+Sofía completes 7 days at Hotel Coral Bay. The system executes the transition automatically.
 
-> [!info] Semáforo del Colaborador
-> **Azul claro** → **Naranja** — 7 días completados (Fijo)
-> **Fecha:** 2026-05-28 · **Responsable:** Sistema · **Comentario:** "Transición automática. Sofía Cruz se convierte en colaboradora fija del Hotel Coral Bay."
+> [!info] Associate Status Indicator
+> **Light Blue** → **Orange** — 7 days completed (Fixed)
+> **Date:** 2026-05-28 · **Responsible:** System · **Comment:** "Automatic transition. Sofía Cruz becomes a fixed associate at Hotel Coral Bay."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Azul claro → Naranja: al completar 7 días. Transición automática por sistema."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Light Blue → Orange: upon completing 7 days. Automatic system transition."
 
-**Resumen de progresión de Sofía Cruz:**
+**Sofía Cruz progression summary:**
 
 ```
-— → Blanco → Verde manzana → Azul claro → Naranja
-     (Pool)    (Día 1)         (Día 3)      (Día 7)
+— → White → Apple Green → Light Blue → Orange
+     (Pool)   (Day 1)        (Day 3)      (Day 7)
 ```
 
 ---
 
-## Fase 5 — Cobertura parcial y escalación por timeout
+## Phase 5 — Partial Coverage and Timeout Escalation
 
-> Referencia: [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] · [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] · [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]] · [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]]
+> Reference: [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] · [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] · [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]] · [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]]
 
-**Protagonistas:** Valeria Soto (Reclutadora), Lucía Méndez (Líder de Grupo), Patricia Nava (SUP Hotel Sierra Alta), Carmen López (GH).
+**Main characters:** Valeria Soto (Recruiter), Lucía Méndez (Team Lead), Patricia Nava (SUP Hotel Sierra Alta), Carmen López (GH).
 
-### 5.1 — Martes 20 mayo, 10:00 — Creación de requisición con múltiples posiciones
+### 5.1 — Tuesday May 20, 10:00 — Requisition with multiple positions
 
-Patricia Nava (Supervisor) crea una requisición para el Hotel Sierra Alta (Zona Centro):
+Patricia Nava (Supervisor) creates a requisition for Hotel Sierra Alta (Center Zone):
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Número de requisición | `202605201000M7` |
+| Requisition number | `202605201000M7` |
 | Hotel | Sierra Alta |
-| Zona | Centro |
+| Zone | Center |
 
-Posiciones solicitadas:
+Requested positions:
 
-| Posición | Modalidad | Cantidad | Fecha de inicio |
+| Position | Modality | Quantity | Start date |
 |---|---|---|---|
-| Housekeeper | Tiempo completo | 6 | Viernes 23 mayo |
-| Houseman | Tiempo completo | 2 | Viernes 23 mayo |
-| Chef | Tiempo completo | 1 | Sábado 24 mayo |
+| Housekeeper | Full time | 6 | Friday May 23 |
+| Houseman | Full time | 2 | Friday May 23 |
+| Chef | Full time | 1 | Saturday May 24 |
 
-### 5.2 — Martes 20 mayo, 10:30 — Autorización
+### 5.2 — Tuesday May 20, 10:30 — Authorization
 
-Carmen López (Manager de Área) autoriza la requisición.
+Carmen López (Area Manager) authorizes the requisition.
 
-Cálculo de urgencia por posición:
-- Housekeeper y Houseman: 20 mayo 10:30 → 23 mayo = ≈ 62h → **Rojo** (< 72h)
-- Chef: 20 mayo 10:30 → 24 mayo = ≈ 86h → **Amarillo** (72–120h)
+Urgency calculation per position:
+- Housekeeper and Houseman: May 20 10:30 → May 23 = ≈ 62h → **Red** (< 72h)
+- Chef: May 20 10:30 → May 24 = ≈ 86h → **Yellow** (72–120h)
 
-Inspector asignado automáticamente: **Elena Rojas** (Zona Centro).
+Inspector automatically assigned: **Elena Rojas** (Center Zone).
 
-> [!info] Semáforo de Requisición
-> **Verde manzana** → **Verde** — Autorizada
-> **Fecha:** 2026-05-20 10:30 · **Responsable:** Carmen López (Manager de Área)
+> [!info] Requisition Status Indicator
+> **Apple Green** → **Green** — Authorized
+> **Date:** 2026-05-20 10:30 · **Responsible:** Carmen López (Area Manager)
 
-> [!info] Semáforo de Posiciones de la Requisición
-> **Dorado** → **Naranja** — Autorizadas (Housekeeper x6, Houseman x2, Chef x1)
-> **Fecha:** 2026-05-20 10:30 · **Responsable:** Sistema · **Comentario:** "Urgencia HK/HM: Rojo. Urgencia Chef: Amarillo."
+> [!info] Requisition Positions Status Indicator
+> **Gold** → **Orange** — Authorized (Housekeeper ×6, Houseman ×2, Chef ×1)
+> **Date:** 2026-05-20 10:30 · **Responsible:** System · **Comment:** "Urgency HK/HM: Red. Urgency Chef: Yellow."
 
-### 5.3 — Martes 20 mayo, 10:35 — Self-Pick por Valeria
+### 5.3 — Tuesday May 20, 10:35 — Self-Pick by Valeria
 
-Valeria Soto toma la requisición de la bandeja compartida.
+Valeria Soto picks the requisition from the shared queue.
 
-> [!info] Semáforo de Requisición
-> **Verde** → **Amarillo** — En proceso
-> **Fecha:** 2026-05-20 10:35 · **Responsable:** Valeria Soto (Reclutadora)
+> [!info] Requisition Status Indicator
+> **Green** → **Yellow** — In process
+> **Date:** 2026-05-20 10:35 · **Responsible:** Valeria Soto (Recruiter)
 
-### 5.4 — Martes 20 mayo, 11:00 — Búsqueda en Pool (match parcial)
+### 5.4 — Tuesday May 20, 11:00 — Pool search (partial match)
 
-Valeria busca en la [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]] filtrando por Zona Centro:
+Valeria searches the [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]] filtering by Center Zone:
 
-| Posición | Requeridos | Encontrados en Pool | Asignados | Cobertura |
+| Position | Required | Found in Pool | Assigned | Coverage |
 |---|---|---|---|---|
 | Housekeeper | 6 | 4 | 4 | 67% |
 | Houseman | 2 | 2 | 2 | 100% |
 | Chef | 1 | 0 | 0 | 0% |
 
-Valeria asigna a los 6 colaboradores encontrados y **busca activamente fuera del sistema** (redes sociales, grupos de WhatsApp) para cubrir las 2 posiciones de Housekeeper y 1 de Chef faltantes.
+Valeria assigns the 6 found associates and **actively searches outside the system** (social media, WhatsApp groups) to cover the 2 missing Housekeeper and 1 Chef positions.
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "Si no hay match en Pool → busca activamente fuera del sistema (redes, grupos externos)."
+> [!warning] Business Rule
+> [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "If no match in Pool → actively search outside the system (social networks, external groups)."
 
-> [!info] Semáforo de Posiciones de la Requisición
-> **Naranja** → **Rojo** — Housekeeper x6 (> 25% faltante: 4/6 = 67%)
-> **Fecha:** 2026-05-20 11:00 · **Responsable:** Sistema
+> [!info] Requisition Positions Status Indicator
+> **Orange** → **Red** — Housekeeper ×6 (> 25% missing: 4/6 = 67%)
+> **Date:** 2026-05-20 11:00 · **Responsible:** System
 
-> [!info] Semáforo de Posiciones de la Requisición
-> **Naranja** → **Verde** — Houseman x2 (100%: 2/2)
-> **Fecha:** 2026-05-20 11:00 · **Responsable:** Valeria Soto (Reclutadora)
+> [!info] Requisition Positions Status Indicator
+> **Orange** → **Green** — Houseman ×2 (100%: 2/2)
+> **Date:** 2026-05-20 11:00 · **Responsible:** Valeria Soto (Recruiter)
 
-> [!info] Semáforo de Posiciones de la Requisición
-> **Naranja** → **Rojo** — Chef x1 (> 25% faltante: 0/1 = 0%)
-> **Fecha:** 2026-05-20 11:00 · **Responsable:** Sistema
+> [!info] Requisition Positions Status Indicator
+> **Orange** → **Red** — Chef ×1 (> 25% missing: 0/1 = 0%)
+> **Date:** 2026-05-20 11:00 · **Responsible:** System
 
-> [!tip] QA — Operador 5 observa
-> REQ 202605201000M7: cobertura parcial detectada. Housekeeper al 67%, Chef al 0%. Valeria activa búsqueda externa. El Operador 5 registra que la requisición está en riesgo de no cumplir el KPI de cobertura total (meta: ≥ 85%). — [[QA/Métricas y KPIs por Departamento|KPI: Cobertura total de requisiciones]]
+> [!tip] QA — Operator 5 observes
+> REQ 202605201000M7: partial coverage detected. Housekeeper at 67%, Chef at 0%. Valeria activates external search. Operator 5 notes that the requisition is at risk of not meeting the total coverage KPI (target: ≥ 85%). — [[QA/Métricas y KPIs por Departamento|KPI: Total requisition coverage]]
 
-### 5.5 — Miércoles 21 mayo, 10:35 — Escalación por timeout
+### 5.5 — Wednesday May 21, 10:35 — Timeout escalation
 
-Han pasado **24 horas** sin cubrir las posiciones pendientes. La urgencia de esas posiciones es **Rojo** (< 72h), por lo que el plazo de escalación es de **24 horas**.
+**24 hours** have passed without covering the pending positions. The urgency for those positions is **Red** (< 72h), so the escalation window is **24 hours**.
 
-El sistema escala a **Lucía Méndez** (Líder de Grupo).
+The system escalates to **Lucía Méndez** (Team Lead).
 
-> [!warning] Escalación activada
-> Timeout de 24h sin cubrir posiciones con urgencia Roja.
+> [!warning] Escalation activated
+> 24h timeout without covering Red-urgency positions.
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] — Tabla de escalación:
-> - Rojo (< 72h): 24h sin cubrir → escala al Líder de Grupo.
-> - Amarillo (72–120h): 48h sin cubrir.
-> - Verde fuerte (> 120h): 72h sin cubrir.
+> [!warning] Business Rule
+> [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] — Escalation table:
+> - Red (< 72h): 24h without coverage → escalates to Team Lead.
+> - Yellow (72–120h): 48h without coverage.
+> - Dark Green (> 120h): 72h without coverage.
 
-La requisición permanece en **Amarillo** (En proceso) durante toda la escalación.
+The requisition remains in **Yellow** (In process) throughout the escalation.
 
-### 5.6 — Miércoles 21 mayo – Viernes 23 mayo — Lucía asume la búsqueda
+### 5.6 — Wednesday May 21 – Friday May 23 — Lucía takes over the search
 
-Lucía Méndez asume la búsqueda. Logra reclutar 1 Housekeeper adicional a través de un grupo externo (Miguel Ángel Paredes, que pasa por las 4 fases del [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] y entra al Pool en Blanco antes de ser asignado).
+Lucía Méndez takes over the search. She manages to recruit 1 additional Housekeeper through an external group (Miguel Ángel Paredes, who goes through all 4 phases of the [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] and enters the Pool as White before being assigned).
 
-Estado actualizado de posiciones al cierre del viernes 23:
+Updated position status at Friday May 23 close:
 
-| Posición | Asignados / Requeridos | Cobertura | Estado |
+| Position | Assigned / Required | Coverage | Status |
 |---|---|---|---|
-| Housekeeper | 5 / 6 | 83% | Amarillo (≤ 25% faltante) |
-| Houseman | 2 / 2 | 100% | Verde |
-| Chef | 0 / 1 | 0% | Rojo (> 25% faltante) |
+| Housekeeper | 5 / 6 | 83% | Yellow (≤ 25% missing) |
+| Houseman | 2 / 2 | 100% | Green |
+| Chef | 0 / 1 | 0% | Red (> 25% missing) |
 
-**La requisición cierra en estado Rojo** (Cubierta parcialmente) porque al menos una posición (Chef) no llegó a Verde.
+**The requisition closes in Red status** (Partially covered) because at least one position (Chef) did not reach Green.
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]] — "Rojo: Cubierta parcialmente. La requisición solo cierra en Azul claro si TODAS las posiciones llegan a Verde."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]] — "Red: Partially covered. The requisition only closes in Light Blue if ALL positions reach Green."
 
-> [!info] Semáforo de Requisición
-> **Amarillo** → **Rojo** — Cubierta parcialmente
-> **Fecha:** 2026-05-23 · **Responsable:** Sistema · **Comentario:** "Chef (0/1) no cubierto. Al menos una posición no llegó a Verde."
+> [!info] Requisition Status Indicator
+> **Yellow** → **Red** — Partially covered
+> **Date:** 2026-05-23 · **Responsible:** System · **Comment:** "Chef (0/1) not covered. At least one position did not reach Green."
 
-> [!info] Semáforo de Posiciones de la Requisición
-> **Rojo** → **Amarillo** — Housekeeper x6 (5/6 = 83%)
-> **Fecha:** 2026-05-23 · **Responsable:** Lucía Méndez (Líder de Grupo)
+> [!info] Requisition Positions Status Indicator
+> **Red** → **Yellow** — Housekeeper ×6 (5/6 = 83%)
+> **Date:** 2026-05-23 · **Responsible:** Lucía Méndez (Team Lead)
 
 ---
 
-## Fase 6 — Auto-asignación por sistema
+## Phase 6 — System Auto-Assignment
 
-> Referencia: [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] · [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]]
+> Reference: [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] · [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]]
 
-### 6.1 — Martes 20 mayo, 16:00 — Requisición sin tomar
+### 6.1 — Tuesday May 20, 16:00 — Unclaimed requisition
 
-Hotel Coral Bay crea otra requisición:
+Hotel Coral Bay creates another requisition:
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Número de requisición | `202605201600P2` |
-| Posición | Houseman x2 |
-| Fecha de inicio | Lunes 26 mayo |
+| Requisition number | `202605201600P2` |
+| Position | Houseman ×2 |
+| Start date | Monday May 26 |
 
-Andrea Fuentes (GH) la autoriza a las 16:00.
+Andrea Fuentes (GH) authorizes it at 16:00.
 
-Urgencia: 20 mayo 16:00 → 26 mayo = ≈ 152h → **Verde fuerte** (Normal, > 120h).
+Urgency: May 20 16:00 → May 26 = ≈ 152h → **Dark Green** (Normal, > 120h).
 
-La requisición queda en la bandeja compartida. Ninguna Reclutadora la toma — todas están enfocadas en las requisiciones con urgencia Roja.
+The requisition sits in the shared queue. No Recruiter picks it — all are focused on Red-urgency requisitions.
 
-> [!info] Semáforo de Requisición
-> **—** → **Verde manzana** → **Verde** — Autorizada
-> **Fecha:** 2026-05-20 16:00 · **Responsable:** Andrea Fuentes (Manager de Área)
+> [!info] Requisition Status Indicator
+> **—** → **Apple Green** → **Green** — Authorized
+> **Date:** 2026-05-20 16:00 · **Responsible:** Andrea Fuentes (Area Manager)
 
-### 6.2 — Miércoles 21 mayo, 16:00 — Auto-asignación
+### 6.2 — Wednesday May 21, 16:00 — Auto-assignment
 
-Han pasado exactamente **24 horas** desde la autorización sin que nadie tome la requisición.
+Exactly **24 hours** have passed since authorization without anyone picking the requisition.
 
-El sistema la asigna automáticamente a la Reclutadora con **menor carga de requisiciones activas**:
-- Valeria Soto: 1 requisición activa
-- Daniela Ríos: 2 requisiciones activas
-- → Se asigna a **Valeria Soto**.
+The system automatically assigns it to the Recruiter with the **lowest active requisition load**:
+- Valeria Soto: 1 active requisition
+- Daniela Ríos: 2 active requisitions
+- → Assigned to **Valeria Soto**.
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] — "Si una requisición lleva más de 24 horas sin ser tomada, el sistema la asigna automáticamente a la Reclutadora con menor carga."
+> [!warning] Business Rule
+> [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] — "If a requisition has gone more than 24 hours without being picked, the system automatically assigns it to the Recruiter with the lowest workload."
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "El Manager de Reclutamiento no recibe notificación; el proceso es transparente."
+> [!warning] Business Rule
+> [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "The Recruitment Manager does not receive a notification; the process is transparent."
 
-> [!info] Semáforo de Requisición
-> **Verde** → **Amarillo** — En proceso (auto-asignada)
-> **Fecha:** 2026-05-21 16:00 · **Responsable:** Sistema · **Comentario:** "Auto-asignada a Valeria Soto por menor carga. 24h sin self-pick."
+> [!info] Requisition Status Indicator
+> **Green** → **Yellow** — In process (auto-assigned)
+> **Date:** 2026-05-21 16:00 · **Responsible:** System · **Comment:** "Auto-assigned to Valeria Soto due to lower workload. 24h without self-pick."
 
-Valeria cubre la requisición con 2 colaboradores del Pool en Verde fuerte. La requisición cierra en **Azul claro**.
+Valeria covers the requisition with 2 Dark Green Pool associates. The requisition closes in **Light Blue**.
 
-> [!tip] QA — Operador 5 observa
-> REQ 202605201600P2: auto-asignada por sistema. Esta requisición alimenta el KPI de tasa de auto-asignación (meta: ≤ 5%). Con 1 de 3 requisiciones auto-asignadas = 33% — valor crítico. El Operador 5 registra la observación para el cierre del ciclo. — [[QA/Métricas y KPIs por Departamento|KPI: Tasa de auto-asignación]]
-
----
-
-## Fase 7 — Asignación temporal (Café)
-
-> Referencia: [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] · [[Core/Módulos/Schedule|Schedule]] · [[Core/Módulos/Timesheet|Timesheet]] · [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]]
-
-**Protagonistas:** Daniela Ríos, Carlos Rivera (colaborador en Amarillo), Diana Morales (colaboradora en Naranja).
-
-### 7.1 — Jueves 22 mayo, 07:30 — Inasistencia de Diana Morales
-
-Diana Morales (Housekeeper fija en Hotel Coral Bay, estado Naranja) no se presenta a trabajar. El sistema la marca como **Morado** (No regresó).
-
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Morado: el sistema lo marca cuando el colaborador no asiste sin justificación."
-
-El Hotel Coral Bay necesita cubrir esa posición temporalmente.
-
-### 7.2 — Jueves 22 mayo, 08:00 — Búsqueda de reemplazo temporal
-
-Daniela busca en la Pool colaboradores disponibles para asignación temporal:
-- Carlos Rivera está en estado **Amarillo** (Disponible voluntario).
-  - Carlos activó este estado él mismo desde la app durante su periodo de descanso del Hotel Sierra Alta.
-
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Amarillo: lo activa el propio colaborador desde la app. Es el único estado de autoservicio, sin aprobación de nadie."
-
-### 7.3 — Jueves 22 mayo, 08:15 — Asignación temporal
-
-Daniela asigna a Carlos Rivera **temporalmente** al Hotel Coral Bay por **3 días** (jueves 22, viernes 23 y sábado 24).
-
-> [!info] Semáforo del Colaborador
-> **Amarillo** → **Café** — Asignación temporal, 3 días
-> **Fecha:** 2026-05-22 08:15 · **Responsable:** Daniela Ríos (Reclutadora) · **Comentario:** "Reemplazo temporal de Diana Morales (inasistencia). Hotel Coral Bay. Duración: 3 días."
-
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Amarillo → Café: la Reclutadora lo asigna temporalmente con duración definida en días."
-
-Efectos de la asignación:
-- Se genera [[Core/Módulos/Schedule|Schedule]] para Carlos en Hotel Coral Bay.
-- El Schedule genera [[Core/Módulos/Timesheet|Timesheet]].
-- Carlos **puede ponchar**.
-
-> [!warning] Regla de negocio
-> [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]] — "Sin asignación activa no hay Schedule; sin Schedule no hay Timesheet; sin Timesheet no es posible ponchar."
-
-### 7.4 — Domingo 25 mayo — Fin de asignación temporal
-
-Vencen los 3 días asignados. Carlos Rivera **no** ha terminado su periodo de descanso del Hotel Sierra Alta.
-
-> [!info] Semáforo del Colaborador
-> **Café** → **Amarillo** — Vence asignación temporal
-> **Fecha:** 2026-05-25 · **Responsable:** Sistema · **Comentario:** "Carlos Rivera regresa a Amarillo porque sigue en periodo de descanso del Hotel Sierra Alta."
-
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Al vencer los días asignados: regresa a Amarillo si sigue en periodo de descanso, o a Verde fuerte si ya no."
+> [!tip] QA — Operator 5 observes
+> REQ 202605201600P2: auto-assigned by system. This requisition feeds the auto-assignment rate KPI (target: ≤ 5%). With 1 of 3 requisitions auto-assigned = 33% — critical value. Operator 5 notes the observation for the end-of-cycle review. — [[QA/Métricas y KPIs por Departamento|KPI: Auto-assignment rate]]
 
 ---
 
-## Fase 8 — Incidencias: no regresó y reportado
+## Phase 7 — Temporary Assignment (Brown)
 
-> Referencia: [[Core/Módulos/Blacklist|Blacklist]] · [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] · [[Reclutamiento/Manager de Reclutamiento|Manager de Reclutamiento]] · [[Inspección/Inspector|Inspector]]
+> Reference: [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] · [[Core/Módulos/Schedule|Schedule]] · [[Core/Módulos/Timesheet|Timesheet]] · [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]]
 
-### Caso 1: Diana Morales — 3 inasistencias → Blacklist
+**Main characters:** Daniela Ríos, Carlos Rivera (associate in Yellow), Diana Morales (associate in Orange).
 
-**Jueves 22 mayo** — Diana no se presentó (1.ª inasistencia). Sistema la marca **Morado**.
+### 7.1 — Thursday May 22, 07:30 — Diana Morales absence
 
-**Viernes 23 mayo** — Diana no se presenta de nuevo (2.ª inasistencia). Se mantiene en **Morado**.
+Diana Morales (fixed Housekeeper at Hotel Coral Bay, Orange status) does not show up for work. The system marks her as **Purple** (Did not return).
 
-**Lunes 26 mayo** — Diana no se presenta por tercera vez (3.ª inasistencia).
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Purple: the system marks this when the associate is absent without justification."
 
-> [!warning] Blacklist automático
-> 3 inasistencias acumuladas → el sistema ejecuta la transición a **Negro** (Blacklist) de forma automática.
+Hotel Coral Bay needs to temporarily fill that position.
 
-> [!info] Semáforo del Colaborador
-> **Naranja** → **Morado** ×3 → **Negro** — Blacklist automático
-> **Fecha:** 2026-05-22 → 2026-05-26 · **Responsable:** Sistema · **Comentario:** "3 inasistencias acumuladas sin justificación. Blacklist ejecutado automáticamente."
+### 7.2 — Thursday May 22, 08:00 — Search for temporary replacement
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Blacklist|Blacklist]] — "3 inasistencias → Blacklist automático por sistema."
+Daniela searches the Pool for associates available for temporary assignment:
+- Carlos Rivera is in **Yellow** (Voluntary available) status.
+  - Carlos activated this status himself via the app during his rest period from Hotel Sierra Alta.
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Blacklist|Blacklist]] — "Negro es PERMANENTE. No existe proceso de rehabilitación ni apelación."
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Yellow: the associate activates it from the app themselves. It is the only self-service status, requiring no one's approval."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Negro: colaborador bloqueado. No aparece en búsquedas activas. Historial conservado."
+### 7.3 — Thursday May 22, 08:15 — Temporary assignment
 
-Fernando Ortiz (Manager de Reclutamiento) **revisa el caso de Blacklist** como parte de su función de supervisión.
+Daniela assigns Carlos Rivera **temporarily** to Hotel Coral Bay for **3 days** (Thursday 22, Friday 23, and Saturday 24).
 
-> [!warning] Regla de negocio
-> [[Reclutamiento/Manager de Reclutamiento|Manager de Reclutamiento]] — "Revisar casos de Blacklist: responsabilidad del Manager de Reclutamiento."
+> [!info] Associate Status Indicator
+> **Yellow** → **Brown** — Temporary assignment, 3 days
+> **Date:** 2026-05-22 08:15 · **Responsible:** Daniela Ríos (Recruiter) · **Comment:** "Temporary replacement for Diana Morales (absence). Hotel Coral Bay. Duration: 3 days."
 
-### Caso 2: Pedro Jiménez — Reportado por el hotel
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Yellow → Brown: the Recruiter assigns temporarily with a defined duration in days."
 
-**Viernes 23 mayo** — Andrea Fuentes (GH del Hotel Coral Bay) **reporta** a Pedro Jiménez por conducta inapropiada.
+Effects of the assignment:
+- A [[Core/Módulos/Schedule|Schedule]] is generated for Carlos at Hotel Coral Bay.
+- The Schedule generates a [[Core/Módulos/Timesheet|Timesheet]].
+- Carlos **can clock in**.
 
-> [!info] Semáforo del Colaborador
-> **[estado previo]** → **Rojo** — Reportado por el hotel
-> **Fecha:** 2026-05-23 · **Responsable:** Andrea Fuentes (Manager de Área) · **Comentario:** "Reporte por conducta inapropiada."
+> [!warning] Business Rule
+> [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]] — "Without an active assignment there is no Schedule; without a Schedule there is no Timesheet; without a Timesheet clocking in is not possible."
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Rojo: lo pone el hotel (GM, GH o SUP). El Inspector investiga y resuelve."
+### 7.4 — Sunday May 25 — Temporary assignment ends
 
-**Investigación del Inspector:**
+The 3 assigned days expire. Carlos Rivera has **not** finished his rest period from Hotel Sierra Alta.
 
-Javier Torres (Inspector Zona Sur) investiga el caso. Entrevista a Pedro, al Supervisor del hotel y revisa los registros.
+> [!info] Associate Status Indicator
+> **Brown** → **Yellow** — Temporary assignment expires
+> **Date:** 2026-05-25 · **Responsible:** System · **Comment:** "Carlos Rivera returns to Yellow because he is still in his rest period from Hotel Sierra Alta."
 
-**Resultado:** la disputa se resuelve **a favor del colaborador**. No hubo conducta inapropiada, fue un malentendido.
-
-> [!info] Semáforo del Colaborador
-> **Rojo** → **Verde fuerte** — Reincorporado (disputa a favor del colaborador)
-> **Fecha:** 2026-05-26 · **Responsable:** Javier Torres (Inspector) · **Comentario:** "Investigación completada. Sin conducta inapropiada. Malentendido resuelto a favor del colaborador."
-
-> [!warning] Regla de negocio
-> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Disputa resuelta a favor del colaborador → regresa a Verde fuerte."
-
-> [!warning] Regla de negocio
-> [[Inspección/Inspector|Inspector]] — "El Inspector tiene autoridad propia para resolver la disputa, sin validación del Manager de Reclutamiento."
-
-> [!tip] QA — Operador 5 observa
-> Dos incidencias esta semana: Diana Morales (Blacklist por 3 inasistencias, ruta automática) y Pedro Jiménez (reporte resuelto por Inspector en favor del colaborador). El Operador 5 registra ambos casos para la revisión de cierre. La tasa de consulta de Blacklist sigue en 100% (2 de 2 candidatos consultados). — [[QA/Métricas y KPIs por Departamento|KPI: Consulta de Blacklist]]
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "When the assigned days expire: returns to Yellow if still in a rest period, or to Dark Green if not."
 
 ---
 
-## Fase 9 — Entrada al sistema de pago
+## Phase 8 — Incidents: Did Not Return and Reported
 
-> Referencia: [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal del Colaborador]] · [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] · [[Core/Módulos/Contrato|Contrato]] · [[Contabilidad/Deducciones|Deducciones]]
+> Reference: [[Core/Módulos/Blacklist|Blacklist]] · [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] · [[Reclutamiento/Manager de Reclutamiento|Manager de Reclutamiento]] · [[Inspección/Inspector|Inspector]]
 
-Se narra cómo la semana laboral de Sofía Cruz y Carlos Rivera llega al sistema de pago.
+### Case 1: Diana Morales — 3 absences → Blacklist
 
-### 9.1 — Domingo 25 mayo — Cierre de semana
+**Thursday May 22** — Diana did not show up (1st absence). System marks her **Purple**.
 
-El sistema genera automáticamente el [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]] para cada colaborador que tuvo actividad durante la semana.
+**Friday May 23** — Diana does not show up again (2nd absence). Remains in **Purple**.
+
+**Monday May 26** — Diana does not show up for the third time (3rd absence).
+
+> [!warning] Automatic Blacklist
+> 3 accumulated absences → the system executes the transition to **Black** (Blacklist) automatically.
+
+> [!info] Associate Status Indicator
+> **Orange** → **Purple** ×3 → **Black** — Automatic Blacklist
+> **Date:** 2026-05-22 → 2026-05-26 · **Responsible:** System · **Comment:** "3 accumulated absences without justification. Blacklist executed automatically."
+
+> [!warning] Business Rule
+> [[Core/Módulos/Blacklist|Blacklist]] — "3 absences → automatic Blacklist by system."
+
+> [!warning] Business Rule
+> [[Core/Módulos/Blacklist|Blacklist]] — "Black is PERMANENT. No rehabilitation or appeal process exists."
+
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Black: associate blocked. Does not appear in active searches. History preserved."
+
+Fernando Ortiz (Recruitment Manager) **reviews the Blacklist case** as part of his supervisory function.
+
+> [!warning] Business Rule
+> [[Reclutamiento/Manager de Reclutamiento|Manager de Reclutamiento]] — "Review Blacklist cases: responsibility of the Recruitment Manager."
+
+### Case 2: Pedro Jiménez — Reported by the hotel
+
+**Friday May 23** — Andrea Fuentes (GH of Hotel Coral Bay) **reports** Pedro Jiménez for inappropriate conduct.
+
+> [!info] Associate Status Indicator
+> **[previous status]** → **Red** — Reported by the hotel
+> **Date:** 2026-05-23 · **Responsible:** Andrea Fuentes (Area Manager) · **Comment:** "Report for inappropriate conduct."
+
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Red: set by the hotel (GM, GH or SUP). The Inspector investigates and resolves."
+
+**Inspector investigation:**
+
+Javier Torres (Inspector, South Zone) investigates the case. Interviews Pedro, the hotel Supervisor, and reviews the records.
+
+**Outcome:** the dispute is resolved **in favor of the associate**. There was no inappropriate conduct — it was a misunderstanding.
+
+> [!info] Associate Status Indicator
+> **Red** → **Dark Green** — Reinstated (dispute resolved in favor of the associate)
+> **Date:** 2026-05-26 · **Responsible:** Javier Torres (Inspector) · **Comment:** "Investigation completed. No inappropriate conduct. Misunderstanding resolved in favor of the associate."
+
+> [!warning] Business Rule
+> [[Core/Módulos/Semáforos/Semáforo del Colaborador|Semáforo del Colaborador]] — "Dispute resolved in favor of the associate → returns to Dark Green."
+
+> [!warning] Business Rule
+> [[Inspección/Inspector|Inspector]] — "The Inspector has autonomous authority to resolve the dispute, without validation from the Recruitment Manager."
+
+> [!tip] QA — Operator 5 observes
+> Two incidents this week: Diana Morales (Blacklist for 3 absences, automatic route) and Pedro Jiménez (report resolved by Inspector in favor of the associate). Operator 5 notes both cases for the end-of-cycle review. The Blacklist lookup rate remains at 100% (2 of 2 candidates checked). — [[QA/Métricas y KPIs por Departamento|KPI: Blacklist lookup]]
+
+---
+
+## Phase 9 — Entry into the Payroll System
+
+> Reference: [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal del Colaborador]] · [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] · [[Core/Módulos/Contrato|Contrato]] · [[Contabilidad/Deducciones|Deducciones]]
+
+This section narrates how Sofía Cruz's and Carlos Rivera's work week enters the payroll system.
+
+### 9.1 — Sunday May 25 — Week close
+
+The system automatically generates the [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]] for each associate who had activity during the week.
 
 #### Sofía Cruz (1 hotel)
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
 | Hotel | Coral Bay |
-| Días trabajados | 5 (miércoles 21 – domingo 25) |
-| Horas brutas | 40h |
-| Deducción lunch | 2.5h (30 min × 5 jornadas) |
-| Horas netas | 37.5h |
-| Pay rate | Según [[Core/Módulos/Contrato\|Contrato]] del Hotel Coral Bay |
+| Days worked | 5 (Wednesday 21 – Sunday 25) |
+| Gross hours | 40h |
+| Lunch deduction | 2.5h (30 min × 5 shifts) |
+| Net hours | 37.5h |
+| Pay rate | Per [[Core/Módulos/Contrato\|Contrato]] of Hotel Coral Bay |
 
-> [!note] Nota
-> Sofía ingresó a media semana (miércoles 21). El sistema prorratea automáticamente: los días previos al alta (lunes 19 y martes 20) se marcan en Gris en el [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]].
+> [!note] Note
+> Sofía joined mid-week (Wednesday 21). The system automatically prorates: days prior to enrollment (Monday 19 and Tuesday 20) are marked Gray in the [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]].
 
-> [!warning] Regla de negocio
-> [[Core/Módulos/Reglas de Negocio|Reglas de Negocio]] — "Ingreso a media semana: el sistema prorratea automáticamente los días restantes del ciclo; los días previos al alta se marcan en Gris."
+> [!warning] Business Rule
+> [[Core/Módulos/Reglas de Negocio|Reglas de Negocio]] — "Mid-week entry: the system automatically prorates the remaining days of the cycle; days prior to enrollment are marked Gray."
 
-#### Carlos Rivera (2 hoteles)
+#### Carlos Rivera (2 hotels)
 
-Carlos trabajó en 2 hoteles durante la semana:
+Carlos worked at 2 hotels during the week:
 
-| Hotel | Días | Horas netas | Pay rate |
+| Hotel | Days | Net hours | Pay rate |
 |---|---|---|---|
-| Sierra Alta (antes de descanso) | 2 | 15h | Según contrato Sierra Alta |
-| Coral Bay (asignación temporal) | 3 | 22.5h | Según contrato Coral Bay |
+| Sierra Alta (before rest) | 2 | 15h | Per Sierra Alta contract |
+| Coral Bay (temporary assignment) | 3 | 22.5h | Per Coral Bay contract |
 
-El overtime se calcula **por hotel**, no de forma global:
-- Sierra Alta: 15h (no excede 40h → sin overtime)
-- Coral Bay: 22.5h (no excede 40h → sin overtime)
+Overtime is calculated **per hotel**, not globally:
+- Sierra Alta: 15h (does not exceed 40h → no overtime)
+- Coral Bay: 22.5h (does not exceed 40h → no overtime)
 
-> [!warning] Regla de negocio
-> [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal del Colaborador]] — "El overtime se calcula por hotel según política de cada contrato."
+> [!warning] Business Rule
+> [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal del Colaborador]] — "Overtime is calculated per hotel according to each contract's policy."
 
-### 9.2 — Lunes 26 mayo — Pre-Payroll
+### 9.2 — Monday May 26 — Pre-Payroll
 
-El sistema genera el Pre-Payroll aplicando:
-- Pay rate del [[Core/Módulos/Contrato|Contrato]] de cada hotel.
-- [[Contabilidad/Deducciones|Deducciones]] activas del colaborador (uniforme, comida, retención del 16%).
+The system generates the Pre-Payroll applying:
+- Pay rate from each hotel's [[Core/Módulos/Contrato|Contrato]].
+- Active [[Contabilidad/Deducciones|Deducciones]] for each associate (uniform, meals, 16% withholding).
 
-> [!warning] Regla de negocio
-> [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] — Paso 2: "Cálculo del Pre-Payroll: aplica pay rate, deducciones activas, overtime autorizado."
+> [!warning] Business Rule
+> [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] — Step 2: "Pre-Payroll calculation: applies pay rate, active deductions, authorized overtime."
 
-### 9.3 — Martes 27 mayo — Validación por Contabilidad
+### 9.3 — Tuesday May 27 — Accounting validation
 
-La [[Contadora]] revisa y el [[Manager de Contabilidad]] aprueba el Pre-Payroll.
+The [[Contadora]] reviews and the [[Manager de Contabilidad]] approves the Pre-Payroll.
 
-> [!warning] Regla de negocio
-> [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] — Paso 3: "Validación del Pre-Payroll por Contabilidad. Requiere aprobación."
+> [!warning] Business Rule
+> [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] — Step 3: "Pre-Payroll validation by Accounting. Requires approval."
 
-### 9.4 — Miércoles 28 mayo — Pago ejecutado
+### 9.4 — Wednesday May 28 — Payment executed
 
-Se libera la nómina y se ejecuta el pago.
+Payroll is released and payment is executed.
 
-> [!warning] Regla de negocio
-> [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] — Paso 7: "Autorización final y ejecución del pago."
-
----
-
-## Fase 10 — Supervisión QA: cierre del ciclo
-
-> Referencia: [[QA/Métricas y KPIs por Departamento|Métricas de Reclutamiento]] · [[Indicador de Calidad]] · [[Reglas de QA]]
-
-El [[Operador de QA]] (Operador 5), asignado de forma fija al departamento de [[Reclutamiento/Reclutamiento|Reclutamiento]], ha observado todo el ciclo sin ejecutar ninguna acción operativa. Su rol es exclusivamente de observación, medición y retroalimentación.
-
-### Resumen de KPIs medidos (semana del 19–25 mayo 2026)
-
-| # | KPI | Resultado en esta simulación | Meta | Estado |
-|---|---|---|---|---|
-| 1 | **Cobertura total de requisiciones** (Azul claro / cerradas) | 2 de 3 = 67% | ≥ 85% | Crítico (< 70%) |
-| 2 | **Tiempo promedio de toma de requisición** | ≈ 3h promedio | ≤ 8h | En meta |
-| 3 | **Tasa de auto-asignación por timeout** | 1 de 3 = 33% | ≤ 5% | Crítico (> 15%) |
-| 4 | **Tasa de escalación por timeout al Líder** | 1 de 3 = 33% | ≤ 10% | Crítico (> 20%) |
-| 5 | **Cumplimiento de consulta de Blacklist** | 2 de 2 = 100% | 100% | En meta |
-| 6 | **Tasa de ingreso al Pool** (aprobados / entrevistados) | 2 de 3 = 67% | ≥ 60% | En meta |
-
-### Observación formal del Operador 5
-
-Los KPIs 1, 3 y 4 están fuera de meta intencionalmente. La simulación incluye escenarios adversos (cobertura parcial, auto-asignación, escalación) para demostrar cómo operan estos mecanismos. En una semana operativa normal, estos indicadores deberían estar dentro de meta.
-
-El [[Indicador de Calidad]] del departamento de Reclutamiento se mantiene bajo observación. Los KPIs 2, 5 y 6 están en meta. Los KPIs 1, 3 y 4 están en zona crítica por la concentración de escenarios adversos en la semana simulada. Si el patrón se repite en las próximas semanas, el Operador 5 emitirá una observación formal al departamento.
-
-> [!warning] Regla de negocio
-> QA no ejecuta la operación de Reclutamiento; solo observa, mide y retroalimenta. Si el [[Indicador de Calidad]] del departamento alcanza **Rojo** sin mejora tras notificación, el [[Manager de QA]] escala a dirección. — [[Reglas de QA]]
+> [!warning] Business Rule
+> [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] — Step 7: "Final authorization and payment execution."
 
 ---
 
-## Resumen consolidado de transiciones de semáforo
+## Phase 10 — QA Supervision: Cycle Close
 
-| Entidad | Semáforo | Transición | Día | Regla fuente |
+> Reference: [[QA/Métricas y KPIs por Departamento|Métricas de Reclutamiento]] · [[Indicador de Calidad]] · [[Reglas de QA]]
+
+The [[Operador de QA]] (Operator 5), with a fixed assignment to the [[Reclutamiento/Reclutamiento|Reclutamiento]] department, has observed the entire cycle without executing any operational action. Their role is exclusively observation, measurement, and feedback.
+
+### KPI Summary (week of May 19–25, 2026)
+
+| # | KPI | Result in this simulation | Target | Status |
 |---|---|---|---|---|
-| Sofía Cruz | Colaborador | — → Blanco | Lun 19 | [[Reclutamiento/Flujo de Reclutamiento\|Flujo de Reclutamiento]] |
-| Sofía Cruz | Colaborador | Blanco → Verde manzana | Mié 21 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Sofía Cruz | Colaborador | Verde manzana → Azul claro | Vie 23 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Sofía Cruz | Colaborador | Azul claro → Naranja | Mié 28 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| REQ 202605191400K3 | Requisición | Vm → V → Am → Ac | Lun 19 | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] |
-| REQ 202605191400K3 | Urgencia | Rojo | Lun 19 | [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] |
-| REQ 202605201000M7 | Requisición | Vm → V → Am → Rojo | Mar 20 – Vie 23 | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] |
-| REQ 202605201600P2 | Requisición | V → Am (auto) → Ac | Mar – Mié | [[Reclutamiento/Self-Pick de Requisiciones\|Self-Pick]] |
-| Carlos Rivera | Colaborador | Am → Café → Am | Jue 22 – Dom 25 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Diana Morales | Colaborador | Na → Mo ×3 → Negro | Jue 22 – Lun 26 | [[Core/Módulos/Blacklist\|Blacklist]] |
-| Pedro Jiménez | Colaborador | [previo] → Rojo → Vf | Vie 23 – Lun 26 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Luis G. Vega | Blacklist | Consulta: Negro (bloqueado) | Lun 19 | [[Core/Módulos/Blacklist\|Blacklist]] |
+| 1 | **Total requisition coverage** (Light Blue / closed) | 2 of 3 = 67% | ≥ 85% | Critical (< 70%) |
+| 2 | **Average time to pick** | ≈ 3h average | ≤ 8h | On target |
+| 3 | **Auto-assignment rate by timeout** | 1 of 3 = 33% | ≤ 5% | Critical (> 15%) |
+| 4 | **Escalation rate to Team Lead by timeout** | 1 of 3 = 33% | ≤ 10% | Critical (> 20%) |
+| 5 | **Blacklist lookup compliance** | 2 of 2 = 100% | 100% | On target |
+| 6 | **Pool entry rate** (approved / interviewed) | 2 of 3 = 67% | ≥ 60% | On target |
 
-**Abreviaturas:** Vm = Verde manzana, V = Verde, Am = Amarillo, Ac = Azul claro, Na = Naranja, Mo = Morado, Vf = Verde fuerte.
+### Operator 5 formal observation
+
+KPIs 1, 3, and 4 are intentionally outside target. The simulation includes adverse scenarios (partial coverage, auto-assignment, escalation) to demonstrate how these mechanisms operate. In a normal operational week, these indicators should be within target.
+
+The [[Indicador de Calidad]] for the Recruitment department remains under observation. KPIs 2, 5, and 6 are on target. KPIs 1, 3, and 4 are in the critical zone due to the concentration of adverse scenarios in the simulated week. If the pattern repeats in the following weeks, Operator 5 will issue a formal observation to the department.
+
+> [!warning] Business Rule
+> QA does not execute Recruitment operations; it only observes, measures, and provides feedback. If the [[Indicador de Calidad]] for the department reaches **Red** without improvement after notification, the [[Manager de QA]] escalates to management. — [[Reglas de QA]]
+
+---
+
+## Consolidated Summary of Status Indicator Transitions
+
+| Entity | Status Indicator | Transition | Day | Source rule |
+|---|---|---|---|---|
+| Sofía Cruz | Associate | — → White | Mon 19 | [[Reclutamiento/Flujo de Reclutamiento\|Flujo de Reclutamiento]] |
+| Sofía Cruz | Associate | White → Apple Green | Wed 21 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
+| Sofía Cruz | Associate | Apple Green → Light Blue | Fri 23 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
+| Sofía Cruz | Associate | Light Blue → Orange | Wed 28 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
+| REQ 202605191400K3 | Requisition | AG → G → Y → LB | Mon 19 | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] |
+| REQ 202605191400K3 | Urgency | Red | Mon 19 | [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] |
+| REQ 202605201000M7 | Requisition | AG → G → Y → Red | Tue 20 – Fri 23 | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] |
+| REQ 202605201600P2 | Requisition | G → Y (auto) → LB | Tue – Wed | [[Reclutamiento/Self-Pick de Requisiciones\|Self-Pick]] |
+| Carlos Rivera | Associate | Y → Brown → Y | Thu 22 – Sun 25 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
+| Diana Morales | Associate | Or → Pu ×3 → Black | Thu 22 – Mon 26 | [[Core/Módulos/Blacklist\|Blacklist]] |
+| Pedro Jiménez | Associate | [prev] → Red → DG | Fri 23 – Mon 26 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
+| Luis G. Vega | Blacklist | Lookup: Black (blocked) | Mon 19 | [[Core/Módulos/Blacklist\|Blacklist]] |
+
+**Abbreviations:** AG = Apple Green, G = Green, Y = Yellow, LB = Light Blue, Or = Orange, Pu = Purple, DG = Dark Green.
 
 ```mermaid
 graph LR
-    %% Sofía Cruz - progresión completa
-    BL[Blanco — Sofía] -->|Reclutadora aprueba| VM[Verde manzana]
-    VM -->|Inspector verifica Día 1| AC[Azul claro]
-    AC -->|7 días| NA1[Naranja — Fijo]
+    %% Sofía Cruz - full progression
+    BL[White — Sofía] -->|Recruiter approves| VM[Apple Green]
+    VM -->|Inspector verifies Day 1| AC[Light Blue]
+    AC -->|7 days| NA1[Orange — Fixed]
 
-    %% Requisiciones
-    VmR[Verde manzana — REQ K3] -->|GH autoriza| VR[Verde]
-    VR -->|Self-Pick| AmR[Amarillo]
-    AmR -->|100% cubierta| AcR[Azul claro]
+    %% Requisitions
+    VmR[Apple Green — REQ K3] -->|GH authorizes| VR[Green]
+    VR -->|Self-Pick| AmR[Yellow]
+    AmR -->|100% covered| AcR[Light Blue]
 
-    %% Carlos Rivera - asignación temporal
-    Am[Amarillo — Carlos] -->|Reclutadora asigna temp.| Cafe[Café]
-    Cafe -->|Vence asignación| Am2[Amarillo]
+    %% Carlos Rivera - temporary assignment
+    Am[Yellow — Carlos] -->|Recruiter assigns temp.| Cafe[Brown]
+    Cafe -->|Assignment expires| Am2[Yellow]
 
     %% Diana Morales - Blacklist
-    NA2[Naranja — Diana] -->|No regresó| Mo[Morado ×3]
-    Mo -->|3 inasistencias| Negro
+    NA2[Orange — Diana] -->|Did not return| Mo[Purple ×3]
+    Mo -->|3 absences| Negro[Black]
 
-    %% Pedro Jiménez - reportado
-    Prev[Estado previo — Pedro] -->|Hotel reporta| Rojo
-    Rojo -->|Inspector: a favor colaborador| VF[Verde fuerte]
+    %% Pedro Jiménez - reported
+    Prev[Previous status — Pedro] -->|Hotel reports| Rojo[Red]
+    Rojo -->|Inspector: in favor of associate| VF[Dark Green]
 
     style BL fill:#FFFFFF,stroke:#000,color:#000
     style VM fill:#8DB600,color:#fff
@@ -847,31 +847,31 @@ graph LR
 
 ---
 
-## Módulos y conceptos referenciados
+## Modules and Referenced Concepts
 
-| Módulo | Referencia |
+| Module | Reference |
 |---|---|
-| Reclutamiento | [[Reclutamiento/Reclutamiento\|Reclutamiento]] · [[Reclutamiento/Reglas de Reclutamiento\|Reglas de Reclutamiento]] |
-| Roles de Reclutamiento | [[Reclutamiento/Reclutadora\|Reclutadora]] · [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo de Reclutadoras]] · [[Reclutamiento/Manager de Reclutamiento\|Manager de Reclutamiento]] |
-| Requisiciones | [[Core/Módulos/Requisicion/Flujo de Requisición\|Flujo de Requisición]] · [[Reclutamiento/Self-Pick de Requisiciones\|Self-Pick de Requisiciones]] |
-| Semáforo del Colaborador | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Semáforos de Requisición | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] · [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia de Requisición]] · [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición\|Semáforo de Posiciones de la Requisición]] |
-| Pool y asignación | [[Core/Módulos/Pool de Colaboradores\|Pool de Colaboradores]] · [[Core/Módulos/Schedule\|Schedule]] · [[Core/Módulos/Timesheet\|Timesheet]] |
+| Recruitment | [[Reclutamiento/Reclutamiento\|Reclutamiento]] · [[Reclutamiento/Reglas de Reclutamiento\|Reglas de Reclutamiento]] |
+| Recruitment roles | [[Reclutamiento/Reclutadora\|Reclutadora]] · [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo de Reclutadoras]] · [[Reclutamiento/Manager de Reclutamiento\|Manager de Reclutamiento]] |
+| Requisitions | [[Core/Módulos/Requisicion/Flujo de Requisición\|Flujo de Requisición]] · [[Reclutamiento/Self-Pick de Requisiciones\|Self-Pick de Requisiciones]] |
+| Associate Status Indicator | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
+| Requisition Status Indicators | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] · [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia de Requisición]] · [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición\|Semáforo de Posiciones de la Requisición]] |
+| Pool and assignment | [[Core/Módulos/Pool de Colaboradores\|Pool de Colaboradores]] · [[Core/Módulos/Schedule\|Schedule]] · [[Core/Módulos/Timesheet\|Timesheet]] |
 | Blacklist | [[Core/Módulos/Blacklist\|Blacklist]] |
-| Inspección | [[Inspección/Inspector\|Inspector]] |
+| Inspection | [[Inspección/Inspector\|Inspector]] |
 | Hotel | [[Hotel/Supervisor\|Supervisor]] · [[Hotel/Manager de Área\|Manager de Área]] · [[Hotel/Manager General\|Manager General]] |
-| Contabilidad | [[Contabilidad/Consolidado Semanal del Colaborador\|Consolidado Semanal del Colaborador]] · [[Contabilidad/Flujo de Nómina\|Flujo de Nómina]] · [[Core/Módulos/Contrato\|Contrato]] · [[Contabilidad/Deducciones\|Deducciones]] |
-| Calidad | [[Operador de QA]] · [[Indicador de Calidad]] · [[QA/Métricas y KPIs por Departamento\|Métricas y KPIs por Departamento]] · [[Reglas de QA]] |
-| Catálogos | [[Core/Catálogos/Posiciones\|Posiciones]] · [[Core/Catálogos/Niveles de Inglés\|Niveles de Inglés]] · [[Core/Catálogos/Modalidades de Contratación\|Modalidades de Contratación]] |
-| Reglas generales | [[Core/Módulos/Reglas de Negocio\|Reglas de Negocio]] · [[Colaborador/Reglas del Colaborador\|Reglas del Colaborador]] |
+| Accounting | [[Contabilidad/Consolidado Semanal del Colaborador\|Consolidado Semanal del Colaborador]] · [[Contabilidad/Flujo de Nómina\|Flujo de Nómina]] · [[Core/Módulos/Contrato\|Contrato]] · [[Contabilidad/Deducciones\|Deducciones]] |
+| Quality | [[Operador de QA]] · [[Indicador de Calidad]] · [[QA/Métricas y KPIs por Departamento\|Métricas y KPIs por Departamento]] · [[Reglas de QA]] |
+| Catalogs | [[Core/Catálogos/Posiciones\|Posiciones]] · [[Core/Catálogos/Niveles de Inglés\|Niveles de Inglés]] · [[Core/Catálogos/Modalidades de Contratación\|Modalidades de Contratación]] |
+| General rules | [[Core/Módulos/Reglas de Negocio\|Reglas de Negocio]] · [[Colaborador/Reglas del Colaborador\|Reglas del Colaborador]] |
 
 ---
 
-## Simulaciones relacionadas
+## Related Simulations
 
-- [[Simulación - Punto de Vista del Hotel]] — Muestra el ciclo completo del hotel como cliente, incluyendo la creación de requisiciones que Reclutamiento atiende.
-- [[Simulación - Punto de Vista de Ventas]] — Narra cómo los hoteles llegan a status Naranja, habilitando las requisiciones que inician el flujo de reclutamiento.
-- [[Simulación - Punto de Vista de Inspección]] — Detalla la verificación de campo (Día 1, Día 3) que el Inspector realiza sobre los colaboradores que Reclutamiento asigna.
-- [[Simulación - Ciclo de Vida del Colaborador]] — Recorre todos los estados del colaborador desde su ingreso al Pool hasta Blacklist, cruzando con los procesos de asignación aquí narrados.
-- [[Simulación - Punto de Vista de QA]] — Narra el ciclo de supervisión de calidad que el Operador 5 aplica sobre las métricas de Reclutamiento documentadas en esta simulación.
-- [[Simulación - Punto de Vista de Contabilidad]] — Detalla el procesamiento del Consolidado Semanal, Pre-Payroll y Nómina que se origina con los colaboradores aquí asignados.
+- [[Simulación - Punto de Vista del Hotel]] — Shows the full hotel lifecycle as a client, including the creation of requisitions that Recruitment attends to.
+- [[Simulación - Punto de Vista de Ventas]] — Narrates how hotels reach Orange status, enabling the requisitions that initiate the recruitment flow.
+- [[Simulación - Punto de Vista de Inspección]] — Details the field verification (Day 1, Day 3) that the Inspector performs on the associates Recruitment assigns.
+- [[Simulación - Ciclo de Vida del Colaborador]] — Covers all associate states from Pool entry through Blacklist, intersecting with the assignment processes narrated here.
+- [[Simulación - Punto de Vista de QA]] — Narrates the quality supervision cycle that Operator 5 applies to the Recruitment metrics documented in this simulation.
+- [[Simulación - Punto de Vista de Contabilidad]] — Details the processing of the Weekly Summary, Pre-Payroll, and Payroll that originates with the associates assigned here.

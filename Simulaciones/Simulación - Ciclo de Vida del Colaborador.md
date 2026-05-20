@@ -1,580 +1,580 @@
 ---
-tipo: simulación
-perspectiva: colaborador
-hotel_ficticio: Hotel Riviera / Hotel Playa Sol / Hotel Costa Azul
-zona: Centro / Sur / Este
+type: simulation
+perspective: associate
+fictional_hotel: Hotel Riviera / Hotel Playa Sol / Hotel Costa Azul
+zone: Center / South / East
 tags:
-  - simulación
-  - colaborador
-  - ciclo-completo
+  - simulation
+  - associate
+  - full-cycle
 aliases:
-  - Simulación del Colaborador
-  - Ciclo de Vida Completo
+  - Associate Simulation
+  - Full Associate Lifecycle
 ---
 
-# Simulación completa — Ciclo de vida del Colaborador
+# Full Simulation — Associate Lifecycle
 
-> [!abstract] Propósito
-> Esta simulación recorre los 12 estados del [[Semáforo del Colaborador]] a través de la historia completa de un colaborador ficticio: Carlos Méndez. A diferencia de las demás simulaciones que siguen un departamento durante una semana operativa, esta narra el ciclo de vida longitudinal de un colaborador: desde su captación por Reclutamiento, pasando por su onboarding en hotel, operación diaria, pago, stand-by, asignación temporal, inasistencia, accidente laboral, reporte del hotel, y entrega de documentos fiscales, hasta sus vacaciones. El ciclo se cierra con la supervisión de calidad (QA) y la medición de los KPIs del módulo Colaborador. Todos los datos son ficticios, pero cada acción, transición y regla respeta fielmente la documentación del vault.
+> [!abstract] Purpose
+> This simulation covers the 12 states of the [[Semáforo del Colaborador]] through the complete story of a fictional associate: Carlos Méndez. Unlike other simulations that follow a department across an operational week, this one narrates the longitudinal lifecycle of an associate: from their sourcing by Recruitment, through hotel onboarding, daily operations, payroll, stand-by, temporary assignment, absence, workplace accident, hotel report, and tax document delivery, through to vacation pay. The cycle closes with quality supervision (QA) and measurement of the Associate module KPIs. All data is fictional, but every action, transition, and rule faithfully reflects the vault documentation.
 
-## Personajes de la simulación
+## Simulation Characters
 
-| Personaje | Rol | Departamento |
+| Character | Role | Department |
 |---|---|---|
-| Carlos Méndez | Colaborador ([[Posiciones\|Housekeeper]]) | — |
-| Operador 3 | [[Operador de QA]] (asignado fijo a Colaborador) | QA — Oranje |
-| (Reclutadora) | [[Reclutadora]] | Reclutamiento — Oranje |
-| (Inspector zona Centro) | [[Inspector]] | Inspección — Oranje |
-| (Inspector zona Este) | [[Inspector]] | Inspección — Oranje |
-| (Supervisor Hotel Riviera) | [[Supervisor]] | Hotel Riviera · Zona Centro |
-| (Manager de Área Hotel Riviera) | [[Manager de Área]] | Hotel Riviera · Zona Centro |
-| (Supervisor Hotel Costa Azul) | [[Supervisor]] | Hotel Costa Azul · Zona Este |
-| [[Contadora]] | [[Contadora]] | Contabilidad — Oranje |
-| [[Manager de Contabilidad]] | [[Manager de Contabilidad]] | Contabilidad — Oranje |
-| María Méndez | Contacto de emergencia (madre) | — |
-| María González | Testigo (compañera de turno) | Hotel Riviera |
+| Carlos Méndez | Associate ([[Posiciones\|Housekeeper]]) | — |
+| Operator 3 | [[Operador de QA]] (fixed assignment to Associate) | QA — Oranje |
+| (Recruiter) | [[Reclutadora]] | Recruitment — Oranje |
+| (Inspector, Center Zone) | [[Inspector]] | Inspection — Oranje |
+| (Inspector, East Zone) | [[Inspector]] | Inspection — Oranje |
+| (Supervisor Hotel Riviera) | [[Supervisor]] | Hotel Riviera · Center Zone |
+| (Area Manager Hotel Riviera) | [[Manager de Área]] | Hotel Riviera · Center Zone |
+| (Supervisor Hotel Costa Azul) | [[Supervisor]] | Hotel Costa Azul · East Zone |
+| [[Contadora]] | [[Contadora]] | Accounting — Oranje |
+| [[Manager de Contabilidad]] | [[Manager de Contabilidad]] | Accounting — Oranje |
+| María Méndez | Emergency contact (mother) | — |
+| María González | Witness (shift partner) | Hotel Riviera |
 
-### Perfil del colaborador
+### Associate Profile
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Nombre | Carlos Méndez |
-| Edad | 28 años |
-| Género | Masculino |
-| Domicilio | Zona Centro |
-| Teléfono | (555) 123-4567 |
-| Posición | Housekeeper |
-| Nivel de inglés | Intermedio |
-| Experiencia | 2 años |
-| Transporte | Vehículo propio |
-| Modalidad | Tiempo completo |
-| SSN/TaxID | No tiene al inicio |
-| Tipo de sangre | O+ |
-| Alergias | Ninguna |
-| Contacto de emergencia | María Méndez (madre) |
+| Name | Carlos Méndez |
+| Age | 28 years old |
+| Gender | Male |
+| Address | Center Zone |
+| Phone | (555) 123-4567 |
+| Position | Housekeeper |
+| English level | Intermediate |
+| Experience | 2 years |
+| Transportation | Own vehicle |
+| Modality | Full time |
+| SSN/TaxID | None at start |
+| Blood type | O+ |
+| Allergies | None |
+| Emergency contact | María Méndez (mother) |
 
 ---
 
-## Fase 1 — Ingreso al sistema
+## Phase 1 — System Entry
 
-> Referencia: [[Flujo de Reclutamiento]] · [[Reglas de Reclutamiento]] · [[Blacklist]] · [[Deducciones]]
+> Reference: [[Flujo de Reclutamiento]] · [[Reglas de Reclutamiento]] · [[Blacklist]] · [[Deducciones]]
 
-### 1.1 — Entrevista inicial
+### 1.1 — Initial interview
 
-La [[Reclutadora]] contacta a Carlos tras identificarlo como candidato viable. Durante la entrevista inicial, captura los datos básicos: nombre, edad, género, domicilio y teléfono. Esta etapa corresponde al inicio del [[Flujo de Reclutamiento]].
+The [[Reclutadora]] contacts Carlos after identifying him as a viable candidate. During the initial interview, she captures the basic data: name, age, gender, address, and phone. This stage corresponds to the start of the [[Flujo de Reclutamiento]].
 
-### 1.2 — Alta en la app
+### 1.2 — App registration
 
-Carlos completa su perfil directamente desde la app de Oranje. Registra los siguientes datos:
+Carlos completes his profile directly from the Oranje app. He enters the following data:
 
-- SSN: no tiene
-- ITIN: no tiene
-- Posición: [[Posiciones|Housekeeper]]
-- Nivel de inglés: [[Niveles de Inglés|Intermedio]]
-- Nivel de experiencia: 2 años
-- Tipo de transporte: vehículo propio
-- Modalidad: [[Modalidades de Contratación|Tiempo completo]]
+- SSN: none
+- ITIN: none
+- Position: [[Posiciones|Housekeeper]]
+- English level: [[Niveles de Inglés|Intermediate]]
+- Experience level: 2 years
+- Transportation type: own vehicle
+- Modality: [[Modalidades de Contratación|Full time]]
 
-### 1.3 — Datos de emergencia
+### 1.3 — Emergency data
 
-Carlos completa la sección de datos de emergencia y salud:
+Carlos completes the emergency and health data section:
 
-- Contacto de emergencia: María Méndez (madre)
-- Tipo de sangre: O+
-- Alergias: ninguna
+- Emergency contact: María Méndez (mother)
+- Blood type: O+
+- Allergies: none
 
-### 1.4 — Validación y aprobación
+### 1.4 — Validation and approval
 
-La [[Reclutadora]] revisa el perfil de Carlos, lo aprueba y habilita su acceso a los paneles del sistema. Antes de proceder, consulta la [[Blacklist]] — Carlos no aparece registrado.
+The [[Reclutadora]] reviews Carlos's profile, approves him, and enables his access to the system panels. Before proceeding, she checks the [[Blacklist]] — Carlos does not appear.
 
-Carlos ingresa al [[Pool de Colaboradores]].
+Carlos enters the [[Pool de Colaboradores]].
 
-> [!info] Semáforo del Colaborador
-> → **Blanco** — Pre-asignación
-> **Responsable:** Reclutadora · **Comentario:** "Candidato aprobado, ingresa al Pool."
+> [!info] Associate Status Indicator
+> → **White** — Pre-assignment
+> **Responsible:** Recruiter · **Comment:** "Candidate approved, enters the Pool."
 
-> [!warning] Regla de negocio
-> La [[Reclutadora]] debe consultar la [[Blacklist]] antes de reclutar a cualquier candidato. — [[Reglas de Reclutamiento]]
+> [!warning] Business Rule
+> The [[Reclutadora]] must check the [[Blacklist]] before recruiting any candidate. — [[Reglas de Reclutamiento]]
 
-> [!info] Sistema
-> Como Carlos no tiene SSN ni TaxID, el sistema activa automáticamente la **retención del 16%** sobre su cheque. — [[Deducciones]]
+> [!info] System
+> Since Carlos has no SSN or TaxID, the system automatically activates a **16% withholding** on his paycheck. — [[Deducciones]]
 
-> [!tip] QA — Operador 3 observa
-> Completitud de datos: Carlos completó las 3 fases de captura (entrevista, alta en app, datos de emergencia). Contribuye positivamente al KPI de **Completitud de datos** (meta: ≥ 95%). — [[Métricas y KPIs por Departamento#Colaborador|KPI 5]]
-
----
-
-## Fase 2 — Primera asignación y onboarding en hotel
-
-> Referencia: [[Flujo de Requisición]] · [[Self-Pick de Requisiciones]] · [[Semáforo del Colaborador]] · [[Schedule]] · [[Timesheet]]
-
-### 2.1 — La Requisición
-
-El [[Supervisor]] del Hotel Riviera (zona Centro) crea una [[Requisición]] solicitando 2 Housekeepers, tiempo completo, con inicio el lunes próximo e inglés intermedio. El [[Manager de Área]] la autoriza.
-
-El sistema calcula la urgencia: más de 120 horas antes del inicio = Verde (Normal). Las posiciones se reflejan en el [[Schedule]] de la semana. El [[Inspector]] de zona Centro se asigna automáticamente a la requisición.
-
-### 2.2 — Match y asignación
-
-La [[Reclutadora]] toma la requisición de la bandeja compartida ([[Self-Pick de Requisiciones|Self-Pick]]). Busca en el [[Pool de Colaboradores]]: Housekeeper, Intermedio, zona Centro, Tiempo completo. Encuentra a Carlos (Blanco). Lo asigna al Hotel Riviera y lo registra en el [[Schedule]].
-
-### 2.3 — Día 1 — Verde manzana
-
-Carlos llega al Hotel Riviera. El [[Inspector]] verifica su llegada en sitio.
-
-> [!info] Semáforo del Colaborador
-> **Blanco** → **Verde manzana** — Día 1 verificado
-> **Responsable:** Inspector (zona Centro) · **Comentario:** "Carlos verificado en sitio en Hotel Riviera."
-
-El [[Timesheet]] se crea a partir del [[Schedule]]. Carlos poncha su primera Entrada vía QR generado por el [[Manager de Área]].
-
-### 2.4 — Día 3 — Azul claro
-
-Carlos poncha en la propiedad al tercer día. El [[Inspector]] le entrega su uniforme.
-
-> [!info] Semáforo del Colaborador
-> **Verde manzana** → **Azul claro** — Día 3, uniforme entregado
-> **Responsable:** Inspector (zona Centro) · **Comentario:** "Carlos poncha Día 3. Uniforme entregado."
-
-> [!info] Sistema
-> Se genera una [[Deducciones|deducción]] de **$15 USD** por uniforme, que se aplicará en el próximo [[Consolidado Semanal del Colaborador|Consolidado Semanal]].
-
-### 2.5 — Día 7+ — Naranja
-
-Carlos completa 7 días consecutivos. El sistema lo transiciona automáticamente.
-
-> [!info] Semáforo del Colaborador
-> **Azul claro** → **Naranja** — Fijo
-> **Responsable:** Sistema · **Comentario:** "Carlos completó 7 días. Ahora es colaborador fijo en Hotel Riviera."
+> [!tip] QA — Operator 3 observes
+> Data completeness: Carlos completed all 3 capture phases (interview, app registration, emergency data). Contributes positively to the **Data completeness** KPI (target: ≥ 95%). — [[Métricas y KPIs por Departamento#Colaborador|KPI 5]]
 
 ---
 
-## Fase 3 — Operación diaria
+## Phase 2 — First Assignment and Hotel Onboarding
 
-> Referencia: [[Timesheet]] · [[Reglas del Colaborador]] · [[Reglas de Inspección]]
+> Reference: [[Flujo de Requisición]] · [[Self-Pick de Requisiciones]] · [[Semáforo del Colaborador]] · [[Schedule]] · [[Timesheet]]
 
-Un día típico de Carlos en Hotel Riviera. Poncha vía QR generado por el [[Manager de Área]].
+### 2.1 — The Requisition
 
-### 3.1 — Registro de ponches
+The [[Supervisor]] of Hotel Riviera (Center Zone) creates a [[Requisición]] requesting 2 Housekeepers, full time, starting next Monday, with intermediate English. The [[Manager de Área]] authorizes it.
 
-| Ponche | Hora | Evento |
+The system calculates urgency: more than 120 hours before the start date = Green (Normal). The positions are reflected in the week's [[Schedule]]. The Center Zone [[Inspector]] is automatically assigned to the requisition.
+
+### 2.2 — Match and assignment
+
+The [[Reclutadora]] picks the requisition from the shared queue ([[Self-Pick de Requisiciones|Self-Pick]]). She searches the [[Pool de Colaboradores]]: Housekeeper, Intermediate, Center Zone, Full time. She finds Carlos (White). She assigns him to Hotel Riviera and registers him in the [[Schedule]].
+
+### 2.3 — Day 1 — Apple Green
+
+Carlos arrives at Hotel Riviera. The [[Inspector]] verifies his arrival on site.
+
+> [!info] Associate Status Indicator
+> **White** → **Apple Green** — Day 1 verified
+> **Responsible:** Inspector (Center Zone) · **Comment:** "Carlos verified on site at Hotel Riviera."
+
+The [[Timesheet]] is created from the [[Schedule]]. Carlos clocks in for the first time via QR generated by the [[Manager de Área]].
+
+### 2.4 — Day 3 — Light Blue
+
+Carlos clocks in at the property on the third day. The [[Inspector]] delivers his uniform.
+
+> [!info] Associate Status Indicator
+> **Apple Green** → **Light Blue** — Day 3, uniform delivered
+> **Responsible:** Inspector (Center Zone) · **Comment:** "Carlos clocks in Day 3. Uniform delivered."
+
+> [!info] System
+> A [[Deducciones|deduction]] of **$15 USD** is generated for the uniform, to be applied in the next [[Consolidado Semanal del Colaborador|Weekly Summary]].
+
+### 2.5 — Day 7+ — Orange
+
+Carlos completes 7 consecutive days. The system transitions him automatically.
+
+> [!info] Associate Status Indicator
+> **Light Blue** → **Orange** — Fixed
+> **Responsible:** System · **Comment:** "Carlos completed 7 days. He is now a fixed associate at Hotel Riviera."
+
+---
+
+## Phase 3 — Daily Operations
+
+> Reference: [[Timesheet]] · [[Reglas del Colaborador]] · [[Reglas de Inspección]]
+
+A typical day for Carlos at Hotel Riviera. He clocks in via QR generated by the [[Manager de Área]].
+
+### 3.1 — Punch records
+
+| Punch | Time | Event |
 |---|---|---|
-| Entrada | 7:00 AM | Inicio de jornada |
-| Salida Lunch | 12:00 PM | Sale a comer |
-| Entrada Lunch | 12:35 PM | Regresa de comer |
-| Salida Break | 3:00 PM | Sale a descanso |
-| Entrada Break | 3:15 PM | Regresa de descanso |
-| Salida | 5:00 PM | Fin de jornada |
+| Clock In | 7:00 AM | Start of shift |
+| Lunch Out | 12:00 PM | Goes to lunch |
+| Lunch In | 12:35 PM | Returns from lunch |
+| Break Out | 3:00 PM | Goes to break |
+| Break In | 3:15 PM | Returns from break |
+| Clock Out | 5:00 PM | End of shift |
 
-### 3.2 — Cálculo de horas
+### 3.2 — Hours calculation
 
-| Concepto | Cálculo | Resultado |
+| Concept | Calculation | Result |
 |---|---|---|
-| Horas brutas | 5:00 PM − 7:00 AM | 10h 00min |
-| Lunch real | 12:35 PM − 12:00 PM | 35 min |
-| Deducción de lunch | Lunch real (35 min) ≥ 30 min → se deduce tiempo real | 35 min |
-| Break real | 3:15 PM − 3:00 PM | 15 min |
-| **Horas netas** | 10h 00min − 35min − 15min | **9h 10min** |
+| Gross hours | 5:00 PM − 7:00 AM | 10h 00min |
+| Actual lunch | 12:35 PM − 12:00 PM | 35 min |
+| Lunch deduction | Actual lunch (35 min) ≥ 30 min → actual time is deducted | 35 min |
+| Actual break | 3:15 PM − 3:00 PM | 15 min |
+| **Net hours** | 10h 00min − 35min − 15min | **9h 10min** |
 
-> [!warning] Regla de negocio
-> El lunch de Carlos (35 min) excede los 30 minutos. El sistema activa el **Indicador de Lunch Extendido**, visible únicamente para [[Inspector]], [[Coordinador]] y [[Manager de Reclutamiento]]. El hotel **no tiene acceso** a este indicador. No es punitivo de forma automática.
+> [!warning] Business Rule
+> Carlos's lunch (35 min) exceeds 30 minutes. The system activates the **Extended Lunch Indicator**, visible only to the [[Inspector]], [[Coordinador]], and [[Manager de Reclutamiento]]. The hotel **does not have access** to this indicator. It is not automatically punitive.
 
-> [!tip] QA — Operador 3 observa
-> El lunch de Carlos (35 min) activa el Indicador de Lunch Extendido. Alimenta el KPI de **Tasa de Lunch Extendido** (meta: ≤ 10%). Una jornada aislada no representa alerta, pero el Operador 3 registra la tendencia. — [[Métricas y KPIs por Departamento#Colaborador|KPI 4]]
+> [!tip] QA — Operator 3 observes
+> Carlos's lunch (35 min) activates the Extended Lunch Indicator. It feeds the **Extended Lunch Rate** KPI (target: ≤ 10%). An isolated shift does not represent an alert, but Operator 3 records the trend. — [[Métricas y KPIs por Departamento#Colaborador|KPI 4]]
 
-### 3.3 — Escenario alternativo — Lunch de 25 minutos
+### 3.3 — Alternative scenario — 25-minute lunch
 
-Si Carlos hubiera tomado solo 25 minutos de lunch:
+If Carlos had taken only 25 minutes for lunch:
 
-| Concepto | Cálculo | Resultado |
+| Concept | Calculation | Result |
 |---|---|---|
-| Lunch real | 25 min | 25 min |
-| Deducción de lunch | Lunch real (25 min) < 30 min → se deduce el **mínimo de 30 min** | 30 min |
-| **Horas netas** | 10h 00min − 30min − 15min | **9h 15min** |
+| Actual lunch | 25 min | 25 min |
+| Lunch deduction | Actual lunch (25 min) < 30 min → the **minimum of 30 min** is deducted | 30 min |
+| **Net hours** | 10h 00min − 30min − 15min | **9h 15min** |
 
-> [!warning] Regla de negocio
-> La deducción de lunch aplica a todos sin excepción:
-> - Lunch < 30 min → se deducen 30 min (mínimo obligatorio)
-> - Lunch ≥ 30 min → se deduce el tiempo real tomado
-> - Sin ponche de lunch → auto-deducción de 30 min
+> [!warning] Business Rule
+> The lunch deduction applies to everyone without exception:
+> - Lunch < 30 min → 30 min are deducted (mandatory minimum)
+> - Lunch ≥ 30 min → the actual time taken is deducted
+> - No lunch punch → auto-deduction of 30 min
 >
-> Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch. — [[Reglas del Colaborador]]
+> After 6 continuous hours of work, the associate must take their lunch. — [[Reglas del Colaborador]]
 
 ---
 
-## Fase 4 — Primera semana de pago
+## Phase 4 — First Pay Week
 
-> Referencia: [[Consolidado Semanal del Colaborador]] · [[Deducciones]] · [[Flujo de Nómina]] · [[Contrato]]
+> Reference: [[Consolidado Semanal del Colaborador]] · [[Deducciones]] · [[Flujo de Nómina]] · [[Contrato]]
 
-Al cierre de la semana, el sistema genera automáticamente el [[Consolidado Semanal del Colaborador|Consolidado Semanal]] de Carlos. Como trabajó solo en Hotel Riviera, el consolidado contiene un único [[Timesheet]].
+At the close of the week, the system automatically generates Carlos's [[Consolidado Semanal del Colaborador|Weekly Summary]]. Since he worked only at Hotel Riviera, the summary contains a single [[Timesheet]].
 
-### 4.1 — Detalle de la semana
+### 4.1 — Week detail
 
-| Día | Horas brutas | Lunch | Break | Horas netas |
+| Day | Gross hours | Lunch | Break | Net hours |
 |---|---|---|---|---|
-| Lunes | 10h 00min | 35 min | 15 min | 9h 10min |
-| Martes | 8h 00min | 30 min | 15 min | 7h 15min |
-| Miércoles | 8h 00min | 30 min | 15 min | 7h 15min |
-| Jueves | 8h 00min | 30 min | 15 min | 7h 15min |
-| Viernes | 8h 00min | 30 min | 15 min | 7h 15min |
+| Monday | 10h 00min | 35 min | 15 min | 9h 10min |
+| Tuesday | 8h 00min | 30 min | 15 min | 7h 15min |
+| Wednesday | 8h 00min | 30 min | 15 min | 7h 15min |
+| Thursday | 8h 00min | 30 min | 15 min | 7h 15min |
+| Friday | 8h 00min | 30 min | 15 min | 7h 15min |
 | **Total** | **42h 00min** | — | — | **38h 10min** |
 
-Las 42 horas brutas exceden el umbral de 40 horas semanales → **2 horas de overtime** en Hotel Riviera.
+The 42 gross hours exceed the 40-hour weekly threshold → **2 hours of overtime** at Hotel Riviera.
 
-### 4.2 — Cálculo de pago
+### 4.2 — Pay calculation
 
-Pay rate de Carlos en Hotel Riviera: **$14.00/hr**.
+Carlos's pay rate at Hotel Riviera: **$14.00/hr**.
 
-| Concepto | Cálculo | Monto |
+| Concept | Calculation | Amount |
 |---|---|---|
-| Horas regulares (netas − OT ajustado) | 36h 10min × $14.00 | $506.33 |
+| Regular hours (net − adjusted OT) | 36h 10min × $14.00 | $506.33 |
 | Overtime | 2h 00min × $21.00 (1.5×) | $42.00 |
-| **Subtotal bruto** | | **$548.33** |
+| **Gross subtotal** | | **$548.33** |
 
-### 4.3 — Deducciones aplicadas
+### 4.3 — Applied deductions
 
-| Deducción | Monto | Condición |
+| Deduction | Amount | Condition |
 |---|---|---|
-| Uniforme | $15.00 | Entregado el Día 3 por el [[Inspector]] |
-| Comida | $15.00 | $3.00 × 5 días laborados (configurado en el [[Contrato]]) |
-| Retención 16% | $87.73 | 16% de $548.33 (sin SSN/TaxID) |
-| **Total deducciones** | **$117.73** | |
+| Uniform | $15.00 | Delivered on Day 3 by the [[Inspector]] |
+| Meals | $15.00 | $3.00 × 5 days worked (configured in the [[Contrato]]) |
+| 16% withholding | $87.73 | 16% of $548.33 (no SSN/TaxID) |
+| **Total deductions** | **$117.73** | |
 
-### 4.4 — Cheque final
+### 4.4 — Final paycheck
 
-| Concepto | Monto |
+| Concept | Amount |
 |---|---|
-| Subtotal bruto | $548.33 |
-| Total deducciones | −$117.73 |
-| **Cheque neto** | **$430.60** |
+| Gross subtotal | $548.33 |
+| Total deductions | −$117.73 |
+| **Net paycheck** | **$430.60** |
 
-> [!info] Sistema
-> El [[Consolidado Semanal del Colaborador|Consolidado Semanal]] es de uso exclusivo de Contabilidad. Carlos no tiene acceso a este documento. La [[Contadora]] revisa y el [[Manager de Contabilidad]] aprueba antes de liberar el pago. — [[Flujo de Nómina]]
-
----
-
-## Fase 5 — Stand-by y disponibilidad voluntaria
-
-> Referencia: [[Semáforo del Colaborador]] · [[Reglas del Colaborador]] · [[Pool de Colaboradores]]
-
-### 5.1 — Rosa — Stand-by
-
-Semanas después, el Hotel Riviera entra en temporada baja. El [[Supervisor]] pone a Carlos en estado **Rosa (Stand-by)**.
-
-Carlos ya no tiene [[Schedule]] ni [[Timesheet]].
-
-> [!info] Semáforo del Colaborador
-> **Naranja** → **Rosa** — Stand-by por hotel
-> **Responsable:** Supervisor Hotel Riviera · **Comentario:** "Temporada baja. Carlos pasa a stand-by."
-
-> [!warning] Regla de negocio
-> En estado Rosa el colaborador **no puede ponchar**. La cadena es: Asignación activa → [[Schedule]] → [[Timesheet]] → Ponchado. Sin asignación activa, no hay Schedule; sin Schedule, no hay Timesheet; sin Timesheet, no puede ponchar. — [[Reglas del Colaborador]]
-
-> [!tip] QA — Operador 3 observa
-> Carlos transita de Naranja (activo) a Rosa (Stand-by). Sale de la cuenta de colaboradores desplegables. Afecta el KPI de **Salud del Pool** (meta: ≥ 60%). — [[Métricas y KPIs por Departamento#Colaborador|KPI 3]]
-
-### 5.2 — Amarillo — Disponible voluntario
-
-Carlos decide que quiere seguir trabajando. Desde la app, activa el estado **Amarillo (Disponible voluntario)** por cuenta propia. No requiere aprobación de nadie.
-
-> [!info] Semáforo del Colaborador
-> **Rosa** → **Amarillo** — Carlos se declara disponible
-> **Responsable:** Carlos Méndez (colaborador) · **Comentario:** "Carlos activa disponibilidad desde la app."
-
-> [!info] Sistema
-> Amarillo es el **único estado** que el colaborador puede activar por sí mismo. Es una declaración de disponibilidad, no una asignación. Carlos sigue sin [[Schedule]] ni [[Timesheet]] y **no puede ponchar** hasta ser asignado (→ Café).
-
-### 5.3 — Café — Asignación temporal
-
-La [[Reclutadora]] detecta que el Hotel Playa Sol (zona Sur) necesita cobertura por 3 días. Busca en el [[Pool de Colaboradores]], encuentra a Carlos en Amarillo. Lo asigna temporalmente y define la duración: **3 días**.
-
-> [!info] Semáforo del Colaborador
-> **Amarillo** → **Café** — Asignación temporal
-> **Responsable:** Reclutadora · **Comentario:** "Carlos asignado temporalmente a Hotel Playa Sol por 3 días."
-
-Se genera el [[Schedule]] y [[Timesheet]] de Carlos en Hotel Playa Sol. Ahora puede ponchar.
-
-### 5.4 — Retorno
-
-Al vencer los 3 días, el sistema cierra automáticamente el estado Café. Como Carlos sigue en periodo de descanso del Hotel Riviera (Rosa), regresa a **Amarillo**.
-
-> [!info] Semáforo del Colaborador
-> **Café** → **Amarillo** — Vence asignación temporal
-> **Responsable:** Sistema · **Comentario:** "3 días completados en Hotel Playa Sol. Carlos regresa a disponible."
-
-> [!info] Sistema
-> El camino completo para que un colaborador en descanso pueda trabajar es: **Rosa → Amarillo → Café**. Si el periodo de descanso hubiera terminado, Carlos regresaría a **Verde fuerte** en lugar de Amarillo.
+> [!info] System
+> The [[Consolidado Semanal del Colaborador|Weekly Summary]] is for Accounting use only. Carlos does not have access to this document. The [[Contadora]] reviews it and the [[Manager de Contabilidad]] approves it before releasing payment. — [[Flujo de Nómina]]
 
 ---
 
-## Fase 6 — Trabajo en múltiples hoteles
+## Phase 5 — Stand-by and Voluntary Availability
 
-> Referencia: [[Consolidado Semanal del Colaborador]] · [[Contrato]] · [[Facturación al Hotel]]
+> Reference: [[Semáforo del Colaborador]] · [[Reglas del Colaborador]] · [[Pool de Colaboradores]]
 
-### 6.1 — Contexto
+### 5.1 — Pink — Stand-by
 
-Semanas después, Carlos ya regresó del descanso y está como **Naranja** (fijo) en Hotel Riviera. El Hotel Playa Sol necesita cobertura extra y la [[Reclutadora]] lo asigna temporalmente (**Café**) para cubrir 2 días adicionales esa semana.
+Weeks later, Hotel Riviera enters the low season. The [[Supervisor]] puts Carlos on **Pink (Stand-by)** status.
 
-### 6.2 — Horas por hotel
+Carlos no longer has a [[Schedule]] or [[Timesheet]].
 
-| Hotel | Tipo | Días | Horas brutas | Horas netas | OT (brutas > 40) |
+> [!info] Associate Status Indicator
+> **Orange** → **Pink** — Stand-by by hotel
+> **Responsible:** Supervisor Hotel Riviera · **Comment:** "Low season. Carlos moves to stand-by."
+
+> [!warning] Business Rule
+> In Pink status the associate **cannot clock in**. The chain is: Active assignment → [[Schedule]] → [[Timesheet]] → Clock in. Without an active assignment there is no Schedule; without a Schedule there is no Timesheet; without a Timesheet, clocking in is not possible. — [[Reglas del Colaborador]]
+
+> [!tip] QA — Operator 3 observes
+> Carlos transitions from Orange (active) to Pink (Stand-by). He leaves the count of deployable associates. Affects the **Pool Health** KPI (target: ≥ 60%). — [[Métricas y KPIs por Departamento#Colaborador|KPI 3]]
+
+### 5.2 — Yellow — Voluntary available
+
+Carlos decides he wants to keep working. From the app, he activates **Yellow (Voluntary available)** status on his own. No one's approval is required.
+
+> [!info] Associate Status Indicator
+> **Pink** → **Yellow** — Carlos declares himself available
+> **Responsible:** Carlos Méndez (associate) · **Comment:** "Carlos activates availability from the app."
+
+> [!info] System
+> Yellow is the **only status** the associate can activate on their own. It is a declaration of availability, not an assignment. Carlos still has no [[Schedule]] or [[Timesheet]] and **cannot clock in** until assigned (→ Brown).
+
+### 5.3 — Brown — Temporary assignment
+
+The [[Reclutadora]] detects that Hotel Playa Sol (South Zone) needs coverage for 3 days. She searches the [[Pool de Colaboradores]], finds Carlos in Yellow. She assigns him temporarily and sets the duration: **3 days**.
+
+> [!info] Associate Status Indicator
+> **Yellow** → **Brown** — Temporary assignment
+> **Responsible:** Recruiter · **Comment:** "Carlos temporarily assigned to Hotel Playa Sol for 3 days."
+
+Carlos's [[Schedule]] and [[Timesheet]] at Hotel Playa Sol are generated. He can now clock in.
+
+### 5.4 — Return
+
+After 3 days, the system automatically closes the Brown status. Since Carlos is still in his rest period at Hotel Riviera (Pink), he returns to **Yellow**.
+
+> [!info] Associate Status Indicator
+> **Brown** → **Yellow** — Temporary assignment expires
+> **Responsible:** System · **Comment:** "3 days completed at Hotel Playa Sol. Carlos returns to available."
+
+> [!info] System
+> The complete path for an associate on rest to be able to work is: **Pink → Yellow → Brown**. If the rest period had ended, Carlos would return to **Dark Green** instead of Yellow.
+
+---
+
+## Phase 6 — Working at Multiple Hotels
+
+> Reference: [[Consolidado Semanal del Colaborador]] · [[Contrato]] · [[Facturación al Hotel]]
+
+### 6.1 — Context
+
+Weeks later, Carlos has returned from his rest and is **Orange** (fixed) at Hotel Riviera. Hotel Playa Sol needs extra coverage and the [[Reclutadora]] assigns him temporarily (**Brown**) to cover 2 additional days that week.
+
+### 6.2 — Hours per hotel
+
+| Hotel | Type | Days | Gross hours | Net hours | OT (gross > 40) |
 |---|---|---|---|---|---|
-| Hotel Riviera | Fijo | 5 | 42h | 38h 10min | 2h OT |
-| Hotel Playa Sol | Temporal | 2 | 16h | 14h 30min | 0h OT |
+| Hotel Riviera | Fixed | 5 | 42h | 38h 10min | 2h OT |
+| Hotel Playa Sol | Temporary | 2 | 16h | 14h 30min | 0h OT |
 
-> [!warning] Regla de negocio
-> El overtime se calcula **por hotel**, no de forma global entre hoteles. Hotel Riviera tiene 42h brutas (2h OT). Hotel Playa Sol tiene 16h brutas (sin OT, por debajo de 40h). — [[Consolidado Semanal del Colaborador]]
+> [!warning] Business Rule
+> Overtime is calculated **per hotel**, not globally across hotels. Hotel Riviera has 42 gross hours (2h OT). Hotel Playa Sol has 16 gross hours (no OT, below 40h). — [[Consolidado Semanal del Colaborador]]
 
-### 6.3 — Rate interno vs. contractual
+### 6.3 — Internal rate vs. contractual rate
 
-Carlos, por su experiencia y desempeño, tiene un **rate interno** de $15.00/hr acordado con Oranje, aunque el [[Contrato]] del Hotel Riviera pacta un pay rate de $14.00/hr.
+Carlos, due to his experience and performance, has an **internal rate** of $15.00/hr agreed with Oranje, although the Hotel Riviera [[Contrato]] stipulates a pay rate of $14.00/hr.
 
-- El sistema usa **$15.00/hr** para calcular el pago a Carlos.
-- La [[Facturación al Hotel]] siempre usa el **bill rate contractual**, no el rate interno.
-- La diferencia la absorbe Oranje.
+- The system uses **$15.00/hr** to calculate Carlos's pay.
+- The [[Facturación al Hotel]] always uses the **contractual bill rate**, not the internal rate.
+- The difference is absorbed by Oranje.
 
-> [!info] Sistema
-> El rate interno solo es visible para Contabilidad ([[Manager de Contabilidad]] y [[Contadora]]). Ni Carlos ni el hotel conocen esta diferencia.
+> [!info] System
+> The internal rate is only visible to Accounting ([[Manager de Contabilidad]] and [[Contadora]]). Neither Carlos nor the hotel are aware of this difference.
 
-### 6.4 — Asignación del cheque
+### 6.4 — Paycheck assignment
 
-Como Carlos trabajó más horas en Hotel Riviera (42h brutas vs. 16h brutas), el cheque se asigna a **Hotel Riviera** para efectos de impresión y entrega.
-
----
-
-## Fase 7 — Primera inasistencia
-
-> Referencia: [[Semáforo del Colaborador]] · [[Blacklist]] · [[Reglas del Colaborador]]
-
-Un día, Carlos no se presenta al Hotel Riviera sin justificación. El sistema lo marca automáticamente como **Morado (No regresó)**.
-
-> [!info] Semáforo del Colaborador
-> **Naranja** → **Morado** — Primera inasistencia
-> **Responsable:** Sistema · **Comentario:** "Carlos no se presentó sin justificación. 1ra inasistencia. Quedan 2 antes del Blacklist automático."
-
-Es su **primera inasistencia**. Le quedan 2 antes del Blacklist automático.
-
-> [!warning] Regla de negocio
-> Cada inasistencia se registra individualmente. Al acumular **3 inasistencias**, el sistema aplica [[Blacklist]] automático (estado Negro). No requiere acción manual de ningún rol. — [[Reglas del Colaborador]]
-
-Al día siguiente, Carlos regresa y sigue trabajando normalmente.
-
-> [!info] Semáforo del Colaborador
-> **Morado** → **Naranja** — Carlos regresa al día siguiente
-> **Responsable:** Sistema · **Comentario:** "Carlos presente. Regresa a estado Naranja."
-
-> [!tip] QA — Operador 3 observa
-> La transición a Morado se contabiliza en el KPI de **Tasa de inasistencia** (meta: ≤ 5%). Una inasistencia aislada no genera alerta, pero el Operador 3 registra el evento. — [[Métricas y KPIs por Departamento#Colaborador|KPI 1]]
+Since Carlos worked more hours at Hotel Riviera (42 gross hours vs. 16 gross hours), the paycheck is assigned to **Hotel Riviera** for printing and delivery purposes.
 
 ---
 
-## Fase 8 — Accidente laboral
+## Phase 7 — First Absence
 
-> Referencia: [[Flujo de Accidente Laboral]] · [[Accidente Laboral]] · [[Semáforo del Colaborador]] · [[Reglas de Inspección]]
+> Reference: [[Semáforo del Colaborador]] · [[Blacklist]] · [[Reglas del Colaborador]]
 
-### 8.1 — El accidente
+One day, Carlos does not show up at Hotel Riviera without justification. The system automatically marks him as **Purple (Did not return)**.
 
-Carlos se lesiona mientras limpia una habitación en Hotel Riviera: resbala con piso mojado. Reporta desde la app (Escenario A del [[Flujo de Accidente Laboral]]).
+> [!info] Associate Status Indicator
+> **Orange** → **Purple** — First absence
+> **Responsible:** System · **Comment:** "Carlos did not show up without justification. 1st absence. 2 remain before automatic Blacklist."
 
-### 8.2 — Generación de tarjeta
+This is his **first absence**. He has 2 remaining before automatic Blacklist.
 
-Se genera la tarjeta de [[Accidente Laboral]] con número de reporte automático. Carlos transita inmediatamente a **Gris — Accidentado**.
+> [!warning] Business Rule
+> Each absence is recorded individually. Upon accumulating **3 absences**, the system applies automatic [[Blacklist]] (Black status). No manual action by any role is required. — [[Reglas del Colaborador]]
 
-> [!info] Semáforo del Colaborador
-> **Naranja** → **Gris** — Accidentado
-> **Responsable:** Carlos Méndez (reporte del colaborador) · **Comentario:** "Resbalo con piso mojado durante limpieza. Habitación 307, piso 3."
+The next day, Carlos returns and continues working normally.
 
-La señal llega simultáneamente al [[Supervisor|SUP]] y al [[Inspector]] de zona Centro.
+> [!info] Associate Status Indicator
+> **Purple** → **Orange** — Carlos returns the next day
+> **Responsible:** System · **Comment:** "Carlos present. Returns to Orange status."
 
-### 8.3 — Captura presencial (SUP)
+> [!tip] QA — Operator 3 observes
+> The transition to Purple is counted in the **Absence rate** KPI (target: ≤ 5%). A single absence does not generate an alert, but Operator 3 records the event. — [[Métricas y KPIs por Departamento#Colaborador|KPI 1]]
 
-El [[Supervisor|SUP]] acude al lugar y captura:
+---
 
-| Campo | Detalle |
+## Phase 8 — Workplace Accident
+
+> Reference: [[Flujo de Accidente Laboral]] · [[Accidente Laboral]] · [[Semáforo del Colaborador]] · [[Reglas de Inspección]]
+
+### 8.1 — The accident
+
+Carlos injures himself while cleaning a room at Hotel Riviera: he slips on a wet floor. He reports it from the app (Scenario A of the [[Flujo de Accidente Laboral]]).
+
+### 8.2 — Card generation
+
+The [[Accidente Laboral]] card is generated with an automatic report number. Carlos immediately transitions to **Gray — Injured**.
+
+> [!info] Associate Status Indicator
+> **Orange** → **Gray** — Injured
+> **Responsible:** Carlos Méndez (associate report) · **Comment:** "Slipped on wet floor during cleaning. Room 307, 3rd floor."
+
+The signal simultaneously reaches the [[Supervisor|SUP]] and the Center Zone [[Inspector]].
+
+### 8.3 — On-site capture (SUP)
+
+The [[Supervisor|SUP]] goes to the scene and captures:
+
+| Field | Detail |
 |---|---|
-| Ubicación | Habitación 307, piso 3 |
-| Circunstancias | Resbaló con piso mojado durante limpieza |
-| Testigos | María González (compañera de turno) |
-| Atención inmediata | Hielo y vendaje en sitio |
+| Location | Room 307, 3rd floor |
+| Circumstances | Slipped on wet floor during cleaning |
+| Witnesses | María González (shift partner) |
+| Immediate care | Ice and bandage on site |
 
-### 8.4 — Seguimiento médico (Inspector)
+### 8.4 — Medical follow-up (Inspector)
 
-El [[Inspector]] complementa la tarjeta:
+The [[Inspector]] completes the card:
 
-| Campo | Detalle |
+| Field | Detail |
 |---|---|
-| Traslado | Clínica local zona Centro |
-| Diagnóstico | Esguince de tobillo grado 2 |
-| Días de incapacidad | 10 días |
-| Observaciones | Reposo absoluto, anti-inflamatorios |
+| Transfer | Local clinic, Center Zone |
+| Diagnosis | Grade 2 ankle sprain |
+| Days of incapacity | 10 days |
+| Notes | Complete rest, anti-inflammatories |
 
-> [!warning] Regla de negocio
-> Mientras Carlos esté en estado **Gris**, sus inasistencias **no cuentan** para la regla de 3 → Negro. Está protegido de [[Blacklist]]. La inasistencia previa (Fase 7) sigue contando, pero las que ocurran durante Gris no se acumulan. — [[Reglas del Colaborador]]
+> [!warning] Business Rule
+> While Carlos is in **Gray** status, his absences **do not count** toward the 3-absence → Black rule. He is protected from [[Blacklist]]. The prior absence (Phase 7) still counts, but those occurring during Gray do not accumulate. — [[Reglas del Colaborador]]
 
-### 8.5 — Alta médica y reintegro
+### 8.5 — Medical discharge and reinstatement
 
-Tras 10 días, Carlos recibe alta médica. El [[Inspector]] cierra la tarjeta de accidente.
+After 10 days, Carlos receives medical discharge. The [[Inspector]] closes the accident card.
 
-> [!info] Semáforo del Colaborador
-> **Gris** → **Verde fuerte** — Alta médica, tarjeta cerrada
-> **Responsable:** Inspector (zona Centro) · **Comentario:** "Alta médica confirmada. Tarjeta de accidente cerrada. Carlos disponible para reasignación."
+> [!info] Associate Status Indicator
+> **Gray** → **Dark Green** — Medical discharge, card closed
+> **Responsible:** Inspector (Center Zone) · **Comment:** "Medical discharge confirmed. Accident card closed. Carlos available for reassignment."
 
-Carlos queda disponible para nueva asignación.
-
----
-
-## Fase 9 — Reporte del hotel
-
-> Referencia: [[Semáforo del Colaborador]] · [[Reglas de Inspección]] · [[Blacklist]]
-
-### 9.1 — Nueva asignación
-
-Tras recuperarse, Carlos es asignado al Hotel Costa Azul (zona Este) a través de una nueva [[Requisición]]. Completa su progresión y llega a **Naranja (Fijo)**.
-
-> [!info] Semáforo del Colaborador
-> **Verde fuerte** → **Naranja** — Nueva asignación completada (7 días)
-> **Responsable:** Sistema · **Comentario:** "Carlos completa progresión en Hotel Costa Azul."
-
-### 9.2 — El reporte
-
-El [[Supervisor]] del Hotel Costa Azul reporta a Carlos por una queja de un huésped.
-
-> [!info] Semáforo del Colaborador
-> **Naranja** → **Rojo** — Reportado por el hotel
-> **Responsable:** Supervisor Hotel Costa Azul · **Comentario:** "Queja de huésped. Inspector zona Este investiga."
-
-### 9.3 — Investigación
-
-El [[Inspector]] de zona Este investiga el caso. Entrevista a Carlos, al Supervisor y recaba evidencia. El Inspector tiene **autoridad propia** para decidir el resultado, sin necesidad de escalamiento al [[Manager de Reclutamiento]].
-
-### 9.4 — Escenario A — Resolución a favor de Carlos
-
-El [[Inspector]] determina que la queja no estaba justificada.
-
-> [!info] Semáforo del Colaborador
-> **Rojo** → **Verde fuerte** — Reincorporación (disputa a favor del colaborador)
-> **Responsable:** Inspector (zona Este) · **Comentario:** "Investigación completada. Queja no justificada. Carlos reincorporado."
-
-> [!success] Resultado
-> Carlos es reincorporado. Disputa resuelta a favor del colaborador.
-
-### 9.5 — Escenario B — Resolución a favor del hotel (hipotético)
-
-Si el [[Inspector]] hubiera determinado que la falta era grave:
-
-> [!danger] Escenario alternativo
-> Transición hipotética: **Rojo → Negro (Blacklist)**. En este escenario hipotético, Carlos habría quedado vetado **permanentemente**. El estado Negro no tiene rehabilitación ni apelación. El registro se conserva pero el colaborador no aparece en búsquedas activas. La 3ra inasistencia también lo habría llevado al mismo destino por otra vía. — [[Blacklist]]
-
-> [!tip] QA — Operador 3 observa
-> En el Escenario A, Carlos es reincorporado — sin impacto en KPIs de Blacklist. En el Escenario B hipotético, la transición a Negro alimentaría el KPI de **Tasa de Blacklist** (meta: ≤ 2%). — [[Métricas y KPIs por Departamento#Colaborador|KPI 2]]
+Carlos is available for a new assignment.
 
 ---
 
-## Fase 10 — Entrega de documentos fiscales
+## Phase 9 — Hotel Report
 
-> Referencia: [[Deducciones]]
+> Reference: [[Semáforo del Colaborador]] · [[Reglas de Inspección]] · [[Blacklist]]
 
-Carlos obtiene su SSN y lo entrega a través del proceso correspondiente.
+### 9.1 — New assignment
 
-La [[Contadora]] desactiva manualmente la **retención del 16%** en el sistema.
+After recovery, Carlos is assigned to Hotel Costa Azul (East Zone) through a new [[Requisición]]. He completes his progression and reaches **Orange (Fixed)**.
 
-> [!info] Sistema
-> La retención 16% es **reembolsable**. El monto acumulado retenido durante todas las semanas previas puede ser devuelto a Carlos. — [[Deducciones]]
+> [!info] Associate Status Indicator
+> **Dark Green** → **Orange** — New assignment completed (7 days)
+> **Responsible:** System · **Comment:** "Carlos completes progression at Hotel Costa Azul."
 
-A partir de este momento, los cheques de Carlos ya no incluyen la retención del 16%.
+### 9.2 — The report
+
+The [[Supervisor]] of Hotel Costa Azul reports Carlos due to a guest complaint.
+
+> [!info] Associate Status Indicator
+> **Orange** → **Red** — Reported by the hotel
+> **Responsible:** Supervisor Hotel Costa Azul · **Comment:** "Guest complaint. East Zone Inspector investigates."
+
+### 9.3 — Investigation
+
+The East Zone [[Inspector]] investigates the case. He interviews Carlos, the Supervisor, and gathers evidence. The Inspector has **autonomous authority** to decide the outcome, without needing to escalate to the [[Manager de Reclutamiento]].
+
+### 9.4 — Scenario A — Resolution in favor of Carlos
+
+The [[Inspector]] determines that the complaint was not justified.
+
+> [!info] Associate Status Indicator
+> **Red** → **Dark Green** — Reinstatement (dispute resolved in favor of the associate)
+> **Responsible:** Inspector (East Zone) · **Comment:** "Investigation completed. Complaint not justified. Carlos reinstated."
+
+> [!success] Outcome
+> Carlos is reinstated. Dispute resolved in favor of the associate.
+
+### 9.5 — Scenario B — Resolution in favor of the hotel (hypothetical)
+
+If the [[Inspector]] had determined the offense was serious:
+
+> [!danger] Alternative scenario
+> Hypothetical transition: **Red → Black (Blacklist)**. In this hypothetical scenario, Carlos would have been permanently banned. The Black status has no rehabilitation or appeal. The record is preserved but the associate does not appear in active searches. The 3rd absence would also have led to the same outcome through a different route. — [[Blacklist]]
+
+> [!tip] QA — Operator 3 observes
+> In Scenario A, Carlos is reinstated — no impact on Blacklist KPIs. In the hypothetical Scenario B, the transition to Black would feed the **Blacklist Rate** KPI (target: ≤ 2%). — [[Métricas y KPIs por Departamento#Colaborador|KPI 2]]
 
 ---
 
-## Fase 11 — Vacaciones
+## Phase 10 — Tax Document Delivery
 
-> Referencia: [[Vacaciones]] · [[Semáforo del Colaborador]]
+> Reference: [[Deducciones]]
 
-El Hotel Costa Azul programa vacaciones para Carlos. Lo pone en **Rosa**.
+Carlos obtains his SSN and delivers it through the corresponding process.
 
-> [!info] Semáforo del Colaborador
-> **Naranja** → **Rosa** — Stand-by por vacaciones
-> **Responsable:** Supervisor Hotel Costa Azul · **Comentario:** "Vacaciones programadas por el hotel."
+The [[Contadora]] manually deactivates the **16% withholding** in the system.
 
-### 11.1 — Cálculo de pago de vacaciones
+> [!info] System
+> The 16% withholding is **refundable**. The accumulated amount withheld during all prior weeks can be returned to Carlos. — [[Deducciones]]
 
-La [[Contadora]] solicita el cálculo al sistema. La fórmula es:
+From this point on, Carlos's paychecks no longer include the 16% withholding.
+
+---
+
+## Phase 11 — Vacation Pay
+
+> Reference: [[Vacaciones]] · [[Semáforo del Colaborador]]
+
+Hotel Costa Azul schedules vacation for Carlos. It puts him on **Pink**.
+
+> [!info] Associate Status Indicator
+> **Orange** → **Pink** — Stand-by for vacation
+> **Responsible:** Supervisor Hotel Costa Azul · **Comment:** "Vacation scheduled by the hotel."
+
+### 11.1 — Vacation pay calculation
+
+The [[Contadora]] requests the calculation from the system. The formula is:
 
 ```
-Promedio de horas = Suma de horas netas pagadas (últimas 52 semanas) / 52
+Average hours = Sum of net hours paid (last 52 weeks) / 52
 ```
 
-Como Carlos trabajó en múltiples hoteles con diferentes rates, el sistema separa por hotel:
+Since Carlos worked at multiple hotels with different rates, the system separates by hotel:
 
-| Hotel | Semanas trabajadas | Promedio horas/semana | Rate |
+| Hotel | Weeks worked | Average hrs/week | Rate |
 |---|---|---|---|
 | Hotel Riviera | 30 | 37.5 hrs | $15.00/hr |
 | Hotel Playa Sol | 3 | 36.0 hrs | $13.00/hr |
 | Hotel Costa Azul | 19 | 37.0 hrs | $14.50/hr |
 
-> [!info] Sistema
-> Si el colaborador tiene menos de 52 semanas de antigüedad, se promedia sobre las semanas disponibles. — [[Vacaciones]]
+> [!info] System
+> If the associate has less than 52 weeks of seniority, the average is calculated over the available weeks. — [[Vacaciones]]
 
 ---
 
-## Fase 12 — Supervisión QA: cierre del ciclo
+## Phase 12 — QA Supervision: Cycle Close
 
-> Referencia: [[Métricas y KPIs por Departamento#Colaborador|Métricas de Colaborador]] · [[Indicador de Calidad]] · [[Reglas de QA]]
+> Reference: [[Métricas y KPIs por Departamento#Colaborador|Associate Metrics]] · [[Indicador de Calidad]] · [[Reglas de QA]]
 
-El [[Operador de QA]] (Operador 3), asignado de forma fija al módulo de [[Colaborador]], ha observado todo el ciclo de vida de Carlos Méndez sin ejecutar ninguna acción operativa. Su rol es exclusivamente de observación, medición y retroalimentación.
+The [[Operador de QA]] (Operator 3), with a fixed assignment to the [[Colaborador]] module, has observed Carlos Méndez's entire lifecycle without executing any operational action. Their role is exclusively observation, measurement, and feedback.
 
-> [!warning] Regla de negocio
-> Colaborador no es un departamento tradicional. El Operador de QA asignado monitorea métricas agregadas del pool y el ciclo de vida de la fuerza laboral, no el desempeño de un equipo interno. — [[Métricas y KPIs por Departamento#Colaborador]]
+> [!warning] Business Rule
+> Associate is not a traditional department. The assigned QA Operator monitors aggregate Pool metrics and the workforce lifecycle, not the performance of an internal team. — [[Métricas y KPIs por Departamento#Colaborador]]
 
-### Resumen de KPIs observados durante el ciclo de Carlos Méndez
+### KPI Summary Observed During Carlos Méndez's Cycle
 
-| # | KPI | Evento relevante en esta simulación | Meta | Impacto |
+| # | KPI | Relevant event in this simulation | Target | Impact |
 |---|---|---|---|---|
-| 1 | **Tasa de inasistencia** | 1 transición a Morado (Fase 7) | ≤ 5% | Contribuye al denominador |
-| 2 | **Tasa de Blacklist** | 0 (Escenario B hipotético en Fase 9 no se materializa) | ≤ 2% | Sin impacto |
-| 3 | **Salud del Pool** | Carlos pasa a Rosa (Fase 5), luego regresa vía Amarillo/Café | ≥ 60% | Fluctuación temporal |
-| 4 | **Tasa de Lunch Extendido** | 1 jornada con lunch > 30 min (Fase 3) | ≤ 10% | Contribuye al denominador |
-| 5 | **Completitud de datos** | Carlos completó las 3 fases de captura (Fase 1) | ≥ 95% | Contribuye positivamente |
+| 1 | **Absence rate** | 1 transition to Purple (Phase 7) | ≤ 5% | Contributes to denominator |
+| 2 | **Blacklist rate** | 0 (hypothetical Scenario B in Phase 9 did not materialize) | ≤ 2% | No impact |
+| 3 | **Pool health** | Carlos moves to Pink (Phase 5), then returns via Yellow/Brown | ≥ 60% | Temporary fluctuation |
+| 4 | **Extended lunch rate** | 1 shift with lunch > 30 min (Phase 3) | ≤ 10% | Contributes to denominator |
+| 5 | **Data completeness** | Carlos completed all 3 capture phases (Phase 1) | ≥ 95% | Contributes positively |
 
-### Observación del Operador 3
+### Operator 3 Observation
 
-El ciclo de Carlos Méndez es representativo de un colaborador estándar: completó su onboarding sin incidencias, tuvo una inasistencia aislada, sufrió un accidente con recuperación dentro de meta, y fue reincorporado tras un reporte infundado. Los eventos individuales no generan alertas — los KPIs se evalúan de forma agregada a nivel de todo el pool.
+Carlos Méndez's cycle is representative of a standard associate: he completed his onboarding without incidents, had a single isolated absence, suffered an accident with recovery within target, and was reinstated after an unfounded report. Individual events do not generate alerts — KPIs are evaluated in aggregate across the entire pool.
 
-> [!warning] Regla de negocio
-> QA no ejecuta la operación del módulo Colaborador; solo observa, mide y retroalimenta. Si el [[Indicador de Calidad]] del módulo alcanza **Rojo** sin mejora tras notificación, el [[Manager de QA]] escala a dirección. — [[Reglas de QA]]
+> [!warning] Business Rule
+> QA does not execute the Associate module operations; it only observes, measures, and provides feedback. If the [[Indicador de Calidad]] for the module reaches **Red** without improvement after notification, the [[Manager de QA]] escalates to management. — [[Reglas de QA]]
 
-### Los 12 estados del Semáforo recorridos por Carlos
+### The 12 Status Indicator States Covered by Carlos
 
-| # | Estado | Color | Fase | Evento |
+| # | Status | Color | Phase | Event |
 |---|---|---|---|---|
-| 1 | Blanco | Pre-asignación | 1 | Ingreso al Pool tras aprobación |
-| 2 | Verde manzana | Día 1-2 | 2 | Inspector verifica llegada al hotel |
-| 3 | Azul claro | Día 3+ | 2 | Poncha Día 3, recibe uniforme |
-| 4 | Naranja | Fijo | 2 | Completa 7 días |
-| 5 | Rosa | Stand-by | 5 | Hotel lo manda a descansar |
-| 6 | Amarillo | Disponible voluntario | 5 | Carlos se declara disponible |
-| 7 | Café | Asignación temporal | 5 | Reclutadora lo asigna temporalmente |
-| 8 | Verde fuerte | Disponible | 8 | Alta médica, reincorporado |
-| 9 | Morado | No regresó | 7 | Inasistencia sin justificación |
-| 10 | Rojo | Reportado | 9 | Hotel lo reporta |
-| 11 | Gris | Accidentado | 8 | Accidente laboral reportado |
-| 12 | Negro | Blacklist | 9 | (Escenario alternativo) |
+| 1 | White | Pre-assignment | 1 | Enters the Pool after approval |
+| 2 | Apple Green | Day 1-2 | 2 | Inspector verifies hotel arrival |
+| 3 | Light Blue | Day 3+ | 2 | Clocks in Day 3, receives uniform |
+| 4 | Orange | Fixed | 2 | Completes 7 days |
+| 5 | Pink | Stand-by | 5 | Hotel sends to rest |
+| 6 | Yellow | Voluntary available | 5 | Carlos declares himself available |
+| 7 | Brown | Temporary assignment | 5 | Recruiter assigns temporarily |
+| 8 | Dark Green | Available | 8 | Medical discharge, reinstated |
+| 9 | Purple | Did not return | 7 | Absence without justification |
+| 10 | Red | Reported | 9 | Hotel reports him |
+| 11 | Gray | Injured | 8 | Workplace accident reported |
+| 12 | Black | Blacklist | 9 | (Alternative scenario) |
 
 ```mermaid
 graph LR
-    BL[Blanco] -->|Reclutadora aprueba| VM[Verde manzana]
-    VM -->|Inspector verifica Día 1| AC[Azul claro]
-    AC -->|7 días| NA[Naranja — Fijo]
-    NA -->|Hotel: Stand-by| Rosa
-    Rosa -->|Carlos se declara disponible| Am[Amarillo]
-    Am -->|Reclutadora asigna temp.| Cafe[Café]
-    Cafe -->|Vence asignación| Am2[Amarillo]
-    NA2[Naranja] -->|No se presenta| Mo[Morado]
-    Mo -->|Regresa al día siguiente| NA3[Naranja]
-    NA4[Naranja] -->|Accidente laboral| Gris
-    Gris -->|Alta médica + Inspector cierra tarjeta| VF[Verde fuerte]
-    VF -->|Nueva asignación + 7 días| NA5[Naranja]
-    NA5 -->|Hotel reporta| Rojo
-    Rojo -->|Inspector: a favor colaborador| VF2[Verde fuerte]
+    BL[White] -->|Recruiter approves| VM[Apple Green]
+    VM -->|Inspector verifies Day 1| AC[Light Blue]
+    AC -->|7 days| NA[Orange — Fixed]
+    NA -->|Hotel: Stand-by| Rosa[Pink]
+    Rosa -->|Carlos declares available| Am[Yellow]
+    Am -->|Recruiter assigns temp.| Cafe[Brown]
+    Cafe -->|Assignment expires| Am2[Yellow]
+    NA2[Orange] -->|Does not show up| Mo[Purple]
+    Mo -->|Returns next day| NA3[Orange]
+    NA4[Orange] -->|Workplace accident| Gris[Gray]
+    Gris -->|Medical discharge + Inspector closes card| VF[Dark Green]
+    VF -->|New assignment + 7 days| NA5[Orange]
+    NA5 -->|Hotel reports| Rojo[Red]
+    Rojo -->|Inspector: in favor of associate| VF2[Dark Green]
 
     style BL fill:#FFFFFF,stroke:#000,color:#000
     style VM fill:#8DB600,color:#fff
@@ -597,30 +597,30 @@ graph LR
 
 ---
 
-## Módulos y conceptos referenciados
+## Modules and Referenced Concepts
 
-| Categoría | Referencia |
+| Category | Reference |
 |---|---|
-| Colaborador | [[Colaborador]] · [[Reglas del Colaborador]] · [[Semáforo del Colaborador]] |
-| Reclutamiento | [[Reclutadora]] · [[Flujo de Reclutamiento]] · [[Reglas de Reclutamiento]] · [[Self-Pick de Requisiciones]] · [[Manager de Reclutamiento]] |
-| Requisiciones | [[Requisición]] · [[Flujo de Requisición]] |
-| Pool y asignación | [[Pool de Colaboradores]] · [[Schedule]] · [[Timesheet]] |
-| Inspección | [[Inspector]] · [[Coordinador]] |
+| Associate | [[Colaborador]] · [[Reglas del Colaborador]] · [[Semáforo del Colaborador]] |
+| Recruitment | [[Reclutadora]] · [[Flujo de Reclutamiento]] · [[Reglas de Reclutamiento]] · [[Self-Pick de Requisiciones]] · [[Manager de Reclutamiento]] |
+| Requisitions | [[Requisición]] · [[Flujo de Requisición]] |
+| Pool and assignment | [[Pool de Colaboradores]] · [[Schedule]] · [[Timesheet]] |
+| Inspection | [[Inspector]] · [[Coordinador]] |
 | Hotel | [[Supervisor]] · [[Manager de Área]] · [[Manager General]] |
-| Accidente Laboral | [[Accidente Laboral]] · [[Flujo de Accidente Laboral]] |
+| Workplace Accident | [[Accidente Laboral]] · [[Flujo de Accidente Laboral]] |
 | Blacklist | [[Blacklist]] |
-| Contabilidad | [[Consolidado Semanal del Colaborador]] · [[Flujo de Nómina]] · [[Contrato]] · [[Deducciones]] · [[Facturación al Hotel]] · [[Vacaciones]] · [[Contadora]] · [[Manager de Contabilidad]] |
-| Calidad | [[Operador de QA]] · [[Indicador de Calidad]] · [[Métricas y KPIs por Departamento]] · [[Reglas de QA]] |
-| Catálogos | [[Posiciones]] · [[Niveles de Inglés]] · [[Modalidades de Contratación]] |
-| Reglas generales | [[Reglas de Negocio]] |
+| Accounting | [[Consolidado Semanal del Colaborador]] · [[Flujo de Nómina]] · [[Contrato]] · [[Deducciones]] · [[Facturación al Hotel]] · [[Vacaciones]] · [[Contadora]] · [[Manager de Contabilidad]] |
+| Quality | [[Operador de QA]] · [[Indicador de Calidad]] · [[Métricas y KPIs por Departamento]] · [[Reglas de QA]] |
+| Catalogs | [[Posiciones]] · [[Niveles de Inglés]] · [[Modalidades de Contratación]] |
+| General rules | [[Reglas de Negocio]] |
 
 ---
 
-## Simulaciones relacionadas
+## Related Simulations
 
-- [[Simulación - Punto de Vista del Hotel]] — Narra el ciclo del hotel donde opera el colaborador, incluyendo requisiciones, facturación y Stand-by.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Detalla el proceso de reclutamiento y asignación al Pool por el que pasa el colaborador antes de ser asignado a un hotel.
-- [[Simulación - Punto de Vista de Inspección]] — Muestra cómo el Inspector verifica, investiga reportes y gestiona accidentes que afectan directamente al colaborador.
-- [[Simulación - Punto de Vista de Ventas]] — Cubre el proceso comercial que convierte al hotel en cliente activo, habilitando la asignación de colaboradores.
-- [[Simulación - Punto de Vista de QA]] — Narra cómo el Operador 3 monitorea los KPIs del módulo Colaborador y escala cuando detecta tendencias adversas en el pool.
-- [[Simulación - Punto de Vista de Contabilidad]] — Detalla el flujo de nómina que procesa el pago del colaborador, desde el Consolidado Semanal hasta la ejecución del cheque.
+- [[Simulación - Punto de Vista del Hotel]] — Narrates the hotel cycle where the associate operates, including requisitions, billing, and stand-by.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Details the recruitment and Pool assignment process the associate goes through before being assigned to a hotel.
+- [[Simulación - Punto de Vista de Inspección]] — Shows how the Inspector verifies, investigates reports, and manages accidents that directly affect the associate.
+- [[Simulación - Punto de Vista de Ventas]] — Covers the commercial process that converts the hotel into an active client, enabling associate assignments.
+- [[Simulación - Punto de Vista de QA]] — Narrates how Operator 3 monitors the Associate module KPIs and escalates when adverse trends are detected in the pool.
+- [[Simulación - Punto de Vista de Contabilidad]] — Details the payroll flow that processes the associate's pay, from the Weekly Summary through paycheck execution.

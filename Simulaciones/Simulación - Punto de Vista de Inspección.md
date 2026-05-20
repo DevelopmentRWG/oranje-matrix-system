@@ -1,420 +1,420 @@
 ---
-tipo: simulación
-perspectiva: inspección
-hotel_ficticio: Hotel Costa Esmeralda
-zona: Noroeste
+type: simulation
+perspective: inspection
+fictional_hotel: Hotel Costa Esmeralda
+zone: Northwest
 tags:
-  - simulación
-  - inspección
-  - ciclo-completo
+  - simulation
+  - inspection
+  - full-cycle
 aliases:
-  - Simulación Inspección
+  - Inspection Simulation
 ---
 
-# Simulación completa — Punto de vista de Inspección
+# Full Simulation — Inspection Perspective
 
-> [!abstract] Propósito
-> Esta simulación narra una semana operativa completa desde la perspectiva del [[Inspector]], el rol de campo del departamento de [[Inspección/Inspección|Inspección]]. Recorre todas las responsabilidades del Inspector: verificación de llegada en Día 1, entrega de uniforme en Día 3, investigación de reportes con dos desenlaces opuestos (Blacklist y reincorporación), gestión completa de un accidente laboral, uso del Indicador de Lunch Extendido, y la cobertura por indisponibilidad gestionada por el [[Inspección/Coordinador|Coordinador]]. El ciclo se cierra con la supervisión de calidad (QA) y la medición de los 5 KPIs del departamento. Todos los datos son ficticios, pero cada acción, transición y regla respeta fielmente la documentación del vault.
+> [!abstract] Purpose
+> This simulation narrates a complete operational week from the perspective of the [[Inspector]], the field role of the [[Inspección/Inspección|Inspección]] department. It covers all Inspector responsibilities: Day 1 arrival verification, Day 3 uniform delivery, report investigation with two opposing outcomes (Blacklist and reinstatement), complete management of a workplace accident, use of the Extended Lunch Indicator, and coverage during unavailability managed by the [[Inspección/Coordinador|Coordinador]]. The cycle closes with quality supervision (QA) and measurement of the department's 5 KPIs. All data is fictional, but every action, transition, and rule faithfully reflects the vault documentation.
 
-## Personajes de la simulación
+## Simulation Characters
 
-| Personaje | Rol | Departamento |
+| Character | Role | Department |
 |---|---|---|
-| Daniel Ortega | [[Inspector]] (zona Noroeste) | Inspección — Oranje |
-| Raúl Méndez | [[Inspección/Coordinador\|Coordinador]] | Inspección — Oranje |
-| Operador 1 | [[Operador de QA]] (asignado fijo a Inspección) | QA — Oranje |
-| Laura Ibarra | [[Inspector]] (zona Sur) — cobertura temporal | Inspección — Oranje |
+| Daniel Ortega | [[Inspector]] (Northwest zone) | Inspection — Oranje |
+| Raúl Méndez | [[Inspección/Coordinador\|Coordinador]] | Inspection — Oranje |
+| Operator 1 | [[Operador de QA]] (fixed assignment to Inspection) | QA — Oranje |
+| Laura Ibarra | [[Inspector]] (South zone) — temporary coverage | Inspection — Oranje |
 | Mariana Vega | [[Supervisor]] | Hotel Costa Esmeralda |
 | Carlos Navarro | [[Manager General]] | Hotel Costa Esmeralda |
 | Gabriel Herrera | [[Manager de Área]] | Hotel Sierra del Pacífico |
 | Teresa Campos | [[Supervisor]] | Hotel Sierra del Pacífico |
-| Ana Belén Herrera | Colaboradora ([[Posiciones\|Housekeeper]]) | Asignada a Hotel Costa Esmeralda |
-| Sofía Cruz | Colaboradora ([[Posiciones\|Housekeeper]]) | Asignada a Hotel Costa Esmeralda |
-| Miguel Ángel Paredes | Colaborador ([[Posiciones\|Houseman]]) | Asignado a Hotel Sierra del Pacífico |
-| Roberto Lara | Colaborador ([[Posiciones\|Houseman]]) | Asignado a Hotel Sierra del Pacífico |
-| + 10 colaboradores | Varios (HK, HM, LN) | Asignados a Hotel Costa Esmeralda |
+| Ana Belén Herrera | Associate ([[Posiciones\|Housekeeper]]) | Assigned to Hotel Costa Esmeralda |
+| Sofía Cruz | Associate ([[Posiciones\|Housekeeper]]) | Assigned to Hotel Costa Esmeralda |
+| Miguel Ángel Paredes | Associate ([[Posiciones\|Houseman]]) | Assigned to Hotel Sierra del Pacífico |
+| Roberto Lara | Associate ([[Posiciones\|Houseman]]) | Assigned to Hotel Sierra del Pacífico |
+| + 10 associates | Various (HK, HM, LN) | Assigned to Hotel Costa Esmeralda |
 
 ---
 
-## Fase 1 — Asignación y contexto
+## Phase 1 — Assignment and Context
 
-> Referencia: [[Reglas de Inspección]] · [[Zonas]] · [[Semáforo Onboarding]]
+> Reference: [[Reglas de Inspección]] · [[Zonas]] · [[Semáforo Onboarding]]
 
-### 1.1 — El Inspector de zona Noroeste
+### 1.1 — The Northwest zone Inspector
 
-Es lunes 21 de julio de 2026, 6:00 AM. Daniel Ortega, [[Inspector]] asignado permanentemente a la zona [[Zonas|Noroeste]] por el [[Inspección/Coordinador|Coordinador]] Raúl Méndez, revisa su agenda para la semana. Tiene dos hoteles activos en su zona:
+It is Monday July 21, 2026, 6:00 AM. Daniel Ortega, [[Inspector]] permanently assigned to the [[Zonas|Northwest]] zone by [[Inspección/Coordinador|Coordinator]] Raúl Méndez, reviews his agenda for the week. He has two active hotels in his zone:
 
-| Hotel | Status Onboarding | Situación |
+| Hotel | Onboarding Status | Situation |
 |---|---|---|
-| Hotel Costa Esmeralda | **Naranja** (desde 11 jul) | Nuevo cliente. Primera semana operativa comienza hoy |
-| Hotel Sierra del Pacífico | **Naranja** (veterano) | Hotel activo con colaboradores en status Naranja (Fijo) |
+| Hotel Costa Esmeralda | **Orange** (since Jul 11) | New client. First operational week begins today |
+| Hotel Sierra del Pacífico | **Orange** (veteran) | Active hotel with associates in Orange (Fixed) status |
 
-El Hotel Costa Esmeralda fue convertido a cliente activo el 11 de julio. Su primera [[Requisición]] (202607141015A3) fue autorizada el 14 de julio con 13 posiciones: 8 [[Posiciones|Housekeeper]], 3 [[Posiciones|Houseman]] y 2 [[Posiciones|Laundry]], todas con fecha de inicio hoy. Al autorizarse la requisición, Daniel fue asignado automáticamente en la cabecera según la zona del hotel.
+Hotel Costa Esmeralda was converted to an active client on July 11. Its first [[Requisición]] (202607141015A3) was authorized on July 14 with 13 positions: 8 [[Posiciones|Housekeeper]], 3 [[Posiciones|Houseman]], and 2 [[Posiciones|Laundry]], all with a start date of today. When the requisition was authorized, Daniel was automatically assigned as the header inspector based on the hotel's zone.
 
-> [!info] Semáforo Onboarding
-> Hotel Costa Esmeralda en **Naranja** — Acuerdo firmado, hotel cliente activo
-> **Fecha:** 2026-07-11 · **Responsable operativo:** Daniel Ortega (Inspector)
+> [!info] Onboarding Status Indicator
+> Hotel Costa Esmeralda in **Orange** — Agreement signed, hotel is an active client
+> **Date:** 2026-07-11 · **Operational responsible:** Daniel Ortega (Inspector)
 
-> [!warning] Regla de negocio
-> Al autorizarse una requisición, el [[Inspector]] se asigna automáticamente en la cabecera según la [[Zonas|zona]] del hotel. — [[Reglas de Inspección]]
+> [!warning] Business Rule
+> When a requisition is authorized, the [[Inspector]] is automatically assigned as the header based on the [[Zonas|zone]] of the hotel. — [[Reglas de Inspección]]
 
-> [!warning] Regla de negocio
-> **Naranja es el único status del [[Semáforo Onboarding]] que habilita al hotel para generar [[Requisición|requisiciones]].** Antes de este status, el hotel es un prospecto comercial sin acceso operativo. — [[Reglas de Inspección]]
+> [!warning] Business Rule
+> **Orange is the only status in the [[Semáforo Onboarding]] that enables the hotel to generate [[Requisición|requisitions]].** Before this status, the hotel is a commercial prospect with no operational access. — [[Reglas de Inspección]]
 
 ---
 
-## Fase 2 — Verificación de llegada Día 1
+## Phase 2 — Day 1 Arrival Verification
 
-> Referencia: [[Reglas de Inspección]] · [[Semáforo del Colaborador]]
+> Reference: [[Reglas de Inspección]] · [[Semáforo del Colaborador]]
 
-### 2.1 — Daniel se presenta en la propiedad
+### 2.1 — Daniel arrives at the property
 
-Lunes 21 de julio, 6:45 AM. Daniel se presenta en el Hotel Costa Esmeralda. Los 13 colaboradores asignados por la [[Reclutadora]] deben presentarse entre las 6:30 y las 7:00 para iniciar su primer día. Daniel se posiciona en el punto de entrada del personal para verificar cada llegada: confirma identidad, registra hora de arribo y valida que el colaborador se presente en la ubicación correcta.
+Monday July 21, 6:45 AM. Daniel arrives at Hotel Costa Esmeralda. The 13 associates assigned by the [[Reclutadora]] must arrive between 6:30 and 7:00 to begin their first day. Daniel positions himself at the staff entrance to verify each arrival: confirms identity, records arrival time, and validates that the associate is at the correct location.
 
-### 2.2 — Resultado de la verificación
+### 2.2 — Verification results
 
-| # | Colaborador | Posición | Hora de llegada | Resultado |
+| # | Associate | Position | Arrival time | Result |
 |---|---|---|---|---|
-| 1 | Ana Belén Herrera | Housekeeper | 06:38 | Verificada |
-| 2 | Sofía Cruz | Housekeeper | 06:42 | Verificada |
-| 3 | Patricia Solís | Housekeeper | 06:35 | Verificada |
-| 4 | Diana Robles | Housekeeper | 06:50 | Verificada |
-| 5 | Lucía Márquez | Housekeeper | 06:44 | Verificada |
-| 6 | Carmen Delgado | Housekeeper | 06:47 | Verificada |
-| 7 | Verónica Estrada | Housekeeper | 06:55 | Verificada |
-| 8 | Gabriela Pineda | Housekeeper | 06:40 | Verificada |
-| 9 | Fernando Ríos | Houseman | 06:36 | Verificado |
-| 10 | Héctor Sandoval | Houseman | 06:48 | Verificado |
-| 11 | Tomás Aguirre | Houseman | 06:52 | Verificado |
-| 12 | Adriana López | Laundry | 06:30 | Verificada |
-| 13 | Ernesto Solís | Laundry | — | **No se presentó** |
+| 1 | Ana Belén Herrera | Housekeeper | 06:38 | Verified |
+| 2 | Sofía Cruz | Housekeeper | 06:42 | Verified |
+| 3 | Patricia Solís | Housekeeper | 06:35 | Verified |
+| 4 | Diana Robles | Housekeeper | 06:50 | Verified |
+| 5 | Lucía Márquez | Housekeeper | 06:44 | Verified |
+| 6 | Carmen Delgado | Housekeeper | 06:47 | Verified |
+| 7 | Verónica Estrada | Housekeeper | 06:55 | Verified |
+| 8 | Gabriela Pineda | Housekeeper | 06:40 | Verified |
+| 9 | Fernando Ríos | Houseman | 06:36 | Verified |
+| 10 | Héctor Sandoval | Houseman | 06:48 | Verified |
+| 11 | Tomás Aguirre | Houseman | 06:52 | Verified |
+| 12 | Adriana López | Laundry | 06:30 | Verified |
+| 13 | Ernesto Solís | Laundry | — | **Did not show up** |
 
-12 de 13 colaboradores se presentan. Ernesto Solís no aparece. Daniel registra la inasistencia.
+12 of 13 associates arrive. Ernesto Solís does not appear. Daniel records the absence.
 
-> [!info] Semáforo del Colaborador
-> **Blanco** → **Verde manzana** — Día 1 verificado (×12 colaboradores)
-> **Fecha:** 2026-07-21 · **Responsable:** Daniel Ortega (Inspector) · **Comentario:** "12 de 13 colaboradores verificados en sitio. Ernesto Solís no se presentó."
+> [!info] Associate Status Indicator
+> **White** → **Apple Green** — Day 1 verified (×12 associates)
+> **Date:** 2026-07-21 · **Responsible:** Daniel Ortega (Inspector) · **Comment:** "12 of 13 associates verified on site. Ernesto Solís did not show up."
 
-> [!warning] Regla de negocio
-> `Blanco → Verde manzana`: al ser asignado y asistir el Día 1. El [[Inspector]] verifica su llegada en sitio en la propiedad. — [[Semáforo del Colaborador]]
+> [!warning] Business Rule
+> `White → Apple Green`: when assigned and present on Day 1. The [[Inspector]] verifies arrival on site at the property. — [[Semáforo del Colaborador]]
 
-> [!warning] Regla de negocio
-> Ernesto Solís permanece en **Blanco**. Si acumula 3 inasistencias, el sistema lo mueve automáticamente a **Negro** (Blacklist). La ruta de 3 inasistencias es automática y **no** pasa por Rojo ni por el Inspector. — [[Reglas de Inspección]] · [[Blacklist]]
+> [!warning] Business Rule
+> Ernesto Solís remains in **White**. If he accumulates 3 absences, the system automatically moves him to **Black** (Blacklist). The 3-absence route is automatic and does **not** go through Red or the Inspector. — [[Reglas de Inspección]] · [[Blacklist]]
 
-> [!tip] QA — Operador 1 observa
-> Tasa de verificación Día 1: 12/13 = **92.3%**. Meta: ≥ 95%. Estado: **En riesgo** (85–94%). El Operador 1 registra que el incumplimiento no es atribuible al Inspector (el colaborador simplemente no se presentó), pero la métrica se contabiliza. — [[Métricas y KPIs por Departamento#Inspección|KPI 1]]
-
----
-
-## Fase 3 — Entrega de uniforme Día 3
-
-> Referencia: [[Reglas de Inspección]] · [[Semáforo del Colaborador]] · [[Deducciones]]
-
-### 3.1 — Tercer día de operación
-
-Miércoles 23 de julio. Los 12 colaboradores que iniciaron el lunes han ponchado 3 días consecutivos. Daniel se presenta en el Hotel Costa Esmeralda con los uniformes preparados.
-
-### 3.2 — Entrega de uniformes
-
-Daniel entrega personalmente el uniforme a cada uno de los 12 colaboradores, verificando que la talla sea correcta y que el colaborador firme el acuse de recepción. Al completar la entrega y registrar el ponche del tercer día, el sistema ejecuta la transición.
-
-> [!info] Semáforo del Colaborador
-> **Verde manzana** → **Azul claro** — Día 3, uniforme entregado (×12 colaboradores)
-> **Fecha:** 2026-07-23 · **Responsable:** Daniel Ortega (Inspector) · **Comentario:** "Uniformes entregados a 12 colaboradores. Todos poncharon 3 días consecutivos."
-
-> [!warning] Regla de negocio
-> `Verde manzana → Azul claro`: cuando el colaborador poncha en la propiedad al tercer día. El [[Inspector]] le entrega su uniforme. — [[Semáforo del Colaborador]]
-
-> [!tip] Acciones automáticas del sistema
-> Se genera una [[Deducciones|deducción]] de **$15 USD** por uniforme para cada uno de los 12 colaboradores. Total: $180 USD en deducciones de uniforme.
-
-> [!tip] QA — Operador 1 observa
-> Tasa de entrega de uniforme Día 3: 12/12 = **100%**. Meta: ≥ 95%. Estado: **En meta**. — [[Métricas y KPIs por Departamento#Inspección|KPI 2]]
+> [!tip] QA — Operator 1 observes
+> Day 1 verification rate: 12/13 = **92.3%**. Target: ≥ 95%. Status: **At risk** (85–94%). Operator 1 notes that the non-compliance is not attributable to the Inspector (the associate simply did not show up), but the metric is counted. — [[Métricas y KPIs por Departamento#Inspección|KPI 1]]
 
 ---
 
-## Fase 4 — Reporte del hotel (Rojo → Negro)
+## Phase 3 — Day 3 Uniform Delivery
 
-> Referencia: [[Reglas de Inspección]] · [[Semáforo del Colaborador]] · [[Blacklist]]
+> Reference: [[Reglas de Inspección]] · [[Semáforo del Colaborador]] · [[Deducciones]]
 
-### 4.1 — El Supervisor reporta a un colaborador
+### 3.1 — Third day of operations
 
-Jueves 24 de julio, 9:20 AM. Teresa Campos, [[Supervisor]] del Hotel Sierra del Pacífico, reporta a **Miguel Ángel Paredes** (Houseman, status **Naranja** — Fijo) por comportamiento inadecuado con un huésped durante el servicio de limpieza de la mañana.
+Wednesday July 23. The 12 associates who started on Monday have clocked in for 3 consecutive days. Daniel arrives at Hotel Costa Esmeralda with the prepared uniforms.
 
-Miguel Ángel transita a **Rojo** (Reportado).
+### 3.2 — Uniform delivery
 
-> [!info] Semáforo del Colaborador
-> **Naranja** → **Rojo** — Reportado por el hotel
-> **Fecha:** 2026-07-24 09:20 · **Responsable:** Teresa Campos (Supervisor) · **Comentario:** "Comportamiento inadecuado con huésped en área de habitaciones."
+Daniel personally delivers the uniform to each of the 12 associates, verifying that the size is correct and that the associate signs the receipt acknowledgment. Upon completing the delivery and recording the third-day punch, the system executes the transition.
 
-> [!warning] Regla de negocio
-> El estado **Rojo** puede ser activado por: [[Manager General]], [[Manager de Área]] o [[Supervisor]]. Al activarse, el [[Inspector]] de la zona investiga el caso. — [[Semáforo del Colaborador]]
+> [!info] Associate Status Indicator
+> **Apple Green** → **Light Blue** — Day 3, uniform delivered (×12 associates)
+> **Date:** 2026-07-23 · **Responsible:** Daniel Ortega (Inspector) · **Comment:** "Uniforms delivered to 12 associates. All clocked in 3 consecutive days."
 
-### 4.2 — Daniel investiga
+> [!warning] Business Rule
+> `Apple Green → Light Blue`: when the associate clocks in at the property on the third day. The [[Inspector]] delivers their uniform. — [[Semáforo del Colaborador]]
 
-Daniel recibe la notificación y se desplaza al Hotel Sierra del Pacífico. Ejecuta su proceso de investigación:
+> [!tip] Automatic system actions
+> A [[Deducciones|deduction]] of **$15 USD** per uniform is generated for each of the 12 associates. Total: $180 USD in uniform deductions.
 
-| Paso | Acción | Resultado |
+> [!tip] QA — Operator 1 observes
+> Day 3 uniform delivery rate: 12/12 = **100%**. Target: ≥ 95%. Status: **On target**. — [[Métricas y KPIs por Departamento#Inspección|KPI 2]]
+
+---
+
+## Phase 4 — Hotel Report (Red → Black)
+
+> Reference: [[Reglas de Inspección]] · [[Semáforo del Colaborador]] · [[Blacklist]]
+
+### 4.1 — The Supervisor reports an associate
+
+Thursday July 24, 9:20 AM. Teresa Campos, [[Supervisor]] of Hotel Sierra del Pacífico, reports **Miguel Ángel Paredes** (Houseman, **Orange** status — Fixed) for inappropriate conduct toward a guest during the morning cleaning service.
+
+Miguel Ángel transitions to **Red** (Reported).
+
+> [!info] Associate Status Indicator
+> **Orange** → **Red** — Reported by the hotel
+> **Date:** 2026-07-24 09:20 · **Responsible:** Teresa Campos (Supervisor) · **Comment:** "Inappropriate conduct toward guest in room area."
+
+> [!warning] Business Rule
+> **Red** status can be activated by: [[Manager General]], [[Manager de Área]], or [[Supervisor]]. When activated, the zone [[Inspector]] investigates the case. — [[Semáforo del Colaborador]]
+
+### 4.2 — Daniel investigates
+
+Daniel receives the notification and travels to Hotel Sierra del Pacífico. He executes his investigation process:
+
+| Step | Action | Result |
 |---|---|---|
-| 1 | Entrevista a Teresa Campos (SUP) | Describe el incidente: Miguel Ángel respondió de forma grosera a un huésped que solicitó toallas adicionales |
-| 2 | Revisa [[Timesheet]] de Miguel Ángel | Ponches del día correctos. Sin anomalías en registros |
-| 3 | Entrevista a testigo (otro colaborador presente) | Confirma la versión del Supervisor: el colaborador levantó la voz frente al huésped |
-| 4 | Entrevista a Miguel Ángel Paredes | Reconoce que perdió la compostura pero alega que fue provocado. No presenta justificación válida |
+| 1 | Interviews Teresa Campos (SUP) | Describes the incident: Miguel Ángel responded rudely to a guest who requested additional towels |
+| 2 | Reviews Miguel Ángel's [[Timesheet]] | Correct punches for the day. No anomalies in records |
+| 3 | Interviews witness (another associate present) | Confirms the Supervisor's account: the associate raised his voice in front of the guest |
+| 4 | Interviews Miguel Ángel Paredes | Acknowledges losing his composure but claims he was provoked. Does not present valid justification |
 
-### 4.3 — Resolución: a favor del hotel
+### 4.3 — Resolution: in favor of the hotel
 
-La evidencia es clara. Dos testimonios independientes (Supervisor y testigo) confirman el incidente. Miguel Ángel reconoció parcialmente los hechos. Daniel evalúa el caso y decide: **disputa a favor del hotel**.
+The evidence is clear. Two independent testimonies (Supervisor and witness) confirm the incident. Miguel Ángel partially acknowledged the facts. Daniel evaluates the case and decides: **dispute in favor of the hotel**.
 
-Daniel ejecuta la transición a Negro (Blacklist manual).
+Daniel executes the transition to Black (manual Blacklist).
 
-> [!info] Semáforo del Colaborador
-> **Rojo** → **Negro** — Blacklist (disputa a favor del hotel)
-> **Fecha:** 2026-07-24 14:30 · **Responsable:** Daniel Ortega (Inspector) · **Comentario:** "Investigación completada. Comportamiento inadecuado confirmado por SUP y testigo. Disputa resuelta a favor del hotel."
+> [!info] Associate Status Indicator
+> **Red** → **Black** — Blacklist (dispute in favor of the hotel)
+> **Date:** 2026-07-24 14:30 · **Responsible:** Daniel Ortega (Inspector) · **Comment:** "Investigation completed. Inappropriate conduct confirmed by SUP and witness. Dispute resolved in favor of the hotel."
 
-> [!warning] Regla de negocio — Autoridad autónoma
-> El [[Inspector]] tiene **autoridad propia** para decidir el resultado de la investigación, sin necesidad de escalamiento ni validación de ningún otro rol. — [[Reglas de Inspección]]
+> [!warning] Business Rule — Autonomous authority
+> The [[Inspector]] has **autonomous authority** to decide the outcome of the investigation, without needing to escalate or obtain validation from any other role. — [[Reglas de Inspección]]
 
-> [!warning] Regla de negocio — Blacklist manual
-> El [[Inspector]] es el **único rol** que puede ejecutar la entrada manual a [[Blacklist]]. — [[Reglas de Inspección]]
+> [!warning] Business Rule — Manual Blacklist
+> The [[Inspector]] is the **only role** that can execute a manual entry into the [[Blacklist]]. — [[Reglas de Inspección]]
 
-> [!warning] Regla de negocio — Permanencia
-> **Negro es PERMANENTE.** No existe proceso de rehabilitación ni apelación. Miguel Ángel Paredes queda vetado permanentemente del sistema. — [[Blacklist]]
+> [!warning] Business Rule — Permanence
+> **Black is PERMANENT.** No rehabilitation or appeal process exists. Miguel Ángel Paredes is permanently banned from the system. — [[Blacklist]]
 
-> [!tip] QA — Operador 1 observa
-> Tiempo de resolución del reporte: **mismo día** (9:20 → 14:30 = ~5 horas). Meta: ≤ 3 días. Estado: **En meta**. — [[Métricas y KPIs por Departamento#Inspección|KPI 3]]
+> [!tip] QA — Operator 1 observes
+> Report resolution time: **same day** (9:20 → 14:30 = ~5 hours). Target: ≤ 3 days. Status: **On target**. — [[Métricas y KPIs por Departamento#Inspección|KPI 3]]
 
 ---
 
-## Fase 5 — Segundo reporte (Rojo → Verde fuerte)
+## Phase 5 — Second Report (Red → Dark Green)
 
-> Referencia: [[Reglas de Inspección]] · [[Semáforo del Colaborador]]
+> Reference: [[Reglas de Inspección]] · [[Semáforo del Colaborador]]
 
-### 5.1 — Reporte por supuesta inasistencia
+### 5.1 — Report for alleged absence
 
-Viernes 25 de julio, 8:00 AM. Mariana Vega, [[Supervisor]] del Hotel Costa Esmeralda, reporta a **Ana Belén Herrera** (Housekeeper, status **Azul claro** — Día 5) por supuesta inasistencia del día anterior (jueves 24). Mariana indica que Ana Belén no apareció en la lista visual de personal que revisó esa mañana.
+Friday July 25, 8:00 AM. Mariana Vega, [[Supervisor]] of Hotel Costa Esmeralda, reports **Ana Belén Herrera** (Housekeeper, **Light Blue** status — Day 5) for an alleged absence the previous day (Thursday July 24). Mariana states that Ana Belén did not appear on the visual staff list she reviewed that morning.
 
-Ana Belén transita a **Rojo** (Reportada).
+Ana Belén transitions to **Red** (Reported).
 
-> [!info] Semáforo del Colaborador
-> **Azul claro** → **Rojo** — Reportada por el hotel
-> **Fecha:** 2026-07-25 08:00 · **Responsable:** Mariana Vega (Supervisor) · **Comentario:** "Colaboradora no apareció en la lista de personal del jueves 24."
+> [!info] Associate Status Indicator
+> **Light Blue** → **Red** — Reported by the hotel
+> **Date:** 2026-07-25 08:00 · **Responsible:** Mariana Vega (Supervisor) · **Comment:** "Associate did not appear on Thursday July 24 staff list."
 
-### 5.2 — Daniel investiga
+### 5.2 — Daniel investigates
 
-Daniel se encuentra en la zona y acude al Hotel Costa Esmeralda. Ejecuta su investigación:
+Daniel is in the zone and goes to Hotel Costa Esmeralda. He executes his investigation:
 
-| Paso | Acción | Resultado |
+| Step | Action | Result |
 |---|---|---|
-| 1 | Entrevista a Mariana Vega (SUP) | Afirma que no vio a Ana Belén el jueves 24 al pasar lista visual |
-| 2 | Revisa [[Timesheet]] de Ana Belén | **Descubre que sí hay ponches registrados** para el jueves 24: entrada 06:42, lunch-out 11:45, lunch-in 12:10, salida 15:02. Jornada completa |
-| 3 | Verifica con el [[Schedule]] | Ana Belén estaba programada y cubierta para el jueves 24 |
-| 4 | Entrevista a Ana Belén Herrera | Confirma que trabajó normalmente. Estaba asignada a un piso diferente al que el Supervisor revisó |
+| 1 | Interviews Mariana Vega (SUP) | States she did not see Ana Belén on Thursday July 24 when doing the visual roll call |
+| 2 | Reviews Ana Belén's [[Timesheet]] | **Discovers that punches are indeed recorded** for Thursday July 24: clock-in 06:42, lunch-out 11:45, lunch-in 12:10, clock-out 15:02. Full shift |
+| 3 | Cross-checks with the [[Schedule]] | Ana Belén was scheduled and covered for Thursday July 24 |
+| 4 | Interviews Ana Belén Herrera | Confirms she worked normally. She was assigned to a different floor than the one the Supervisor checked |
 
-### 5.3 — Resolución: a favor de la colaboradora
+### 5.3 — Resolution: in favor of the associate
 
-El [[Timesheet]] demuestra que Ana Belén trabajó su jornada completa el jueves 24. El reporte fue producto de un error administrativo: el Supervisor revisó la lista de personal de un piso diferente al que Ana Belén tenía asignado ese día. Daniel decide: **disputa a favor de la colaboradora**.
+The [[Timesheet]] proves that Ana Belén worked her full shift on Thursday July 24. The report was the result of an administrative error: the Supervisor checked the staff list for a different floor than the one Ana Belén was assigned to that day. Daniel decides: **dispute in favor of the associate**.
 
-Daniel ejecuta la transición de Rojo a Verde fuerte (reincorporación).
+Daniel executes the transition from Red to Dark Green (reinstatement).
 
-> [!info] Semáforo del Colaborador
-> **Rojo** → **Verde fuerte** — Reincorporación (disputa a favor de la colaboradora)
-> **Fecha:** 2026-07-25 11:00 · **Responsable:** Daniel Ortega (Inspector) · **Comentario:** "Timesheet confirma jornada completa el 24 jul. Error administrativo del Supervisor al verificar lista de personal. Colaboradora reincorporada."
+> [!info] Associate Status Indicator
+> **Red** → **Dark Green** — Reinstatement (dispute in favor of the associate)
+> **Date:** 2026-07-25 11:00 · **Responsible:** Daniel Ortega (Inspector) · **Comment:** "Timesheet confirms full shift on Jul 24. Administrative error by Supervisor when checking staff list. Associate reinstated."
 
-> [!warning] Regla de negocio — Autoridad autónoma
-> El [[Inspector]] tiene **autoridad propia** para decidir el resultado. En este caso, la evidencia del [[Timesheet]] es concluyente a favor de la colaboradora. — [[Reglas de Inspección]]
+> [!warning] Business Rule — Autonomous authority
+> The [[Inspector]] has **autonomous authority** to decide the outcome. In this case, the [[Timesheet]] evidence is conclusive in favor of the associate. — [[Reglas de Inspección]]
 
-> [!warning] Regla de negocio — Rojo vs. 3 inasistencias
-> La acumulación de 3 inasistencias **no** pasa por Rojo ni por el Inspector; esa ruta va directo a **Negro** de forma automática por sistema. Los reportes del hotel (Rojo) son un camino diferente que siempre requiere investigación del Inspector. — [[Reglas de Inspección]]
+> [!warning] Business Rule — Red vs. 3 absences
+> Accumulation of 3 absences does **not** go through Red or the Inspector; that route goes directly to **Black** automatically via the system. Hotel reports (Red) are a different path that always requires Inspector investigation. — [[Reglas de Inspección]]
 
-> [!tip] QA — Operador 1 observa
-> Segundo reporte resuelto en **mismo día** (8:00 → 11:00 = 3 horas). Tiempo promedio acumulado de resolución: (~5h + ~3h) / 2 = **~4 horas**. Meta: ≤ 3 días. Estado: **En meta**. — [[Métricas y KPIs por Departamento#Inspección|KPI 3]]
+> [!tip] QA — Operator 1 observes
+> Second report resolved **same day** (8:00 → 11:00 = 3 hours). Cumulative average resolution time: (~5h + ~3h) / 2 = **~4 hours**. Target: ≤ 3 days. Status: **On target**. — [[Métricas y KPIs por Departamento#Inspección|KPI 3]]
 
 ---
 
-## Fase 6 — Accidente Laboral
+## Phase 6 — Workplace Accident
 
-> Referencia: [[Flujo de Accidente Laboral]] · [[Accidente Laboral]] · [[Reglas de Inspección]] · [[Semáforo del Colaborador]]
+> Reference: [[Flujo de Accidente Laboral]] · [[Accidente Laboral]] · [[Reglas de Inspección]] · [[Semáforo del Colaborador]]
 
-### 6.1 — El accidente (Escenario A)
+### 6.1 — The accident (Scenario A)
 
-Sábado 26 de julio, 10:15 AM. **Roberto Lara** (Houseman, status **Naranja** — Fijo), asignado al Hotel Sierra del Pacífico, sufre una caída mientras mueve equipo de limpieza pesado en el área de lavandería. El piso estaba mojado y desnivelado.
+Saturday July 26, 10:15 AM. **Roberto Lara** (Houseman, **Orange** status — Fixed), assigned to Hotel Sierra del Pacífico, suffers a fall while moving heavy cleaning equipment in the laundry area. The floor was wet and uneven.
 
-Roberto abre la app desde su teléfono y genera un reporte de accidente (**Escenario A**: el colaborador reporta desde la app).
+Roberto opens the app from his phone and generates an accident report (**Scenario A**: associate reports from the app).
 
-> [!tip] Acciones automáticas del sistema — [[Flujo de Accidente Laboral]]
-> 1. Se genera la **tarjeta de Accidente Laboral** con número automático
-> 2. Roberto transita a **Gris** (Accidentado)
-> 3. La señal llega **simultáneamente** a Teresa Campos (Supervisor) y a Daniel Ortega (Inspector zona Noroeste)
+> [!tip] Automatic system actions — [[Flujo de Accidente Laboral]]
+> 1. A **Workplace Accident card** is generated with an automatic number
+> 2. Roberto transitions to **Gray** (Injured)
+> 3. The signal reaches Teresa Campos (Supervisor) and Daniel Ortega (Northwest zone Inspector) **simultaneously**
 
-> [!info] Semáforo del Colaborador
-> **Naranja** → **Gris** — Accidentado
-> **Fecha:** 2026-07-26 10:15 · **Responsable:** Roberto Lara (reporte del colaborador) · **Comentario:** "Caída en área de lavandería. Piso mojado."
+> [!info] Associate Status Indicator
+> **Orange** → **Gray** — Injured
+> **Date:** 2026-07-26 10:15 · **Responsible:** Roberto Lara (associate report) · **Comment:** "Fall in laundry area. Wet floor."
 
-### 6.2 — Captura presencial del Supervisor
+### 6.2 — On-site capture by the Supervisor
 
-Teresa Campos acude al lugar del accidente y captura la información presencial en la tarjeta:
+Teresa Campos goes to the accident site and captures the on-site information in the card:
 
-| Campo (SUP) | Valor |
+| Field (SUP) | Value |
 |---|---|
-| Ubicación exacta | Área de lavandería, zona de carga |
-| Circunstancias | Caída al mover equipo pesado, piso mojado y desnivelado |
-| Testigos | Otro colaborador presente en el área |
-| Atención inmediata | Hielo aplicado, inmovilización de muñeca derecha |
+| Exact location | Laundry area, loading zone |
+| Circumstances | Fall while moving heavy equipment, wet and uneven floor |
+| Witnesses | Another associate present in the area |
+| Immediate care | Ice applied, right wrist immobilized |
 
-### 6.3 — Seguimiento médico del Inspector
+### 6.3 — Medical follow-up by the Inspector
 
-Daniel recibe la notificación a las 10:20 AM y se desplaza al Hotel Sierra del Pacífico. Evalúa la situación con Teresa y decide trasladar a Roberto al centro médico más cercano. Daniel complementa la tarjeta de accidente con la información médica:
+Daniel receives the notification at 10:20 AM and travels to Hotel Sierra del Pacífico. He assesses the situation with Teresa and decides to transfer Roberto to the nearest medical center. Daniel completes the accident card with medical information:
 
-| Campo (Inspector) | Valor |
+| Field (Inspector) | Value |
 |---|---|
-| Traslado al centro médico | Centro Médico Noroeste, llegada 11:30 AM |
-| Diagnóstico | Fractura leve de muñeca derecha |
-| Días de incapacidad | 5 días (del 26 al 30 de julio) |
-| Observaciones médicas | Férula colocada. Reposo absoluto. Revisión de seguimiento programada para el 31 de julio |
+| Transfer to medical center | Northwest Medical Center, arrival 11:30 AM |
+| Diagnosis | Minor fracture of right wrist |
+| Days of incapacity | 5 days (July 26–30) |
+| Medical notes | Splint applied. Complete rest. Follow-up review scheduled for July 31 |
 
-### 6.4 — Protección durante estado Gris
+### 6.4 — Protection during Gray status
 
-Domingo 27 de julio. Roberto obviamente no se presenta a trabajar. Esta inasistencia **no cuenta** para la regla de 3 inasistencias → Blacklist, porque Roberto está protegido en estado **Gris**.
+Sunday July 27. Roberto obviously does not show up for work. This absence **does not count** toward the 3-absences → Blacklist rule, because Roberto is protected in **Gray** status.
 
-> [!warning] Regla de negocio — Protección en Gris
-> Mientras el colaborador está en estado **Gris** (Accidentado), las inasistencias **no cuentan** para la regla de 3 inasistencias → Negro. El Inspector gestiona la salida de ese estado al cerrar la tarjeta. — [[Semáforo del Colaborador]] · [[Reglas de Inspección]]
+> [!warning] Business Rule — Gray protection
+> While the associate is in **Gray** (Injured) status, absences **do not count** toward the 3-absences → Black rule. The Inspector manages the exit from this status by closing the card. — [[Semáforo del Colaborador]] · [[Reglas de Inspección]]
 
-### 6.5 — Cierre de tarjeta y alta
+### 6.5 — Card closure and medical discharge
 
-Jueves 31 de julio. Roberto acude a su revisión médica de seguimiento. El médico confirma evolución favorable y otorga el **alta médica**. Daniel recibe la documentación, verifica que la información esté completa y **cierra la tarjeta de accidente** en el sistema.
+Thursday July 31. Roberto goes to his follow-up medical review. The doctor confirms favorable progress and grants **medical discharge**. Daniel receives the documentation, verifies that the information is complete, and **closes the accident card** in the system.
 
-> [!info] Semáforo del Colaborador
-> **Gris** → **Verde fuerte** — Alta médica, tarjeta de accidente cerrada
-> **Fecha:** 2026-07-31 · **Responsable:** Daniel Ortega (Inspector) · **Comentario:** "Alta médica confirmada. Tarjeta cerrada. Colaborador disponible para reasignación."
+> [!info] Associate Status Indicator
+> **Gray** → **Dark Green** — Medical discharge, accident card closed
+> **Date:** 2026-07-31 · **Responsible:** Daniel Ortega (Inspector) · **Comment:** "Medical discharge confirmed. Card closed. Associate available for reassignment."
 
-Roberto queda en status **Verde fuerte** (Disponible) en el [[Pool de Colaboradores]], listo para ser reasignado a una nueva posición.
+Roberto is now in **Dark Green** (Available) status in the [[Pool de Colaboradores]], ready to be reassigned to a new position.
 
-> [!warning] Regla de negocio — Responsable final del cierre
-> El [[Inspector]] es **siempre** el responsable final del cierre de la tarjeta de accidente. Esto es una regla sin excepción documentada. — [[Reglas de Inspección]] · [[Flujo de Accidente Laboral]]
+> [!warning] Business Rule — Final responsible for closure
+> The [[Inspector]] is **always** the final party responsible for closing the accident card. This is a rule with no documented exception. — [[Reglas de Inspección]] · [[Flujo de Accidente Laboral]]
 
-> [!warning] Regla de negocio — Requisitos para cerrar Gris
-> `Gris → Verde fuerte` requiere: **alta médica** + **cierre de tarjeta por el Inspector**. Ambas condiciones son obligatorias. — [[Semáforo del Colaborador]]
+> [!warning] Business Rule — Requirements to close Gray
+> `Gray → Dark Green` requires: **medical discharge** + **card closure by the Inspector**. Both conditions are mandatory. — [[Semáforo del Colaborador]]
 
-> [!tip] QA — Operador 1 observa
-> Tiempo de cierre del accidente: **5 días** (26 jul → 31 jul). Meta: ≤ 7 días. Estado: **En meta**. — [[Métricas y KPIs por Departamento#Inspección|KPI 4]]
+> [!tip] QA — Operator 1 observes
+> Accident closure time: **5 days** (Jul 26 → Jul 31). Target: ≤ 7 days. Status: **On target**. — [[Métricas y KPIs por Departamento#Inspección|KPI 4]]
 
 ---
 
-## Fase 7 — Indicador de Lunch Extendido
+## Phase 7 — Extended Lunch Indicator
 
-> Referencia: [[Timesheet]] · [[Reglas de Inspección]]
+> Reference: [[Timesheet]] · [[Reglas de Inspección]]
 
-### 7.1 — Revisión rutinaria de Timesheets
+### 7.1 — Routine Timesheet review
 
-Viernes 25 de julio, 4:00 PM. Como parte de su supervisión rutinaria, Daniel revisa los [[Timesheet|Timesheets]] de sus hoteles. En el Hotel Costa Esmeralda, detecta que **Sofía Cruz** (Housekeeper, status Azul claro) ha tenido lunch extendido en 3 de los 5 días de la semana:
+Friday July 25, 4:00 PM. As part of his routine supervision, Daniel reviews the [[Timesheet|Timesheets]] for his hotels. At Hotel Costa Esmeralda, he detects that **Sofía Cruz** (Housekeeper, Light Blue status) has had extended lunch on 3 of the 5 days this week:
 
-| Día | Lunch-out | Lunch-in | Tiempo de lunch | Indicador |
+| Day | Lunch Out | Lunch In | Lunch time | Indicator |
 |---|---|---|---|---|
-| Lunes 21 | 11:30 | 12:05 | 35 min | Extendido |
-| Martes 22 | 11:45 | 12:27 | 42 min | Extendido |
-| Miércoles 23 | 12:00 | 12:30 | 30 min | Normal |
-| Jueves 24 | 11:50 | 12:28 | 38 min | Extendido |
-| Viernes 25 | 12:00 | 12:30 | 30 min | Normal |
+| Monday Jul 21 | 11:30 | 12:05 | 35 min | Extended |
+| Tuesday Jul 22 | 11:45 | 12:27 | 42 min | Extended |
+| Wednesday Jul 23 | 12:00 | 12:30 | 30 min | Normal |
+| Thursday Jul 24 | 11:50 | 12:28 | 38 min | Extended |
+| Friday Jul 25 | 12:00 | 12:30 | 30 min | Normal |
 
-El Indicador de Lunch Extendido se activa automáticamente cuando el tiempo de lunch excede los 30 minutos. Sofía tiene el indicador activo en 3 de 5 jornadas.
+The Extended Lunch Indicator activates automatically when lunch time exceeds 30 minutes. Sofía has the indicator active on 3 of 5 shifts.
 
-### 7.2 — Acción del Inspector
+### 7.2 — Inspector action
 
-Daniel toma nota para seguimiento preventivo. En su próxima visita al hotel, podría conversar con Sofía sobre la gestión de sus tiempos de lunch. No es una acción disciplinaria; el indicador es una herramienta de supervisión interna de Oranje.
+Daniel takes note for preventive follow-up. On his next visit to the hotel, he may speak with Sofía about managing her lunch times. This is not a disciplinary action; the indicator is an internal Oranje supervision tool.
 
-> [!warning] Regla de negocio — Visibilidad restringida
-> El Indicador de Lunch Extendido es visible **solo** para: [[Inspector]], [[Inspección/Coordinador|Coordinador]] y [[Manager de Reclutamiento]]. **No es visible** para [[Manager General]], [[Manager de Área]] ni [[Supervisor]] del hotel. — [[Reglas de Inspección]] · [[Timesheet]]
+> [!warning] Business Rule — Restricted visibility
+> The Extended Lunch Indicator is visible **only** to: [[Inspector]], [[Inspección/Coordinador|Coordinador]], and [[Manager de Reclutamiento]]. **Not visible** to [[Manager General]], [[Manager de Área]], or [[Supervisor]] of the hotel. — [[Reglas de Inspección]] · [[Timesheet]]
 
-> [!warning] Regla de negocio — No punitivo
-> El Indicador de Lunch Extendido **no es punitivo de forma automática**. Es una herramienta de supervisión interna de Oranje. — [[Reglas de Inspección]]
+> [!warning] Business Rule — Not punitive
+> The Extended Lunch Indicator **is not automatically punitive**. It is an internal Oranje supervision tool. — [[Reglas de Inspección]]
 
-> [!warning] Regla de negocio — Deducción de lunch
-> Lunch ≥ 30 min: se deduce el tiempo real tomado. Lunch < 30 min: se deducen 30 min (mínimo obligatorio). Sin ponche de lunch: auto-deducción de 30 min. — [[Timesheet]]
-
----
-
-## Fase 8 — Indisponibilidad y reasignación
-
-> Referencia: [[Reglas de Inspección]] · [[Inspección/Coordinador|Coordinador]] · [[Zonas]]
-
-### 8.1 — El Inspector se ausenta
-
-Lunes 28 de julio, 7:00 AM. Daniel Ortega notifica al [[Inspección/Coordinador|Coordinador]] Raúl Méndez que tiene una emergencia personal y no podrá presentarse a trabajar hoy.
-
-### 8.2 — El Coordinador reasigna
-
-Raúl Méndez evalúa la situación de cobertura. La zona Noroeste no puede quedarse sin Inspector, especialmente con dos hoteles activos en plena operación. Decide reasignar temporalmente a **Laura Ibarra**, [[Inspector]] de zona Sur, para cubrir la zona Noroeste durante la ausencia de Daniel.
-
-Laura se presenta en los hoteles de la zona Noroeste. No ocurren incidencias mayores durante el día — realiza una visita rutinaria de supervisión al Hotel Costa Esmeralda y al Hotel Sierra del Pacífico.
-
-### 8.3 — Regreso del Inspector titular
-
-Martes 29 de julio. Daniel regresa a su operación normal. La asignación permanente de Daniel a zona Noroeste **no cambió** durante su ausencia. Laura Ibarra regresa a su zona Sur. Raúl Méndez registra la reasignación temporal en el sistema.
-
-> [!warning] Regla de negocio — Reasignación temporal
-> Si el [[Inspector]] asignado a una zona no está disponible (enfermedad, emergencia u otra causa), el [[Inspección/Coordinador|Coordinador]] reasigna temporalmente otro Inspector para garantizar cobertura operativa. — [[Reglas de Inspección]]
-
-> [!warning] Regla de negocio — Asignación permanente intacta
-> La reasignación temporal **no modifica** la asignación permanente de zona. Es cobertura hasta que el Inspector titular retome. — [[Reglas de Inspección]]
-
-> [!tip] QA — Operador 1 observa
-> Cobertura de zonas durante la ausencia: **6/6** (Laura cubrió Noroeste). Meta: 6/6 (100%). Estado: **En meta**. Si no se hubiera cubierto la zona: 5/6 = 83% → **En riesgo**. — [[Métricas y KPIs por Departamento#Inspección|KPI 5]]
+> [!warning] Business Rule — Lunch deduction
+> Lunch ≥ 30 min: actual time taken is deducted. Lunch < 30 min: 30 min are deducted (mandatory minimum). No lunch punch: auto-deduction of 30 min. — [[Timesheet]]
 
 ---
 
-## Fase 9 — Supervisión QA: cierre del ciclo
+## Phase 8 — Unavailability and Reassignment
 
-> Referencia: [[Métricas y KPIs por Departamento#Inspección|Métricas de Inspección]] · [[Indicador de Calidad]] · [[Reglas de QA]]
+> Reference: [[Reglas de Inspección]] · [[Inspección/Coordinador|Coordinador]] · [[Zonas]]
 
-El [[Operador de QA]] (Operador 1), asignado de forma fija al departamento de [[Inspección/Inspección|Inspección]], ha observado todo el ciclo sin ejecutar ninguna acción operativa. Su rol es exclusivamente de observación, medición y retroalimentación.
+### 8.1 — The Inspector is unavailable
 
-### Resumen de KPIs medidos (semana del 21–31 julio 2026)
+Monday July 28, 7:00 AM. Daniel Ortega notifies [[Inspección/Coordinador|Coordinator]] Raúl Méndez that he has a personal emergency and will not be able to come to work today.
 
-| # | KPI | Resultado en esta simulación | Meta | Estado |
+### 8.2 — The Coordinator reassigns
+
+Raúl Méndez assesses the coverage situation. The Northwest zone cannot be left without an Inspector, especially with two active hotels in full operation. He decides to temporarily reassign **Laura Ibarra**, [[Inspector]] for the South zone, to cover the Northwest zone during Daniel's absence.
+
+Laura arrives at the hotels in the Northwest zone. No major incidents occur during the day — she conducts a routine supervisory visit to Hotel Costa Esmeralda and Hotel Sierra del Pacífico.
+
+### 8.3 — Return of the primary Inspector
+
+Tuesday July 29. Daniel returns to normal operations. Daniel's permanent assignment to the Northwest zone **did not change** during his absence. Laura Ibarra returns to her South zone. Raúl Méndez records the temporary reassignment in the system.
+
+> [!warning] Business Rule — Temporary reassignment
+> If the [[Inspector]] assigned to a zone is unavailable (illness, emergency, or other cause), the [[Inspección/Coordinador|Coordinador]] temporarily reassigns another Inspector to guarantee operational coverage. — [[Reglas de Inspección]]
+
+> [!warning] Business Rule — Permanent assignment unchanged
+> The temporary reassignment **does not modify** the permanent zone assignment. It is coverage until the primary Inspector resumes. — [[Reglas de Inspección]]
+
+> [!tip] QA — Operator 1 observes
+> Zone coverage during absence: **6/6** (Laura covered Northwest). Target: 6/6 (100%). Status: **On target**. If the zone had not been covered: 5/6 = 83% → **At risk**. — [[Métricas y KPIs por Departamento#Inspección|KPI 5]]
+
+---
+
+## Phase 9 — QA Supervision: Cycle Close
+
+> Reference: [[Métricas y KPIs por Departamento#Inspección|Inspection Metrics]] · [[Indicador de Calidad]] · [[Reglas de QA]]
+
+The [[Operador de QA]] (Operator 1), permanently assigned to the [[Inspección/Inspección|Inspección]] department, has observed the entire cycle without executing any operational action. Their role is exclusively observation, measurement, and feedback.
+
+### KPI Summary (week of July 21–31, 2026)
+
+| # | KPI | Result in this simulation | Target | Status |
 |---|---|---|---|---|
-| 1 | **Tasa de verificación Día 1** | 12/13 = 92.3% | ≥ 95% | ⚠ En riesgo (85–94%) |
-| 2 | **Tasa de entrega de uniforme Día 3** | 12/12 = 100% | ≥ 95% | En meta |
-| 3 | **Tiempo promedio de resolución de reportes (Rojo)** | (~5h + ~3h) / 2 = ~4 horas | ≤ 3 días | En meta |
-| 4 | **Tiempo promedio de cierre de accidente (Gris → Verde fuerte)** | 5 días (26 jul → 31 jul) | ≤ 7 días | En meta |
-| 5 | **Cobertura de zonas (6 zonas con Inspector activo)** | 6/6 = 100% (reasignación temporal cubrió la ausencia) | 6/6 (100%) | En meta |
+| 1 | **Day 1 verification rate** | 12/13 = 92.3% | ≥ 95% | At risk (85–94%) |
+| 2 | **Day 3 uniform delivery rate** | 12/12 = 100% | ≥ 95% | On target |
+| 3 | **Average report resolution time (Red)** | (~5h + ~3h) / 2 = ~4 hours | ≤ 3 days | On target |
+| 4 | **Average accident closure time (Gray → Dark Green)** | 5 days (Jul 26 → Jul 31) | ≤ 7 days | On target |
+| 5 | **Zone coverage (6 zones with active Inspector)** | 6/6 = 100% (temporary reassignment covered the absence) | 6/6 (100%) | On target |
 
-### Observación formal del Operador 1
+### Formal observation by Operator 1
 
-El KPI 1 (Tasa de verificación Día 1) está **en riesgo**. Un colaborador no se presentó el Día 1 y la verificación no pudo completarse al 100%. Aunque la inasistencia no es atribuible al Inspector (el colaborador simplemente no llegó), la métrica se contabiliza. Si el patrón se repite en las próximas semanas, el Operador 1 emitirá una observación formal al departamento.
+KPI 1 (Day 1 verification rate) is **at risk**. One associate did not show up on Day 1 and the verification could not be completed at 100%. Although the absence is not attributable to the Inspector (the associate simply did not arrive), the metric is counted. If the pattern repeats in the coming weeks, Operator 1 will issue a formal observation to the department.
 
-El [[Indicador de Calidad]] del departamento de Inspección se mantiene en **Verde** (Calidad óptima). Un solo KPI en riesgo no justifica transición a Amarillo.
+The [[Indicador de Calidad]] for the Inspection department remains **Green** (Optimal quality). A single at-risk KPI does not justify a transition to Yellow.
 
-> [!warning] Regla de negocio
-> QA no ejecuta la operación de Inspección; solo observa, mide y retroalimenta. Si el [[Indicador de Calidad]] del departamento alcanza **Rojo** sin mejora tras notificación, el [[Manager de QA]] escala a dirección. — [[Reglas de QA]]
+> [!warning] Business Rule
+> QA does not execute Inspection operations; it only observes, measures, and provides feedback. If the [[Indicador de Calidad]] for the department reaches **Red** without improvement after notification, the [[Manager de QA]] escalates to management. — [[Reglas de QA]]
 
 ---
 
-## Resumen de transiciones del Semáforo del Colaborador
+## Associate Status Indicator Transition Summary
 
-| Fecha | Colaborador(es) | Transición | Acción | Responsable |
+| Date | Associate(s) | Transition | Action | Responsible |
 |---|---|---|---|---|
-| 21 jul 2026 | 12 colaboradores nuevos | Blanco → **Verde manzana** | Verificación de llegada Día 1 | Daniel Ortega (Inspector) |
-| 23 jul 2026 | 12 colaboradores | Verde manzana → **Azul claro** | Entrega de uniforme Día 3 | Daniel Ortega (Inspector) |
-| 24 jul 2026 | Miguel Ángel Paredes | Naranja → **Rojo** | Reporte del Supervisor | Teresa Campos (SUP) |
-| 24 jul 2026 | Miguel Ángel Paredes | Rojo → **Negro** | Disputa a favor del hotel (Blacklist manual) | Daniel Ortega (Inspector) |
-| 25 jul 2026 | Ana Belén Herrera | Azul claro → **Rojo** | Reporte del Supervisor | Mariana Vega (SUP) |
-| 25 jul 2026 | Ana Belén Herrera | Rojo → **Verde fuerte** | Disputa a favor de la colaboradora | Daniel Ortega (Inspector) |
-| 26 jul 2026 | Roberto Lara | Naranja → **Gris** | Accidente laboral (Escenario A) | Roberto Lara (colaborador) |
-| 31 jul 2026 | Roberto Lara | Gris → **Verde fuerte** | Alta médica + cierre de tarjeta | Daniel Ortega (Inspector) |
+| Jul 21, 2026 | 12 new associates | White → **Apple Green** | Day 1 arrival verification | Daniel Ortega (Inspector) |
+| Jul 23, 2026 | 12 associates | Apple Green → **Light Blue** | Day 3 uniform delivery | Daniel Ortega (Inspector) |
+| Jul 24, 2026 | Miguel Ángel Paredes | Orange → **Red** | Supervisor report | Teresa Campos (SUP) |
+| Jul 24, 2026 | Miguel Ángel Paredes | Red → **Black** | Dispute in favor of hotel (manual Blacklist) | Daniel Ortega (Inspector) |
+| Jul 25, 2026 | Ana Belén Herrera | Light Blue → **Red** | Supervisor report | Mariana Vega (SUP) |
+| Jul 25, 2026 | Ana Belén Herrera | Red → **Dark Green** | Dispute in favor of the associate | Daniel Ortega (Inspector) |
+| Jul 26, 2026 | Roberto Lara | Orange → **Gray** | Workplace accident (Scenario A) | Roberto Lara (associate) |
+| Jul 31, 2026 | Roberto Lara | Gray → **Dark Green** | Medical discharge + card closure | Daniel Ortega (Inspector) |
 
 ```mermaid
 graph LR
-    B[Blanco ×12] -->|Inspector verifica Día 1| VM[Verde manzana ×12]
-    VM -->|Inspector entrega uniforme Día 3| AC[Azul claro ×12]
+    B[White ×12] -->|Inspector verifies Day 1| VM[Apple Green ×12]
+    VM -->|Inspector delivers uniform Day 3| AC[Light Blue ×12]
 
-    NA1[Naranja — Miguel Á.] -->|SUP reporta| R1[Rojo]
-    R1 -->|Inspector: a favor del hotel| Negro
+    NA1[Orange — Miguel Á.] -->|SUP reports| R1[Red]
+    R1 -->|Inspector: in favor of hotel| Black
 
-    AC2[Azul claro — Ana B.] -->|SUP reporta| R2[Rojo]
-    R2 -->|Inspector: a favor de colaboradora| VF1[Verde fuerte]
+    AC2[Light Blue — Ana B.] -->|SUP reports| R2[Red]
+    R2 -->|Inspector: in favor of associate| VF1[Dark Green]
 
-    NA2[Naranja — Roberto] -->|Accidente laboral| Gris
-    Gris -->|Inspector cierra tarjeta| VF2[Verde fuerte]
+    NA2[Orange — Roberto] -->|Workplace accident| Gray
+    Gray -->|Inspector closes card| VF2[Dark Green]
 
     style B fill:#FFFFFF,stroke:#000,color:#000
     style VM fill:#8DB600,color:#fff
@@ -424,40 +424,40 @@ graph LR
     style NA2 fill:#FF8C00,color:#fff
     style R1 fill:#DC143C,color:#fff
     style R2 fill:#DC143C,color:#fff
-    style Negro fill:#000000,color:#fff
+    style Black fill:#000000,color:#fff
     style VF1 fill:#228B22,color:#fff
     style VF2 fill:#228B22,color:#fff
-    style Gris fill:#808080,color:#fff
+    style Gray fill:#808080,color:#fff
 ```
 
 ---
 
-## Módulos y conceptos referenciados
+## Modules and Referenced Concepts
 
-| Módulo | Referencia |
+| Module | Reference |
 |---|---|
-| Inspección | [[Inspección/Inspección\|Inspección]] · [[Reglas de Inspección]] |
-| Roles de Inspección | [[Inspector]] · [[Inspección/Coordinador\|Coordinador]] |
-| Semáforo del Colaborador | [[Semáforo del Colaborador]] |
-| Accidente Laboral | [[Accidente Laboral]] · [[Flujo de Accidente Laboral]] |
+| Inspection | [[Inspección/Inspección\|Inspección]] · [[Reglas de Inspección]] |
+| Inspection roles | [[Inspector]] · [[Inspección/Coordinador\|Coordinador]] |
+| Associate Status Indicator | [[Semáforo del Colaborador]] |
+| Workplace Accident | [[Accidente Laboral]] · [[Flujo de Accidente Laboral]] |
 | Blacklist | [[Blacklist]] |
-| Operación diaria | [[Timesheet]] · [[Schedule]] |
-| Requisiciones | [[Requisición]] · [[Flujo de Requisición]] |
+| Daily operations | [[Timesheet]] · [[Schedule]] |
+| Requisitions | [[Requisición]] · [[Flujo de Requisición]] |
 | Hotel | [[Hotel/Hotel\|Hotel]] · [[Reglas del Hotel]] |
-| Roles del hotel | [[Manager General]] · [[Manager de Área]] · [[Supervisor]] |
-| Calidad | [[Operador de QA]] · [[Manager de QA]] · [[Indicador de Calidad]] · [[Métricas y KPIs por Departamento]] · [[Reglas de QA]] |
+| Hotel roles | [[Manager General]] · [[Manager de Área]] · [[Supervisor]] |
+| Quality | [[Operador de QA]] · [[Manager de QA]] · [[Indicador de Calidad]] · [[Métricas y KPIs por Departamento]] · [[Reglas de QA]] |
 | Onboarding | [[Semáforo Onboarding]] |
-| Catálogos | [[Zonas]] · [[Posiciones]] |
-| Pool y reclutamiento | [[Pool de Colaboradores]] · [[Reclutadora]] · [[Manager de Reclutamiento]] |
-| Contabilidad | [[Deducciones]] |
-| Reglas generales | [[Reglas de Negocio]] · [[Reglas del Colaborador]] |
-| Ventas (continuidad) | [[Business Developer]] · [[Business Developer Coordinator]] |
+| Catalogs | [[Zonas]] · [[Posiciones]] |
+| Pool and recruitment | [[Pool de Colaboradores]] · [[Reclutadora]] · [[Manager de Reclutamiento]] |
+| Accounting | [[Deducciones]] |
+| General rules | [[Reglas de Negocio]] · [[Reglas del Colaborador]] |
+| Sales (continuity) | [[Business Developer]] · [[Business Developer Coordinator]] |
 
 ---
 
-## Simulaciones relacionadas
+## Related Simulations
 
-- [[Simulación - Punto de Vista de Ventas]] — Narra cómo el Hotel Costa Esmeralda llegó a ser cliente activo, con los mismos personajes (Daniel Ortega, Mariana Vega, Carlos Navarro) desde la perspectiva comercial.
-- [[Simulación - Punto de Vista del Hotel]] — Muestra el ciclo completo del hotel incluyendo la operación diaria que el Inspector supervisa.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Detalla el proceso de asignación de colaboradores que el Inspector luego verifica en Día 1 y Día 3.
-- [[Simulación - Ciclo de Vida del Colaborador]] — Recorre los estados del colaborador que el Inspector monitorea: reportes, accidentes, Blacklist y reincorporación.
+- [[Simulación - Punto de Vista de Ventas]] — Narrates how Hotel Costa Esmeralda became an active client, featuring the same characters (Daniel Ortega, Mariana Vega, Carlos Navarro) from the commercial perspective.
+- [[Simulación - Punto de Vista del Hotel]] — Shows the complete hotel cycle including the daily operations the Inspector supervises.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Details the associate assignment process that the Inspector then verifies on Day 1 and Day 3.
+- [[Simulación - Ciclo de Vida del Colaborador]] — Covers the associate states the Inspector monitors: reports, accidents, Blacklist, and reinstatement.

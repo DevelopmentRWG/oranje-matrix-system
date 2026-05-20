@@ -1,565 +1,565 @@
 ---
-tipo: simulación
-perspectiva: hotel
-hotel_ficticio: Hotel Riviera Maya Beach Resort
-zona: Sureste
-jerarquía: extendida
+type: simulation
+perspective: hotel
+fictional_hotel: Hotel Riviera Maya Beach Resort
+zone: Southeast
+hierarchy: extended
 tags:
-  - simulación
+  - simulation
   - hotel
-  - ciclo-completo
+  - full-cycle
 aliases:
-  - Simulación Hotel
+  - Hotel Simulation
 ---
 
-# Simulación completa — Punto de vista del Hotel
+# Full Simulation — Hotel Perspective
 
-> [!abstract] Propósito
-> Esta simulación narra el ciclo de vida completo de un hotel dentro del sistema Oranje, desde que es identificado como prospecto comercial hasta su operación diaria con personal asignado. Todos los datos son ficticios, pero cada acción, transición de semáforo y regla de negocio respeta fielmente la documentación del vault.
+> [!abstract] Purpose
+> This simulation narrates the complete lifecycle of a hotel within the Oranje system, from the moment it is identified as a commercial prospect through its daily operation with assigned staff. All data is fictional, but every action, status indicator transition, and business rule faithfully reflects the vault documentation.
 
-## Personajes de la simulación
+## Simulation Characters
 
-| Personaje | Rol | Departamento |
+| Character | Role | Department |
 |---|---|---|
 | Carlos Méndez | [[Manager General]] (GM) | Hotel Riviera Maya Beach Resort |
 | Laura Torres | [[Manager de Área]] (GH) | Housekeeping |
 | Pedro Ramírez | [[Supervisor]] (SUP) | Housekeeping |
-| Sofía Vega | [[Business Developer]] (BD) | Ventas — Oranje |
-| Ricardo Luna | [[Business Developer Coordinator]] (BDC) | Ventas — Oranje |
-| Ana Martínez | [[Reclutadora]] | Reclutamiento — Oranje |
-| Miguel Ochoa | [[Inspector]] | Inspección — Oranje (zona Sureste) |
-| María López | Colaboradora | Housekeeper |
-| Juan Hernández | Colaborador | Houseman |
-| Elena Cruz | Colaboradora | Housekeeper |
-| Roberto Díaz | Colaborador (reemplazo) | Houseman |
+| Sofía Vega | [[Business Developer]] (BD) | Sales — Oranje |
+| Ricardo Luna | [[Business Developer Coordinator]] (BDC) | Sales — Oranje |
+| Ana Martínez | [[Reclutadora]] | Recruitment — Oranje |
+| Miguel Ochoa | [[Inspector]] | Inspection — Oranje (Southeast zone) |
+| María López | Associate | Housekeeper |
+| Juan Hernández | Associate | Houseman |
+| Elena Cruz | Associate | Housekeeper |
+| Roberto Díaz | Associate (replacement) | Houseman |
 
 ---
 
-## Fase 1 — Onboarding comercial
+## Phase 1 — Commercial Onboarding
 
-> Referencia: [[Flujo de Onboarding]] · [[Semáforo Onboarding]]
+> Reference: [[Flujo de Onboarding]] · [[Semáforo Onboarding]]
 
-### 1.1 — Identificación del hotel
+### 1.1 — Hotel identification
 
-Sofía Vega, [[Business Developer]] asignada a la zona Sureste, identifica al **Hotel Riviera Maya Beach Resort** como un hotel con alta rotación de personal de housekeeping y potencial interés en servicios de staffing.
+Sofía Vega, [[Business Developer]] assigned to the Southeast zone, identifies **Hotel Riviera Maya Beach Resort** as a hotel with high housekeeping staff turnover and potential interest in staffing services.
 
-Sofía crea el perfil del hotel en el sistema.
+Sofía creates the hotel profile in the system.
 
-> [!info] Semáforo Onboarding
-> **Gris** → Hotel identificado
+> [!info] Onboarding Status Indicator
+> **Gray** → Hotel identified
 
-### 1.2 — Contacto y recopilación de datos
+### 1.2 — Contact and data collection
 
-Sofía realiza una visita en frío al hotel. Se reúne con Carlos Méndez (GM) y recopila los datos básicos: nombre del hotel, dirección, contacto principal, número de habitaciones, departamentos activos y necesidad estimada de personal.
+Sofía makes a cold visit to the hotel. She meets with Carlos Méndez (GM) and collects basic data: hotel name, address, main contact, number of rooms, active departments, and estimated staffing needs.
 
-Registra todo en el perfil del sistema.
+She records everything in the system profile.
 
-> [!info] Semáforo Onboarding
-> Gris → **Azul Claro** — Contacto y recopilación de datos
+> [!info] Onboarding Status Indicator
+> Gray → **Light Blue** — Contact and data collection
 
-### 1.3 — Propuesta enviada
+### 1.3 — Proposal sent
 
-Sofía elabora una [[Propuesta Personalizada]] para el Hotel Riviera Maya: servicios de staffing para el departamento de Housekeeping, con cobertura de Housekeepers, Housemen y personal de lavandería. Incluye descripción de servicios, modelo de operación y propuesta de precios preliminar.
+Sofía prepares a [[Propuesta Personalizada]] for Hotel Riviera Maya: staffing services for the Housekeeping department, covering Housekeepers, Housemen, and laundry staff. It includes a service description, operating model, and preliminary pricing proposal.
 
-Envía la propuesta por correo al GM Carlos Méndez y da seguimiento.
+She sends the proposal by email to GM Carlos Méndez and follows up.
 
-> [!info] Semáforo Onboarding
-> Azul Claro → **Verde** — Propuesta enviada
+> [!info] Onboarding Status Indicator
+> Light Blue → **Green** — Proposal sent
 
-### 1.4 — Seguimiento y términos
+### 1.4 — Follow-up and terms
 
-Carlos Méndez responde con interés. Sofía, con apoyo de Ricardo Luna ([[Business Developer Coordinator]]), crea el [[Documento de Términos y Condiciones]] con los parámetros comerciales:
+Carlos Méndez responds with interest. Sofía, with support from Ricardo Luna ([[Business Developer Coordinator]]), creates the [[Documento de Términos y Condiciones]] with the commercial parameters:
 
-| Parámetro | Valor |
+| Parameter | Value |
 |---|---|
-| Pay rate (Housekeeper) | $180 MXN/hora |
-| Pay rate (Houseman) | $160 MXN/hora |
-| Bill rate (Housekeeper) | $280 MXN/hora |
-| Bill rate (Houseman) | $250 MXN/hora |
-| Overtime | 1.5x bill rate |
-| Festivos | 2x bill rate |
-| Inicio de semana | Lunes |
-| Fin de semana | Domingo |
+| Pay rate (Housekeeper) | $180 MXN/hr |
+| Pay rate (Houseman) | $160 MXN/hr |
+| Bill rate (Housekeeper) | $280 MXN/hr |
+| Bill rate (Houseman) | $250 MXN/hr |
+| Overtime | 1.5× bill rate |
+| Holidays | 2× bill rate |
+| Week start | Monday |
+| Week end | Sunday |
 
-> [!info] Semáforo Onboarding
-> Verde → **Amarillo** — En seguimiento tras propuesta
+> [!info] Onboarding Status Indicator
+> Green → **Yellow** — In follow-up after proposal
 
-### 1.5 — Negociación de términos
+### 1.5 — Terms negotiation
 
-Carlos solicita ajustar el bill rate de Houseman a $240 MXN/hora. Ricardo Luna (BDC) participa directamente en la negociación. Después de dos rondas de ajuste, ambas partes llegan a un acuerdo. Se firma el [[Contrato]].
+Carlos requests an adjustment to the Houseman bill rate to $240 MXN/hr. Ricardo Luna (BDC) participates directly in the negotiation. After two rounds of adjustment, both parties reach an agreement. The [[Contrato]] is signed.
 
-> [!info] Semáforo Onboarding
-> Amarillo → **Rosa** — Negociación de términos
+> [!info] Onboarding Status Indicator
+> Yellow → **Pink** — Terms negotiation
 
-### 1.6 — Conversión a cliente activo
+### 1.6 — Conversion to active client
 
-Ricardo Luna (BDC) aprueba la conversión del Hotel Riviera Maya a cliente activo. Solo el BDC tiene autoridad para esta acción.
+Ricardo Luna (BDC) approves the conversion of Hotel Riviera Maya to active client. Only the BDC has authority for this action.
 
-> [!tip] Acciones automáticas del sistema — [[Trigger Automático de Conversión]]
-> 1. Se crea el [[Usuario del Hotel]] en el sistema
-> 2. El sistema envía email de bienvenida al hotel
-> 3. Se notifica a Sofía Vega (BD asignada)
-> 4. El hotel desaparece de la lista de prospectos
+> [!tip] Automatic system actions — [[Trigger Automático de Conversión]]
+> 1. The [[Usuario del Hotel]] is created in the system
+> 2. The system sends a welcome email to the hotel
+> 3. Sofía Vega (assigned BD) is notified
+> 4. The hotel disappears from the prospect list
 
-> [!info] Semáforo Onboarding
-> Rosa → **Naranja** — Acuerdo firmado, hotel cliente activo
+> [!info] Onboarding Status Indicator
+> Pink → **Orange** — Agreement signed, hotel is an active client
 
-> [!warning] Regla de negocio
-> El hotel solo puede generar [[Requisición|requisiciones]] a partir de este momento. Antes de alcanzar Naranja en el [[Semáforo Onboarding]], el hotel es un prospecto comercial sin acceso operativo.
+> [!warning] Business Rule
+> The hotel can only generate [[Requisición|requisitions]] from this point on. Before reaching Orange in the [[Semáforo Onboarding]], the hotel is a commercial prospect with no operational access.
 
 ---
 
-## Fase 2 — Primera requisición de personal
+## Phase 2 — First Staffing Requisition
 
-> Referencia: [[Flujo de Requisición]] · [[Semáforo de Requisición]] · [[Requisición]]
+> Reference: [[Flujo de Requisición]] · [[Semáforo de Requisición]] · [[Requisición]]
 
-### 2.1 — Creación de la requisición
+### 2.1 — Requisition creation
 
-Es lunes 19 de mayo de 2026. Pedro Ramírez ([[Supervisor|SUP]]) del departamento de Housekeeping necesita personal. Abre la app y crea una requisición con las siguientes posiciones:
+It is Monday May 19, 2026. Pedro Ramírez ([[Supervisor|SUP]]) from the Housekeeping department needs staff. He opens the app and creates a requisition with the following positions:
 
-| # | Posición | Cantidad | Modalidad | Fecha de inicio | Horario | Inglés |
+| # | Position | Quantity | Modality | Start date | Schedule | English |
 |---|---|---|---|---|---|---|
-| 1 | Housekeeper | 2 | Tiempo completo | 25 mayo 2026 | 07:00–15:00 | Básico |
-| 2 | Houseman | 1 | Tiempo completo | 25 mayo 2026 | 07:00–15:00 | Básico |
+| 1 | Housekeeper | 2 | Full time | May 25, 2026 | 07:00–15:00 | Basic |
+| 2 | Houseman | 1 | Full time | May 25, 2026 | 07:00–15:00 | Basic |
 
-> [!tip] Acción automática del sistema
-> Se genera el número de requisición: **202605190830A3**
-> Formato: `Año(4) + Mes(2) + Día(2) + Hora(2) + Minutos(2) + Homoclave(2)`
+> [!tip] Automatic system action
+> Requisition number generated: **202605190830A3**
+> Format: `Year(4) + Month(2) + Day(2) + Hour(2) + Minutes(2) + Homoclave(2)`
 
-> [!info] Semáforo de Requisición
-> → **Verde manzana** — En elaboración
+> [!info] Requisition Status Indicator
+> → **Apple Green** — In preparation
 
-> [!info] Semáforo de Posiciones
-> Posición 1 (Housekeeper ×2): → **Dorado** — En preparación
-> Posición 2 (Houseman ×1): → **Dorado** — En preparación
+> [!info] Position Status Indicator
+> Position 1 (Housekeeper ×2): → **Gold** — In preparation
+> Position 2 (Houseman ×1): → **Gold** — In preparation
 
-### 2.2 — Autorización
+### 2.2 — Authorization
 
-Laura Torres ([[Manager de Área|GH]] de Housekeeping) revisa la requisición `202605190830A3` en su bandeja. Verifica las posiciones, cantidades y fechas. Todo correcto. Autoriza la requisición.
+Laura Torres ([[Manager de Área|GH]] of Housekeeping) reviews requisition `202605190830A3` in her inbox. She verifies positions, quantities, and dates. Everything is correct. She authorizes the requisition.
 
-> [!warning] Regla de negocio
-> Solo el [[Manager General]] o el [[Manager de Área]] pueden autorizar una requisición. Si Pedro (SUP) intentara autorizar, el sistema bloquearía con: *"Solo el gerente del hotel puede autorizar la requisición"*.
+> [!warning] Business Rule
+> Only the [[Manager General]] or the [[Manager de Área]] can authorize a requisition. If Pedro (SUP) attempted to authorize it, the system would block with: *"Only the hotel manager can authorize the requisition."*
 
-> [!tip] Acciones automáticas al autorizar
-> 1. **Requisición** pasa a Verde (Autorizada)
-> 2. **Posiciones** pasan de Dorado a Naranja (Autorizadas)
-> 3. **Cálculo de urgencia**: fecha de autorización (19 mayo 08:45) vs fecha de inicio (25 mayo 07:00) = ~142 horas → **Verde fuerte** (Normal, >120h)
-> 4. **Inspector asignado**: Miguel Ochoa — automático según [[Zonas|zona Sureste]] del hotel
-> 5. **Posiciones reflejadas** en el [[Schedule]] de la semana del 25 de mayo
+> [!tip] Automatic actions on authorization
+> 1. **Requisition** moves to Green (Authorized)
+> 2. **Positions** move from Gold to Orange (Authorized)
+> 3. **Urgency calculation**: authorization date (May 19 08:45) vs. start date (May 25 07:00) = ~142 hours → **Dark Green** (Normal, >120h)
+> 4. **Inspector assigned**: Miguel Ochoa — automatically based on the hotel's [[Zonas|Southeast zone]]
+> 5. **Positions reflected** in the [[Schedule]] for the week of May 25
 
-> [!info] Semáforo de Requisición
-> Verde manzana → **Verde** — Autorizada
+> [!info] Requisition Status Indicator
+> Apple Green → **Green** — Authorized
 
-> [!info] Semáforo de Posiciones
-> Dorado → **Naranja** — Autorizadas
+> [!info] Position Status Indicator
+> Gold → **Orange** — Authorized
 
-> [!info] Semáforo de Urgencia
-> → **Verde fuerte** — Normal (142 horas disponibles)
+> [!info] Urgency Status Indicator
+> → **Dark Green** — Normal (142 hours available)
 
-### 2.3 — Self-Pick por Reclutamiento
+### 2.3 — Self-Pick by Recruitment
 
-La requisición `202605190830A3` aparece en la bandeja compartida de [[Self-Pick de Requisiciones]], priorizada por nivel de urgencia. Ana Martínez ([[Reclutadora]]) la ve y la toma a las 12:30 del mismo día.
+Requisition `202605190830A3` appears in the shared [[Self-Pick de Requisiciones]] queue, prioritized by urgency level. Ana Martínez ([[Reclutadora]]) sees it and picks it up at 12:30 the same day.
 
-> [!warning] Regla de negocio
-> Si ninguna reclutadora toma la requisición en 24 horas, el sistema la asigna automáticamente a la reclutadora con menor carga de trabajo.
+> [!warning] Business Rule
+> If no recruiter picks the requisition within 24 hours, the system automatically assigns it to the recruiter with the lowest workload.
 
-> [!info] Semáforo de Requisición
-> Verde → **Amarillo** — En proceso
+> [!info] Requisition Status Indicator
+> Green → **Yellow** — In process
 
-### 2.4 — Cobertura
+### 2.4 — Coverage
 
-Ana Martínez consulta el [[Pool de Colaboradores]] y busca candidatos que hagan match con los requisitos: posición, zona geográfica compatible, disponibilidad y modalidad.
+Ana Martínez checks the [[Pool de Colaboradores]] and searches for candidates that match the requirements: position, compatible geographic zone, availability, and modality.
 
-**Resultado de búsqueda:**
+**Search results:**
 
-| Colaborador | Posición | Estado en semáforo | Match |
+| Associate | Position | Status Indicator | Match |
 |---|---|---|---|
-| María López | Housekeeper | Verde fuerte (Disponible) | Sí |
-| Elena Cruz | Housekeeper | Verde fuerte (Disponible) | Sí |
-| Juan Hernández | Houseman | Verde fuerte (Disponible) | Sí |
+| María López | Housekeeper | Dark Green (Available) | Yes |
+| Elena Cruz | Housekeeper | Dark Green (Available) | Yes |
+| Juan Hernández | Houseman | Dark Green (Available) | Yes |
 
-Ana asigna a los tres colaboradores. Los registra en el [[Schedule]] del hotel para la semana del 25 de mayo.
+Ana assigns all three associates. She registers them in the hotel's [[Schedule]] for the week of May 25.
 
-> [!info] Semáforo de Posiciones
-> **Posición 1** (Housekeeper ×2): Naranja → **Verde** — 100% cubierta (2/2)
-> **Posición 2** (Houseman ×1): Naranja → **Verde** — 100% cubierta (1/1)
+> [!info] Position Status Indicator
+> **Position 1** (Housekeeper ×2): Orange → **Green** — 100% covered (2/2)
+> **Position 2** (Houseman ×1): Orange → **Green** — 100% covered (1/1)
 
-> [!warning] Regla de negocio
-> Requisición = Azul claro **solo si** TODAS las posiciones están en Verde. Si alguna posición cierra en Amarillo o Rojo, la requisición cierra en Rojo.
+> [!warning] Business Rule
+> Requisition = Light Blue **only if** ALL positions are Green. If any position closes in Yellow or Red, the requisition closes in Red.
 
-> [!info] Semáforo de Requisición
-> Amarillo → **Azul claro** — Cubierta totalmente
+> [!info] Requisition Status Indicator
+> Yellow → **Light Blue** — Fully covered
 
-> [!info] Semáforo del Colaborador
-> María López: Verde fuerte → **Blanco** (Pre-asignación)
-> Elena Cruz: Verde fuerte → **Blanco** (Pre-asignación)
-> Juan Hernández: Verde fuerte → **Blanco** (Pre-asignación)
+> [!info] Associate Status Indicator
+> María López: Dark Green → **White** (Pre-assignment)
+> Elena Cruz: Dark Green → **White** (Pre-assignment)
+> Juan Hernández: Dark Green → **White** (Pre-assignment)
 
 ---
 
-## Fase 3 — Día 1: llegada de colaboradores
+## Phase 3 — Day 1: Associate Arrival
 
-> Referencia: [[Reglas de Inspección]] · [[Semáforo del Colaborador]] · [[Inspector]]
+> Reference: [[Reglas de Inspección]] · [[Semáforo del Colaborador]] · [[Inspector]]
 
-### 3.1 — Verificación de llegada
+### 3.1 — Arrival verification
 
-Es domingo 25 de mayo de 2026, 06:45 AM. María López, Juan Hernández y Elena Cruz llegan al Hotel Riviera Maya Beach Resort.
+It is Sunday May 25, 2026, 06:45 AM. María López, Juan Hernández, and Elena Cruz arrive at Hotel Riviera Maya Beach Resort.
 
-Miguel Ochoa ([[Inspector]] de zona Sureste) se presenta en la propiedad. Verifica presencialmente la llegada de cada colaborador: confirma identidad, registra la hora de llegada y valida que están en el lugar correcto.
+Miguel Ochoa ([[Inspector]] for the Southeast zone) arrives at the property. He verifies the arrival of each associate in person: confirms identity, records arrival time, and validates that they are at the correct location.
 
-> [!info] Semáforo del Colaborador
-> María López: Blanco → **Verde manzana** (Día 1-2)
-> Juan Hernández: Blanco → **Verde manzana** (Día 1-2)
-> Elena Cruz: Blanco → **Verde manzana** (Día 1-2)
+> [!info] Associate Status Indicator
+> María López: White → **Apple Green** (Day 1-2)
+> Juan Hernández: White → **Apple Green** (Day 1-2)
+> Elena Cruz: White → **Apple Green** (Day 1-2)
 
-### 3.2 — Primer ponchado
+### 3.2 — First clock-in
 
-Laura Torres ([[Manager de Área|GH]]) genera el código QR de ponchado desde la app. Los tres colaboradores ponchan su primer día de trabajo.
+Laura Torres ([[Manager de Área|GH]]) generates the punch QR code from the app. The three associates clock in for their first day of work.
 
-Registro de ponchado de María López — Día 1 (25 mayo):
+María López punch record — Day 1 (May 25):
 
-| Evento | Hora |
+| Event | Time |
 |---|---|
-| Entrada | 07:00 |
-| Salida Lunch | 11:30 |
-| Entrada Lunch | 12:00 |
-| Salida Break | 14:00 |
-| Entrada Break | 14:15 |
-| Salida | 15:00 |
+| Clock In | 07:00 |
+| Lunch Out | 11:30 |
+| Lunch In | 12:00 |
+| Break Out | 14:00 |
+| Break In | 14:15 |
+| Clock Out | 15:00 |
 
-> [!warning] Regla de negocio — Deducción de lunch
-> Lunch tomado: 30 min (12:00 − 11:30). Como es exactamente 30 min (mínimo obligatorio), se deduce 30 min. Si hubiera sido menor a 30 min, se deducirían 30 min de todas formas. Si hubiera sido mayor, se deduciría el tiempo real.
+> [!warning] Business Rule — Lunch deduction
+> Lunch taken: 30 min (12:00 − 11:30). Since it is exactly 30 min (mandatory minimum), 30 min are deducted. If it had been less than 30 min, 30 min would be deducted anyway. If it had been more, the actual time would be deducted.
 
-> [!tip] Cálculo automático del sistema — [[Timesheet]]
-> - Horas brutas: 15:00 − 07:00 = 8:00
-> - Deducción lunch: 0:30
-> - Deducción break: 0:15
-> - **Horas netas pagables: 7:15**
-
----
-
-## Fase 4 — Día 3: entrega de uniforme
-
-> Referencia: [[Reglas de Inspección]] · [[Inspector]]
-
-### 4.1 — Entrega de uniforme
-
-Es martes 27 de mayo de 2026. Miguel Ochoa ([[Inspector]]) regresa al Hotel Riviera Maya para entregar los uniformes de Oranje a los tres colaboradores.
-
-Miguel entrega personalmente el uniforme a María López, Juan Hernández y Elena Cruz. Registra la entrega en la app.
-
-> [!info] Semáforo del Colaborador
-> María López: Verde manzana → **Azul claro** (Día 3+)
-> Juan Hernández: Verde manzana → **Azul claro** (Día 3+)
-> Elena Cruz: Verde manzana → **Azul claro** (Día 3+)
-
-A partir de este momento, los tres colaboradores operan con normalidad: ponchan diariamente, su [[Timesheet]] se genera a partir del [[Schedule]], y su trabajo queda registrado en el sistema.
+> [!tip] Automatic system calculation — [[Timesheet]]
+> - Gross hours: 15:00 − 07:00 = 8:00
+> - Lunch deduction: 0:30
+> - Break deduction: 0:15
+> - **Net payable hours: 7:15**
 
 ---
 
-## Fase 5 — Operación semanal normal
+## Phase 4 — Day 3: Uniform Delivery
 
-> Referencia: [[Timesheet]] · [[Schedule]] · [[Indicador de Cumplimiento del Timesheet]]
+> Reference: [[Reglas de Inspección]] · [[Inspector]]
 
-### 5.1 — Semana completa de trabajo
+### 4.1 — Uniform delivery
 
-La primera semana completa transcurre sin incidentes. Los tres colaboradores trabajan 5 jornadas (lunes a viernes) con 2 días de descanso (sábado y domingo).
+It is Tuesday May 27, 2026. Miguel Ochoa ([[Inspector]]) returns to Hotel Riviera Maya to deliver the Oranje uniforms to the three associates.
 
-**Resumen del [[Timesheet]] de María López — Semana del 26 mayo al 1 junio:**
+Miguel personally delivers the uniform to María López, Juan Hernández, and Elena Cruz. He records the delivery in the app.
 
-| Día | Entrada | Salida | Lunch | Break | Horas netas |
+> [!info] Associate Status Indicator
+> María López: Apple Green → **Light Blue** (Day 3+)
+> Juan Hernández: Apple Green → **Light Blue** (Day 3+)
+> Elena Cruz: Apple Green → **Light Blue** (Day 3+)
+
+From this point on, the three associates operate normally: they clock in daily, their [[Timesheet]] is generated from the [[Schedule]], and their work is recorded in the system.
+
+---
+
+## Phase 5 — Normal Weekly Operations
+
+> Reference: [[Timesheet]] · [[Schedule]] · [[Indicador de Cumplimiento del Timesheet]]
+
+### 5.1 — Full work week
+
+The first full week passes without incidents. The three associates work 5 shifts (Monday through Friday) with 2 rest days (Saturday and Sunday).
+
+**[[Timesheet]] summary for María López — Week of May 26 to June 1:**
+
+| Day | Clock In | Clock Out | Lunch | Break | Net hours |
 |---|---|---|---|---|---|
-| Lun 26 | 07:00 | 15:00 | 30 min | 15 min | 7:15 |
-| Mar 27 | 07:00 | 15:00 | 30 min | 15 min | 7:15 |
-| Mié 28 | 07:00 | 15:00 | 35 min | 15 min | 7:10 |
-| Jue 29 | 07:00 | 15:00 | 30 min | 15 min | 7:15 |
-| Vie 30 | 07:00 | 15:00 | 30 min | 15 min | 7:15 |
+| Mon 26 | 07:00 | 15:00 | 30 min | 15 min | 7:15 |
+| Tue 27 | 07:00 | 15:00 | 30 min | 15 min | 7:15 |
+| Wed 28 | 07:00 | 15:00 | 35 min | 15 min | 7:10 |
+| Thu 29 | 07:00 | 15:00 | 30 min | 15 min | 7:15 |
+| Fri 30 | 07:00 | 15:00 | 30 min | 15 min | 7:15 |
 | **Total** | | | | | **36:10** |
 
-> [!warning] Regla — Jornada semanal
-> Jornada diaria: 8 horas brutas. Semana laboral: 7 días (5 trabajo + 2 descanso). Total semanal bruto: 40 horas. Total semanal neto pagable esperado: 37.5 horas (40 hrs − 30 min lunch × 5 jornadas, sin contar breaks). María registra 36:10 horas netas por los breaks de 15 min diarios.
+> [!warning] Rule — Weekly schedule
+> Daily shift: 8 gross hours. Work week: 7 days (5 work + 2 rest). Weekly gross total: 40 hours. Expected weekly net payable total: 37.5 hours (40 hrs − 30 min lunch × 5 shifts, not counting breaks). María records 36:10 net hours due to the 15-min daily breaks.
 
-### 5.2 — Indicador de Lunch Extendido
+### 5.2 — Extended Lunch Indicator
 
-El miércoles 28, Juan Hernández toma un lunch de 45 minutos en lugar de los 30 reglamentarios.
+On Wednesday the 28th, Juan Hernández takes a 45-minute lunch instead of the standard 30 minutes.
 
-> [!tip] Acción automática del sistema
-> El **Indicador de Lunch Extendido** se activa para Juan Hernández el miércoles 28. Se deduce el tiempo real (45 min) en lugar del mínimo de 30 min.
+> [!tip] Automatic system action
+> The **Extended Lunch Indicator** is activated for Juan Hernández on Wednesday the 28th. The actual time (45 min) is deducted instead of the 30-min minimum.
 
-> [!warning] Regla de visibilidad
-> El Indicador de Lunch Extendido es visible **solo** para: Miguel Ochoa ([[Inspector]]), el [[Coordinador]] y el [[Manager de Reclutamiento]].
-> **No es visible** para: Carlos Méndez (GM), Laura Torres (GH) ni Pedro Ramírez (SUP).
-> No es punitivo de forma automática — es una herramienta de supervisión interna de Oranje.
+> [!warning] Visibility rule
+> The Extended Lunch Indicator is visible **only** to: Miguel Ochoa ([[Inspector]]), the [[Coordinador]], and the [[Manager de Reclutamiento]].
+> **Not visible** to: Carlos Méndez (GM), Laura Torres (GH), or Pedro Ramírez (SUP).
+> It is not automatically punitive — it is an internal Oranje supervision tool.
 
-### 5.3 — Transición a Fijo
+### 5.3 — Transition to Fixed
 
-Al completar 7 días de operación continua, el sistema transita automáticamente a los tres colaboradores al estado Naranja (Fijo).
+Upon completing 7 days of continuous operation, the system automatically transitions all three associates to Orange (Fixed) status.
 
-> [!info] Semáforo del Colaborador
-> María López: Azul claro → **Naranja** (Fijo)
-> Juan Hernández: Azul claro → **Naranja** (Fijo)
-> Elena Cruz: Azul claro → **Naranja** (Fijo)
+> [!info] Associate Status Indicator
+> María López: Light Blue → **Orange** (Fixed)
+> Juan Hernández: Light Blue → **Orange** (Fixed)
+> Elena Cruz: Light Blue → **Orange** (Fixed)
 
 ---
 
-## Fase 6 — Incidente: reporte de colaborador
+## Phase 6 — Incident: Associate Report
 
-> Referencia: [[Semáforo del Colaborador]] · [[Reglas de Inspección]] · [[Blacklist]]
+> Reference: [[Semáforo del Colaborador]] · [[Reglas de Inspección]] · [[Blacklist]]
 
-### 6.1 — Reporte por parte del hotel
+### 6.1 — Report by the hotel
 
-Es jueves 5 de junio de 2026. Juan Hernández ha llegado tarde tres días de la semana y su rendimiento ha bajado significativamente. Pedro Ramírez ([[Supervisor|SUP]]) decide reportarlo desde la app.
+It is Thursday June 5, 2026. Juan Hernández has arrived late three days this week and his performance has dropped significantly. Pedro Ramírez ([[Supervisor|SUP]]) decides to report him through the app.
 
-> [!info] Semáforo del Colaborador
-> Juan Hernández: Naranja → **Rojo** (Reportado)
+> [!info] Associate Status Indicator
+> Juan Hernández: Orange → **Red** (Reported)
 
-> [!warning] Regla de negocio
-> El estado Rojo puede ser activado por: [[Manager General]], [[Manager de Área]] o [[Supervisor]]. La acumulación de 3 inasistencias **no** pasa por Rojo; va directo a Negro ([[Blacklist]] automático).
+> [!warning] Business Rule
+> Red status can be activated by: [[Manager General]], [[Manager de Área]], or [[Supervisor]]. Accumulation of 3 absences does **not** go through Red; it goes directly to Black (automatic [[Blacklist]]).
 
-### 6.2 — Investigación del Inspector
+### 6.2 — Inspector investigation
 
-Miguel Ochoa ([[Inspector]]) recibe la notificación del reporte. Se presenta en el hotel, entrevista a Pedro (SUP) y a Laura (GH), revisa los registros de ponchado de Juan y documenta la situación.
+Miguel Ochoa ([[Inspector]]) receives the report notification. He arrives at the hotel, interviews Pedro (SUP) and Laura (GH), reviews Juan's punch records, and documents the situation.
 
-Después de su investigación, Miguel determina que la disputa **favorece al hotel**: los tardíos están documentados en el [[Timesheet]] y no hay justificación válida por parte del colaborador.
+After his investigation, Miguel determines that the dispute **favors the hotel**: the late arrivals are documented in the [[Timesheet]] and there is no valid justification from the associate.
 
-> [!warning] Regla — Autoridad del Inspector
-> El [[Inspector]] tiene autoridad propia para decidir el resultado:
-> - Disputa a favor del hotel → **Negro** ([[Blacklist]])
-> - Disputa a favor del colaborador → **Verde fuerte** (reincorporado)
+> [!warning] Rule — Inspector authority
+> The [[Inspector]] has autonomous authority to decide the outcome:
+> - Dispute in favor of the hotel → **Black** ([[Blacklist]])
+> - Dispute in favor of the associate → **Dark Green** (reinstated)
 
-> [!info] Semáforo del Colaborador
-> Juan Hernández: Rojo → **Negro** (Blacklist)
+> [!info] Associate Status Indicator
+> Juan Hernández: Red → **Black** (Blacklist)
 
-Juan Hernández queda **vetado permanentemente** del sistema Oranje. No puede ser asignado a ningún hotel.
+Juan Hernández is **permanently banned** from the Oranje system. He cannot be assigned to any hotel.
 
-### 6.3 — Requisición de reemplazo
+### 6.3 — Replacement requisition
 
-Laura Torres ([[Manager de Área|GH]]) necesita cubrir la vacante dejada por Juan. Crea una nueva requisición desde la app:
+Laura Torres ([[Manager de Área|GH]]) needs to fill the vacancy left by Juan. She creates a new requisition from the app:
 
-| # | Posición | Cantidad | Modalidad | Fecha de inicio | Horario | Inglés |
+| # | Position | Quantity | Modality | Start date | Schedule | English |
 |---|---|---|---|---|---|---|
-| 1 | Houseman | 1 | Tiempo completo | 7 junio 2026 | 07:00–15:00 | Básico |
+| 1 | Houseman | 1 | Full time | June 7, 2026 | 07:00–15:00 | Basic |
 
-> [!tip] Acción automática del sistema
-> Número de requisición generado: **202606050915B7**
+> [!tip] Automatic system action
+> Requisition number generated: **202606050915B7**
 
-Laura misma autoriza la requisición (como GH tiene autoridad para hacerlo).
+Laura herself authorizes the requisition (as GH she has the authority to do so).
 
-> [!tip] Acciones automáticas al autorizar
-> 1. Requisición → **Verde** (Autorizada)
-> 2. Posición → **Naranja** (Autorizada)
-> 3. Urgencia: fecha de autorización (5 junio 09:15) vs fecha de inicio (7 junio 07:00) = ~46 horas → **Rojo** (Urgente, <72h)
-> 4. Inspector Miguel Ochoa asignado automáticamente
+> [!tip] Automatic actions on authorization
+> 1. Requisition → **Green** (Authorized)
+> 2. Position → **Orange** (Authorized)
+> 3. Urgency: authorization date (June 5 09:15) vs. start date (June 7 07:00) = ~46 hours → **Red** (Urgent, <72h)
+> 4. Inspector Miguel Ochoa automatically assigned
 
-> [!info] Semáforo de Urgencia
-> → **Rojo** — Urgente (<72 horas)
+> [!info] Urgency Status Indicator
+> → **Red** — Urgent (<72 hours)
 
-### 6.4 — Cobertura urgente
+### 6.4 — Urgent coverage
 
-La requisición urgente aparece en la bandeja de [[Self-Pick de Requisiciones]] destacada por su nivel de urgencia Rojo. Ana Martínez ([[Reclutadora]]) la toma de inmediato.
+The urgent requisition appears in the [[Self-Pick de Requisiciones]] queue highlighted by its Red urgency level. Ana Martínez ([[Reclutadora]]) picks it up immediately.
 
-Ana busca en el [[Pool de Colaboradores]] y encuentra a Roberto Díaz (Houseman, estado Verde fuerte — Disponible, zona Sureste). Lo asigna a la posición.
+Ana searches the [[Pool de Colaboradores]] and finds Roberto Díaz (Houseman, Dark Green status — Available, Southeast zone). She assigns him to the position.
 
-> [!info] Semáforo de Posiciones
-> Posición 1 (Houseman ×1): Naranja → **Verde** — 100% cubierta
+> [!info] Position Status Indicator
+> Position 1 (Houseman ×1): Orange → **Green** — 100% covered
 
-> [!info] Semáforo de Requisición
-> Amarillo → **Azul claro** — Cubierta totalmente
+> [!info] Requisition Status Indicator
+> Yellow → **Light Blue** — Fully covered
 
-Roberto Díaz inicia el proceso estándar: llegada verificada por Miguel (Inspector) en Día 1, entrega de uniforme en Día 3, y transición a Naranja (Fijo) después del Día 7.
+Roberto Díaz starts the standard process: arrival verified by Miguel (Inspector) on Day 1, uniform delivery on Day 3, and transition to Orange (Fixed) after Day 7.
 
 ---
 
-## Fase 7 — Contingencia: accidente laboral
+## Phase 7 — Contingency: Workplace Accident
 
-> Referencia: [[Flujo de Accidente Laboral]] · [[Accidente Laboral]] · [[Reglas de Inspección]]
+> Reference: [[Flujo de Accidente Laboral]] · [[Accidente Laboral]] · [[Reglas de Inspección]]
 
-### 7.1 — Reporte del accidente (Escenario A)
+### 7.1 — Accident report (Scenario A)
 
-Es miércoles 18 de junio de 2026, 10:20 AM. María López sufre una caída en el área de lavandería del hotel mientras trasladaba un carrito de ropa. Se lastima el tobillo derecho.
+It is Wednesday June 18, 2026, 10:20 AM. María López suffers a fall in the hotel's laundry area while transporting a linen cart. She injures her right ankle.
 
-María abre la app de Oranje y genera un reporte de accidente desde su teléfono.
+María opens the Oranje app and generates an accident report from her phone.
 
-> [!tip] Acciones automáticas del sistema
-> 1. Se genera una **tarjeta de accidente laboral** con número automático
-> 2. María López transita a estado **Gris** (Accidentada) en el [[Semáforo del Colaborador]]
-> 3. La señal llega **simultáneamente** a Pedro Ramírez (SUP) y a Miguel Ochoa (Inspector de zona Sureste)
+> [!tip] Automatic system actions
+> 1. A **workplace accident card** is generated with an automatic number
+> 2. María López transitions to **Gray** (Injured) in the [[Semáforo del Colaborador]]
+> 3. The signal reaches Pedro Ramírez (SUP) and Miguel Ochoa (Southeast zone Inspector) **simultaneously**
 
-> [!info] Semáforo del Colaborador
-> María López: Naranja → **Gris** (Accidentada)
+> [!info] Associate Status Indicator
+> María López: Orange → **Gray** (Injured)
 
-> [!warning] Regla de protección
-> Mientras María esté en estado Gris, sus inasistencias **no cuentan** para la regla de 3 inasistencias → [[Blacklist]]. El estado Gris protege al colaborador accidentado.
+> [!warning] Protection rule
+> While María is in Gray status, her absences **do not count** toward the 3-absences → [[Blacklist]] rule. Gray status protects the injured associate.
 
-### 7.2 — Información presencial del Supervisor
+### 7.2 — On-site information from the Supervisor
 
-Pedro Ramírez ([[Supervisor|SUP]]) recibe la notificación y acude físicamente al área de lavandería. Captura la información presencial en la tarjeta de accidente:
+Pedro Ramírez ([[Supervisor|SUP]]) receives the notification and goes physically to the laundry area. He captures the on-site information in the accident card:
 
-| Campo | Información capturada |
+| Field | Captured information |
 |---|---|
-| Ubicación exacta | Área de lavandería, pasillo entre lavadoras industriales y estación de planchado |
-| Circunstancias | Colaboradora resbaló con piso mojado mientras trasladaba carrito de ropa sucia |
-| Testigos | Elena Cruz (compañera de turno) |
-| Atención inmediata | Se aplicó hielo en el tobillo, se sentó a la colaboradora en área de descanso |
+| Exact location | Laundry area, hallway between industrial washers and ironing station |
+| Circumstances | Associate slipped on wet floor while transporting dirty linen cart |
+| Witnesses | Elena Cruz (shift partner) |
+| Immediate care | Ice applied to ankle, associate seated in rest area |
 
-### 7.3 — Seguimiento médico del Inspector
+### 7.3 — Medical follow-up by the Inspector
 
-Miguel Ochoa ([[Inspector]]) recibe la notificación en la app y se desplaza al hotel. Evalúa la situación y decide trasladar a María al centro médico más cercano.
+Miguel Ochoa ([[Inspector]]) receives the notification in the app and travels to the hotel. He assesses the situation and decides to transfer María to the nearest medical center.
 
-Miguel complementa la tarjeta de accidente con la información médica:
+Miguel completes the accident card with medical information:
 
-| Campo | Información capturada |
+| Field | Captured information |
 |---|---|
-| Traslado | Centro Médico del Sureste, llegada 11:45 AM |
-| Diagnóstico | Esguince de tobillo grado I |
-| Días de incapacidad | 5 días (del 18 al 22 de junio) |
-| Observaciones médicas | Reposo absoluto, no cargar peso, revisión de seguimiento el día 23 |
+| Transfer | Southeast Medical Center, arrival 11:45 AM |
+| Diagnosis | Grade I ankle sprain |
+| Days of incapacity | 5 days (June 18–22) |
+| Medical notes | Complete rest, no weight bearing, follow-up review on June 23 |
 
-### 7.4 — Cierre de la tarjeta
+### 7.4 — Card closure
 
-El lunes 23 de junio, María López recibe el alta médica. Miguel Ochoa ([[Inspector]]) cierra la tarjeta de accidente en el sistema.
+On Monday June 23, María López receives medical discharge. Miguel Ochoa ([[Inspector]]) closes the accident card in the system.
 
-> [!warning] Regla de negocio
-> El [[Inspector]] es **siempre** el responsable final del cierre de la tarjeta de accidente. Sin excepción. El cierre requiere alta médica documentada.
+> [!warning] Business Rule
+> The [[Inspector]] is **always** the final party responsible for closing the accident card. No exceptions. Closure requires documented medical discharge.
 
-> [!info] Semáforo del Colaborador
-> María López: Gris → **Verde fuerte** (Disponible)
+> [!info] Associate Status Indicator
+> María López: Gray → **Dark Green** (Available)
 
-María queda disponible en el [[Pool de Colaboradores]] para ser reasignada. Ana Martínez ([[Reclutadora]]) la reasigna al Hotel Riviera Maya para continuar su posición de Housekeeper.
-
----
-
-## Fase 8 — Stand-by
-
-> Referencia: [[Semáforo del Colaborador]] · [[Reglas del Hotel]]
-
-### 8.1 — Activación de Stand-by
-
-Es julio de 2026. La temporada baja reduce la ocupación del hotel significativamente. Laura Torres ([[Manager de Área|GH]]) decide que no necesita a las dos Housekeepers simultáneamente.
-
-Laura pone a Elena Cruz en **Stand-by** desde la app.
-
-> [!info] Semáforo del Colaborador
-> Elena Cruz: Naranja → **Rosa** (Stand-by)
-
-> [!warning] Reglas de Stand-by
-> - Elena **no tiene** [[Schedule]] ni [[Timesheet]] mientras esté en Rosa
-> - Elena **no puede** ponchar
-> - **Sin fecha de fin definida** — el estado se mantiene hasta que cualquier rol del hotel lo cambie
-> - La acción puede ser ejecutada por: [[Manager General]], [[Manager de Área]] o [[Supervisor]]
-
-### 8.2 — Reactivación
-
-Tres semanas después, la ocupación del hotel repunta. Laura Torres reactiva a Elena Cruz desde la app, cambiando su estado de vuelta a operativo.
-
-> [!info] Semáforo del Colaborador
-> Elena Cruz: Rosa → estado operativo
-
-Elena reaparece en el [[Schedule]] del hotel y puede ponchar nuevamente. Su [[Timesheet]] se genera a partir de la semana de reactivación.
+María is available in the [[Pool de Colaboradores]] to be reassigned. Ana Martínez ([[Reclutadora]]) reassigns her to Hotel Riviera Maya to continue her Housekeeper position.
 
 ---
 
-## Fase 9 — Facturación semanal
+## Phase 8 — Stand-by
 
-> Referencia: [[Facturación al Hotel]] · [[Flujo de Nómina]] · [[Contrato]]
+> Reference: [[Semáforo del Colaborador]] · [[Reglas del Hotel]]
 
-### 9.1 — Generación automática de factura
+### 8.1 — Stand-by activation
 
-Al cierre de la semana del 26 mayo al 1 junio, el sistema genera automáticamente la factura para el Hotel Riviera Maya Beach Resort.
+It is July 2026. The low season significantly reduces hotel occupancy. Laura Torres ([[Manager de Área|GH]]) decides she does not need both Housekeepers simultaneously.
 
-**Factura — Semana del 26 mayo al 1 junio de 2026**
+Laura puts Elena Cruz on **Stand-by** from the app.
 
-| Colaborador | Posición | Horas regulares | Horas OT autorizadas | Bill rate | Subtotal |
+> [!info] Associate Status Indicator
+> Elena Cruz: Orange → **Pink** (Stand-by)
+
+> [!warning] Stand-by rules
+> - Elena has **no** [[Schedule]] or [[Timesheet]] while in Pink
+> - Elena **cannot** clock in
+> - **No defined end date** — the status is maintained until any hotel role changes it
+> - The action can be executed by: [[Manager General]], [[Manager de Área]], or [[Supervisor]]
+
+### 8.2 — Reactivation
+
+Three weeks later, hotel occupancy picks back up. Laura Torres reactivates Elena Cruz from the app, changing her status back to operational.
+
+> [!info] Associate Status Indicator
+> Elena Cruz: Pink → operational status
+
+Elena reappears in the hotel's [[Schedule]] and can clock in again. Her [[Timesheet]] is generated from the reactivation week onward.
+
+---
+
+## Phase 9 — Weekly Billing
+
+> Reference: [[Facturación al Hotel]] · [[Flujo de Nómina]] · [[Contrato]]
+
+### 9.1 — Automatic invoice generation
+
+At the close of the week of May 26 through June 1, the system automatically generates the invoice for Hotel Riviera Maya Beach Resort.
+
+**Invoice — Week of May 26 to June 1, 2026**
+
+| Associate | Position | Regular hours | Authorized OT hours | Bill rate | Subtotal |
 |---|---|---|---|---|---|
 | María López | Housekeeper | 36.17 | 0 | $280/hr | $10,127.60 |
 | Juan Hernández | Houseman | 35.75 | 0 | $240/hr | $8,580.00 |
 | Elena Cruz | Housekeeper | 36.17 | 0 | $280/hr | $10,127.60 |
 
-| Concepto | Monto |
+| Concept | Amount |
 |---|---|
-| Subtotal servicios | $28,835.20 |
-| Acreditaciones | $0.00 |
-| **Total a cobrar** | **$28,835.20** |
+| Services subtotal | $28,835.20 |
+| Credits | $0.00 |
+| **Total due** | **$28,835.20** |
 
-> [!warning] Reglas de facturación
-> - Se usa exclusivamente el **bill rate** del [[Contrato]]. El pay rate (lo que Oranje paga al colaborador) nunca se refleja en la factura.
-> - Solo se factura **overtime autorizado** por el hotel. Horas extra no autorizadas no se incluyen.
-> - Si la semana cruzara un cambio de mes y el contrato indica "Factura partida por mes: sí", el sistema generaría dos facturas separadas.
+> [!warning] Billing rules
+> - Only the **bill rate** from the [[Contrato]] is used. The pay rate (what Oranje pays the associate) is never reflected in the invoice.
+> - Only **hotel-authorized overtime** is billed. Unauthorized extra hours are not included.
+> - If the week crossed a month boundary and the contract specifies "Split invoice by month: yes," the system would generate two separate invoices.
 
-> [!tip] Acción automática del sistema
-> La factura se genera con un folio único asignado por Oranje. Se envía al hotel como documento fiscal.
-
----
-
-## Fase 10 — Supervisión de calidad (QA)
-
-> Referencia: [[Indicador de Calidad]] · [[Operador de QA]] · [[Manager de QA]]
-
-### 10.1 — Monitoreo continuo
-
-Un [[Operador de QA]] está asignado de forma fija al departamento Hotel. Este operador monitorea continuamente los indicadores de calidad del servicio de staffing que Oranje proporciona al Hotel Riviera Maya y a todos los hoteles clientes.
-
-El [[Indicador de Calidad]] del departamento Hotel se mantiene en **Verde** (Calidad óptima) durante las primeras semanas de operación.
-
-> [!warning] Regla de escalamiento
-> Si el [[Indicador de Calidad]] alcanza estado **Rojo** (Calidad crítica) sin mejora después de la notificación, el [[Manager de QA]] escala a dirección. QA no ejecuta la operación del Hotel; solo observa, mide y retroalimenta.
+> [!tip] Automatic system action
+> The invoice is generated with a unique folio assigned by Oranje. It is sent to the hotel as a fiscal document.
 
 ---
 
-## Resumen de transiciones de semáforo
+## Phase 10 — Quality Supervision (QA)
+
+> Reference: [[Indicador de Calidad]] · [[Operador de QA]] · [[Manager de QA]]
+
+### 10.1 — Ongoing monitoring
+
+A [[Operador de QA]] is permanently assigned to the Hotel department. This operator continuously monitors the quality indicators of the staffing service that Oranje provides to Hotel Riviera Maya and all hotel clients.
+
+The [[Indicador de Calidad]] for the Hotel department remains **Green** (Optimal quality) during the first weeks of operation.
+
+> [!warning] Escalation rule
+> If the [[Indicador de Calidad]] reaches **Red** (Critical quality) without improvement after notification, the [[Manager de QA]] escalates to management. QA does not execute Hotel operations; it only observes, measures, and provides feedback.
+
+---
+
+## Status Indicator Transition Summary
 
 ### [[Semáforo Onboarding]]
 ```
-Gris → Azul Claro → Verde → Amarillo → Rosa → Naranja (cliente activo)
+Gray → Light Blue → Green → Yellow → Pink → Orange (active client)
 ```
 
-### [[Semáforo de Requisición]] (Requisición 202605190830A3)
+### [[Semáforo de Requisición]] (Requisition 202605190830A3)
 ```
-Verde manzana → Verde → Amarillo → Azul claro (cubierta totalmente)
+Apple Green → Green → Yellow → Light Blue (fully covered)
 ```
 
 ### [[Semáforo de Posiciones de la Requisición]]
 ```
-Dorado → Naranja → Verde (100% cubierta)
+Gold → Orange → Green (100% covered)
 ```
 
 ### [[Semáforo del Colaborador]] — María López
 ```
-Verde fuerte → Blanco → Verde manzana → Azul claro → Naranja → Gris → Verde fuerte
+Dark Green → White → Apple Green → Light Blue → Orange → Gray → Dark Green
 ```
 
 ### [[Semáforo del Colaborador]] — Juan Hernández
 ```
-Verde fuerte → Blanco → Verde manzana → Azul claro → Naranja → Rojo → Negro (Blacklist)
+Dark Green → White → Apple Green → Light Blue → Orange → Red → Black (Blacklist)
 ```
 
 ### [[Semáforo del Colaborador]] — Elena Cruz
 ```
-Verde fuerte → Blanco → Verde manzana → Azul claro → Naranja → Rosa (Stand-by) → reactivada
+Dark Green → White → Apple Green → Light Blue → Orange → Pink (Stand-by) → reactivated
 ```
 
 ---
 
-## Módulos y conceptos referenciados
+## Modules and Referenced Concepts
 
-| Módulo | Referencia |
+| Module | Reference |
 |---|---|
-| Hotel como cliente | [[Hotel]] · [[Reglas del Hotel]] |
-| Roles del hotel | [[Manager General]] · [[Manager de Área]] · [[Supervisor]] |
-| Onboarding comercial | [[Flujo de Onboarding]] · [[Semáforo Onboarding]] · [[Propuesta Personalizada]] · [[Documento de Términos y Condiciones]] · [[Contrato]] |
-| Requisiciones | [[Requisición]] · [[Flujo de Requisición]] · [[Semáforo de Requisición]] · [[Semáforo de Posiciones de la Requisición]] · [[Semáforo de Urgencia de Requisición]] |
-| Asignación de personal | [[Pool de Colaboradores]] · [[Reclutadora]] · [[Self-Pick de Requisiciones]] |
-| Operación diaria | [[Schedule]] · [[Timesheet]] · [[Semáforo del Colaborador]] |
-| Inspección | [[Inspector]] · [[Coordinador]] · [[Reglas de Inspección]] |
-| Contingencias | [[Accidente Laboral]] · [[Flujo de Accidente Laboral]] · [[Blacklist]] |
-| Facturación | [[Facturación al Hotel]] · [[Flujo de Nómina]] |
-| Calidad | [[Indicador de Calidad]] · [[Indicador de Cumplimiento del Timesheet]] · [[Operador de QA]] · [[Manager de QA]] |
+| Hotel as client | [[Hotel]] · [[Reglas del Hotel]] |
+| Hotel roles | [[Manager General]] · [[Manager de Área]] · [[Supervisor]] |
+| Commercial onboarding | [[Flujo de Onboarding]] · [[Semáforo Onboarding]] · [[Propuesta Personalizada]] · [[Documento de Términos y Condiciones]] · [[Contrato]] |
+| Requisitions | [[Requisición]] · [[Flujo de Requisición]] · [[Semáforo de Requisición]] · [[Semáforo de Posiciones de la Requisición]] · [[Semáforo de Urgencia de Requisición]] |
+| Staffing assignment | [[Pool de Colaboradores]] · [[Reclutadora]] · [[Self-Pick de Requisiciones]] |
+| Daily operations | [[Schedule]] · [[Timesheet]] · [[Semáforo del Colaborador]] |
+| Inspection | [[Inspector]] · [[Coordinador]] · [[Reglas de Inspección]] |
+| Contingencies | [[Accidente Laboral]] · [[Flujo de Accidente Laboral]] · [[Blacklist]] |
+| Billing | [[Facturación al Hotel]] · [[Flujo de Nómina]] |
+| Quality | [[Indicador de Calidad]] · [[Indicador de Cumplimiento del Timesheet]] · [[Operador de QA]] · [[Manager de QA]] |
 
 ---
 
-## Simulaciones relacionadas
+## Related Simulations
 
-- [[Simulación - Punto de Vista de Ventas]] — Detalla el proceso comercial de onboarding desde la perspectiva del BD y BDC hasta la conversión del hotel a cliente activo.
-- [[Simulación - Punto de Vista de Inspección]] — Muestra la operación de campo del Inspector: verificación Día 1, Día 3, reportes y accidentes desde su perspectiva.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Cubre el proceso de reclutamiento y asignación de personal que el hotel solicita mediante requisiciones.
-- [[Simulación - Ciclo de Vida del Colaborador]] — Narra la experiencia completa del colaborador asignado al hotel, incluyendo estados y transiciones que afectan la operación diaria.
+- [[Simulación - Punto de Vista de Ventas]] — Details the commercial onboarding process from the BD and BDC perspective through the hotel's conversion to an active client.
+- [[Simulación - Punto de Vista de Inspección]] — Shows the Inspector's field operation: Day 1 and Day 3 verification, reports, and accidents from their perspective.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Covers the recruitment and staffing assignment process the hotel requests through requisitions.
+- [[Simulación - Ciclo de Vida del Colaborador]] — Narrates the complete experience of the associate assigned to the hotel, including states and transitions that affect daily operations.
