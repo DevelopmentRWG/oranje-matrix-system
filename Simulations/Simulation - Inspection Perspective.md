@@ -457,7 +457,7 @@ graph LR
 
 ## Related Simulations
 
-- [[Simulation - Sales Point of View]] — Narrates how Hotel Costa Esmeralda became an active client, featuring the same characters (Daniel Ortega, Mariana Vega, Carlos Navarro) from the commercial perspective.
+- [[Simulation - Sales Perspective]] — Narrates how Hotel Costa Esmeralda became an active client, featuring the same characters (Daniel Ortega, Mariana Vega, Carlos Navarro) from the commercial perspective.
 - [[Simulation - Hotel Perspective]] — Shows the complete hotel cycle including the daily operations the Inspector supervises.
 - [[Simulation - Recruitment Perspective]] — Details the associate assignment process that the Inspector then verifies on Day 1 and Day 3.
 - [[Simulation - Associate Lifecycle]] — Covers the associate states the Inspector monitors: reports, accidents, Blacklist, and reinstatement.

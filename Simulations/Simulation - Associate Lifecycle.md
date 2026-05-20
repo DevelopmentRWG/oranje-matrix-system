@@ -73,7 +73,7 @@ Carlos completes his profile directly from the Oranje app. He enters the followi
 - English level: [[English Levels|Intermediate]]
 - Experience level: 2 years
 - Transportation type: own vehicle
-- Modality: [[Employment Modalities|Full time]]
+- Modality: [[Employment Types|Full time]]
 
 ### 1.3 — Emergency data
 
@@ -106,7 +106,7 @@ Carlos enters the [[Associate Pool]].
 
 ## Phase 2 — First Assignment and Hotel Onboarding
 
-> Reference: [[Requisition Flow]] · [[Self-Pick]] · [[Associate Status Indicator]] · [[Schedule]] · [[Timesheet]]
+> Reference: [[Requisition Flow]] · [[Requisition Self-Pick]] · [[Associate Status Indicator]] · [[Schedule]] · [[Timesheet]]
 
 ### 2.1 — The Requisition
 
@@ -116,7 +116,7 @@ The system calculates urgency: more than 120 hours before the start date = Green
 
 ### 2.2 — Match and assignment
 
-The [[Recruiter]] picks the requisition from the shared queue ([[Self-Pick|Self-Pick]]). She searches the [[Associate Pool]]: Housekeeper, Intermediate, Center Zone, Full time. She finds Carlos (White). She assigns him to Hotel Riviera and registers him in the [[Schedule]].
+The [[Recruiter]] picks the requisition from the shared queue ([[Requisition Self-Pick|Self-Pick]]). She searches the [[Associate Pool]]: Housekeeper, Intermediate, Center Zone, Full time. She finds Carlos (White). She assigns him to Hotel Riviera and registers him in the [[Schedule]].
 
 ### 2.3 — Day 1 — Apple Green
 
@@ -602,7 +602,7 @@ graph LR
 | Category | Reference |
 |---|---|
 | Associate | [[Associate]] · [[Associate Rules]] · [[Associate Status Indicator]] |
-| Recruitment | [[Recruiter]] · [[Recruitment Flow]] · [[Recruitment Rules]] · [[Self-Pick]] · [[Recruitment Manager]] |
+| Recruitment | [[Recruiter]] · [[Recruitment Flow]] · [[Recruitment Rules]] · [[Requisition Self-Pick]] · [[Recruitment Manager]] |
 | Requisitions | [[Requisition]] · [[Requisition Flow]] |
 | Pool and assignment | [[Associate Pool]] · [[Schedule]] · [[Timesheet]] |
 | Inspection | [[Inspector]] · [[Coordinator]] |
@@ -611,7 +611,7 @@ graph LR
 | Blacklist | [[Blacklist]] |
 | Accounting | [[Weekly Associate Summary]] · [[Payroll Flow]] · [[Contract]] · [[Deductions]] · [[Hotel Invoice]] · [[Vacation Pay]] · [[Accountant]] · [[Accounting Manager]] |
 | Quality | [[QA Operator]] · [[Quality Indicator]] · [[Metrics and KPIs by Department]] · [[QA Rules]] |
-| Catalogs | [[Positions]] · [[English Levels]] · [[Employment Modalities]] |
+| Catalogs | [[Positions]] · [[English Levels]] · [[Employment Types]] |
 | General rules | [[Business Rules]] |
 
 ---
@@ -621,6 +621,6 @@ graph LR
 - [[Simulation - Hotel Perspective]] — Narrates the hotel cycle where the associate operates, including requisitions, billing, and stand-by.
 - [[Simulation - Recruitment Perspective]] — Details the recruitment and Pool assignment process the associate goes through before being assigned to a hotel.
 - [[Simulation - Inspection Perspective]] — Shows how the Inspector verifies, investigates reports, and manages accidents that directly affect the associate.
-- [[Simulation - Sales Point of View]] — Covers the commercial process that converts the hotel into an active client, enabling associate assignments.
-- [[Simulation - QA Point of View]] — Narrates how Operator 3 monitors the Associate module KPIs and escalates when adverse trends are detected in the pool.
-- [[Simulation - Accounting Point of View]] — Details the payroll flow that processes the associate's pay, from the Weekly Summary through paycheck execution.
+- [[Simulation - Sales Perspective]] — Covers the commercial process that converts the hotel into an active client, enabling associate assignments.
+- [[Simulation - QA Perspective]] — Narrates how Operator 3 monitors the Associate module KPIs and escalates when adverse trends are detected in the pool.
+- [[Simulation - Accounting Perspective]] — Details the payroll flow that processes the associate's pay, from the Weekly Summary through paycheck execution.

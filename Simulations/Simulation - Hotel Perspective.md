@@ -96,7 +96,7 @@ Carlos requests an adjustment to the Houseman bill rate to $240 MXN/hr. Ricardo 
 Ricardo Luna (BDC) approves the conversion of Hotel Riviera Maya to active client. Only the BDC has authority for this action.
 
 > [!tip] Automatic system actions — [[Automatic Conversion Trigger]]
-> 1. The [[Hotel User]] is created in the system
+> 1. The [[Hotel User Account]] is created in the system
 > 2. The system sends a welcome email to the hotel
 > 3. Sofía Vega (assigned BD) is notified
 > 4. The hotel disappears from the prospect list
@@ -158,7 +158,7 @@ Laura Torres ([[Area Manager|GH]] of Housekeeping) reviews requisition `20260519
 
 ### 2.3 — Self-Pick by Recruitment
 
-Requisition `202605190830A3` appears in the shared [[Self-Pick]] queue, prioritized by urgency level. Ana Martínez ([[Recruiter]]) sees it and picks it up at 12:30 the same day.
+Requisition `202605190830A3` appears in the shared [[Requisition Self-Pick]] queue, prioritized by urgency level. Ana Martínez ([[Recruiter]]) sees it and picks it up at 12:30 the same day.
 
 > [!warning] Business Rule
 > If no recruiter picks the requisition within 24 hours, the system automatically assigns it to the recruiter with the lowest workload.
@@ -356,7 +356,7 @@ Laura herself authorizes the requisition (as GH she has the authority to do so).
 
 ### 6.4 — Urgent coverage
 
-The urgent requisition appears in the [[Self-Pick]] queue highlighted by its Red urgency level. Ana Martínez ([[Recruiter]]) picks it up immediately.
+The urgent requisition appears in the [[Requisition Self-Pick]] queue highlighted by its Red urgency level. Ana Martínez ([[Recruiter]]) picks it up immediately.
 
 Ana searches the [[Associate Pool]] and finds Roberto Díaz (Houseman, Dark Green status — Available, Southeast zone). She assigns him to the position.
 
@@ -518,7 +518,7 @@ Gray → Light Blue → Green → Yellow → Pink → Orange (active client)
 Apple Green → Green → Yellow → Light Blue (fully covered)
 ```
 
-### [[Requisition Position Status Indicator]]
+### [[Requisition Position Indicator]]
 ```
 Gold → Orange → Green (100% covered)
 ```
@@ -547,8 +547,8 @@ Dark Green → White → Apple Green → Light Blue → Orange → Pink (Stand-b
 | Hotel as client | [[Hotel]] · [[Hotel Rules]] |
 | Hotel roles | [[General Manager]] · [[Area Manager]] · [[Supervisor]] |
 | Commercial onboarding | [[Onboarding Flow]] · [[Onboarding Status Indicator]] · [[Customized Proposal]] · [[Terms and Conditions Document]] · [[Contract]] |
-| Requisitions | [[Requisition]] · [[Requisition Flow]] · [[Requisition Status Indicator]] · [[Requisition Position Status Indicator]] · [[Requisition Urgency Indicator]] |
-| Staffing assignment | [[Associate Pool]] · [[Recruiter]] · [[Self-Pick]] |
+| Requisitions | [[Requisition]] · [[Requisition Flow]] · [[Requisition Status Indicator]] · [[Requisition Position Indicator]] · [[Requisition Urgency Indicator]] |
+| Staffing assignment | [[Associate Pool]] · [[Recruiter]] · [[Requisition Self-Pick]] |
 | Daily operations | [[Schedule]] · [[Timesheet]] · [[Associate Status Indicator]] |
 | Inspection | [[Inspector]] · [[Coordinator]] · [[Inspection Rules]] |
 | Contingencies | [[Work Accident]] · [[Work Accident Flow]] · [[Blacklist]] |
@@ -559,7 +559,7 @@ Dark Green → White → Apple Green → Light Blue → Orange → Pink (Stand-b
 
 ## Related Simulations
 
-- [[Simulation - Sales Point of View]] — Details the commercial onboarding process from the BD and BDC perspective through the hotel's conversion to an active client.
+- [[Simulation - Sales Perspective]] — Details the commercial onboarding process from the BD and BDC perspective through the hotel's conversion to an active client.
 - [[Simulation - Inspection Perspective]] — Shows the Inspector's field operation: Day 1 and Day 3 verification, reports, and accidents from their perspective.
 - [[Simulation - Recruitment Perspective]] — Covers the recruitment and staffing assignment process the hotel requests through requisitions.
 - [[Simulation - Associate Lifecycle]] — Narrates the complete experience of the associate assigned to the hotel, including states and transitions that affect daily operations.

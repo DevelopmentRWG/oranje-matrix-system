@@ -17,7 +17,7 @@ Module responsible for onboarding new hotels onto the Oranje platform and managi
 
 ## Processes
 
-- [[Onboarding-Hotel]] — Commercial phase from hotel identification through activation as a client.
+- [[Hotel-Onboarding]] — Commercial phase from hotel identification through activation as a client.
 - [[Onboarding Flow]] — Step-by-step onboarding process.
 - [[Onboarding Status Indicator]] — Tracking statuses for the hotel negotiation.
 

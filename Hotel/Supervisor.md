@@ -22,7 +22,7 @@ Operational role in the [[Hotel/Hotel|Hotel]] module, subordinate to the [[Hotel
   - Number of people per position.
   - Start date.
   - Schedule.
-  - [[Employment Modalities|Employment modality]].
+  - [[Employment Types|Employment modality]].
   - [[English Levels|English level]] preference.
   - Additional notes.
 - Sends the requisition to the [[Hotel/Area Manager|Area Manager]] for approval.

@@ -18,7 +18,7 @@ Consolidation of all business rules that apply to the Sales department within th
 
 ## Onboarding Status Indicator Cycle
 
-The hotel acquisition process follows the [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]], documented in detail in the [[Sales/Onboarding-Hotel/Onboarding Flow|Onboarding Flow]].
+The hotel acquisition process follows the [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]], documented in detail in the [[Sales/Hotel-Onboarding/Onboarding Flow|Onboarding Flow]].
 
 | Status | Description | Primary Responsible |
 |---|---|---|
@@ -36,7 +36,7 @@ The hotel acquisition process follows the [[Core/Modules/Status Indicators/Onboa
 
 - Prepared and sent at **Green** status of the [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]].
 - Adjusted or resumed from **Brown** status when there is a stall.
-- Reference: [[Sales/Onboarding-Hotel/Conceptos/Customized Proposal|Customized Proposal]].
+- Reference: [[Sales/Hotel-Onboarding/Concepts/Customized Proposal|Customized Proposal]].
 
 ## Terms and Conditions Document
 
@@ -56,13 +56,13 @@ Required content:
 | Holidays |
 | Calendar |
 
-- Reference: [[Sales/Onboarding-Hotel/Conceptos/Terms and Conditions Document|Terms and Conditions Document]].
+- Reference: [[Sales/Hotel-Onboarding/Concepts/Terms and Conditions Document|Terms and Conditions Document]].
 
 ## Contract
 
 The [[Core/Modules/Contract|Contract]] results from a successful close at **Pink** status:
 
-- Required input: [[Sales/Onboarding-Hotel/Conceptos/Terms and Conditions Document|Terms and Conditions Document]].
+- Required input: [[Sales/Hotel-Onboarding/Concepts/Terms and Conditions Document|Terms and Conditions Document]].
 - The [[Sales/Roles/Business Developer Coordinator|BDC]] validates before the close.
 
 | Contract Field | Effect in the system |
@@ -79,7 +79,7 @@ The [[Core/Modules/Contract|Contract]] results from a successful close at **Pink
 
 > [!important] **Only** the [[Sales/Roles/Business Developer Coordinator\|BDC]] can approve the conversion of a prospect to a client.
 
-**Mandatory precondition:** creation of the [[Sales/Onboarding-Hotel/Conceptos/Hotel User|Hotel User]] in the system before triggering the conversion.
+**Mandatory precondition:** creation of the [[Sales/Hotel-Onboarding/Concepts/Hotel User Account|Hotel User]] in the system before triggering the conversion.
 
 ### Automatic Conversion Trigger
 
@@ -89,7 +89,7 @@ Upon approving the conversion, the system automatically executes three actions i
 2. Notifies the assigned [[Sales/Roles/Business Developer\|BD]].
 3. The hotel disappears from the prospect list.
 
-- Reference: [[Sales/Onboarding-Hotel/Conceptos/Automatic Conversion Trigger|Automatic Conversion Trigger]].
+- Reference: [[Sales/Hotel-Onboarding/Concepts/Automatic Conversion Trigger|Automatic Conversion Trigger]].
 
 ## Reactivations
 
@@ -142,12 +142,12 @@ Upon approving the conversion, the system automatically executes three actions i
 - [[Business Rules]]
 - [[Sales/Roles/Business Developer|Business Developer]]
 - [[Sales/Roles/Business Developer Coordinator|Business Developer Coordinator]]
-- [[Sales/Onboarding-Hotel/Onboarding Flow|Onboarding Flow]]
+- [[Sales/Hotel-Onboarding/Onboarding Flow|Onboarding Flow]]
 - [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]
-- [[Sales/Onboarding-Hotel/Conceptos/Customized Proposal|Customized Proposal]]
-- [[Sales/Onboarding-Hotel/Conceptos/Terms and Conditions Document|Terms and Conditions Document]]
-- [[Sales/Onboarding-Hotel/Conceptos/Automatic Conversion Trigger|Automatic Conversion Trigger]]
-- [[Sales/Onboarding-Hotel/Conceptos/Hotel User|Hotel User]]
+- [[Sales/Hotel-Onboarding/Concepts/Customized Proposal|Customized Proposal]]
+- [[Sales/Hotel-Onboarding/Concepts/Terms and Conditions Document|Terms and Conditions Document]]
+- [[Sales/Hotel-Onboarding/Concepts/Automatic Conversion Trigger|Automatic Conversion Trigger]]
+- [[Sales/Hotel-Onboarding/Concepts/Hotel User Account|Hotel User]]
 - [[Core/Modules/Contract|Contract]]
 - [[Core/Modules/Schedule|Schedule]]
 - [[Timesheet]]

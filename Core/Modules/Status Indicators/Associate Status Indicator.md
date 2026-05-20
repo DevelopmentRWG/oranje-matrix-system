@@ -22,7 +22,7 @@ aliases:
 Visual status system that represents the current situation of each associate within Oranje. Each color corresponds to a state with its own transition rules.
 
 > [!info]
-> This Status Indicator describes the **associate**. Requisition states are managed in other Status Indicators: [[Requisition Status Indicator]], [[Requisition Urgency Indicator]] and [[Requisition Position Status Indicator]].
+> This Status Indicator describes the **associate**. Requisition states are managed in other Status Indicators: [[Requisition Status Indicator]], [[Requisition Urgency Indicator]] and [[Requisition Position Indicator]].
 
 ## States
 
@@ -80,7 +80,7 @@ Visual status system that represents the current situation of each associate wit
 
 - [[Requisition Status Indicator]]
 - [[Requisition Urgency Indicator]]
-- [[Requisition Position Status Indicator]]
+- [[Requisition Position Indicator]]
 - [[Recruitment Flow]]
 - [[Recruitment Manager]]
 - [[Recruiter]]

@@ -14,7 +14,7 @@ aliases:
 Visual classification of the urgency level with which a [[Requisition]] needs to be covered, based on the time available before the start date.
 
 > [!info]
-> This is one of the requisition Status Indicators. See also: [[Requisition Status Indicator]], [[Requisition Position Status Indicator]] and [[Associate Status Indicator]].
+> This is one of the requisition Status Indicators. See also: [[Requisition Status Indicator]], [[Requisition Position Indicator]] and [[Associate Status Indicator]].
 
 ## States
 
@@ -38,5 +38,5 @@ Visual classification of the urgency level with which a [[Requisition]] needs to
 
 - [[Requisition]]
 - [[Requisition Status Indicator]]
-- [[Requisition Position Status Indicator]]
+- [[Requisition Position Indicator]]
 - [[Recruiter]]

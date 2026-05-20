@@ -40,7 +40,7 @@ Completed by the Associate themselves:
 | English level | [[English Levels]] |
 | Experience level | — |
 | Transportation type | — |
-| Modality | [[Employment Modalities]] |
+| Modality | [[Employment Types]] |
 
 ### Phase 3 — Emergency Data
 

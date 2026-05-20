@@ -28,4 +28,4 @@ Catalog of positions that hotels request and Oranje recruits for.
 
 - [[Hotel Departments]]
 - [[Requisition]]
-- [[Employment Modalities]]
+- [[Employment Types]]

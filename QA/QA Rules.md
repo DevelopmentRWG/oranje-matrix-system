@@ -103,4 +103,4 @@ The [[Core/Modules/Status Indicators/Quality Indicator|Quality Indicator]] is QA
 - [[Requisition Status Indicator]]
 - [[Onboarding Status Indicator]]
 - [[Requisition Urgency Indicator]]
-- [[Requisition Position Status Indicator]]
+- [[Requisition Position Indicator]]

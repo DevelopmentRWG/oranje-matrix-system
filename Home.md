@@ -48,7 +48,7 @@ Business development and onboarding of new client hotels.
 - [[Business Developer Coordinator]] — supervises BDs in their territory and approves the conversion of prospects into clients.
 - [[Business Developer]] — manages the commercial cycle with prospect hotels.
 
-Process: [[Onboarding-Hotel]]
+Process: [[Hotel-Onboarding]]
 
 ### [[Customer Service/Customer Service|Customer Service]]
 
@@ -104,7 +104,7 @@ Process: [[Accounting/Payroll Flow|Payroll Flow]]
 - [[Zones]] — geographic areas of operation.
 - [[English Levels]] — associate language proficiency scale.
 - [[Hotel Departments]] — hotel internal operational areas.
-- [[Employment Modalities]] — available employment types.
+- [[Employment Types]] — available employment types.
 
 ## Status Indicators
 
@@ -113,7 +113,7 @@ Status indicators that reflect the real-time operational situation of each entit
 - [[Associate Status Indicator]] — associate status in their lifecycle.
 - [[Requisition Status Indicator]] — requisition status in its coverage process.
 - [[Requisition Urgency Indicator]] — urgency level of an open requisition.
-- [[Requisition Position Status Indicator]] — status of each position within a requisition.
+- [[Requisition Position Indicator]] — status of each position within a requisition.
 - [[Onboarding Status Indicator]] — status of the negotiation with a prospect hotel.
 - [[Quality Indicator]] — performance level of an area supervised by QA.
 - [[Timesheet Compliance Indicator]] — comparison between worked hours and the associate's contractual hours.
@@ -126,6 +126,6 @@ Narrative walkthroughs that illustrate how the system operates from the perspect
 - [[Simulation - Associate Lifecycle]]
 - [[Simulation - Hotel Perspective]]
 - [[Simulation - Inspection Perspective]]
-- [[Simulation - QA Point of View]]
-- [[Simulation - Sales Point of View]]
-- [[Simulation - Accounting Point of View]]
+- [[Simulation - QA Perspective]]
+- [[Simulation - Sales Perspective]]
+- [[Simulation - Accounting Perspective]]

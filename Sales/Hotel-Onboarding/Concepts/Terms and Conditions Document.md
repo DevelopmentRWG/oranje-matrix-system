@@ -30,4 +30,4 @@ Formal document created during [[Onboarding Status Indicator|Onboarding Status Y
 
 - [[Onboarding Flow]]
 - [[Customized Proposal]]
-- [[Hotel User]]
+- [[Hotel User Account]]

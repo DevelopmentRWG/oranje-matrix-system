@@ -1,35 +1,35 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "Requisition Self-Pick",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:Ventas  ",
+      "query": "path:Sales  ",
       "color": {
         "a": 1,
         "rgb": 6692382
       }
     },
     {
-      "query": "path:Core/Módulos/Semáforos  ",
+      "query": "path:\"Core/Modules/Status Indicators\"  ",
       "color": {
         "a": 1,
         "rgb": 16514821
       }
     },
     {
-      "query": "path:Inspección",
+      "query": "path:Inspection  ",
       "color": {
         "a": 1,
         "rgb": 1347327
       }
     },
     {
-      "query": "path:Colaborador",
+      "query": "path:Associate  ",
       "color": {
         "a": 1,
         "rgb": 8060794
@@ -50,14 +50,14 @@
       }
     },
     {
-      "query": "path:Reclutamiento",
+      "query": "path:Recruitment  ",
       "color": {
         "a": 1,
         "rgb": 16497975
       }
     },
     {
-      "query": "path:Core/Módulos/Requisicion  ",
+      "query": "path:Core/Modules/Requisition  ",
       "color": {
         "a": 1,
         "rgb": 16726794
@@ -71,7 +71,7 @@
       }
     },
     {
-      "query": "path:Contabilidad",
+      "query": "path:Accounting  ",
       "color": {
         "a": 1,
         "rgb": 14048348
@@ -95,6 +95,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.33284422838680305,
-  "close": true
+  "scale": 0.9551647884969326,
+  "close": false
 }

@@ -123,7 +123,7 @@ Sofía downloads the app and completes her profile:
 | English level | Intermediate | [[Core/Catalogs/English Levels\|English Levels]] |
 | Experience level | 2 years | — |
 | Transportation | Own car | — |
-| Modality | Full time | [[Core/Catalogs/Employment Modalities\|Employment Modalities]] |
+| Modality | Full time | [[Core/Catalogs/Employment Types\|Employment Modalities]] |
 
 > [!warning] Business Rule
 > [[Recruitment/Recruitment Flow|Recruitment Flow]] — Phase 2: App registration. Responsible: the Associate themselves.
@@ -198,7 +198,7 @@ Luis Gerardo Vega presents as a candidate. Daniela initiates the standard protoc
 
 ## Phase 3 — Requisition Self-Pick (100% coverage)
 
-> Reference: [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]] · [[Recruitment/Self-Pick|Self-Pick]] · [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]] · [[Core/Modules/Status Indicators/Requisition Urgency Indicator|Requisition Urgency Indicator]]
+> Reference: [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]] · [[Requisition Self-Pick|Self-Pick]] · [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]] · [[Core/Modules/Status Indicators/Requisition Urgency Indicator|Requisition Urgency Indicator]]
 
 **Main characters:** Daniela Ríos (Recruiter), Andrea Fuentes (GH Hotel Coral Bay), Marco Duarte (SUP).
 
@@ -265,7 +265,7 @@ The requisition appears in the shared "Authorized" queue, visible to the entire 
 Daniela Ríos sees it and **picks it up** (first to confirm).
 
 > [!warning] Business Rule
-> [[Recruitment/Self-Pick|Self-Pick]] — "Concurrency: first to confirm wins. If two Recruiters pick the same one simultaneously, the system locks it for the first to confirm."
+> [[Requisition Self-Pick|Self-Pick]] — "Concurrency: first to confirm wins. If two Recruiters pick the same one simultaneously, the system locks it for the first to confirm."
 
 > [!info] Requisition Status Indicator
 > **Green** → **Yellow** — In process
@@ -305,7 +305,7 @@ Daniela assigns all 4 associates to Hotel Coral Bay and registers them in the [[
 > **Date:** 2026-05-19 14:40 · **Responsible:** System · **Comment:** "All positions reached Green."
 
 > [!warning] Business Rule
-> [[Core/Modules/Status Indicators/Requisition Position Status Indicator|Requisition Position Status Indicator]] — "Green: 100% covered. All assigned associates confirmed."
+> [[Core/Modules/Status Indicators/Requisition Position Indicator|Requisition Position Status Indicator]] — "Green: 100% covered. All assigned associates confirmed."
 
 > [!warning] Business Rule
 > [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]] — "Light Blue: Fully covered. Only if ALL positions reach Green."
@@ -394,7 +394,7 @@ Sofía completes 7 days at Hotel Coral Bay. The system executes the transition a
 
 ## Phase 5 — Partial Coverage and Timeout Escalation
 
-> Reference: [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]] · [[Recruitment/Self-Pick|Self-Pick]] · [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]] · [[Recruitment/Recruitment Rules|Recruitment Rules]]
+> Reference: [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]] · [[Requisition Self-Pick|Self-Pick]] · [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]] · [[Recruitment/Recruitment Rules|Recruitment Rules]]
 
 **Main characters:** Valeria Soto (Recruiter), Lucía Méndez (Team Lead), Patricia Nava (SUP Hotel Sierra Alta), Carmen López (GH).
 
@@ -482,7 +482,7 @@ The system escalates to **Lucía Méndez** (Team Lead).
 > 24h timeout without covering Red-urgency positions.
 
 > [!warning] Business Rule
-> [[Recruitment/Self-Pick|Self-Pick]] — Escalation table:
+> [[Requisition Self-Pick|Self-Pick]] — Escalation table:
 > - Red (< 72h): 24h without coverage → escalates to Team Lead.
 > - Yellow (72–120h): 48h without coverage.
 > - Dark Green (> 120h): 72h without coverage.
@@ -518,7 +518,7 @@ Updated position status at Friday May 23 close:
 
 ## Phase 6 — System Auto-Assignment
 
-> Reference: [[Recruitment/Self-Pick|Self-Pick]] · [[Recruitment/Recruitment Rules|Recruitment Rules]]
+> Reference: [[Requisition Self-Pick|Self-Pick]] · [[Recruitment/Recruitment Rules|Recruitment Rules]]
 
 ### 6.1 — Tuesday May 20, 16:00 — Unclaimed requisition
 
@@ -550,7 +550,7 @@ The system automatically assigns it to the Recruiter with the **lowest active re
 - → Assigned to **Valeria Soto**.
 
 > [!warning] Business Rule
-> [[Recruitment/Self-Pick|Self-Pick]] — "If a requisition has gone more than 24 hours without being picked, the system automatically assigns it to the Recruiter with the lowest workload."
+> [[Requisition Self-Pick|Self-Pick]] — "If a requisition has gone more than 24 hours without being picked, the system automatically assigns it to the Recruiter with the lowest workload."
 
 > [!warning] Business Rule
 > [[Recruitment/Recruitment Rules|Recruitment Rules]] — "The Recruitment Manager does not receive a notification; the process is transparent."
@@ -794,7 +794,7 @@ The [[Quality Indicator]] for the Recruitment department remains under observati
 | REQ 202605191400K3 | Requisition | AG → G → Y → LB | Mon 19 | [[Core/Modules/Status Indicators/Requisition Status Indicator\|Requisition Status Indicator]] |
 | REQ 202605191400K3 | Urgency | Red | Mon 19 | [[Core/Modules/Status Indicators/Requisition Urgency Indicator\|Requisition Urgency Indicator]] |
 | REQ 202605201000M7 | Requisition | AG → G → Y → Red | Tue 20 – Fri 23 | [[Core/Modules/Status Indicators/Requisition Status Indicator\|Requisition Status Indicator]] |
-| REQ 202605201600P2 | Requisition | G → Y (auto) → LB | Tue – Wed | [[Recruitment/Self-Pick\|Self-Pick]] |
+| REQ 202605201600P2 | Requisition | G → Y (auto) → LB | Tue – Wed | [[Self-Pick\|Self-Pick]] |
 | Carlos Rivera | Associate | Y → Brown → Y | Thu 22 – Sun 25 | [[Core/Modules/Status Indicators/Associate Status Indicator\|Associate Status Indicator]] |
 | Diana Morales | Associate | Or → Pu ×3 → Black | Thu 22 – Mon 26 | [[Core/Modules/Blacklist\|Blacklist]] |
 | Pedro Jiménez | Associate | [prev] → Red → DG | Fri 23 – Mon 26 | [[Core/Modules/Status Indicators/Associate Status Indicator\|Associate Status Indicator]] |
@@ -853,16 +853,16 @@ graph LR
 |---|---|
 | Recruitment | [[Recruitment/Recruitment\|Recruitment]] · [[Recruitment/Recruitment Rules\|Recruitment Rules]] |
 | Recruitment roles | [[Recruitment/Recruiter\|Recruiter]] · [[Recruitment/Recruiter Team Lead\|Recruiter Team Lead]] · [[Recruitment/Recruitment Manager\|Recruitment Manager]] |
-| Requisitions | [[Core/Modules/Requisition/Requisition Flow\|Requisition Flow]] · [[Recruitment/Self-Pick\|Self-Pick]] |
+| Requisitions | [[Core/Modules/Requisition/Requisition Flow\|Requisition Flow]] · [[Self-Pick\|Self-Pick]] |
 | Associate Status Indicator | [[Core/Modules/Status Indicators/Associate Status Indicator\|Associate Status Indicator]] |
-| Requisition Status Indicators | [[Core/Modules/Status Indicators/Requisition Status Indicator\|Requisition Status Indicator]] · [[Core/Modules/Status Indicators/Requisition Urgency Indicator\|Requisition Urgency Indicator]] · [[Core/Modules/Status Indicators/Requisition Position Status Indicator\|Requisition Position Status Indicator]] |
+| Requisition Status Indicators | [[Core/Modules/Status Indicators/Requisition Status Indicator\|Requisition Status Indicator]] · [[Core/Modules/Status Indicators/Requisition Urgency Indicator\|Requisition Urgency Indicator]] · [[Core/Modules/Status Indicators/Requisition Position Indicator\|Requisition Position Status Indicator]] |
 | Pool and assignment | [[Core/Modules/Associate Pool\|Associate Pool]] · [[Core/Modules/Schedule\|Schedule]] · [[Core/Modules/Timesheet\|Timesheet]] |
 | Blacklist | [[Core/Modules/Blacklist\|Blacklist]] |
 | Inspection | [[Inspection/Inspector\|Inspector]] |
 | Hotel | [[Hotel/Supervisor\|Supervisor]] · [[Hotel/Area Manager\|Area Manager]] · [[Hotel/General Manager\|General Manager]] |
 | Accounting | [[Accounting/Weekly Associate Summary\|Weekly Associate Summary]] · [[Accounting/Payroll Flow\|Payroll Flow]] · [[Core/Modules/Contract\|Contract]] · [[Accounting/Deductions\|Deductions]] |
 | Quality | [[QA Operator]] · [[Quality Indicator]] · [[QA/Metrics and KPIs by Department\|Metrics and KPIs by Department]] · [[QA Rules]] |
-| Catalogs | [[Core/Catalogs/Positions\|Positions]] · [[Core/Catalogs/English Levels\|English Levels]] · [[Core/Catalogs/Employment Modalities\|Employment Modalities]] |
+| Catalogs | [[Core/Catalogs/Positions\|Positions]] · [[Core/Catalogs/English Levels\|English Levels]] · [[Core/Catalogs/Employment Types\|Employment Modalities]] |
 | General rules | [[Core/Modules/Business Rules\|Business Rules]] · [[Associate/Associate Rules\|Associate Rules]] |
 
 ---
@@ -870,8 +870,8 @@ graph LR
 ## Related Simulations
 
 - [[Simulation - Hotel Perspective]] — Shows the full hotel lifecycle as a client, including the creation of requisitions that Recruitment attends to.
-- [[Simulation - Sales Point of View]] — Narrates how hotels reach Orange status, enabling the requisitions that initiate the recruitment flow.
+- [[Simulation - Sales Perspective]] — Narrates how hotels reach Orange status, enabling the requisitions that initiate the recruitment flow.
 - [[Simulation - Inspection Perspective]] — Details the field verification (Day 1, Day 3) that the Inspector performs on the associates Recruitment assigns.
 - [[Simulation - Associate Lifecycle]] — Covers all associate states from Pool entry through Blacklist, intersecting with the assignment processes narrated here.
-- [[Simulation - QA Point of View]] — Narrates the quality supervision cycle that Operator 5 applies to the Recruitment metrics documented in this simulation.
-- [[Simulation - Accounting Point of View]] — Details the processing of the Weekly Summary, Pre-Payroll, and Payroll that originates with the associates assigned here.
+- [[Simulation - QA Perspective]] — Narrates the quality supervision cycle that Operator 5 applies to the Recruitment metrics documented in this simulation.
+- [[Simulation - Accounting Perspective]] — Details the processing of the Weekly Summary, Pre-Payroll, and Payroll that originates with the associates assigned here.

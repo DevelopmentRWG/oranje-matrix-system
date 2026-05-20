@@ -55,4 +55,4 @@ The specific thresholds that define when a KPI is at Target, At risk or Critical
 - [[Requisition Status Indicator]]
 - [[Onboarding Status Indicator]]
 - [[Requisition Urgency Indicator]]
-- [[Requisition Position Status Indicator]]
+- [[Requisition Position Indicator]]

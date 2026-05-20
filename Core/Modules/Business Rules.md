@@ -117,7 +117,7 @@ Centralized document with the business rules that govern the Oranje system. Each
 - Position in Yellow: up to 25% missing
 - Position in Red: more than 25% missing
 - If any position is in Yellow or Red → Requisition in Red
-- Reference: [[Requisition Position Status Indicator]]
+- Reference: [[Requisition Position Indicator]]
 
 ### Assignment (Self-Pick)
 - The authorized requisition is placed in the shared queue; a [[Recruiter]] or [[Recruitment/Recruiter Team Lead|Team Lead]] picks it → the requisition transitions to Yellow (In process)
@@ -180,8 +180,8 @@ Centralized document with the business rules that govern the Oranje system. Each
 
 ### Prospect-to-Client Conversion
 - Only the [[Sales/Roles/Business Developer Coordinator|Business Developer Coordinator]] (BDC) can approve the conversion
-- **Precondition:** creation of the [[Sales/Onboarding-Hotel/Conceptos/Hotel User|Hotel User Account]] in the system
-- Upon approval, the [[Sales/Onboarding-Hotel/Conceptos/Automatic Conversion Trigger|Automatic Conversion Trigger]] fires with parallel actions:
+- **Precondition:** creation of the [[Sales/Hotel-Onboarding/Concepts/Hotel User Account|Hotel User Account]] in the system
+- Upon approval, the [[Sales/Hotel-Onboarding/Concepts/Automatic Conversion Trigger|Automatic Conversion Trigger]] fires with parallel actions:
   - System sends welcome email to the hotel
   - System notifies the assigned Business Developer
   - Hotel disappears from the prospect list
@@ -374,14 +374,14 @@ Centralized document with the business rules that govern the Oranje system. Each
 - [[Associate Status Indicator]]
 - [[Requisition Status Indicator]]
 - [[Requisition Urgency Indicator]]
-- [[Requisition Position Status Indicator]]
+- [[Requisition Position Indicator]]
 - [[Onboarding Status Indicator]]
 - [[Quality Indicator]]
 - [[Core/Modules/Status Indicators/Timesheet Compliance Indicator|Timesheet Compliance Indicator]]
 - [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]]
 - [[Core/Modules/Work Accident/Work Accident Flow|Work Accident Flow]]
 - [[Recruitment/Recruitment Flow|Recruitment Flow]]
-- [[Sales/Onboarding-Hotel/Onboarding Flow|Onboarding Flow]]
+- [[Sales/Hotel-Onboarding/Onboarding Flow|Onboarding Flow]]
 - [[Core/Modules/Blacklist|Blacklist]]
 - [[Associate Pool]]
 - [[Core/Modules/Schedule|Schedule]]
@@ -397,7 +397,7 @@ Centralized document with the business rules that govern the Oranje system. Each
 - [[QA/QA Manager|QA Manager]]
 - [[QA/QA Operator|QA Operator]]
 - [[Sales/Roles/Business Developer Coordinator|Business Developer Coordinator]]
-- [[Sales/Onboarding-Hotel/Conceptos/Hotel User|Hotel User Account]]
-- [[Sales/Onboarding-Hotel/Conceptos/Automatic Conversion Trigger|Automatic Conversion Trigger]]
-- [[Sales/Onboarding-Hotel/Conceptos/Terms and Conditions Document|Terms and Conditions Document]]
+- [[Sales/Hotel-Onboarding/Concepts/Hotel User Account|Hotel User Account]]
+- [[Sales/Hotel-Onboarding/Concepts/Automatic Conversion Trigger|Automatic Conversion Trigger]]
+- [[Sales/Hotel-Onboarding/Concepts/Terms and Conditions Document|Terms and Conditions Document]]
 - [[Core/Catalogs/Zones|Zones]]

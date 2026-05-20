@@ -1,6 +1,6 @@
 ---
 tags:
-  - module/onboarding-hotel
+  - module/hotel-onboarding
 aliases:
   - Onboarding Status Indicator
   - Hotel Onboarding Status Indicator
@@ -20,7 +20,7 @@ aliases:
 Status system that represents the tracking of commercial negotiation with a hotel, from its identification as a prospect to its activation as a client (or its pause/rejection).
 
 > [!info]
-> This Status Indicator applies exclusively to the [[Onboarding-Hotel|Hotel Onboarding]] module. Once the hotel reaches [[#Orange — Signed agreement, active hotel client|Orange]], its operation is governed by the Status Indicators in the [[Hotel/Hotel|Hotel]] module ([[Requisition Status Indicator]], [[Associate Status Indicator]], etc.).
+> This Status Indicator applies exclusively to the [[Hotel-Onboarding|Hotel Onboarding]] module. Once the hotel reaches [[#Orange — Signed agreement, active hotel client|Orange]], its operation is governed by the Status Indicators in the [[Hotel/Hotel|Hotel]] module ([[Requisition Status Indicator]], [[Associate Status Indicator]], etc.).
 
 ## States
 
@@ -112,7 +112,7 @@ The BD identifies the hotel within their territory as a possible client.
 **Is the agreement closed?**
 
 - **NO →** returns to the flow (renegotiation / [[#Brown — Renegotiation / unblocking|Brown]] / End).
-- **YES →** the [[Business Developer Coordinator|BDC]] approves the conversion and the [[Hotel User|Hotel User]] is created in the system.
+- **YES →** the [[Business Developer Coordinator|BDC]] approves the conversion and the [[Hotel User Account|Hotel User]] is created in the system.
 
 ### Upon conversion approval
 
@@ -136,7 +136,7 @@ The [[Automatic Conversion Trigger|Automatic Conversion Trigger]] fires (in para
 
 ### Operational state
 
-- The hotel already has a [[Hotel User|user created]] in the system.
+- The hotel already has a [[Hotel User Account|user created]] in the system.
 - Transfers to responsibility of [[Recruiter|Recruiters]].
 - Operational cycle begins: [[Requisition|requisitions]] → coverage → [[Core/Modules/Schedule|Schedule]] → [[Timesheet]].
 - BD and BDC remain as commercial references for the account.
@@ -205,7 +205,7 @@ Client stopped operating or the relationship was paused.
 
 ## Related
 
-- [[Onboarding-Hotel]]
+- [[Hotel-Onboarding]]
 - [[Onboarding Flow]]
 - [[Business Developer]]
 - [[Business Developer Coordinator]]

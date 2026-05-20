@@ -9,7 +9,7 @@ aliases:
 
 # Business Developer Coordinator
 
-Supervisory role in the [[Onboarding-Hotel|Hotel Onboarding]] module. Oversees the full picture of routes and zones assigned to them, follows up with the [[Business Developer]] during their hotel negotiation, validates the terms and conditions before the [[Contract]] is closed; they are the **final yes** of the negotiation.
+Supervisory role in the [[Hotel-Onboarding|Hotel Onboarding]] module. Oversees the full picture of routes and zones assigned to them, follows up with the [[Business Developer]] during their hotel negotiation, validates the terms and conditions before the [[Contract]] is closed; they are the **final yes** of the negotiation.
 
 ## Responsibilities
 
@@ -17,7 +17,7 @@ Supervisory role in the [[Onboarding-Hotel|Hotel Onboarding]] module. Oversees t
 - Intervenes in cases of stall or renegotiation.
 - Investigates and provides solutions to resume stalled proposals.
 - Validates the terms of the [[Terms and Conditions Document]].
-- Approves hotel conversion at [[Onboarding Status Indicator#Pink — Terms negotiation|Pink]], triggering the creation of the [[Hotel User]] and the [[Automatic Conversion Trigger]].
+- Approves hotel conversion at [[Onboarding Status Indicator#Pink — Terms negotiation|Pink]], triggering the creation of the [[Hotel User Account]] and the [[Automatic Conversion Trigger]].
 - Manages paused relationships or clients that stop operating.
 
 ## Statuses They Participate In

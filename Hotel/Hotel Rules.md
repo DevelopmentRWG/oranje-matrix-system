@@ -56,7 +56,7 @@ When a requisition is authorized, the system automatically executes:
 | Effect | Detail |
 |---|---|
 | Urgency calculation | Per position, according to the [[Core/Modules/Status Indicators/Requisition Urgency Indicator\|urgency formula]]: `> 120h` → Dark Green (Normal), `72–120h` → Yellow (Medium), `< 72h` → Red (Urgent) |
-| Position transition | From Gold to Orange in the [[Core/Modules/Status Indicators/Requisition Position Status Indicator\|Requisition Position Status Indicator]] |
+| Position transition | From Gold to Orange in the [[Core/Modules/Status Indicators/Requisition Position Indicator\|Requisition Position Status Indicator]] |
 | Schedule reflection | Positions appear in the [[Core/Modules/Schedule\|Schedule]] for the week corresponding to their start date |
 | Inspector assignment | The [[Inspector]] is automatically assigned based on the hotel's zone |
 
@@ -194,7 +194,7 @@ The [[Hotel/General Manager|General Manager]] is the hotel's highest authority a
 - [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]]
 - [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]]
 - [[Core/Modules/Status Indicators/Requisition Urgency Indicator|Requisition Urgency Indicator]]
-- [[Core/Modules/Status Indicators/Requisition Position Status Indicator|Requisition Position Status Indicator]]
+- [[Core/Modules/Status Indicators/Requisition Position Indicator|Requisition Position Status Indicator]]
 - [[Associate Status Indicator]]
 - [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]
 - [[Core/Modules/Schedule|Schedule]]

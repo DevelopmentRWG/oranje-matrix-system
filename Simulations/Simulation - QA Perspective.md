@@ -12,7 +12,7 @@ aliases:
   - Simulation QA
 ---
 
-# Full Simulation — QA Point of View
+# Full Simulation — QA Perspective
 
 > [!abstract] Purpose
 > This simulation narrates the full quality supervision cycle within the Oranje system, from the perspective of the QA department: the [[QA Manager]] and the 5 [[QA Operator|QA Operators]]. It covers every stage of QA work — routine monitoring, anomaly detection, issuance of formal observations, [[Quality Indicator]] transitions, escalation to management, and resolution — across three operational weeks. QA never executes the operations of any department; its function is exclusively to **observe, measure, and provide feedback**. All data is fictional, but every action, transition, and rule faithfully follows the vault documentation.
@@ -133,7 +133,7 @@ Operator 5 reviews the recruitment funnel and the pickup-time heatmap by urgency
 
 Wednesday, August 6. Operator 5 reviews the current week's activity and detects an anomaly:
 
-- **Hotel Costa Esmeralda Requisition** (replacement for 1 Housekeeper who went to Stand-by): authorized Tuesday, August 5 at 09:00. No [[Recruiter]] picked it up from the [[Self-Pick]]. After 24 hours, the system auto-assigned it to Daniela Ríos.
+- **Hotel Costa Esmeralda Requisition** (replacement for 1 Housekeeper who went to Stand-by): authorized Tuesday, August 5 at 09:00. No [[Recruiter]] picked it up from the [[Requisition Self-Pick]]. After 24 hours, the system auto-assigned it to Daniela Ríos.
 - **Another hotel requisition** (2 Housemen): authorized Wednesday, August 6 at 14:00. Picked up at 22:00 — 8 hours later, right at the limit.
 
 Operator 5 records the data in the trend lines of their panel. This week's auto-assignment rate is already 1 out of 4 requisitions (25%), far above the ≤ 5% target. However, a single week does not confirm a pattern.
@@ -195,7 +195,7 @@ Operator 5 prepares and sends a formal observation to the Recruitment department
 > | Department | [[Recruitment/Recruitment\|Recruitment]] |
 > | Issued by | Operator 5 ([[QA Operator]]) |
 > | Affected KPIs | #1 Coverage (67%), #3 Auto-assignment (67%), #4 Escalation (33%) |
-> | Finding | Persistent failure in the [[Self-Pick]] system. Recruiters are not proactively picking up requisitions. Auto-assignment and escalation rates far exceed thresholds for two consecutive weeks. |
+> | Finding | Persistent failure in the [[Requisition Self-Pick]] system. Recruiters are not proactively picking up requisitions. Auto-assignment and escalation rates far exceed thresholds for two consecutive weeks. |
 > | Impact | Requisition 202608110800A3 for Hotel Costa Esmeralda closed at Red with only 67% coverage. The hotel did not receive the full requested staffing. |
 > | Recommendation | Review recruitment team workload distribution. Evaluate whether the team is understaffed. Reinforce Self-Pick model discipline. |
 
@@ -334,7 +334,7 @@ Fernando acknowledges the problem: a recruiter recently left the team and has no
 Fernando commits to immediate corrective actions:
 
 1. Redistribute the requisition workload among active recruiters.
-2. Assign the [[Recruitment/Recruiter Team Lead|Recruiter Team Lead]] to co-manage the [[Self-Pick]] inbox and pick up requisitions when no recruiter takes them within 4 hours.
+2. Assign the [[Recruitment/Recruiter Team Lead|Recruiter Team Lead]] to co-manage the [[Requisition Self-Pick]] inbox and pick up requisitions when no recruiter takes them within 4 hours.
 3. Prioritize hiring a replacement recruiter.
 4. Formally respond to the QA observation within the next 24 hours.
 
@@ -607,8 +607,8 @@ graph TD
 | Associate | [[Associate/Associate\|Associate]] · [[Associate Pool]] |
 | Sales | [[Sales/Sales\|Sales]] · [[Sales Rules]] · [[Business Developer]] · [[Business Developer Coordinator]] |
 | Recruitment | [[Recruitment/Recruitment\|Recruitment]] · [[Recruitment Rules]] · [[Recruiter]] · [[Recruitment/Recruitment Manager\|Recruitment Manager]] · [[Recruitment/Recruiter Team Lead\|Recruiter Team Lead]] |
-| Status Indicators | [[Associate Status Indicator]] · [[Requisition Status Indicator]] · [[Onboarding Status Indicator]] · [[Requisition Urgency Indicator]] · [[Requisition Position Status Indicator]] |
-| Requisitions | [[Requisition]] · [[Requisition Flow]] · [[Self-Pick]] |
+| Status Indicators | [[Associate Status Indicator]] · [[Requisition Status Indicator]] · [[Onboarding Status Indicator]] · [[Requisition Urgency Indicator]] · [[Requisition Position Indicator]] |
+| Requisitions | [[Requisition]] · [[Requisition Flow]] · [[Requisition Self-Pick]] |
 | Catalogs | [[Zones]] · [[Positions]] |
 
 ---
@@ -617,6 +617,6 @@ graph TD
 
 - [[Simulation - Inspection Perspective]] — Narrates the operational week of Inspector Daniel Ortega in the Northwest zone. In this QA simulation, a coverage failure due to Daniel's absence triggers the Indicator's transition to Yellow and its swift correction.
 - [[Simulation - Hotel Perspective]] — Shows the hotel's cycle as a client. QA monitors Hotel department KPIs (authorization, punching, QR, Stand-by) that remain stable throughout this simulation.
-- [[Simulation - Sales Point of View]] — Details the commercial process narrated from Sales. QA supervises conversion rates, onboarding cycle, and reactivation, all on target during this simulation.
+- [[Simulation - Sales Perspective]] — Details the commercial process narrated from Sales. QA supervises conversion rates, onboarding cycle, and reactivation, all on target during this simulation.
 - [[Simulation - Recruitment Perspective]] — Covers the staffing process. In this QA simulation, Recruitment's persistent failures (unpicked requisitions, auto-assignments, partial coverage) trigger the crisis that brings the department to Red and requires escalation to management.
 - [[Simulation - Associate Lifecycle]] — Traces the associate's states. QA monitors aggregate Associate Pool metrics (absenteeism, Blacklist, Pool Health) that appear here as preventive signals under watch.

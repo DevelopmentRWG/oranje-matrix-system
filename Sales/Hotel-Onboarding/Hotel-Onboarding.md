@@ -42,7 +42,7 @@ Module representing the commercial phase before a hotel becomes an active operat
 - [[Customized Proposal]]
 - [[Terms and Conditions Document]]
 - [[Automatic Conversion Trigger]]
-- [[Hotel User]]
+- [[Hotel User Account]]
 
 ## Relationship with Other Modules
 

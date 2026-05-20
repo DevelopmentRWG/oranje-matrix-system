@@ -16,9 +16,9 @@ aliases:
 Visual status system that represents the lifecycle of a [[Requisition]], from when the [[Hotel/General Manager|General Manager]], the [[Hotel/Area Manager|Area Manager]] or the [[Hotel/Supervisor|Supervisor]] begin drafting it until it is fully covered.
 
 > [!info]
-> This Status Indicator describes the **general lifecycle** of the requisition. The other dimensions are managed in separate Status Indicators: [[Requisition Urgency Indicator]] (classification by time) and [[Requisition Position Status Indicator]] (coverage percentage per position). For the associate's state see [[Associate Status Indicator]].
+> This Status Indicator describes the **general lifecycle** of the requisition. The other dimensions are managed in separate Status Indicators: [[Requisition Urgency Indicator]] (classification by time) and [[Requisition Position Indicator]] (coverage percentage per position). For the associate's state see [[Associate Status Indicator]].
 
-> [!note] Parallelism with [[Requisition Position Status Indicator]]
+> [!note] Parallelism with [[Requisition Position Indicator]]
 > Each requisition state has its mirror at the position level: `Apple Green`↔`Gold` · `Green`↔`Orange` · `Light Blue`↔`Green` · `Red`↔`Yellow/Red` · `Purple`↔`Purple`.
 
 ## States
@@ -55,7 +55,7 @@ The requisition is ready for assignment. The system automatically calculates urg
 ### Yellow — In progress
 **Responsible:** [[Recruiter]]
 
-The recruiter searches for and assigns associates to the positions (see [[Requisition Position Status Indicator]] and [[Associate Status Indicator]]).
+The recruiter searches for and assigns associates to the positions (see [[Requisition Position Indicator]] and [[Associate Status Indicator]]).
 
 ### Decision
 
@@ -69,7 +69,7 @@ The recruiter searches for and assigns associates to the positions (see [[Requis
 ### Light Blue — Fully covered
 **Responsible:** [[Recruiter]]
 
-All positions reached 100% (see `Green` in [[Requisition Position Status Indicator]]).
+All positions reached 100% (see `Green` in [[Requisition Position Indicator]]).
 
 **End of active cycle** — the requisition is closed satisfactorily.
 
@@ -78,7 +78,7 @@ All positions reached 100% (see `Green` in [[Requisition Position Status Indicat
 ### Red — Partially covered
 **Responsible:** [[Recruiter]]
 
-The requisition closed with at least one position in `Yellow` or `Red` at the [[Requisition Position Status Indicator|position]] level.
+The requisition closed with at least one position in `Yellow` or `Red` at the [[Requisition Position Indicator|position]] level.
 
 **End of active cycle** — with incomplete coverage.
 
@@ -92,7 +92,7 @@ Cross-cutting state: reached from any previous state when the requisition is phy
 
 - [[Requisition]]
 - [[Requisition Urgency Indicator]]
-- [[Requisition Position Status Indicator]]
+- [[Requisition Position Indicator]]
 - [[Associate Status Indicator]]
 - [[Recruitment Flow]]
 - [[Recruiter]]

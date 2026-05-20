@@ -149,5 +149,5 @@ Assigned operator: Operator 6. Supervised department: [[Customer Service/Custome
 - [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]]
 - [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]
 - [[Core/Modules/Status Indicators/Requisition Urgency Indicator|Requisition Urgency Status Indicator]]
-- [[Core/Modules/Status Indicators/Requisition Position Status Indicator|Requisition Positions Status Indicator]]
+- [[Core/Modules/Status Indicators/Requisition Position Indicator|Requisition Positions Status Indicator]]
 - [[Business Rules]]

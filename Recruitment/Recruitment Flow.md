@@ -37,7 +37,7 @@ Capture of the associate's initial information:
 - English level (see [[English Levels]])
 - Experience level
 - Transportation type
-- Modality (see [[Employment Modalities]])
+- Modality (see [[Employment Types]])
 
 ### Phase 3 — Validation and Approval
 
@@ -60,5 +60,5 @@ The approved associate **enters the [[Associate Pool]]** with their [[Associate 
 - [[Recruiter]]
 - [[Associate Status Indicator]]
 - [[Positions]]
-- [[Employment Modalities]]
+- [[Employment Types]]
 - [[English Levels]]

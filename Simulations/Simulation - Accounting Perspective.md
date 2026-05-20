@@ -12,7 +12,7 @@ aliases:
   - Simulation Accounting
 ---
 
-# Full Simulation — Accounting Point of View
+# Full Simulation — Accounting Perspective
 
 > [!abstract] Purpose
 > This simulation narrates a complete weekly payroll cycle within the Oranje system, from the perspective of the [[Accountant]] and the [[Accounting Manager]]. It covers the 7 steps of the [[Accounting/Payroll Flow|Payroll Flow]] — from the automatic generation of the [[Weekly Associate Summary]] through to the final payment authorization — and includes scenarios for partial overtime, multi-hotel, internal rate, all three types of [[Deductions]], [[Hotel Invoice|split invoice for month crossover]], 16% withholding deactivation, and [[Vacation Pay|vacation pay calculation]]. All data is fictional, but every action, calculation, and rule faithfully follows the vault documentation.
@@ -39,7 +39,7 @@ aliases:
 
 ### 0.1 — Situation
 
-It is Monday, July 21, 2026. **Hotel Costa Esmeralda** was converted to an active client (**Orange** status on the [[Onboarding Status Indicator]]) on July 11 — as narrated in the [[Simulation - Sales Point of View]]. The first [[Requisition]] was filled by Recruitment, and today the first associates report to work.
+It is Monday, July 21, 2026. **Hotel Costa Esmeralda** was converted to an active client (**Orange** status on the [[Onboarding Status Indicator]]) on July 11 — as narrated in the [[Simulation - Sales Perspective]]. The first [[Requisition]] was filled by Recruitment, and today the first associates report to work.
 
 Patricia Solano, Oranje's [[Accountant]], is responsible for executing the entire weekly financial operation: Pre-Payroll validation, reconciliation with the check provider, deduction management, and vacation pay calculation. Irene, [[Accounting Manager]], oversees Patricia's work and is the one who approves invoices and authorizes payroll release. Together they are the two human actors in the [[Accounting/Payroll Flow|Payroll Flow]].
 
@@ -612,7 +612,7 @@ graph TD
 
 ## Related Simulations
 
-- [[Simulation - Sales Point of View]] — Narrates the commercial cycle of Hotel Costa Esmeralda from prospecting through conversion to active client. The contractual terms (pay rate, bill rate, overtime) negotiated in that simulation are the ones used here to calculate payments and invoices.
+- [[Simulation - Sales Perspective]] — Narrates the commercial cycle of Hotel Costa Esmeralda from prospecting through conversion to active client. The contractual terms (pay rate, bill rate, overtime) negotiated in that simulation are the ones used here to calculate payments and invoices.
 - [[Simulation - Inspection Perspective]] — Covers the field operations of Inspector Daniel Ortega, including the Day 3 uniform delivery that triggers the uniform deduction processed in this simulation.
 - [[Simulation - Hotel Perspective]] — Shows the weekly billing from the hotel's perspective, complementing the internal Accounting view presented here.
 - [[Simulation - Recruitment Perspective]] — Includes the week-end close with Weekly Summary and Pre-Payroll generation for the recruited associates, connecting to the payroll flow detailed here.

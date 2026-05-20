@@ -66,7 +66,7 @@ Step-by-step commercial process for incorporating a hotel as an active Oranje cl
 **Decision: Is the agreement closed?**
 
 - **NO →** returns to the flow (renegotiation / [[Onboarding Status Indicator#Brown — Renegotiation / unblocking|Brown]] / End).
-- **YES →** the BDC approves the conversion and the [[Hotel User]] is created in the system.
+- **YES →** the BDC approves the conversion and the [[Hotel User Account]] is created in the system.
 
 **When the user is created**, the [[Automatic Conversion Trigger]] fires (in parallel):
 
@@ -79,7 +79,7 @@ Step-by-step commercial process for incorporating a hotel as an active Oranje cl
 ## Stage 6 — [[Onboarding Status Indicator#Orange — Signed agreement, active hotel client|Orange]] Active Hotel Client
 
 **Operational responsible:** [[Inspector]] + [[Recruiter|Recruiters]]
-**Status:** the hotel already has a [[Hotel User|user account created]] and is working with Oranje.
+**Status:** the hotel already has a [[Hotel User Account|user account created]] and is working with Oranje.
 
 - Passes to responsibility of [[Recruiter|Recruiters]].
 - Operational cycle begins: [[Requisition|requisitions]] → coverage → [[Core/Modules/Schedule|Schedule]] → [[Timesheet]].
@@ -113,6 +113,6 @@ Step-by-step commercial process for incorporating a hotel as an active Oranje cl
 
 - Every status change is recorded with date, responsible, and comment.
 - [[Onboarding Status Indicator#Orange — Signed agreement, active hotel client|Orange]] is the only status that enables the hotel to generate [[Requisition|requisitions]].
-- The [[Hotel User]] is created upon approving the conversion at [[Onboarding Status Indicator#Pink — Terms negotiation|Pink]], just before the [[Automatic Conversion Trigger|automatic trigger]].
+- The [[Hotel User Account]] is created upon approving the conversion at [[Onboarding Status Indicator#Pink — Terms negotiation|Pink]], just before the [[Automatic Conversion Trigger|automatic trigger]].
 - [[Onboarding Status Indicator#Red — Rejection or no interest|Red]], [[Onboarding Status Indicator#Black — Paused or inactive client|Black]], and [[Onboarding Status Indicator#Brown — Renegotiation / unblocking|Brown]] always reactivate toward [[Onboarding Status Indicator#Light Blue — Contact and data collection|Light Blue]].
 - Final conversion approval is given exclusively by the [[Business Developer Coordinator]].

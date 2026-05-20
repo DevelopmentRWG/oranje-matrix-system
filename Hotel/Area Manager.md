@@ -19,7 +19,7 @@ Operational role in the [[Hotel/Hotel|Hotel]] module. Responsible for approving 
 ### Requisitions
 
 - Creates staff [[Requisition|requisitions]].
-- **Approves** the requisition (status **Authorized**), making it available in the [[Recruitment/Recruitment|Recruitment]] shared inbox to be taken by a [[Recruiter]] or [[Recruitment/Recruiter Team Lead|Team Lead]] ([[Self-Pick|Self-Pick]] model).
+- **Approves** the requisition (status **Authorized**), making it available in the [[Recruitment/Recruitment|Recruitment]] shared inbox to be taken by a [[Recruiter]] or [[Recruitment/Recruiter Team Lead|Team Lead]] ([[Requisition Self-Pick|Self-Pick]] model).
 - **Rejects** the requisition, returning it to the creator with comments (status **In Progress**).
 
 > [!important] Security Layer

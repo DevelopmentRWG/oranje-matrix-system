@@ -12,7 +12,7 @@ aliases:
   - Simulation Sales
 ---
 
-# Full Simulation — Sales Point of View
+# Full Simulation — Sales Perspective
 
 > [!abstract] Purpose
 > This simulation narrates the complete commercial cycle of a hotel within the Oranje system, from the perspective of the Sales team: the [[Business Developer]] (BD) and the [[Business Developer Coordinator]] (BDC). It covers every stage of the [[Onboarding Status Indicator]], including a rejection and reactivation branch, through to the operational handoff. All data is fictional, but every action, transition, and rule faithfully follows the vault documentation.
@@ -284,7 +284,7 @@ Ricardo (BDC) validates the Terms and Conditions Document: all required fields a
 
 ### 8.4 — Creating the Hotel User Account
 
-Thursday, July 10. Before approving the conversion, Ricardo (BDC) creates the [[Hotel User]] in the system:
+Thursday, July 10. Before approving the conversion, Ricardo (BDC) creates the [[Hotel User Account]] in the system:
 
 | Field | Value |
 |---|---|
@@ -295,7 +295,7 @@ Thursday, July 10. Before approving the conversion, Ricardo (BDC) creates the [[
 | Access email | operaciones@costaesmeralda.com |
 
 > [!warning] Business Rule — Mandatory Precondition
-> The [[Hotel User]] **must** be created in the system **before** triggering the conversion. Without this step, the Automatic Trigger cannot execute. — [[Sales Rules#Prospect-to-Client Conversion]]
+> The [[Hotel User Account]] **must** be created in the system **before** triggering the conversion. Without this step, the Automatic Trigger cannot execute. — [[Sales Rules#Prospect-to-Client Conversion]]
 
 ### 8.5 — Conversion Approval by the BDC
 
@@ -359,19 +359,19 @@ Monday, July 14. Mariana Vega, now with system access as the hotel's [[Superviso
 
 | # Position | Position | Quantity | Modality | Start date | Schedule | English |
 |---|---|---|---|---|---|---|
-| 1 | [[Positions\|Housekeeper]] | 5 | [[Employment Modalities\|Full time]] | Jul 21, 2026 | 07:00–15:00 | Basic |
-| 2 | [[Positions\|Houseman]] | 3 | [[Employment Modalities\|Full time]] | Jul 21, 2026 | 07:00–15:00 | Basic |
-| 3 | [[Positions\|Laundry]] | 2 | [[Employment Modalities\|Full time]] | Jul 21, 2026 | 06:00–14:00 | Not required |
+| 1 | [[Positions\|Housekeeper]] | 5 | [[Employment Types\|Full time]] | Jul 21, 2026 | 07:00–15:00 | Basic |
+| 2 | [[Positions\|Houseman]] | 3 | [[Employment Types\|Full time]] | Jul 21, 2026 | 07:00–15:00 | Basic |
+| 3 | [[Positions\|Laundry]] | 2 | [[Employment Types\|Full time]] | Jul 21, 2026 | 06:00–14:00 | Not required |
 
 > [!tip] Automatic system actions
 > - Requisition number generated: **202607141015A3**
 > - Carlos Navarro (General Manager) authorizes the requisition
 > - **Urgency calculation:** authorization date (Jul 14 10:30) vs start date (Jul 21 07:00) ≈ 165 hours → **Dark Green** (Normal, >120h) — [[Requisition Urgency Indicator]]
 > - **Inspector assigned:** Daniel Ortega — automatic based on Northwest zone
-> - The requisition appears in the [[Self-Pick]] queue, prioritized by urgency
+> - The requisition appears in the [[Requisition Self-Pick]] queue, prioritized by urgency
 
 > [!info] Connection to the operational cycle
-> The requisition now follows the [[Requisition Flow]]. A [[Recruiter]] will pick it up from the queue via [[Self-Pick]] and fill the positions with associates from the [[Associate Pool]].
+> The requisition now follows the [[Requisition Flow]]. A [[Recruiter]] will pick it up from the queue via [[Requisition Self-Pick]] and fill the positions with associates from the [[Associate Pool]].
 >
 > **The Sales cycle has fulfilled its purpose: the hotel is active and generating requisitions.**
 
@@ -445,10 +445,10 @@ graph LR
 | Sales | [[Sales/Sales\|Sales]] · [[Sales Rules]] |
 | Sales Roles | [[Business Developer]] · [[Business Developer Coordinator]] |
 | Onboarding | [[Onboarding Flow]] · [[Onboarding Status Indicator]] |
-| Proposal and closing | [[Customized Proposal]] · [[Terms and Conditions Document]] · [[Automatic Conversion Trigger]] · [[Hotel User]] · [[Contract]] |
+| Proposal and closing | [[Customized Proposal]] · [[Terms and Conditions Document]] · [[Automatic Conversion Trigger]] · [[Hotel User Account]] · [[Contract]] |
 | Quality | [[QA Operator]] · [[QA Manager]] · [[Quality Indicator]] · [[Metrics and KPIs by Department]] |
-| Catalogs | [[Zones]] · [[Positions]] · [[Hotel Departments]] · [[Employment Modalities]] |
-| Operations (handoff) | [[Inspector]] · [[Recruiter]] · [[Requisition]] · [[Requisition Flow]] · [[Self-Pick]] · [[Schedule]] · [[Timesheet]] · [[Hotel Invoice]] |
+| Catalogs | [[Zones]] · [[Positions]] · [[Hotel Departments]] · [[Employment Types]] |
+| Operations (handoff) | [[Inspector]] · [[Recruiter]] · [[Requisition]] · [[Requisition Flow]] · [[Requisition Self-Pick]] · [[Schedule]] · [[Timesheet]] · [[Hotel Invoice]] |
 | Operational Status Indicators | [[Requisition Status Indicator]] · [[Requisition Urgency Indicator]] · [[Associate Pool]] |
 
 ---

@@ -43,7 +43,7 @@ Each requisition can include one or more positions. Each position records:
 | Requisition number       | Reference to the parent requisition.                                                 |
 | Position number          | Identifier for the position within the requisition.                                  |
 | Position                 | Type of role requested (see [[Positions]]: Housekeeper, Houseman, etc.).            |
-| Employment type          | Employment modality (see [[Employment Modalities]]).                           |
+| Employment type          | Employment modality (see [[Employment Types]]).                           |
 | Headcount                | How many associates are needed for this position.                                    |
 | Start date               | Date when personnel is required.                                                     |
 | Schedule                 | Position schedule.                                                                   |
@@ -63,7 +63,7 @@ A requisition has several visual statuses that apply to different dimensions:
 
 - **[[Requisition Status Indicator]]** — general lifecycle status (drafting, authorized, in process, covered).
 - **[[Requisition Urgency Indicator]]** — urgency level based on time.
-- **[[Requisition Position Status Indicator]]** — coverage percentage for each requested position.
+- **[[Requisition Position Indicator]]** — coverage percentage for each requested position.
 
 ## Flow
 
@@ -74,10 +74,10 @@ See [[Requisition Flow]].
 - [[Requisition Flow]]
 - [[Requisition Status Indicator]]
 - [[Requisition Urgency Indicator]]
-- [[Requisition Position Status Indicator]]
+- [[Requisition Position Indicator]]
 - [[Recruitment Flow]]
 - [[Positions]]
-- [[Employment Modalities]]
+- [[Employment Types]]
 - [[English Levels]]
 - [[Zones]]
 - [[Inspector]]

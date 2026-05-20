@@ -9,7 +9,7 @@ aliases:
 
 # Business Developer
 
-Operational role in the [[Onboarding-Hotel|Hotel Onboarding]] module. Responsible for the commercial cycle with the hotel: contacts, presents, proposes, and follows up with the hotel throughout the negotiation between Oranje and the hotel.
+Operational role in the [[Hotel-Onboarding|Hotel Onboarding]] module. Responsible for the commercial cycle with the hotel: contacts, presents, proposes, and follows up with the hotel throughout the negotiation between Oranje and the hotel.
 
 ## Responsibilities
 

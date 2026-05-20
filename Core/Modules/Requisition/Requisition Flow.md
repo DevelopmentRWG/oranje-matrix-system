@@ -137,7 +137,7 @@ See [[Requisition Status Indicator]]. Statuses: Apple Green → Green → Yellow
 - **Purple** — Physically deleted.
 
 ### Position — coverage
-See [[Requisition Position Status Indicator]]. Green (100%), Yellow (75%), Red (<75%).
+See [[Requisition Position Indicator]]. Green (100%), Yellow (75%), Red (<75%).
 
 ### Position — priority (time)
 See [[Requisition Urgency Indicator]]. Green (>120 h), Yellow (72-120 h), Red (<72 h).
@@ -181,4 +181,4 @@ Records in the position journal: Requisition number, Position number, Position, 
 - [[Core/Modules/Schedule|Schedule]]
 - [[Requisition Status Indicator]]
 - [[Requisition Urgency Indicator]]
-- [[Requisition Position Status Indicator]]
+- [[Requisition Position Indicator]]

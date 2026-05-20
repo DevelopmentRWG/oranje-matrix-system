@@ -59,7 +59,7 @@ The associate recruitment process consists of phases defined in the [[Recruitmen
 
 ## Position Coverage
 
-When assigning associates from the [[Associate Pool]] to the positions of a requisition, the [[Recruiter]] directly affects the [[Core/Modules/Status Indicators/Requisition Position Status Indicator|Requisition Position Status Indicator]]:
+When assigning associates from the [[Associate Pool]] to the positions of a requisition, the [[Recruiter]] directly affects the [[Core/Modules/Status Indicators/Requisition Position Indicator|Requisition Position Status Indicator]]:
 
 | Color | Status | Condition |
 |---|---|---|
@@ -136,6 +136,6 @@ When assigning associates from the [[Associate Pool]] to the positions of a requ
 - [[Core/Modules/Blacklist|Blacklist]]
 - [[Associate Status Indicator]]
 - [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]]
-- [[Core/Modules/Status Indicators/Requisition Position Status Indicator|Requisition Position Status Indicator]]
+- [[Core/Modules/Status Indicators/Requisition Position Indicator|Requisition Position Status Indicator]]
 - [[Core/Modules/Schedule|Schedule]]
 - [[Timesheet]]
