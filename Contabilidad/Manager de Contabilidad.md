@@ -1,23 +1,23 @@
 ---
 tags:
-  - departamento/contabilidad
+  - department/accounting
 aliases:
-  - Manager de Contabilidad
+  - Accounting Manager
 ---
 
-# Manager de Contabilidad
+# Accounting Manager
 
-Rol de supervisión encargado de la aprobación y autorización de los procesos financieros semanales dentro del sistema Oranje: aprobación del Consolidado Semanal, autorización de la nómina y aprobación de la facturación al hotel.
+Supervisory role responsible for the approval and authorization of weekly financial processes within the Oranje system: approval of the Weekly Associate Summary, authorization of payroll, and approval of hotel billing.
 
-## Responsabilidades
+## Responsibilities
 
-- **Aprueba el [[Consolidado Semanal del Colaborador]]** antes de liberar el pago al colaborador (después de que la [[Contadora]] lo revisa).
-- **Autoriza overtime parcial**: cuando el hotel no aprueba todas las horas extra trabajadas, decide las horas OT facturables/pagables según lo autorizado.
-- **Aprueba la [[Facturación al Hotel]]**: valida que la factura generada automáticamente refleje correctamente el bill rate y las horas autorizadas.
-- **Autoriza la nómina final** para liberar los pagos.
-- **Supervisa y coordina** el trabajo de la [[Contadora]].
+- **Approves the [[Consolidado Semanal del Colaborador]]** before releasing payment to the associate (after the [[Contadora]] reviews it).
+- **Authorizes partial overtime**: when the hotel does not approve all overtime hours worked, decides the billable/payable OT hours based on what was authorized.
+- **Approves [[Facturación al Hotel]]**: validates that the automatically generated invoice correctly reflects the bill rate and authorized hours.
+- **Authorizes the final payroll** to release payments.
+- **Supervises and coordinates** the work of the [[Contadora]].
 
-## Relacionado
+## Related
 
 - [[Contadora]]
 - [[Consolidado Semanal del Colaborador]]

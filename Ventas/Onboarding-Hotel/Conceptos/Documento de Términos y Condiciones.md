@@ -1,32 +1,32 @@
 ---
 tags:
-  - modulo/onboarding-hotel
-  - concepto
+  - module/hotel-onboarding
+  - concept
 aliases:
-  - Documento de Términos y Condiciones
+  - Terms and Conditions Document
   - T&C
-  - Términos y Condiciones
+  - Terms and Conditions
 ---
 
-# Documento de Términos y Condiciones
+# Terms and Conditions Document
 
-Documento formal creado durante [[Semáforo Onboarding|Status Onboarding Amarillo]] por el [[Business Developer]] o el [[Business Developer Coordinator]]. Establece las condiciones comerciales sobre las que se negocia el acuerdo final con el hotel.
+Formal document created during [[Semáforo Onboarding|Onboarding Status Yellow]] by the [[Business Developer]] or the [[Business Developer Coordinator]]. It establishes the commercial conditions under which the final agreement with the hotel is negotiated.
 
-## Contenido
+## Content
 
-- **Pay rate** — pago al colaborador.
-- **Bill rate** — cobro al hotel.
-- **Overtime** — política de horas extra.
-- **Festivos** — manejo y recargos.
-- **Calendario** — inicio de operación, vigencia y renovación.
+- **Pay rate** — associate payment.
+- **Bill rate** — charge to the hotel.
+- **Overtime** — overtime policy.
+- **Holidays** — handling and surcharges.
+- **Calendar** — start of operations, term, and renewal.
 
-## Ciclo de vida
+## Lifecycle
 
-- **Se crea en:** [[Semáforo Onboarding|Status Onboarding Amarillo]].
-- **Se negocia en:** [[Semáforo Onboarding|Status Onboarding Rosa]].
-- **Validación final:** [[Business Developer Coordinator]] antes del cierre del [[Contrato]].
+- **Created at:** [[Semáforo Onboarding|Onboarding Status Yellow]].
+- **Negotiated at:** [[Semáforo Onboarding|Onboarding Status Pink]].
+- **Final validation:** [[Business Developer Coordinator]] before closing the [[Contrato]].
 
-## Relacionado
+## Related
 
 - [[Flujo de Onboarding]]
 - [[Propuesta Personalizada]]

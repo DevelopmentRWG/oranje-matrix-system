@@ -1,46 +1,46 @@
 ---
 tags:
-  - modulo/contabilidad
+  - module/accounting
 aliases:
-  - Vacaciones
-  - Cálculo de Vacaciones
+  - Vacation Pay
+  - Vacation Pay Calculation
 ---
 
-# Vacaciones
+# Vacation Pay
 
-Cálculo automatizado del pago de vacaciones de un colaborador, basado en el promedio de horas laboradas en las últimas 52 semanas.
+Automated calculation of an associate's vacation pay, based on the average hours worked over the last 52 weeks.
 
-## Fórmula
+## Formula
 
-**Promedio de horas = Σ horas netas pagadas (últimas 52 semanas) ÷ 52**
+**Average hours = Σ net paid hours (last 52 weeks) ÷ 52**
 
-- El sistema toma como fuente los [[Consolidado Semanal del Colaborador|Consolidados Semanales]] históricos del colaborador
-- Si el colaborador tiene menos de 52 semanas de antigüedad, se promedia sobre las semanas disponibles
+- The system uses the associate's historical [[Consolidado Semanal del Colaborador|Weekly Summaries]] as the source
+- If the associate has fewer than 52 weeks of seniority, the average is calculated over the available weeks
 
-## Complejidad por múltiples rates
+## Complexity with Multiple Rates
 
-Cuando el colaborador trabajó con distintos rates durante el periodo (distintos hoteles o distintas posiciones), el sistema debe:
+When the associate worked with different rates during the period (different hotels or different positions), the system must:
 
-1. **Separar** las semanas/horas por rate
-2. **Calcular** el promedio por cada rate independientemente
-3. **Presentar** el desglose:
-   - Promedio por hotel
-   - Promedio por posición
-   - Promedio por rate
+1. **Separate** the weeks/hours by rate
+2. **Calculate** the average for each rate independently
+3. **Present** the breakdown:
+   - Average per hotel
+   - Average per position
+   - Average per rate
 
-> [!example] **Ejemplo**
-> Colaborador trabajó 30 semanas en Hotel A (Housekeeper, $14/hr) y 22 semanas en Hotel B (Breakfast, $13/hr):
-> - Promedio Hotel A: Σ horas Hotel A ÷ 30
-> - Promedio Hotel B: Σ horas Hotel B ÷ 22
+> [!example] **Example**
+> Associate worked 30 weeks at Hotel A (Housekeeper, $14/hr) and 22 weeks at Hotel B (Breakfast, $13/hr):
+> - Hotel A average: Σ Hotel A hours ÷ 30
+> - Hotel B average: Σ Hotel B hours ÷ 22
 
-## Funcionalidad en el sistema
+## System Functionality
 
-- La [[Contadora]] selecciona el colaborador y el periodo
-- El sistema calcula automáticamente sin intervención manual
-- Presenta el resultado con desglose por rate/hotel/posición
-- Permite ajustar el rango de semanas si se requiere un cálculo parcial
+- The [[Contadora]] selects the associate and the period
+- The system calculates automatically without manual intervention
+- Presents the result with a breakdown by rate/hotel/position
+- Allows adjusting the week range if a partial calculation is required
 
-## Relacionado
+## Related
 
 - [[Consolidado Semanal del Colaborador]]
 - [[Manager de Contabilidad]]

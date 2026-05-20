@@ -1,97 +1,97 @@
 ---
 tags:
-  - modulo/contabilidad
+  - module/accounting
 aliases:
-  - Flujo de Nómina
-  - Proceso de Nómina
+  - Payroll Flow
+  - Payroll Process
   - Pre-Payroll
 ---
 
-# Flujo de Nómina
+# Payroll Flow
 
-Proceso semanal semi-automatizado que transforma los [[Timesheet|Timesheets]] aprobados en pagos al colaborador y facturas al hotel. El sistema automatiza el cálculo; la [[Contadora]] valida y el [[Manager de Contabilidad]] autoriza.
+Semi-automated weekly process that transforms approved [[Timesheet|Timesheets]] into associate payments and hotel invoices. The system automates the calculation; the [[Contadora]] validates and the [[Manager de Contabilidad]] authorizes.
 
-## Pasos del flujo
+## Flow Steps
 
-### 1. Generación automática del Consolidado Semanal
+### 1. Automatic Generation of the Weekly Associate Summary
 
-- El sistema agrupa los [[Timesheet|Timesheets]] aprobados por colaborador/hotel/semana
-- Aplica el pay rate de cada [[Core/Módulos/Contrato|Contrato]]
-- Calcula overtime según las reglas del contrato de cada hotel
-- Ver [[Consolidado Semanal del Colaborador]] para estructura y cálculo
+- The system groups approved [[Timesheet|Timesheets]] by associate/hotel/week
+- Applies the pay rate from each [[Core/Módulos/Contrato|Contrato]]
+- Calculates overtime according to each hotel's contract rules
+- See [[Consolidado Semanal del Colaborador]] for structure and calculation
 
-> [!success] **Automatizado** — No requiere intervención humana.
+> [!success] **Automated** — No human intervention required.
 
-### 2. Cálculo automático del Pre-Payroll
+### 2. Automatic Pre-Payroll Calculation
 
-- El sistema genera el Pre-Payroll a partir del Consolidado:
-  - Aplica el **rate interno** si existe (puede ser mayor al rate contractual)
-  - Aplica las **[[Deducciones]]** activas del colaborador (uniforme, comida, retención 16%)
-  - Aplica el **overtime autorizado** (solo las horas aprobadas por el hotel)
-- El Pre-Payroll refleja el monto neto que recibirá cada colaborador
+- The system generates the Pre-Payroll from the Summary:
+  - Applies the **internal rate** if one exists (may be higher than the contractual rate)
+  - Applies the active **[[Deducciones]]** for the associate (uniform, food, 16% withholding)
+  - Applies **authorized overtime** (only hours approved by the hotel)
+- The Pre-Payroll reflects the net amount each associate will receive
 
-> [!success] **Automatizado** — No requiere intervención humana.
+> [!success] **Automated** — No human intervention required.
 
-### 3. Validación humana
+### 3. Human Validation
 
-- La [[Contadora]] revisa el Pre-Payroll generado
-- Verifica por cada línea:
-  - ID del colaborador correcto
-  - Nombre/apellidos coinciden con el ID
-  - Horas correctas según Timesheet aprobado
-  - Rate correcto (interno o contractual según corresponda)
-  - Descuentos aplicados correctamente
-  - Posiciones correctas si tiene múltiples
-  - Hotel correcto si trabaja en múltiples
-- Aprueba, corrige o rechaza líneas individuales
+- The [[Contadora]] reviews the generated Pre-Payroll
+- Verifies for each line:
+  - Associate ID is correct
+  - Name/last name matches the ID
+  - Hours are correct per approved Timesheet
+  - Rate is correct (internal or contractual as applicable)
+  - Discounts are correctly applied
+  - Positions are correct if they have multiple
+  - Hotel is correct if they work at multiple
+- Approves, corrects, or rejects individual lines
 
-> [!warning] **Semi-automatizado** — Requiere validación de la [[Contadora]].
+> [!warning] **Semi-automated** — Requires validation by the [[Contadora]].
 
-### 4. Generación automática de la Factura al Hotel
+### 4. Automatic Hotel Invoice Generation
 
-- El sistema genera la [[Facturación al Hotel|Factura al Hotel]] usando el **bill rate** del [[Core/Módulos/Contrato|Contrato]] (nunca el rate interno)
-- Aplica acreditaciones si corresponden (ej. deducción de comida)
-- El overtime facturado es solo el **autorizado** por el hotel
-- Si la semana cruza dos meses, genera dos facturas separadas
+- The system generates the [[Facturación al Hotel|Hotel Invoice]] using the **bill rate** from the [[Core/Módulos/Contrato|Contrato]] (never the internal rate)
+- Applies credits if applicable (e.g. food deduction)
+- Overtime invoiced is only what was **authorized** by the hotel
+- If the week spans two months, two separate invoices are generated
 
-> [!success] **Automatizado** — No requiere intervención humana.
+> [!success] **Automated** — No human intervention required.
 
-### 5. Exportación a sistema de pago externo
+### 5. Export to External Payment System
 
-- El sistema genera el archivo/datos necesarios para el proveedor de cheques
-- La integración con el proveedor externo es configurable
+- The system generates the file/data required for the check provider
+- Integration with the external provider is configurable
 
-> [!success] **Automatizado** — No requiere intervención humana.
+> [!success] **Automated** — No human intervention required.
 
-### 6. Conciliación
+### 6. Reconciliation
 
-- El proveedor devuelve la confirmación de los cheques generados
-- La [[Contadora]] valida que lo devuelto coincida con lo enviado
-- Identifica discrepancias y las resuelve antes de autorizar
+- The provider returns confirmation of the generated checks
+- The [[Contadora]] validates that what was returned matches what was submitted
+- Identifies discrepancies and resolves them before authorizing
 
-> [!warning] **Semi-automatizado** — Requiere validación de la [[Contadora]].
+> [!warning] **Semi-automated** — Requires validation by the [[Contadora]].
 
-### 7. Autorización final
+### 7. Final Authorization
 
-- El [[Manager de Contabilidad]] libera la nómina
-- Los pagos se ejecutan
-- El sistema registra la fecha y responsable de la autorización
+- The [[Manager de Contabilidad]] releases payroll
+- Payments are executed
+- The system records the date and responsible for the authorization
 
-> [!warning] **Semi-automatizado** — Requiere autorización del [[Manager de Contabilidad]].
+> [!warning] **Semi-automated** — Requires authorization from the [[Manager de Contabilidad]].
 
-## Resumen de automatización
+## Automation Summary
 
-| Paso | Descripción | Automatización |
+| Step | Description | Automation |
 | ---- | ----------- | -------------- |
-| 1 | Generación del Consolidado Semanal | Automático |
-| 2 | Cálculo del Pre-Payroll | Automático |
-| 3 | Validación del Pre-Payroll | Semi-automático ([[Contadora]] valida) |
-| 4 | Generación de Factura al Hotel | Automático |
-| 5 | Exportación a proveedor de cheques | Automático |
-| 6 | Conciliación | Semi-automático ([[Contadora]] valida) |
-| 7 | Autorización final | Semi-automático ([[Manager de Contabilidad]] libera) |
+| 1 | Weekly Associate Summary generation | Automated |
+| 2 | Pre-Payroll calculation | Automated |
+| 3 | Pre-Payroll validation | Semi-automated ([[Contadora]] validates) |
+| 4 | Hotel Invoice generation | Automated |
+| 5 | Export to check provider | Automated |
+| 6 | Reconciliation | Semi-automated ([[Contadora]] validates) |
+| 7 | Final authorization | Semi-automated ([[Manager de Contabilidad]] releases) |
 
-## Relacionado
+## Related
 
 - [[Consolidado Semanal del Colaborador]]
 - [[Manager de Contabilidad]]

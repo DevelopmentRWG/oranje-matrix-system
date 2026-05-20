@@ -1,28 +1,28 @@
 ---
 tags:
-  - modulo/onboarding-hotel
-  - concepto
+  - module/hotel-onboarding
+  - concept
 aliases:
-  - Propuesta Personalizada
+  - Customized Proposal
 ---
 
-# Propuesta Personalizada
+# Customized Proposal
 
-Documento comercial que el [[Business Developer]] elabora y envía al hotel durante [[Semáforo Onboarding|Status Onboarding Verde]]. Presenta la oferta de Oranje adaptada a las necesidades específicas del hotel prospecto.
+Commercial document that the [[Business Developer]] prepares and sends to the hotel during [[Semáforo Onboarding|Onboarding Status Green]]. It presents Oranje's offer tailored to the specific needs of the prospect hotel.
 
-## Contenido
+## Content
 
-- Servicios ofrecidos.
-- Precios tentativos (pay rate / bill rate).
-- Condiciones generales de la relación comercial.
+- Services offered.
+- Tentative prices (pay rate / bill rate).
+- General conditions of the commercial relationship.
 
-## Ciclo de vida
+## Lifecycle
 
-- **Se elabora y envía en:** [[Semáforo Onboarding|Status Onboarding Verde]].
-- **Se da seguimiento en:** [[Semáforo Onboarding|Status Onboarding Verde]] (registro de intentos de contacto).
-- **Se ajusta/retoma desde:** [[Semáforo Onboarding|Status Onboarding Café]] cuando hay estancamiento.
+- **Prepared and sent at:** [[Semáforo Onboarding|Onboarding Status Green]].
+- **Followed up at:** [[Semáforo Onboarding|Onboarding Status Green]] (recording contact attempts).
+- **Adjusted/resumed from:** [[Semáforo Onboarding|Onboarding Status Brown]] when there is a stall.
 
-## Relacionado
+## Related
 
 - [[Flujo de Onboarding]]
 - [[Documento de Términos y Condiciones]]

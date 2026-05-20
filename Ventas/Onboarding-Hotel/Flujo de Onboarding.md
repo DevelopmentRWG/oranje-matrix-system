@@ -1,118 +1,118 @@
 ---
 tags:
-  - modulo/onboarding-hotel
-  - flujo
+  - module/hotel-onboarding
+  - flow
 aliases:
-  - Flujo de Onboarding Hotel
+  - Hotel Onboarding Flow
 ---
 
-# Flujo de Onboarding
+# Onboarding Flow
 
-Proceso comercial paso a paso para incorporar un hotel como cliente activo de Oranje. Cada etapa corresponde a un status del [[Semáforo Onboarding]].
+Step-by-step commercial process for incorporating a hotel as an active Oranje client. Each stage corresponds to a status in the [[Semáforo Onboarding]].
 
-## Etapa 1 — [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] Hotel identificado
+## Stage 1 — [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] Hotel Identified
 
-**Responsable:** [[Business Developer]]
-**Acción única:** el BD identifica el hotel dentro de su territorio como posible cliente.
+**Responsible:** [[Business Developer]]
+**Single action:** the BD identifies the hotel within their territory as a potential client.
 
-**Avance →** cuando inicia contacto y recopilación de datos, mueve el status a [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
+**Advance →** when they initiate contact and data collection, the status moves to [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 
-## Etapa 2 — [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] Contacto y recopilación de datos
+## Stage 2 — [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] Contact and Data Collection
 
-**Responsable:** [[Business Developer]]
-**Acciones durante este status:**
+**Responsible:** [[Business Developer]]
+**Actions during this status:**
 
-- Crea el perfil del hotel en el sistema.
-- Recopila datos: nombre del hotel, email, teléfono, nombre y cargo del contacto, necesidad del negocio.
-- Realiza visita en frío al hotel.
+- Creates the hotel profile in the system.
+- Collects data: hotel name, email, phone, contact name and title, business need.
+- Conducts a cold visit to the hotel.
 
-**Avance →** al enviar la propuesta, el status cambia a [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]].
+**Advance →** upon sending the proposal, the status changes to [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]].
 
-## Etapa 3 — [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] Propuesta enviada
+## Stage 3 — [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] Proposal Sent
 
-**Responsable:** [[Business Developer]]
-**Acciones:**
+**Responsible:** [[Business Developer]]
+**Actions:**
 
-- Elabora [[Propuesta Personalizada|propuesta personalizada]] (servicios, precios, condiciones).
-- Adjunta y envía la propuesta al hotel.
-- Registra intentos de contacto y respuestas.
-- Hace seguimiento al hotel.
+- Prepares a [[Propuesta Personalizada|customized proposal]] (services, prices, conditions).
+- Attaches and sends the proposal to the hotel.
+- Records contact attempts and responses.
+- Follows up with the hotel.
 
-**Decisión: ¿El hotel responde con interés?**
+**Decision: Does the hotel respond with interest?**
 
-- **SÍ →** pasa a [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]].
-- **NO →** pasa a [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]].
+- **YES →** moves to [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]].
+- **NO →** moves to [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]].
 
-**Rama alterna:** si hay estancamiento, se activa [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] y el [[Business Developer Coordinator]] investiga y da solución para retomar la propuesta → regresa a [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
+**Alternate branch:** if there is a stall, [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] is activated and the [[Business Developer Coordinator]] investigates and provides a solution to resume the proposal → returns to [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 
-## Etapa 4 — [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] En seguimiento tras propuesta
+## Stage 4 — [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] In Follow-up After Proposal
 
-**Responsable:** [[Business Developer]] (con apoyo del [[Business Developer Coordinator]])
-**Acciones durante este status:**
+**Responsible:** [[Business Developer]] (with support from the [[Business Developer Coordinator]])
+**Actions during this status:**
 
-- BD o BDC crea el [[Documento de Términos y Condiciones]], que establece:
+- BD or BDC creates the [[Documento de Términos y Condiciones]], which establishes:
   - Pay rate
   - Bill rate
   - Overtime
-  - Festivos
-  - Calendario
+  - Holidays
+  - Calendar
 
-**Avance →** al iniciar negociación formal, pasa a [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]].
+**Advance →** when formal negotiation begins, moves to [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]].
 
-## Etapa 5 — [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] Negociación de términos
+## Stage 5 — [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] Terms Negotiation
 
-**Responsable:** [[Business Developer]] + [[Business Developer Coordinator]]
+**Responsible:** [[Business Developer]] + [[Business Developer Coordinator]]
 
-**Decisión: ¿Se cierra el acuerdo?**
+**Decision: Is the agreement closed?**
 
-- **NO →** vuelve al flujo (renegociación / [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] / Fin).
-- **SÍ →** el BDC aprueba la conversión y se crea el [[Usuario del Hotel]] en el sistema.
+- **NO →** returns to the flow (renegotiation / [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] / End).
+- **YES →** the BDC approves the conversion and the [[Usuario del Hotel]] is created in the system.
 
-**Al crearse el usuario** se dispara el [[Trigger Automático de Conversión]] (en paralelo):
+**When the user is created**, the [[Trigger Automático de Conversión]] fires (in parallel):
 
-- Sistema envía email de bienvenida al hotel.
-- Sistema notifica al BD asignado.
-- Hotel desaparece de la lista de prospectos.
+- System sends a welcome email to the hotel.
+- System notifies the assigned BD.
+- Hotel disappears from the prospect list.
 
-**Avance →** pasa a [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]].
+**Advance →** moves to [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]].
 
-## Etapa 6 — [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] Hotel cliente activo
+## Stage 6 — [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] Active Hotel Client
 
-**Responsable operativo:** [[Inspector]] + [[Reclutadora|Reclutadores]]
-**Estado:** el hotel ya tiene [[Usuario del Hotel|usuario creado]] y está trabajando con Oranje.
+**Operational responsible:** [[Inspector]] + [[Reclutadora|Recruiters]]
+**Status:** the hotel already has a [[Usuario del Hotel|user account created]] and is working with Oranje.
 
-- Pasa a responsabilidad de [[Reclutadora|Reclutadores]].
-- Inicia ciclo operativo: [[Requisición|requisiciones]] → cobertura → [[Core/Módulos/Schedule|Schedule]] → [[Timesheet]].
-- BD y BDC quedan como referentes comerciales.
+- Passes to responsibility of [[Reclutadora|Recruiters]].
+- Operational cycle begins: [[Requisición|requisitions]] → coverage → [[Core/Módulos/Schedule|Schedule]] → [[Timesheet]].
+- BD and BDC remain as commercial references.
 
-**Decisión: ¿El hotel deja de operar?**
+**Decision: Does the hotel stop operating?**
 
-- **NO →** Fin (continúa activo).
-- **SÍ →** pasa a [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]].
+- **NO →** End (continues active).
+- **YES →** moves to [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]].
 
-## Etapa 7 — [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] Hotel rechazó la propuesta / no interesado
+## Stage 7 — [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] Hotel Rejected the Proposal / Not Interested
 
-**Responsable:** [[Business Developer]]
+**Responsible:** [[Business Developer]]
 
-**Decisión: ¿Reactivar?**
+**Decision: Reactivate?**
 
-- **NO →** Fin.
-- **SÍ →** regresa a [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
+- **NO →** End.
+- **YES →** returns to [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 
-## Etapa 8 — [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] Cliente dejó de operar / relación pausada
+## Stage 8 — [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] Client Stopped Operating / Paused Relationship
 
-**Responsable:** [[Business Developer Coordinator]]
-**Motivos:** cierre del hotel, cambio de administración, pausa, disputa.
+**Responsible:** [[Business Developer Coordinator]]
+**Reasons:** hotel closure, management change, pause, dispute.
 
-**Decisión: ¿Reactivar?**
+**Decision: Reactivate?**
 
-- **NO →** Fin.
-- **SÍ →** regresa a [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
+- **NO →** End.
+- **YES →** returns to [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
 
-## Puntos clave
+## Key Points
 
-- Todo cambio de status queda registrado con fecha, responsable y comentario.
-- [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] es el único status que habilita al hotel para generar [[Requisición|requisiciones]].
-- El [[Usuario del Hotel]] se crea al aprobar la conversión en [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]], justo antes del [[Trigger Automático de Conversión|trigger automático]].
-- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]], [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] y [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] siempre reactivan hacia [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
-- La aprobación final de conversión la da únicamente el [[Business Developer Coordinator]].
+- Every status change is recorded with date, responsible, and comment.
+- [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] is the only status that enables the hotel to generate [[Requisición|requisitions]].
+- The [[Usuario del Hotel]] is created upon approving the conversion at [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]], just before the [[Trigger Automático de Conversión|automatic trigger]].
+- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]], [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]], and [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] always reactivate toward [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
+- Final conversion approval is given exclusively by the [[Business Developer Coordinator]].

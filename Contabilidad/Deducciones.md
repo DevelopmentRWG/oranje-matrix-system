@@ -1,57 +1,57 @@
 ---
 tags:
-  - modulo/contabilidad
+  - module/accounting
 aliases:
-  - Deducciones
-  - Deducción
+  - Deductions
+  - Deduction
 ---
 
-# Deducciones
+# Deductions
 
-Descuentos monetarios que el sistema aplica automáticamente al cheque del colaborador antes de liberar el pago. Cada deducción tiene un disparador específico y condiciones de activación.
+Monetary discounts that the system automatically applies to the associate's check before releasing payment. Each deduction has a specific trigger and activation conditions.
 
-## Tipos de deducción
+## Deduction Types
 
-### Uniforme
+### Uniform
 
-| Campo | Valor |
+| Field | Value |
 | ----- | ----- |
-| Monto | $15 USD por uniforme |
-| Disparador | El [[Inspección/Inspector\|Inspector]] registra entrega o pérdida de uniforme vía formulario |
-| Aplicación | Se aplica automáticamente al siguiente [[Consolidado Semanal del Colaborador\|Consolidado Semanal]] |
-| Acumulable | Sí — si el colaborador pierde el uniforme y recibe otro, se suma una nueva deducción |
+| Amount | $15 USD per uniform |
+| Trigger | The [[Inspección/Inspector\|Inspector]] registers uniform delivery or loss via form |
+| Application | Applied automatically to the next [[Consolidado Semanal del Colaborador\|Weekly Summary]] |
+| Cumulative | Yes — if the associate loses a uniform and receives another, a new deduction is added |
 
-### Comida
+### Food
 
-| Campo | Valor |
+| Field | Value |
 | ----- | ----- |
-| Monto | $3 USD por día laborado |
-| Disparador | Configuración del hotel en el [[Core/Módulos/Contrato\|Contrato]] (campo: "Deduce comida: sí/no") |
-| Aplicación | Solo en días donde el colaborador tiene [[Timesheet]] registrado |
-| Particularidad | Se descuenta al colaborador Y se acredita al hotel en su [[Facturación al Hotel\|Factura]] |
+| Amount | $3 USD per day worked |
+| Trigger | Hotel configuration in the [[Core/Módulos/Contrato\|Contrato]] (field: "Deduct food: yes/no") |
+| Application | Only on days where the associate has a recorded [[Timesheet]] |
+| Particularity | Deducted from the associate AND credited to the hotel on their [[Facturación al Hotel\|Invoice]] |
 
-> [!note] Esta deducción es por configuración del hotel. No todos los hoteles la aplican.
+> [!note] This deduction is based on hotel configuration. Not all hotels apply it.
 
-### Retención 16%
+### 16% Withholding
 
-| Campo | Valor |
+| Field | Value |
 | ----- | ----- |
-| Monto | 16% del monto total del cheque |
-| Disparador | Campo del [[Colaborador/Colaborador\|Colaborador]]: "Tiene SSN/TaxID: no" |
-| Activación | Automática al registrar al colaborador sin documentos fiscales |
-| Desactivación | La [[Contadora]] la desactiva manualmente cuando el colaborador entrega documentos |
-| Reembolso | Al desactivar, el sistema permite generar el reembolso del monto acumulado retenido |
+| Amount | 16% of the total check amount |
+| Trigger | [[Colaborador/Colaborador\|Associate]] field: "Has SSN/TaxID: no" |
+| Activation | Automatic upon registering the associate without tax documents |
+| Deactivation | The [[Contadora]] deactivates it manually when the associate submits documents |
+| Refund | Upon deactivation, the system allows generating a refund for the accumulated withheld amount |
 
-> [!important] La retención 16% es reembolsable. El sistema debe mantener un registro histórico del monto acumulado retenido para poder generar el reembolso cuando corresponda.
+> [!important] The 16% withholding is refundable. The system must maintain a historical record of the accumulated withheld amount in order to generate the refund when applicable.
 
-## Comportamiento en el sistema
+## System Behavior
 
-- Las deducciones se aplican en el paso 2 del [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] (cálculo del Pre-Payroll)
-- Reducen el monto neto del cheque del colaborador
-- La [[Contadora]] verifica que las deducciones estén correctamente aplicadas en el paso 3 (validación)
-- El sistema mantiene un historial de deducciones aplicadas por colaborador/semana
+- Deductions are applied in step 2 of the [[Contabilidad/Flujo de Nómina|Flujo de Nómina]] (Pre-Payroll calculation)
+- They reduce the associate's net check amount
+- The [[Contadora]] verifies that deductions are correctly applied in step 3 (validation)
+- The system maintains a history of deductions applied per associate/week
 
-## Relacionado
+## Related
 
 - [[Consolidado Semanal del Colaborador]]
 - [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]

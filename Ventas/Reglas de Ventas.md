@@ -1,143 +1,143 @@
 ---
 tags:
-  - modulo/ventas
+  - module/sales
 aliases:
-  - Reglas de Ventas
+  - Sales Rules
 ---
 
-# Reglas de Ventas
+# Sales Rules
 
-Consolidación de todas las reglas de negocio que aplican al departamento de Ventas dentro del sistema Oranje. Referencia cruzada con [[Reglas de Negocio]] (concentrado general del sistema).
+Consolidation of all business rules that apply to the Sales department within the Oranje system. Cross-reference with [[Reglas de Negocio]] (system-wide general reference).
 
-## Jerarquía del departamento
+## Department Hierarchy
 
-| Rol | Función |
+| Role | Function |
 |---|---|
-| [[Ventas/Roles/Business Developer Coordinator\|Business Developer Coordinator (BDC)]] | Supervisa a los BD en su territorio. Valida términos, aprueba conversiones y gestiona estancamientos |
-| [[Ventas/Roles/Business Developer\|Business Developer (BD)]] | Ejecutor comercial en campo. Identifica prospectos, elabora propuestas y da seguimiento |
+| [[Ventas/Roles/Business Developer Coordinator\|Business Developer Coordinator (BDC)]] | Supervises BDs in their territory. Validates terms, approves conversions, and manages stalls |
+| [[Ventas/Roles/Business Developer\|Business Developer (BD)]] | Field commercial executor. Identifies prospects, prepares proposals, and follows up |
 
-## Ciclo del Semáforo Onboarding
+## Onboarding Status Indicator Cycle
 
-El proceso de captación de un hotel sigue el [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]], documentado en detalle en el [[Ventas/Onboarding-Hotel/Flujo de Onboarding|Flujo de Onboarding]].
+The hotel acquisition process follows the [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]], documented in detail in the [[Ventas/Onboarding-Hotel/Flujo de Onboarding|Flujo de Onboarding]].
 
-| Status | Descripción | Responsable principal |
+| Status | Description | Primary Responsible |
 |---|---|---|
-| **Gris** | Prospecto identificado sin contacto | [[Ventas/Roles/Business Developer\|BD]] |
-| **Azul Claro** | Perfil creado, datos recopilados, visita en frío realizada | [[Ventas/Roles/Business Developer\|BD]] |
-| **Verde** | Propuesta Personalizada elaborada y enviada; seguimiento activo | [[Ventas/Roles/Business Developer\|BD]] |
-| **Amarillo** | Documento de T&C creado; seguimiento post-propuesta | [[Ventas/Roles/Business Developer\|BD]] + [[Ventas/Roles/Business Developer Coordinator\|BDC]] (apoyo) |
-| **Rosa** | Negociación de términos; validación final y cierre | [[Ventas/Roles/Business Developer\|BD]] + [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
-| **Naranja** | Hotel cliente activo; pasa a operaciones | [[Inspector]] + [[Reclutadora]] (operativo) / BD y BDC (referente comercial) |
-| **Rojo** | Rechazo del hotel; decisión de reactivar o archivar | [[Ventas/Roles/Business Developer\|BD]] |
-| **Negro** | Cliente pausado o inactivo | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
-| **Café** | Estancamiento; puente de desbloqueo | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| **Gray** | Identified prospect with no contact | [[Ventas/Roles/Business Developer\|BD]] |
+| **Light Blue** | Profile created, data collected, cold visit completed | [[Ventas/Roles/Business Developer\|BD]] |
+| **Green** | Customized Proposal prepared and sent; active follow-up | [[Ventas/Roles/Business Developer\|BD]] |
+| **Yellow** | T&C document created; post-proposal follow-up | [[Ventas/Roles/Business Developer\|BD]] + [[Ventas/Roles/Business Developer Coordinator\|BDC]] (support) |
+| **Pink** | Terms negotiation; final validation and close | [[Ventas/Roles/Business Developer\|BD]] + [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| **Orange** | Active hotel client; moves to operations | [[Inspector]] + [[Reclutadora]] (operational) / BD and BDC (commercial reference) |
+| **Red** | Hotel rejection; decision to reactivate or archive | [[Ventas/Roles/Business Developer\|BD]] |
+| **Black** | Paused or inactive client | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| **Brown** | Stall; unblocking bridge | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
 
-## Propuesta Personalizada
+## Customized Proposal
 
-- Se elabora y envía en status **Verde** del [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
-- Se ajusta o retoma desde status **Café** cuando hay estancamiento.
-- Referencia: [[Ventas/Onboarding-Hotel/Conceptos/Propuesta Personalizada|Propuesta Personalizada]].
+- Prepared and sent at **Green** status of the [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
+- Adjusted or resumed from **Brown** status when there is a stall.
+- Reference: [[Ventas/Onboarding-Hotel/Conceptos/Propuesta Personalizada|Propuesta Personalizada]].
 
-## Documento de Términos y Condiciones
+## Terms and Conditions Document
 
-| Fase | Status | Responsable |
+| Phase | Status | Responsible |
 |---|---|---|
-| Creación | **Amarillo** | [[Ventas/Roles/Business Developer\|BD]] o [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
-| Negociación | **Rosa** | [[Ventas/Roles/Business Developer\|BD]] + [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
-| Validación final | **Rosa** (previo al cierre) | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| Creation | **Yellow** | [[Ventas/Roles/Business Developer\|BD]] or [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| Negotiation | **Pink** | [[Ventas/Roles/Business Developer\|BD]] + [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| Final validation | **Pink** (before close) | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
 
-Contenido obligatorio:
+Required content:
 
-| Campo |
+| Field |
 |---|
 | Pay rate |
 | Bill rate |
 | Overtime |
-| Festivos |
-| Calendario |
+| Holidays |
+| Calendar |
 
-- Referencia: [[Ventas/Onboarding-Hotel/Conceptos/Documento de Términos y Condiciones|Documento de Términos y Condiciones]].
+- Reference: [[Ventas/Onboarding-Hotel/Conceptos/Documento de Términos y Condiciones|Documento de Términos y Condiciones]].
 
-## Contrato
+## Contract
 
-El [[Core/Módulos/Contrato|Contrato]] resulta del cierre exitoso en status **Rosa**:
+The [[Core/Módulos/Contrato|Contrato]] results from a successful close at **Pink** status:
 
-- Insumo obligatorio: [[Ventas/Onboarding-Hotel/Conceptos/Documento de Términos y Condiciones|Documento de Términos y Condiciones]].
-- El [[Ventas/Roles/Business Developer Coordinator|BDC]] valida antes del cierre.
+- Required input: [[Ventas/Onboarding-Hotel/Conceptos/Documento de Términos y Condiciones|Documento de Términos y Condiciones]].
+- The [[Ventas/Roles/Business Developer Coordinator|BDC]] validates before the close.
 
-| Campo del Contrato | Efecto en el sistema |
+| Contract Field | Effect in the system |
 |---|---|
-| Pay rate | Cálculo de pagos al colaborador |
-| Bill rate | Cálculo de facturación al hotel |
-| Overtime | Reglas de tiempo extra |
-| Festivos | Calendario de días festivos |
-| Inicio y fin de semana | Configura la estructura del [[Core/Módulos/Schedule\|Schedule]] semanal del hotel |
-| Vigencia | Período de validez del contrato |
-| Renovación | Términos de renovación |
+| Pay rate | Associate payment calculations |
+| Bill rate | Hotel billing calculations |
+| Overtime | Overtime rules |
+| Holidays | Holiday calendar |
+| Week start and end | Configures the hotel's weekly [[Core/Módulos/Schedule\|Schedule]] structure |
+| Term | Contract validity period |
+| Renewal | Renewal terms |
 
-## Conversión de prospecto a cliente
+## Prospect-to-Client Conversion
 
-> [!important] **Solo** el [[Ventas/Roles/Business Developer Coordinator\|BDC]] puede aprobar la conversión de prospecto a cliente.
+> [!important] **Only** the [[Ventas/Roles/Business Developer Coordinator\|BDC]] can approve the conversion of a prospect to a client.
 
-**Precondición obligatoria:** creación del [[Ventas/Onboarding-Hotel/Conceptos/Usuario del Hotel|Usuario del Hotel]] en el sistema antes de disparar la conversión.
+**Mandatory precondition:** creation of the [[Ventas/Onboarding-Hotel/Conceptos/Usuario del Hotel|Usuario del Hotel]] in the system before triggering the conversion.
 
-### Trigger Automático de Conversión
+### Automatic Conversion Trigger
 
-Al aprobar la conversión, el sistema ejecuta automáticamente tres acciones en paralelo:
+Upon approving the conversion, the system automatically executes three actions in parallel:
 
-1. Envía email de bienvenida al hotel.
-2. Notifica al [[Ventas/Roles/Business Developer\|BD]] asignado.
-3. El hotel desaparece de la lista de prospectos.
+1. Sends a welcome email to the hotel.
+2. Notifies the assigned [[Ventas/Roles/Business Developer\|BD]].
+3. The hotel disappears from the prospect list.
 
-- Referencia: [[Ventas/Onboarding-Hotel/Conceptos/Trigger Automático de Conversión|Trigger Automático de Conversión]].
+- Reference: [[Ventas/Onboarding-Hotel/Conceptos/Trigger Automático de Conversión|Trigger Automático de Conversión]].
 
-## Reactivaciones
+## Reactivations
 
-| Status origen | Destino de reactivación | Responsable |
+| Origin status | Reactivation destination | Responsible |
 |---|---|---|
-| **Rojo** (rechazo) | → **Azul Claro** | [[Ventas/Roles/Business Developer\|BD]] |
-| **Negro** (pausado/inactivo) | → **Azul Claro** | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
-| **Café** (estancamiento) | → **Azul Claro** | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| **Red** (rejection) | → **Light Blue** | [[Ventas/Roles/Business Developer\|BD]] |
+| **Black** (paused/inactive) | → **Light Blue** | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| **Brown** (stall) | → **Light Blue** | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
 
-> [!note] **Café** no es un status terminal. Es un puente de desbloqueo operado exclusivamente por el [[Ventas/Roles/Business Developer Coordinator\|BDC]], quien investiga la causa del estancamiento y da solución para retomar.
+> [!note] **Brown** is not a terminal status. It is an unblocking bridge operated exclusively by the [[Ventas/Roles/Business Developer Coordinator\|BDC]], who investigates the cause of the stall and provides a solution to resume.
 
-## Transición a Operaciones (Naranja)
+## Transition to Operations (Orange)
 
-> [!important] **Naranja** es el único status del [[Core/Módulos/Semáforos/Semáforo Onboarding\|Semáforo Onboarding]] que habilita al hotel para generar requisiciones.
+> [!important] **Orange** is the only status in the [[Core/Módulos/Semáforos/Semáforo Onboarding\|Semáforo Onboarding]] that enables the hotel to generate requisitions.
 
-- Al alcanzar Naranja, el hotel pasa a responsabilidad operativa del [[Inspector]] y las [[Reclutadora|Reclutadoras]].
-- El [[Ventas/Roles/Business Developer\|BD]] y el [[Ventas/Roles/Business Developer Coordinator\|BDC]] quedan como **referentes comerciales**, no como operativos.
-- Se inicia el ciclo operativo: Requisiciones → cobertura → [[Core/Módulos/Schedule\|Schedule]] → [[Timesheet]].
+- Upon reaching Orange, the hotel passes to the operational responsibility of the [[Inspector]] and the [[Reclutadora|Recruiters]].
+- The [[Ventas/Roles/Business Developer\|BD]] and [[Ventas/Roles/Business Developer Coordinator\|BDC]] remain as **commercial references**, not as operators.
+- The operational cycle begins: Requisitions → coverage → [[Core/Módulos/Schedule\|Schedule]] → [[Timesheet]].
 
-## Trazabilidad
+## Traceability
 
-> [!info] Todo cambio de status en el [[Core/Módulos/Semáforos/Semáforo Onboarding\|Semáforo Onboarding]] queda registrado con: **fecha, responsable y comentario**.
+> [!info] Every status change in the [[Core/Módulos/Semáforos/Semáforo Onboarding\|Semáforo Onboarding]] is recorded with: **date, responsible, and comment**.
 
-## Supervisión de Calidad (QA)
+## Quality Supervision (QA)
 
-- Un [[QA/Operador de QA\|Operador de QA]] está asignado de forma fija al departamento de Ventas.
-- QA **no ejecuta** la operación de Ventas; solo observa, mide y retroalimenta.
-- Las métricas específicas que el Operador de QA monitorea para Ventas están definidas en [[QA/Métricas y KPIs por Departamento#Ventas|Métricas y KPIs — Ventas]].
-- Si el [[Core/Módulos/Semáforos/Indicador de Calidad\|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+- A [[QA/Operador de QA\|QA Operator]] is permanently assigned to the Sales department.
+- QA does **not execute** Sales operations; it only observes, measures, and provides feedback.
+- The specific metrics the QA Operator monitors for Sales are defined in [[QA/Métricas y KPIs por Departamento#Ventas|Metrics and KPIs — Sales]].
+- If the department's [[Core/Módulos/Semáforos/Indicador de Calidad\|Quality Indicator]] reaches **Red** status without improvement after notification, the QA Manager escalates to management.
 
-## Resumen de responsabilidades por rol
+## Responsibility Summary by Role
 
-| Acción | [[Ventas/Roles/Business Developer\|BD]] | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| Action | [[Ventas/Roles/Business Developer\|BD]] | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
 |---|---|---|
-| Identificar prospecto (Gris) | Sí | No |
-| Crear perfil del hotel (Azul Claro) | Sí | No |
-| Elaborar Propuesta Personalizada (Verde) | Sí | No |
-| Crear Documento de T&C (Amarillo) | Sí | Apoyo |
-| Negociar términos (Rosa) | Sí | Sí |
-| Validar T&C y dar sí final | No | Sí (exclusivo) |
-| Crear Usuario del Hotel | No | Sí (exclusivo) |
-| Aprobar conversión a cliente | No | Sí (exclusivo) |
-| Gestionar rechazo (Rojo) | Sí | No |
-| Desbloquear estancamiento (Café) | No | Sí |
-| Gestionar cliente pausado (Negro) | No | Sí |
-| Referente comercial post-conversión (Naranja) | Sí | Sí |
+| Identify prospect (Gray) | Yes | No |
+| Create hotel profile (Light Blue) | Yes | No |
+| Prepare Customized Proposal (Green) | Yes | No |
+| Create T&C Document (Yellow) | Yes | Support |
+| Negotiate terms (Pink) | Yes | Yes |
+| Validate T&C and give final approval | No | Yes (exclusive) |
+| Create Hotel User Account | No | Yes (exclusive) |
+| Approve conversion to client | No | Yes (exclusive) |
+| Manage rejection (Red) | Yes | No |
+| Unblock stall (Brown) | No | Yes |
+| Manage paused client (Black) | No | Yes |
+| Commercial reference post-conversion (Orange) | Yes | Yes |
 
-## Relacionado
+## Related
 
 - [[Reglas de Negocio]]
 - [[Ventas/Roles/Business Developer|Business Developer]]

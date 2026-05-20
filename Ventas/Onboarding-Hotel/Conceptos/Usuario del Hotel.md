@@ -1,31 +1,31 @@
 ---
 tags:
-  - modulo/onboarding-hotel
-  - concepto
+  - module/hotel-onboarding
+  - concept
 aliases:
-  - Usuario del Hotel
+  - Hotel User Account
 ---
 
-# Usuario del Hotel
+# Hotel User Account
 
-Cuenta del hotel en el sistema Oranje. Se crea al aprobarse la conversión en [[Semáforo Onboarding|Status Onboarding Rosa]], justo antes del [[Trigger Automático de Conversión]], y marca la transición del hotel de prospecto comercial a **cliente activo** en [[Semáforo Onboarding|Status Onboarding Naranja]].
+The hotel's account in the Oranje system. It is created upon approving the conversion at [[Semáforo Onboarding|Onboarding Status Pink]], just before the [[Trigger Automático de Conversión]], and marks the hotel's transition from commercial prospect to **active client** at [[Semáforo Onboarding|Onboarding Status Orange]].
 
-## Creación
+## Creation
 
-- **Responsable de la aprobación:** [[Business Developer Coordinator]].
-- **Momento:** al cerrarse el acuerdo en [[Semáforo Onboarding|Status Onboarding Rosa]].
-- **Efecto inmediato:** dispara el [[Trigger Automático de Conversión]].
+- **Responsible for approval:** [[Business Developer Coordinator]].
+- **Moment:** when the agreement is closed at [[Semáforo Onboarding|Onboarding Status Pink]].
+- **Immediate effect:** triggers the [[Trigger Automático de Conversión]].
 
-## Qué habilita
+## What It Enables
 
-- Acceso del hotel al sistema como cliente.
-- Capacidad de generar [[Requisición|requisiciones]] desde el módulo [[Hotel/Hotel|Hotel]].
-- Gestión del [[Core/Módulos/Schedule|Schedule]] semanal, desde donde se administran las requisiciones, asignaciones y el [[Timesheet]] de sus colaboradores.
+- Hotel access to the system as a client.
+- Ability to generate [[Requisición|requisitions]] from the [[Hotel/Hotel|Hotel]] module.
+- Management of the weekly [[Core/Módulos/Schedule|Schedule]], from which requisitions, assignments, and the [[Timesheet]] of its associates are administered.
 
-## Relacionado
+## Related
 
 - [[Flujo de Onboarding]]
 - [[Hotel/Hotel|Hotel]]
-- [[Semáforo Onboarding|Status Onboarding Rosa]]
-- [[Semáforo Onboarding|Status Onboarding Naranja]]
+- [[Semáforo Onboarding|Onboarding Status Pink]]
+- [[Semáforo Onboarding|Onboarding Status Orange]]
 - [[Trigger Automático de Conversión]]

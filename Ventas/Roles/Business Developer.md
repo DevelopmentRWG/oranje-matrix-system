@@ -1,7 +1,7 @@
 ---
 tags:
-  - modulo/onboarding-hotel
-  - rol
+  - module/hotel-onboarding
+  - role
 aliases:
   - BD
   - Business Developer
@@ -9,29 +9,29 @@ aliases:
 
 # Business Developer
 
-Rol operativo del módulo de [[Onboarding-Hotel|Onboarding Hotel]]. Responsable del ciclo comercial con el hotel: se encarga de contactar, presentar, proponer y dar seguimiento al hotel mientras se está haciendo la negociación entre Oranje y el hotel.
+Operational role in the [[Onboarding-Hotel|Hotel Onboarding]] module. Responsible for the commercial cycle with the hotel: contacts, presents, proposes, and follows up with the hotel throughout the negotiation between Oranje and the hotel.
 
-## Responsabilidades
+## Responsibilities
 
-- Identifica hoteles prospecto dentro de su territorio asignado.
-- Crea el perfil del hotel en el sistema y recopila datos iniciales.
-- Realiza visita en frío al hotel.
-- Elabora y envía la [[Propuesta Personalizada]] al hotel.
-- Registra intentos de contacto y respuestas.
-- Hace seguimiento continuo durante la negociación.
-- Participa en la negociación de términos junto al [[Business Developer Coordinator]].
-- Queda como referente comercial una vez el hotel está activo.
+- Identifies prospect hotels within their assigned territory.
+- Creates the hotel profile in the system and collects initial data.
+- Conducts a cold visit to the hotel.
+- Prepares and sends the [[Propuesta Personalizada]] to the hotel.
+- Records contact attempts and responses.
+- Maintains continuous follow-up throughout the negotiation.
+- Participates in terms negotiation alongside the [[Business Developer Coordinator]].
+- Remains as commercial reference once the hotel is active.
 
-## Status en los que participa
+## Statuses They Participate In
 
-- [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] — Identificación del prospecto.
-- [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] — Contacto y recopilación de datos.
-- [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] — Propuesta enviada.
-- [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] — Seguimiento tras propuesta.
-- [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] — Negociación de términos (en conjunto con BDC).
-- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] — Gestión del rechazo y posible reactivación.
+- [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] — Prospect identification.
+- [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] — Contact and data collection.
+- [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] — Proposal sent.
+- [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] — Follow-up after proposal.
+- [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] — Terms negotiation (jointly with BDC).
+- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] — Rejection management and possible reactivation.
 
-## Relacionado
+## Related
 
 - [[Flujo de Onboarding]]
 - [[Business Developer Coordinator]]

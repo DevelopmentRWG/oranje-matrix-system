@@ -1,31 +1,31 @@
 ---
 tags:
-  - modulo/onboarding-hotel
-  - concepto
+  - module/hotel-onboarding
+  - concept
 aliases:
-  - Trigger Automático
-  - Trigger Automático de Conversión
+  - Automatic Trigger
+  - Automatic Conversion Trigger
 ---
 
-# Trigger Automático de Conversión
+# Automatic Conversion Trigger
 
-Conjunto de acciones automáticas que el sistema ejecuta **en paralelo** cuando el [[Business Developer Coordinator]] aprueba la conversión en [[Semáforo Onboarding|Status Onboarding Rosa]] y se crea el [[Usuario del Hotel]].
+Set of automatic actions that the system executes **in parallel** when the [[Business Developer Coordinator]] approves the conversion at [[Semáforo Onboarding|Onboarding Status Pink]] and the [[Usuario del Hotel]] is created.
 
-## Acciones automáticas
+## Automatic Actions
 
-- Sistema envía **email de bienvenida** al hotel.
-- Sistema **notifica al [[Business Developer|BD]] asignado**.
-- El hotel **desaparece de la lista de prospectos**.
+- System sends a **welcome email** to the hotel.
+- System **notifies the assigned [[Business Developer|BD]]**.
+- The hotel **disappears from the prospect list**.
 
-## Disparador
+## Trigger
 
-- **Evento:** aprobación de la conversión en [[Semáforo Onboarding|Status Onboarding Rosa]].
-- **Precondición:** creación del [[Usuario del Hotel]] en el sistema.
-- **Resultado:** el hotel pasa a [[Semáforo Onboarding|Status Onboarding Naranja]] y queda habilitado para generar [[Requisición|requisiciones]].
+- **Event:** conversion approval at [[Semáforo Onboarding|Onboarding Status Pink]].
+- **Precondition:** creation of the [[Usuario del Hotel]] in the system.
+- **Result:** the hotel moves to [[Semáforo Onboarding|Onboarding Status Orange]] and is enabled to generate [[Requisición|requisitions]].
 
-## Relacionado
+## Related
 
 - [[Flujo de Onboarding]]
 - [[Usuario del Hotel]]
-- [[Semáforo Onboarding|Status Onboarding Rosa]]
-- [[Semáforo Onboarding|Status Onboarding Naranja]]
+- [[Semáforo Onboarding|Onboarding Status Pink]]
+- [[Semáforo Onboarding|Onboarding Status Orange]]

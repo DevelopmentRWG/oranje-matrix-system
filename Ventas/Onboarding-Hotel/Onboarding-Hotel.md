@@ -1,52 +1,52 @@
 ---
 tags:
-  - modulo/onboarding-hotel
+  - module/hotel-onboarding
 aliases:
-  - Onboarding Hotel
-  - Módulo de Onboarding Hotel
+  - Hotel Onboarding
+  - Hotel Onboarding Module
 ---
 
-# Onboarding Hotel
+# Hotel Onboarding
 
-Módulo que representa la fase comercial previa a que un hotel se convierta en cliente operativo de Oranje. Cubre el ciclo desde que el [[Business Developer]] identifica un hotel en su territorio hasta que el [[Business Developer Coordinator]] aprueba la conversión y el hotel queda habilitado para generar [[Requisición|requisiciones]].
+Module representing the commercial phase before a hotel becomes an active operating client of Oranje. Covers the cycle from when the [[Business Developer]] identifies a hotel in their territory until the [[Business Developer Coordinator]] approves the conversion and the hotel is enabled to generate [[Requisición|requisitions]].
 
 > [!info]
-> El hotel **solo habilita requisiciones** cuando alcanza el status [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]]. Antes de eso permanece como prospecto comercial gestionado por [[Ventas/Ventas|Ventas]].
+> The hotel **only enables requisitions** when it reaches [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] status. Before that, it remains a commercial prospect managed by [[Ventas/Ventas|Ventas]].
 
-## Contenido del módulo
+## Module Contents
 
 ### Roles
 
-- [[Business Developer]] — Responsable del ciclo comercial con el hotel: contacta, propone y da seguimiento.
-- [[Business Developer Coordinator]] — Supervisa rutas y zonas, valida términos y da el sí final a la conversión.
+- [[Business Developer]] — Responsible for the commercial cycle with the hotel: contacts, proposes, and follows up.
+- [[Business Developer Coordinator]] — Supervises routes and zones, validates terms, and gives the final yes on conversion.
 
-### Procesos
+### Processes
 
-- [[Flujo de Onboarding]] — Proceso paso a paso desde la identificación hasta la activación.
-- [[Semáforo Onboarding]] — Estados de seguimiento de la negociación con el hotel.
+- [[Flujo de Onboarding]] — Step-by-step process from identification to activation.
+- [[Semáforo Onboarding]] — Tracking statuses for the hotel negotiation.
 
-## Estados del onboarding
+## Onboarding Statuses
 
-- [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] — Hotel identificado.
-- [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] — Contacto y recopilación de datos.
-- [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] — Propuesta enviada.
-- [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] — En seguimiento tras propuesta.
-- [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] — Negociación de términos.
-- [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] — Acuerdo firmado, hotel cliente activo.
-- [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] — Renegociación / desbloqueo.
-- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] — Rechazo o no interés.
-- [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] — Cliente pausado o inactivo.
+- [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] — Hotel identified.
+- [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] — Contact and data collection.
+- [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] — Proposal sent.
+- [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] — In follow-up after proposal.
+- [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] — Terms negotiation.
+- [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] — Agreement signed, hotel active as client.
+- [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] — Renegotiation / unblocking.
+- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] — Rejection or no interest.
+- [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] — Paused or inactive client.
 
-## Conceptos clave
+## Key Concepts
 
 - [[Propuesta Personalizada]]
 - [[Documento de Términos y Condiciones]]
 - [[Trigger Automático de Conversión]]
 - [[Usuario del Hotel]]
 
-## Relación con otros módulos
+## Relationship with Other Modules
 
-- [[Hotel/Hotel|Hotel]] — Destino final del onboarding; el hotel convertido comienza su ciclo operativo.
-- [[Ventas/Ventas|Ventas]] — Área comercial dueña del proceso de onboarding.
-- [[Requisición]] — Solo disponible a partir del status Naranja.
-- [[Reclutamiento/Reclutamiento|Reclutamiento]] — Recibe al hotel una vez activo para iniciar cobertura.
+- [[Hotel/Hotel|Hotel]] — Final destination of the onboarding; the converted hotel begins its operational cycle.
+- [[Ventas/Ventas|Ventas]] — Commercial area that owns the onboarding process.
+- [[Requisición]] — Only available from Orange status onward.
+- [[Reclutamiento/Reclutamiento|Reclutamiento]] — Receives the hotel once active to begin coverage.

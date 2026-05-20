@@ -1,90 +1,90 @@
 ---
 tags:
-  - modulo/contabilidad
+  - module/accounting
 aliases:
-  - Consolidado Semanal del Colaborador
-  - Consolidado Semanal
+  - Weekly Associate Summary
+  - Weekly Summary
 ---
 
-# Consolidado Semanal del Colaborador
+# Weekly Associate Summary
 
-Resumen semanal que agrupa todos los [[Timesheet|Timesheets]] de un colaborador en los hoteles donde trabajó durante la semana, aplicando el [[Core/Módulos/Contrato|pay rate]] de cada hotel para calcular el monto total a pagar.
+Weekly summary that groups all [[Timesheet|Timesheets]] for an associate across the hotels where they worked during the week, applying the [[Core/Módulos/Contrato|pay rate]] for each hotel to calculate the total amount to be paid.
 
-## Origen
+## Origin
 
-- El sistema genera automáticamente el Consolidado Semanal al finalizar la semana del hotel (según la configuración de inicio/fin de semana del [[Core/Módulos/Contrato|Contrato]]), a partir de los [[Timesheet|Timesheets]] de esa semana
-- Si el colaborador trabajó en un solo hotel, el consolidado contiene un único Timesheet
-- Si trabajó en múltiples hoteles (vía asignación temporal [[Semáforo del Colaborador|Café]]), el consolidado agrupa los Timesheets de cada hotel
+- The system automatically generates the Weekly Summary at the end of the hotel's week (according to the week start/end configuration in the [[Core/Módulos/Contrato|Contrato]]), based on the [[Timesheet|Timesheets]] for that week
+- If the associate worked at a single hotel, the summary contains a single Timesheet
+- If they worked at multiple hotels (via temporary assignment [[Semáforo del Colaborador|Café]]), the summary groups the Timesheets from each hotel
 
-## Estructura
+## Structure
 
-| Campo              | Descripción                                                                    |
+| Field              | Description                                                                    |
 | ------------------ | ------------------------------------------------------------------------------ |
-| Colaborador        | Nombre y datos del colaborador                                                 |
-| Semana             | Número de semana y rango de fechas                                             |
-| Detalle por hotel  | Hotel, horas netas, pay rate del [[Core/Módulos/Contrato\|Contrato]], subtotal |
-| Overtime por hotel | Horas extra calculadas según la política del contrato de cada hotel            |
-| Total a pagar      | Suma de subtotales de todos los hoteles                                        |
+| Associate          | Associate name and details                                                     |
+| Week               | Week number and date range                                                     |
+| Detail per hotel   | Hotel, net hours, pay rate from the [[Core/Módulos/Contrato\|Contrato]], subtotal |
+| Overtime per hotel | Overtime hours calculated per each hotel's contract policy                    |
+| Total to pay       | Sum of subtotals across all hotels                                             |
 
-## Cálculo
+## Calculation
 
-- **Por cada hotel donde trabajó:**
-  - Horas netas × pay rate del contrato de ese hotel = subtotal regular
-  - Horas de overtime × tasa de overtime del contrato de ese hotel = subtotal overtime
-- **Umbral de overtime:** se calcula por hotel a partir de las **40 horas brutas semanales** (8 hrs × 5 días). Las horas que excedan ese umbral en un hotel se consideran overtime de ese hotel
-- **Total a pagar** = Σ (subtotal regular + subtotal overtime) de todos los hoteles
-- El overtime se calcula **por hotel**, no de forma global entre hoteles
+- **For each hotel where they worked:**
+  - Net hours × hotel contract pay rate = regular subtotal
+  - Overtime hours × hotel contract overtime rate = overtime subtotal
+- **Overtime threshold:** calculated per hotel from **40 gross weekly hours** (8 hrs × 5 days). Hours exceeding that threshold at a hotel are considered overtime for that hotel
+- **Total to pay** = Σ (regular subtotal + overtime subtotal) across all hotels
+- Overtime is calculated **per hotel**, not globally across hotels
 
-> [!info] **Festivos** — El [[Core/Módulos/Contrato|Contrato]] define el manejo y recargos por días festivos, pero la regla de cálculo de recargos por festivo aún no está definida. Al definirse, se integrará en esta sección.
+> [!info] **Holidays** — The [[Core/Módulos/Contrato|Contrato]] defines the handling and surcharges for holidays, but the rule for calculating holiday surcharges has not yet been defined. Once defined, it will be integrated into this section.
 
-### Rate interno
+### Internal Rate
 
-- El pay rate aplicado al colaborador puede ser **mayor** al rate pactado en el [[Core/Módulos/Contrato|Contrato]] del hotel (por acuerdo interno: experiencia, antigüedad o negociación con el colaborador)
-- Cuando existe un rate interno, el sistema lo usa para calcular el pago al colaborador en lugar del rate contractual
-- El rate interno **no se refleja** en la [[Facturación al Hotel|Factura al Hotel]] (esa siempre usa el bill rate contractual)
-- Visible solo para Contabilidad ([[Manager de Contabilidad]] y [[Contadora]])
+- The pay rate applied to the associate may be **higher** than the rate agreed in the hotel's [[Core/Módulos/Contrato|Contrato]] (by internal agreement: experience, seniority, or negotiation with the associate)
+- When an internal rate exists, the system uses it to calculate the associate's payment instead of the contractual rate
+- The internal rate is **not reflected** in the [[Facturación al Hotel|Hotel Invoice]] (which always uses the contractual bill rate)
+- Visible only to Accounting ([[Manager de Contabilidad]] and [[Contadora]])
 
-### Deducciones
+### Deductions
 
-- Antes de liberar el pago, el sistema aplica las [[Deducciones]] activas del colaborador
-- Las deducciones (uniforme, comida, retención 16%) reducen el monto neto del cheque
-- Ver [[Deducciones]] para el detalle de cada tipo y sus condiciones
+- Before releasing payment, the system applies the associate's active [[Deducciones]]
+- Deductions (uniform, food, 16% withholding) reduce the net check amount
+- See [[Deducciones]] for details on each type and its conditions
 
-### Múltiples posiciones en el mismo hotel
+### Multiple Positions at the Same Hotel
 
-- Un colaborador puede tener dos o más posiciones distintas en el mismo hotel durante la misma semana (ej. Breakfast + Housekeeper)
-- Cada posición tiene su propio rate
-- Se presentan como **líneas separadas** en el Consolidado, cada una con sus horas y subtotal independiente
+- An associate may hold two or more different positions at the same hotel during the same week (e.g., Breakfast + Housekeeper)
+- Each position has its own rate
+- They are presented as **separate lines** in the Summary, each with their own independent hours and subtotal
 
-### Overtime autorizado parcialmente
+### Partially Authorized Overtime
 
-- El hotel puede autorizar solo una fracción del overtime trabajado
-- El sistema permite que el [[Manager de Contabilidad]] ajuste las horas OT pagables según lo autorizado por el hotel
-- **Ejemplo:** colaborador trabajó 50 hrs (10 OT), hotel autoriza solo 5 OT → se pagan 5 OT al colaborador y se facturan 5 OT al hotel
-- Las horas OT no autorizadas quedan registradas pero no se facturan al hotel
+- The hotel may authorize only a fraction of the overtime worked
+- The system allows the [[Manager de Contabilidad]] to adjust the payable OT hours based on what the hotel authorized
+- **Example:** associate worked 50 hrs (10 OT), hotel authorizes only 5 OT → 5 OT are paid to the associate and 5 OT are billed to the hotel
+- Unauthorized OT hours are recorded but not billed to the hotel
 
-### Asignación del cheque
+### Check Assignment
 
-- Cuando el colaborador trabajó en múltiples hoteles durante la semana, el cheque se asigna al hotel donde acumuló **mayor cantidad de horas**
-- Esta asignación es para efectos de impresión y entrega del cheque físico
+- When the associate worked at multiple hotels during the week, the check is assigned to the hotel where they accumulated the **most hours**
+- This assignment is for check printing and physical delivery purposes
 
-## Periodo
+## Period
 
-- El Consolidado Semanal se genera al cierre de cada semana
-- El periodo de pago es **semanal**, alineado al ciclo del [[Timesheet]]
-- Oranje paga al colaborador; el hotel paga a Oranje según el bill rate de su [[Core/Módulos/Contrato|Contrato]]
+- The Weekly Summary is generated at the close of each week
+- The payment period is **weekly**, aligned with the [[Timesheet]] cycle
+- Oranje pays the associate; the hotel pays Oranje based on their [[Core/Módulos/Contrato|Contrato]] bill rate
 
-## Visibilidad
+## Visibility
 
-> [!important] El Consolidado Semanal es de uso exclusivo del departamento de **Contabilidad** de Oranje. El hotel y el colaborador no tienen acceso a este documento.
+> [!important] The Weekly Associate Summary is for exclusive use by Oranje's **Accounting** department. The hotel and the associate do not have access to this document.
 
-## Validación
+## Validation
 
-- El sistema genera el Consolidado automáticamente al finalizar cada semana
-- La [[Contadora]] revisa el Consolidado y el [[Manager de Contabilidad]] lo aprueba antes de ejecutar el pago al colaborador
-- El pago no se ejecuta sin la aprobación del [[Manager de Contabilidad]]
+- The system generates the Summary automatically at the end of each week
+- The [[Contadora]] reviews the Summary and the [[Manager de Contabilidad]] approves it before executing the associate payment
+- Payment is not executed without the [[Manager de Contabilidad]]'s approval
 
-## Relacionado
+## Related
 
 - [[Timesheet]]
 - [[Core/Módulos/Contrato|Contrato]]

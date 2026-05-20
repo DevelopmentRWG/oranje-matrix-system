@@ -1,28 +1,28 @@
 ---
 tags:
-  - modulo/ventas
+  - module/sales
 aliases:
-  - Ventas
-  - Módulo de Ventas
+  - Sales
+  - Sales Module
 ---
 
-# Ventas
+# Sales
 
-Módulo responsable de la incorporación de nuevos hoteles a la plataforma Oranje (onboarding) y la gestión comercial con clientes.
+Module responsible for onboarding new hotels onto the Oranje platform and managing commercial relationships with clients.
 
 ## Roles
 
-- [[Business Developer]] — Ciclo comercial con el hotel: contacta, propone y da seguimiento.
-- [[Business Developer Coordinator]] — Supervisa rutas y zonas, valida términos y aprueba la conversión.
+- [[Business Developer]] — Commercial cycle with the hotel: contacts, proposes, and follows up.
+- [[Business Developer Coordinator]] — Supervises routes and zones, validates terms, and approves conversion.
 
-## Procesos
+## Processes
 
-- [[Onboarding-Hotel]] — Fase comercial desde la identificación de un hotel hasta su activación como cliente.
-- [[Flujo de Onboarding]] — Proceso paso a paso del onboarding.
-- [[Semáforo Onboarding]] — Estados de seguimiento de la negociación con el hotel.
+- [[Onboarding-Hotel]] — Commercial phase from hotel identification through activation as a client.
+- [[Flujo de Onboarding]] — Step-by-step onboarding process.
+- [[Semáforo Onboarding]] — Tracking statuses for the hotel negotiation.
 
-## Conceptos Core relacionados
+## Related Core Concepts
 
 - [[Hotel/Hotel|Hotel]]
 - [[Requisición]]
-- [[Customer Service/Customer Service|Customer Service]] — Continuación del ciclo comercial post-conversión; atiende al hotel una vez activo en Naranja.
+- [[Customer Service/Customer Service|Customer Service]] — Continuation of the commercial cycle post-conversion; serves the hotel once it is active on Oranje.
