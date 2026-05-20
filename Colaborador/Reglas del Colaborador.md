@@ -1,169 +1,169 @@
 ---
 tags:
-  - modulo/colaborador
+  - module/associate
 aliases:
-  - Reglas del Colaborador
+  - Associate Business Rules
 ---
 
-# Reglas del Colaborador
+# Associate Business Rules
 
-Consolidación de todas las reglas de negocio que aplican al Colaborador dentro del sistema Oranje. Referencia cruzada con [[Reglas de Negocio]] (concentrado general del sistema).
+Consolidation of all business rules that apply to the Associate within the Oranje system. Cross-reference with [[Reglas de Negocio]] (general system consolidation).
 
-## Captura de datos en 3 fases
+## Data Capture in 3 Phases
 
-### Fase 1 — Entrevista inicial
-Capturada por la [[Reclutadora]] durante el primer contacto:
+### Phase 1 — Initial Interview
+Captured by the [[Reclutadora]] during the first contact:
 
-| Campo | Capturado por |
+| Field | Captured by |
 |---|---|
-| Nombre completo | Reclutadora |
-| Edad | Reclutadora |
-| Género | Reclutadora |
-| Domicilio | Reclutadora |
-| Teléfono | Reclutadora |
+| Full name | Recruiter |
+| Age | Recruiter |
+| Gender | Recruiter |
+| Address | Recruiter |
+| Phone | Recruiter |
 
-### Fase 2 — Alta en la app
-Completada por el propio Colaborador:
+### Phase 2 — App Registration
+Completed by the Associate themselves:
 
-| Campo | Catálogo asociado |
+| Field | Associated catalog |
 |---|---|
 | SSN | — |
 | ITIN | — |
-| Posición | [[Posiciones]] |
-| Nivel de inglés | [[Niveles de Inglés]] |
-| Nivel de experiencia | — |
-| Tipo de transporte | — |
-| Modalidad | [[Modalidades de Contratación]] |
+| Position | [[Posiciones]] |
+| English level | [[Niveles de Inglés]] |
+| Experience level | — |
+| Transportation type | — |
+| Modality | [[Modalidades de Contratación]] |
 
-### Fase 3 — Datos de emergencia
-Completada por el propio Colaborador desde la app:
+### Phase 3 — Emergency Data
+Completed by the Associate themselves from the app:
 
-| Campo | Descripción |
+| Field | Description |
 |---|---|
-| Contacto de emergencia — nombre | Persona a contactar en caso de emergencia |
-| Contacto de emergencia — teléfono | Teléfono del contacto |
-| Contacto de emergencia — parentesco | Relación con el colaborador |
-| Tipo de sangre | Grupo sanguíneo |
-| Alergias o condiciones médicas | Información médica relevante |
+| Emergency contact — name | Person to contact in case of emergency |
+| Emergency contact — phone | Contact's phone number |
+| Emergency contact — relationship | Relationship with the associate |
+| Blood type | Blood group |
+| Allergies or medical conditions | Relevant medical information |
 
-## Semáforo y transiciones
+## Status Indicator and Transitions
 
-El [[Semáforo del Colaborador]] define 12 estados. A continuación se documentan las reglas de transición que gobiernan el ciclo de vida del colaborador.
+The [[Semáforo del Colaborador]] defines 12 states. The transition rules that govern the associate's lifecycle are documented below.
 
-### Progresión estándar
+### Standard Progression
 
-| Transición | Condición | Responsable |
+| Transition | Condition | Responsible |
 |---|---|---|
-| → Blanco | Al registrarse con sus datos, sin asignación aún | Sistema |
-| Blanco → Verde manzana | Al ser asignado y asistir el Día 1 | [[Inspector]] (verifica en sitio) |
-| Verde manzana → Azul claro | Al ponchar en la propiedad el tercer día | Sistema + [[Inspector]] (entrega uniforme) |
-| Azul claro → Naranja | Al completar 7 días | Sistema (automático) |
-| Naranja → Verde fuerte | Al quedar libre (fin de asignación fija o reincorporado) | Sistema |
+| → White | Upon registering with their data, no assignment yet | System |
+| White → Apple Green | Upon being assigned and attending Day 1 | [[Inspector]] (verifies on-site) |
+| Apple Green → Light Blue | Upon punching in at the property on the third day | System + [[Inspector]] (delivers uniform) |
+| Light Blue → Orange | Upon completing 7 days | System (automatic) |
+| Orange → Dark Green | Upon becoming available (end of fixed assignment or reinstated) | System |
 
-### Disponibilidad y asignaciones
+### Availability and Assignments
 
-- **Amarillo (Disponible voluntario):** lo activa el propio colaborador **desde la app, sin aprobación de nadie**. Es autoservicio y el **único estado que el colaborador puede activar por sí mismo**.
-- **Café (Asignación temporal):** la [[Reclutadora]] asigna temporalmente al colaborador y define la duración (días asignados) al momento de la asignación. El estado se cierra automáticamente al vencer esos días; al cerrarse, vuelve a Verde fuerte o Naranja según su estado previo.
+- **Yellow (Voluntary available):** activated by the associate themselves **from the app, without anyone's approval**. It is self-service and the **only status the associate can activate on their own**.
+- **Brown (Temporary assignment):** the [[Reclutadora]] temporarily assigns the associate and defines the duration (assigned days) at the time of assignment. The status closes automatically when those days expire; upon closing, it returns to Dark Green or Orange based on their previous state.
 
-### Stand-by (Rosa)
+### Stand-by (Pink)
 
-- El [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] pueden poner a un colaborador en Rosa.
-- Indica espera por decisión del hotel (vacaciones, temporada baja).
-- La posición no tiene fecha de fin; termina cuando el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] retira al colaborador del estado Rosa. Al salir, regresa a Verde fuerte.
+- The [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], or the [[Hotel/Supervisor|Supervisor]] can place an associate in Pink.
+- Indicates waiting on a hotel decision (vacation, low season).
+- The status has no end date; it ends when the [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], or the [[Hotel/Supervisor|Supervisor]] removes the associate from Pink status. Upon exit, they return to Dark Green.
 
-## Reglas de incidencia
+## Incident Rules
 
-### Inasistencia (Morado)
+### Absence (Purple)
 
-- El sistema marca Morado cuando el colaborador no asiste sin justificación.
-- Cada inasistencia se registra individualmente.
+- The system marks Purple when the associate does not show up without justification.
+- Each absence is recorded individually.
 
-### Regla de 3 inasistencias
+### 3-Absence Rule
 
-- 3 inasistencias acumuladas → [[Core/Módulos/Blacklist|Blacklist]] automático (estado Negro).
-- Responsable: Sistema (no requiere acción manual).
+- 3 accumulated absences → [[Core/Módulos/Blacklist|Blacklist]] automatically (Black status).
+- Responsible: System (no manual action required).
 
-### Reporte del hotel (Rojo)
+### Hotel Report (Red)
 
-- El [[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]] activa el estado Rojo (reportado).
-- El [[Inspector]] investiga el caso y resuelve hacia:
-  - **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), si la disputa es a favor del hotel.
-  - **Verde fuerte** (reincorporado), si la disputa es a favor del colaborador.
-- El [[Manager de Reclutamiento]] tiene visibilidad de los casos de Blacklist como supervisión posterior, pero la decisión la toma el [[Inspector]].
+- The [[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], or [[Hotel/Supervisor|Supervisor]] activates Red status (reported).
+- The [[Inspector]] investigates the case and resolves it toward:
+  - **Black** ([[Core/Módulos/Blacklist|Blacklist]]), if the dispute is in the hotel's favor.
+  - **Dark Green** (reinstated), if the dispute is in the associate's favor.
+- The [[Manager de Reclutamiento]] has visibility of Blacklist cases for subsequent oversight, but the decision is made by the [[Inspector]].
 
-## Protección por Accidente Laboral (Gris)
+## Workers' Compensation Protection (Gray)
 
-- Cualquier estado activo → **Gris** cuando se genera un reporte de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]].
-- Mientras el colaborador esté en Gris, las inasistencias **no cuentan** para la regla de 3 inasistencias → Negro.
-- **Gris → Verde fuerte** requiere: alta médica + cierre de tarjeta de accidente por el [[Inspector]].
-- Referencia: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]].
+- Any active status → **Gray** when a [[Core/Módulos/Accidente Laboral/Accidente Laboral|Workers' Compensation]] report is generated.
+- While the associate is in Gray, absences **do not count** toward the 3-absence → Black rule.
+- **Gray → Dark Green** requires: medical discharge + accident card closure by the [[Inspector]].
+- Reference: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]].
 
-## Ponchado y Timesheet
+## Punching and Timesheet
 
-> [!info] Las reglas de ponchado y deducción de Lunch también se documentan en [[Hotel/Reglas del Hotel|Reglas del Hotel]] desde la perspectiva del hotel.
+> [!info] Punching and Lunch deduction rules are also documented in [[Hotel/Reglas del Hotel|Reglas del Hotel]] from the hotel's perspective.
 
-### Mecanismo de ponchado
+### Punch Mechanism
 
-- El colaborador poncha vía **QR** generado por el [[Hotel/Manager General|Manager General]] o el [[Hotel/Manager de Área|Manager de Área]].
-- Los ponches se registran por pares de entrada/salida para cada periodo (exactamente seis):
-  - **Entrada** — inicio de jornada
-  - **Salida Lunch** — sale a comer
-  - **Entrada Lunch** — regresa de comer
-  - **Salida Break** — sale a descanso
-  - **Entrada Break** — regresa de descanso
-  - **Salida** — fin de jornada
-- El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente.
+- The associate punches via **QR** generated by the [[Hotel/Manager General|Manager General]] or the [[Hotel/Manager de Área|Manager de Área]].
+- Punches are recorded in entry/exit pairs for each period (exactly six):
+  - **Clock In** — start of shift
+  - **Lunch Out** — leaves for lunch
+  - **Lunch In** — returns from lunch
+  - **Break Out** — leaves for break
+  - **Break In** — returns from break
+  - **Clock Out** — end of shift
+- The [[Timesheet]] is created from the [[Core/Módulos/Schedule|Schedule]]; it cannot exist independently.
 
-### Restricción por estado del semáforo
+### Status Indicator Restriction
 
-- El colaborador solo puede ponchar si tiene un [[Timesheet]] activo, lo cual requiere estar inscrito en el [[Core/Módulos/Schedule|Schedule]] de un hotel con una asignación activa (fija o temporal)
-- En estado **Rosa** (Stand-by): no hay asignación activa → no hay Schedule → no hay Timesheet → no puede ponchar
-- En estado **Amarillo** (Disponible voluntario): el colaborador declaró disponibilidad, pero aún no tiene asignación → no puede ponchar
-- En estado **Café** (Asignación temporal): la [[Reclutadora]] lo asignó, se genera Schedule y Timesheet → puede ponchar
-- El camino para trabajar durante un descanso es: **Rosa → Amarillo → Café**. Cada transición queda registrada en el journal del [[Semáforo del Colaborador]]
+- The associate can only punch if they have an active [[Timesheet]], which requires being enrolled in the [[Core/Módulos/Schedule|Schedule]] of a hotel with an active assignment (fixed or temporary).
+- In **Pink** status (Stand-by): no active assignment → no Schedule → no Timesheet → cannot punch.
+- In **Yellow** status (Voluntary available): the associate declared availability, but does not yet have an assignment → cannot punch.
+- In **Brown** status (Temporary assignment): the [[Reclutadora]] assigned them, Schedule and Timesheet are generated → can punch.
+- The path to work during a rest period is: **Pink → Yellow → Brown**. Each transition is recorded in the [[Semáforo del Colaborador]] journal.
 
-### Deducción de Lunch
+### Lunch Deduction
 
-> [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada.
+> [!important] This rule applies to **all** associates without exception, on every shift.
 
-| Escenario | Deducción aplicada |
+| Scenario | Deduction applied |
 |---|---|
-| Lunch < 30 min | 30 min (mínimo obligatorio) |
-| Lunch ≥ 30 min | Tiempo real tomado |
-| Sin ponche de Lunch | 30 min (auto-deducción) |
+| Lunch < 30 min | 30 min (mandatory minimum) |
+| Lunch ≥ 30 min | Actual time taken |
+| No lunch punch | 30 min (auto-deduction) |
 
-- **Horas brutas** = Salida − Entrada
-- **Horas netas** = Horas brutas − Deducción de Lunch − Breaks reales
-- Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
+- **Gross hours** = Clock Out − Clock In
+- **Net hours** = Gross hours − Lunch Deduction − Actual Breaks
+- After 6 continuous hours of work, the associate must take their lunch.
 
-### Indicador de Lunch Extendido
+### Extended Lunch Indicator
 
-- El sistema marca automáticamente a los colaboradores cuyo lunch excede 30 minutos.
-- **Visible para:** [[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]].
-- **No visible para:** [[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], [[Hotel/Supervisor|Supervisor]].
-- Propósito: supervisión interna de Oranje; no es punitivo de forma automática.
+- The system automatically flags associates whose lunch exceeds 30 minutes.
+- **Visible to:** [[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]].
+- **Not visible to:** [[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], [[Hotel/Supervisor|Supervisor]].
+- Purpose: internal Oranje oversight; not automatically punitive.
 
-## Pago semanal
+## Weekly Payment
 
-- El colaborador recibe pago **semanal** por parte de Oranje
-- El monto se calcula a partir del [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]], que agrupa los [[Timesheet|Timesheets]] de todos los hoteles donde trabajó esa semana
-- Si trabajó en múltiples hoteles, cada hotel aporta sus horas con el pay rate de su [[Core/Módulos/Contrato|Contrato]]
-- El overtime se calcula por hotel, según la política de cada contrato
+- The associate receives **weekly** payment from Oranje.
+- The amount is calculated from the [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]], which groups the [[Timesheet|Timesheets]] from all hotels where they worked that week.
+- If they worked at multiple hotels, each hotel contributes its hours at the pay rate of its [[Core/Módulos/Contrato|Contrato]].
+- Overtime is calculated per hotel, according to each contract's policy.
 
-## Elegibilidad y Pool
+## Eligibility and Pool
 
-- Solo entran al [[Pool de Colaboradores]] los colaboradores que pasaron el filtro y fueron aprobados por Reclutamiento.
-- La [[Reclutadora]] debe consultar la [[Core/Módulos/Blacklist|Blacklist]] antes de reclutar a un candidato.
-- Colaborador aprobado ingresa al Pool con [[Semáforo del Colaborador]] en estado Blanco.
+- Only associates who passed the filter and were approved by Recruitment enter the [[Pool de Colaboradores]].
+- The [[Reclutadora]] must check the [[Core/Módulos/Blacklist|Blacklist]] before recruiting a candidate.
+- An approved associate enters the Pool with [[Semáforo del Colaborador]] in White status.
 
-## Supervisión de Calidad (QA)
+## Quality Supervision (QA)
 
-- Un [[QA/Operador de QA|Operador de QA]] está asignado de forma fija a la supervisión del ámbito Colaborador.
-- QA **no ejecuta** la gestión del Colaborador; solo observa métricas agregadas del pool y el ciclo de vida.
-- Las métricas específicas que el Operador de QA monitorea para Colaborador están definidas en [[QA/Métricas y KPIs por Departamento#Colaborador|Métricas y KPIs — Colaborador]].
-- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del ámbito Colaborador alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+- A [[QA/Operador de QA|Operador de QA]] is permanently assigned to supervising the Associate domain.
+- QA **does not execute** Associate management; it only observes aggregate pool metrics and the lifecycle.
+- The specific metrics that the QA Operator monitors for Associate are defined in [[QA/Métricas y KPIs por Departamento#Colaborador|Métricas y KPIs — Colaborador]].
+- If the [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] for the Associate domain reaches **Red** status without improvement after notification, the QA Manager escalates to management.
 
-## Relacionado
+## Related
 
 - [[Semáforo del Colaborador]]
 - [[Reglas de Negocio]]

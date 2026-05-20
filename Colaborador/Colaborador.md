@@ -1,76 +1,76 @@
 ---
 tags:
-  - modulo/colaborador
+  - module/associate
 aliases:
-  - Colaborador
+  - Associate
 ---
 
-# Colaborador
+# Associate
 
-Entidad central del sistema Oranje. Representa a la persona que es reclutada, asignada y gestionada operativamente en los hoteles. Su registro vive en el [[Pool de Colaboradores]] y su ciclo de vida se refleja en el [[Semáforo del Colaborador]].
+Central entity of the Oranje system. Represents the person who is recruited, assigned, and operationally managed at hotels. Their record lives in the [[Pool de Colaboradores]] and their lifecycle is reflected in the [[Semáforo del Colaborador]].
 
 > [!info]
-> El Colaborador no es solo un registro estático: su estado cambia a lo largo del tiempo según el [[Semáforo del Colaborador]], que define en qué fase operativa se encuentra en cada momento.
+> The Associate is not just a static record: their status changes over time according to the [[Semáforo del Colaborador]], which defines what operational phase they are in at any given moment.
 
-## Datos del Colaborador
+## Associate Data
 
-Los datos del colaborador se capturan en tres fases.
+Associate data is captured in three phases.
 
-### Fase 1 — Entrevista inicial
+### Phase 1 — Initial Interview
 
-Capturada por la [[Reclutadora]] durante el primer contacto:
+Captured by the [[Reclutadora]] during the first contact:
 
-| Campo | Capturado por |
+| Field | Captured by |
 |---|---|
-| Nombre completo | Reclutadora |
-| Edad | Reclutadora |
-| Género | Reclutadora |
-| Domicilio | Reclutadora |
-| Teléfono | Reclutadora |
+| Full name | Recruiter |
+| Age | Recruiter |
+| Gender | Recruiter |
+| Address | Recruiter |
+| Phone | Recruiter |
 
-### Fase 2 — Alta en la app
+### Phase 2 — App Registration
 
-Completada por el propio Colaborador:
+Completed by the Associate themselves:
 
-| Campo | Catálogo asociado |
+| Field | Associated catalog |
 |---|---|
 | SSN | — |
 | ITIN | — |
-| Posición | [[Posiciones]] |
-| Nivel de inglés | [[Niveles de Inglés]] |
-| Nivel de experiencia | — |
-| Tipo de transporte | — |
-| Modalidad | [[Modalidades de Contratación]] |
+| Position | [[Posiciones]] |
+| English level | [[Niveles de Inglés]] |
+| Experience level | — |
+| Transportation type | — |
+| Modality | [[Modalidades de Contratación]] |
 
-### Fase 3 — Datos de emergencia
+### Phase 3 — Emergency Data
 
-Completada por el propio Colaborador desde la app:
+Completed by the Associate themselves from the app:
 
-| Campo | Descripción |
+| Field | Description |
 |---|---|
-| Contacto de emergencia — nombre | Persona a contactar en caso de emergencia |
-| Contacto de emergencia — teléfono | Teléfono del contacto |
-| Contacto de emergencia — parentesco | Relación con el colaborador |
-| Tipo de sangre | Grupo sanguíneo |
-| Alergias o condiciones médicas | Información médica relevante |
+| Emergency contact — name | Person to contact in case of emergency |
+| Emergency contact — phone | Contact's phone number |
+| Emergency contact — relationship | Relationship with the associate |
+| Blood type | Blood group |
+| Allergies or medical conditions | Relevant medical information |
 
-## Ciclo de vida
+## Lifecycle
 
-El estado del Colaborador se gestiona a través del [[Semáforo del Colaborador]], que define 12 estados posibles desde su ingreso al [[Pool de Colaboradores]] hasta su eventual salida o bloqueo en la [[Core/Módulos/Blacklist|Blacklist]].
+The Associate's status is managed through the [[Semáforo del Colaborador]], which defines 12 possible states from their entry into the [[Pool de Colaboradores]] to their eventual departure or blocking in the [[Core/Módulos/Blacklist|Blacklist]].
 
-## Roles que interactúan con el Colaborador
+## Roles That Interact with the Associate
 
-- [[Reclutadora]] — lo recluta, valida documentos y lo asigna a un hotel.
-- [[Manager de Reclutamiento]] — supervisa el proceso y revisa casos de Blacklist.
-- [[Hotel/Manager de Área|Manager de Área]] — genera su QR de acceso, gestiona descansos y reportes.
-- [[Inspector]] — verifica su llegada el Día 1, entrega uniforme en Día 3+, investiga casos Rojo.
+- [[Reclutadora]] — recruits them, validates documents, and assigns them to a hotel.
+- [[Manager de Reclutamiento]] — oversees the process and reviews Blacklist cases.
+- [[Hotel/Manager de Área|Manager de Área]] — generates their QR access code, manages rest periods and reports.
+- [[Inspector]] — verifies their arrival on Day 1, delivers uniform on Day 3+, investigates Red cases.
 
-## Operación diaria
+## Daily Operations
 
-- Su asignación semanal se registra en el [[Core/Módulos/Schedule|Schedule]].
-- Sus horas trabajadas se registran en el [[Timesheet]] mediante ponches vía QR por pares de entrada/salida: Entrada, Salida Lunch, Entrada Lunch, Salida Break, Entrada Break, Salida.
+- Their weekly assignment is recorded in the [[Core/Módulos/Schedule|Schedule]].
+- Their worked hours are recorded in the [[Timesheet]] via QR punches in entry/exit pairs: Clock In, Lunch Out, Lunch In, Break Out, Break In, Clock Out.
 
-## Relacionado
+## Related
 
 - [[Reglas del Colaborador]]
 - [[Pool de Colaboradores]]
