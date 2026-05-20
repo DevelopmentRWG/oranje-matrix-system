@@ -7,10 +7,10 @@ aliases:
 
 # Associate
 
-Central entity of the Oranje system. Represents the person who is recruited, assigned, and operationally managed at hotels. Their record lives in the [[Pool de Colaboradores]] and their lifecycle is reflected in the [[Semáforo del Colaborador]].
+Central entity of the Oranje system. Represents the person who is recruited, assigned, and operationally managed at hotels. Their record lives in the [[Associate Pool]] and their lifecycle is reflected in the [[Associate Status Indicator]].
 
 > [!info]
-> The Associate is not just a static record: their status changes over time according to the [[Semáforo del Colaborador]], which defines what operational phase they are in at any given moment.
+> The Associate is not just a static record: their status changes over time according to the [[Associate Status Indicator]], which defines what operational phase they are in at any given moment.
 
 ## Associate Data
 
@@ -18,7 +18,7 @@ Associate data is captured in three phases.
 
 ### Phase 1 — Initial Interview
 
-Captured by the [[Reclutadora]] during the first contact:
+Captured by the [[Recruiter]] during the first contact:
 
 | Field | Captured by |
 |---|---|
@@ -36,11 +36,11 @@ Completed by the Associate themselves:
 |---|---|
 | SSN | — |
 | ITIN | — |
-| Position | [[Posiciones]] |
-| English level | [[Niveles de Inglés]] |
+| Position | [[Positions]] |
+| English level | [[English Levels]] |
 | Experience level | — |
 | Transportation type | — |
-| Modality | [[Modalidades de Contratación]] |
+| Modality | [[Employment Modalities]] |
 
 ### Phase 3 — Emergency Data
 
@@ -56,28 +56,28 @@ Completed by the Associate themselves from the app:
 
 ## Lifecycle
 
-The Associate's status is managed through the [[Semáforo del Colaborador]], which defines 12 possible states from their entry into the [[Pool de Colaboradores]] to their eventual departure or blocking in the [[Core/Módulos/Blacklist|Blacklist]].
+The Associate's status is managed through the [[Associate Status Indicator]], which defines 12 possible states from their entry into the [[Associate Pool]] to their eventual departure or blocking in the [[Core/Modules/Blacklist|Blacklist]].
 
 ## Roles That Interact with the Associate
 
-- [[Reclutadora]] — recruits them, validates documents, and assigns them to a hotel.
-- [[Manager de Reclutamiento]] — oversees the process and reviews Blacklist cases.
-- [[Hotel/Manager de Área|Manager de Área]] — generates their QR access code, manages rest periods and reports.
+- [[Recruiter]] — recruits them, validates documents, and assigns them to a hotel.
+- [[Recruitment Manager]] — oversees the process and reviews Blacklist cases.
+- [[Hotel/Area Manager|Area Manager]] — generates their QR access code, manages rest periods and reports.
 - [[Inspector]] — verifies their arrival on Day 1, delivers uniform on Day 3+, investigates Red cases.
 
 ## Daily Operations
 
-- Their weekly assignment is recorded in the [[Core/Módulos/Schedule|Schedule]].
+- Their weekly assignment is recorded in the [[Core/Modules/Schedule|Schedule]].
 - Their worked hours are recorded in the [[Timesheet]] via QR punches in entry/exit pairs: Clock In, Lunch Out, Lunch In, Break Out, Break In, Clock Out.
 
 ## Related
 
-- [[Reglas del Colaborador]]
-- [[Pool de Colaboradores]]
-- [[Semáforo del Colaborador]]
-- [[Core/Módulos/Blacklist|Blacklist]]
-- [[Core/Módulos/Schedule|Schedule]]
+- [[Associate Rules]]
+- [[Associate Pool]]
+- [[Associate Status Indicator]]
+- [[Core/Modules/Blacklist|Blacklist]]
+- [[Core/Modules/Schedule|Schedule]]
 - [[Timesheet]]
-- [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]]
-- [[Core/Módulos/Requisicion/Requisición|Requisición]]
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
+- [[Recruitment/Recruitment Flow|Recruitment Flow]]
+- [[Core/Modules/Requisition/Requisition|Requisition]]
+- [[Core/Modules/Work Accident/Work Accident|Work Accident]]

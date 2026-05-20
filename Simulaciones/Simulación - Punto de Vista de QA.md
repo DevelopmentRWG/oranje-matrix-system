@@ -15,37 +15,37 @@ aliases:
 # Full Simulation — QA Point of View
 
 > [!abstract] Purpose
-> This simulation narrates the full quality supervision cycle within the Oranje system, from the perspective of the QA department: the [[Manager de QA]] and the 5 [[Operador de QA|QA Operators]]. It covers every stage of QA work — routine monitoring, anomaly detection, issuance of formal observations, [[Indicador de Calidad]] transitions, escalation to management, and resolution — across three operational weeks. QA never executes the operations of any department; its function is exclusively to **observe, measure, and provide feedback**. All data is fictional, but every action, transition, and rule faithfully follows the vault documentation.
+> This simulation narrates the full quality supervision cycle within the Oranje system, from the perspective of the QA department: the [[QA Manager]] and the 5 [[QA Operator|QA Operators]]. It covers every stage of QA work — routine monitoring, anomaly detection, issuance of formal observations, [[Quality Indicator]] transitions, escalation to management, and resolution — across three operational weeks. QA never executes the operations of any department; its function is exclusively to **observe, measure, and provide feedback**. All data is fictional, but every action, transition, and rule faithfully follows the vault documentation.
 
 ## Simulation Characters
 
 | Character | Role | Department |
 |---|---|---|
-| Alejandra Duarte | [[Manager de QA]] | QA — Oranje |
-| Operator 1 | [[Operador de QA]] (assigned to Inspection) | QA — Oranje |
-| Operator 2 | [[Operador de QA]] (assigned to Hotel) | QA — Oranje |
-| Operator 3 | [[Operador de QA]] (assigned to Associate) | QA — Oranje |
-| Operator 4 | [[Operador de QA]] (assigned to Sales) | QA — Oranje |
-| Operator 5 | [[Operador de QA]] (assigned to Recruitment) | QA — Oranje |
+| Alejandra Duarte | [[QA Manager]] | QA — Oranje |
+| Operator 1 | [[QA Operator]] (assigned to Inspection) | QA — Oranje |
+| Operator 2 | [[QA Operator]] (assigned to Hotel) | QA — Oranje |
+| Operator 3 | [[QA Operator]] (assigned to Associate) | QA — Oranje |
+| Operator 4 | [[QA Operator]] (assigned to Sales) | QA — Oranje |
+| Operator 5 | [[QA Operator]] (assigned to Recruitment) | QA — Oranje |
 | Daniel Ortega | [[Inspector]] (Northwest zone) | Inspection — Oranje |
-| Raúl Méndez | [[Inspección/Coordinador\|Coordinator]] | Inspection — Oranje |
+| Raúl Méndez | [[Inspection/Coordinator\|Coordinator]] | Inspection — Oranje |
 | Mariana Vega | [[Hotel/Supervisor\|Supervisor]] | Hotel Costa Esmeralda |
 | Sofía Méndez | [[Business Developer]] (BD) | Sales — Oranje |
 | Ricardo Fuentes | [[Business Developer Coordinator]] (BDC) | Sales — Oranje |
-| Daniela Ríos | [[Reclutadora]] | Recruitment — Oranje |
-| Fernando Ortiz | [[Reclutamiento/Manager de Reclutamiento\|Recruitment Manager]] | Recruitment — Oranje |
+| Daniela Ríos | [[Recruiter]] | Recruitment — Oranje |
+| Fernando Ortiz | [[Recruitment/Recruitment Manager\|Recruitment Manager]] | Recruitment — Oranje |
 
 ---
 
 ## Phase 1 — Baseline and Routine Monitoring
 
-> Reference: [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]] · [[QA/Dashboard de QA|QA Dashboard]] · [[QA/Reglas de QA|QA Rules]]
+> Reference: [[QA/Metrics and KPIs by Department|Metrics and KPIs by Department]] · [[QA/QA Dashboard|QA Dashboard]] · [[QA/QA Rules|QA Rules]]
 
 ### 1.1 — Weekly Dashboard Opening (Monday, August 4, 2026)
 
-It is Monday, August 4, 2026. Alejandra Duarte, [[Manager de QA]], opens the global panel of the [[QA/Dashboard de QA|QA Dashboard]] to start the week. She reviews the 5 summary cards — one per supervised department — and confirms that all are at **Green** (Optimal quality).
+It is Monday, August 4, 2026. Alejandra Duarte, [[QA Manager]], opens the global panel of the [[QA/QA Dashboard|QA Dashboard]] to start the week. She reviews the 5 summary cards — one per supervised department — and confirms that all are at **Green** (Optimal quality).
 
-The [[Indicador de Calidad]] trend chart shows 4 consecutive weeks at Green for all 5 departments. The Critical KPI table is empty.
+The [[Quality Indicator]] trend chart shows 4 consecutive weeks at Green for all 5 departments. The Critical KPI table is empty.
 
 | Department | KPIs On Target | KPIs At Risk | KPIs Critical | Quality Status Indicator |
 |---|---|---|---|---|
@@ -56,10 +56,10 @@ The [[Indicador de Calidad]] trend chart shows 4 consecutive weeks at Green for 
 | Recruitment | 6/6 | 0 | 0 | Green |
 
 > [!tip] QA — Dashboard
-> Alejandra reviews the global panel: 5 summary cards, all at Green. The trend chart shows 4 consecutive weeks without alerts. The Critical KPIs table is empty. — [[QA/Dashboard de QA|QA Dashboard]]
+> Alejandra reviews the global panel: 5 summary cards, all at Green. The trend chart shows 4 consecutive weeks without alerts. The Critical KPIs table is empty. — [[QA/QA Dashboard|QA Dashboard]]
 
 > [!warning] Business Rule
-> The [[Manager de QA]] has access to the global panel + the 5 department panels. Each [[Operador de QA]] only sees the panel for their assigned department. — [[QA/Dashboard de QA|QA Dashboard]]
+> The [[QA Manager]] has access to the global panel + the 5 department panels. Each [[QA Operator]] only sees the panel for their assigned department. — [[QA/QA Dashboard|QA Dashboard]]
 
 ### 1.2 — Each Operator Reviews Their Panel
 
@@ -75,7 +75,7 @@ Each Operator reviews the previous week's KPIs (ended August 3) in their individ
 | 4 | Average accident closure time | 5 days | ≤ 7 days | On target |
 | 5 | Zone coverage | 6/6 (100%) | 6/6 (100%) | On target |
 
-Operator 1 reviews the zone coverage map: all 6 [[Zonas|zones]] (Central, South, East, West, Northwest, Southeast) have an assigned and active [[Inspector]].
+Operator 1 reviews the zone coverage map: all 6 [[Zones|zones]] (Central, South, East, West, Northwest, Southeast) have an assigned and active [[Inspector]].
 
 **Operator 2 — Hotel:**
 
@@ -99,7 +99,7 @@ Operator 2 reviews the hotel ranking by punch compliance. Hotel Costa Esmeralda 
 | 4 | Extended Lunch rate | 8% | ≤ 10% | On target |
 | 5 | Data completeness | 96% | ≥ 95% | On target |
 
-Operator 3 reviews the donut chart showing the distribution of the [[Semáforo del Colaborador]]. The majority of associates are concentrated in Dark Green and Yellow.
+Operator 3 reviews the donut chart showing the distribution of the [[Associate Status Indicator]]. The majority of associates are concentrated in Dark Green and Yellow.
 
 **Operator 4 — Sales:**
 
@@ -111,7 +111,7 @@ Operator 3 reviews the donut chart showing the distribution of the [[Semáforo d
 | 4 | Loss rate | 18% | ≤ 20% | On target |
 | 5 | Successful reactivation rate | 45% | ≥ 40% | On target |
 
-Operator 4 reviews the [[Semáforo Onboarding]] funnel. The distribution is healthy: few hotels stalled at intermediate stages.
+Operator 4 reviews the [[Onboarding Status Indicator]] funnel. The distribution is healthy: few hotels stalled at intermediate stages.
 
 **Operator 5 — Recruitment:**
 
@@ -127,35 +127,35 @@ Operator 4 reviews the [[Semáforo Onboarding]] funnel. The distribution is heal
 Operator 5 reviews the recruitment funnel and the pickup-time heatmap by urgency. No visible anomalies.
 
 > [!warning] Business Rule
-> QA does not execute the operations of any department. Its function is to **observe, measure, and provide feedback** so that each area maintains its quality within defined standards. — [[QA/Reglas de QA|QA Rules]]
+> QA does not execute the operations of any department. Its function is to **observe, measure, and provide feedback** so that each area maintains its quality within defined standards. — [[QA/QA Rules|QA Rules]]
 
 ### 1.3 — First Signals in Recruitment (Wednesday, August 6)
 
 Wednesday, August 6. Operator 5 reviews the current week's activity and detects an anomaly:
 
-- **Hotel Costa Esmeralda Requisition** (replacement for 1 Housekeeper who went to Stand-by): authorized Tuesday, August 5 at 09:00. No [[Reclutadora]] picked it up from the [[Self-Pick de Requisiciones]]. After 24 hours, the system auto-assigned it to Daniela Ríos.
+- **Hotel Costa Esmeralda Requisition** (replacement for 1 Housekeeper who went to Stand-by): authorized Tuesday, August 5 at 09:00. No [[Recruiter]] picked it up from the [[Self-Pick]]. After 24 hours, the system auto-assigned it to Daniela Ríos.
 - **Another hotel requisition** (2 Housemen): authorized Wednesday, August 6 at 14:00. Picked up at 22:00 — 8 hours later, right at the limit.
 
 Operator 5 records the data in the trend lines of their panel. This week's auto-assignment rate is already 1 out of 4 requisitions (25%), far above the ≤ 5% target. However, a single week does not confirm a pattern.
 
 > [!tip] QA — Operator 5 Observes
-> Timeout auto-assignment rate this week: 1/4 = 25%. Target: ≤ 5%. Spot status: **Critical** (> 15%). Operator 5 decides to wait for confirmation next week before issuing a formal observation — one isolated week does not constitute a pattern. — [[QA/Métricas y KPIs por Departamento|Recruitment KPI 3]]
+> Timeout auto-assignment rate this week: 1/4 = 25%. Target: ≤ 5%. Spot status: **Critical** (> 15%). Operator 5 decides to wait for confirmation next week before issuing a formal observation — one isolated week does not constitute a pattern. — [[QA/Metrics and KPIs by Department|Recruitment KPI 3]]
 
 ---
 
 ## Phase 2 — Anomaly Detection
 
-> Reference: [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]] · [[Indicador de Calidad]] · [[QA/Reglas de QA|QA Rules]]
+> Reference: [[QA/Metrics and KPIs by Department|Metrics and KPIs by Department]] · [[Quality Indicator]] · [[QA/QA Rules|QA Rules]]
 
 ### 2.1 — Recruitment Deteriorates (Monday August 11 — Wednesday August 13)
 
 The second week confirms the pattern. Three new requisitions arrive in the system:
 
-**Requisition A** — Hotel Costa Esmeralda, 3 Housekeepers, urgency **Red** per the [[Semáforo de Urgencia de Requisición]]:
+**Requisition A** — Hotel Costa Esmeralda, 3 Housekeepers, urgency **Red** per the [[Requisition Urgency Indicator]]:
 - Authorized Monday, August 11 at 08:00.
 - No recruiter picks it up. The system auto-assigns it after 24 hours.
 - The assigned recruiter only manages to cover 2 of 3 positions before Friday.
-- The requisition closes at **Red** on the [[Semáforo de Requisición]] — partial coverage (67%).
+- The requisition closes at **Red** on the [[Requisition Status Indicator]] — partial coverage (67%).
 
 **Requisition B** — another hotel, 2 Housemen, urgency **Yellow**:
 - Authorized Tuesday, August 12 at 10:00.
@@ -181,7 +181,7 @@ Operator 5 consolidates the Week 2 KPIs:
 The Week 1 pattern has been confirmed. Three KPIs are at Critical level and one more is at risk.
 
 > [!tip] QA — Operator 5 Observes
-> Three KPIs at Critical level (Coverage, Auto-assignment, Escalation) and one At risk (Pickup time) for the second consecutive week. The pattern is confirmed. Operator 5 proceeds to issue a formal observation to the [[Reclutamiento/Reclutamiento|Recruitment]] department. — [[QA/Métricas y KPIs por Departamento|Recruitment]]
+> Three KPIs at Critical level (Coverage, Auto-assignment, Escalation) and one At risk (Pickup time) for the second consecutive week. The pattern is confirmed. Operator 5 proceeds to issue a formal observation to the [[Recruitment/Recruitment|Recruitment]] department. — [[QA/Metrics and KPIs by Department|Recruitment]]
 
 ### 2.2 — Operator 5 Issues a Formal Observation (Thursday, August 14)
 
@@ -192,15 +192,15 @@ Operator 5 prepares and sends a formal observation to the Recruitment department
 > | Field | Detail |
 > |---|---|
 > | Date | 2026-08-14 |
-> | Department | [[Reclutamiento/Reclutamiento\|Recruitment]] |
-> | Issued by | Operator 5 ([[Operador de QA]]) |
+> | Department | [[Recruitment/Recruitment\|Recruitment]] |
+> | Issued by | Operator 5 ([[QA Operator]]) |
 > | Affected KPIs | #1 Coverage (67%), #3 Auto-assignment (67%), #4 Escalation (33%) |
-> | Finding | Persistent failure in the [[Self-Pick de Requisiciones]] system. Recruiters are not proactively picking up requisitions. Auto-assignment and escalation rates far exceed thresholds for two consecutive weeks. |
+> | Finding | Persistent failure in the [[Self-Pick]] system. Recruiters are not proactively picking up requisitions. Auto-assignment and escalation rates far exceed thresholds for two consecutive weeks. |
 > | Impact | Requisition 202608110800A3 for Hotel Costa Esmeralda closed at Red with only 67% coverage. The hotel did not receive the full requested staffing. |
 > | Recommendation | Review recruitment team workload distribution. Evaluate whether the team is understaffed. Reinforce Self-Pick model discipline. |
 
 > [!warning] Business Rule
-> If **any KPI** reaches Critical level, the [[Operador de QA]] must propose that the department's [[Indicador de Calidad]] moves to at least **Yellow**. — [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
+> If **any KPI** reaches Critical level, the [[QA Operator]] must propose that the department's [[Quality Indicator]] moves to at least **Yellow**. — [[QA/Metrics and KPIs by Department|Metrics and KPIs by Department]]
 
 ### 2.3 — Quality Status Indicator: Recruitment Moves to Yellow
 
@@ -216,13 +216,13 @@ Alejandra validates the proposal and approves the transition.
 > **Date:** 2026-08-14 · **Proposed by:** Operator 5 · **Approved by:** Alejandra Duarte (QA Manager) · **Comment:** "3 KPIs at Critical level for 2 consecutive weeks: Coverage (67%), Auto-assignment (67%), Escalation (33%). Pickup time At risk (17h). Formal observation QA-REC-2026-08-001 issued."
 
 > [!warning] Business Rule
-> Only the [[Manager de QA]] can formally update each department's [[Indicador de Calidad]]. The [[Operador de QA]] proposes the change; the Manager validates and approves. — [[QA/Reglas de QA|QA Rules]]
+> Only the [[QA Manager]] can formally update each department's [[Quality Indicator]]. The [[QA Operator]] proposes the change; the Manager validates and approves. — [[QA/QA Rules|QA Rules]]
 
 ### 2.4 — Inspection Shows a Dip (Week of August 11)
 
 Meanwhile, Operator 1 detects a problem in Inspection:
 
-Daniel Ortega, lead [[Inspector]] for the Northwest zone, was absent Monday August 11 and Tuesday August 12 for personal reasons. [[Inspección/Coordinador|Coordinator]] Raúl Méndez activated the temporary coverage protocol and assigned another Inspector to cover the zone. However, the substitute Inspector arrived late to the property on Monday August 11, when a group of 6 new associates was starting at Hotel Costa Esmeralda.
+Daniel Ortega, lead [[Inspector]] for the Northwest zone, was absent Monday August 11 and Tuesday August 12 for personal reasons. [[Inspection/Coordinator|Coordinator]] Raúl Méndez activated the temporary coverage protocol and assigned another Inspector to cover the zone. However, the substitute Inspector arrived late to the property on Monday August 11, when a group of 6 new associates was starting at Hotel Costa Esmeralda.
 
 Result: the substitute Inspector was only able to verify 4 of the 6 associates on their Day 1.
 
@@ -235,7 +235,7 @@ Result: the substitute Inspector was only able to verify 4 of the 6 associates o
 | 5 | Zone coverage | 6/6 (100%) | 6/6 (100%) | On target |
 
 > [!tip] QA — Operator 1 Observes
-> Day 1 verification rate this week: 4/6 = 67%. Target: ≥ 95%. Status: **Critical** (< 85%). Identified cause: lead Inspector absent, coverage Inspector arrived late to the property. — [[QA/Métricas y KPIs por Departamento|Inspection KPI 1]]
+> Day 1 verification rate this week: 4/6 = 67%. Target: ≥ 95%. Status: **Critical** (< 85%). Identified cause: lead Inspector absent, coverage Inspector arrived late to the property. — [[QA/Metrics and KPIs by Department|Inspection KPI 1]]
 
 Operator 1 issues an observation to the Inspection department pointing out the systemic risk: when the lead Inspector is absent, the coverage protocol does not guarantee timely verification.
 
@@ -251,7 +251,7 @@ Operator 1 proposes a transition of the Quality Status Indicator to Yellow. Alej
 
 **Operator 3 — Associate:** Pool Health drops to 58% ("At risk": 40–59%) because several associates moved to Stand-by. The absenteeism rate rises to 6% ("At risk": 6–10%). Operator 3 logs both trends. No KPI reaches Critical, so no formal observation is issued yet.
 
-**Operator 4 — Sales:** All 5 KPIs remain on target. No observations. The [[Semáforo Onboarding]] funnel shows healthy flow.
+**Operator 4 — Sales:** All 5 KPIs remain on target. No observations. The [[Onboarding Status Indicator]] funnel shows healthy flow.
 
 ### 2.6 — Alejandra Consolidates the Weekly Report (Friday, August 15)
 
@@ -273,7 +273,7 @@ Alejandra notifies both departments of the expected response to the observations
 
 ## Phase 3 — Escalation: Recruitment Reaches Red
 
-> Reference: [[QA/Reglas de QA|QA Rules]] · [[Indicador de Calidad]] · [[Manager de QA]]
+> Reference: [[QA/QA Rules|QA Rules]] · [[Quality Indicator]] · [[QA Manager]]
 
 ### 3.1 — Recruitment Does Not Respond (Monday, August 18)
 
@@ -294,7 +294,7 @@ Rolling KPIs (2-week cumulative):
 | 6 | Pool entry rate | 55% | ≥ 60% | **At risk** |
 
 > [!warning] Business Rule
-> If **2 or more KPIs** are at Critical level, or the situation persists without improvement, the [[Operador de QA]] must propose escalating the [[Indicador de Calidad]] to **Red**. — [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
+> If **2 or more KPIs** are at Critical level, or the situation persists without improvement, the [[QA Operator]] must propose escalating the [[Quality Indicator]] to **Red**. — [[QA/Metrics and KPIs by Department|Metrics and KPIs by Department]]
 
 ### 3.2 — Quality Status Indicator: Recruitment Moves to Red (Tuesday, August 19)
 
@@ -315,7 +315,7 @@ Alejandra validates and approves the transition to Red.
 Alejandra Duarte prepares a formal escalation report and presents it to the Oranje Director of Operations.
 
 > [!warning] Business Rule
-> Department at **Red** status with no improvement after notification → the [[Manager de QA]] escalates the case to management. — [[QA/Reglas de QA|QA Rules]]
+> Department at **Red** status with no improvement after notification → the [[QA Manager]] escalates the case to management. — [[QA/QA Rules|QA Rules]]
 
 The report includes:
 
@@ -327,31 +327,31 @@ The report includes:
 | Observations issued | QA-REC-2026-08-001 (2026-08-14) — no response |
 | Recommended corrective actions | Review recruitment team staffing levels. Implement mandatory SLAs for requisition pickup. Temporarily redistribute workload. |
 
-The Director of Operations calls an urgent meeting with Fernando Ortiz ([[Reclutamiento/Manager de Reclutamiento|Recruitment Manager]]) and Alejandra Duarte.
+The Director of Operations calls an urgent meeting with Fernando Ortiz ([[Recruitment/Recruitment Manager|Recruitment Manager]]) and Alejandra Duarte.
 
 Fernando acknowledges the problem: a recruiter recently left the team and has not been replaced. The remaining recruiters are overloaded and unable to pick up requisitions within the expected windows.
 
 Fernando commits to immediate corrective actions:
 
 1. Redistribute the requisition workload among active recruiters.
-2. Assign the [[Reclutamiento/Líder de Grupo de Reclutadoras|Recruiter Team Lead]] to co-manage the [[Self-Pick de Requisiciones]] inbox and pick up requisitions when no recruiter takes them within 4 hours.
+2. Assign the [[Recruitment/Recruiter Team Lead|Recruiter Team Lead]] to co-manage the [[Self-Pick]] inbox and pick up requisitions when no recruiter takes them within 4 hours.
 3. Prioritize hiring a replacement recruiter.
 4. Formally respond to the QA observation within the next 24 hours.
 
 > [!tip] QA — Escalation
-> This is QA's last-resort mechanism: when a department does not respond to formal observations and the [[Indicador de Calidad]] reaches Red, the [[Manager de QA]] escalates to management to force intervention. QA does not execute the corrective actions — the department does; QA verifies that they are implemented.
+> This is QA's last-resort mechanism: when a department does not respond to formal observations and the [[Quality Indicator]] reaches Red, the [[QA Manager]] escalates to management to force intervention. QA does not execute the corrective actions — the department does; QA verifies that they are implemented.
 
 ---
 
 ## Phase 4 — Inspection Resolution
 
-> Reference: [[Inspección/Inspección|Inspection]] · [[Reglas de Inspección]] · [[Indicador de Calidad]]
+> Reference: [[Inspection/Inspection|Inspection]] · [[Inspection Rules]] · [[Quality Indicator]]
 
 ### 4.1 — Inspection Responds Quickly (Monday, August 18)
 
 While Recruitment remained unresponsive, the Inspection department acted immediately upon receiving the QA observation.
 
-[[Inspección/Coordinador|Coordinator]] Raúl Méndez:
+[[Inspection/Coordinator|Coordinator]] Raúl Méndez:
 - Reviewed the coverage protocol for lead Inspector absences.
 - Established an additional operational rule: the substitute Inspector must arrive at the property at least 30 minutes before the expected arrival time of the first associate.
 - Daniel Ortega returned from his absence and personally verified a new group of 4 associates who arrived at Hotel Costa Esmeralda on Monday, August 18 — **4/4 verified (100%)**.
@@ -390,7 +390,7 @@ Alejandra approves.
 
 ## Phase 5 — Recruitment Begins to Improve
 
-> Reference: [[Indicador de Calidad]] · [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
+> Reference: [[Quality Indicator]] · [[QA/Metrics and KPIs by Department|Metrics and KPIs by Department]]
 
 ### 5.1 — Fernando Ortiz Implements Changes (Thursday, August 21)
 
@@ -399,7 +399,7 @@ Fernando Ortiz formally responds to observation QA-REC-2026-08-001 and reports t
 | Action | Status |
 |---|---|
 | Requisition workload redistribution | Implemented |
-| [[Reclutamiento/Líder de Grupo de Reclutadoras\|Recruiter Team Lead]] co-managing Self-Pick inbox | Active since Wednesday August 20 |
+| [[Recruitment/Recruiter Team Lead\|Recruiter Team Lead]] co-managing Self-Pick inbox | Active since Wednesday August 20 |
 | Hiring a replacement recruiter | In progress — candidate identified |
 | Formal response to QA observation | Delivered |
 
@@ -436,13 +436,13 @@ Alejandra approves.
 > **Date:** 2026-08-22 · **Proposed by:** Operator 5 · **Approved by:** Alejandra Duarte (QA Manager) · **Comment:** "Department addressed formal observation. Corrective actions implemented. This week's KPIs on target. At least 1 additional week of stable data required before proposing return to Green."
 
 > [!warning] Business Rule
-> **Red → Yellow**: when the department begins to address observations and shows improvement in metrics. — [[Indicador de Calidad]]
+> **Red → Yellow**: when the department begins to address observations and shows improvement in metrics. — [[Quality Indicator]]
 
 ---
 
 ## Phase 6 — QA Manager Final Consolidation
 
-> Reference: [[QA/Dashboard de QA|QA Dashboard]] · [[Manager de QA]]
+> Reference: [[QA/QA Dashboard|QA Dashboard]] · [[QA Manager]]
 
 ### 6.1 — Global Dashboard at the Close of the Third Week (Friday, August 22)
 
@@ -468,7 +468,7 @@ Although the Associate department remains at Green, Alejandra detects that 2 of 
 Alejandra instructs Operator 3 to increase monitoring frequency for these two KPIs. If either reaches Critical level the following week, a formal observation must be issued immediately.
 
 > [!tip] QA — Proactivity
-> The [[Manager de QA]] does not wait for KPIs to reach Critical before acting. Upon detecting 2 KPIs "At risk" in Associate, monitoring frequency is increased as a preventive measure. This is consistent with QA's continuous improvement principle.
+> The [[QA Manager]] does not wait for KPIs to reach Critical before acting. Upon detecting 2 KPIs "At risk" in Associate, monitoring frequency is increased as a preventive measure. This is consistent with QA's continuous improvement principle.
 
 ### 6.3 — Consolidated Report to Management
 
@@ -483,7 +483,7 @@ Alejandra prepares the consolidated weekly report for the Director of Operations
 | **Recruitment** | Formal escalation executed (August 20). Department responded with corrective actions. Indicator dropped from Red to Yellow. Consolidation being monitored — return to Green expected if KPIs remain on target next week. |
 
 > [!warning] Business Rule
-> The [[Manager de QA]] presents quality reports to management with findings, trends, and areas for improvement. — [[QA/Reglas de QA|QA Rules]]
+> The [[QA Manager]] presents quality reports to management with findings, trends, and areas for improvement. — [[QA/QA Rules|QA Rules]]
 
 ---
 
@@ -597,26 +597,26 @@ graph TD
 
 | Module | Reference |
 |---|---|
-| QA | [[QA/QA\|QA]] · [[QA/Reglas de QA\|QA Rules]] |
-| QA Roles | [[Manager de QA]] · [[Operador de QA]] |
-| Quality Status Indicator | [[Indicador de Calidad]] |
-| Metrics | [[QA/Métricas y KPIs por Departamento\|Metrics and KPIs by Department]] |
-| Dashboard | [[QA/Dashboard de QA\|QA Dashboard]] |
-| Inspection | [[Inspección/Inspección\|Inspection]] · [[Reglas de Inspección]] · [[Inspector]] · [[Inspección/Coordinador\|Coordinator]] |
-| Hotel | [[Hotel/Hotel\|Hotel]] · [[Reglas del Hotel]] · [[Hotel/Supervisor\|Supervisor]] |
-| Associate | [[Colaborador/Colaborador\|Associate]] · [[Pool de Colaboradores]] |
-| Sales | [[Ventas/Ventas\|Sales]] · [[Reglas de Ventas]] · [[Business Developer]] · [[Business Developer Coordinator]] |
-| Recruitment | [[Reclutamiento/Reclutamiento\|Recruitment]] · [[Reglas de Reclutamiento]] · [[Reclutadora]] · [[Reclutamiento/Manager de Reclutamiento\|Recruitment Manager]] · [[Reclutamiento/Líder de Grupo de Reclutadoras\|Recruiter Team Lead]] |
-| Status Indicators | [[Semáforo del Colaborador]] · [[Semáforo de Requisición]] · [[Semáforo Onboarding]] · [[Semáforo de Urgencia de Requisición]] · [[Semáforo de Posiciones de la Requisición]] |
-| Requisitions | [[Requisición]] · [[Flujo de Requisición]] · [[Self-Pick de Requisiciones]] |
-| Catalogs | [[Zonas]] · [[Posiciones]] |
+| QA | [[QA/QA\|QA]] · [[QA/QA Rules\|QA Rules]] |
+| QA Roles | [[QA Manager]] · [[QA Operator]] |
+| Quality Status Indicator | [[Quality Indicator]] |
+| Metrics | [[QA/Metrics and KPIs by Department\|Metrics and KPIs by Department]] |
+| Dashboard | [[QA/QA Dashboard\|QA Dashboard]] |
+| Inspection | [[Inspection/Inspection\|Inspection]] · [[Inspection Rules]] · [[Inspector]] · [[Inspection/Coordinator\|Coordinator]] |
+| Hotel | [[Hotel/Hotel\|Hotel]] · [[Hotel Rules]] · [[Hotel/Supervisor\|Supervisor]] |
+| Associate | [[Associate/Associate\|Associate]] · [[Associate Pool]] |
+| Sales | [[Sales/Sales\|Sales]] · [[Sales Rules]] · [[Business Developer]] · [[Business Developer Coordinator]] |
+| Recruitment | [[Recruitment/Recruitment\|Recruitment]] · [[Recruitment Rules]] · [[Recruiter]] · [[Recruitment/Recruitment Manager\|Recruitment Manager]] · [[Recruitment/Recruiter Team Lead\|Recruiter Team Lead]] |
+| Status Indicators | [[Associate Status Indicator]] · [[Requisition Status Indicator]] · [[Onboarding Status Indicator]] · [[Requisition Urgency Indicator]] · [[Requisition Position Status Indicator]] |
+| Requisitions | [[Requisition]] · [[Requisition Flow]] · [[Self-Pick]] |
+| Catalogs | [[Zones]] · [[Positions]] |
 
 ---
 
 ## Related Simulations
 
-- [[Simulación - Punto de Vista de Inspección]] — Narrates the operational week of Inspector Daniel Ortega in the Northwest zone. In this QA simulation, a coverage failure due to Daniel's absence triggers the Indicator's transition to Yellow and its swift correction.
-- [[Simulación - Punto de Vista del Hotel]] — Shows the hotel's cycle as a client. QA monitors Hotel department KPIs (authorization, punching, QR, Stand-by) that remain stable throughout this simulation.
-- [[Simulación - Punto de Vista de Ventas]] — Details the commercial process narrated from Sales. QA supervises conversion rates, onboarding cycle, and reactivation, all on target during this simulation.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Covers the staffing process. In this QA simulation, Recruitment's persistent failures (unpicked requisitions, auto-assignments, partial coverage) trigger the crisis that brings the department to Red and requires escalation to management.
-- [[Simulación - Ciclo de Vida del Colaborador]] — Traces the associate's states. QA monitors aggregate Associate Pool metrics (absenteeism, Blacklist, Pool Health) that appear here as preventive signals under watch.
+- [[Simulation - Inspection Perspective]] — Narrates the operational week of Inspector Daniel Ortega in the Northwest zone. In this QA simulation, a coverage failure due to Daniel's absence triggers the Indicator's transition to Yellow and its swift correction.
+- [[Simulation - Hotel Perspective]] — Shows the hotel's cycle as a client. QA monitors Hotel department KPIs (authorization, punching, QR, Stand-by) that remain stable throughout this simulation.
+- [[Simulation - Sales Point of View]] — Details the commercial process narrated from Sales. QA supervises conversion rates, onboarding cycle, and reactivation, all on target during this simulation.
+- [[Simulation - Recruitment Perspective]] — Covers the staffing process. In this QA simulation, Recruitment's persistent failures (unpicked requisitions, auto-assignments, partial coverage) trigger the crisis that brings the department to Red and requires escalation to management.
+- [[Simulation - Associate Lifecycle]] — Traces the associate's states. QA monitors aggregate Associate Pool metrics (absenteeism, Blacklist, Pool Health) that appear here as preventive signals under watch.

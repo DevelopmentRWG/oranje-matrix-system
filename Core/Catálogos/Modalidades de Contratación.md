@@ -19,5 +19,5 @@ Employment modalities under which an associate can be hired.
 
 ## Related
 
-- [[Requisición]]
-- [[Posiciones]]
+- [[Requisition]]
+- [[Positions]]

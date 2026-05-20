@@ -14,7 +14,7 @@ aliases:
 Automatically calculated indicator that compares the associate's actual compliance against the hotel's contractual parameters, evaluated on a weekly basis.
 
 > [!info]
-> This indicator takes as input the parameters from the [[Core/Módulos/Contrato|Contract]] and the data from the [[Timesheet]]. See also: [[Semáforo del Colaborador]].
+> This indicator takes as input the parameters from the [[Core/Modules/Contract|Contract]] and the data from the [[Timesheet]]. See also: [[Associate Status Indicator]].
 
 ## Navigation structure
 
@@ -60,13 +60,13 @@ If the associate starts mid-week, the system **automatically prorates** the rema
 ## Business Rules
 
 - **Automatic calculation by system**
-- **Input:** parameters from the [[Core/Módulos/Contrato|Contract]] + [[Timesheet]] data
+- **Input:** parameters from the [[Core/Modules/Contract|Contract]] + [[Timesheet]] data
 - **No human intervention**: the system evaluates at the close of each week
 - **Weekly evaluation** (current version)
 
 ## Related
 
 - [[Timesheet]]
-- [[Core/Módulos/Contrato|Contrato]]
-- [[Core/Módulos/Schedule|Schedule]]
-- [[Semáforo del Colaborador]]
+- [[Core/Modules/Contract|Contract]]
+- [[Core/Modules/Schedule|Schedule]]
+- [[Associate Status Indicator]]

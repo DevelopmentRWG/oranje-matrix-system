@@ -19,6 +19,6 @@ Catalog of the hotel's internal departments for which Oranje recruits associates
 
 ## Related
 
-- [[Posiciones]]
+- [[Positions]]
 - [[Hotel/Hotel|Hotel]]
-- [[Hotel/Manager de Área|Area Manager]]
+- [[Hotel/Area Manager|Area Manager]]

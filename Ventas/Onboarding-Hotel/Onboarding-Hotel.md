@@ -8,10 +8,10 @@ aliases:
 
 # Hotel Onboarding
 
-Module representing the commercial phase before a hotel becomes an active operating client of Oranje. Covers the cycle from when the [[Business Developer]] identifies a hotel in their territory until the [[Business Developer Coordinator]] approves the conversion and the hotel is enabled to generate [[Requisición|requisitions]].
+Module representing the commercial phase before a hotel becomes an active operating client of Oranje. Covers the cycle from when the [[Business Developer]] identifies a hotel in their territory until the [[Business Developer Coordinator]] approves the conversion and the hotel is enabled to generate [[Requisition|requisitions]].
 
 > [!info]
-> The hotel **only enables requisitions** when it reaches [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] status. Before that, it remains a commercial prospect managed by [[Ventas/Ventas|Ventas]].
+> The hotel **only enables requisitions** when it reaches [[Onboarding Status Indicator#Orange — Signed agreement, active hotel client|Orange]] status. Before that, it remains a commercial prospect managed by [[Sales/Sales|Sales]].
 
 ## Module Contents
 
@@ -22,31 +22,31 @@ Module representing the commercial phase before a hotel becomes an active operat
 
 ### Processes
 
-- [[Flujo de Onboarding]] — Step-by-step process from identification to activation.
-- [[Semáforo Onboarding]] — Tracking statuses for the hotel negotiation.
+- [[Onboarding Flow]] — Step-by-step process from identification to activation.
+- [[Onboarding Status Indicator]] — Tracking statuses for the hotel negotiation.
 
 ## Onboarding Statuses
 
-- [[Semáforo Onboarding#Gris — Hotel identificado|Gris]] — Hotel identified.
-- [[Semáforo Onboarding#Azul Claro — Contacto y recopilación de datos|Azul Claro]] — Contact and data collection.
-- [[Semáforo Onboarding#Verde — Propuesta enviada|Verde]] — Proposal sent.
-- [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] — In follow-up after proposal.
-- [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] — Terms negotiation.
-- [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] — Agreement signed, hotel active as client.
-- [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] — Renegotiation / unblocking.
-- [[Semáforo Onboarding#Rojo — Rechazo o no interés|Rojo]] — Rejection or no interest.
-- [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] — Paused or inactive client.
+- [[Onboarding Status Indicator#Gray — Hotel identified|Gray]] — Hotel identified.
+- [[Onboarding Status Indicator#Light Blue — Contact and data collection|Light Blue]] — Contact and data collection.
+- [[Onboarding Status Indicator#Green — Proposal sent|Green]] — Proposal sent.
+- [[Onboarding Status Indicator#Yellow — Follow-up after proposal|Yellow]] — In follow-up after proposal.
+- [[Onboarding Status Indicator#Pink — Terms negotiation|Pink]] — Terms negotiation.
+- [[Onboarding Status Indicator#Orange — Signed agreement, active hotel client|Orange]] — Agreement signed, hotel active as client.
+- [[Onboarding Status Indicator#Brown — Renegotiation / unblocking|Brown]] — Renegotiation / unblocking.
+- [[Onboarding Status Indicator#Red — Rejection or no interest|Red]] — Rejection or no interest.
+- [[Onboarding Status Indicator#Black — Paused or inactive client|Black]] — Paused or inactive client.
 
 ## Key Concepts
 
-- [[Propuesta Personalizada]]
-- [[Documento de Términos y Condiciones]]
-- [[Trigger Automático de Conversión]]
-- [[Usuario del Hotel]]
+- [[Customized Proposal]]
+- [[Terms and Conditions Document]]
+- [[Automatic Conversion Trigger]]
+- [[Hotel User]]
 
 ## Relationship with Other Modules
 
 - [[Hotel/Hotel|Hotel]] — Final destination of the onboarding; the converted hotel begins its operational cycle.
-- [[Ventas/Ventas|Ventas]] — Commercial area that owns the onboarding process.
-- [[Requisición]] — Only available from Orange status onward.
-- [[Reclutamiento/Reclutamiento|Reclutamiento]] — Receives the hotel once active to begin coverage.
+- [[Sales/Sales|Sales]] — Commercial area that owns the onboarding process.
+- [[Requisition]] — Only available from Orange status onward.
+- [[Recruitment/Recruitment|Recruitment]] — Receives the hotel once active to begin coverage.

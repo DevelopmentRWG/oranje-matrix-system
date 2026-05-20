@@ -7,18 +7,18 @@ aliases:
 
 # Inspection Rules
 
-Consolidation of all business rules that apply to the Inspection department within the Oranje system. Cross-reference with [[Reglas de Negocio]] (system-wide consolidated rules).
+Consolidation of all business rules that apply to the Inspection department within the Oranje system. Cross-reference with [[Business Rules]] (system-wide consolidated rules).
 
 ## Department Hierarchy
 
 | Role | Function |
 |---|---|
-| [[Inspección/Coordinador\|Coordinator]] | Manager of Inspectors. Interdepartmental liaison and escalation of special cases |
+| [[Inspection/Coordinator\|Coordinator]] | Manager of Inspectors. Interdepartmental liaison and escalation of special cases |
 | [[Inspector]] | Operational executor in the field, assigned by geographic zone |
 
 ## Zone Assignments
 
-- The [[Inspección/Coordinador\|Coordinator]] assigns Inspectors to geographic [[Core/Catálogos/Zonas|Zones]].
+- The [[Inspection/Coordinator\|Coordinator]] assigns Inspectors to geographic [[Core/Catalogs/Zones|Zones]].
 - Each zone has a responsible [[Inspector]].
 - Existing zones: **Center, South, East, West, Northwest, Southeast**.
 - When a requisition is authorized, the [[Inspector]] is automatically assigned in the header based on the hotel's zone.
@@ -27,12 +27,12 @@ Consolidation of all business rules that apply to the Inspection department with
 
 ### Coverage During Unavailability
 
-- If the [[Inspector]] assigned to a zone is unavailable (illness, vacation, or other cause), the [[Inspección/Coordinador|Coordinator]] temporarily reassigns another Inspector to that zone.
+- If the [[Inspector]] assigned to a zone is unavailable (illness, vacation, or other cause), the [[Inspection/Coordinator|Coordinator]] temporarily reassigns another Inspector to that zone.
 - The temporary reassignment does not modify the permanent zone assignment; it is coverage until the primary Inspector resumes.
 
 ## Arrival Verification and Uniform Delivery
 
-The [[Inspector]] participates in two key transitions of the [[Semáforo del Colaborador]]:
+The [[Inspector]] participates in two key transitions of the [[Associate Status Indicator]]:
 
 | Event | Transition | Responsible |
 |---|---|---|
@@ -43,8 +43,8 @@ The [[Inspector]] participates in two key transitions of the [[Semáforo del Col
 
 ### Origin of Red Status
 
-- The [[Hotel/Manager General\|General Manager]], [[Hotel/Manager de Área\|Area Manager]], or [[Hotel/Supervisor\|Supervisor]] activates **Red** status (Reported) in the [[Semáforo del Colaborador]].
-- Accumulation of 3 absences does **not** go through Red; it goes directly to **Black** ([[Core/Módulos/Blacklist|Blacklist]]) automatically.
+- The [[Hotel/General Manager\|General Manager]], [[Hotel/Area Manager\|Area Manager]], or [[Hotel/Supervisor\|Supervisor]] activates **Red** status (Reported) in the [[Associate Status Indicator]].
+- Accumulation of 3 absences does **not** go through Red; it goes directly to **Black** ([[Core/Modules/Blacklist|Blacklist]]) automatically.
 
 ### Investigation and Resolution
 
@@ -52,10 +52,10 @@ The [[Inspector]] investigates cases of associates in Red status and issues the 
 
 | Outcome | Destination Status | Consequence |
 |---|---|---|
-| Dispute in favor of the hotel | → **Black** ([[Core/Módulos/Blacklist\|Blacklist]]) | Associate banned from the system |
+| Dispute in favor of the hotel | → **Black** ([[Core/Modules/Blacklist\|Blacklist]]) | Associate banned from the system |
 | Dispute in favor of the associate | → **Dark Green** | Associate reinstated |
 
-> [!note] Resulting Blacklist cases are reviewed by the [[Manager de Reclutamiento]]. The [[Inspector]] is the **only role** that can execute a manual Blacklist entry.
+> [!note] Resulting Blacklist cases are reviewed by the [[Recruitment Manager]]. The [[Inspector]] is the **only role** that can execute a manual Blacklist entry.
 
 ## Workplace Accident
 
@@ -91,32 +91,32 @@ The [[Inspector]] completes the accident card with:
 - **Gray → Dark Green** requires: medical discharge + accident card closure by the [[Inspector]].
 - While the associate is in **Gray** status, absences **do not count** toward the 3-absence → Blacklist rule.
 - After closure, the associate becomes available for reassignment.
-- Reference: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Workplace Accident Flow]].
+- Reference: [[Core/Modules/Work Accident/Work Accident Flow|Workplace Accident Flow]].
 
 ## Extended Lunch Indicator
 
-- **Visible to:** [[Inspector]] and [[Inspección/Coordinador\|Coordinator]].
-- **Not visible to:** [[Hotel/Manager General\|General Manager]], [[Hotel/Manager de Área\|Area Manager]], or [[Hotel/Supervisor\|Supervisor]].
+- **Visible to:** [[Inspector]] and [[Inspection/Coordinator\|Coordinator]].
+- **Not visible to:** [[Hotel/General Manager\|General Manager]], [[Hotel/Area Manager\|Area Manager]], or [[Hotel/Supervisor\|Supervisor]].
 - Shows: associate, hotel, date, actual lunch duration.
 - Activates automatically when lunch time exceeds 30 minutes.
 - Purpose: Oranje's internal supervision; not automatically punitive.
 
-> [!info] Also visible to the [[Manager de Reclutamiento]]. See [[Reclutamiento/Reglas de Reclutamiento\|Recruitment Rules]].
+> [!info] Also visible to the [[Recruitment Manager]]. See [[Recruitment/Recruitment Rules\|Recruitment Rules]].
 
 ## Active Hotel Supervision
 
-Once the hotel reaches **Orange** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding\|Onboarding Status Indicator]] (signed agreement, active client hotel), the [[Inspector]] appears as operational responsible alongside the Recruiters.
+Once the hotel reaches **Orange** status in the [[Core/Modules/Status Indicators/Onboarding Status Indicator\|Onboarding Status Indicator]] (signed agreement, active client hotel), the [[Inspector]] appears as operational responsible alongside the Recruiters.
 
 ## Quality Supervision (QA)
 
-- A [[QA/Operador de QA\|QA Operator]] is permanently assigned to the Inspection department.
+- A [[QA/QA Operator\|QA Operator]] is permanently assigned to the Inspection department.
 - QA does **not execute** Inspection operations; it only observes, measures, and provides feedback.
-- The specific metrics that the QA Operator monitors for Inspection are defined in [[QA/Métricas y KPIs por Departamento#Inspección|Metrics and KPIs — Inspection]].
-- If the [[Core/Módulos/Semáforos/Indicador de Calidad\|Quality Indicator]] of the department reaches **Red** status without improvement after notification, the QA Manager escalates to management.
+- The specific metrics that the QA Operator monitors for Inspection are defined in [[QA/Metrics and KPIs by Department#Inspection|Metrics and KPIs — Inspection]].
+- If the [[Core/Modules/Status Indicators/Quality Indicator\|Quality Indicator]] of the department reaches **Red** status without improvement after notification, the QA Manager escalates to management.
 
 ## Responsibility Summary by Role
 
-| Action | [[Inspector]] | [[Inspección/Coordinador\|Coordinator]] |
+| Action | [[Inspector]] | [[Inspection/Coordinator\|Coordinator]] |
 |---|---|---|
 | Verify arrival Day 1 | Yes | No |
 | Deliver uniform Day 3 | Yes | No |
@@ -134,22 +134,22 @@ Once the hotel reaches **Orange** status in the [[Core/Módulos/Semáforos/Semá
 
 ## Related
 
-- [[Reglas de Negocio]]
+- [[Business Rules]]
 - [[Inspector]]
-- [[Inspección/Coordinador|Coordinator]]
-- [[Core/Catálogos/Zonas|Zones]]
-- [[Semáforo del Colaborador]]
-- [[Core/Módulos/Blacklist|Blacklist]]
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Workplace Accident]]
-- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Workplace Accident Flow]]
+- [[Inspection/Coordinator|Coordinator]]
+- [[Core/Catalogs/Zones|Zones]]
+- [[Associate Status Indicator]]
+- [[Core/Modules/Blacklist|Blacklist]]
+- [[Core/Modules/Work Accident/Work Accident|Workplace Accident]]
+- [[Core/Modules/Work Accident/Work Accident Flow|Workplace Accident Flow]]
 - [[Timesheet]]
-- [[Core/Módulos/Requisicion/Requisición|Requisition]]
-- [[Core/Módulos/Requisicion/Flujo de Requisición|Requisition Flow]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]
-- [[Core/Módulos/Schedule|Schedule]]
-- [[Core/Módulos/Semáforos/Indicador de Calidad|Quality Indicator]]
-- [[Manager de Reclutamiento]]
-- [[Hotel/Manager General|General Manager]]
-- [[Hotel/Manager de Área|Area Manager]]
+- [[Core/Modules/Requisition/Requisition|Requisition]]
+- [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]]
+- [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]
+- [[Core/Modules/Schedule|Schedule]]
+- [[Core/Modules/Status Indicators/Quality Indicator|Quality Indicator]]
+- [[Recruitment Manager]]
+- [[Hotel/General Manager|General Manager]]
+- [[Hotel/Area Manager|Area Manager]]
 - [[Hotel/Supervisor|Supervisor]]
-- [[Pool de Colaboradores]]
+- [[Associate Pool]]

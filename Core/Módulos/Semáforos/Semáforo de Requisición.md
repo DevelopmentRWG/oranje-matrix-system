@@ -13,49 +13,49 @@ aliases:
 
 # Requisition Status Indicator
 
-Visual status system that represents the lifecycle of a [[Requisición]], from when the [[Hotel/Manager General|General Manager]], the [[Hotel/Manager de Área|Area Manager]] or the [[Hotel/Supervisor|Supervisor]] begin drafting it until it is fully covered.
+Visual status system that represents the lifecycle of a [[Requisition]], from when the [[Hotel/General Manager|General Manager]], the [[Hotel/Area Manager|Area Manager]] or the [[Hotel/Supervisor|Supervisor]] begin drafting it until it is fully covered.
 
 > [!info]
-> This Status Indicator describes the **general lifecycle** of the requisition. The other dimensions are managed in separate Status Indicators: [[Semáforo de Urgencia de Requisición]] (classification by time) and [[Semáforo de Posiciones de la Requisición]] (coverage percentage per position). For the associate's state see [[Semáforo del Colaborador]].
+> This Status Indicator describes the **general lifecycle** of the requisition. The other dimensions are managed in separate Status Indicators: [[Requisition Urgency Indicator]] (classification by time) and [[Requisition Position Status Indicator]] (coverage percentage per position). For the associate's state see [[Associate Status Indicator]].
 
-> [!note] Parallelism with [[Semáforo de Posiciones de la Requisición]]
+> [!note] Parallelism with [[Requisition Position Status Indicator]]
 > Each requisition state has its mirror at the position level: `Apple Green`↔`Gold` · `Green`↔`Orange` · `Light Blue`↔`Green` · `Red`↔`Yellow/Red` · `Purple`↔`Purple`.
 
 ## States
 
 | Color       | State               | Responsible                                                                 | Description                                  |
 | ----------- | ------------------- | --------------------------------------------------------------------------- | -------------------------------------------- |
-| Apple Green | In preparation      | [[Hotel/Manager General\|GM]], [[Hotel/Manager de Área\|GH]] or [[Hotel/Supervisor\|SUP]] | Being drafted by the hotel.           |
-| Green       | Authorized          | [[Hotel/Manager General\|GM]] or [[Hotel/Manager de Área\|GH]]                            | Authorized by the hotel.              |
-| Yellow      | In progress         | [[Reclutadora]] (taken from the shared tray)                                | In the process of staff assignment.          |
-| Light Blue  | Fully covered       | [[Reclutadora]]                                                             | Requisition fully covered.                   |
-| Red         | Partially covered   | [[Reclutadora]]                                                             | Requisition partially covered.               |
+| Apple Green | In preparation      | [[Hotel/General Manager\|GM]], [[Hotel/Area Manager\|GH]] or [[Hotel/Supervisor\|SUP]] | Being drafted by the hotel.           |
+| Green       | Authorized          | [[Hotel/General Manager\|GM]] or [[Hotel/Area Manager\|GH]]                            | Authorized by the hotel.              |
+| Yellow      | In progress         | [[Recruiter]] (taken from the shared tray)                                | In the process of staff assignment.          |
+| Light Blue  | Fully covered       | [[Recruiter]]                                                             | Requisition fully covered.                   |
+| Red         | Partially covered   | [[Recruiter]]                                                             | Requisition partially covered.               |
 | Purple      | Deleted             | —                                                                           | Requisition physically deleted.              |
 
 ## Detail by state
 
 ### Apple Green — In preparation
-**Responsible:** [[Hotel/Manager General|GM]], [[Hotel/Manager de Área|GH]] or [[Hotel/Supervisor|SUP]]
+**Responsible:** [[Hotel/General Manager|GM]], [[Hotel/Area Manager|GH]] or [[Hotel/Supervisor|SUP]]
 
 The hotel begins creating the requisition and its positions.
 
-**Advance →** when the [[Hotel/Manager General|GM]] or the [[Hotel/Manager de Área|GH]] authorizes the requisition, it moves to [[#Green — Authorized|Green]]. Only the GM or GH can authorize; if the SUP attempts it, the system blocks the action.
+**Advance →** when the [[Hotel/General Manager|GM]] or the [[Hotel/Area Manager|GH]] authorizes the requisition, it moves to [[#Green — Authorized|Green]]. Only the GM or GH can authorize; if the SUP attempts it, the system blocks the action.
 
 ---
 
 ### Green — Authorized
-**Responsible:** [[Hotel/Manager General|GM]] or [[Hotel/Manager de Área|GH]]
+**Responsible:** [[Hotel/General Manager|GM]] or [[Hotel/Area Manager|GH]]
 
-The requisition is ready for assignment. The system automatically calculates urgency (see [[Semáforo de Urgencia de Requisición]]).
+The requisition is ready for assignment. The system automatically calculates urgency (see [[Requisition Urgency Indicator]]).
 
-**Advance →** a [[Reclutadora]] or [[Reclutamiento/Líder de Grupo de Reclutadoras|Recruiter Team Lead]] takes the requisition from the shared tray; moves to [[#Yellow — In progress|Yellow]].
+**Advance →** a [[Recruiter]] or [[Recruitment/Recruiter Team Lead|Recruiter Team Lead]] takes the requisition from the shared tray; moves to [[#Yellow — In progress|Yellow]].
 
 ---
 
 ### Yellow — In progress
-**Responsible:** [[Reclutadora]]
+**Responsible:** [[Recruiter]]
 
-The recruiter searches for and assigns associates to the positions (see [[Semáforo de Posiciones de la Requisición]] and [[Semáforo del Colaborador]]).
+The recruiter searches for and assigns associates to the positions (see [[Requisition Position Status Indicator]] and [[Associate Status Indicator]]).
 
 ### Decision
 
@@ -67,18 +67,18 @@ The recruiter searches for and assigns associates to the positions (see [[Semáf
 ---
 
 ### Light Blue — Fully covered
-**Responsible:** [[Reclutadora]]
+**Responsible:** [[Recruiter]]
 
-All positions reached 100% (see `Green` in [[Semáforo de Posiciones de la Requisición]]).
+All positions reached 100% (see `Green` in [[Requisition Position Status Indicator]]).
 
 **End of active cycle** — the requisition is closed satisfactorily.
 
 ---
 
 ### Red — Partially covered
-**Responsible:** [[Reclutadora]]
+**Responsible:** [[Recruiter]]
 
-The requisition closed with at least one position in `Yellow` or `Red` at the [[Semáforo de Posiciones de la Requisición|position]] level.
+The requisition closed with at least one position in `Yellow` or `Red` at the [[Requisition Position Status Indicator|position]] level.
 
 **End of active cycle** — with incomplete coverage.
 
@@ -90,13 +90,13 @@ Cross-cutting state: reached from any previous state when the requisition is phy
 
 ## Related
 
-- [[Requisición]]
-- [[Semáforo de Urgencia de Requisición]]
-- [[Semáforo de Posiciones de la Requisición]]
-- [[Semáforo del Colaborador]]
-- [[Flujo de Reclutamiento]]
-- [[Reclutadora]]
-- [[Manager de Reclutamiento]]
-- [[Hotel/Manager General|Manager General]]
-- [[Hotel/Manager de Área|Manager de Área]]
+- [[Requisition]]
+- [[Requisition Urgency Indicator]]
+- [[Requisition Position Status Indicator]]
+- [[Associate Status Indicator]]
+- [[Recruitment Flow]]
+- [[Recruiter]]
+- [[Recruitment Manager]]
+- [[Hotel/General Manager|General Manager]]
+- [[Hotel/Area Manager|Area Manager]]
 - [[Hotel/Supervisor|Supervisor]]

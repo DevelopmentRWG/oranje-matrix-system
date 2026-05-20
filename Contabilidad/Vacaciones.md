@@ -14,7 +14,7 @@ Automated calculation of an associate's vacation pay, based on the average hours
 
 **Average hours = Σ net paid hours (last 52 weeks) ÷ 52**
 
-- The system uses the associate's historical [[Consolidado Semanal del Colaborador|Weekly Summaries]] as the source
+- The system uses the associate's historical [[Weekly Associate Summary|Weekly Summaries]] as the source
 - If the associate has fewer than 52 weeks of seniority, the average is calculated over the available weeks
 
 ## Complexity with Multiple Rates
@@ -35,15 +35,15 @@ When the associate worked with different rates during the period (different hote
 
 ## System Functionality
 
-- The [[Contadora]] selects the associate and the period
+- The [[Accountant]] selects the associate and the period
 - The system calculates automatically without manual intervention
 - Presents the result with a breakdown by rate/hotel/position
 - Allows adjusting the week range if a partial calculation is required
 
 ## Related
 
-- [[Consolidado Semanal del Colaborador]]
-- [[Manager de Contabilidad]]
-- [[Contadora]]
-- [[Core/Módulos/Contrato|Contrato]]
-- [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]
+- [[Weekly Associate Summary]]
+- [[Accounting Manager]]
+- [[Accountant]]
+- [[Core/Modules/Contract|Contract]]
+- [[Accounting/Payroll Flow|Payroll Flow]]

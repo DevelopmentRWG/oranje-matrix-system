@@ -15,33 +15,33 @@ aliases:
 # Full Simulation — Accounting Point of View
 
 > [!abstract] Purpose
-> This simulation narrates a complete weekly payroll cycle within the Oranje system, from the perspective of the [[Contadora]] and the [[Manager de Contabilidad]]. It covers the 7 steps of the [[Contabilidad/Flujo de Nómina|Payroll Flow]] — from the automatic generation of the [[Consolidado Semanal del Colaborador]] through to the final payment authorization — and includes scenarios for partial overtime, multi-hotel, internal rate, all three types of [[Deducciones]], [[Facturación al Hotel|split invoice for month crossover]], 16% withholding deactivation, and [[Vacaciones|vacation pay calculation]]. All data is fictional, but every action, calculation, and rule faithfully follows the vault documentation.
+> This simulation narrates a complete weekly payroll cycle within the Oranje system, from the perspective of the [[Accountant]] and the [[Accounting Manager]]. It covers the 7 steps of the [[Accounting/Payroll Flow|Payroll Flow]] — from the automatic generation of the [[Weekly Associate Summary]] through to the final payment authorization — and includes scenarios for partial overtime, multi-hotel, internal rate, all three types of [[Deductions]], [[Hotel Invoice|split invoice for month crossover]], 16% withholding deactivation, and [[Vacation Pay|vacation pay calculation]]. All data is fictional, but every action, calculation, and rule faithfully follows the vault documentation.
 
 ## Simulation Characters
 
 | Character | Role | Department |
 |---|---|---|
-| Patricia Solano | [[Contadora]] (protagonist) | Accounting — Oranje |
-| Irene | [[Manager de Contabilidad]] | Accounting — Oranje |
-| María López | [[Posiciones\|Housekeeper]] | Associate — Hotel Costa Esmeralda |
-| Juan Hernández | [[Posiciones\|Houseman]] | Associate — Hotel Costa Esmeralda |
-| Elena Cruz | [[Posiciones\|Housekeeper]] | Associate — Hotel Costa Esmeralda + Hotel Playa del Sol |
-| Roberto Fuentes | [[Posiciones\|Housekeeper]] | Associate — Hotel Costa Esmeralda |
-| Ana Castillo | [[Posiciones\|Laundry]] | Associate — Hotel Costa Esmeralda |
-| Carmen Delgado | [[Posiciones\|Housekeeper]] veteran | Associate — 52+ weeks of seniority |
-| Daniel Ortega | [[Inspección/Inspector\|Inspector]] (Northwest zone) | Inspection — Oranje |
+| Patricia Solano | [[Accountant]] (protagonist) | Accounting — Oranje |
+| Irene | [[Accounting Manager]] | Accounting — Oranje |
+| María López | [[Positions\|Housekeeper]] | Associate — Hotel Costa Esmeralda |
+| Juan Hernández | [[Positions\|Houseman]] | Associate — Hotel Costa Esmeralda |
+| Elena Cruz | [[Positions\|Housekeeper]] | Associate — Hotel Costa Esmeralda + Hotel Playa del Sol |
+| Roberto Fuentes | [[Positions\|Housekeeper]] | Associate — Hotel Costa Esmeralda |
+| Ana Castillo | [[Positions\|Laundry]] | Associate — Hotel Costa Esmeralda |
+| Carmen Delgado | [[Positions\|Housekeeper]] veteran | Associate — 52+ weeks of seniority |
+| Daniel Ortega | [[Inspection/Inspector\|Inspector]] (Northwest zone) | Inspection — Oranje |
 
 ---
 
 ## Phase 0 — Context and Initial Conditions
 
-> Reference: [[Contadora]] · [[Manager de Contabilidad]] · [[Contabilidad/Flujo de Nómina|Payroll Flow]] · [[Core/Módulos/Contrato|Contract]]
+> Reference: [[Accountant]] · [[Accounting Manager]] · [[Accounting/Payroll Flow|Payroll Flow]] · [[Core/Modules/Contract|Contract]]
 
 ### 0.1 — Situation
 
-It is Monday, July 21, 2026. **Hotel Costa Esmeralda** was converted to an active client (**Orange** status on the [[Semáforo Onboarding]]) on July 11 — as narrated in the [[Simulación - Punto de Vista de Ventas]]. The first [[Requisición]] was filled by Recruitment, and today the first associates report to work.
+It is Monday, July 21, 2026. **Hotel Costa Esmeralda** was converted to an active client (**Orange** status on the [[Onboarding Status Indicator]]) on July 11 — as narrated in the [[Simulation - Sales Point of View]]. The first [[Requisition]] was filled by Recruitment, and today the first associates report to work.
 
-Patricia Solano, Oranje's [[Contadora]], is responsible for executing the entire weekly financial operation: Pre-Payroll validation, reconciliation with the check provider, deduction management, and vacation pay calculation. Irene, [[Manager de Contabilidad]], oversees Patricia's work and is the one who approves invoices and authorizes payroll release. Together they are the two human actors in the [[Contabilidad/Flujo de Nómina|Payroll Flow]].
+Patricia Solano, Oranje's [[Accountant]], is responsible for executing the entire weekly financial operation: Pre-Payroll validation, reconciliation with the check provider, deduction management, and vacation pay calculation. Irene, [[Accounting Manager]], oversees Patricia's work and is the one who approves invoices and authorizes payroll release. Together they are the two human actors in the [[Accounting/Payroll Flow|Payroll Flow]].
 
 ### 0.2 — Hotel Costa Esmeralda Contract Terms
 
@@ -61,7 +61,7 @@ Patricia Solano, Oranje's [[Contadora]], is responsible for executing the entire
 | Split invoice by month | Yes |
 
 > [!warning] Business Rule
-> Overtime is calculated **per hotel**, not globally. If an associate works at two hotels, each hotel has its own independent 40 gross weekly hours threshold. — [[Consolidado Semanal del Colaborador#Cálculo]]
+> Overtime is calculated **per hotel**, not globally. If an associate works at two hotels, each hotel has its own independent 40 gross weekly hours threshold. — [[Weekly Associate Summary#Calculation]]
 
 ### 0.3 — Associates and Their Conditions
 
@@ -74,29 +74,29 @@ Patricia Solano, Oranje's [[Contadora]], is responsible for executing the entire
 | Ana Castillo | LN | Costa Esmeralda | $11.50 | Meal deduction |
 
 > [!tip] Internal rate — Roberto Fuentes
-> Roberto has an internal arrangement with Oranje due to prior experience: his actual pay rate is **$14.00/hr**, higher than the hotel's contractual rate ($12.50/hr). This internal rate is visible **only** to Accounting. The [[Facturación al Hotel|Hotel Invoice]] always uses the [[Core/Módulos/Contrato|Contract]] bill rate ($18.25/hr). The difference is absorbed by Oranje. — [[Consolidado Semanal del Colaborador#Rate interno]]
+> Roberto has an internal arrangement with Oranje due to prior experience: his actual pay rate is **$14.00/hr**, higher than the hotel's contractual rate ($12.50/hr). This internal rate is visible **only** to Accounting. The [[Hotel Invoice|Hotel Invoice]] always uses the [[Core/Modules/Contract|Contract]] bill rate ($18.25/hr). The difference is absorbed by Oranje. — [[Weekly Associate Summary#Rate interno]]
 
 ### 0.4 — Note on QA
 
 > [!info] Accounting and QA
-> The Accounting department **does not have** an assigned [[Operador de QA]] or defined KPIs in the system. The 5 QA operators cover Inspection, Hotel, Associate, Sales, and Recruitment. — [[Métricas y KPIs por Departamento]]
+> The Accounting department **does not have** an assigned [[QA Operator]] or defined KPIs in the system. The 5 QA operators cover Inspection, Hotel, Associate, Sales, and Recruitment. — [[Metrics and KPIs by Department]]
 
 ---
 
 ## Phase 1 — The Work Week (Mon July 21 – Sun July 27, 2026)
 
-> Reference: [[Timesheet]] · [[Core/Módulos/Schedule|Schedule]] · [[Inspección/Inspector|Inspector]] · [[Deducciones#Uniforme]]
+> Reference: [[Timesheet]] · [[Core/Modules/Schedule|Schedule]] · [[Inspection/Inspector|Inspector]] · [[Deductions#Uniforme]]
 
 ### 1.1 — Operational Summary of the Week
 
-All 5 associates assigned to Hotel Costa Esmeralda report on Monday, July 21 (Day 1). Daniel Ortega, [[Inspección/Inspector|Inspector]] for the Northwest zone, verifies their arrival at the property — White → Apple Green transition on the [[Semáforo del Colaborador]].
+All 5 associates assigned to Hotel Costa Esmeralda report on Monday, July 21 (Day 1). Daniel Ortega, [[Inspection/Inspector|Inspector]] for the Northwest zone, verifies their arrival at the property — White → Apple Green transition on the [[Associate Status Indicator]].
 
-On Wednesday, July 23 (Day 3), Daniel delivers uniforms to all 5 associates and logs each delivery in the system. This triggers the [[Deducciones#Uniforme|uniform deduction]] ($15 USD per person) to be applied to the next [[Consolidado Semanal del Colaborador|Weekly Summary]].
+On Wednesday, July 23 (Day 3), Daniel delivers uniforms to all 5 associates and logs each delivery in the system. This triggers the [[Deductions#Uniforme|uniform deduction]] ($15 USD per person) to be applied to the next [[Weekly Associate Summary|Weekly Summary]].
 
 > [!warning] Business Rule
-> The uniform deduction is automatically applied to the next [[Consolidado Semanal del Colaborador|Weekly Summary]] following the delivery registration by the [[Inspección/Inspector|Inspector]]. — [[Deducciones#Uniforme]]
+> The uniform deduction is automatically applied to the next [[Weekly Associate Summary|Weekly Summary]] following the delivery registration by the [[Inspection/Inspector|Inspector]]. — [[Deductions#Uniforme]]
 
-Elena Cruz works at Costa Esmeralda Monday through Wednesday (3 days). On Thursday, her [[Reclutadora]] temporarily assigns her ([[Semáforo del Colaborador|Brown]]) to **Hotel Playa del Sol** (HK pay rate: $13.00/hr, HK bill rate: $17.50/hr), where she works Thursday and Friday.
+Elena Cruz works at Costa Esmeralda Monday through Wednesday (3 days). On Thursday, her [[Recruiter]] temporarily assigns her ([[Associate Status Indicator|Brown]]) to **Hotel Playa del Sol** (HK pay rate: $13.00/hr, HK bill rate: $17.50/hr), where she works Thursday and Friday.
 
 Juan Hernández works extended 9-hour gross shifts per day (1 extra hour daily), accumulating 45 gross hours in the week — 5 hours above the overtime threshold.
 
@@ -112,15 +112,15 @@ Juan Hernández works extended 9-hour gross shifts per day (1 extra hour daily),
 | Ana Castillo | Costa Esmeralda | 5 | 8.0 | 40.0 | 2.5 | 37.5 |
 
 > [!info] Juan Hernández Overtime
-> Juan accumulated 45 gross hours at Costa Esmeralda. The threshold is 40 gross hours → 5 overtime hours. The hotel authorizes **only 3 of the 5 hours**. The 2 unauthorized hours are recorded but not paid or billed. — [[Consolidado Semanal del Colaborador#Overtime autorizado parcialmente]]
+> Juan accumulated 45 gross hours at Costa Esmeralda. The threshold is 40 gross hours → 5 overtime hours. The hotel authorizes **only 3 of the 5 hours**. The 2 unauthorized hours are recorded but not paid or billed. — [[Weekly Associate Summary#Overtime autorizado parcialmente]]
 
 ---
 
 ## Phase 2 — Automatic Generation of the Weekly Summary
 
-> Reference: [[Consolidado Semanal del Colaborador]] · [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 1
+> Reference: [[Weekly Associate Summary]] · [[Accounting/Payroll Flow|Payroll Flow]] step 1
 
-Sunday, July 27, at the close of the week. The system automatically generates the [[Consolidado Semanal del Colaborador|Weekly Summary]] for each associate, grouping their [[Timesheet|Timesheets]] by hotel and applying the corresponding pay rate.
+Sunday, July 27, at the close of the week. The system automatically generates the [[Weekly Associate Summary|Weekly Summary]] for each associate, grouping their [[Timesheet|Timesheets]] by hotel and applying the corresponding pay rate.
 
 > [!success] **Payroll Flow Step 1** — Automatic. No human intervention required.
 
@@ -153,7 +153,7 @@ Sunday, July 27, at the close of the week. The system automatically generates th
 |---|---|
 
 > [!warning] Business Rule
-> The hotel authorized only 3 of the 5 overtime hours. The [[Manager de Contabilidad]] adjusts payable OT hours per what was authorized. The remaining 2 hours are recorded but not paid to the associate or billed to the hotel. — [[Consolidado Semanal del Colaborador#Overtime autorizado parcialmente]]
+> The hotel authorized only 3 of the 5 overtime hours. The [[Accounting Manager]] adjusts payable OT hours per what was authorized. The remaining 2 hours are recorded but not paid to the associate or billed to the hotel. — [[Weekly Associate Summary#Overtime autorizado parcialmente]]
 
 ### 2.3 — Summary: Elena Cruz (multi-hotel)
 
@@ -171,7 +171,7 @@ Sunday, July 27, at the close of the week. The system automatically generates th
 |---|---|
 
 > [!info] Check Assignment
-> Elena worked at two hotels. The check is assigned to **Hotel Costa Esmeralda** (22.5 hrs > 15.0 hrs) — the hotel where she accumulated the most hours. — [[Consolidado Semanal del Colaborador#Asignación del cheque]]
+> Elena worked at two hotels. The check is assigned to **Hotel Costa Esmeralda** (22.5 hrs > 15.0 hrs) — the hotel where she accumulated the most hours. — [[Weekly Associate Summary#Check Assignment]]
 
 ### 2.4 — Summary: Roberto Fuentes (internal rate)
 
@@ -184,7 +184,7 @@ Sunday, July 27, at the close of the week. The system automatically generates th
 |---|---|---|---|---|---|---|---|
 | Costa Esmeralda | HK | 37.5 | **$14.00*** | $525.00 | 0 | — | $0.00 |
 
-\* Internal rate — higher than the contractual rate ($12.50). Visible only to Accounting ([[Manager de Contabilidad]] and [[Contadora]]).
+\* Internal rate — higher than the contractual rate ($12.50). Visible only to Accounting ([[Accounting Manager]] and [[Accountant]]).
 
 | **Total payable** | **$525.00** |
 |---|---|
@@ -204,15 +204,15 @@ Sunday, July 27, at the close of the week. The system automatically generates th
 |---|---|
 
 > [!important] Visibility
-> The [[Consolidado Semanal del Colaborador|Weekly Summary]] is for exclusive use by the Accounting department. The hotel and the associate **do not have access** to this document. — [[Consolidado Semanal del Colaborador#Visibilidad]]
+> The [[Weekly Associate Summary|Weekly Summary]] is for exclusive use by the Accounting department. The hotel and the associate **do not have access** to this document. — [[Weekly Associate Summary#Visibilidad]]
 
 ---
 
 ## Phase 3 — Automatic Pre-Payroll Calculation
 
-> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 2 · [[Deducciones]]
+> Reference: [[Accounting/Payroll Flow|Payroll Flow]] step 2 · [[Deductions]]
 
-Monday, July 28, morning. The system generates the Pre-Payroll from the Summaries: it applies the internal rate where applicable, the active [[Deducciones]] for each associate, and the authorized overtime.
+Monday, July 28, morning. The system generates the Pre-Payroll from the Summaries: it applies the internal rate where applicable, the active [[Deductions]] for each associate, and the authorized overtime.
 
 > [!success] **Payroll Flow Step 2** — Automatic. No human intervention required.
 
@@ -227,9 +227,9 @@ Monday, July 28, morning. The system generates the Pre-Payroll from the Summarie
 | Ana Castillo | $15.00 | $15.00 | — | $30.00 |
 
 > [!warning] Deduction Rules
-> - **Uniform** ($15/person): the [[Inspección/Inspector|Inspector]] registered delivery on July 23 (Day 3). Applied to this week's Summary. — [[Deducciones#Uniforme]]
-> - **Meal** ($3/day worked): configured in the Costa Esmeralda [[Core/Módulos/Contrato|Contract]]. Applied only on days with a recorded [[Timesheet]]. Elena worked 3 days at Costa Esmeralda ($9) and 2 at Playa del Sol (where it is **not** configured). — [[Deducciones#Comida]]
-> - **16% Withholding** ($84.00): Roberto Fuentes does not have an SSN/TaxID registered. 16% × $525.00 = $84.00. Activates automatically until the [[Contadora]] deactivates it upon receiving documents. — [[Deducciones#Retención 16%]]
+> - **Uniform** ($15/person): the [[Inspection/Inspector|Inspector]] registered delivery on July 23 (Day 3). Applied to this week's Summary. — [[Deductions#Uniforme]]
+> - **Meal** ($3/day worked): configured in the Costa Esmeralda [[Core/Modules/Contract|Contract]]. Applied only on days with a recorded [[Timesheet]]. Elena worked 3 days at Costa Esmeralda ($9) and 2 at Playa del Sol (where it is **not** configured). — [[Deductions#Comida]]
+> - **16% Withholding** ($84.00): Roberto Fuentes does not have an SSN/TaxID registered. 16% × $525.00 = $84.00. Activates automatically until the [[Accountant]] deactivates it upon receiving documents. — [[Deductions#16% Withholding]]
 
 ### 3.2 — Full Pre-Payroll
 
@@ -250,7 +250,7 @@ Monday, July 28, morning. The system generates the Pre-Payroll from the Summarie
 
 ## Phase 4 — Human Validation by Accounting
 
-> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 3 · [[Contadora]]
+> Reference: [[Accounting/Payroll Flow|Payroll Flow]] step 3 · [[Accountant]]
 
 Monday, July 28, mid-morning. Patricia Solano opens the system-generated Pre-Payroll and begins line-by-line validation.
 
@@ -283,7 +283,7 @@ Patricia reviews line 4 (Roberto Fuentes) and detects an error: the system appli
 Patricia corrects the rate in the system. The Pre-Payroll recalculates automatically for the affected line.
 
 > [!warning] Business Rule
-> When an internal rate exists, the system must use it to calculate the associate's payment instead of the contractual rate. The internal rate **is not reflected** in the [[Facturación al Hotel|Hotel Invoice]]. — [[Consolidado Semanal del Colaborador#Rate interno]]
+> When an internal rate exists, the system must use it to calculate the associate's payment instead of the contractual rate. The internal rate **is not reflected** in the [[Hotel Invoice|Hotel Invoice]]. — [[Weekly Associate Summary#Rate interno]]
 
 ### 4.3 — Approval
 
@@ -295,7 +295,7 @@ Patricia confirms that the remaining 5 lines are correct: IDs match names, hours
 
 ## Phase 5 — Automatic Hotel Invoice Generation
 
-> Reference: [[Facturación al Hotel]] · [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 4 · [[Core/Módulos/Contrato|Contract]]
+> Reference: [[Hotel Invoice]] · [[Accounting/Payroll Flow|Payroll Flow]] step 4 · [[Core/Modules/Contract|Contract]]
 
 Monday, July 28. After Pre-Payroll approval, the system automatically generates invoices for each hotel.
 
@@ -324,9 +324,9 @@ Monday, July 28. After Pre-Payroll approval, the system automatically generates 
 | **Total due** | **$3,040.89** |
 
 > [!warning] Invoice Rules
-> - The Invoice uses exclusively the **bill rate** from the [[Core/Módulos/Contrato|Contract]]. Roberto Fuentes's internal rate ($14.00) **never** appears on the Invoice — $18.25 is used. — [[Facturación al Hotel]]
-> - Only the **authorized** overtime is billed (3 hours for Juan). The 2 unauthorized hours are not included. — [[Facturación al Hotel#Overtime autorizado]]
-> - The meal deduction ($3/day) is credited to the hotel. 5 associates × days with [[Timesheet]]: (5+5+3+5+5) = 23 days × $3 = $69.00. — [[Deducciones#Comida]]
+> - The Invoice uses exclusively the **bill rate** from the [[Core/Modules/Contract|Contract]]. Roberto Fuentes's internal rate ($14.00) **never** appears on the Invoice — $18.25 is used. — [[Hotel Invoice]]
+> - Only the **authorized** overtime is billed (3 hours for Juan). The 2 unauthorized hours are not included. — [[Hotel Invoice#Overtime autorizado]]
+> - The meal deduction ($3/day) is credited to the hotel. 5 associates × days with [[Timesheet]]: (5+5+3+5+5) = 23 days × $3 = $69.00. — [[Deductions#Comida]]
 
 ### 5.2 — Invoice to Hotel Playa del Sol
 
@@ -346,7 +346,7 @@ Monday, July 28. After Pre-Payroll approval, the system automatically generates 
 | Credits | $0.00 |
 | **Total due** | **$262.50** |
 
-> [!info] Hotel Playa del Sol does not have the meal deduction configured in its [[Core/Módulos/Contrato|Contract]].
+> [!info] Hotel Playa del Sol does not have the meal deduction configured in its [[Core/Modules/Contract|Contract]].
 
 ### 5.3 — Invoice Approval
 
@@ -358,7 +358,7 @@ Patricia reviews both invoices, verifies that bill rates match the contracts, th
 
 ## Phase 6 — Export to Check Provider
 
-> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 5
+> Reference: [[Accounting/Payroll Flow|Payroll Flow]] step 5
 
 Monday, July 28, afternoon. The system generates the export file with payment data for the external check provider.
 
@@ -377,7 +377,7 @@ Monday, July 28, afternoon. The system generates the export file with payment da
 
 ## Phase 7 — Reconciliation
 
-> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 6 · [[Contadora]]
+> Reference: [[Accounting/Payroll Flow|Payroll Flow]] step 6 · [[Accountant]]
 
 Tuesday, July 29, morning. The check provider returns confirmation of the 5 checks generated. Patricia initiates the reconciliation: she compares what was sent against what was returned.
 
@@ -405,16 +405,16 @@ Patricia validates that all 5 checks match the approved Pre-Payroll amounts.
 
 ## Phase 8 — Final Authorization and Payment Release
 
-> Reference: [[Contabilidad/Flujo de Nómina|Payroll Flow]] step 7 · [[Manager de Contabilidad]]
+> Reference: [[Accounting/Payroll Flow|Payroll Flow]] step 7 · [[Accounting Manager]]
 
 Tuesday, July 29, midday. Irene authorizes the release of the weekly payroll.
 
-> [!warning] **Payroll Flow Step 7** — Semi-automated. Requires [[Manager de Contabilidad]] authorization.
+> [!warning] **Payroll Flow Step 7** — Semi-automated. Requires [[Accounting Manager]] authorization.
 
 | Field | Value |
 |---|---|
 | Authorization date | July 29, 2026, 12:15 PM |
-| Authorized by | Irene — [[Manager de Contabilidad]] |
+| Authorized by | Irene — [[Accounting Manager]] |
 | Total payroll released | $2,135.25 (5 checks) |
 | Status | Payments executed |
 
@@ -427,7 +427,7 @@ Associates will receive their checks at the assigned hotel (all at Costa Esmeral
 
 ## Phase 9 — Split Invoice for Month Crossover
 
-> Reference: [[Facturación al Hotel#Factura partida por cruce de mes]] · [[Core/Módulos/Contrato|Contract]]
+> Reference: [[Hotel Invoice#Factura partida por cruce de mes]] · [[Core/Modules/Contract|Contract]]
 
 ### 9.1 — Context: Week of July 28 – August 3
 
@@ -435,7 +435,7 @@ The next work week (Week 31) crosses two calendar months:
 - **July:** Monday July 28, Tuesday July 29, Wednesday July 30, Thursday July 31 (4 work days)
 - **August:** Friday August 1 (1 work day) + Saturday August 2 and Sunday August 3 (rest)
 
-The [[Core/Módulos/Contrato|Contract]] for Hotel Costa Esmeralda has "Split invoice by month: Yes" configured. This requires the system to generate **two separate invoices** when the week crosses the monthly boundary.
+The [[Core/Modules/Contract|Contract]] for Hotel Costa Esmeralda has "Split invoice by month: Yes" configured. This requires the system to generate **two separate invoices** when the week crosses the monthly boundary.
 
 ### 9.2 — Example: María López in the Split Week
 
@@ -452,15 +452,15 @@ The [[Core/Módulos/Contrato|Contract]] for Hotel Costa Esmeralda has "Split inv
 | María López | HK | 7.5 | $18.25 | $136.88 |
 
 > [!warning] Business Rule
-> When a week spans two calendar months and the [[Core/Módulos/Contrato|Contract]] has "Split invoice by month: Yes", the system generates two separate invoices: one for the days of the ending month and another for the days of the new month. — [[Facturación al Hotel#Factura partida por cruce de mes]]
+> When a week spans two calendar months and the [[Core/Modules/Contract|Contract]] has "Split invoice by month: Yes", the system generates two separate invoices: one for the days of the ending month and another for the days of the new month. — [[Hotel Invoice#Factura partida por cruce de mes]]
 
-The system automatically generates both complete invoices (with all associates). Patricia validates and approves them as part of the normal [[Contabilidad/Flujo de Nómina|Payroll Flow]] cycle.
+The system automatically generates both complete invoices (with all associates). Patricia validates and approves them as part of the normal [[Accounting/Payroll Flow|Payroll Flow]] cycle.
 
 ---
 
 ## Phase 10 — 16% Withholding Deactivation
 
-> Reference: [[Deducciones#Retención 16%]] · [[Contadora]]
+> Reference: [[Deductions#16% Withholding]] · [[Accountant]]
 
 ### 10.1 — Roberto Fuentes Delivers Documents
 
@@ -468,7 +468,7 @@ Monday, August 4, 2026. Roberto Fuentes delivers his SSN to the Human Resources 
 
 ### 10.2 — Manual Deactivation
 
-Patricia Solano receives the notification that Roberto now has a registered SSN. She accesses the [[Deducciones]] module and **manually deactivates** the 16% withholding for Roberto Fuentes.
+Patricia Solano receives the notification that Roberto now has a registered SSN. She accesses the [[Deductions]] module and **manually deactivates** the 16% withholding for Roberto Fuentes.
 
 | Field | Value |
 |---|---|
@@ -477,7 +477,7 @@ Patricia Solano receives the notification that Roberto now has a registered SSN.
 | Previous status | Active |
 | New status | Deactivated |
 | Deactivation date | August 4, 2026 |
-| Responsible | Patricia Solano — [[Contadora]] |
+| Responsible | Patricia Solano — [[Accountant]] |
 
 ### 10.3 — Cumulative Withheld Amount
 
@@ -490,7 +490,7 @@ The system displays the accumulated withholding history:
 | **Total accumulated** | | **$168.00** |
 
 > [!important] Refund
-> The 16% withholding is **refundable**. Upon deactivation, the system allows generating a refund for the accumulated withheld amount ($168.00). Patricia can schedule the refund in the next payroll cycle or split it according to Oranje's internal policy. — [[Deducciones#Retención 16%]]
+> The 16% withholding is **refundable**. Upon deactivation, the system allows generating a refund for the accumulated withheld amount ($168.00). Patricia can schedule the refund in the next payroll cycle or split it according to Oranje's internal policy. — [[Deductions#16% Withholding]]
 
 Starting from week 32, Roberto's check will no longer include the 16% withholding.
 
@@ -498,11 +498,11 @@ Starting from week 32, Roberto's check will no longer include the 16% withholdin
 
 ## Phase 11 — Vacation Pay Calculation
 
-> Reference: [[Vacaciones]] · [[Contadora]] · [[Consolidado Semanal del Colaborador]]
+> Reference: [[Vacation Pay]] · [[Accountant]] · [[Weekly Associate Summary]]
 
 ### 11.1 — Context
 
-July 2027 — one year later. Carmen Delgado, a veteran [[Posiciones|Housekeeper]], requests her vacation pay calculation. Carmen has worked 52 complete weeks at two hotels:
+July 2027 — one year later. Carmen Delgado, a veteran [[Positions|Housekeeper]], requests her vacation pay calculation. Carmen has worked 52 complete weeks at two hotels:
 
 | Hotel | Position | Weeks | Pay rate |
 |---|---|---|---|
@@ -530,9 +530,9 @@ Patricia selects Carmen Delgado and the 52-week period in the system. The calcul
 | **Vacation Pay (weekly equivalent)** | | | **$930.50** |
 
 > [!warning] Business Rule
-> When the associate worked at different rates, the system separates the weeks/hours by rate, calculates the average for each rate independently, and presents the breakdown by hotel, position, and rate. — [[Vacaciones#Complejidad por múltiples rates]]
+> When the associate worked at different rates, the system separates the weeks/hours by rate, calculates the average for each rate independently, and presents the breakdown by hotel, position, and rate. — [[Vacation Pay#Complexity with Multiple Rates]]
 
-> [!info] If Carmen had fewer than 52 weeks of seniority, the system would average over the available weeks. — [[Vacaciones#Fórmula]]
+> [!info] If Carmen had fewer than 52 weeks of seniority, the system would average over the available weeks. — [[Vacation Pay#Formula]]
 
 ---
 
@@ -540,10 +540,10 @@ Patricia selects Carmen Delgado and the 52-week period in the system. The calcul
 
 | Step | Description | Automation | Date | Responsible |
 |---|---|---|---|---|
-| 1 | [[Consolidado Semanal del Colaborador\|Weekly Summary]] generation | Automatic | Jul 27 (Sun night) | System |
+| 1 | [[Weekly Associate Summary\|Weekly Summary]] generation | Automatic | Jul 27 (Sun night) | System |
 | 2 | Pre-Payroll calculation | Automatic | Jul 28 (Mon AM) | System |
 | 3 | Pre-Payroll validation | Semi-automatic | Jul 28 (Mon morning) | Patricia Solano |
-| 4 | [[Facturación al Hotel\|Hotel Invoice]] generation | Automatic | Jul 28 (Mon) | System |
+| 4 | [[Hotel Invoice\|Hotel Invoice]] generation | Automatic | Jul 28 (Mon) | System |
 | 5 | Export to check provider | Automatic | Jul 28 (Mon afternoon) | System |
 | 6 | Reconciliation | Semi-automatic | Jul 29 (Tue AM) | Patricia Solano |
 | 7 | Final authorization and payment | Semi-automatic | Jul 29 (Tue midday) | Patricia Solano |
@@ -579,17 +579,17 @@ graph TD
 
 | # | Scenario | Associate | Phase | Main Module |
 |---|---|---|---|---|
-| 1 | Standard case (regular hours, no OT) | María López | 2–8 | [[Consolidado Semanal del Colaborador]] |
-| 2 | Partially authorized overtime (5 OT, hotel approves 3) | Juan Hernández | 2–8 | [[Consolidado Semanal del Colaborador]] |
-| 3 | Multi-hotel with check at hotel with most hours | Elena Cruz | 2–8 | [[Consolidado Semanal del Colaborador]] |
-| 4 | Internal rate (higher than contractual) | Roberto Fuentes | 2–5 | [[Consolidado Semanal del Colaborador]] |
-| 5 | 16% withholding (no SSN) + deactivation + refund | Roberto Fuentes | 3, 10 | [[Deducciones]] |
-| 6 | Uniform deduction (Day 3) | All | 3 | [[Deducciones]] |
-| 7 | Meal deduction + hotel credit | All (Costa Esmeralda) | 3, 5 | [[Deducciones]] · [[Facturación al Hotel]] |
-| 8 | Split invoice for month crossover | All (Costa Esmeralda) | 9 | [[Facturación al Hotel]] |
-| 9 | Multi-hotel vacation pay calculation | Carmen Delgado | 11 | [[Vacaciones]] |
-| 10 | Pre-Payroll discrepancy (incorrect rate) | Roberto Fuentes | 4 | [[Contadora]] |
-| 11 | Reconciliation discrepancy (provider) | Roberto Fuentes | 7 | [[Contadora]] |
+| 1 | Standard case (regular hours, no OT) | María López | 2–8 | [[Weekly Associate Summary]] |
+| 2 | Partially authorized overtime (5 OT, hotel approves 3) | Juan Hernández | 2–8 | [[Weekly Associate Summary]] |
+| 3 | Multi-hotel with check at hotel with most hours | Elena Cruz | 2–8 | [[Weekly Associate Summary]] |
+| 4 | Internal rate (higher than contractual) | Roberto Fuentes | 2–5 | [[Weekly Associate Summary]] |
+| 5 | 16% withholding (no SSN) + deactivation + refund | Roberto Fuentes | 3, 10 | [[Deductions]] |
+| 6 | Uniform deduction (Day 3) | All | 3 | [[Deductions]] |
+| 7 | Meal deduction + hotel credit | All (Costa Esmeralda) | 3, 5 | [[Deductions]] · [[Hotel Invoice]] |
+| 8 | Split invoice for month crossover | All (Costa Esmeralda) | 9 | [[Hotel Invoice]] |
+| 9 | Multi-hotel vacation pay calculation | Carmen Delgado | 11 | [[Vacation Pay]] |
+| 10 | Pre-Payroll discrepancy (incorrect rate) | Roberto Fuentes | 4 | [[Accountant]] |
+| 11 | Reconciliation discrepancy (provider) | Roberto Fuentes | 7 | [[Accountant]] |
 
 ---
 
@@ -597,23 +597,23 @@ graph TD
 
 | Module | Reference |
 |---|---|
-| Accounting | [[Manager de Contabilidad]] · [[Contadora]] · [[Contabilidad/Flujo de Nómina\|Payroll Flow]] |
-| Summary and payment | [[Consolidado Semanal del Colaborador]] · [[Deducciones]] |
-| Billing | [[Facturación al Hotel]] |
-| Vacation Pay | [[Vacaciones]] |
-| Core | [[Core/Módulos/Contrato\|Contract]] · [[Timesheet]] · [[Core/Módulos/Schedule\|Schedule]] |
-| Status Indicators | [[Semáforo del Colaborador]] · [[Semáforo Onboarding]] |
-| Catalogs | [[Posiciones]] · [[Zonas]] |
-| Inspection | [[Inspección/Inspector\|Inspector]] |
-| Recruitment | [[Reclutadora]] |
-| Quality | [[Operador de QA]] · [[Métricas y KPIs por Departamento]] |
+| Accounting | [[Accounting Manager]] · [[Accountant]] · [[Accounting/Payroll Flow\|Payroll Flow]] |
+| Summary and payment | [[Weekly Associate Summary]] · [[Deductions]] |
+| Billing | [[Hotel Invoice]] |
+| Vacation Pay | [[Vacation Pay]] |
+| Core | [[Core/Modules/Contract\|Contract]] · [[Timesheet]] · [[Core/Modules/Schedule\|Schedule]] |
+| Status Indicators | [[Associate Status Indicator]] · [[Onboarding Status Indicator]] |
+| Catalogs | [[Positions]] · [[Zones]] |
+| Inspection | [[Inspection/Inspector\|Inspector]] |
+| Recruitment | [[Recruiter]] |
+| Quality | [[QA Operator]] · [[Metrics and KPIs by Department]] |
 
 ---
 
 ## Related Simulations
 
-- [[Simulación - Punto de Vista de Ventas]] — Narrates the commercial cycle of Hotel Costa Esmeralda from prospecting through conversion to active client. The contractual terms (pay rate, bill rate, overtime) negotiated in that simulation are the ones used here to calculate payments and invoices.
-- [[Simulación - Punto de Vista de Inspección]] — Covers the field operations of Inspector Daniel Ortega, including the Day 3 uniform delivery that triggers the uniform deduction processed in this simulation.
-- [[Simulación - Punto de Vista del Hotel]] — Shows the weekly billing from the hotel's perspective, complementing the internal Accounting view presented here.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Includes the week-end close with Weekly Summary and Pre-Payroll generation for the recruited associates, connecting to the payroll flow detailed here.
-- [[Simulación - Ciclo de Vida del Colaborador]] — Traces the 12 states of the associate status indicator and includes check calculation examples with deductions, overtime, and internal rate that align with the scenarios in this simulation.
+- [[Simulation - Sales Point of View]] — Narrates the commercial cycle of Hotel Costa Esmeralda from prospecting through conversion to active client. The contractual terms (pay rate, bill rate, overtime) negotiated in that simulation are the ones used here to calculate payments and invoices.
+- [[Simulation - Inspection Perspective]] — Covers the field operations of Inspector Daniel Ortega, including the Day 3 uniform delivery that triggers the uniform deduction processed in this simulation.
+- [[Simulation - Hotel Perspective]] — Shows the weekly billing from the hotel's perspective, complementing the internal Accounting view presented here.
+- [[Simulation - Recruitment Perspective]] — Includes the week-end close with Weekly Summary and Pre-Payroll generation for the recruited associates, connecting to the payroll flow detailed here.
+- [[Simulation - Associate Lifecycle]] — Traces the 12 states of the associate status indicator and includes check calculation examples with deductions, overtime, and internal rate that align with the scenarios in this simulation.

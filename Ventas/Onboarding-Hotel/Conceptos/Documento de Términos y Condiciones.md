@@ -10,7 +10,7 @@ aliases:
 
 # Terms and Conditions Document
 
-Formal document created during [[Semáforo Onboarding|Onboarding Status Yellow]] by the [[Business Developer]] or the [[Business Developer Coordinator]]. It establishes the commercial conditions under which the final agreement with the hotel is negotiated.
+Formal document created during [[Onboarding Status Indicator|Onboarding Status Yellow]] by the [[Business Developer]] or the [[Business Developer Coordinator]]. It establishes the commercial conditions under which the final agreement with the hotel is negotiated.
 
 ## Content
 
@@ -22,12 +22,12 @@ Formal document created during [[Semáforo Onboarding|Onboarding Status Yellow]]
 
 ## Lifecycle
 
-- **Created at:** [[Semáforo Onboarding|Onboarding Status Yellow]].
-- **Negotiated at:** [[Semáforo Onboarding|Onboarding Status Pink]].
-- **Final validation:** [[Business Developer Coordinator]] before closing the [[Contrato]].
+- **Created at:** [[Onboarding Status Indicator|Onboarding Status Yellow]].
+- **Negotiated at:** [[Onboarding Status Indicator|Onboarding Status Pink]].
+- **Final validation:** [[Business Developer Coordinator]] before closing the [[Contract]].
 
 ## Related
 
-- [[Flujo de Onboarding]]
-- [[Propuesta Personalizada]]
-- [[Usuario del Hotel]]
+- [[Onboarding Flow]]
+- [[Customized Proposal]]
+- [[Hotel User]]

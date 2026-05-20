@@ -8,7 +8,7 @@ aliases:
 
 # English Levels
 
-English proficiency levels used at Oranje. They apply both to the **preference** the hotel specifies in the [[Requisición]] and to the level declared by the associate upon registration.
+English proficiency levels used at Oranje. They apply both to the **preference** the hotel specifies in the [[Requisition]] and to the level declared by the associate upon registration.
 
 ## Levels
 
@@ -19,5 +19,5 @@ English proficiency levels used at Oranje. They apply both to the **preference**
 
 ## Related
 
-- [[Requisición]]
-- [[Flujo de Reclutamiento]]
+- [[Requisition]]
+- [[Recruitment Flow]]

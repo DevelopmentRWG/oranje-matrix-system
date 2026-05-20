@@ -9,7 +9,7 @@ aliases:
 
 # QA
 
-Department responsible for supervising the operational quality of all Oranje departments. Each department has an assigned [[Operador de QA]] who monitors performance metrics and issues observations for continuous improvement.
+Department responsible for supervising the operational quality of all Oranje departments. Each department has an assigned [[QA Operator]] who monitors performance metrics and issues observations for continuous improvement.
 
 > [!info]
 > QA does not execute the operations of any department. Its function is to **observe, measure, and provide feedback** so that each area maintains its quality within the defined standards.
@@ -18,35 +18,35 @@ Department responsible for supervising the operational quality of all Oranje dep
 
 ### Roles
 
-- [[Manager de QA]]
-- [[Operador de QA]]
+- [[QA Manager]]
+- [[QA Operator]]
 
 ### Rules
 
-- [[QA/Reglas de QA|QA Rules]]
+- [[QA/QA Rules|QA Rules]]
 
 ### Metrics
 
-- [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
+- [[QA/Metrics and KPIs by Department|Metrics and KPIs by Department]]
 
 ### Dashboard
 
-- [[QA/Dashboard de QA|QA Dashboard]]
+- [[QA/QA Dashboard|QA Dashboard]]
 
 ### Supervised Departments
 
-- [[Inspección/Inspección|Inspection]]
+- [[Inspection/Inspection|Inspection]]
 - [[Hotel/Hotel|Hotel]]
-- [[Colaborador/Colaborador|Associate]]
-- [[Ventas/Ventas|Sales]]
-- [[Reclutamiento/Reclutamiento|Recruitment]]
+- [[Associate/Associate|Associate]]
+- [[Sales/Sales|Sales]]
+- [[Recruitment/Recruitment|Recruitment]]
 - [[Customer Service/Customer Service|Customer Service]]
 
 ## Related Core Concepts
 
-- [[Indicador de Calidad]]
-- [[Semáforo del Colaborador]]
-- [[Semáforo de Requisición]]
-- [[Semáforo Onboarding]]
-- [[Semáforo de Urgencia de Requisición]]
-- [[Semáforo de Posiciones de la Requisición]]
+- [[Quality Indicator]]
+- [[Associate Status Indicator]]
+- [[Requisition Status Indicator]]
+- [[Onboarding Status Indicator]]
+- [[Requisition Urgency Indicator]]
+- [[Requisition Position Status Indicator]]

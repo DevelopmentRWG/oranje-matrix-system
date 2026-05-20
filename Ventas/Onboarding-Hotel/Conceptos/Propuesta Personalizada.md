@@ -8,7 +8,7 @@ aliases:
 
 # Customized Proposal
 
-Commercial document that the [[Business Developer]] prepares and sends to the hotel during [[Semáforo Onboarding|Onboarding Status Green]]. It presents Oranje's offer tailored to the specific needs of the prospect hotel.
+Commercial document that the [[Business Developer]] prepares and sends to the hotel during [[Onboarding Status Indicator|Onboarding Status Green]]. It presents Oranje's offer tailored to the specific needs of the prospect hotel.
 
 ## Content
 
@@ -18,12 +18,12 @@ Commercial document that the [[Business Developer]] prepares and sends to the ho
 
 ## Lifecycle
 
-- **Prepared and sent at:** [[Semáforo Onboarding|Onboarding Status Green]].
-- **Followed up at:** [[Semáforo Onboarding|Onboarding Status Green]] (recording contact attempts).
-- **Adjusted/resumed from:** [[Semáforo Onboarding|Onboarding Status Brown]] when there is a stall.
+- **Prepared and sent at:** [[Onboarding Status Indicator|Onboarding Status Green]].
+- **Followed up at:** [[Onboarding Status Indicator|Onboarding Status Green]] (recording contact attempts).
+- **Adjusted/resumed from:** [[Onboarding Status Indicator|Onboarding Status Brown]] when there is a stall.
 
 ## Related
 
-- [[Flujo de Onboarding]]
-- [[Documento de Términos y Condiciones]]
+- [[Onboarding Flow]]
+- [[Terms and Conditions Document]]
 - [[Business Developer]]

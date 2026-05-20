@@ -8,7 +8,7 @@ aliases:
 
 # Contract
 
-Formal agreement between Oranje and the hotel resulting from the negotiation closure at [[Semáforo Onboarding|Onboarding Status Pink]]. It formalizes the conditions agreed upon in the [[Documento de Términos y Condiciones]] and defines the operational parameters of the relationship.
+Formal agreement between Oranje and the hotel resulting from the negotiation closure at [[Onboarding Status Indicator|Onboarding Status Pink]]. It formalizes the conditions agreed upon in the [[Terms and Conditions Document]] and defines the operational parameters of the relationship.
 
 ## Contents
 
@@ -22,13 +22,13 @@ Formal agreement between Oranje and the hotel resulting from the negotiation clo
 
 ## Lifecycle
 
-- **Formalized at:** [[Semáforo Onboarding|Onboarding Status Pink]] after validation by the [[Business Developer Coordinator]].
-- **Prior input:** [[Documento de Términos y Condiciones]].
+- **Formalized at:** [[Onboarding Status Indicator|Onboarding Status Pink]] after validation by the [[Business Developer Coordinator]].
+- **Prior input:** [[Terms and Conditions Document]].
 
 ## Related
 
-- [[Documento de Términos y Condiciones]]
+- [[Terms and Conditions Document]]
 - [[Schedule]]
-- [[Flujo de Onboarding]]
+- [[Onboarding Flow]]
 - [[Business Developer Coordinator]]
-- [[Contabilidad/Consolidado Semanal del Colaborador|Weekly Associate Summary]]
+- [[Accounting/Weekly Associate Summary|Weekly Associate Summary]]

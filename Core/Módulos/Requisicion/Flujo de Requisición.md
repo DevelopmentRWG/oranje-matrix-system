@@ -7,17 +7,17 @@ aliases:
 
 # Requisition Flow
 
-Operational lifecycle of a [[Requisición]] and its positions: from the moment the [[Hotel/Manager General|General Manager]] (GM), the [[Hotel/Manager de Área|Area Manager]] (GH), or the [[Hotel/Supervisor|Supervisor]] (SUP) creates it, until it is **Covered** or deleted. This flow **consumes** associates from the [[Pool de Colaboradores]]; it does not produce them.
+Operational lifecycle of a [[Requisition]] and its positions: from the moment the [[Hotel/General Manager|General Manager]] (GM), the [[Hotel/Area Manager|Area Manager]] (GH), or the [[Hotel/Supervisor|Supervisor]] (SUP) creates it, until it is **Covered** or deleted. This flow **consumes** associates from the [[Associate Pool]]; it does not produce them.
 
-> [!info] Meeting point with the [[Flujo de Reclutamiento]]
-> The [[Pool de Colaboradores]] is the only point where both flows connect. The [[Flujo de Reclutamiento]] runs **continuously** feeding the pool (whether or not there are requisitions); this flow **consumes** from it when it needs to fill positions.
+> [!info] Meeting point with the [[Recruitment Flow]]
+> The [[Associate Pool]] is the only point where both flows connect. The [[Recruitment Flow]] runs **continuously** feeding the pool (whether or not there are requisitions); this flow **consumes** from it when it needs to fill positions.
 
 ## Actors
 
-- **GM — [[Hotel/Manager General|General Manager]]**: highest authority at the hotel. Can create, authorize, and reject requisitions.
-- **GH — [[Hotel/Manager de Área|Area Manager]]**: can create, authorize, and reject requisitions.
+- **GM — [[Hotel/General Manager|General Manager]]**: highest authority at the hotel. Can create, authorize, and reject requisitions.
+- **GH — [[Hotel/Area Manager|Area Manager]]**: can create, authorize, and reject requisitions.
 - **SUP — [[Hotel/Supervisor|Supervisor]]**: can create, modify, and prepare the requisition. Cannot authorize.
-- **Recruiter — [[Reclutadora]]**: executes personnel assignment after authorization.
+- **Recruiter — [[Recruiter]]**: executes personnel assignment after authorization.
 
 ## Access Validation
 
@@ -74,11 +74,11 @@ Rules:
 
 If conditions are met:
 1. The requisition changes to **Status Green** (Requisition authorized) + date/time.
-2. The [[Inspector]] in the header is automatically assigned according to the hotel's [[Core/Catálogos/Zonas|zone]].
+2. The [[Inspector]] in the header is automatically assigned according to the hotel's [[Core/Catalogs/Zones|zone]].
 3. [[#ROUTINE - Requisition Journal]] is executed.
 4. **For each position in the requisition**:
    - [[#ROUTINE - Automatic position priority]] is executed using the authorization date and the position's start date.
-   - The calculated priority is recorded (Green / Yellow / Red — see [[Semáforo de Urgencia de Requisición]]).
+   - The calculated priority is recorded (Green / Yellow / Red — see [[Requisition Urgency Indicator]]).
    - The position changes to **Status Orange** (Position authorized) + date/time.
    - [[#ROUTINE - Position Journal]] is executed.
 
@@ -112,11 +112,11 @@ If confirmed:
 
 ## 5. Handoff to Recruitment (post-authorization)
 
-Once authorized (Status Green), the requisition's positions are reflected in the [[Core/Módulos/Schedule|Schedule]] for the week corresponding to their start date. The requisition becomes available in the shared queue, prioritized by the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Urgency Indicator]]. A [[Reclutadora]] or [[Reclutamiento/Líder de Grupo de Reclutadoras|Team Lead]] picks it from the queue and the status changes to **Yellow** (Personnel assignment in process by recruiter). If no one picks it within 24 hours, the system automatically assigns it to the [[Reclutadora]] with the lowest active requisition load.
+Once authorized (Status Green), the requisition's positions are reflected in the [[Core/Modules/Schedule|Schedule]] for the week corresponding to their start date. The requisition becomes available in the shared queue, prioritized by the [[Core/Modules/Status Indicators/Requisition Urgency Indicator|Urgency Indicator]]. A [[Recruiter]] or [[Recruitment/Recruiter Team Lead|Team Lead]] picks it from the queue and the status changes to **Yellow** (Personnel assignment in process by recruiter). If no one picks it within 24 hours, the system automatically assigns it to the [[Recruiter]] with the lowest active requisition load.
 
-The recruiter checks the hotel's [[Core/Módulos/Schedule|Schedule]] to see demand and positions pending coverage, and searches for a match in the [[Pool de Colaboradores]]:
-- **If there is a match** → assigns the associate to the hotel and registers them in the [[Core/Módulos/Schedule|Schedule]].
-- **If there is no match** → the requisition remains on hold. The [[Flujo de Reclutamiento]] runs continuously feeding the pool; priority can be escalated by zone/position, but recruitment is not "launched" — it is always active.
+The recruiter checks the hotel's [[Core/Modules/Schedule|Schedule]] to see demand and positions pending coverage, and searches for a match in the [[Associate Pool]]:
+- **If there is a match** → assigns the associate to the hotel and registers them in the [[Core/Modules/Schedule|Schedule]].
+- **If there is no match** → the requisition remains on hold. The [[Recruitment Flow]] runs continuously feeding the pool; priority can be escalated by zone/position, but recruitment is not "launched" — it is always active.
 
 Closure:
 - **Status Light Blue** — Fully covered by the recruiter.
@@ -129,7 +129,7 @@ Closure:
 The requisition and its positions are governed by multiple status indicators:
 
 ### Requisition (lifecycle)
-See [[Semáforo de Requisición]]. Statuses: Apple Green → Green → Yellow → Light Blue / Red. Purple = physically deleted.
+See [[Requisition Status Indicator]]. Statuses: Apple Green → Green → Yellow → Light Blue / Red. Purple = physically deleted.
 
 ### Position (lifecycle)
 - **Gold** — Being prepared/drafted by the hotel.
@@ -137,10 +137,10 @@ See [[Semáforo de Requisición]]. Statuses: Apple Green → Green → Yellow �
 - **Purple** — Physically deleted.
 
 ### Position — coverage
-See [[Semáforo de Posiciones de la Requisición]]. Green (100%), Yellow (75%), Red (<75%).
+See [[Requisition Position Status Indicator]]. Green (100%), Yellow (75%), Red (<75%).
 
 ### Position — priority (time)
-See [[Semáforo de Urgencia de Requisición]]. Green (>120 h), Yellow (72-120 h), Red (<72 h).
+See [[Requisition Urgency Indicator]]. Green (>120 h), Yellow (72-120 h), Red (<72 h).
 
 ---
 
@@ -170,15 +170,15 @@ Records in the position journal: Requisition number, Position number, Position, 
 
 ## Related
 
-- [[Requisición]]
-- [[Pool de Colaboradores]]
-- [[Flujo de Reclutamiento]]
-- [[Hotel/Manager General|General Manager]] (GM)
-- [[Hotel/Manager de Área|Area Manager]] (GH)
+- [[Requisition]]
+- [[Associate Pool]]
+- [[Recruitment Flow]]
+- [[Hotel/General Manager|General Manager]] (GM)
+- [[Hotel/Area Manager|Area Manager]] (GH)
 - [[Hotel/Supervisor|Supervisor]] (SUP)
-- [[Manager de Reclutamiento]]
-- [[Reclutadora]]
-- [[Core/Módulos/Schedule|Schedule]]
-- [[Semáforo de Requisición]]
-- [[Semáforo de Urgencia de Requisición]]
-- [[Semáforo de Posiciones de la Requisición]]
+- [[Recruitment Manager]]
+- [[Recruiter]]
+- [[Core/Modules/Schedule|Schedule]]
+- [[Requisition Status Indicator]]
+- [[Requisition Urgency Indicator]]
+- [[Requisition Position Status Indicator]]

@@ -9,13 +9,13 @@ aliases:
 
 # Customer Service Flow
 
-Step-by-step process for handling requests from the active client hotel. The flow covers from the receipt of a request through to its closure or escalation. Applies exclusively to hotels in **Orange** status of the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]].
+Step-by-step process for handling requests from the active client hotel. The flow covers from the receipt of a request through to its closure or escalation. Applies exclusively to hotels in **Orange** status of the [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]].
 
 ## Step 1 — Request Receipt
 
-**Responsible:** [[Customer Service/Agente de Customer Service|Customer Service Agent]]
+**Responsible:** [[Customer Service/Customer Service Agent|Customer Service Agent]]
 
-The hotel contacts Customer Service through the enabled channels. The hotel's point of contact may be the [[Hotel/Manager General|General Manager]], the [[Hotel/Manager de Área|Area Manager]], or the [[Hotel/Supervisor|Supervisor]].
+The hotel contacts Customer Service through the enabled channels. The hotel's point of contact may be the [[Hotel/General Manager|General Manager]], the [[Hotel/Area Manager|Area Manager]], or the [[Hotel/Supervisor|Supervisor]].
 
 **Action:** the Agent records the request with the following data:
 - Hotel and contact.
@@ -27,7 +27,7 @@ The hotel contacts Customer Service through the enabled channels. The hotel's po
 
 ## Step 2 — Classification and Initial Response
 
-**Responsible:** [[Customer Service/Agente de Customer Service|Customer Service Agent]]
+**Responsible:** [[Customer Service/Customer Service Agent|Customer Service Agent]]
 
 The Agent evaluates the request and determines whether it can be resolved directly or requires coordination with another department.
 
@@ -42,16 +42,16 @@ The Agent evaluates the request and determines whether it can be resolved direct
 
 ## Step 3 — Interdepartmental Coordination
 
-**Responsible:** [[Customer Service/Agente de Customer Service|Customer Service Agent]]
+**Responsible:** [[Customer Service/Customer Service Agent|Customer Service Agent]]
 
 The Agent contacts the corresponding internal department to obtain the necessary information or action:
 
 | Incident Type | Department to Contact | Contact |
 |---|---|---|
-| Associate did not show up / performance issues | [[Inspección/Inspección\|Inspection]] | [[Inspección/Coordinador\|Coordinator]] |
-| Position coverage / staff assignment | [[Reclutamiento/Reclutamiento\|Recruitment]] | [[Manager de Reclutamiento]] |
-| Billing or payment inquiries | Accounting | [[Manager de Contabilidad]] |
-| Contractual or commercial matters | [[Ventas/Ventas\|Sales]] | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| Associate did not show up / performance issues | [[Inspection/Inspection\|Inspection]] | [[Inspection/Coordinator\|Coordinator]] |
+| Position coverage / staff assignment | [[Recruitment/Recruitment\|Recruitment]] | [[Recruitment Manager]] |
+| Billing or payment inquiries | Accounting | [[Accounting Manager]] |
+| Contractual or commercial matters | [[Sales/Sales\|Sales]] | [[Sales/Roles/Business Developer Coordinator\|BDC]] |
 
 **Action:** the Agent documents the coordination performed and the response received.
 
@@ -62,7 +62,7 @@ The Agent contacts the corresponding internal department to obtain the necessary
 
 ## Step 4 — Escalation
 
-Escalation follows the hierarchy defined in the [[Customer Service/Reglas de Customer Service|Customer Service Rules]]:
+Escalation follows the hierarchy defined in the [[Customer Service/Customer Service Rules|Customer Service Rules]]:
 
 ### Level 2 — Customer Service Manager
 
@@ -82,7 +82,7 @@ Receives cases the Agent could not resolve or that involve multiple departments.
 
 ### Level 3 — Business Developer Coordinator
 
-**Responsible:** [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]]
+**Responsible:** [[Sales/Roles/Business Developer Coordinator|Business Developer Coordinator]]
 
 Receives cases with a commercial, contractual component or with client loss risk.
 
@@ -100,11 +100,11 @@ Receives cases with a commercial, contractual component or with client loss risk
 
 Cases unresolved at previous levels or with reputational risk.
 
-> [!warning] If the dispute is not resolved and the hotel decides to pause or terminate the relationship, the [[Ventas/Roles/Business Developer Coordinator|BDC]] executes the transition to **Black** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]. Customer Service cannot modify the status indicator.
+> [!warning] If the dispute is not resolved and the hotel decides to pause or terminate the relationship, the [[Sales/Roles/Business Developer Coordinator|BDC]] executes the transition to **Black** status in the [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]. Customer Service cannot modify the status indicator.
 
 ## Step 5 — Closure
 
-**Responsible:** [[Customer Service/Agente de Customer Service|Customer Service Agent]] or [[Customer Service/Customer Service Manager|Customer Service Manager]] (depending on who resolved it)
+**Responsible:** [[Customer Service/Customer Service Agent|Customer Service Agent]] or [[Customer Service/Customer Service Manager|Customer Service Manager]] (depending on who resolved it)
 
 **Actions:**
 - Documents the case resolution.
@@ -113,7 +113,7 @@ Cases unresolved at previous levels or with reputational risk.
 
 ## Key Points
 
-- Customer Service **cannot modify** the status of the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]; it only reports and escalates.
+- Customer Service **cannot modify** the status of the [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]; it only reports and escalates.
 - Customer Service **does not substitute** the operations of any department; it coordinates, channels, and follows up.
 - Every request must be documented regardless of whether it is resolved at Step 2 or reaches Step 4.
 - Cases involving a commercial dispute are always escalated immediately to the [[Customer Service/Customer Service Manager|CS Manager]], without waiting for the normal cycle.
@@ -121,8 +121,8 @@ Cases unresolved at previous levels or with reputational risk.
 ## Related
 
 - [[Customer Service/Customer Service|Customer Service]]
-- [[Customer Service/Reglas de Customer Service|Customer Service Rules]]
+- [[Customer Service/Customer Service Rules|Customer Service Rules]]
 - [[Customer Service/Customer Service Manager|Customer Service Manager]]
-- [[Customer Service/Agente de Customer Service|Customer Service Agent]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]
-- [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]]
+- [[Customer Service/Customer Service Agent|Customer Service Agent]]
+- [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]
+- [[Sales/Roles/Business Developer Coordinator|Business Developer Coordinator]]

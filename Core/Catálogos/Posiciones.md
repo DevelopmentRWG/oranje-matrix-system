@@ -11,13 +11,13 @@ Catalog of positions that hotels request and Oranje recruits for.
 
 ## List by Department
 
-### [[Departamentos del Hotel|Housekeeping]]
+### [[Hotel Departments|Housekeeping]]
 
 - Housekeeper
 - Houseman
 - Laundry
 
-### [[Departamentos del Hotel|Food & Beverage]]
+### [[Hotel Departments|Food & Beverage]]
 
 - Chef
 
@@ -26,6 +26,6 @@ Catalog of positions that hotels request and Oranje recruits for.
 
 ## Related
 
-- [[Departamentos del Hotel]]
-- [[Requisición]]
-- [[Modalidades de Contratación]]
+- [[Hotel Departments]]
+- [[Requisition]]
+- [[Employment Modalities]]

@@ -7,7 +7,7 @@ aliases:
 
 # Hotel Business Rules
 
-Consolidation of all business rules that apply to Hotel roles within the Oranje system. Cross-reference with [[Reglas de Negocio]] (general system consolidation).
+Consolidation of all business rules that apply to Hotel roles within the Oranje system. Cross-reference with [[Business Rules]] (general system consolidation).
 
 ## Supported Hierarchies
 
@@ -15,16 +15,16 @@ The platform supports two organizational models for the hotel:
 
 | Hierarchy | Structure |
 |---|---|
-| **Simple** | [[Hotel/Manager General\|Manager General]] (also operates as [[Hotel/Manager de Área\|Manager de Área]]) → [[Hotel/Supervisor\|SUP]] → Oranje Associates |
-| **Extended** | [[Hotel/Manager General\|Manager General]] → [[Hotel/Manager de Área\|Manager de Área]] → [[Hotel/Supervisor\|Supervisor]] → Oranje Associates |
+| **Simple** | [[Hotel/General Manager\|General Manager]] (also operates as [[Hotel/Area Manager\|Area Manager]]) → [[Hotel/Supervisor\|SUP]] → Oranje Associates |
+| **Extended** | [[Hotel/General Manager\|General Manager]] → [[Hotel/Area Manager\|Area Manager]] → [[Hotel/Supervisor\|Supervisor]] → Oranje Associates |
 
-- In the simple hierarchy, the [[Hotel/Manager General|Manager General]] also operates as [[Hotel/Manager de Área|Manager de Área]] (same person, two roles).
-- Hotel departments are: **Housekeeping, Food & Beverage, Maintenance, and Front Desk** (see [[Core/Catálogos/Departamentos del Hotel|Departamentos del Hotel]]).
+- In the simple hierarchy, the [[Hotel/General Manager|General Manager]] also operates as [[Hotel/Area Manager|Area Manager]] (same person, two roles).
+- Hotel departments are: **Housekeeping, Food & Beverage, Maintenance, and Front Desk** (see [[Core/Catalogs/Hotel Departments|Hotel Departments]]).
 - In the extended hierarchy, each department has its own Manager and Supervisor(s).
 
 ## Hotel Enablement
 
-> [!important] The hotel can only generate requisitions when it reaches **Orange** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
+> [!important] The hotel can only generate requisitions when it reaches **Orange** status in the [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]].
 
 - Before reaching Orange, the hotel is a commercial prospect managed by Sales.
 
@@ -32,22 +32,22 @@ The platform supports two organizational models for the hotel:
 
 ### Module Access
 
-- The [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], and the [[Hotel/Supervisor|Supervisor]] have access to the requisitions module.
+- The [[Hotel/General Manager|General Manager]], the [[Hotel/Area Manager|Area Manager]], and the [[Hotel/Supervisor|Supervisor]] have access to the requisitions module.
 - Users without access receive the message: **"You do not have access"**.
 
 ### Creation
 
-- Any hotel role ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], or [[Hotel/Supervisor|Supervisor]]) creates the requisition (status **Apple Green** — In Progress in the [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]]).
+- Any hotel role ([[Hotel/General Manager|General Manager]], [[Hotel/Area Manager|Area Manager]], or [[Hotel/Supervisor|Supervisor]]) creates the requisition (status **Apple Green** — In Progress in the [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]]).
 - The requisition number is automatically generated: `Year (4) + Month (2) + Day (2) + Hour (2, 24h) + Minutes (2) + Homoclave (2 alphanumeric)`. Example: `202604081632V1`.
 
 ### Authorization
 
-> [!important] Only the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Manager General|Manager General]] can authorize a requisition. If the [[Hotel/Supervisor|Supervisor]] attempts to do so, the system blocks the action with the message: **"Only the hotel manager can authorize the requisition"**.
+> [!important] Only the [[Hotel/Area Manager|Area Manager]] or the [[Hotel/General Manager|General Manager]] can authorize a requisition. If the [[Hotel/Supervisor|Supervisor]] attempts to do so, the system blocks the action with the message: **"Only the hotel manager can authorize the requisition"**.
 
 - To authorize, at least **one position** must be registered. If not: **"No positions registered. Please register at least one position and try again"**.
 - Rejection returns the requisition to the creator with comments (status **In Progress**).
 
-> [!info] Authorization by the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Manager General|Manager General]] is a **security layer** to prevent false or incorrect requisitions from reaching Recruitment.
+> [!info] Authorization by the [[Hotel/Area Manager|Area Manager]] or the [[Hotel/General Manager|General Manager]] is a **security layer** to prevent false or incorrect requisitions from reaching Recruitment.
 
 ## Automatic Effects Upon Authorization
 
@@ -55,15 +55,15 @@ When a requisition is authorized, the system automatically executes:
 
 | Effect | Detail |
 |---|---|
-| Urgency calculation | Per position, according to the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|urgency formula]]: `> 120h` → Dark Green (Normal), `72–120h` → Yellow (Medium), `< 72h` → Red (Urgent) |
-| Position transition | From Gold to Orange in the [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición\|Semáforo de Posiciones]] |
-| Schedule reflection | Positions appear in the [[Core/Módulos/Schedule\|Schedule]] for the week corresponding to their start date |
+| Urgency calculation | Per position, according to the [[Core/Modules/Status Indicators/Requisition Urgency Indicator\|urgency formula]]: `> 120h` → Dark Green (Normal), `72–120h` → Yellow (Medium), `< 72h` → Red (Urgent) |
+| Position transition | From Gold to Orange in the [[Core/Modules/Status Indicators/Requisition Position Status Indicator\|Requisition Position Status Indicator]] |
+| Schedule reflection | Positions appear in the [[Core/Modules/Schedule\|Schedule]] for the week corresponding to their start date |
 | Inspector assignment | The [[Inspector]] is automatically assigned based on the hotel's zone |
 
 ## Position Lifecycle
 
 - Each position has a **start date but no defined end date**.
-- The position ends when the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Supervisor|Supervisor]] places the associate on **Stand-by** (Pink status in the [[Semáforo del Colaborador]]).
+- The position ends when the [[Hotel/Area Manager|Area Manager]] or the [[Hotel/Supervisor|Supervisor]] places the associate on **Stand-by** (Pink status in the [[Associate Status Indicator]]).
 
 ## Requisition Deletion
 
@@ -76,22 +76,22 @@ When a requisition is authorized, the system automatically executes:
 
 Responsibilities over assigned associates (all hotel roles):
 
-| Action | Effect on [[Semáforo del Colaborador]] | Description |
+| Action | Effect on [[Associate Status Indicator]] | Description |
 |---|---|---|
 | Generate QR code | — | Allows associates to punch in the [[Timesheet]] |
 | Place on Stand-by | → **Pink** | Waiting on a hotel decision (vacation, low season). No end date; ends when any hotel role changes the status. The associate has no Schedule or Timesheet and cannot punch |
 | Report associate | → **Red** | Initiates an investigation by the [[Inspector]] |
-| Manage weekly Schedule | — | Administers the assignments in the hotel's [[Core/Módulos/Schedule\|Schedule]] |
+| Manage weekly Schedule | — | Administers the assignments in the hotel's [[Core/Modules/Schedule\|Schedule]] |
 
-> [!important] All hotel roles ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], and [[Hotel/Supervisor|Supervisor]]) can place an associate in Pink (Stand-by) status.
+> [!important] All hotel roles ([[Hotel/General Manager|General Manager]], [[Hotel/Area Manager|Area Manager]], and [[Hotel/Supervisor|Supervisor]]) can place an associate in Pink (Stand-by) status.
 
 ## Timesheet and Lunch Deduction
 
-> [!info] Punching and Lunch deduction rules are also documented in [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]] from the associate's perspective.
+> [!info] Punching and Lunch deduction rules are also documented in [[Associate/Associate Rules|Associate Rules]] from the associate's perspective.
 
 ### Dependency
 
-- The [[Timesheet]] is created from the [[Core/Módulos/Schedule|Schedule]]; it cannot exist independently.
+- The [[Timesheet]] is created from the [[Core/Modules/Schedule|Schedule]]; it cannot exist independently.
 - The hotel's week is defined by the contract (start and end of week).
 
 ### Shift
@@ -103,7 +103,7 @@ Responsibilities over assigned associates (all hotel roles):
 
 ### Punching
 
-- The associate punches via **QR** generated by the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Manager General|Manager General]].
+- The associate punches via **QR** generated by the [[Hotel/Area Manager|Area Manager]] or the [[Hotel/General Manager|General Manager]].
 - Punches are recorded in entry/exit pairs for each period (exactly six):
   - **Clock In** — start of shift
   - **Lunch Out** — leaves for lunch
@@ -128,11 +128,11 @@ Responsibilities over assigned associates (all hotel roles):
 
 ## Extended Lunch Indicator
 
-> [!note] The [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], and the [[Hotel/Supervisor|Supervisor]] **do not have access** to the Extended Lunch Indicator. It is exclusive to Oranje's internal roles ([[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]]).
+> [!note] The [[Hotel/General Manager|General Manager]], the [[Hotel/Area Manager|Area Manager]], and the [[Hotel/Supervisor|Supervisor]] **do not have access** to the Extended Lunch Indicator. It is exclusive to Oranje's internal roles ([[Inspector]], [[Inspection/Coordinator|Coordinator]], [[Recruitment Manager]]).
 
 ## Timesheet Compliance Indicator
 
-The system automatically calculates a color-coded indicator (Green / Yellow / Red) that compares the associate's actual compliance against the hotel's contractual parameters, evaluated per week. See full reference: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]].
+The system automatically calculates a color-coded indicator (Green / Yellow / Red) that compares the associate's actual compliance against the hotel's contractual parameters, evaluated per week. See full reference: [[Core/Modules/Status Indicators/Timesheet Compliance Indicator|Timesheet Compliance Indicator]].
 
 ## Workplace Accident — Supervisor Responsibilities
 
@@ -150,29 +150,29 @@ The [[Hotel/Supervisor|Supervisor]] has an active role in reporting and capturin
 2. Creates the accident card from the app.
 3. The signal reaches the zone [[Inspector]].
 
-- In both scenarios, the associate moves to **Gray** status in the [[Semáforo del Colaborador]] (protection against the 3-absence rule).
-- Reference: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]].
+- In both scenarios, the associate moves to **Gray** status in the [[Associate Status Indicator]] (protection against the 3-absence rule).
+- Reference: [[Core/Modules/Work Accident/Work Accident Flow|Work Accident Flow]].
 
 ## General Manager
 
-The [[Hotel/Manager General|Manager General]] is the hotel's highest authority and **always exists** in both hierarchies:
+The [[Hotel/General Manager|General Manager]] is the hotel's highest authority and **always exists** in both hierarchies:
 
-- Has **global visibility** of the [[Core/Módulos/Schedule|Schedule]] and [[Timesheet]] across all departments.
+- Has **global visibility** of the [[Core/Modules/Schedule|Schedule]] and [[Timesheet]] across all departments.
 - Can create, authorize, and reject requisitions.
 - Can generate QR codes, place on Stand-by, report associates, and report workplace accidents.
-- In the simple hierarchy, also operates as [[Hotel/Manager de Área|Manager de Área]] (same person).
+- In the simple hierarchy, also operates as [[Hotel/Area Manager|Area Manager]] (same person).
 - Primary point of contact with Oranje at the management level.
 
 ## Quality Supervision (QA)
 
-- A [[QA/Operador de QA|Operador de QA]] is permanently assigned to the Hotel department.
+- A [[QA/QA Operator|QA Operator]] is permanently assigned to the Hotel department.
 - QA **does not execute** Hotel operations; it only observes, measures, and provides feedback.
-- The specific metrics that the QA Operator monitors for Hotel are defined in [[QA/Métricas y KPIs por Departamento#Hotel|Métricas y KPIs — Hotel]].
-- If the [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] for the department reaches **Red** status without improvement after notification, the QA Manager escalates to management.
+- The specific metrics that the QA Operator monitors for Hotel are defined in [[QA/Metrics and KPIs by Department#Hotel|Metrics and KPIs — Hotel]].
+- If the [[Core/Modules/Status Indicators/Quality Indicator|Quality Indicator]] for the department reaches **Red** status without improvement after notification, the QA Manager escalates to management.
 
 ## Responsibility Summary by Role
 
-| Action | [[Hotel/Manager General\|Manager General]] | [[Hotel/Manager de Área\|Manager de Área]] | [[Hotel/Supervisor\|Supervisor]] |
+| Action | [[Hotel/General Manager\|General Manager]] | [[Hotel/Area Manager\|Area Manager]] | [[Hotel/Supervisor\|Supervisor]] |
 |---|---|---|---|
 | Create requisition | Yes | Yes | Yes |
 | Authorize requisition | Yes | Yes | No |
@@ -187,20 +187,20 @@ The [[Hotel/Manager General|Manager General]] is the hotel's highest authority a
 
 ## Related
 
-- [[Reglas de Negocio]]
-- [[Hotel/Manager de Área|Manager de Área]]
+- [[Business Rules]]
+- [[Hotel/Area Manager|Area Manager]]
 - [[Hotel/Supervisor|Supervisor]]
-- [[Hotel/Manager General|Manager General]]
-- [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]]
-- [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]]
-- [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia de Requisición]]
-- [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición|Semáforo de Posiciones de la Requisición]]
-- [[Semáforo del Colaborador]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]
-- [[Core/Módulos/Schedule|Schedule]]
+- [[Hotel/General Manager|General Manager]]
+- [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]]
+- [[Core/Modules/Status Indicators/Requisition Status Indicator|Requisition Status Indicator]]
+- [[Core/Modules/Status Indicators/Requisition Urgency Indicator|Requisition Urgency Indicator]]
+- [[Core/Modules/Status Indicators/Requisition Position Status Indicator|Requisition Position Status Indicator]]
+- [[Associate Status Indicator]]
+- [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]
+- [[Core/Modules/Schedule|Schedule]]
 - [[Timesheet]]
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
-- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
-- [[Core/Módulos/Blacklist|Blacklist]]
-- [[Core/Catálogos/Departamentos del Hotel|Departamentos del Hotel]]
-- [[Pool de Colaboradores]]
+- [[Core/Modules/Work Accident/Work Accident|Work Accident]]
+- [[Core/Modules/Work Accident/Work Accident Flow|Work Accident Flow]]
+- [[Core/Modules/Blacklist|Blacklist]]
+- [[Core/Catalogs/Hotel Departments|Hotel Departments]]
+- [[Associate Pool]]

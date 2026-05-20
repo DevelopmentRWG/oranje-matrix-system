@@ -7,7 +7,7 @@ aliases:
 
 # Work Accident Flow
 
-Lifecycle of a [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]]: from when the incident is reported until the [[Inspector|zone Inspector]] closes the card with complete information. The flow has two origin scenarios depending on who detects the accident first.
+Lifecycle of a [[Core/Modules/Work Accident/Work Accident|Work Accident]]: from when the incident is reported until the [[Inspector|zone Inspector]] closes the card with complete information. The flow has two origin scenarios depending on who detects the accident first.
 
 ## Actors
 
@@ -24,8 +24,8 @@ Occurs when the injured associate is the one who first detects and reports the i
 ### 1. Initial Report
 
 1. The **Associate** reports the accident from the app.
-2. A [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]] card is generated with an automatic report number.
-3. The **Associate** transitions to **Gray — Injured** in the [[Semáforo del Colaborador]].
+2. A [[Core/Modules/Work Accident/Work Accident|Work Accident]] card is generated with an automatic report number.
+3. The **Associate** transitions to **Gray — Injured** in the [[Associate Status Indicator]].
 4. The notification reaches the SUP and the assigned zone Inspector **simultaneously**.
 
 ### 2. On-Site Capture (SUP)
@@ -48,7 +48,7 @@ Occurs when the injured associate is the one who first detects and reports the i
 ### 4. Closure
 
 8. The **Inspector** closes the card once the information is complete.
-9. Upon receiving medical clearance, the associate transitions from `Gray → Dark Green` in the [[Semáforo del Colaborador]].
+9. Upon receiving medical clearance, the associate transitions from `Gray → Dark Green` in the [[Associate Status Indicator]].
 
 ---
 
@@ -59,8 +59,8 @@ Occurs when the [[Hotel/Supervisor|SUP]] detects the incident first (the associa
 ### 1. Initial Report with On-Site Information
 
 1. The **SUP** detects the incident and creates the card from the app.
-2. A [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]] card is generated with an automatic report number.
-3. The **Associate** transitions to **Gray — Injured** in the [[Semáforo del Colaborador]].
+2. A [[Core/Modules/Work Accident/Work Accident|Work Accident]] card is generated with an automatic report number.
+3. The **Associate** transitions to **Gray — Injured** in the [[Associate Status Indicator]].
 4. The **SUP** directly captures the on-site information:
    - Exact location within the property.
    - Circumstances of the accident.
@@ -79,22 +79,22 @@ Occurs when the [[Hotel/Supervisor|SUP]] detects the incident first (the associa
 ### 3. Closure
 
 7. The **Inspector** closes the card once the information is complete.
-8. Upon receiving medical clearance, the associate transitions from `Gray → Dark Green` in the [[Semáforo del Colaborador]].
+8. Upon receiving medical clearance, the associate transitions from `Gray → Dark Green` in the [[Associate Status Indicator]].
 
 ---
 
 ## Protection Rule
 
-While the associate is in **Gray — Injured** status, absences **do not count** toward the 3 absences rule → [[Core/Módulos/Blacklist|Blacklist]] of the [[Semáforo del Colaborador]]. The associate is out of active operations for medical reasons.
+While the associate is in **Gray — Injured** status, absences **do not count** toward the 3 absences rule → [[Core/Modules/Blacklist|Blacklist]] of the [[Associate Status Indicator]]. The associate is out of active operations for medical reasons.
 
 ---
 
 ## Related
 
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]]
-- [[Semáforo del Colaborador]]
+- [[Core/Modules/Work Accident/Work Accident|Work Accident]]
+- [[Associate Status Indicator]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]
-- [[Colaborador]]
+- [[Associate]]
 - [[Hotel/Hotel|Hotel]]
-- [[Core/Módulos/Blacklist|Blacklist]]
+- [[Core/Modules/Blacklist|Blacklist]]

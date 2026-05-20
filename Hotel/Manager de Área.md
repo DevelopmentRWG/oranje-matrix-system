@@ -9,39 +9,39 @@ aliases:
 
 # Area Manager
 
-Operational role in the [[Hotel/Hotel|Hotel]] module. Responsible for approving or rejecting [[Requisición|requisitions]], managing assigned associates, and administering the [[Core/Módulos/Schedule|Schedule]] for their department.
+Operational role in the [[Hotel/Hotel|Hotel]] module. Responsible for approving or rejecting [[Requisition|requisitions]], managing assigned associates, and administering the [[Core/Modules/Schedule|Schedule]] for their department.
 
 > [!note] Simple Hierarchy
-> In hotels with a simple hierarchy, the [[Hotel/Manager General|Manager General]] also operates as Area Manager (same person, two roles). In hotels with an extended hierarchy, there is one Area Manager per [[Departamentos del Hotel|department]] (Housekeeping, Food & Beverage, Maintenance, Front Desk), subordinate to the [[Hotel/Manager General|Manager General]].
+> In hotels with a simple hierarchy, the [[Hotel/General Manager|General Manager]] also operates as Area Manager (same person, two roles). In hotels with an extended hierarchy, there is one Area Manager per [[Hotel Departments|department]] (Housekeeping, Food & Beverage, Maintenance, Front Desk), subordinate to the [[Hotel/General Manager|General Manager]].
 
 ## Responsibilities
 
 ### Requisitions
 
-- Creates staff [[Requisición|requisitions]].
-- **Approves** the requisition (status **Authorized**), making it available in the [[Reclutamiento/Reclutamiento|Reclutamiento]] shared inbox to be taken by a [[Reclutadora]] or [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] ([[Self-Pick de Requisiciones|Self-Pick]] model).
+- Creates staff [[Requisition|requisitions]].
+- **Approves** the requisition (status **Authorized**), making it available in the [[Recruitment/Recruitment|Recruitment]] shared inbox to be taken by a [[Recruiter]] or [[Recruitment/Recruiter Team Lead|Team Lead]] ([[Self-Pick|Self-Pick]] model).
 - **Rejects** the requisition, returning it to the creator with comments (status **In Progress**).
 
 > [!important] Security Layer
-> This approval is a security layer to prevent false or incorrect requisitions from reaching the [[Reclutamiento/Reclutamiento|Reclutamiento]] team. Oranje only receives requisitions that an Area Manager or the [[Hotel/Manager General|Manager General]] has validated.
+> This approval is a security layer to prevent false or incorrect requisitions from reaching the [[Recruitment/Recruitment|Recruitment]] team. Oranje only receives requisitions that an Area Manager or the [[Hotel/General Manager|General Manager]] has validated.
 
 ### Assigned Staff Management
 
 - Generates the **QR** code for associates to punch in the [[Timesheet]].
-- Places associates on rest (status **Pink — Stand-by** in the [[Semáforo del Colaborador]]).
-- Reports associates (status **Red — Reported** in the [[Semáforo del Colaborador]]).
-- Reports [[Core/Módulos/Accidente Laboral/Accidente Laboral|workplace accidents]] detected on the property.
-- Manages the weekly [[Core/Módulos/Schedule|Schedule]] for their department.
+- Places associates on rest (status **Pink — Stand-by** in the [[Associate Status Indicator]]).
+- Reports associates (status **Red — Reported** in the [[Associate Status Indicator]]).
+- Reports [[Core/Modules/Work Accident/Work Accident|workplace accidents]] detected on the property.
+- Manages the weekly [[Core/Modules/Schedule|Schedule]] for their department.
 
 ## Related
 
-- [[Hotel/Manager General|Manager General]]
+- [[Hotel/General Manager|General Manager]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Hotel/Hotel|Hotel]]
-- [[Departamentos del Hotel]]
-- [[Requisición]]
+- [[Hotel Departments]]
+- [[Requisition]]
 - [[Timesheet]]
-- [[Core/Módulos/Schedule|Schedule]]
-- [[Semáforo de Requisición]]
-- [[Semáforo del Colaborador]]
+- [[Core/Modules/Schedule|Schedule]]
+- [[Requisition Status Indicator]]
+- [[Associate Status Indicator]]
 - [[Inspector]]

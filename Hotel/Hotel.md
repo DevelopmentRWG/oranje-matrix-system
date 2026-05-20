@@ -8,14 +8,14 @@ aliases:
 
 # Hotel
 
-Module that represents the hotel as an Oranje client. The hotel requests staff through [[Requisición|requisitions]] and manages its weekly operations from the [[Core/Módulos/Schedule|Schedule]], which is the hub where demand for positions, coverage of assigned associates, and worked-time records ([[Timesheet]]) converge. It operates as the counterpart to the [[Reclutamiento/Reclutamiento|Reclutamiento]] team.
+Module that represents the hotel as an Oranje client. The hotel requests staff through [[Requisition|requisitions]] and manages its weekly operations from the [[Core/Modules/Schedule|Schedule]], which is the hub where demand for positions, coverage of assigned associates, and worked-time records ([[Timesheet]]) converge. It operates as the counterpart to the [[Recruitment/Recruitment|Recruitment]] team.
 
 ## Module Contents
 
 ### Roles
 
-- [[Hotel/Manager General|Manager General]] — Highest authority at the hotel. Always exists in both hierarchies.
-- [[Hotel/Manager de Área|Manager de Área]] — Operational role by department. Approves or rejects requisitions; manages assigned staff.
+- [[Hotel/General Manager|General Manager]] — Highest authority at the hotel. Always exists in both hierarchies.
+- [[Hotel/Area Manager|Area Manager]] — Operational role by department. Approves or rejects requisitions; manages assigned staff.
 - [[Hotel/Supervisor|Supervisor]] — Creates staff requisitions.
 
 ### Organizational Structure
@@ -32,7 +32,7 @@ General Manager (GM) → SUP → Oranje Associates
 
 #### Extended Hierarchy
 
-For large hotels with multiple operational [[Departamentos del Hotel|departments]].
+For large hotels with multiple operational [[Hotel Departments|departments]].
 
 ```
 General Manager (GM)
@@ -45,8 +45,8 @@ General Manager (GM)
 
 | Simple Hierarchy | Extended Hierarchy | Platform Responsibilities |
 |---|---|---|
-| [[Hotel/Manager General\|Manager General]] | [[Hotel/Manager General\|Manager General]] | General oversight, global visibility, all operational actions |
-| [[Hotel/Manager General\|Manager General]] (same role) | [[Hotel/Manager de Área\|Manager de Área]] | Approves requisitions, manages schedule, generates QR, reports associates |
+| [[Hotel/General Manager\|General Manager]] | [[Hotel/General Manager\|General Manager]] | General oversight, global visibility, all operational actions |
+| [[Hotel/General Manager\|General Manager]] (same role) | [[Hotel/Area Manager\|Area Manager]] | Approves requisitions, manages schedule, generates QR, reports associates |
 | [[Hotel/Supervisor\|SUP]] | [[Hotel/Supervisor\|Supervisor]] | Creates requisitions, reports associates, reports workplace accidents |
 
 #### Hotel Departments
@@ -56,33 +56,33 @@ General Manager (GM)
 - **Maintenance**
 - **Front Desk**
 
-See full catalog at [[Departamentos del Hotel]].
+See full catalog at [[Hotel Departments]].
 
 ### Processes
 
-- Creation and authorization of [[Requisición|requisitions]].
-- Management of the weekly [[Core/Módulos/Schedule|Schedule]].
+- Creation and authorization of [[Requisition|requisitions]].
+- Management of the weekly [[Core/Modules/Schedule|Schedule]].
 - Recording of worked time via [[Timesheet]].
 
 ## Related Core Concepts
 
-- [[Requisición]]
-- [[Core/Módulos/Schedule|Schedule]]
+- [[Requisition]]
+- [[Core/Modules/Schedule|Schedule]]
 - [[Timesheet]]
-- [[Semáforo de Requisición]]
-- [[Semáforo de Urgencia de Requisición]]
-- [[Semáforo de Posiciones de la Requisición]]
-- [[Semáforo del Colaborador]]
-- [[Core/Módulos/Blacklist|Blacklist]]
-- [[Posiciones]]
-- [[Departamentos del Hotel]]
-- [[Modalidades de Contratación]]
-- [[Niveles de Inglés]]
-- [[Zonas]]
+- [[Requisition Status Indicator]]
+- [[Requisition Urgency Indicator]]
+- [[Requisition Position Status Indicator]]
+- [[Associate Status Indicator]]
+- [[Core/Modules/Blacklist|Blacklist]]
+- [[Positions]]
+- [[Hotel Departments]]
+- [[Employment Modalities]]
+- [[English Levels]]
+- [[Zones]]
 - [[Inspector]]
 
 ## Relationship with Other Modules
 
-- [[Reclutamiento/Reclutamiento|Reclutamiento]] — Receives approved requisitions and assigns staff.
-- [[Ventas/Ventas|Ventas]] — Responsible for onboarding new hotels.
+- [[Recruitment/Recruitment|Recruitment]] — Receives approved requisitions and assigns staff.
+- [[Sales/Sales|Sales]] — Responsible for onboarding new hotels.
 - [[Customer Service/Customer Service|Customer Service]] — Post-onboarding service channel for inquiries, complaints, and incident follow-up.

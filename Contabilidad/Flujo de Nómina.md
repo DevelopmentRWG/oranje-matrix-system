@@ -9,16 +9,16 @@ aliases:
 
 # Payroll Flow
 
-Semi-automated weekly process that transforms approved [[Timesheet|Timesheets]] into associate payments and hotel invoices. The system automates the calculation; the [[Contadora]] validates and the [[Manager de Contabilidad]] authorizes.
+Semi-automated weekly process that transforms approved [[Timesheet|Timesheets]] into associate payments and hotel invoices. The system automates the calculation; the [[Accountant]] validates and the [[Accounting Manager]] authorizes.
 
 ## Flow Steps
 
 ### 1. Automatic Generation of the Weekly Associate Summary
 
 - The system groups approved [[Timesheet|Timesheets]] by associate/hotel/week
-- Applies the pay rate from each [[Core/Módulos/Contrato|Contrato]]
+- Applies the pay rate from each [[Core/Modules/Contract|Contract]]
 - Calculates overtime according to each hotel's contract rules
-- See [[Consolidado Semanal del Colaborador]] for structure and calculation
+- See [[Weekly Associate Summary]] for structure and calculation
 
 > [!success] **Automated** — No human intervention required.
 
@@ -26,7 +26,7 @@ Semi-automated weekly process that transforms approved [[Timesheet|Timesheets]] 
 
 - The system generates the Pre-Payroll from the Summary:
   - Applies the **internal rate** if one exists (may be higher than the contractual rate)
-  - Applies the active **[[Deducciones]]** for the associate (uniform, food, 16% withholding)
+  - Applies the active **[[Deductions]]** for the associate (uniform, food, 16% withholding)
   - Applies **authorized overtime** (only hours approved by the hotel)
 - The Pre-Payroll reflects the net amount each associate will receive
 
@@ -34,7 +34,7 @@ Semi-automated weekly process that transforms approved [[Timesheet|Timesheets]] 
 
 ### 3. Human Validation
 
-- The [[Contadora]] reviews the generated Pre-Payroll
+- The [[Accountant]] reviews the generated Pre-Payroll
 - Verifies for each line:
   - Associate ID is correct
   - Name/last name matches the ID
@@ -45,11 +45,11 @@ Semi-automated weekly process that transforms approved [[Timesheet|Timesheets]] 
   - Hotel is correct if they work at multiple
 - Approves, corrects, or rejects individual lines
 
-> [!warning] **Semi-automated** — Requires validation by the [[Contadora]].
+> [!warning] **Semi-automated** — Requires validation by the [[Accountant]].
 
 ### 4. Automatic Hotel Invoice Generation
 
-- The system generates the [[Facturación al Hotel|Hotel Invoice]] using the **bill rate** from the [[Core/Módulos/Contrato|Contrato]] (never the internal rate)
+- The system generates the [[Hotel Invoice|Hotel Invoice]] using the **bill rate** from the [[Core/Modules/Contract|Contract]] (never the internal rate)
 - Applies credits if applicable (e.g. food deduction)
 - Overtime invoiced is only what was **authorized** by the hotel
 - If the week spans two months, two separate invoices are generated
@@ -66,18 +66,18 @@ Semi-automated weekly process that transforms approved [[Timesheet|Timesheets]] 
 ### 6. Reconciliation
 
 - The provider returns confirmation of the generated checks
-- The [[Contadora]] validates that what was returned matches what was submitted
+- The [[Accountant]] validates that what was returned matches what was submitted
 - Identifies discrepancies and resolves them before authorizing
 
-> [!warning] **Semi-automated** — Requires validation by the [[Contadora]].
+> [!warning] **Semi-automated** — Requires validation by the [[Accountant]].
 
 ### 7. Final Authorization
 
-- The [[Manager de Contabilidad]] releases payroll
+- The [[Accounting Manager]] releases payroll
 - Payments are executed
 - The system records the date and responsible for the authorization
 
-> [!warning] **Semi-automated** — Requires authorization from the [[Manager de Contabilidad]].
+> [!warning] **Semi-automated** — Requires authorization from the [[Accounting Manager]].
 
 ## Automation Summary
 
@@ -85,19 +85,19 @@ Semi-automated weekly process that transforms approved [[Timesheet|Timesheets]] 
 | ---- | ----------- | -------------- |
 | 1 | Weekly Associate Summary generation | Automated |
 | 2 | Pre-Payroll calculation | Automated |
-| 3 | Pre-Payroll validation | Semi-automated ([[Contadora]] validates) |
+| 3 | Pre-Payroll validation | Semi-automated ([[Accountant]] validates) |
 | 4 | Hotel Invoice generation | Automated |
 | 5 | Export to check provider | Automated |
-| 6 | Reconciliation | Semi-automated ([[Contadora]] validates) |
-| 7 | Final authorization | Semi-automated ([[Manager de Contabilidad]] releases) |
+| 6 | Reconciliation | Semi-automated ([[Accountant]] validates) |
+| 7 | Final authorization | Semi-automated ([[Accounting Manager]] releases) |
 
 ## Related
 
-- [[Consolidado Semanal del Colaborador]]
-- [[Manager de Contabilidad]]
-- [[Contadora]]
-- [[Deducciones]]
-- [[Facturación al Hotel]]
-- [[Vacaciones]]
-- [[Core/Módulos/Contrato|Contrato]]
+- [[Weekly Associate Summary]]
+- [[Accounting Manager]]
+- [[Accountant]]
+- [[Deductions]]
+- [[Hotel Invoice]]
+- [[Vacation Pay]]
+- [[Core/Modules/Contract|Contract]]
 - [[Timesheet]]

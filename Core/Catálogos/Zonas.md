@@ -26,9 +26,9 @@ Geographic division of the state into operational areas. Each zone is the basis 
 
 - **Each hotel belongs to a zone.**
 - **Each zone is assigned an [[Inspector]].**
-- Because of this relationship, the inspector for the hotel's zone is responsible for following up on any dispute that occurs at that hotel — which is why the Inspector appears in the header of the [[Requisición]].
+- Because of this relationship, the inspector for the hotel's zone is responsible for following up on any dispute that occurs at that hotel — which is why the Inspector appears in the header of the [[Requisition]].
 
 ## Related
 
 - [[Inspector]]
-- [[Requisición]]
+- [[Requisition]]

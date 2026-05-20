@@ -20,7 +20,7 @@ aliases:
 Status system that represents the tracking of commercial negotiation with a hotel, from its identification as a prospect to its activation as a client (or its pause/rejection).
 
 > [!info]
-> This Status Indicator applies exclusively to the [[Onboarding-Hotel|Hotel Onboarding]] module. Once the hotel reaches [[#Orange — Signed agreement, active hotel client|Orange]], its operation is governed by the Status Indicators in the [[Hotel/Hotel|Hotel]] module ([[Semáforo de Requisición]], [[Semáforo del Colaborador]], etc.).
+> This Status Indicator applies exclusively to the [[Onboarding-Hotel|Hotel Onboarding]] module. Once the hotel reaches [[#Orange — Signed agreement, active hotel client|Orange]], its operation is governed by the Status Indicators in the [[Hotel/Hotel|Hotel]] module ([[Requisition Status Indicator]], [[Associate Status Indicator]], etc.).
 
 ## States
 
@@ -58,7 +58,7 @@ The BD identifies the hotel within their territory as a possible client.
 - Collects data: hotel name, email, phone, contact name and position, business need.
 - Conducts a cold visit to the hotel.
 
-**Advance →** upon sending the [[Propuesta Personalizada|proposal]], moves to [[#Green — Proposal sent|Green]].
+**Advance →** upon sending the [[Customized Proposal|proposal]], moves to [[#Green — Proposal sent|Green]].
 
 > Also reached through reactivation from [[#Red — Rejection or no interest|Red]], [[#Black — Paused or inactive client|Black]] or [[#Brown — Renegotiation / unblocking|Brown]].
 
@@ -70,7 +70,7 @@ The BD identifies the hotel within their territory as a possible client.
 
 ### Actions during this status
 
-- Drafts [[Propuesta Personalizada|personalized proposal]] (services, prices, conditions).
+- Drafts [[Customized Proposal|personalized proposal]] (services, prices, conditions).
 - Attaches and sends the proposal to the hotel.
 - Logs contact attempts and responses.
 - Follows up with the hotel.
@@ -92,7 +92,7 @@ The BD identifies the hotel within their territory as a possible client.
 
 ### Actions during this status
 
-- BD or BDC creates the [[Documento de Términos y Condiciones]], which establishes:
+- BD or BDC creates the [[Terms and Conditions Document]], which establishes:
   - Pay rate
   - Bill rate
   - Overtime
@@ -112,11 +112,11 @@ The BD identifies the hotel within their territory as a possible client.
 **Is the agreement closed?**
 
 - **NO →** returns to the flow (renegotiation / [[#Brown — Renegotiation / unblocking|Brown]] / End).
-- **YES →** the [[Business Developer Coordinator|BDC]] approves the conversion and the [[Usuario del Hotel|Hotel User]] is created in the system.
+- **YES →** the [[Business Developer Coordinator|BDC]] approves the conversion and the [[Hotel User|Hotel User]] is created in the system.
 
 ### Upon conversion approval
 
-The [[Trigger Automático de Conversión|Automatic Conversion Trigger]] fires (in parallel):
+The [[Automatic Conversion Trigger|Automatic Conversion Trigger]] fires (in parallel):
 
 - System sends welcome email to the hotel.
 - System notifies the assigned [[Business Developer|BD]].
@@ -128,17 +128,17 @@ The [[Trigger Automático de Conversión|Automatic Conversion Trigger]] fires (i
 
 ## Orange — Signed agreement, active hotel client
 
-**Operational Responsible:** [[Inspector]] + [[Reclutadora|Recruiters]]
+**Operational Responsible:** [[Inspector]] + [[Recruiter|Recruiters]]
 **Commercial Responsible:** [[Business Developer Coordinator]] (reference) · [[Business Developer]] (assigned)
 
 > [!important]
-> **Orange is the only status that enables the hotel to generate [[Requisición|requisitions]].**
+> **Orange is the only status that enables the hotel to generate [[Requisition|requisitions]].**
 
 ### Operational state
 
-- The hotel already has a [[Usuario del Hotel|user created]] in the system.
-- Transfers to responsibility of [[Reclutadora|Recruiters]].
-- Operational cycle begins: [[Requisición|requisitions]] → coverage → [[Core/Módulos/Schedule|Schedule]] → [[Timesheet]].
+- The hotel already has a [[Hotel User|user created]] in the system.
+- Transfers to responsibility of [[Recruiter|Recruiters]].
+- Operational cycle begins: [[Requisition|requisitions]] → coverage → [[Core/Modules/Schedule|Schedule]] → [[Timesheet]].
 - BD and BDC remain as commercial references for the account.
 
 ### Decision
@@ -206,6 +206,6 @@ Client stopped operating or the relationship was paused.
 ## Related
 
 - [[Onboarding-Hotel]]
-- [[Flujo de Onboarding]]
+- [[Onboarding Flow]]
 - [[Business Developer]]
 - [[Business Developer Coordinator]]

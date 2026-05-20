@@ -9,27 +9,27 @@ aliases:
 
 # Business Developer Coordinator
 
-Supervisory role in the [[Onboarding-Hotel|Hotel Onboarding]] module. Oversees the full picture of routes and zones assigned to them, follows up with the [[Business Developer]] during their hotel negotiation, validates the terms and conditions before the [[Contrato]] is closed; they are the **final yes** of the negotiation.
+Supervisory role in the [[Onboarding-Hotel|Hotel Onboarding]] module. Oversees the full picture of routes and zones assigned to them, follows up with the [[Business Developer]] during their hotel negotiation, validates the terms and conditions before the [[Contract]] is closed; they are the **final yes** of the negotiation.
 
 ## Responsibilities
 
 - Supervises BDs in their territory and assigned routes.
 - Intervenes in cases of stall or renegotiation.
 - Investigates and provides solutions to resume stalled proposals.
-- Validates the terms of the [[Documento de Términos y Condiciones]].
-- Approves hotel conversion at [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]], triggering the creation of the [[Usuario del Hotel]] and the [[Trigger Automático de Conversión]].
+- Validates the terms of the [[Terms and Conditions Document]].
+- Approves hotel conversion at [[Onboarding Status Indicator#Pink — Terms negotiation|Pink]], triggering the creation of the [[Hotel User]] and the [[Automatic Conversion Trigger]].
 - Manages paused relationships or clients that stop operating.
 
 ## Statuses They Participate In
 
-- [[Semáforo Onboarding#Café — Renegociación / desbloqueo|Café]] — Renegotiation / unblocking.
-- [[Semáforo Onboarding#Amarillo — En seguimiento tras propuesta|Amarillo]] — Supports creation of the T&C document.
-- [[Semáforo Onboarding#Rosa — Negociación de términos|Rosa]] — Approves conversion (final yes).
-- [[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]] — Commercial reference for the active hotel.
-- [[Semáforo Onboarding#Negro — Cliente pausado o inactivo|Negro]] — Management of the paused client and possible reactivation.
+- [[Onboarding Status Indicator#Brown — Renegotiation / unblocking|Brown]] — Renegotiation / unblocking.
+- [[Onboarding Status Indicator#Yellow — Follow-up after proposal|Yellow]] — Supports creation of the T&C document.
+- [[Onboarding Status Indicator#Pink — Terms negotiation|Pink]] — Approves conversion (final yes).
+- [[Onboarding Status Indicator#Orange — Signed agreement, active hotel client|Orange]] — Commercial reference for the active hotel.
+- [[Onboarding Status Indicator#Black — Paused or inactive client|Black]] — Management of the paused client and possible reactivation.
 
 ## Related
 
-- [[Flujo de Onboarding]]
+- [[Onboarding Flow]]
 - [[Business Developer]]
-- [[Semáforo Onboarding]]
+- [[Onboarding Status Indicator]]

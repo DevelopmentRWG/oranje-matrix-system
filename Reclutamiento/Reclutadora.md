@@ -7,13 +7,13 @@ aliases:
 
 # Recruiter
 
-Operational role in the [[Reclutamiento/Reclutamiento|Reclutamiento]] module. Executes the process of searching, interviewing, validating, and assigning associates based on a [[Requisición]].
+Operational role in the [[Recruitment/Recruitment|Recruitment]] module. Executes the process of searching, interviewing, validating, and assigning associates based on a [[Requisition]].
 
 ## Responsibilities
 
-- Takes [[Requisición|requisitions]] from the shared inbox, prioritized by the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]].
-- Searches the [[Pool de Colaboradores|pool]] for available associates who meet the requisition requirements.
-- Checks the [[Core/Módulos/Blacklist|Blacklist]] when a candidate applies, to avoid re-recruiting someone who is barred.
+- Takes [[Requisition|requisitions]] from the shared inbox, prioritized by the [[Core/Modules/Status Indicators/Requisition Urgency Indicator|Requisition Urgency Indicator]].
+- Searches the [[Associate Pool|pool]] for available associates who meet the requisition requirements.
+- Checks the [[Core/Modules/Blacklist|Blacklist]] when a candidate applies, to avoid re-recruiting someone who is barred.
 - Conducts the initial interview and captures the associate's basic information:
   - Age
   - Gender
@@ -22,18 +22,18 @@ Operational role in the [[Reclutamiento/Reclutamiento|Reclutamiento]] module. Ex
   - Phone
 - Validates and approves the associate after they complete their app registration.
 - Enables the associate's access to the panels.
-- Checks the hotel's [[Core/Módulos/Schedule|Schedule]] to see pending positions to fill.
-- Assigns the associate to the hotel and registers them in their [[Core/Módulos/Schedule|Schedule]].
-- Temporarily assigns available associates (yellow → brown transition in [[Semáforo del Colaborador]]).
+- Checks the hotel's [[Core/Modules/Schedule|Schedule]] to see pending positions to fill.
+- Assigns the associate to the hotel and registers them in their [[Core/Modules/Schedule|Schedule]].
+- Temporarily assigns available associates (yellow → brown transition in [[Associate Status Indicator]]).
 
 ## Related
 
-- [[Flujo de Reclutamiento]]
-- [[Manager de Reclutamiento]]
-- [[Líder de Grupo de Reclutadoras]]
-- [[Requisición]]
-- [[Pool de Colaboradores]]
-- [[Core/Módulos/Blacklist|Blacklist]]
-- [[Core/Módulos/Schedule|Schedule]]
-- [[Semáforo del Colaborador]]
-- [[Colaborador/Colaborador|Colaborador]]
+- [[Recruitment Flow]]
+- [[Recruitment Manager]]
+- [[Recruiter Team Lead]]
+- [[Requisition]]
+- [[Associate Pool]]
+- [[Core/Modules/Blacklist|Blacklist]]
+- [[Core/Modules/Schedule|Schedule]]
+- [[Associate Status Indicator]]
+- [[Associate/Associate|Associate]]

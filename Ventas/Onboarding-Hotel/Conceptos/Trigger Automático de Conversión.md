@@ -9,7 +9,7 @@ aliases:
 
 # Automatic Conversion Trigger
 
-Set of automatic actions that the system executes **in parallel** when the [[Business Developer Coordinator]] approves the conversion at [[Semáforo Onboarding|Onboarding Status Pink]] and the [[Usuario del Hotel]] is created.
+Set of automatic actions that the system executes **in parallel** when the [[Business Developer Coordinator]] approves the conversion at [[Onboarding Status Indicator|Onboarding Status Pink]] and the [[Hotel User]] is created.
 
 ## Automatic Actions
 
@@ -19,13 +19,13 @@ Set of automatic actions that the system executes **in parallel** when the [[Bus
 
 ## Trigger
 
-- **Event:** conversion approval at [[Semáforo Onboarding|Onboarding Status Pink]].
-- **Precondition:** creation of the [[Usuario del Hotel]] in the system.
-- **Result:** the hotel moves to [[Semáforo Onboarding|Onboarding Status Orange]] and is enabled to generate [[Requisición|requisitions]].
+- **Event:** conversion approval at [[Onboarding Status Indicator|Onboarding Status Pink]].
+- **Precondition:** creation of the [[Hotel User]] in the system.
+- **Result:** the hotel moves to [[Onboarding Status Indicator|Onboarding Status Orange]] and is enabled to generate [[Requisition|requisitions]].
 
 ## Related
 
-- [[Flujo de Onboarding]]
-- [[Usuario del Hotel]]
-- [[Semáforo Onboarding|Onboarding Status Pink]]
-- [[Semáforo Onboarding|Onboarding Status Orange]]
+- [[Onboarding Flow]]
+- [[Hotel User]]
+- [[Onboarding Status Indicator|Onboarding Status Pink]]
+- [[Onboarding Status Indicator|Onboarding Status Orange]]

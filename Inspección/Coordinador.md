@@ -12,18 +12,18 @@ Supervisory role in the Inspection department. Is the manager of the [[Inspector
 
 ## Responsibilities
 
-- Assigns [[Inspector|inspectors]] to geographic [[Zonas|zones]].
+- Assigns [[Inspector|inspectors]] to geographic [[Zones|zones]].
 - Reviews and supervises the work of inspectors in the field.
 - Coordinates the overall operation of the Inspection department.
 - Escalates problems or cases that require special attention.
-- Liaison between the Inspection department and other departments ([[Reclutamiento/Reclutamiento|Recruitment]], [[Hotel/Hotel|Hotel]]).
+- Liaison between the Inspection department and other departments ([[Recruitment/Recruitment|Recruitment]], [[Hotel/Hotel|Hotel]]).
 - Has visibility of the **Extended Lunch Indicator** in the [[Timesheet]] to supervise extended lunch patterns across assigned zones.
 - When an [[Inspector]] is unavailable (illness, vacation, or other cause), temporarily reassigns another Inspector to that zone to ensure operational coverage.
 
 ## Related
 
 - [[Inspector]]
-- [[Zonas]]
+- [[Zones]]
 - [[Hotel/Hotel|Hotel]]
-- [[Reclutamiento/Reclutamiento|Recruitment]]
+- [[Recruitment/Recruitment|Recruitment]]
 - [[Timesheet]]

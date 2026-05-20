@@ -17,7 +17,7 @@ Operational role in the [[Customer Service/Customer Service|Customer Service]] d
 
 - Receives hotel requests through the enabled channels.
 - Documents each case with: date, hotel, contact, description, and category.
-- Provides an initial response within the times defined in the [[Customer Service/Reglas de Customer Service|Customer Service Rules]].
+- Provides an initial response within the times defined in the [[Customer Service/Customer Service Rules|Customer Service Rules]].
 
 ### Follow-Up and Closure
 
@@ -28,13 +28,13 @@ Operational role in the [[Customer Service/Customer Service|Customer Service]] d
 ### Escalation
 
 - Escalates to the [[Customer Service/Customer Service Manager|Customer Service Manager]] cases that exceed their resolution capacity or the defined timeframes.
-- Immediately escalates any case involving a potential commercial dispute or risk of transitioning to **Black** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]].
+- Immediately escalates any case involving a potential commercial dispute or risk of transitioning to **Black** status in the [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]].
 
 ## Related
 
 - [[Customer Service/Customer Service Manager|Customer Service Manager]]
 - [[Customer Service/Customer Service|Customer Service]]
-- [[Customer Service/Reglas de Customer Service|Customer Service Rules]]
-- [[Hotel/Manager General|General Manager]]
-- [[Hotel/Manager de Área|Area Manager]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]
+- [[Customer Service/Customer Service Rules|Customer Service Rules]]
+- [[Hotel/General Manager|General Manager]]
+- [[Hotel/Area Manager|Area Manager]]
+- [[Core/Modules/Status Indicators/Onboarding Status Indicator|Onboarding Status Indicator]]

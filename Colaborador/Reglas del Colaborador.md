@@ -7,12 +7,12 @@ aliases:
 
 # Associate Business Rules
 
-Consolidation of all business rules that apply to the Associate within the Oranje system. Cross-reference with [[Reglas de Negocio]] (general system consolidation).
+Consolidation of all business rules that apply to the Associate within the Oranje system. Cross-reference with [[Business Rules]] (general system consolidation).
 
 ## Data Capture in 3 Phases
 
 ### Phase 1 — Initial Interview
-Captured by the [[Reclutadora]] during the first contact:
+Captured by the [[Recruiter]] during the first contact:
 
 | Field | Captured by |
 |---|---|
@@ -29,11 +29,11 @@ Completed by the Associate themselves:
 |---|---|
 | SSN | — |
 | ITIN | — |
-| Position | [[Posiciones]] |
-| English level | [[Niveles de Inglés]] |
+| Position | [[Positions]] |
+| English level | [[English Levels]] |
 | Experience level | — |
 | Transportation type | — |
-| Modality | [[Modalidades de Contratación]] |
+| Modality | [[Employment Modalities]] |
 
 ### Phase 3 — Emergency Data
 Completed by the Associate themselves from the app:
@@ -48,7 +48,7 @@ Completed by the Associate themselves from the app:
 
 ## Status Indicator and Transitions
 
-The [[Semáforo del Colaborador]] defines 12 states. The transition rules that govern the associate's lifecycle are documented below.
+The [[Associate Status Indicator]] defines 12 states. The transition rules that govern the associate's lifecycle are documented below.
 
 ### Standard Progression
 
@@ -63,13 +63,13 @@ The [[Semáforo del Colaborador]] defines 12 states. The transition rules that g
 ### Availability and Assignments
 
 - **Yellow (Voluntary available):** activated by the associate themselves **from the app, without anyone's approval**. It is self-service and the **only status the associate can activate on their own**.
-- **Brown (Temporary assignment):** the [[Reclutadora]] temporarily assigns the associate and defines the duration (assigned days) at the time of assignment. The status closes automatically when those days expire; upon closing, it returns to Dark Green or Orange based on their previous state.
+- **Brown (Temporary assignment):** the [[Recruiter]] temporarily assigns the associate and defines the duration (assigned days) at the time of assignment. The status closes automatically when those days expire; upon closing, it returns to Dark Green or Orange based on their previous state.
 
 ### Stand-by (Pink)
 
-- The [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], or the [[Hotel/Supervisor|Supervisor]] can place an associate in Pink.
+- The [[Hotel/General Manager|General Manager]], the [[Hotel/Area Manager|Area Manager]], or the [[Hotel/Supervisor|Supervisor]] can place an associate in Pink.
 - Indicates waiting on a hotel decision (vacation, low season).
-- The status has no end date; it ends when the [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], or the [[Hotel/Supervisor|Supervisor]] removes the associate from Pink status. Upon exit, they return to Dark Green.
+- The status has no end date; it ends when the [[Hotel/General Manager|General Manager]], the [[Hotel/Area Manager|Area Manager]], or the [[Hotel/Supervisor|Supervisor]] removes the associate from Pink status. Upon exit, they return to Dark Green.
 
 ## Incident Rules
 
@@ -80,31 +80,31 @@ The [[Semáforo del Colaborador]] defines 12 states. The transition rules that g
 
 ### 3-Absence Rule
 
-- 3 accumulated absences → [[Core/Módulos/Blacklist|Blacklist]] automatically (Black status).
+- 3 accumulated absences → [[Core/Modules/Blacklist|Blacklist]] automatically (Black status).
 - Responsible: System (no manual action required).
 
 ### Hotel Report (Red)
 
-- The [[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], or [[Hotel/Supervisor|Supervisor]] activates Red status (reported).
+- The [[Hotel/General Manager|General Manager]], [[Hotel/Area Manager|Area Manager]], or [[Hotel/Supervisor|Supervisor]] activates Red status (reported).
 - The [[Inspector]] investigates the case and resolves it toward:
-  - **Black** ([[Core/Módulos/Blacklist|Blacklist]]), if the dispute is in the hotel's favor.
+  - **Black** ([[Core/Modules/Blacklist|Blacklist]]), if the dispute is in the hotel's favor.
   - **Dark Green** (reinstated), if the dispute is in the associate's favor.
-- The [[Manager de Reclutamiento]] has visibility of Blacklist cases for subsequent oversight, but the decision is made by the [[Inspector]].
+- The [[Recruitment Manager]] has visibility of Blacklist cases for subsequent oversight, but the decision is made by the [[Inspector]].
 
 ## Workers' Compensation Protection (Gray)
 
-- Any active status → **Gray** when a [[Core/Módulos/Accidente Laboral/Accidente Laboral|Workers' Compensation]] report is generated.
+- Any active status → **Gray** when a [[Core/Modules/Work Accident/Work Accident|Workers' Compensation]] report is generated.
 - While the associate is in Gray, absences **do not count** toward the 3-absence → Black rule.
 - **Gray → Dark Green** requires: medical discharge + accident card closure by the [[Inspector]].
-- Reference: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]].
+- Reference: [[Core/Modules/Work Accident/Work Accident Flow|Work Accident Flow]].
 
 ## Punching and Timesheet
 
-> [!info] Punching and Lunch deduction rules are also documented in [[Hotel/Reglas del Hotel|Reglas del Hotel]] from the hotel's perspective.
+> [!info] Punching and Lunch deduction rules are also documented in [[Hotel/Hotel Rules|Hotel Rules]] from the hotel's perspective.
 
 ### Punch Mechanism
 
-- The associate punches via **QR** generated by the [[Hotel/Manager General|Manager General]] or the [[Hotel/Manager de Área|Manager de Área]].
+- The associate punches via **QR** generated by the [[Hotel/General Manager|General Manager]] or the [[Hotel/Area Manager|Area Manager]].
 - Punches are recorded in entry/exit pairs for each period (exactly six):
   - **Clock In** — start of shift
   - **Lunch Out** — leaves for lunch
@@ -112,15 +112,15 @@ The [[Semáforo del Colaborador]] defines 12 states. The transition rules that g
   - **Break Out** — leaves for break
   - **Break In** — returns from break
   - **Clock Out** — end of shift
-- The [[Timesheet]] is created from the [[Core/Módulos/Schedule|Schedule]]; it cannot exist independently.
+- The [[Timesheet]] is created from the [[Core/Modules/Schedule|Schedule]]; it cannot exist independently.
 
 ### Status Indicator Restriction
 
-- The associate can only punch if they have an active [[Timesheet]], which requires being enrolled in the [[Core/Módulos/Schedule|Schedule]] of a hotel with an active assignment (fixed or temporary).
+- The associate can only punch if they have an active [[Timesheet]], which requires being enrolled in the [[Core/Modules/Schedule|Schedule]] of a hotel with an active assignment (fixed or temporary).
 - In **Pink** status (Stand-by): no active assignment → no Schedule → no Timesheet → cannot punch.
 - In **Yellow** status (Voluntary available): the associate declared availability, but does not yet have an assignment → cannot punch.
-- In **Brown** status (Temporary assignment): the [[Reclutadora]] assigned them, Schedule and Timesheet are generated → can punch.
-- The path to work during a rest period is: **Pink → Yellow → Brown**. Each transition is recorded in the [[Semáforo del Colaborador]] journal.
+- In **Brown** status (Temporary assignment): the [[Recruiter]] assigned them, Schedule and Timesheet are generated → can punch.
+- The path to work during a rest period is: **Pink → Yellow → Brown**. Each transition is recorded in the [[Associate Status Indicator]] journal.
 
 ### Lunch Deduction
 
@@ -139,46 +139,46 @@ The [[Semáforo del Colaborador]] defines 12 states. The transition rules that g
 ### Extended Lunch Indicator
 
 - The system automatically flags associates whose lunch exceeds 30 minutes.
-- **Visible to:** [[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]].
-- **Not visible to:** [[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], [[Hotel/Supervisor|Supervisor]].
+- **Visible to:** [[Inspector]], [[Inspection/Coordinator|Coordinator]], [[Recruitment Manager]].
+- **Not visible to:** [[Hotel/General Manager|General Manager]], [[Hotel/Area Manager|Area Manager]], [[Hotel/Supervisor|Supervisor]].
 - Purpose: internal Oranje oversight; not automatically punitive.
 
 ## Weekly Payment
 
 - The associate receives **weekly** payment from Oranje.
-- The amount is calculated from the [[Contabilidad/Consolidado Semanal del Colaborador|Consolidado Semanal]], which groups the [[Timesheet|Timesheets]] from all hotels where they worked that week.
-- If they worked at multiple hotels, each hotel contributes its hours at the pay rate of its [[Core/Módulos/Contrato|Contrato]].
+- The amount is calculated from the [[Accounting/Weekly Associate Summary|Weekly Associate Summary]], which groups the [[Timesheet|Timesheets]] from all hotels where they worked that week.
+- If they worked at multiple hotels, each hotel contributes its hours at the pay rate of its [[Core/Modules/Contract|Contract]].
 - Overtime is calculated per hotel, according to each contract's policy.
 
 ## Eligibility and Pool
 
-- Only associates who passed the filter and were approved by Recruitment enter the [[Pool de Colaboradores]].
-- The [[Reclutadora]] must check the [[Core/Módulos/Blacklist|Blacklist]] before recruiting a candidate.
-- An approved associate enters the Pool with [[Semáforo del Colaborador]] in White status.
+- Only associates who passed the filter and were approved by Recruitment enter the [[Associate Pool]].
+- The [[Recruiter]] must check the [[Core/Modules/Blacklist|Blacklist]] before recruiting a candidate.
+- An approved associate enters the Pool with [[Associate Status Indicator]] in White status.
 
 ## Quality Supervision (QA)
 
-- A [[QA/Operador de QA|Operador de QA]] is permanently assigned to supervising the Associate domain.
+- A [[QA/QA Operator|QA Operator]] is permanently assigned to supervising the Associate domain.
 - QA **does not execute** Associate management; it only observes aggregate pool metrics and the lifecycle.
-- The specific metrics that the QA Operator monitors for Associate are defined in [[QA/Métricas y KPIs por Departamento#Colaborador|Métricas y KPIs — Colaborador]].
-- If the [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] for the Associate domain reaches **Red** status without improvement after notification, the QA Manager escalates to management.
+- The specific metrics that the QA Operator monitors for Associate are defined in [[QA/Metrics and KPIs by Department#Associate|Metrics and KPIs — Associate]].
+- If the [[Core/Modules/Status Indicators/Quality Indicator|Quality Indicator]] for the Associate domain reaches **Red** status without improvement after notification, the QA Manager escalates to management.
 
 ## Related
 
-- [[Semáforo del Colaborador]]
-- [[Reglas de Negocio]]
-- [[Pool de Colaboradores]]
-- [[Core/Módulos/Blacklist|Blacklist]]
-- [[Core/Módulos/Schedule|Schedule]]
+- [[Associate Status Indicator]]
+- [[Business Rules]]
+- [[Associate Pool]]
+- [[Core/Modules/Blacklist|Blacklist]]
+- [[Core/Modules/Schedule|Schedule]]
 - [[Timesheet]]
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
-- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
-- [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]]
-- [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]]
-- [[Reclutadora]]
-- [[Manager de Reclutamiento]]
-- [[Hotel/Manager General|Manager General]]
-- [[Hotel/Manager de Área|Manager de Área]]
+- [[Core/Modules/Work Accident/Work Accident|Work Accident]]
+- [[Core/Modules/Work Accident/Work Accident Flow|Work Accident Flow]]
+- [[Recruitment/Recruitment Flow|Recruitment Flow]]
+- [[Core/Modules/Requisition/Requisition Flow|Requisition Flow]]
+- [[Recruiter]]
+- [[Recruitment Manager]]
+- [[Hotel/General Manager|General Manager]]
+- [[Hotel/Area Manager|Area Manager]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Inspector]]
-- [[Inspección/Coordinador|Coordinador]]
+- [[Inspection/Coordinator|Coordinator]]

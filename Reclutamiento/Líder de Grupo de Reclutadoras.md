@@ -8,19 +8,19 @@ aliases:
 
 # Recruiter Team Lead
 
-Intermediate role in the [[Reclutamiento/Reclutamiento|Reclutamiento]] module. Executes the same operational functions as a [[Reclutadora]] (recruiting and assigning staff) and also supervises the performance of an assigned group of Recruiters.
+Intermediate role in the [[Recruitment/Recruitment|Recruitment]] module. Executes the same operational functions as a [[Recruiter]] (recruiting and assigning staff) and also supervises the performance of an assigned group of Recruiters.
 
 ## Responsibilities
 
-The Recruiter Team Lead executes all operational responsibilities of a [[Reclutadora]], plus the following supervisory functions:
+The Recruiter Team Lead executes all operational responsibilities of a [[Recruiter]], plus the following supervisory functions:
 
-- Executes all operational responsibilities of a [[Reclutadora]]: recruiting, interviewing, validating, approving, and assigning associates.
-- Supervises and monitors the progress of the [[Reclutadora|Recruiters]] in their group.
-- Reports the status and performance of their group to the [[Manager de Reclutamiento]].
+- Executes all operational responsibilities of a [[Recruiter]]: recruiting, interviewing, validating, approving, and assigning associates.
+- Supervises and monitors the progress of the [[Recruiter|Recruiters]] in their group.
+- Reports the status and performance of their group to the [[Recruitment Manager]].
 
 ## Related
 
-- [[Flujo de Reclutamiento]]
-- [[Manager de Reclutamiento]]
-- [[Reclutadora]]
-- [[Requisición]]
+- [[Recruitment Flow]]
+- [[Recruitment Manager]]
+- [[Recruiter]]
+- [[Requisition]]

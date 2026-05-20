@@ -8,24 +8,24 @@ aliases:
 
 # Hotel User Account
 
-The hotel's account in the Oranje system. It is created upon approving the conversion at [[Semáforo Onboarding|Onboarding Status Pink]], just before the [[Trigger Automático de Conversión]], and marks the hotel's transition from commercial prospect to **active client** at [[Semáforo Onboarding|Onboarding Status Orange]].
+The hotel's account in the Oranje system. It is created upon approving the conversion at [[Onboarding Status Indicator|Onboarding Status Pink]], just before the [[Automatic Conversion Trigger]], and marks the hotel's transition from commercial prospect to **active client** at [[Onboarding Status Indicator|Onboarding Status Orange]].
 
 ## Creation
 
 - **Responsible for approval:** [[Business Developer Coordinator]].
-- **Moment:** when the agreement is closed at [[Semáforo Onboarding|Onboarding Status Pink]].
-- **Immediate effect:** triggers the [[Trigger Automático de Conversión]].
+- **Moment:** when the agreement is closed at [[Onboarding Status Indicator|Onboarding Status Pink]].
+- **Immediate effect:** triggers the [[Automatic Conversion Trigger]].
 
 ## What It Enables
 
 - Hotel access to the system as a client.
-- Ability to generate [[Requisición|requisitions]] from the [[Hotel/Hotel|Hotel]] module.
-- Management of the weekly [[Core/Módulos/Schedule|Schedule]], from which requisitions, assignments, and the [[Timesheet]] of its associates are administered.
+- Ability to generate [[Requisition|requisitions]] from the [[Hotel/Hotel|Hotel]] module.
+- Management of the weekly [[Core/Modules/Schedule|Schedule]], from which requisitions, assignments, and the [[Timesheet]] of its associates are administered.
 
 ## Related
 
-- [[Flujo de Onboarding]]
+- [[Onboarding Flow]]
 - [[Hotel/Hotel|Hotel]]
-- [[Semáforo Onboarding|Onboarding Status Pink]]
-- [[Semáforo Onboarding|Onboarding Status Orange]]
-- [[Trigger Automático de Conversión]]
+- [[Onboarding Status Indicator|Onboarding Status Pink]]
+- [[Onboarding Status Indicator|Onboarding Status Orange]]
+- [[Automatic Conversion Trigger]]

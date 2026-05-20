@@ -362,7 +362,7 @@ Types used:
 ## 10. Anti-patterns Avoided in This Vault
 
 - **No orphan files** — everything is linked from at least one hub
-- **No duplicated rules** — rules live in a single place ([[Reglas de Negocio]] centralized or `[Dept] Rules.md` local) and are referenced, not copied
+- **No duplicated rules** — rules live in a single place ([[Business Rules]] centralized or `[Dept] Rules.md` local) and are referenced, not copied
 - **No deep hierarchy** — maximum 4 levels of nesting
 - **No language mixing** — everything consistently in English
-- **Status indicators don't define rules** — they implement them. The definition lives in [[Reglas de Negocio]]
+- **Status indicators don't define rules** — they implement them. The definition lives in [[Business Rules]]

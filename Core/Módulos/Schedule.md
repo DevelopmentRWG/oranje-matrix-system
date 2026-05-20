@@ -7,24 +7,24 @@ aliases:
 
 # Schedule
 
-The hotel's weekly planning board. It is the **central axis of operations**: it brings together personnel demand ([[Requisición]]), coverage (associate assignment from the [[Pool de Colaboradores]]), and time tracking ([[Timesheet]]). Each hotel week has its own schedule.
+The hotel's weekly planning board. It is the **central axis of operations**: it brings together personnel demand ([[Requisition]]), coverage (associate assignment from the [[Associate Pool]]), and time tracking ([[Timesheet]]). Each hotel week has its own schedule.
 
 ## Initial Setup
 
-- The hotel defines its **week start and end** in the [[Contrato]].
+- The hotel defines its **week start and end** in the [[Contract]].
 - Oranje provides a **weekly planning format** based on that configuration.
 
 ## What the Schedule Contains
 
 ### Requisition (what the hotel needs)
 
-- When a [[Requisición]] is created with a start date within the week, its positions are reflected in that week's schedule.
+- When a [[Requisition]] is created with a start date within the week, its positions are reflected in that week's schedule.
 - The schedule shows the requested positions: role, headcount, schedule, dates, and language.
 
 ### Assignments (who covers the positions)
 
-- The [[Reclutadora]] checks the hotel's schedule to see the full picture: which positions were requested and which are already covered.
-- When assigning an associate from the [[Pool de Colaboradores]], they are registered in the hotel's schedule.
+- The [[Recruiter]] checks the hotel's schedule to see the full picture: which positions were requested and which are already covered.
+- When assigning an associate from the [[Associate Pool]], they are registered in the hotel's schedule.
 
 ### Timesheet (actual hours record)
 
@@ -34,8 +34,8 @@ The hotel's weekly planning board. It is the **central axis of operations**: it 
 
 ## Who Manages It
 
-- **[[Hotel/Manager de Área|Area Manager]]** — Manages the weekly schedule: distributes and plans their staff.
-- **[[Reclutadora]]** — Checks the schedule to see demand and registers associates when assigning them.
+- **[[Hotel/Area Manager|Area Manager]]** — Manages the weekly schedule: distributes and plans their staff.
+- **[[Recruiter]]** — Checks the schedule to see demand and registers associates when assigning them.
 
 ## What It Enables
 
@@ -52,9 +52,9 @@ The hotel's weekly planning board. It is the **central axis of operations**: it 
 
 ## Related
 
-- [[Requisición]]
+- [[Requisition]]
 - [[Timesheet]]
-- [[Reclutadora]]
-- [[Pool de Colaboradores]]
-- [[Hotel/Manager de Área|Area Manager]]
-- [[Flujo de Requisición]]
+- [[Recruiter]]
+- [[Associate Pool]]
+- [[Hotel/Area Manager|Area Manager]]
+- [[Requisition Flow]]
