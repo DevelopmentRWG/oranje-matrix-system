@@ -1,39 +1,39 @@
 ---
 tags:
-  - modulo/hotel
+  - module/hotel
 aliases:
-  - Manager de Área
-  - Gerente de Departamento
+  - Area Manager
+  - Department Manager
   - GH
 ---
 
-# Manager de Área
+# Area Manager
 
-Rol operativo del módulo de [[Hotel/Hotel|Hotel]]. Responsable de aprobar o rechazar las [[Requisición|requisiciones]], gestionar a los colaboradores asignados y administrar el [[Core/Módulos/Schedule|Schedule]] de su departamento.
+Operational role in the [[Hotel/Hotel|Hotel]] module. Responsible for approving or rejecting [[Requisición|requisitions]], managing assigned associates, and administering the [[Core/Módulos/Schedule|Schedule]] for their department.
 
-> [!note] Jerarquía simple
-> En hoteles con jerarquía simple, el [[Hotel/Manager General|Manager General]] también opera como Manager de Área (misma persona, dos roles). En hoteles con jerarquía extendida, hay un Manager de Área por cada [[Departamentos del Hotel|departamento]] (Housekeeping, Alimentos, Mantenimiento, Front Desk), subordinados al [[Hotel/Manager General|Manager General]].
+> [!note] Simple Hierarchy
+> In hotels with a simple hierarchy, the [[Hotel/Manager General|Manager General]] also operates as Area Manager (same person, two roles). In hotels with an extended hierarchy, there is one Area Manager per [[Departamentos del Hotel|department]] (Housekeeping, Food & Beverage, Maintenance, Front Desk), subordinate to the [[Hotel/Manager General|Manager General]].
 
-## Responsabilidades
+## Responsibilities
 
-### Requisiciones
+### Requisitions
 
-- Crea [[Requisición|requisiciones]] de personal.
-- **Aprueba** la requisición (estado **Autorizada**), que queda disponible en la bandeja compartida de [[Reclutamiento/Reclutamiento|Reclutamiento]] para ser tomada por una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] (modelo [[Self-Pick de Requisiciones|Self-Pick]]).
-- **Rechaza** la requisición, regresándola al creador con observaciones (estado **En elaboración**).
+- Creates staff [[Requisición|requisitions]].
+- **Approves** the requisition (status **Authorized**), making it available in the [[Reclutamiento/Reclutamiento|Reclutamiento]] shared inbox to be taken by a [[Reclutadora]] or [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] ([[Self-Pick de Requisiciones|Self-Pick]] model).
+- **Rejects** the requisition, returning it to the creator with comments (status **In Progress**).
 
-> [!important] Capa de seguridad
-> Esta aprobación es una capa de seguridad para evitar que lleguen requisiciones falsas o incorrectas al equipo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Oranje solo recibe requisiciones que un Manager de Área o el [[Hotel/Manager General|Manager General]] ha validado.
+> [!important] Security Layer
+> This approval is a security layer to prevent false or incorrect requisitions from reaching the [[Reclutamiento/Reclutamiento|Reclutamiento]] team. Oranje only receives requisitions that an Area Manager or the [[Hotel/Manager General|Manager General]] has validated.
 
-### Gestión de personal asignado
+### Assigned Staff Management
 
-- Genera el código **QR** para que los colaboradores ponchen en el [[Timesheet]].
-- Manda a colaboradores a descansar (estado **Rosa — Stand-by** en el [[Semáforo del Colaborador]]).
-- Reporta colaboradores (estado **Rojo — Reportado** en el [[Semáforo del Colaborador]]).
-- Reporta [[Core/Módulos/Accidente Laboral/Accidente Laboral|accidentes laborales]] detectados en la propiedad.
-- Gestiona el [[Core/Módulos/Schedule|Schedule]] semanal de su departamento.
+- Generates the **QR** code for associates to punch in the [[Timesheet]].
+- Places associates on rest (status **Pink — Stand-by** in the [[Semáforo del Colaborador]]).
+- Reports associates (status **Red — Reported** in the [[Semáforo del Colaborador]]).
+- Reports [[Core/Módulos/Accidente Laboral/Accidente Laboral|workplace accidents]] detected on the property.
+- Manages the weekly [[Core/Módulos/Schedule|Schedule]] for their department.
 
-## Relacionado
+## Related
 
 - [[Hotel/Manager General|Manager General]]
 - [[Hotel/Supervisor|Supervisor]]

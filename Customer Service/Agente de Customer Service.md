@@ -1,41 +1,40 @@
 ---
 tags:
-  - modulo/customer-service
-  - rol
+  - module/customer-service
+  - role
 aliases:
-  - Agente de Customer Service
-  - Agente de CS
-  - Agente CS
+  - Customer Service Agent
+  - CS Agent
 ---
 
-# Agente de Customer Service
+# Customer Service Agent
 
-Rol operativo del departamento de [[Customer Service/Customer Service|Customer Service]]. Es el primer punto de contacto para las solicitudes del hotel cliente. Recibe, documenta y da seguimiento a cada caso hasta su cierre o escalamiento.
+Operational role in the [[Customer Service/Customer Service|Customer Service]] department. Is the first point of contact for client hotel requests. Receives, documents, and follows up on each case until closure or escalation.
 
-## Responsabilidades
+## Responsibilities
 
-### Atención de solicitudes
+### Request Handling
 
-- Recibe solicitudes del hotel a través de los canales habilitados.
-- Documenta cada caso con: fecha, hotel, contacto, descripción y categoría.
-- Brinda respuesta inicial dentro de los tiempos definidos en las [[Customer Service/Reglas de Customer Service|Reglas de Customer Service]].
+- Receives hotel requests through the enabled channels.
+- Documents each case with: date, hotel, contact, description, and category.
+- Provides an initial response within the times defined in the [[Customer Service/Reglas de Customer Service|Customer Service Rules]].
 
-### Seguimiento y cierre
+### Follow-Up and Closure
 
-- Da seguimiento a los casos abiertos hasta su resolución.
-- Coordina con los departamentos internos que correspondan para obtener la información o acción necesaria.
-- Documenta la resolución y cierra el caso.
+- Follows up on open cases until resolution.
+- Coordinates with the corresponding internal departments to obtain the necessary information or action.
+- Documents the resolution and closes the case.
 
-### Escalamiento
+### Escalation
 
-- Escala al [[Customer Service/Customer Service Manager|Customer Service Manager]] los casos que excedan su capacidad de resolución o los tiempos definidos.
-- Escala de forma inmediata cualquier caso que involucre una posible disputa comercial o riesgo de transición a estado **Negro** en el [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
+- Escalates to the [[Customer Service/Customer Service Manager|Customer Service Manager]] cases that exceed their resolution capacity or the defined timeframes.
+- Immediately escalates any case involving a potential commercial dispute or risk of transitioning to **Black** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]].
 
-## Relacionado
+## Related
 
 - [[Customer Service/Customer Service Manager|Customer Service Manager]]
 - [[Customer Service/Customer Service|Customer Service]]
-- [[Customer Service/Reglas de Customer Service|Reglas de Customer Service]]
-- [[Hotel/Manager General|Manager General]]
-- [[Hotel/Manager de Área|Manager de Área]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]
+- [[Customer Service/Reglas de Customer Service|Customer Service Rules]]
+- [[Hotel/Manager General|General Manager]]
+- [[Hotel/Manager de Área|Area Manager]]
+- [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]

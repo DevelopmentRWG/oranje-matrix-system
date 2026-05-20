@@ -1,48 +1,48 @@
 ---
 tags:
-  - departamento/qa
+  - department/qa
 aliases:
   - QA
   - Quality Assurance
-  - Departamento de Calidad
+  - Quality Department
 ---
 
 # QA
 
-Departamento encargado de supervisar la calidad operativa de todos los departamentos de Oranje. Cada departamento tiene un [[Operador de QA]] asignado que monitorea métricas de desempeño y emite observaciones para la mejora continua.
+Department responsible for supervising the operational quality of all Oranje departments. Each department has an assigned [[Operador de QA]] who monitors performance metrics and issues observations for continuous improvement.
 
 > [!info]
-> QA no ejecuta la operación de ningún departamento. Su función es **observar, medir y retroalimentar** para que cada área mantenga su calidad dentro de los estándares definidos.
+> QA does not execute the operations of any department. Its function is to **observe, measure, and provide feedback** so that each area maintains its quality within the defined standards.
 
-## Contenido del módulo
+## Module Contents
 
 ### Roles
 
 - [[Manager de QA]]
 - [[Operador de QA]]
 
-### Reglas
+### Rules
 
-- [[QA/Reglas de QA|Reglas de QA]]
+- [[QA/Reglas de QA|QA Rules]]
 
-### Métricas
+### Metrics
 
-- [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]
+- [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
 
 ### Dashboard
 
-- [[QA/Dashboard de QA|Dashboard de QA]]
+- [[QA/Dashboard de QA|QA Dashboard]]
 
-### Departamentos supervisados
+### Supervised Departments
 
-- [[Inspección/Inspección|Inspección]]
+- [[Inspección/Inspección|Inspection]]
 - [[Hotel/Hotel|Hotel]]
-- [[Colaborador/Colaborador|Colaborador]]
-- [[Ventas/Ventas|Ventas]]
-- [[Reclutamiento/Reclutamiento|Reclutamiento]]
+- [[Colaborador/Colaborador|Associate]]
+- [[Ventas/Ventas|Sales]]
+- [[Reclutamiento/Reclutamiento|Recruitment]]
 - [[Customer Service/Customer Service|Customer Service]]
 
-## Conceptos Core relacionados
+## Related Core Concepts
 
 - [[Indicador de Calidad]]
 - [[Semáforo del Colaborador]]

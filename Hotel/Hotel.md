@@ -1,70 +1,70 @@
 ---
 tags:
-  - modulo/hotel
+  - module/hotel
 aliases:
   - Hotel
-  - Módulo de Hotel
+  - Hotel Module
 ---
 
 # Hotel
 
-Módulo que representa al hotel como cliente de Oranje. El hotel solicita personal a través de [[Requisición|requisiciones]] y gestiona su operación semanal desde el [[Core/Módulos/Schedule|Schedule]], que es el eje donde convergen la demanda de posiciones, la cobertura de colaboradores asignados y el registro de tiempo trabajado ([[Timesheet]]). Opera como contraparte del equipo de [[Reclutamiento/Reclutamiento|Reclutamiento]].
+Module that represents the hotel as an Oranje client. The hotel requests staff through [[Requisición|requisitions]] and manages its weekly operations from the [[Core/Módulos/Schedule|Schedule]], which is the hub where demand for positions, coverage of assigned associates, and worked-time records ([[Timesheet]]) converge. It operates as the counterpart to the [[Reclutamiento/Reclutamiento|Reclutamiento]] team.
 
-## Contenido del módulo
+## Module Contents
 
 ### Roles
 
-- [[Hotel/Manager General|Manager General]] — Máxima autoridad del hotel. Siempre existe en ambas jerarquías.
-- [[Hotel/Manager de Área|Manager de Área]] — Rol operativo por departamento. Aprueba o rechaza requisiciones; gestiona el personal asignado.
-- [[Hotel/Supervisor|Supervisor]] — Crea las requisiciones de personal.
+- [[Hotel/Manager General|Manager General]] — Highest authority at the hotel. Always exists in both hierarchies.
+- [[Hotel/Manager de Área|Manager de Área]] — Operational role by department. Approves or rejects requisitions; manages assigned staff.
+- [[Hotel/Supervisor|Supervisor]] — Creates staff requisitions.
 
-### Estructura organizacional
+### Organizational Structure
 
-Dependiendo del tamaño y complejidad del hotel, la plataforma soporta dos configuraciones jerárquicas:
+Depending on the hotel's size and complexity, the platform supports two hierarchical configurations:
 
-#### Jerarquía simple
+#### Simple Hierarchy
 
-Para hoteles pequeños o con estructura plana. El Manager General también opera como Manager de Área (misma persona, dos roles).
-
-```
-Manager General (GM) → SUP → Colaboradores de Oranje
-```
-
-#### Jerarquía extendida
-
-Para hoteles grandes con múltiples [[Departamentos del Hotel|departamentos]] operativos.
+For small hotels or those with a flat structure. The General Manager also operates as Area Manager (same person, two roles).
 
 ```
-Manager General (GM)
-  └── Manager de Área (uno por departamento)
-       └── Supervisor(es)
-            └── Colaboradores de Oranje
+General Manager (GM) → SUP → Oranje Associates
 ```
 
-#### Equivalencia de roles
+#### Extended Hierarchy
 
-| Jerarquía simple | Jerarquía extendida | Responsabilidades en plataforma |
+For large hotels with multiple operational [[Departamentos del Hotel|departments]].
+
+```
+General Manager (GM)
+  └── Area Manager (one per department)
+       └── Supervisor(s)
+            └── Oranje Associates
+```
+
+#### Role Equivalence
+
+| Simple Hierarchy | Extended Hierarchy | Platform Responsibilities |
 |---|---|---|
-| [[Hotel/Manager General\|Manager General]] | [[Hotel/Manager General\|Manager General]] | Supervisión general, visibilidad global, todas las acciones operativas |
-| [[Hotel/Manager General\|Manager General]] (mismo rol) | [[Hotel/Manager de Área\|Manager de Área]] | Aprueba requisiciones, gestiona schedule, genera QR, reporta colaboradores |
-| [[Hotel/Supervisor\|SUP]] | [[Hotel/Supervisor\|Supervisor]] | Crea requisiciones, reporta colaboradores, reporta accidentes laborales |
+| [[Hotel/Manager General\|Manager General]] | [[Hotel/Manager General\|Manager General]] | General oversight, global visibility, all operational actions |
+| [[Hotel/Manager General\|Manager General]] (same role) | [[Hotel/Manager de Área\|Manager de Área]] | Approves requisitions, manages schedule, generates QR, reports associates |
+| [[Hotel/Supervisor\|SUP]] | [[Hotel/Supervisor\|Supervisor]] | Creates requisitions, reports associates, reports workplace accidents |
 
-#### Departamentos del hotel
+#### Hotel Departments
 
 - **Housekeeping** — Housekeeper, Houseman, Laundry
-- **Alimentos** — Chef
-- **Mantenimiento**
+- **Food & Beverage** — Chef
+- **Maintenance**
 - **Front Desk**
 
-Ver catálogo completo en [[Departamentos del Hotel]].
+See full catalog at [[Departamentos del Hotel]].
 
-### Procesos
+### Processes
 
-- Creación y autorización de [[Requisición|requisiciones]].
-- Gestión del [[Core/Módulos/Schedule|Schedule]] semanal.
-- Registro de tiempo trabajado vía [[Timesheet]].
+- Creation and authorization of [[Requisición|requisitions]].
+- Management of the weekly [[Core/Módulos/Schedule|Schedule]].
+- Recording of worked time via [[Timesheet]].
 
-## Conceptos Core relacionados
+## Related Core Concepts
 
 - [[Requisición]]
 - [[Core/Módulos/Schedule|Schedule]]
@@ -81,8 +81,8 @@ Ver catálogo completo en [[Departamentos del Hotel]].
 - [[Zonas]]
 - [[Inspector]]
 
-## Relación con otros módulos
+## Relationship with Other Modules
 
-- [[Reclutamiento/Reclutamiento|Reclutamiento]] — Recibe las requisiciones aprobadas y asigna personal.
-- [[Ventas/Ventas|Ventas]] — Responsable del onboarding de nuevos hoteles.
-- [[Customer Service/Customer Service|Customer Service]] — Canal de atención post-onboarding para consultas, quejas y seguimiento de incidencias.
+- [[Reclutamiento/Reclutamiento|Reclutamiento]] — Receives approved requisitions and assigns staff.
+- [[Ventas/Ventas|Ventas]] — Responsible for onboarding new hotels.
+- [[Customer Service/Customer Service|Customer Service]] — Post-onboarding service channel for inquiries, complaints, and incident follow-up.

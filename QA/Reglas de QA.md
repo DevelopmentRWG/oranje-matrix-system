@@ -1,104 +1,104 @@
 ---
 tags:
-  - departamento/qa
+  - department/qa
 aliases:
-  - Reglas de QA
+  - QA Rules
 ---
 
-# Reglas de QA
+# QA Rules
 
-Consolidación de todas las reglas de negocio que aplican al departamento de QA dentro del sistema Oranje. Referencia cruzada con [[Reglas de Negocio]] (concentrado general del sistema).
+Consolidation of all business rules that apply to the QA department within the Oranje system. Cross-reference with [[Reglas de Negocio]] (system-wide consolidated rules).
 
-## Principio fundamental
+## Fundamental Principle
 
-> [!important] QA no ejecuta la operación de ningún departamento. Su función es **observar, medir y retroalimentar** para que cada área mantenga su calidad dentro de los estándares definidos.
+> [!important] QA does not execute the operations of any department. Its function is to **observe, measure, and provide feedback** so that each area maintains its quality within the defined standards.
 
-## Jerarquía del departamento
+## Department Hierarchy
 
-| Rol | Función |
+| Role | Function |
 |---|---|
-| [[Manager de QA]] | Define métricas y KPIs, supervisa operadores, consolida hallazgos, actualiza el [[Indicador de Calidad]] y presenta reportes a dirección |
-| [[Operador de QA]] | Ejecutor operativo. Monitorea semáforos, mide métricas, emite observaciones formales al departamento asignado |
+| [[Manager de QA]] | Defines metrics and KPIs, supervises operators, consolidates findings, updates the [[Indicador de Calidad]], and presents reports to management |
+| [[Operador de QA]] | Operational executor. Monitors status indicators, measures metrics, issues formal observations to the assigned department |
 
-## Asignación de operadores
+## Operator Assignments
 
-Existen **6 Operadores de QA**, cada uno asignado de forma fija a un departamento:
+There are **6 QA Operators**, each permanently assigned to one department:
 
-| Operador | Departamento supervisado |
+| Operator | Supervised Department |
 |---|---|
-| Operador 1 | [[Inspección/Inspector\|Inspección]] |
-| Operador 2 | [[Hotel/Hotel\|Hotel]] |
-| Operador 3 | [[Colaborador/Colaborador\|Colaborador]] |
-| Operador 4 | [[Ventas/Ventas\|Ventas]] |
-| Operador 5 | [[Reclutamiento/Reclutamiento\|Reclutamiento]] |
-| Operador 6 | [[Customer Service/Customer Service\|Customer Service]] |
+| Operator 1 | [[Inspección/Inspector\|Inspection]] |
+| Operator 2 | [[Hotel/Hotel\|Hotel]] |
+| Operator 3 | [[Colaborador/Colaborador\|Associate]] |
+| Operator 4 | [[Ventas/Ventas\|Sales]] |
+| Operator 5 | [[Reclutamiento/Reclutamiento\|Recruitment]] |
+| Operator 6 | [[Customer Service/Customer Service\|Customer Service]] |
 
-> [!note] La asignación es fija: cada operador conoce a fondo la operación del departamento que supervisa.
+> [!note] The assignment is fixed: each operator has an in-depth knowledge of the department they supervise.
 
-> [!note] Alcance de este documento
-> Las métricas y KPIs específicos por departamento están definidos en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]. Este documento cubre la estructura general del módulo de QA: roles, flujo de observaciones y escalación.
+> [!note] Scope of this document
+> The specific metrics and KPIs per department are defined in [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]. This document covers the general structure of the QA module: roles, observation flow, and escalation.
 
-## Métricas y observaciones
+## Metrics and Observations
 
-- El [[Operador de QA]] monitorea los semáforos del departamento asignado ([[Semáforo del Colaborador]], [[Semáforo de Requisición]], [[Semáforo Onboarding]], etc.) como fuente de contexto operativo.
-- Mide métricas de desempeño: tiempos de respuesta, tasas de éxito, frecuencia de errores y cumplimiento de procesos.
-- Emite **observaciones formales** al departamento con hallazgos específicos y recomendaciones de mejora.
-- Reporta al [[Manager de QA]] con los datos recopilados y el estado de calidad.
-- Las métricas concretas que cada operador monitorea están definidas en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
+- The [[Operador de QA]] monitors the status indicators of the assigned department ([[Semáforo del Colaborador]], [[Semáforo de Requisición]], [[Semáforo Onboarding]], etc.) as a source of operational context.
+- Measures performance metrics: response times, success rates, error frequency, and process compliance.
+- Issues **formal observations** to the department with specific findings and improvement recommendations.
+- Reports to the [[Manager de QA]] with the collected data and quality status.
+- The specific metrics each operator monitors are defined in [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]].
 
-## Indicador de Calidad
+## Quality Indicator
 
-El [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] es el instrumento de medición propio de QA. Cada departamento tiene su propio indicador independiente; el estado inicial es **Verde**.
+The [[Core/Módulos/Semáforos/Indicador de Calidad|Quality Indicator]] is QA's own measurement instrument. Each department has its own independent indicator; the initial status is **Green**.
 
-| Color | Estado | Descripción |
+| Color | Status | Description |
 |---|---|---|
-| Verde | Calidad óptima | Métricas dentro de parámetros esperados, sin observaciones pendientes |
-| Amarillo | Calidad en riesgo | Métricas fuera de rango o existen observaciones pendientes sin atender |
-| Rojo | Calidad crítica | Métricas muy por debajo del estándar o acumulación de observaciones ignoradas |
+| Green | Optimal quality | Metrics within expected parameters, no pending observations |
+| Yellow | Quality at risk | Metrics out of range or unaddressed pending observations exist |
+| Red | Critical quality | Metrics well below standard or accumulation of ignored observations |
 
-### Transiciones
+### Transitions
 
-- **→ Verde**: estado inicial cuando QA comienza a supervisar un departamento.
-- **Verde → Amarillo**: cuando el [[Operador de QA]] detecta métricas fuera de rango o emite observaciones no atendidas.
-- **Amarillo → Rojo**: cuando las observaciones persisten sin atención o las métricas se deterioran significativamente.
-- **Rojo → Amarillo**: cuando el departamento comienza a atender observaciones y muestra mejora.
-- **Amarillo → Verde**: cuando todas las observaciones están resueltas y las métricas regresan a parámetros.
+- **→ Green**: initial status when QA begins supervising a department.
+- **Green → Yellow**: when the [[Operador de QA]] detects out-of-range metrics or issues unaddressed observations.
+- **Yellow → Red**: when observations persist without attention or metrics deteriorate significantly.
+- **Red → Yellow**: when the department begins addressing observations and shows improvement.
+- **Yellow → Green**: when all observations are resolved and metrics return to parameters.
 
-### Quién actualiza el indicador
+### Who Updates the Indicator
 
-| Acción | Responsable |
+| Action | Responsible |
 |---|---|
-| Proponer cambio de estado con base en mediciones | [[Operador de QA]] |
-| Validar y aprobar la actualización | [[Manager de QA]] |
+| Propose status change based on measurements | [[Operador de QA]] |
+| Validate and approve the update | [[Manager de QA]] |
 
-> [!important] Solo el [[Manager de QA]] puede actualizar formalmente el [[Indicador de Calidad]] de cada departamento.
+> [!important] Only the [[Manager de QA]] can formally update the [[Indicador de Calidad]] of each department.
 
-## Escalamiento
+## Escalation
 
-- Departamento en estado **Rojo** sin mejora tras notificación → el [[Manager de QA]] escala el caso a dirección.
-- El [[Manager de QA]] presenta reportes de calidad a la dirección con hallazgos, tendencias y áreas de mejora.
+- Department in **Red** status without improvement after notification → the [[Manager de QA]] escalates the case to management.
+- The [[Manager de QA]] presents quality reports to management with findings, trends, and areas for improvement.
 
-## Resumen de responsabilidades por rol
+## Responsibility Summary by Role
 
-| Acción | [[Operador de QA]] | [[Manager de QA]] |
+| Action | [[Operador de QA]] | [[Manager de QA]] |
 |---|---|---|
-| Monitorear semáforos del departamento asignado | Sí | No |
-| Medir métricas de desempeño | Sí | No |
-| Emitir observaciones formales | Sí | No |
-| Alimentar datos del Indicador de Calidad | Sí | No |
-| Definir métricas y KPIs | No | Sí |
-| Validar y aprobar cambios del Indicador | No | Sí |
-| Consolidar hallazgos de todos los operadores | No | Sí |
-| Presentar reportes a dirección | No | Sí |
-| Escalar departamento en Rojo sin mejora | No | Sí |
-| Supervisar operadores de QA | No | Sí |
+| Monitor status indicators of the assigned department | Yes | No |
+| Measure performance metrics | Yes | No |
+| Issue formal observations | Yes | No |
+| Feed Quality Indicator data | Yes | No |
+| Define metrics and KPIs | No | Yes |
+| Validate and approve Indicator changes | No | Yes |
+| Consolidate findings from all operators | No | Yes |
+| Present reports to management | No | Yes |
+| Escalate department in Red without improvement | No | Yes |
+| Supervise QA operators | No | Yes |
 
-## Relacionado
+## Related
 
 - [[Reglas de Negocio]]
 - [[Manager de QA]]
 - [[Operador de QA]]
-- [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]]
+- [[Core/Módulos/Semáforos/Indicador de Calidad|Quality Indicator]]
 - [[Semáforo del Colaborador]]
 - [[Semáforo de Requisición]]
 - [[Semáforo Onboarding]]

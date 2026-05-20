@@ -1,59 +1,58 @@
 ---
 tags:
-  - modulo/customer-service
+  - module/customer-service
 aliases:
   - Customer Service
-  - Módulo de Customer Service
+  - Customer Service Module
   - CS
-  - Servicio al Cliente
 ---
 
 # Customer Service
 
-Módulo responsable de la atención post-onboarding al hotel cliente activo. Customer Service es el canal formal de comunicación entre el hotel y Oranje para consultas, solicitudes, quejas y seguimiento de incidencias que no correspondan a los flujos operativos predefinidos ([[Requisición|requisiciones]], [[Core/Módulos/Schedule|Schedule]], [[Timesheet]]).
+Module responsible for post-onboarding service to the active client hotel. Customer Service is the formal communication channel between the hotel and Oranje for inquiries, requests, complaints, and incident follow-up that do not correspond to the predefined operational flows ([[Requisición|requisitions]], [[Core/Módulos/Schedule|Schedule]], [[Timesheet]]).
 
-Opera a partir del momento en que el hotel alcanza el status **Naranja** en el [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]] y se mantiene como punto de contacto durante toda la vida del hotel como cliente.
+It operates from the moment the hotel reaches **Orange** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]] and remains the point of contact throughout the hotel's life as a client.
 
 ## Roles
 
-- [[Customer Service/Customer Service Manager|Customer Service Manager]] — Supervisa al equipo de agentes, gestiona escalamientos y reporta métricas de satisfacción.
-- [[Customer Service/Agente de Customer Service|Agente de Customer Service]] — Recibe, documenta y da seguimiento a las solicitudes del hotel hasta su cierre.
+- [[Customer Service/Customer Service Manager|Customer Service Manager]] — Supervises the agent team, manages escalations, and reports satisfaction metrics.
+- [[Customer Service/Agente de Customer Service|Customer Service Agent]] — Receives, documents, and follows up on hotel requests until closure.
 
-## Alcance
+## Scope
 
-### Qué atiende Customer Service
+### What Customer Service Handles
 
-- Consultas generales del hotel sobre la operación con Oranje.
-- Quejas o inconformidades sobre colaboradores asignados, facturación o procesos.
-- Solicitudes que no encajan en los flujos operativos existentes.
-- Seguimiento de disputas comerciales antes de que escalen a estado **Negro** en el [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
-- Coordinación con departamentos internos para resolver incidencias reportadas por el hotel.
+- General hotel inquiries about operations with Oranje.
+- Complaints or grievances about assigned associates, billing, or processes.
+- Requests that do not fit into existing operational flows.
+- Follow-up on commercial disputes before they escalate to **Black** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]].
+- Coordination with internal departments to resolve incidents reported by the hotel.
 
-### Qué NO atiende Customer Service
+### What Customer Service Does NOT Handle
 
-- Creación o autorización de [[Requisición|requisiciones]] — eso es responsabilidad del [[Hotel/Hotel|Hotel]].
-- Asignación de personal — eso es responsabilidad de [[Reclutamiento/Reclutamiento|Reclutamiento]].
-- Verificación en sitio de colaboradores — eso es responsabilidad de [[Inspección/Inspección|Inspección]].
-- Captación de nuevos hoteles — eso es responsabilidad de [[Ventas/Ventas|Ventas]].
+- Creation or authorization of [[Requisición|requisitions]] — that is the responsibility of [[Hotel/Hotel|Hotel]].
+- Staff assignment — that is the responsibility of [[Reclutamiento/Reclutamiento|Recruitment]].
+- On-site associate verification — that is the responsibility of [[Inspección/Inspección|Inspection]].
+- Acquisition of new hotels — that is the responsibility of [[Ventas/Ventas|Sales]].
 
-## Procesos
+## Processes
 
-- [[Customer Service/Flujo de Customer Service|Flujo de Customer Service]] — Proceso paso a paso de atención de solicitudes del hotel.
+- [[Customer Service/Flujo de Customer Service|Customer Service Flow]] — Step-by-step process for handling hotel requests.
 
-## Reglas
+## Rules
 
-Ver [[Customer Service/Reglas de Customer Service|Reglas de Customer Service]].
+See [[Customer Service/Reglas de Customer Service|Customer Service Rules]].
 
-## Conceptos Core relacionados
+## Related Core Concepts
 
 - [[Hotel/Hotel|Hotel]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]
-- [[Ventas/Ventas|Ventas]]
+- [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]
+- [[Ventas/Ventas|Sales]]
 - [[Reglas de Negocio]]
 
-## Relación con otros módulos
+## Relationship with Other Modules
 
-- [[Hotel/Hotel|Hotel]] — El hotel es el emisor de solicitudes de soporte. El [[Hotel/Manager General|Manager General]] es el interlocutor principal.
-- [[Ventas/Ventas|Ventas]] — Customer Service es la continuación del ciclo comercial post-conversión. El [[Ventas/Roles/Business Developer Coordinator|BDC]] es el punto de escalamiento para temas comerciales.
-- [[QA/QA|QA]] — Un [[Operador de QA]] supervisa las métricas de desempeño de Customer Service.
-- [[Inspección/Inspección|Inspección]] — Para incidencias que requieran verificación en sitio, Customer Service coordina con el [[Inspección/Coordinador|Coordinador]] de Inspección.
+- [[Hotel/Hotel|Hotel]] — The hotel is the source of support requests. The [[Hotel/Manager General|General Manager]] is the primary point of contact.
+- [[Ventas/Ventas|Sales]] — Customer Service is the continuation of the commercial cycle post-conversion. The [[Ventas/Roles/Business Developer Coordinator|BDC]] is the escalation point for commercial matters.
+- [[QA/QA|QA]] — A [[Operador de QA]] supervises Customer Service performance metrics.
+- [[Inspección/Inspección|Inspection]] — For incidents requiring on-site verification, Customer Service coordinates with the [[Inspección/Coordinador|Inspection Coordinator]].

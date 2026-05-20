@@ -1,22 +1,22 @@
 ---
 tags:
-  - modulo/reclutamiento
+  - module/recruitment
 aliases:
-  - Manager de Reclutamiento
+  - Recruitment Manager
 ---
 
-# Manager de Reclutamiento
+# Recruitment Manager
 
-Rol responsable de coordinar la entrada de requisiciones y supervisar casos especiales dentro del módulo de [[Reclutamiento/Reclutamiento|Reclutamiento]].
+Role responsible for coordinating the intake of requisitions and overseeing special cases within the [[Reclutamiento/Reclutamiento|Reclutamiento]] module.
 
-## Responsabilidades
+## Responsibilities
 
-- Monitorea la bandeja compartida de [[Requisición|requisiciones]] e interviene manualmente solo en casos excepcionales: balanceo entre grupos, líder ausente y corrección de error de asignación. Las requisiciones sin tomar por más de 24 horas son asignadas automáticamente por el sistema.
-- Revisa casos de [[Core/Módulos/Blacklist|Blacklist]].
-- Supervisa a las [[Líder de Grupo de Reclutadoras|Líderes de Grupo de Reclutadoras]].
-- Tiene visibilidad del **Indicador de Lunch Extendido** en el [[Timesheet]] para evaluar patrones de comportamiento de colaboradores activos.
+- Monitors the shared [[Requisición|requisition]] inbox and intervenes manually only in exceptional cases: balancing between groups, absent team lead, and correcting assignment errors. Requisitions untaken for more than 24 hours are automatically assigned by the system.
+- Reviews [[Core/Módulos/Blacklist|Blacklist]] cases.
+- Supervises the [[Líder de Grupo de Reclutadoras|Recruiter Team Leads]].
+- Has visibility of the **Extended Lunch Indicator** in the [[Timesheet]] to evaluate behavioral patterns of active associates.
 
-## Relacionado
+## Related
 
 - [[Flujo de Reclutamiento]]
 - [[Reclutadora]]

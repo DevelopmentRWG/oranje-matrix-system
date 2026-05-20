@@ -1,191 +1,191 @@
 ---
 tags:
-  - modulo/hotel
+  - module/hotel
 aliases:
-  - Reglas del Hotel
+  - Hotel Business Rules
 ---
 
-# Reglas del Hotel
+# Hotel Business Rules
 
-Consolidación de todas las reglas de negocio que aplican a los roles del Hotel dentro del sistema Oranje. Referencia cruzada con [[Reglas de Negocio]] (concentrado general del sistema).
+Consolidation of all business rules that apply to Hotel roles within the Oranje system. Cross-reference with [[Reglas de Negocio]] (general system consolidation).
 
-## Jerarquías soportadas
+## Supported Hierarchies
 
-La plataforma soporta dos modelos organizacionales para el hotel:
+The platform supports two organizational models for the hotel:
 
-| Jerarquía | Estructura |
+| Hierarchy | Structure |
 |---|---|
-| **Simple** | [[Hotel/Manager General\|Manager General]] (también opera como [[Hotel/Manager de Área\|Manager de Área]]) → [[Hotel/Supervisor\|SUP]] → Colaboradores de Oranje |
-| **Extendida** | [[Hotel/Manager General\|Manager General]] → [[Hotel/Manager de Área\|Manager de Área]] → [[Hotel/Supervisor\|Supervisor]] → Colaboradores de Oranje |
+| **Simple** | [[Hotel/Manager General\|Manager General]] (also operates as [[Hotel/Manager de Área\|Manager de Área]]) → [[Hotel/Supervisor\|SUP]] → Oranje Associates |
+| **Extended** | [[Hotel/Manager General\|Manager General]] → [[Hotel/Manager de Área\|Manager de Área]] → [[Hotel/Supervisor\|Supervisor]] → Oranje Associates |
 
-- En la jerarquía simple, el [[Hotel/Manager General|Manager General]] también opera como [[Hotel/Manager de Área|Manager de Área]] (misma persona, dos roles).
-- Los departamentos del hotel son: **Housekeeping, Alimentos, Mantenimiento y Front Desk** (ver [[Core/Catálogos/Departamentos del Hotel|Departamentos del Hotel]]).
-- En la jerarquía extendida, cada departamento tiene su propio Gerente y Supervisor(es).
+- In the simple hierarchy, the [[Hotel/Manager General|Manager General]] also operates as [[Hotel/Manager de Área|Manager de Área]] (same person, two roles).
+- Hotel departments are: **Housekeeping, Food & Beverage, Maintenance, and Front Desk** (see [[Core/Catálogos/Departamentos del Hotel|Departamentos del Hotel]]).
+- In the extended hierarchy, each department has its own Manager and Supervisor(s).
 
-## Habilitación del hotel
+## Hotel Enablement
 
-> [!important] El hotel solo puede generar requisiciones cuando alcanza el status **Naranja** en el [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
+> [!important] The hotel can only generate requisitions when it reaches **Orange** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
 
-- Antes de alcanzar Naranja, el hotel es un prospecto comercial gestionado por Ventas.
+- Before reaching Orange, the hotel is a commercial prospect managed by Sales.
 
-## Requisiciones — creación y autorización
+## Requisitions — Creation and Authorization
 
-### Acceso al módulo
+### Module Access
 
-- El [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] y el [[Hotel/Supervisor|Supervisor]] tienen acceso al módulo de requisiciones.
-- Usuarios sin acceso reciben el mensaje: **"No cuenta con acceso"**.
+- The [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], and the [[Hotel/Supervisor|Supervisor]] have access to the requisitions module.
+- Users without access receive the message: **"You do not have access"**.
 
-### Creación
+### Creation
 
-- Cualquier rol del hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]]) crea la requisición (estado **Verde manzana** — En elaboración en el [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]]).
-- El número de requisición se genera automáticamente: `Año (4) + Mes (2) + Día (2) + Hora (2, 24h) + Minutos (2) + Homoclave (2 alfanuméricos)`. Ejemplo: `202604081632V1`.
+- Any hotel role ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], or [[Hotel/Supervisor|Supervisor]]) creates the requisition (status **Apple Green** — In Progress in the [[Core/Módulos/Semáforos/Semáforo de Requisición|Semáforo de Requisición]]).
+- The requisition number is automatically generated: `Year (4) + Month (2) + Day (2) + Hour (2, 24h) + Minutes (2) + Homoclave (2 alphanumeric)`. Example: `202604081632V1`.
 
-### Autorización
+### Authorization
 
-> [!important] Solo el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Manager General|Manager General]] pueden autorizar una requisición. Si el [[Hotel/Supervisor|Supervisor]] intenta hacerlo, el sistema bloquea la acción con el mensaje: **"Solo el gerente del hotel puede autorizar la requisición"**.
+> [!important] Only the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Manager General|Manager General]] can authorize a requisition. If the [[Hotel/Supervisor|Supervisor]] attempts to do so, the system blocks the action with the message: **"Only the hotel manager can authorize the requisition"**.
 
-- Para autorizar debe existir **al menos una posición** registrada. Si no: **"No tiene posiciones registradas, registre al menos una posición e intente nuevamente"**.
-- El rechazo regresa la requisición al creador con observaciones (estado **En elaboración**).
+- To authorize, at least **one position** must be registered. If not: **"No positions registered. Please register at least one position and try again"**.
+- Rejection returns the requisition to the creator with comments (status **In Progress**).
 
-> [!info] La autorización del [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Manager General|Manager General]] es una **capa de seguridad** para evitar que lleguen requisiciones falsas o incorrectas a Reclutamiento.
+> [!info] Authorization by the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Manager General|Manager General]] is a **security layer** to prevent false or incorrect requisitions from reaching Recruitment.
 
-## Efectos automáticos al autorizar
+## Automatic Effects Upon Authorization
 
-Al autorizar una requisición, el sistema ejecuta automáticamente:
+When a requisition is authorized, the system automatically executes:
 
-| Efecto | Detalle |
+| Effect | Detail |
 |---|---|
-| Cálculo de urgencia | Por posición, según la [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|fórmula de urgencia]]: `> 120h` → Verde fuerte (Normal), `72–120h` → Amarillo (Medio), `< 72h` → Rojo (Urgente) |
-| Transición de posiciones | De Dorado (Gold) a Naranja (Orange) en el [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición\|Semáforo de Posiciones]] |
-| Reflejo en Schedule | Las posiciones quedan en el [[Core/Módulos/Schedule\|Schedule]] de la semana correspondiente a su fecha de inicio |
-| Asignación de Inspector | El [[Inspector]] se asigna automáticamente según la zona del hotel |
+| Urgency calculation | Per position, according to the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|urgency formula]]: `> 120h` → Dark Green (Normal), `72–120h` → Yellow (Medium), `< 72h` → Red (Urgent) |
+| Position transition | From Gold to Orange in the [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición\|Semáforo de Posiciones]] |
+| Schedule reflection | Positions appear in the [[Core/Módulos/Schedule\|Schedule]] for the week corresponding to their start date |
+| Inspector assignment | The [[Inspector]] is automatically assigned based on the hotel's zone |
 
-## Ciclo de vida de la posición
+## Position Lifecycle
 
-- Cada posición tiene **fecha de inicio pero no fecha de fin** definida.
-- La posición termina cuando el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] pone al colaborador en **Stand-by** (estado Rosa en el [[Semáforo del Colaborador]]).
+- Each position has a **start date but no defined end date**.
+- The position ends when the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Supervisor|Supervisor]] places the associate on **Stand-by** (Pink status in the [[Semáforo del Colaborador]]).
 
-## Eliminación de requisición
+## Requisition Deletion
 
-- Al confirmar la eliminación, el sistema muestra: **"Al confirmar la eliminación de la requisición, las posiciones registradas y la requisición serán eliminadas físicamente"**.
-- El estado **Morado** es transversal: se alcanza desde cualquier estado cuando se elimina la requisición.
-- Si una requisición no tiene posiciones al salir del editor → **eliminación física automática**.
-- Al eliminar una requisición con posiciones → cada posición también pasa a Morado con journal individual.
+- Upon confirming deletion, the system displays: **"By confirming the deletion of the requisition, the registered positions and the requisition will be permanently deleted"**.
+- The **Purple** status is transversal: it is reached from any status when the requisition is deleted.
+- If a requisition has no positions when exiting the editor → **automatic permanent deletion**.
+- When deleting a requisition with positions → each position also moves to Purple with an individual journal entry.
 
-## Gestión de personal asignado
+## Assigned Staff Management
 
-Responsabilidades sobre los colaboradores asignados (todos los roles del hotel):
+Responsibilities over assigned associates (all hotel roles):
 
-| Acción | Efecto en [[Semáforo del Colaborador]] | Descripción |
+| Action | Effect on [[Semáforo del Colaborador]] | Description |
 |---|---|---|
-| Generar código QR | — | Permite a los colaboradores ponchar en el [[Timesheet]] |
-| Poner en Stand-by | → **Rosa** | Espera por decisión del hotel (vacaciones, temporada baja). Sin fecha de fin; termina cuando cualquier rol del hotel cambia el estado. El colaborador queda sin Schedule ni Timesheet y no puede ponchar |
-| Reportar colaborador | → **Rojo** | Inicia investigación por parte del [[Inspector]] |
-| Gestionar Schedule semanal | — | Administra las asignaciones del [[Core/Módulos/Schedule\|Schedule]] del hotel |
+| Generate QR code | — | Allows associates to punch in the [[Timesheet]] |
+| Place on Stand-by | → **Pink** | Waiting on a hotel decision (vacation, low season). No end date; ends when any hotel role changes the status. The associate has no Schedule or Timesheet and cannot punch |
+| Report associate | → **Red** | Initiates an investigation by the [[Inspector]] |
+| Manage weekly Schedule | — | Administers the assignments in the hotel's [[Core/Módulos/Schedule\|Schedule]] |
 
-> [!important] Todos los roles del hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] y [[Hotel/Supervisor|Supervisor]]) pueden poner a un colaborador en estado Rosa (Stand-by).
+> [!important] All hotel roles ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]], and [[Hotel/Supervisor|Supervisor]]) can place an associate in Pink (Stand-by) status.
 
-## Timesheet y deducción de Lunch
+## Timesheet and Lunch Deduction
 
-> [!info] Las reglas de ponchado y deducción de Lunch también se documentan en [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]] desde la perspectiva del colaborador.
+> [!info] Punching and Lunch deduction rules are also documented in [[Colaborador/Reglas del Colaborador|Reglas del Colaborador]] from the associate's perspective.
 
-### Dependencia
+### Dependency
 
-- El [[Timesheet]] se crea a partir del [[Core/Módulos/Schedule|Schedule]]; no puede existir de forma independiente.
-- La semana del hotel está definida por el contrato (inicio y fin de semana).
+- The [[Timesheet]] is created from the [[Core/Módulos/Schedule|Schedule]]; it cannot exist independently.
+- The hotel's week is defined by the contract (start and end of week).
 
-### Jornada
+### Shift
 
-- La jornada diaria es de **8 horas**
-- La semana laboral es de 7 días: **5 de trabajo + 2 de descanso**
-- Total semanal bruto: **40 horas** (8 hrs × 5 días)
-- Total semanal neto pagable: **37.5 horas** (40 hrs − 30 min de lunch × 5 jornadas)
+- The daily shift is **8 hours**.
+- The work week is 7 days: **5 working + 2 rest days**.
+- Total gross weekly: **40 hours** (8 hrs × 5 days).
+- Total net payable weekly: **37.5 hours** (40 hrs − 30 min lunch × 5 shifts).
 
-### Ponchado
+### Punching
 
-- El colaborador poncha vía **QR** generado por el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Manager General|Manager General]].
-- Los ponches se registran por pares de entrada/salida para cada periodo (exactamente seis):
-  - **Entrada** — inicio de jornada
-  - **Salida Lunch** — sale a comer
-  - **Entrada Lunch** — regresa de comer
-  - **Salida Break** — sale a descanso
-  - **Entrada Break** — regresa de descanso
-  - **Salida** — fin de jornada
+- The associate punches via **QR** generated by the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Manager General|Manager General]].
+- Punches are recorded in entry/exit pairs for each period (exactly six):
+  - **Clock In** — start of shift
+  - **Lunch Out** — leaves for lunch
+  - **Lunch In** — returns from lunch
+  - **Break Out** — leaves for break
+  - **Break In** — returns from break
+  - **Clock Out** — end of shift
 
-### Deducción de Lunch
+### Lunch Deduction
 
-> [!important] Esta regla aplica a **todos** los colaboradores sin excepción, en cada jornada.
+> [!important] This rule applies to **all** associates without exception, on every shift.
 
-| Escenario | Deducción aplicada |
+| Scenario | Deduction applied |
 |---|---|
-| Lunch < 30 min | 30 min (mínimo obligatorio) |
-| Lunch ≥ 30 min | Tiempo real tomado |
-| Sin ponche de Lunch | 30 min (auto-deducción) |
+| Lunch < 30 min | 30 min (mandatory minimum) |
+| Lunch ≥ 30 min | Actual time taken |
+| No lunch punch | 30 min (auto-deduction) |
 
-- **Horas brutas** = Salida − Entrada
-- **Horas netas** = Horas brutas − Deducción de Lunch − Breaks reales
-- Después de 6 horas continuas de trabajo, el colaborador debe tomar su lunch.
+- **Gross hours** = Clock Out − Clock In
+- **Net hours** = Gross hours − Lunch Deduction − Actual Breaks
+- After 6 continuous hours of work, the associate must take their lunch.
 
-## Indicador de Lunch Extendido
+## Extended Lunch Indicator
 
-> [!note] El [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] y el [[Hotel/Supervisor|Supervisor]] **no tienen acceso** al Indicador de Lunch Extendido. Es exclusivo de roles internos de Oranje ([[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]]).
+> [!note] The [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], and the [[Hotel/Supervisor|Supervisor]] **do not have access** to the Extended Lunch Indicator. It is exclusive to Oranje's internal roles ([[Inspector]], [[Inspección/Coordinador|Coordinador]], [[Manager de Reclutamiento]]).
 
-## Indicador de Cumplimiento del Timesheet
+## Timesheet Compliance Indicator
 
-El sistema calcula automáticamente un indicador semaforizado (Verde / Amarillo / Rojo) que compara el cumplimiento real del colaborador contra los parámetros contractuales del hotel, evaluado por semana. Ver referencia completa: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]].
+The system automatically calculates a color-coded indicator (Green / Yellow / Red) that compares the associate's actual compliance against the hotel's contractual parameters, evaluated per week. See full reference: [[Core/Módulos/Semáforos/Indicador de Cumplimiento del Timesheet|Indicador de Cumplimiento del Timesheet]].
 
-## Accidente Laboral — responsabilidades del Supervisor
+## Workplace Accident — Supervisor Responsibilities
 
-El [[Hotel/Supervisor|Supervisor]] tiene un rol activo en el reporte y captura de accidentes laborales:
+The [[Hotel/Supervisor|Supervisor]] has an active role in reporting and capturing workplace accidents:
 
-### Escenario A — Colaborador reporta desde la app
+### Scenario A — Associate reports from the app
 
-1. El colaborador genera el reporte desde la app.
-2. La señal llega **simultáneamente** al [[Hotel/Supervisor|SUP]] y al [[Inspector]] de zona asignado.
-3. El SUP acude físicamente y captura: ubicación exacta, circunstancias, testigos y atención inmediata brindada.
+1. The associate generates the report from the app.
+2. The signal arrives **simultaneously** to the [[Hotel/Supervisor|SUP]] and the assigned zone [[Inspector]].
+3. The SUP goes to the location physically and captures: exact location, circumstances, witnesses, and immediate care provided.
 
-### Escenario B — Supervisor detecta primero
+### Scenario B — Supervisor detects first
 
-1. El [[Hotel/Supervisor|SUP]] detecta el accidente en la propiedad.
-2. Crea la tarjeta de accidente desde la app.
-3. La señal llega al [[Inspector]] de zona.
+1. The [[Hotel/Supervisor|SUP]] detects the accident on the property.
+2. Creates the accident card from the app.
+3. The signal reaches the zone [[Inspector]].
 
-- En ambos escenarios, el colaborador pasa a estado **Gris** en el [[Semáforo del Colaborador]] (protección contra la regla de 3 inasistencias).
-- Referencia: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]].
+- In both scenarios, the associate moves to **Gray** status in the [[Semáforo del Colaborador]] (protection against the 3-absence rule).
+- Reference: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]].
 
-## Manager General
+## General Manager
 
-El [[Hotel/Manager General|Manager General]] es la máxima autoridad del hotel y **siempre existe** en ambas jerarquías:
+The [[Hotel/Manager General|Manager General]] is the hotel's highest authority and **always exists** in both hierarchies:
 
-- Tiene **visibilidad global** del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de todos los departamentos.
-- Puede crear, autorizar y rechazar requisiciones.
-- Puede generar QR, poner Stand-by, reportar colaboradores y reportar accidentes laborales.
-- En jerarquía simple, también opera como [[Hotel/Manager de Área|Manager de Área]] (misma persona).
-- Punto de contacto principal con Oranje a nivel directivo.
+- Has **global visibility** of the [[Core/Módulos/Schedule|Schedule]] and [[Timesheet]] across all departments.
+- Can create, authorize, and reject requisitions.
+- Can generate QR codes, place on Stand-by, report associates, and report workplace accidents.
+- In the simple hierarchy, also operates as [[Hotel/Manager de Área|Manager de Área]] (same person).
+- Primary point of contact with Oranje at the management level.
 
-## Supervisión de Calidad (QA)
+## Quality Supervision (QA)
 
-- Un [[QA/Operador de QA|Operador de QA]] está asignado de forma fija al departamento de Hotel.
-- QA **no ejecuta** la operación del Hotel; solo observa, mide y retroalimenta.
-- Las métricas específicas que el Operador de QA monitorea para Hotel están definidas en [[QA/Métricas y KPIs por Departamento#Hotel|Métricas y KPIs — Hotel]].
-- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+- A [[QA/Operador de QA|Operador de QA]] is permanently assigned to the Hotel department.
+- QA **does not execute** Hotel operations; it only observes, measures, and provides feedback.
+- The specific metrics that the QA Operator monitors for Hotel are defined in [[QA/Métricas y KPIs por Departamento#Hotel|Métricas y KPIs — Hotel]].
+- If the [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] for the department reaches **Red** status without improvement after notification, the QA Manager escalates to management.
 
-## Resumen de responsabilidades por rol
+## Responsibility Summary by Role
 
-| Acción | [[Hotel/Manager General\|Manager General]] | [[Hotel/Manager de Área\|Manager de Área]] | [[Hotel/Supervisor\|Supervisor]] |
+| Action | [[Hotel/Manager General\|Manager General]] | [[Hotel/Manager de Área\|Manager de Área]] | [[Hotel/Supervisor\|Supervisor]] |
 |---|---|---|---|
-| Crear requisición | Sí | Sí | Sí |
-| Autorizar requisición | Sí | Sí | No |
-| Rechazar requisición | Sí | Sí | No |
-| Generar QR para ponchado | Sí | Sí | No |
-| Poner en Stand-by (Rosa) | Sí | Sí | Sí |
-| Reportar colaborador (Rojo) | Sí | Sí | Sí |
-| Reportar accidente laboral | Sí | Sí | Sí |
-| Gestionar Schedule semanal | Visibilidad global | Sí (su departamento) | No |
-| Ver Indicador de Lunch Extendido | No | No | No |
-| Visibilidad global Schedule/Timesheet | Sí | No | Sí (su departamento) |
+| Create requisition | Yes | Yes | Yes |
+| Authorize requisition | Yes | Yes | No |
+| Reject requisition | Yes | Yes | No |
+| Generate QR for punching | Yes | Yes | No |
+| Place on Stand-by (Pink) | Yes | Yes | Yes |
+| Report associate (Red) | Yes | Yes | Yes |
+| Report workplace accident | Yes | Yes | Yes |
+| Manage weekly Schedule | Global visibility | Yes (their department) | No |
+| View Extended Lunch Indicator | No | No | No |
+| Global Schedule/Timesheet visibility | Yes | No | Yes (their department) |
 
-## Relacionado
+## Related
 
 - [[Reglas de Negocio]]
 - [[Hotel/Manager de Área|Manager de Área]]

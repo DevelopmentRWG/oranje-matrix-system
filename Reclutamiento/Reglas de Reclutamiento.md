@@ -1,130 +1,130 @@
 ---
 tags:
-  - modulo/reclutamiento
+  - module/recruitment
 aliases:
-  - Reglas de Reclutamiento
+  - Recruitment Business Rules
 ---
 
-# Reglas de Reclutamiento
+# Recruitment Business Rules
 
-Consolidación de todas las reglas de negocio que aplican al área de Reclutamiento dentro del sistema Oranje. Referencia cruzada con [[Reglas de Negocio]] (concentrado general del sistema).
+Consolidation of all business rules that apply to the Recruitment area within the Oranje system. Cross-reference with [[Reglas de Negocio]] (general system consolidation).
 
-## Reclutamiento continuo y Pool
+## Continuous Recruitment and Pool
 
-> [!important] El flujo de reclutamiento es **continuo**: siempre se está contratando, haya o no requisiciones abiertas.
+> [!important] The recruitment flow is **continuous**: hiring is always ongoing, whether or not there are open requisitions.
 
-- Las requisiciones sin match pueden acelerar o priorizar ciertas posiciones/zonas, pero **no son condición** para iniciar el flujo.
-- Solo entran al [[Pool de Colaboradores]] los colaboradores que pasaron el filtro y fueron aprobados por Reclutamiento.
-- La [[Reclutadora]] debe consultar la [[Core/Módulos/Blacklist|Blacklist]] antes de reclutar a un candidato.
+- Unmatched requisitions may accelerate or prioritize certain positions/zones, but they are **not a condition** for starting the flow.
+- Only associates who passed the filter and were approved by Recruitment enter the [[Pool de Colaboradores]].
+- The [[Reclutadora]] must check the [[Core/Módulos/Blacklist|Blacklist]] before recruiting a candidate.
 
-## Captura y aprobación de colaboradores
+## Associate Capture and Approval
 
-El proceso de reclutamiento de un colaborador consta de fases definidas en el [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]].
+The associate recruitment process consists of phases defined in the [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]].
 
-| Fase | Descripción | Responsable |
+| Phase | Description | Responsible |
 |---|---|---|
-| 1 — Entrevista inicial | Captura de nombre completo, edad, género, domicilio y teléfono | [[Reclutadora]] |
-| 2 — Alta en la app | Colaborador completa SSN, ITIN, Posición, Nivel de inglés, Nivel de experiencia, Tipo de transporte, Modalidad | Colaborador |
-| 3 — Validación y aprobación | Reclutamiento revisa los datos y aprueba o rechaza al colaborador | [[Reclutadora]] |
-| 4 — Habilitación de acceso | Se habilita el acceso del colaborador a los paneles | [[Reclutadora]] |
+| 1 — Initial interview | Capture of full name, age, gender, address, and phone | [[Reclutadora]] |
+| 2 — App registration | Associate completes SSN, ITIN, Position, English level, Experience level, Transportation type, Modality | Associate |
+| 3 — Validation and approval | Recruitment reviews the data and approves or rejects the associate | [[Reclutadora]] |
+| 4 — Access enablement | Associate's access to the panels is enabled | [[Reclutadora]] |
 
-- Colaborador aprobado ingresa al [[Pool de Colaboradores]] con [[Semáforo del Colaborador]] en estado **Blanco**.
+- An approved associate enters the [[Pool de Colaboradores]] with [[Semáforo del Colaborador]] in **White** status.
 
-## Requisiciones — recepción y asignación (Self-Pick)
+## Requisitions — Reception and Assignment (Self-Pick)
 
-| Paso | Acción | Responsable |
+| Step | Action | Responsible |
 |---|---|---|
-| 1 | La requisición autorizada por el [[Hotel/Manager General\|Manager General]] o el [[Hotel/Manager de Área\|Manager de Área]] queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] | Sistema |
-| 2 | Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] toma la requisición de la bandeja | [[Reclutadora]] / [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder]] |
-| 3 | La requisición pasa a **Amarillo** (En proceso) en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] | Sistema |
-| 4 | La [[Reclutadora]] consulta el [[Core/Módulos/Schedule\|Schedule]] del hotel para ver posiciones pendientes | [[Reclutadora]] |
-| 5 | Si hay match → asigna al colaborador y lo registra en el Schedule | [[Reclutadora]] |
-| 6 | Si no hay match → la [[Reclutadora]] busca activamente fuera del sistema (redes sociales, grupos externos, etc.) | [[Reclutadora]] |
+| 1 | The requisition authorized by the [[Hotel/Manager General\|Manager General]] or the [[Hotel/Manager de Área\|Manager de Área]] becomes available in the shared inbox, prioritized by the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] | System |
+| 2 | A [[Reclutadora]] or [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] takes the requisition from the inbox | [[Reclutadora]] / [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder]] |
+| 3 | The requisition moves to **Yellow** (In progress) in the [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] | System |
+| 4 | The [[Reclutadora]] checks the hotel's [[Core/Módulos/Schedule\|Schedule]] to see pending positions | [[Reclutadora]] |
+| 5 | If there is a match → assigns the associate and registers them in the Schedule | [[Reclutadora]] |
+| 6 | If there is no match → the [[Reclutadora]] actively searches outside the system (social networks, external groups, etc.) | [[Reclutadora]] |
 
-> [!important] **Bandeja global con filtros** — todas las Reclutadoras ven todas las requisiciones disponibles. Pueden filtrar por zona, urgencia, posición y otros criterios. La bandeja no está segmentada por grupo ni por Reclutadora.
+> [!important] **Global inbox with filters** — all Recruiters see all available requisitions. They can filter by zone, urgency, position, and other criteria. The inbox is not segmented by group or by Recruiter.
 
-> [!important] **Concurrencia: primera en confirmar gana** — si dos Reclutadoras intentan tomar la misma requisición simultáneamente, el sistema la bloquea para la primera en confirmar. La segunda recibe un mensaje indicando que la requisición ya fue tomada.
+> [!important] **Concurrency: first to confirm wins** — if two Recruiters attempt to take the same requisition simultaneously, the system locks it for the first one to confirm. The second receives a message indicating the requisition has already been taken.
 
-> [!important] **Auto-asignación a las 24 horas** — si una requisición lleva más de **24 horas** sin ser tomada (contadas desde la autorización), el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El [[Manager de Reclutamiento]] no recibe notificación; el proceso es transparente.
+> [!important] **Auto-assignment at 24 hours** — if a requisition has been untaken for more than **24 hours** (counted from authorization), the system automatically assigns it to the [[Reclutadora]] with the lowest active requisition load. The [[Manager de Reclutamiento]] does not receive a notification; the process is transparent.
 
-> [!warning] **Escalación al Líder de Grupo por timeout sin match** — cuando la [[Reclutadora]] no logra cubrir la requisición buscando dentro y fuera del sistema, aplica el siguiente plazo de escalación hacia el [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] según el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]]:
+> [!warning] **Escalation to Team Lead on timeout without match** — when the [[Reclutadora]] cannot cover the requisition by searching inside and outside the system, the following escalation timeout to the [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] applies based on the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]]:
 >
-> | Color de urgencia | Condición | Plazo para escalar |
+> | Urgency color | Condition | Time to escalate |
 > |---|---|---|
-> | Rojo | Menos de 72h para inicio | 24h sin cubrir |
-> | Amarillo | Entre 72h y 120h para inicio | 48h sin cubrir |
-> | Verde fuerte | Más de 120h para inicio | 72h sin cubrir |
+> | Red | Less than 72h until start | 24h without coverage |
+> | Yellow | Between 72h and 120h until start | 48h without coverage |
+> | Dark Green | More than 120h until start | 72h without coverage |
 >
-> Durante todo este proceso la requisición permanece en estado **Amarillo** en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]].
+> Throughout this entire process the requisition remains in **Yellow** status in the [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]].
 
-## Cobertura de posiciones
+## Position Coverage
 
-Al asignar colaboradores del [[Pool de Colaboradores]] a las posiciones de una requisición, la [[Reclutadora]] afecta directamente el [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición|Semáforo de Posiciones de la Requisición]]:
+When assigning associates from the [[Pool de Colaboradores]] to the positions of a requisition, the [[Reclutadora]] directly affects the [[Core/Módulos/Semáforos/Semáforo de Posiciones de la Requisición|Semáforo de Posiciones de la Requisición]]:
 
-| Color | Estado | Condición |
+| Color | Status | Condition |
 |---|---|---|
-| Verde | 100% cubierta | Todos los colaboradores asignados a la posición están confirmados |
-| Amarillo | Hasta 25% faltante | Falta hasta el 25% del personal requerido |
-| Rojo | Más de 25% faltante | Falta más del 25% — requiere atención prioritaria |
+| Green | 100% covered | All associates assigned to the position are confirmed |
+| Yellow | Up to 25% missing | Up to 25% of required staff is missing |
+| Red | More than 25% missing | More than 25% missing — requires priority attention |
 
-> [!important] El resultado de las posiciones determina el estado final de la requisición: si **todas** llegan a Verde → la requisición pasa a **Azul claro** (cubierta totalmente). Si al menos una cierra en Amarillo o Rojo → la requisición pasa a **Rojo** (cubierta parcialmente).
+> [!important] The position results determine the final status of the requisition: if **all** reach Green → the requisition moves to **Light Blue** (fully covered). If at least one closes at Yellow or Red → the requisition moves to **Red** (partially covered).
 
-## Asignación temporal (Café)
+## Temporary Assignment (Brown)
 
-- La [[Reclutadora]] puede asignar temporalmente a un colaborador disponible (→ **Café** en el [[Semáforo del Colaborador]]).
-- Al terminar la jornada temporal, el colaborador regresa a **Verde fuerte** o **Naranja** según su estado previo.
+- The [[Reclutadora]] can temporarily assign an available associate (→ **Brown** in the [[Semáforo del Colaborador]]).
+- At the end of the temporary shift, the associate returns to **Dark Green** or **Orange** based on their previous state.
 
 ## Blacklist
 
-| Acción | Rol | Tipo |
+| Action | Role | Type |
 |---|---|---|
-| Consultar la [[Core/Módulos/Blacklist\|Blacklist]] antes de reclutar | [[Reclutadora]] | Obligatoria |
-| Revisar casos de Blacklist | [[Manager de Reclutamiento]] | Supervisión |
+| Check the [[Core/Módulos/Blacklist\|Blacklist]] before recruiting | [[Reclutadora]] | Mandatory |
+| Review Blacklist cases | [[Manager de Reclutamiento]] | Oversight |
 
-> [!note] Ningún rol de Reclutamiento puede enviar a un colaborador a Blacklist directamente. La entrada a Blacklist es automática (3 inasistencias) o ejecutada por el [[Inspector]] tras una disputa resuelta a favor del hotel.
+> [!note] No Recruitment role can send an associate to the Blacklist directly. Entry to Blacklist is automatic (3 absences) or executed by the [[Inspector]] after a dispute resolved in the hotel's favor.
 
-## Supervisión interna
+## Internal Supervision
 
-### Indicador de Lunch Extendido
+### Extended Lunch Indicator
 
-- El [[Manager de Reclutamiento]] tiene visibilidad del Indicador de Lunch Extendido en el [[Timesheet]].
-- Se activa cuando el tiempo de lunch de un colaborador excede 30 minutos.
-- **No es visible** para el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] ni el [[Hotel/Supervisor|Supervisor]].
-- Propósito: supervisión interna de Oranje; no es punitivo de forma automática.
+- The [[Manager de Reclutamiento]] has visibility of the Extended Lunch Indicator in the [[Timesheet]].
+- It activates when an associate's lunch time exceeds 30 minutes.
+- **Not visible** to the [[Hotel/Manager General|Manager General]], the [[Hotel/Manager de Área|Manager de Área]], or the [[Hotel/Supervisor|Supervisor]].
+- Purpose: internal Oranje oversight; not automatically punitive.
 
-### Jerarquía de supervisión
+### Supervision Hierarchy
 
-| Rol | Supervisa a | Reporta a |
+| Role | Supervises | Reports to |
 |---|---|---|
-| [[Manager de Reclutamiento]] | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líderes de Grupo]] | — |
-| [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo de Reclutadoras]] | [[Reclutadora\|Reclutadoras]] de su grupo | [[Manager de Reclutamiento]] |
-| [[Reclutadora]] | — | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] |
+| [[Manager de Reclutamiento]] | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Team Leads]] | — |
+| [[Reclutamiento/Líder de Grupo de Reclutadoras\|Recruiter Team Lead]] | [[Reclutadora\|Recruiters]] in their group | [[Manager de Reclutamiento]] |
+| [[Reclutadora]] | — | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Team Lead]] |
 
-## Supervisión de Calidad (QA)
+## Quality Supervision (QA)
 
-- Un [[QA/Operador de QA|Operador de QA]] está asignado de forma fija al departamento de Reclutamiento.
-- QA **no ejecuta** la operación de Reclutamiento; solo observa, mide y retroalimenta.
-- Las métricas específicas que el Operador de QA monitorea para Reclutamiento están definidas en [[QA/Métricas y KPIs por Departamento#Reclutamiento|Métricas y KPIs — Reclutamiento]].
-- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+- A [[QA/Operador de QA|Operador de QA]] is permanently assigned to the Recruitment department.
+- QA **does not execute** Recruitment operations; it only observes, measures, and provides feedback.
+- The specific metrics that the QA Operator monitors for Recruitment are defined in [[QA/Métricas y KPIs por Departamento#Reclutamiento|Métricas y KPIs — Reclutamiento]].
+- If the [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] for the department reaches **Red** status without improvement after notification, the QA Manager escalates to management.
 
-## Resumen de responsabilidades por rol
+## Responsibility Summary by Role
 
-| Acción | [[Reclutadora]] | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] | [[Manager de Reclutamiento]] |
+| Action | [[Reclutadora]] | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Team Lead]] | [[Manager de Reclutamiento]] |
 |---|---|---|---|
-| Entrevista inicial y captura de datos | Sí | Sí (hereda) | No |
-| Validar y aprobar colaborador | Sí | Sí (hereda) | No |
-| Habilitar acceso a paneles | Sí | Sí (hereda) | No |
-| Tomar requisiciones de la bandeja | Sí | Sí (hereda) | Solo excepciones (balanceo, líder ausente, error de asignación) |
-| Consultar Blacklist | Sí (obligatorio) | Sí (hereda) | — |
-| Revisar casos de Blacklist | No | No | Sí |
-| Asignación temporal (Café) | Sí | Sí (hereda) | No |
-| Gestionar cobertura de posiciones | Sí | Sí (hereda) | No |
-| Ver Indicador de Lunch Extendido | No | No | Sí |
-| Supervisar Reclutadoras | No | Sí | No (supervisa Líderes) |
+| Initial interview and data capture | Yes | Yes (inherited) | No |
+| Validate and approve associate | Yes | Yes (inherited) | No |
+| Enable panel access | Yes | Yes (inherited) | No |
+| Take requisitions from the inbox | Yes | Yes (inherited) | Exceptions only (balancing, absent lead, assignment error) |
+| Check Blacklist | Yes (mandatory) | Yes (inherited) | — |
+| Review Blacklist cases | No | No | Yes |
+| Temporary assignment (Brown) | Yes | Yes (inherited) | No |
+| Manage position coverage | Yes | Yes (inherited) | No |
+| View Extended Lunch Indicator | No | No | Yes |
+| Supervise Recruiters | No | Yes | No (supervises Team Leads) |
 
-> [!info] La [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo de Reclutadoras]] ejecuta **todas** las responsabilidades operativas de una [[Reclutadora]], además de sus funciones de supervisión.
+> [!info] The [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo de Reclutadoras]] executes **all** operational responsibilities of a [[Reclutadora]], in addition to their supervisory functions.
 
-## Relacionado
+## Related
 
 - [[Reglas de Negocio]]
 - [[Reclutadora]]

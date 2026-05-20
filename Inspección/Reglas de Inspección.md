@@ -1,155 +1,155 @@
 ---
 tags:
-  - modulo/inspeccion
+  - module/inspection
 aliases:
-  - Reglas de Inspección
+  - Inspection Rules
 ---
 
-# Reglas de Inspección
+# Inspection Rules
 
-Consolidación de todas las reglas de negocio que aplican al departamento de Inspección dentro del sistema Oranje. Referencia cruzada con [[Reglas de Negocio]] (concentrado general del sistema).
+Consolidation of all business rules that apply to the Inspection department within the Oranje system. Cross-reference with [[Reglas de Negocio]] (system-wide consolidated rules).
 
-## Jerarquía del departamento
+## Department Hierarchy
 
-| Rol | Función |
+| Role | Function |
 |---|---|
-| [[Inspección/Coordinador\|Coordinador]] | Jefe de los Inspectores. Enlace interdepartamental y escalamiento de casos especiales |
-| [[Inspector]] | Ejecutor operativo en campo, asignado por zona geográfica |
+| [[Inspección/Coordinador\|Coordinator]] | Manager of Inspectors. Interdepartmental liaison and escalation of special cases |
+| [[Inspector]] | Operational executor in the field, assigned by geographic zone |
 
-## Asignación de zonas
+## Zone Assignments
 
-- El [[Inspección/Coordinador\|Coordinador]] asigna Inspectores a las [[Core/Catálogos/Zonas|Zonas]] geográficas.
-- A cada zona le corresponde un [[Inspector]] responsable.
-- Zonas existentes: **Centro, Sur, Este, Oeste, Noroeste, Sureste**.
-- Al autorizarse una requisición, el [[Inspector]] se asigna automáticamente en la cabecera según la zona del hotel.
+- The [[Inspección/Coordinador\|Coordinator]] assigns Inspectors to geographic [[Core/Catálogos/Zonas|Zones]].
+- Each zone has a responsible [[Inspector]].
+- Existing zones: **Center, South, East, West, Northwest, Southeast**.
+- When a requisition is authorized, the [[Inspector]] is automatically assigned in the header based on the hotel's zone.
 
-> [!important] El [[Inspector]] de la zona del hotel es el responsable de darle seguimiento a cualquier disputa, accidente o verificación que ocurra en ese hotel.
+> [!important] The [[Inspector]] of the hotel's zone is responsible for following up on any dispute, accident, or verification that occurs at that hotel.
 
-### Cobertura por indisponibilidad
+### Coverage During Unavailability
 
-- Si el [[Inspector]] asignado a una zona no está disponible (enfermedad, vacaciones u otra causa), el [[Inspección/Coordinador|Coordinador]] reasigna temporalmente otro Inspector a esa zona.
-- La reasignación temporal no modifica la asignación permanente de zona; es una cobertura hasta que el Inspector titular retome.
+- If the [[Inspector]] assigned to a zone is unavailable (illness, vacation, or other cause), the [[Inspección/Coordinador|Coordinator]] temporarily reassigns another Inspector to that zone.
+- The temporary reassignment does not modify the permanent zone assignment; it is coverage until the primary Inspector resumes.
 
-## Verificación de llegada y entrega de uniforme
+## Arrival Verification and Uniform Delivery
 
-El [[Inspector]] participa en dos transiciones clave del [[Semáforo del Colaborador]]:
+The [[Inspector]] participates in two key transitions of the [[Semáforo del Colaborador]]:
 
-| Evento | Transición | Responsable |
+| Event | Transition | Responsible |
 |---|---|---|
-| Verificación de llegada en sitio — Día 1 | Blanco → **Verde manzana** | [[Inspector]] (verifica en sitio) |
-| Entrega de uniforme — Día 3 | Verde manzana → **Azul claro** | [[Inspector]] (entrega uniforme) + Sistema (ponche del colaborador) |
+| On-site arrival verification — Day 1 | White → **Apple Green** | [[Inspector]] (verifies on-site) |
+| Uniform delivery — Day 3 | Apple Green → **Light Blue** | [[Inspector]] (delivers uniform) + System (associate punch) |
 
-## Investigación de reportes (estado Rojo)
+## Report Investigation (Red Status)
 
-### Origen del estado Rojo
+### Origin of Red Status
 
-- El [[Hotel/Manager General\|Manager General]], [[Hotel/Manager de Área\|Manager de Área]] o [[Hotel/Supervisor\|Supervisor]] activa el estado **Rojo** (Reportado) en el [[Semáforo del Colaborador]].
-- La acumulación de 3 inasistencias **no** pasa por Rojo; va directo a **Negro** ([[Core/Módulos/Blacklist|Blacklist]]) de forma automática.
+- The [[Hotel/Manager General\|General Manager]], [[Hotel/Manager de Área\|Area Manager]], or [[Hotel/Supervisor\|Supervisor]] activates **Red** status (Reported) in the [[Semáforo del Colaborador]].
+- Accumulation of 3 absences does **not** go through Red; it goes directly to **Black** ([[Core/Módulos/Blacklist|Blacklist]]) automatically.
 
-### Investigación y resolución
+### Investigation and Resolution
 
-El [[Inspector]] investiga los casos de colaboradores en estado Rojo y emite el resultado:
+The [[Inspector]] investigates cases of associates in Red status and issues the outcome:
 
-| Resultado | Estado destino | Consecuencia |
+| Outcome | Destination Status | Consequence |
 |---|---|---|
-| Disputa a favor del hotel | → **Negro** ([[Core/Módulos/Blacklist\|Blacklist]]) | Colaborador vetado del sistema |
-| Disputa a favor del colaborador | → **Verde fuerte** | Colaborador reincorporado |
+| Dispute in favor of the hotel | → **Black** ([[Core/Módulos/Blacklist\|Blacklist]]) | Associate banned from the system |
+| Dispute in favor of the associate | → **Dark Green** | Associate reinstated |
 
-> [!note] Los casos de Blacklist resultantes son revisados por el [[Manager de Reclutamiento]]. El [[Inspector]] es el **único rol** que puede ejecutar la entrada manual a Blacklist.
+> [!note] Resulting Blacklist cases are reviewed by the [[Manager de Reclutamiento]]. The [[Inspector]] is the **only role** that can execute a manual Blacklist entry.
 
-## Accidente Laboral
+## Workplace Accident
 
-El [[Inspector]] es el responsable final de la gestión de accidentes laborales en su zona.
+The [[Inspector]] is the final party responsible for managing workplace accidents in their zone.
 
-### Escenario A — Colaborador reporta desde la app
+### Scenario A — Associate reports from the app
 
-1. El colaborador genera el reporte desde la app.
-2. La señal llega **simultáneamente** al [[Hotel/Supervisor\|SUP]] y al [[Inspector]] de zona asignado.
-3. Ambos acuden físicamente al lugar del incidente.
+1. The associate generates the report from the app.
+2. The signal arrives **simultaneously** to the [[Hotel/Supervisor\|SUP]] and the assigned zone [[Inspector]].
+3. Both physically go to the incident location.
 
-### Escenario B — Supervisor detecta primero
+### Scenario B — Supervisor detects first
 
-1. El [[Hotel/Supervisor\|SUP]] detecta el accidente en la propiedad.
-2. Crea la tarjeta de accidente desde la app.
-3. La señal llega al [[Inspector]] de zona.
+1. The [[Hotel/Supervisor\|SUP]] detects the accident at the property.
+2. Creates the accident card from the app.
+3. The signal reaches the zone [[Inspector]].
 
-### Seguimiento médico (Inspector)
+### Medical Follow-Up (Inspector)
 
-El [[Inspector]] complementa la tarjeta de accidente con:
+The [[Inspector]] completes the accident card with:
 
-| Campo | Descripción |
+| Field | Description |
 |---|---|
-| Traslado al centro médico | Si aplica, cuál centro |
-| Diagnóstico recibido | Diagnóstico médico |
-| Días de incapacidad | Cantidad de días |
-| Observaciones médicas | Información adicional relevante |
+| Transfer to medical center | If applicable, which center |
+| Received diagnosis | Medical diagnosis |
+| Days of incapacity | Number of days |
+| Medical observations | Additional relevant information |
 
-### Cierre de tarjeta
+### Card Closure
 
-> [!important] El [[Inspector]] es **siempre** el responsable final del cierre de la tarjeta de accidente.
+> [!important] The [[Inspector]] is **always** the final party responsible for closing the accident card.
 
-- **Gris → Verde fuerte** requiere: alta médica + cierre de tarjeta de accidente por el [[Inspector]].
-- Mientras el colaborador esté en estado **Gris**, las inasistencias **no cuentan** para la regla de 3 inasistencias → Blacklist.
-- Tras el cierre, el colaborador queda disponible para reasignación.
-- Referencia: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]].
+- **Gray → Dark Green** requires: medical discharge + accident card closure by the [[Inspector]].
+- While the associate is in **Gray** status, absences **do not count** toward the 3-absence → Blacklist rule.
+- After closure, the associate becomes available for reassignment.
+- Reference: [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Workplace Accident Flow]].
 
-## Indicador de Lunch Extendido
+## Extended Lunch Indicator
 
-- **Visible para:** [[Inspector]] y [[Inspección/Coordinador\|Coordinador]].
-- **No visible para:** [[Hotel/Manager General\|Manager General]], [[Hotel/Manager de Área\|Manager de Área]] ni [[Hotel/Supervisor\|Supervisor]].
-- Muestra: colaborador, hotel, fecha, tiempo de lunch real.
-- Se activa automáticamente cuando el tiempo de lunch excede 30 minutos.
-- Propósito: supervisión interna de Oranje; no es punitivo de forma automática.
+- **Visible to:** [[Inspector]] and [[Inspección/Coordinador\|Coordinator]].
+- **Not visible to:** [[Hotel/Manager General\|General Manager]], [[Hotel/Manager de Área\|Area Manager]], or [[Hotel/Supervisor\|Supervisor]].
+- Shows: associate, hotel, date, actual lunch duration.
+- Activates automatically when lunch time exceeds 30 minutes.
+- Purpose: Oranje's internal supervision; not automatically punitive.
 
-> [!info] También es visible para el [[Manager de Reclutamiento]]. Ver [[Reclutamiento/Reglas de Reclutamiento\|Reglas de Reclutamiento]].
+> [!info] Also visible to the [[Manager de Reclutamiento]]. See [[Reclutamiento/Reglas de Reclutamiento\|Recruitment Rules]].
 
-## Supervisión del hotel activo
+## Active Hotel Supervision
 
-Una vez que el hotel alcanza el status **Naranja** en el [[Core/Módulos/Semáforos/Semáforo Onboarding\|Semáforo Onboarding]] (acuerdo firmado, hotel cliente activo), el [[Inspector]] figura como responsable operativo junto con las Reclutadoras.
+Once the hotel reaches **Orange** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding\|Onboarding Status Indicator]] (signed agreement, active client hotel), the [[Inspector]] appears as operational responsible alongside the Recruiters.
 
-## Supervisión de Calidad (QA)
+## Quality Supervision (QA)
 
-- Un [[QA/Operador de QA\|Operador de QA]] está asignado de forma fija al departamento de Inspección.
-- QA **no ejecuta** la operación de Inspección; solo observa, mide y retroalimenta.
-- Las métricas específicas que el Operador de QA monitorea para Inspección están definidas en [[QA/Métricas y KPIs por Departamento#Inspección|Métricas y KPIs — Inspección]].
-- Si el [[Core/Módulos/Semáforos/Indicador de Calidad\|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el Manager de QA escala a dirección.
+- A [[QA/Operador de QA\|QA Operator]] is permanently assigned to the Inspection department.
+- QA does **not execute** Inspection operations; it only observes, measures, and provides feedback.
+- The specific metrics that the QA Operator monitors for Inspection are defined in [[QA/Métricas y KPIs por Departamento#Inspección|Metrics and KPIs — Inspection]].
+- If the [[Core/Módulos/Semáforos/Indicador de Calidad\|Quality Indicator]] of the department reaches **Red** status without improvement after notification, the QA Manager escalates to management.
 
-## Resumen de responsabilidades por rol
+## Responsibility Summary by Role
 
-| Acción | [[Inspector]] | [[Inspección/Coordinador\|Coordinador]] |
+| Action | [[Inspector]] | [[Inspección/Coordinador\|Coordinator]] |
 |---|---|---|
-| Verificar llegada Día 1 | Sí | No |
-| Entregar uniforme Día 3 | Sí | No |
-| Investigar reportes (Rojo) | Sí | No |
-| Ejecutar Blacklist manual | Sí | No |
-| Recibir notificación de accidente | Sí | No |
-| Complementar y cerrar tarjeta de accidente | Sí | No |
-| Gestionar transición Gris → Verde fuerte | Sí | No |
-| Ver Indicador de Lunch Extendido | Sí | Sí |
-| Asignar Inspectores a zonas | No | Sí |
-| Reasignar Inspector por indisponibilidad | No | Sí |
-| Supervisar Inspectores | No | Sí |
-| Enlace interdepartamental | No | Sí |
-| Escalar casos especiales | No | Sí |
+| Verify arrival Day 1 | Yes | No |
+| Deliver uniform Day 3 | Yes | No |
+| Investigate reports (Red) | Yes | No |
+| Execute manual Blacklist | Yes | No |
+| Receive accident notification | Yes | No |
+| Complete and close accident card | Yes | No |
+| Manage Gray → Dark Green transition | Yes | No |
+| View Extended Lunch Indicator | Yes | Yes |
+| Assign Inspectors to zones | No | Yes |
+| Reassign Inspector due to unavailability | No | Yes |
+| Supervise Inspectors | No | Yes |
+| Interdepartmental liaison | No | Yes |
+| Escalate special cases | No | Yes |
 
-## Relacionado
+## Related
 
 - [[Reglas de Negocio]]
 - [[Inspector]]
-- [[Inspección/Coordinador|Coordinador]]
-- [[Core/Catálogos/Zonas|Zonas]]
+- [[Inspección/Coordinador|Coordinator]]
+- [[Core/Catálogos/Zonas|Zones]]
 - [[Semáforo del Colaborador]]
 - [[Core/Módulos/Blacklist|Blacklist]]
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
-- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Workplace Accident]]
+- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Workplace Accident Flow]]
 - [[Timesheet]]
-- [[Core/Módulos/Requisicion/Requisición|Requisición]]
-- [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]
+- [[Core/Módulos/Requisicion/Requisición|Requisition]]
+- [[Core/Módulos/Requisicion/Flujo de Requisición|Requisition Flow]]
+- [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]
 - [[Core/Módulos/Schedule|Schedule]]
-- [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]]
+- [[Core/Módulos/Semáforos/Indicador de Calidad|Quality Indicator]]
 - [[Manager de Reclutamiento]]
-- [[Hotel/Manager General|Manager General]]
-- [[Hotel/Manager de Área|Manager de Área]]
+- [[Hotel/Manager General|General Manager]]
+- [[Hotel/Manager de Área|Area Manager]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Pool de Colaboradores]]

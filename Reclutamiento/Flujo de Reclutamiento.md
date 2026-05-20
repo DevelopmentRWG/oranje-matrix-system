@@ -1,57 +1,57 @@
 ---
 tags:
-  - modulo/reclutamiento
+  - module/recruitment
 aliases:
-  - Flujo de Reclutamiento
+  - Recruitment Flow
 ---
 
-# Flujo de Reclutamiento
+# Recruitment Flow
 
-Proceso mediante el cual [[Reclutamiento]] **capta, valida y da de alta colaboradores nuevos** para alimentar la [[Pool de Colaboradores]]. Este flujo **no** cubre requisiciones directamente: su objetivo es que la pool tenga colaboradores disponibles para que el [[Flujo de Requisición]] pueda consumirlos.
+Process by which [[Reclutamiento]] **captures, validates, and registers new associates** to feed the [[Pool de Colaboradores]]. This flow does **not** cover requisitions directly: its objective is to ensure the pool has available associates so the [[Flujo de Requisición]] can consume them.
 
-> [!info] Punto de encuentro con el [[Flujo de Requisición]]
-> La [[Pool de Colaboradores]] es el único punto donde ambos flujos se conectan. El Flujo de Reclutamiento **alimenta** la pool; el [[Flujo de Requisición]] la **consume**.
+> [!info] Connection point with the [[Flujo de Requisición]]
+> The [[Pool de Colaboradores]] is the only point where both flows connect. The Recruitment Flow **feeds** the pool; the [[Flujo de Requisición]] **consumes** it.
 
-## Naturaleza del flujo
+## Nature of the Flow
 
-El Flujo de Reclutamiento es **continuo**: [[Reclutamiento]] **siempre está contratando**, haya o no requisiciones abiertas. El objetivo es mantener la [[Pool de Colaboradores]] sana y lista para cuando el [[Flujo de Requisición]] necesite consumirla.
+The Recruitment Flow is **continuous**: [[Reclutamiento]] is **always hiring**, whether or not there are open requisitions. The objective is to keep the [[Pool de Colaboradores]] healthy and ready for when the [[Flujo de Requisición]] needs to consume it.
 
-No depende de un disparador externo — corre de forma permanente. Las requisiciones sin match pueden **acelerar** o **priorizar** ciertas posiciones/zonas, pero no son condición para iniciar el flujo.
+It does not depend on an external trigger — it runs permanently. Unmatched requisitions may **accelerate** or **prioritize** certain positions/zones, but they are not a condition for starting the flow.
 
-## Fases
+## Phases
 
-### Fase 1 — Entrevista inicial (panel de reclutamiento)
+### Phase 1 — Initial Interview (recruitment panel)
 
-Captura de información inicial del colaborador:
-- Edad
-- Género
-- Nombre completo
-- Domicilio
-- Teléfono
+Capture of the associate's initial information:
+- Age
+- Gender
+- Full name
+- Address
+- Phone
 
-### Fase 2 — Alta en la app de Oranje (la completa el colaborador)
+### Phase 2 — Oranje App Registration (completed by the associate)
 
 - SSN
 - ITIN
-- Posición (ver [[Posiciones]])
-- Nivel de inglés (ver [[Niveles de Inglés]])
-- Nivel de experiencia
-- Tipo de transporte
-- Modalidad (ver [[Modalidades de Contratación]])
+- Position (see [[Posiciones]])
+- English level (see [[Niveles de Inglés]])
+- Experience level
+- Transportation type
+- Modality (see [[Modalidades de Contratación]])
 
-### Fase 3 — Validación y aprobación
+### Phase 3 — Validation and Approval
 
-[[Reclutamiento]] revisa la información capturada y aprueba o rechaza al colaborador.
+[[Reclutamiento]] reviews the captured information and approves or rejects the associate.
 
-### Fase 4 — Habilitación de acceso
+### Phase 4 — Access Enablement
 
-Al colaborador aprobado se le habilita el acceso a los paneles correspondientes.
+The approved associate is granted access to the corresponding panels.
 
-## Salida
+## Output
 
-El colaborador aprobado **ingresa a la [[Pool de Colaboradores]]** con su [[Semáforo del Colaborador]] activo. A partir de ahí queda disponible para ser asignado a un hotel a través del [[Flujo de Requisición]].
+The approved associate **enters the [[Pool de Colaboradores]]** with their [[Semáforo del Colaborador]] active. From there they become available to be assigned to a hotel through the [[Flujo de Requisición]].
 
-## Relacionado
+## Related
 
 - [[Pool de Colaboradores]]
 - [[Flujo de Requisición]]

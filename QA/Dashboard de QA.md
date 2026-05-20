@@ -1,94 +1,92 @@
 ---
 tags:
-  - departamento/qa
+  - department/qa
 aliases:
-  - Dashboard de QA
-  - Dashboard QA
-  - Tablero de QA
+  - QA Dashboard
 ---
 
-# Dashboard de QA
+# QA Dashboard
 
-Especificación de las visualizaciones y gráficas que la aplicación debe proveer al equipo de [[QA/QA|QA]] para monitorear la calidad operativa de cada departamento. Este documento es un **requerimiento funcional** para desarrollo.
+Specification of the visualizations and charts that the application must provide to the [[QA/QA|QA]] team to monitor the operational quality of each department. This document is a **functional requirement** for development.
 
 > [!info]
-> Todos los datos que alimentan estas gráficas ya son rastreados por el sistema (semáforos, timesheets, journals, requisiciones). El dashboard los presenta de forma visual para facilitar el análisis del equipo de QA.
+> All data feeding these charts is already tracked by the system (status indicators, timesheets, journals, requisitions). The dashboard presents them visually to facilitate analysis by the QA team.
 
-## Acceso por rol
+## Access by Role
 
-| Rol | Paneles visibles |
+| Role | Visible Panels |
 |---|---|
-| [[Manager de QA]] | Panel global + los 6 paneles por departamento |
-| [[Operador de QA]] | Solo el panel de su departamento asignado |
+| [[Manager de QA]] | Global panel + the 6 department panels |
+| [[Operador de QA]] | Only the panel for their assigned department |
 
-## Panel global — Manager de QA
+## Global Panel — QA Manager
 
-Vista consolidada de los 6 departamentos supervisados. Permite al [[Manager de QA]] identificar rápidamente qué departamentos requieren atención.
+Consolidated view of the 6 supervised departments. Allows the [[Manager de QA]] to quickly identify which departments require attention.
 
-### Gráficas del panel global
+### Global Panel Charts
 
-| # | Gráfica | Tipo de visualización | Datos | Actualización |
+| # | Chart | Visualization Type | Data | Update |
 |---|---------|----------------------|-------|---------------|
-| 1 | **Estado actual de los 6 departamentos** | Tarjetas resumen (1 por departamento) | [[Indicador de Calidad]] de cada departamento + conteo de KPIs en Meta / En riesgo / Crítico | Tiempo real |
-| 2 | **Tendencia del Indicador de Calidad** | Gráfica de líneas (1 línea por departamento) | Historial de cambios del [[Indicador de Calidad]] por departamento. Eje X = semanas | Semanal |
-| 3 | **KPIs en estado Crítico** | Tabla con alertas | Lista de KPIs que están en nivel Crítico en cualquier departamento, con nombre del KPI, departamento y valor actual | Tiempo real |
+| 1 | **Current status of all 6 departments** | Summary cards (1 per department) | [[Indicador de Calidad]] per department + count of KPIs at Target / At Risk / Critical | Real time |
+| 2 | **Quality Indicator trend** | Line chart (1 line per department) | History of [[Indicador de Calidad]] changes per department. X axis = weeks | Weekly |
+| 3 | **KPIs in Critical status** | Table with alerts | List of KPIs at Critical level in any department, with KPI name, department, and current value | Real time |
 
-## Panel por departamento — Operador de QA
+## Department Panel — QA Operator
 
-Cada uno de los 6 departamentos tiene un panel detallado con las siguientes gráficas estándar, alimentadas por los KPIs definidos en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
+Each of the 6 departments has a detailed panel with the following standard charts, fed by the KPIs defined in [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]].
 
-### Gráficas estándar (aplican a los 6 departamentos)
+### Standard Charts (apply to all 6 departments)
 
-| # | Gráfica | Tipo de visualización | Datos | Actualización |
+| # | Chart | Visualization Type | Data | Update |
 |---|---------|----------------------|-------|---------------|
-| 1 | **Resumen de KPIs** | Barras horizontales con zonas Meta / En riesgo / Crítico | Valor actual de cada KPI del departamento vs umbrales definidos | Tiempo real |
-| 2 | **Tendencia de KPIs** | Gráfica de líneas (1 línea por KPI) | Historial semanal de cada KPI del departamento. Eje X = semanas | Semanal |
-| 3 | **Historial de observaciones** | Timeline / lista cronológica | Observaciones formales emitidas al departamento: estado (abierta / atendida / cerrada), fecha de emisión, descripción | Tiempo real |
+| 1 | **KPI Summary** | Horizontal bars with Target / At Risk / Critical zones | Current value of each department KPI vs defined thresholds | Real time |
+| 2 | **KPI Trend** | Line chart (1 line per KPI) | Weekly history of each department KPI. X axis = weeks | Weekly |
+| 3 | **Observation history** | Timeline / chronological list | Formal observations issued to the department: status (open / addressed / closed), issue date, description | Real time |
 
-### Gráficas específicas por departamento
+### Department-Specific Charts
 
-Además de las gráficas estándar, cada departamento tiene visualizaciones particulares que aprovechan la naturaleza de sus datos.
+In addition to the standard charts, each department has particular visualizations that leverage the nature of its data.
 
-#### Inspección
+#### Inspection
 
-| Gráfica | Tipo de visualización | Datos |
+| Chart | Visualization Type | Data |
 |---------|----------------------|-------|
-| **Mapa de cobertura de zonas** | Mapa geográfico o diagrama de zonas | Las 6 [[Core/Catálogos/Zonas|zonas]] con indicador de disponibilidad de [[Inspector]] (activo / cobertura temporal / sin cobertura) |
+| **Zone coverage map** | Geographic map or zone diagram | The 6 [[Core/Catálogos/Zonas|zones]] with [[Inspector]] availability indicator (active / temporary coverage / no coverage) |
 
 #### Hotel
 
-| Gráfica | Tipo de visualización | Datos |
+| Chart | Visualization Type | Data |
 |---------|----------------------|-------|
-| **Ranking de hoteles por cumplimiento de ponchado** | Tabla ordenada / barras verticales | Hoteles ordenados por % de timesheets con 6 ponches completos, del mejor al peor |
+| **Hotel ranking by punch compliance** | Sorted table / vertical bars | Hotels ranked by % of timesheets with 6 complete punches, from best to worst |
 
-#### Colaborador
+#### Associate
 
-| Gráfica | Tipo de visualización | Datos |
+| Chart | Visualization Type | Data |
 |---------|----------------------|-------|
-| **Distribución del Semáforo del Colaborador** | Gráfica de dona | Porcentaje de colaboradores en cada uno de los 12 estados del [[Semáforo del Colaborador]] |
+| **Associate Status Indicator distribution** | Donut chart | Percentage of associates in each of the 12 states of the [[Semáforo del Colaborador]] |
 
-#### Ventas
+#### Sales
 
-| Gráfica | Tipo de visualización | Datos |
+| Chart | Visualization Type | Data |
 |---------|----------------------|-------|
-| **Funnel del Semáforo Onboarding** | Gráfica de embudo | Cantidad de hoteles en cada etapa del [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]] (Gris → Azul Claro → Verde → Amarillo → Rosa → Naranja) |
+| **Onboarding Status Indicator funnel** | Funnel chart | Number of hotels at each stage of the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]] (Gray → Light Blue → Green → Yellow → Pink → Orange) |
 
-#### Reclutamiento
+#### Recruitment
 
-| Gráfica | Tipo de visualización | Datos |
+| Chart | Visualization Type | Data |
 |---------|----------------------|-------|
-| **Embudo de reclutamiento** | Gráfica de embudo | Candidatos entrevistados → aprobados → ingresados al [[Pool de Colaboradores]] → asignados a posición |
-| **Heatmap de tiempo de toma por urgencia** | Mapa de calor | Tiempo de toma de requisición (eje Y) vs nivel de urgencia del [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]] (eje X). Intensidad = cantidad de requisiciones |
+| **Recruitment funnel** | Funnel chart | Interviewed candidates → approved → admitted to [[Pool de Colaboradores]] → assigned to position |
+| **Pickup time heatmap by urgency** | Heat map | Requisition pickup time (Y axis) vs urgency level of the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Urgency Status Indicator]] (X axis). Intensity = number of requisitions |
 
 #### Customer Service
 
 > [!note]
-> Las gráficas específicas de Customer Service se definirán una vez que los KPIs del departamento estén establecidos. Ver [[QA/Métricas y KPIs por Departamento#Customer Service|Métricas y KPIs — Customer Service]].
+> The specific charts for Customer Service will be defined once the department's KPIs are established. See [[QA/Métricas y KPIs por Departamento#Customer Service|Metrics and KPIs — Customer Service]].
 
-## Relacionado
+## Related
 
 - [[QA/QA|QA]]
 - [[Manager de QA]]
 - [[Operador de QA]]
-- [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]
-- [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]]
+- [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]
+- [[Core/Módulos/Semáforos/Indicador de Calidad|Quality Indicator]]

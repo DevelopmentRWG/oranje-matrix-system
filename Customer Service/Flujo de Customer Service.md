@@ -1,128 +1,128 @@
 ---
 tags:
-  - modulo/customer-service
-  - flujo
+  - module/customer-service
+  - flow
 aliases:
-  - Flujo de Customer Service
-  - Flujo de Atención al Cliente
+  - Customer Service Flow
+  - Customer Service Attendance Flow
 ---
 
-# Flujo de Customer Service
+# Customer Service Flow
 
-Proceso paso a paso para la atención de solicitudes del hotel cliente activo. El flujo cubre desde la recepción de una solicitud hasta su cierre o escalamiento. Aplica únicamente a hoteles en status **Naranja** del [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
+Step-by-step process for handling requests from the active client hotel. The flow covers from the receipt of a request through to its closure or escalation. Applies exclusively to hotels in **Orange** status of the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]].
 
-## Paso 1 — Recepción de la solicitud
+## Step 1 — Request Receipt
 
-**Responsable:** [[Customer Service/Agente de Customer Service|Agente de Customer Service]]
+**Responsible:** [[Customer Service/Agente de Customer Service|Customer Service Agent]]
 
-El hotel contacta a Customer Service a través de los canales habilitados. El interlocutor del hotel puede ser el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]].
+The hotel contacts Customer Service through the enabled channels. The hotel's point of contact may be the [[Hotel/Manager General|General Manager]], the [[Hotel/Manager de Área|Area Manager]], or the [[Hotel/Supervisor|Supervisor]].
 
-**Acción:** el Agente registra la solicitud con los siguientes datos:
-- Hotel y contacto.
-- Fecha y hora de recepción.
-- Descripción de la solicitud.
-- Categoría (consulta, queja, incidencia, solicitud operativa).
+**Action:** the Agent records the request with the following data:
+- Hotel and contact.
+- Date and time of receipt.
+- Description of the request.
+- Category (inquiry, complaint, incident, operational request).
 
-**Avance →** al registrar la solicitud, pasa a Paso 2.
+**Advance →** upon recording the request, it moves to Step 2.
 
-## Paso 2 — Clasificación y respuesta inicial
+## Step 2 — Classification and Initial Response
 
-**Responsable:** [[Customer Service/Agente de Customer Service|Agente de Customer Service]]
+**Responsible:** [[Customer Service/Agente de Customer Service|Customer Service Agent]]
 
-El Agente evalúa la solicitud y determina si puede resolverla directamente o si requiere coordinación con otro departamento.
+The Agent evaluates the request and determines whether it can be resolved directly or requires coordination with another department.
 
-**Decisión: ¿El Agente puede resolver directamente?**
+**Decision: Can the Agent resolve it directly?**
 
-- **SÍ →** el Agente resuelve, documenta la solución y pasa a Paso 5 (Cierre).
-- **NO →** pasa a Paso 3 (Coordinación interdepartamental).
+- **YES →** the Agent resolves it, documents the solution, and moves to Step 5 (Closure).
+- **NO →** moves to Step 3 (Interdepartmental Coordination).
 
-**Decisión: ¿La solicitud involucra una disputa comercial o riesgo de transición a Negro?**
+**Decision: Does the request involve a commercial dispute or risk of transitioning to Black?**
 
-- **SÍ →** escalamiento inmediato al [[Customer Service/Customer Service Manager|Customer Service Manager]] (Paso 4).
+- **YES →** immediate escalation to the [[Customer Service/Customer Service Manager|Customer Service Manager]] (Step 4).
 
-## Paso 3 — Coordinación interdepartamental
+## Step 3 — Interdepartmental Coordination
 
-**Responsable:** [[Customer Service/Agente de Customer Service|Agente de Customer Service]]
+**Responsible:** [[Customer Service/Agente de Customer Service|Customer Service Agent]]
 
-El Agente contacta al departamento interno correspondiente para obtener la información o acción necesaria:
+The Agent contacts the corresponding internal department to obtain the necessary information or action:
 
-| Tipo de incidencia | Departamento a contactar | Contacto |
+| Incident Type | Department to Contact | Contact |
 |---|---|---|
-| Colaborador no se presentó / problemas de desempeño | [[Inspección/Inspección\|Inspección]] | [[Inspección/Coordinador\|Coordinador]] |
-| Cobertura de posiciones / asignación de personal | [[Reclutamiento/Reclutamiento\|Reclutamiento]] | [[Manager de Reclutamiento]] |
-| Dudas de facturación o pagos | Contabilidad | [[Manager de Contabilidad]] |
-| Temas contractuales o comerciales | [[Ventas/Ventas\|Ventas]] | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
+| Associate did not show up / performance issues | [[Inspección/Inspección\|Inspection]] | [[Inspección/Coordinador\|Coordinator]] |
+| Position coverage / staff assignment | [[Reclutamiento/Reclutamiento\|Recruitment]] | [[Manager de Reclutamiento]] |
+| Billing or payment inquiries | Accounting | [[Manager de Contabilidad]] |
+| Contractual or commercial matters | [[Ventas/Ventas\|Sales]] | [[Ventas/Roles/Business Developer Coordinator\|BDC]] |
 
-**Acción:** el Agente documenta la coordinación realizada y la respuesta obtenida.
+**Action:** the Agent documents the coordination performed and the response received.
 
-**Decisión: ¿Se obtuvo resolución del departamento?**
+**Decision: Was a resolution obtained from the department?**
 
-- **SÍ →** el Agente comunica la resolución al hotel y pasa a Paso 5 (Cierre).
-- **NO →** el caso se escala al [[Customer Service/Customer Service Manager|Customer Service Manager]] (Paso 4).
+- **YES →** the Agent communicates the resolution to the hotel and moves to Step 5 (Closure).
+- **NO →** the case is escalated to the [[Customer Service/Customer Service Manager|Customer Service Manager]] (Step 4).
 
-## Paso 4 — Escalamiento
+## Step 4 — Escalation
 
-El escalamiento sigue la jerarquía definida en las [[Customer Service/Reglas de Customer Service|Reglas de Customer Service]]:
+Escalation follows the hierarchy defined in the [[Customer Service/Reglas de Customer Service|Customer Service Rules]]:
 
-### Nivel 2 — Customer Service Manager
+### Level 2 — Customer Service Manager
 
-**Responsable:** [[Customer Service/Customer Service Manager|Customer Service Manager]]
+**Responsible:** [[Customer Service/Customer Service Manager|Customer Service Manager]]
 
-Recibe casos que el Agente no pudo resolver o que involucran múltiples departamentos.
+Receives cases the Agent could not resolve or that involve multiple departments.
 
-**Acciones:**
-- Revisa el historial del caso.
-- Coordina directamente con los responsables de los departamentos involucrados.
-- Resuelve el caso y comunica al hotel.
+**Actions:**
+- Reviews the case history.
+- Coordinates directly with the responsible parties from the involved departments.
+- Resolves the case and communicates to the hotel.
 
-**Decisión: ¿Se resolvió?**
+**Decision: Was it resolved?**
 
-- **SÍ →** pasa a Paso 5 (Cierre).
-- **NO →** escala al Nivel 3.
+- **YES →** moves to Step 5 (Closure).
+- **NO →** escalates to Level 3.
 
-### Nivel 3 — Business Developer Coordinator
+### Level 3 — Business Developer Coordinator
 
-**Responsable:** [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]]
+**Responsible:** [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]]
 
-Recibe casos con componente comercial, contractual o con riesgo de pérdida de cliente.
+Receives cases with a commercial, contractual component or with client loss risk.
 
-**Acciones:**
-- Evalúa el impacto comercial.
-- Negocia solución con el hotel.
-- Coordina ajustes contractuales si aplica.
+**Actions:**
+- Evaluates the commercial impact.
+- Negotiates a solution with the hotel.
+- Coordinates contractual adjustments if applicable.
 
-**Decisión: ¿Se resolvió?**
+**Decision: Was it resolved?**
 
-- **SÍ →** pasa a Paso 5 (Cierre).
-- **NO →** escala al Nivel 4 (Dirección General).
+- **YES →** moves to Step 5 (Closure).
+- **NO →** escalates to Level 4 (General Management).
 
-### Nivel 4 — Dirección General
+### Level 4 — General Management
 
-Casos sin resolución en niveles anteriores o con riesgo reputacional.
+Cases unresolved at previous levels or with reputational risk.
 
-> [!warning] Si la disputa no se resuelve y el hotel decide pausar o terminar la relación, el [[Ventas/Roles/Business Developer Coordinator|BDC]] ejecuta la transición a status **Negro** en el [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]. Customer Service no puede modificar el status del semáforo.
+> [!warning] If the dispute is not resolved and the hotel decides to pause or terminate the relationship, the [[Ventas/Roles/Business Developer Coordinator|BDC]] executes the transition to **Black** status in the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]. Customer Service cannot modify the status indicator.
 
-## Paso 5 — Cierre
+## Step 5 — Closure
 
-**Responsable:** [[Customer Service/Agente de Customer Service|Agente de Customer Service]] o [[Customer Service/Customer Service Manager|Customer Service Manager]] (según quién resolvió)
+**Responsible:** [[Customer Service/Agente de Customer Service|Customer Service Agent]] or [[Customer Service/Customer Service Manager|Customer Service Manager]] (depending on who resolved it)
 
-**Acciones:**
-- Documenta la resolución del caso.
-- Confirma con el hotel que la solicitud fue atendida.
-- Cierra el caso en el sistema.
+**Actions:**
+- Documents the case resolution.
+- Confirms with the hotel that the request was handled.
+- Closes the case in the system.
 
-## Puntos clave
+## Key Points
 
-- Customer Service **no puede modificar** el status del [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]; solo reporta y escala.
-- Customer Service **no sustituye** la operación de ningún departamento; coordina, canaliza y da seguimiento.
-- Toda solicitud debe quedar documentada independientemente de si se resuelve en Paso 2 o llega a Paso 4.
-- Los casos con disputa comercial siempre se escalan de forma inmediata al [[Customer Service/Customer Service Manager|CS Manager]], sin esperar el ciclo normal.
+- Customer Service **cannot modify** the status of the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]; it only reports and escalates.
+- Customer Service **does not substitute** the operations of any department; it coordinates, channels, and follows up.
+- Every request must be documented regardless of whether it is resolved at Step 2 or reaches Step 4.
+- Cases involving a commercial dispute are always escalated immediately to the [[Customer Service/Customer Service Manager|CS Manager]], without waiting for the normal cycle.
 
-## Relacionado
+## Related
 
 - [[Customer Service/Customer Service|Customer Service]]
-- [[Customer Service/Reglas de Customer Service|Reglas de Customer Service]]
+- [[Customer Service/Reglas de Customer Service|Customer Service Rules]]
 - [[Customer Service/Customer Service Manager|Customer Service Manager]]
-- [[Customer Service/Agente de Customer Service|Agente de Customer Service]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]
+- [[Customer Service/Agente de Customer Service|Customer Service Agent]]
+- [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]
 - [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]]

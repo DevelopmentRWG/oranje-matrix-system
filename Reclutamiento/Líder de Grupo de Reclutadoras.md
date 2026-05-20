@@ -1,24 +1,24 @@
 ---
 tags:
-  - modulo/reclutamiento
+  - module/recruitment
 aliases:
-  - Líder de Grupo de Reclutadoras
-  - Líder de Grupo
+  - Recruiter Team Lead
+  - Team Lead
 ---
 
-# Líder de Grupo de Reclutadoras
+# Recruiter Team Lead
 
-Rol intermedio del módulo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Ejecuta las mismas funciones operativas que una [[Reclutadora]] (reclutamiento y asignación de personal) y además supervisa el desempeño de un grupo de Reclutadoras asignadas.
+Intermediate role in the [[Reclutamiento/Reclutamiento|Reclutamiento]] module. Executes the same operational functions as a [[Reclutadora]] (recruiting and assigning staff) and also supervises the performance of an assigned group of Recruiters.
 
-## Responsabilidades
+## Responsibilities
 
-La Líder de Grupo ejecuta todas las responsabilidades operativas de una [[Reclutadora]], además de las siguientes funciones de supervisión:
+The Recruiter Team Lead executes all operational responsibilities of a [[Reclutadora]], plus the following supervisory functions:
 
-- Ejecuta todas las responsabilidades operativas de una [[Reclutadora]]: reclutamiento, entrevista, validación, aprobación y asignación de colaboradores.
-- Supervisa y monitorea el avance de las [[Reclutadora|Reclutadoras]] de su grupo.
-- Reporta al [[Manager de Reclutamiento]] el estatus y desempeño de su grupo.
+- Executes all operational responsibilities of a [[Reclutadora]]: recruiting, interviewing, validating, approving, and assigning associates.
+- Supervises and monitors the progress of the [[Reclutadora|Recruiters]] in their group.
+- Reports the status and performance of their group to the [[Manager de Reclutamiento]].
 
-## Relacionado
+## Related
 
 - [[Flujo de Reclutamiento]]
 - [[Manager de Reclutamiento]]

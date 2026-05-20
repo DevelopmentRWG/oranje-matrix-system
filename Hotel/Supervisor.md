@@ -1,6 +1,6 @@
 ---
 tags:
-  - modulo/hotel
+  - module/hotel
 aliases:
   - SUP
   - Supervisor
@@ -8,36 +8,36 @@ aliases:
 
 # Supervisor
 
-Rol operativo del módulo de [[Hotel/Hotel|Hotel]], subordinado del [[Hotel/Manager de Área|Manager de Área]]. Responsable de crear las [[Requisición|requisiciones]] de personal que el hotel necesita cubrir.
+Operational role in the [[Hotel/Hotel|Hotel]] module, subordinate to the [[Hotel/Manager de Área|Manager de Área]]. Responsible for creating the staff [[Requisición|requisitions]] that the hotel needs to fill.
 
-> [!note] Jerarquía extendida
-> En hoteles con jerarquía extendida, este rol corresponde al Supervisor del [[Departamentos del Hotel|departamento]], subordinado al [[Hotel/Manager de Área|Manager de Área]] de su departamento. Las responsabilidades en plataforma son las mismas.
+> [!note] Extended Hierarchy
+> In hotels with an extended hierarchy, this role corresponds to the [[Departamentos del Hotel|department]] Supervisor, subordinate to the [[Hotel/Manager de Área|Manager de Área]] of their department. The platform responsibilities are the same.
 
-## Responsabilidades
+## Responsibilities
 
-### Requisiciones
+### Requisitions
 
-- Crea la [[Requisición]] desde la app, especificando:
-  - [[Posiciones]] requeridas.
-  - Cantidad de personas por posición.
-  - Fecha de inicio.
-  - Horario.
-  - [[Modalidades de Contratación|Modalidad de contratación]].
-  - Preferencia de [[Niveles de Inglés|nivel de inglés]].
-  - Notas adicionales.
-- Envía la requisición al [[Hotel/Manager de Área|Manager de Área]] para su aprobación.
+- Creates the [[Requisición]] from the app, specifying:
+  - Required [[Posiciones|positions]].
+  - Number of people per position.
+  - Start date.
+  - Schedule.
+  - [[Modalidades de Contratación|Employment modality]].
+  - [[Niveles de Inglés|English level]] preference.
+  - Additional notes.
+- Sends the requisition to the [[Hotel/Manager de Área|Manager de Área]] for approval.
 
-> [!note] Sobre la autorización
-> El Supervisor **no puede autorizar** una requisición. Toda requisición debe ser revisada y aprobada por el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Manager General|Manager General]] antes de llegar al equipo de [[Reclutamiento/Reclutamiento|Reclutamiento]].
+> [!note] On Authorization
+> The Supervisor **cannot authorize** a requisition. All requisitions must be reviewed and approved by the [[Hotel/Manager de Área|Manager de Área]] or the [[Hotel/Manager General|Manager General]] before reaching the [[Reclutamiento/Reclutamiento|Reclutamiento]] team.
 
-### Gestión de personal asignado
+### Assigned Staff Management
 
-- Manda a colaboradores a descansar (estado **Rosa — Stand-by** en el [[Semáforo del Colaborador]]).
-- Reporta colaboradores (estado **Rojo — Reportado** en el [[Semáforo del Colaborador]]).
-- Reporta [[Core/Módulos/Accidente Laboral/Accidente Laboral|accidentes laborales]] detectados en la propiedad (ver [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]).
-- Acude físicamente al lugar del incidente y captura la información presencial en la tarjeta de accidente: ubicación exacta, circunstancias, testigos y atención inmediata brindada.
+- Places associates on rest (status **Pink — Stand-by** in the [[Semáforo del Colaborador]]).
+- Reports associates (status **Red — Reported** in the [[Semáforo del Colaborador]]).
+- Reports [[Core/Módulos/Accidente Laboral/Accidente Laboral|workplace accidents]] detected on the property (see [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]).
+- Physically goes to the incident location and captures on-site information on the accident card: exact location, circumstances, witnesses, and immediate care provided.
 
-## Relacionado
+## Related
 
 - [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Manager General|Manager General]]

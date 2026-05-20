@@ -1,37 +1,37 @@
 ---
 tags:
-  - departamento/inspeccion
+  - department/inspection
 aliases:
   - Inspector
-  - Inspector de zona
+  - Zone Inspector
 ---
 
 # Inspector
 
-Rol operativo encargado de la supervisión en sitio de los colaboradores asignados a un hotel, de la verificación de llegadas, de la entrega del uniforme y de la investigación de casos reportados.
+Operational role responsible for on-site supervision of associates assigned to a hotel, arrival verification, uniform delivery, and investigation of reported cases.
 
-## Responsabilidades
+## Responsibilities
 
-- **Verifica la llegada del colaborador el día 1** en la propiedad (transición `Blanco → Verde manzana` en el [[Semáforo del Colaborador]]).
-- **Entrega del uniforme** al colaborador cuando transita a `Azul claro` (Día 3+) en el [[Semáforo del Colaborador]].
-- Supervisa en sitio la operación de los colaboradores en el hotel.
-- Investiga los casos de colaboradores en estado `Rojo` (reportados por el [[Hotel/Manager de Área|Manager de Área]]) en el [[Semáforo del Colaborador]].
-- **Tiene autoridad propia para decidir** el resultado de la investigación, sin necesidad de escalamiento:
-  - `Negro` ([[Core/Módulos/Blacklist|Blacklist]]) — si la disputa se resuelve a favor del hotel.
-  - `Verde fuerte` (reincorporado) — si la disputa se resuelve a favor del colaborador.
-- Apoya la operación del hotel cliente activo ([[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Naranja del Onboarding]]).
-- Recibe notificación de [[Core/Módulos/Accidente Laboral/Accidente Laboral|accidente laboral]] en su zona (ver [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]).
-- Complementa la tarjeta de accidente con información de seguimiento médico: traslado, diagnóstico, días de incapacidad, observaciones.
-- Es el **responsable final del cierre** de la tarjeta de accidente, una vez que la información está completa.
-- Al cierre, gestiona la transición del colaborador de `Gris → Verde fuerte` en el [[Semáforo del Colaborador]] cuando recibe el alta médica.
-- Consulta el **Indicador de Lunch Extendido** en el [[Timesheet]] para identificar colaboradores cuyo lunch excede los 30 minutos en su zona.
+- **Verifies the associate's arrival on Day 1** at the property (transition `White → Apple Green` in the [[Semáforo del Colaborador]]).
+- **Delivers the uniform** to the associate when transitioning to `Light Blue` (Day 3+) in the [[Semáforo del Colaborador]].
+- Supervises the on-site operation of associates at the hotel.
+- Investigates cases of associates in `Red` status (reported by the [[Hotel/Manager de Área|Area Manager]]) in the [[Semáforo del Colaborador]].
+- **Has independent authority to decide** the outcome of the investigation, without the need for escalation:
+  - `Black` ([[Core/Módulos/Blacklist|Blacklist]]) — if the dispute is resolved in favor of the hotel.
+  - `Dark Green` (reinstated) — if the dispute is resolved in favor of the associate.
+- Supports the operation of the active client hotel ([[Semáforo Onboarding#Naranja — Acuerdo firmado, hotel cliente activo|Orange in Onboarding]]).
+- Receives notification of a [[Core/Módulos/Accidente Laboral/Accidente Laboral|workplace accident]] in their zone (see [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Workplace Accident Flow]]).
+- Completes the accident card with medical follow-up information: transfer, diagnosis, days of incapacity, observations.
+- Is the **final party responsible for closing** the accident card, once the information is complete.
+- Upon closure, manages the associate's transition from `Gray → Dark Green` in the [[Semáforo del Colaborador]] when medical discharge is received.
+- Consults the **Extended Lunch Indicator** in the [[Timesheet]] to identify associates whose lunch exceeds 30 minutes in their zone.
 
-## Relacionado
+## Related
 
 - [[Semáforo del Colaborador]]
 - [[Core/Módulos/Blacklist|Blacklist]]
-- [[Hotel/Manager de Área|Manager de Área]]
+- [[Hotel/Manager de Área|Area Manager]]
 - [[Manager de Reclutamiento]]
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
-- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Flujo de Accidente Laboral]]
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Workplace Accident]]
+- [[Core/Módulos/Accidente Laboral/Flujo de Accidente Laboral|Workplace Accident Flow]]
 - [[Timesheet]]

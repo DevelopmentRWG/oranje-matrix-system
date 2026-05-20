@@ -1,40 +1,39 @@
 ---
 tags:
-  - modulo/hotel
+  - module/hotel
 aliases:
-  - Manager General
-  - Gerente General
+  - General Manager
   - GM
 ---
 
-# Manager General
+# General Manager
 
-Rol de máxima autoridad dentro del hotel. Supervisa a los [[Hotel/Manager de Área|Managers de Área]] de las áreas operativas del hotel. El Manager General **siempre existe** en ambas jerarquías (ver [[Hotel/Hotel|Hotel]]).
+Role of highest authority within the hotel. Supervises the [[Hotel/Manager de Área|Area Managers]] of the hotel's operational departments. The General Manager **always exists** in both hierarchies (see [[Hotel/Hotel|Hotel]]).
 
-> [!note] Jerarquía simple
-> En hoteles con jerarquía simple, el Manager General también opera como [[Hotel/Manager de Área|Manager de Área]] (misma persona, dos roles). En jerarquía extendida, son personas distintas.
+> [!note] Simple Hierarchy
+> In hotels with a simple hierarchy, the General Manager also operates as [[Hotel/Manager de Área|Manager de Área]] (same person, two roles). In an extended hierarchy, they are different people.
 
-## Responsabilidades
+## Responsibilities
 
-### Requisiciones
+### Requisitions
 
-- Crea [[Requisición|requisiciones]] de personal.
-- **Aprueba** requisiciones (estado **Autorizada**).
-- **Rechaza** requisiciones, regresándolas al creador con observaciones (estado **En elaboración**).
+- Creates staff [[Requisición|requisitions]].
+- **Approves** requisitions (status **Authorized**).
+- **Rejects** requisitions, returning them to the creator with comments (status **In Progress**).
 
-### Gestión de personal asignado
+### Assigned Staff Management
 
-- Genera el código **QR** para que los colaboradores ponchen en el [[Timesheet]].
-- Manda a colaboradores a descansar (estado **Rosa — Stand-by** en el [[Semáforo del Colaborador]]).
-- Reporta colaboradores (estado **Rojo — Reportado** en el [[Semáforo del Colaborador]]).
-- Reporta [[Core/Módulos/Accidente Laboral/Accidente Laboral|accidentes laborales]] detectados en la propiedad.
+- Generates the **QR** code for associates to punch in the [[Timesheet]].
+- Places associates on rest (status **Pink — Stand-by** in the [[Semáforo del Colaborador]]).
+- Reports associates (status **Red — Reported** in the [[Semáforo del Colaborador]]).
+- Reports [[Core/Módulos/Accidente Laboral/Accidente Laboral|workplace accidents]] detected on the property.
 
-### Supervisión general
+### General Oversight
 
-- Visibilidad global del [[Core/Módulos/Schedule|Schedule]] y [[Timesheet]] de todos los [[Departamentos del Hotel|departamentos]].
-- Punto de contacto principal con Oranje a nivel directivo.
+- Global visibility of the [[Core/Módulos/Schedule|Schedule]] and [[Timesheet]] across all [[Departamentos del Hotel|departments]].
+- Primary point of contact with Oranje at the management level.
 
-## Relacionado
+## Related
 
 - [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]

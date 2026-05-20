@@ -1,66 +1,66 @@
 ---
 tags:
-  - modulo/customer-service
+  - module/customer-service
 aliases:
-  - Reglas de Customer Service
-  - Reglas de CS
+  - Customer Service Rules
+  - CS Rules
 ---
 
-# Reglas de Customer Service
+# Customer Service Rules
 
-Consolidación de las reglas de negocio que aplican al departamento de Customer Service dentro del sistema Oranje. Referencia cruzada con [[Reglas de Negocio]] (concentrado general del sistema).
+Consolidation of the business rules that apply to the Customer Service department within the Oranje system. Cross-reference with [[Reglas de Negocio]] (system-wide consolidated rules).
 
-## Jerarquía del departamento
+## Department Hierarchy
 
-| Rol | Función |
+| Role | Function |
 |---|---|
-| [[Customer Service/Customer Service Manager\|Customer Service Manager]] | Supervisa agentes, gestiona escalamientos y reporta métricas de satisfacción |
-| [[Customer Service/Agente de Customer Service\|Agente de Customer Service]] | Primer punto de contacto; recibe, documenta y resuelve solicitudes del hotel |
+| [[Customer Service/Customer Service Manager\|Customer Service Manager]] | Supervises agents, manages escalations, and reports satisfaction metrics |
+| [[Customer Service/Agente de Customer Service\|Customer Service Agent]] | First point of contact; receives, documents, and resolves hotel requests |
 
-## Jerarquía de escalamiento
+## Escalation Hierarchy
 
-El escalamiento sigue un orden definido según la gravedad y tipo del caso:
+Escalation follows a defined order based on severity and case type:
 
 ```
-Agente de CS → CS Manager → Business Developer Coordinator → Dirección
+CS Agent → CS Manager → Business Developer Coordinator → Management
 ```
 
-| Nivel | Responsable | Criterio de escalamiento |
+| Level | Responsible | Escalation Criteria |
 |---|---|---|
-| **1 - Atención directa** | [[Customer Service/Agente de Customer Service\|Agente de CS]] | Consultas generales, solicitudes operativas simples |
-| **2 - Supervisión** | [[Customer Service/Customer Service Manager\|CS Manager]] | Casos sin resolución en tiempo, quejas recurrentes, múltiples departamentos involucrados |
-| **3 - Comercial** | [[Ventas/Roles/Business Developer Coordinator\|BDC]] | Disputas contractuales, riesgo de pérdida de cliente, temas de facturación no resueltos |
-| **4 - Dirección** | Dirección General | Casos sin resolución en niveles anteriores, riesgo reputacional |
+| **1 - Direct handling** | [[Customer Service/Agente de Customer Service\|CS Agent]] | General inquiries, simple operational requests |
+| **2 - Supervision** | [[Customer Service/Customer Service Manager\|CS Manager]] | Cases unresolved within timeframe, recurring complaints, multiple departments involved |
+| **3 - Commercial** | [[Ventas/Roles/Business Developer Coordinator\|BDC]] | Contractual disputes, client loss risk, unresolved billing matters |
+| **4 - Management** | General Management | Cases unresolved at previous levels, reputational risk |
 
-## Relación con el Semáforo Onboarding
+## Relationship with the Onboarding Status Indicator
 
-- Customer Service opera exclusivamente con hoteles en status **Naranja** (cliente activo) del [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]].
-- Si una disputa comercial gestionada por Customer Service no se resuelve y el hotel decide pausar o terminar la relación, el [[Ventas/Roles/Business Developer Coordinator|BDC]] es quien ejecuta la transición a status **Negro**.
-- Customer Service **no** puede modificar el status del [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]; solo reporta y escala.
+- Customer Service operates exclusively with hotels in **Orange** status (active client) of the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]].
+- If a commercial dispute managed by Customer Service is not resolved and the hotel decides to pause or terminate the relationship, the [[Ventas/Roles/Business Developer Coordinator|BDC]] is the one who executes the transition to **Black** status.
+- Customer Service **cannot** modify the status of the [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]; it only reports and escalates.
 
-## Límites del departamento
+## Department Limits
 
-> [!important] Customer Service no sustituye la operación de ningún departamento. Coordina, canaliza y da seguimiento, pero la ejecución corresponde al departamento responsable.
+> [!important] Customer Service does not substitute the operations of any department. It coordinates, channels, and follows up, but execution belongs to the responsible department.
 
-- **No crea ni aprueba** [[Requisición|requisiciones]] — eso es del [[Hotel/Hotel|Hotel]].
-- **No asigna** colaboradores — eso es de [[Reclutamiento/Reclutamiento|Reclutamiento]].
-- **No inspecciona** en sitio — eso es de [[Inspección/Inspección|Inspección]].
-- **No capta** hoteles nuevos — eso es de [[Ventas/Ventas|Ventas]].
-- **No modifica** contratos ni términos comerciales — eso es del [[Ventas/Roles/Business Developer Coordinator|BDC]].
+- **Does not create or approve** [[Requisición|requisitions]] — that is the [[Hotel/Hotel|Hotel]]'s responsibility.
+- **Does not assign** associates — that is [[Reclutamiento/Reclutamiento|Recruitment]]'s responsibility.
+- **Does not inspect** on-site — that is [[Inspección/Inspección|Inspection]]'s responsibility.
+- **Does not acquire** new hotels — that is [[Ventas/Ventas|Sales]]'s responsibility.
+- **Does not modify** contracts or commercial terms — that is the [[Ventas/Roles/Business Developer Coordinator|BDC]]'s responsibility.
 
-## Supervisión de Calidad (QA)
+## Quality Supervision (QA)
 
-- Un [[Operador de QA]] está asignado de forma fija al departamento de Customer Service.
-- QA **no ejecuta** la operación de Customer Service; solo observa, mide y retroalimenta.
-- Si el [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]] del departamento alcanza estado **Rojo** sin mejora tras notificación, el [[Manager de QA]] escala a dirección.
+- A [[Operador de QA]] is permanently assigned to the Customer Service department.
+- QA does **not execute** Customer Service operations; it only observes, measures, and provides feedback.
+- If the [[Core/Módulos/Semáforos/Indicador de Calidad|Quality Indicator]] of the department reaches **Red** status without improvement after notification, the [[Manager de QA]] escalates to management.
 
-## Relacionado
+## Related
 
 - [[Reglas de Negocio]]
 - [[Customer Service/Customer Service Manager|Customer Service Manager]]
-- [[Customer Service/Agente de Customer Service|Agente de Customer Service]]
+- [[Customer Service/Agente de Customer Service|Customer Service Agent]]
 - [[Customer Service/Customer Service|Customer Service]]
-- [[Core/Módulos/Semáforos/Semáforo Onboarding|Semáforo Onboarding]]
+- [[Core/Módulos/Semáforos/Semáforo Onboarding|Onboarding Status Indicator]]
 - [[Ventas/Roles/Business Developer Coordinator|Business Developer Coordinator]]
-- [[Core/Módulos/Semáforos/Indicador de Calidad|Indicador de Calidad]]
+- [[Core/Módulos/Semáforos/Indicador de Calidad|Quality Indicator]]
 - [[Hotel/Hotel|Hotel]]

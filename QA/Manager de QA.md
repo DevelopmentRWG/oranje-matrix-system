@@ -1,26 +1,24 @@
 ---
 tags:
-  - departamento/qa
+  - department/qa
 aliases:
-  - Manager de QA
-  - Gerente de QA
   - QA Manager
 ---
 
-# Manager de QA
+# QA Manager
 
-Rol responsable de la estrategia de calidad y supervisión del equipo de operadores dentro del departamento de [[QA/QA|QA]].
+Role responsible for quality strategy and supervision of the operator team within the [[QA/QA|QA]] department.
 
-## Responsabilidades
+## Responsibilities
 
-- **Define las métricas y KPIs** que cada [[Operador de QA]] debe monitorear por departamento. Ver [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
-- **Supervisa a los 5 operadores de QA**, uno por cada departamento: Inspección, Hotel, Colaborador, Ventas y Reclutamiento.
-- **Consolida las observaciones** de todos los operadores en una vista global de calidad operativa.
-- **Presenta reportes de calidad** a la dirección con hallazgos, tendencias y áreas de mejora.
-- **Actualiza el [[Indicador de Calidad]]** de cada departamento con base en los reportes de los operadores.
-- **Escala problemas críticos** cuando un departamento permanece en estado Rojo del [[Indicador de Calidad]] sin mejora.
+- **Defines the metrics and KPIs** that each [[Operador de QA]] must monitor per department. See [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]].
+- **Supervises the 5 QA operators**, one per department: Inspection, Hotel, Associate, Sales, and Recruitment.
+- **Consolidates observations** from all operators into a global view of operational quality.
+- **Presents quality reports** to management with findings, trends, and areas for improvement.
+- **Updates the [[Indicador de Calidad]]** for each department based on operator reports.
+- **Escalates critical problems** when a department remains in Red status on the [[Indicador de Calidad]] without improvement.
 
-## Relacionado
+## Related
 
 - [[Operador de QA]]
 - [[Indicador de Calidad]]

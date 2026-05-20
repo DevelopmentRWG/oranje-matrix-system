@@ -1,35 +1,33 @@
 ---
 tags:
-  - departamento/qa
+  - department/qa
 aliases:
-  - Operador de QA
-  - Operador QA
   - QA Operator
 ---
 
-# Operador de QA
+# QA Operator
 
-Rol operativo del departamento de [[QA/QA|QA]]. Cada operador está asignado de forma fija a un departamento específico para monitorear sus métricas de desempeño y emitir observaciones de mejora.
+Operational role in the [[QA/QA|QA]] department. Each operator is permanently assigned to a specific department to monitor its performance metrics and issue improvement observations.
 
-## Departamentos asignados
+## Assigned Departments
 
-Cada operador cubre uno de los siguientes departamentos:
+Each operator covers one of the following departments:
 
-- [[Inspección/Inspección|Inspección]]
+- [[Inspección/Inspección|Inspection]]
 - [[Hotel/Hotel|Hotel]]
-- [[Colaborador/Colaborador|Colaborador]]
-- [[Ventas/Ventas|Ventas]]
-- [[Reclutamiento/Reclutamiento|Reclutamiento]]
+- [[Colaborador/Colaborador|Associate]]
+- [[Ventas/Ventas|Sales]]
+- [[Reclutamiento/Reclutamiento|Recruitment]]
 
-## Responsabilidades
+## Responsibilities
 
-- **Monitorea los semáforos** del departamento asignado ([[Semáforo del Colaborador]], [[Semáforo de Requisición]], [[Semáforo Onboarding]], etc.) para obtener contexto operativo.
-- **Mide métricas de desempeño** del departamento según los KPIs definidos en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]]: tiempos de respuesta, tasas de éxito, frecuencia de errores y cumplimiento de procesos.
-- **Emite observaciones formales** al departamento con hallazgos específicos y recomendaciones de mejora.
-- **Reporta al [[Manager de QA]]** con los datos recopilados y el estado de calidad del departamento.
-- **Alimenta el [[Indicador de Calidad]]** con los datos medidos para mantener actualizado el estado de calidad del departamento.
+- **Monitors the status indicators** of the assigned department ([[Semáforo del Colaborador]], [[Semáforo de Requisición]], [[Semáforo Onboarding]], etc.) to obtain operational context.
+- **Measures performance metrics** of the department according to the KPIs defined in [[QA/Métricas y KPIs por Departamento|Metrics and KPIs by Department]]: response times, success rates, error frequency, and process compliance.
+- **Issues formal observations** to the department with specific findings and improvement recommendations.
+- **Reports to the [[Manager de QA]]** with the collected data and the department's quality status.
+- **Feeds the [[Indicador de Calidad]]** with the measured data to keep the department's quality status up to date.
 
-## Relacionado
+## Related
 
 - [[Manager de QA]]
 - [[Indicador de Calidad]]

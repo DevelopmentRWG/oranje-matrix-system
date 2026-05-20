@@ -1,44 +1,44 @@
 ---
 tags:
-  - departamento/inspeccion
+  - department/inspection
 aliases:
-  - Inspección
-  - Departamento de Inspección
+  - Inspection
+  - Inspection Department
 ---
 
-# Inspección
+# Inspection
 
-Departamento encargado de la supervisión de colaboradores en sitio. Los inspectores verifican la llegada de colaboradores asignados, entregan uniformes, investigan incidencias y gestionan tarjetas de accidente laboral. Operan organizados por [[Zonas|zonas geográficas]] bajo la coordinación de un Coordinador.
+Department responsible for on-site supervision of associates. Inspectors verify the arrival of assigned associates, deliver uniforms, investigate incidents, and manage workplace accident cards. They operate organized by [[Zonas|geographic zones]] under the coordination of a Coordinator.
 
-## Contenido del módulo
+## Module Contents
 
 ### Roles
 
-- [[Inspección/Coordinador|Coordinador]] — Asigna inspectores a zonas, supervisa en campo y actúa como enlace interdepartamental.
-- [[Inspección/Inspector|Inspector]] — Verifica llegadas, entrega uniformes, investiga estados Rojo, ejecuta Blacklist manual y gestiona tarjetas de accidente.
+- [[Inspección/Coordinador|Coordinator]] — Assigns inspectors to zones, supervises in the field, and acts as an interdepartmental liaison.
+- [[Inspección/Inspector|Inspector]] — Verifies arrivals, delivers uniforms, investigates Red status cases, executes manual Blacklist, and manages accident cards.
 
-### Reglas
+### Rules
 
-- [[Inspección/Reglas de Inspección|Reglas de Inspección]]
+- [[Inspección/Reglas de Inspección|Inspection Rules]]
 
-### Procesos
+### Processes
 
-- Verificación de llegada Día 1 (transición Blanco → Verde manzana en [[Semáforo del Colaborador]]).
-- Entrega de uniforme Día 3+ (transición Verde manzana → Azul claro).
-- Investigación de estado Rojo → resolución hacia Negro ([[Core/Módulos/Blacklist|Blacklist]]) o Verde fuerte.
-- Gestión de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] — complemento y cierre de tarjeta (transición Gris → Verde fuerte).
+- Day 1 arrival verification (White → Apple Green transition in [[Semáforo del Colaborador]]).
+- Uniform delivery Day 3+ (Apple Green → Light Blue transition).
+- Red status investigation → resolution toward Black ([[Core/Módulos/Blacklist|Blacklist]]) or Dark Green.
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Workplace Accident]] management — card completion and closure (Gray → Dark Green transition).
 
-## Conceptos Core relacionados
+## Related Core Concepts
 
 - [[Semáforo del Colaborador]]
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Workplace Accident]]
 - [[Core/Módulos/Blacklist|Blacklist]]
 - [[Zonas]]
 - [[Indicador de Calidad]]
 
-## Relación con otros módulos
+## Relationship with Other Modules
 
-- [[Hotel/Hotel|Hotel]] — Los inspectores verifican colaboradores asignados a hoteles.
-- [[Reclutamiento/Reclutamiento|Reclutamiento]] — Inspección valida en sitio el resultado del proceso de reclutamiento.
-- [[QA/QA|QA]] — Un Operador de QA supervisa las métricas de desempeño de Inspección.
-- [[Customer Service/Customer Service|Customer Service]] — Customer Service coordina con el [[Inspección/Coordinador|Coordinador]] para incidencias del hotel que requieran verificación en sitio.
+- [[Hotel/Hotel|Hotel]] — Inspectors verify associates assigned to hotels.
+- [[Reclutamiento/Reclutamiento|Recruitment]] — Inspection validates on-site the result of the recruitment process.
+- [[QA/QA|QA]] — A QA Operator supervises Inspection's performance metrics.
+- [[Customer Service/Customer Service|Customer Service]] — Customer Service coordinates with the [[Inspección/Coordinador|Coordinator]] for hotel incidents that require on-site verification.

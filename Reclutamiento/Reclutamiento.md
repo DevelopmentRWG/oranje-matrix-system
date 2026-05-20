@@ -1,19 +1,19 @@
 ---
 tags:
-  - modulo/reclutamiento
+  - module/recruitment
 aliases:
-  - Reclutamiento
-  - Módulo de Reclutamiento
+  - Recruitment
+  - Recruitment Module
 ---
 
-# Reclutamiento
+# Recruitment
 
-Módulo encargado de:
+Module responsible for:
 
-- **Reclutar personal nuevo** para llenar la [[Pool de Colaboradores]].
-- **Asignar el personal** a los hoteles.
+- **Recruiting new staff** to fill the [[Pool de Colaboradores]].
+- **Assigning staff** to hotels.
 
-## Contenido del módulo
+## Module Contents
 
 ### Roles
 
@@ -21,12 +21,12 @@ Módulo encargado de:
 - [[Líder de Grupo de Reclutadoras]]
 - [[Reclutadora]]
 
-### Procesos
+### Processes
 
-- [[Flujo de Reclutamiento]] — alimenta la pool con colaboradores nuevos.
-- [[Flujo de Requisición]] — consume la pool para cubrir hoteles.
+- [[Flujo de Reclutamiento]] — feeds the pool with new associates.
+- [[Flujo de Requisición]] — consumes the pool to cover hotels.
 
-## Conceptos Core relacionados
+## Related Core Concepts
 
 - [[Pool de Colaboradores]]
 - [[Requisición]]

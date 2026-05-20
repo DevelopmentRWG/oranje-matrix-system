@@ -1,29 +1,29 @@
 ---
 tags:
-  - departamento/inspeccion
+  - department/inspection
 aliases:
-  - Coordinador
-  - Coordinador de Inspección
+  - Coordinator
+  - Inspection Coordinator
 ---
 
-# Coordinador
+# Coordinator
 
-Rol de supervisión del departamento de Inspección. Es el jefe de los [[Inspector|inspectores]], responsable de la asignación de zonas, la revisión de su trabajo en campo y la coordinación general de la operación de inspección.
+Supervisory role in the Inspection department. Is the manager of the [[Inspector|inspectors]], responsible for zone assignments, reviewing their field work, and the general coordination of inspection operations.
 
-## Responsabilidades
+## Responsibilities
 
-- Asigna [[Inspector|inspectores]] a las [[Zonas|zonas]] geográficas.
-- Revisa y supervisa el trabajo de los inspectores en campo.
-- Coordina la operación general del departamento de Inspección.
-- Escala problemas o casos que requieran atención especial.
-- Enlace entre el departamento de Inspección y otros departamentos ([[Reclutamiento/Reclutamiento|Reclutamiento]], [[Hotel/Hotel|Hotel]]).
-- Tiene visibilidad del **Indicador de Lunch Extendido** en el [[Timesheet]] para supervisar patrones de lunch extendido en las zonas asignadas.
-- Cuando un [[Inspector]] no está disponible (enfermedad, vacaciones u otra causa), reasigna temporalmente otro Inspector a esa zona para garantizar la cobertura operativa.
+- Assigns [[Inspector|inspectors]] to geographic [[Zonas|zones]].
+- Reviews and supervises the work of inspectors in the field.
+- Coordinates the overall operation of the Inspection department.
+- Escalates problems or cases that require special attention.
+- Liaison between the Inspection department and other departments ([[Reclutamiento/Reclutamiento|Recruitment]], [[Hotel/Hotel|Hotel]]).
+- Has visibility of the **Extended Lunch Indicator** in the [[Timesheet]] to supervise extended lunch patterns across assigned zones.
+- When an [[Inspector]] is unavailable (illness, vacation, or other cause), temporarily reassigns another Inspector to that zone to ensure operational coverage.
 
-## Relacionado
+## Related
 
 - [[Inspector]]
 - [[Zonas]]
 - [[Hotel/Hotel|Hotel]]
-- [[Reclutamiento/Reclutamiento|Reclutamiento]]
+- [[Reclutamiento/Reclutamiento|Recruitment]]
 - [[Timesheet]]

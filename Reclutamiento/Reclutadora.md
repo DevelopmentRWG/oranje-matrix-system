@@ -1,32 +1,32 @@
 ---
 tags:
-  - modulo/reclutamiento
+  - module/recruitment
 aliases:
-  - Reclutadora
+  - Recruiter
 ---
 
-# Reclutadora
+# Recruiter
 
-Rol operativo del módulo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Ejecuta el proceso de búsqueda, entrevista, validación y asignación de colaboradores a partir de una [[Requisición]].
+Operational role in the [[Reclutamiento/Reclutamiento|Reclutamiento]] module. Executes the process of searching, interviewing, validating, and assigning associates based on a [[Requisición]].
 
-## Responsabilidades
+## Responsibilities
 
-- Toma [[Requisición|requisiciones]] de la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]].
-- Busca en la [[Pool de Colaboradores|pool]] a los colaboradores disponibles que cumplan la requisición.
-- Consulta la [[Core/Módulos/Blacklist|Blacklist]] cuando un candidato se postula, para evitar volver a reclutar a alguien vetado.
-- Realiza la entrevista inicial y captura la información básica del colaborador:
-  - Edad
-  - Género
-  - Nombre completo
-  - Domicilio
-  - Teléfono
-- Valida y aprueba al colaborador después de que completa su alta en la app.
-- Habilita el acceso del colaborador a los paneles.
-- Consulta el [[Core/Módulos/Schedule|Schedule]] del hotel para ver las posiciones pendientes de cubrir.
-- Asigna al colaborador al hotel y lo registra en su [[Core/Módulos/Schedule|Schedule]].
-- Asigna temporalmente a colaboradores disponibles (transición amarillo → café en [[Semáforo del Colaborador]]).
+- Takes [[Requisición|requisitions]] from the shared inbox, prioritized by the [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]].
+- Searches the [[Pool de Colaboradores|pool]] for available associates who meet the requisition requirements.
+- Checks the [[Core/Módulos/Blacklist|Blacklist]] when a candidate applies, to avoid re-recruiting someone who is barred.
+- Conducts the initial interview and captures the associate's basic information:
+  - Age
+  - Gender
+  - Full name
+  - Address
+  - Phone
+- Validates and approves the associate after they complete their app registration.
+- Enables the associate's access to the panels.
+- Checks the hotel's [[Core/Módulos/Schedule|Schedule]] to see pending positions to fill.
+- Assigns the associate to the hotel and registers them in their [[Core/Módulos/Schedule|Schedule]].
+- Temporarily assigns available associates (yellow → brown transition in [[Semáforo del Colaborador]]).
 
-## Relacionado
+## Related
 
 - [[Flujo de Reclutamiento]]
 - [[Manager de Reclutamiento]]
