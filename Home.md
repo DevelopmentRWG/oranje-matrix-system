@@ -1,126 +1,126 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
   - Oranje Matrix System
   - Home
 ---
 # Oranje Matrix System
 
-Sistema de gestión organizacional para staffing de hoteles. Documenta los roles, procesos, reglas de negocio y módulos operativos que estructuran la operación de Oranje, desde el reclutamiento de personal hasta su asignación y seguimiento en hoteles clientes.
+Organizational management system for hotel staffing. It documents the roles, processes, business rules, and operational modules that structure Oranje's operations, from personnel recruitment to their assignment and tracking at client hotels.
 
-## Departamentos y Roles
+## Departments and Roles
 
-### [[Reclutamiento/Reclutamiento|Reclutamiento]]
+### [[Reclutamiento/Reclutamiento|Recruitment]]
 
-Búsqueda, entrevista y asignación de personal a hoteles.
+Search, interview, and assignment of personnel to hotels.
 
-- [[Manager de Reclutamiento]] — monitorea la operación de reclutamiento e interviene solo en casos excepcionales: balanceo entre grupos, líder ausente o corrección de error de asignación.
-- [[Líder de Grupo de Reclutadoras]] — recluta y supervisa el desempeño de un grupo de reclutadoras.
-- [[Reclutadora]] — busca, entrevista, valida y asigna colaboradores.
+- [[Manager de Reclutamiento]] — monitors the recruitment operation and intervenes only in exceptional cases: balancing between groups, absent team lead, or assignment error correction.
+- [[Líder de Grupo de Reclutadoras]] — recruits and supervises the performance of a group of recruiters.
+- [[Reclutadora]] — searches, interviews, validates, and assigns associates.
 
 ### [[Hotel/Hotel|Hotel]]
 
-Operación diaria y gestión de personal en hoteles clientes.
+Daily operations and personnel management at client hotels.
 
-- [[Hotel/Manager General|Manager General]] — máxima autoridad en hoteles con jerarquía extendida.
-- [[Hotel/Manager de Área|Manager de Área]] — aprueba requisiciones, genera QR de ponchado y gestiona el schedule semanal. En jerarquía extendida: Gerente de Departamento.
-- [[Hotel/Supervisor|Supervisor]] — crea requisiciones de personal y reporta accidentes laborales.
+- [[Hotel/Manager General|General Manager]] — highest authority at hotels with extended hierarchy.
+- [[Hotel/Manager de Área|Area Manager]] — approves requisitions, generates punch QR codes, and manages the weekly schedule. In extended hierarchy: Department Manager.
+- [[Hotel/Supervisor|Supervisor]] — creates personnel requisitions and reports work accidents.
 
-### [[Inspección/Inspección|Inspección]]
+### [[Inspección/Inspección|Inspection]]
 
-Supervisión de colaboradores en sitio durante sus primeros días de asignación.
+On-site supervision of associates during their first days of assignment.
 
-- [[Coordinador]] — asigna inspectores a zonas y actúa como enlace con otros departamentos.
-- [[Inspector]] — supervisa colaboradores en sitio, verifica llegadas y cierra tarjetas de accidente.
+- [[Coordinador]] — assigns inspectors to zones and acts as liaison with other departments.
+- [[Inspector]] — supervises associates on-site, verifies arrivals, and closes accident cards.
 
 ### [[QA/QA|QA]]
 
-Control de calidad sobre todos los departamentos de Oranje.
+Quality control across all Oranje departments.
 
-- [[Manager de QA]] — define métricas y KPIs, supervisa operadores y presenta reportes a dirección.
-- [[Operador de QA]] — monitorea semáforos, mide métricas y emite observaciones por departamento.
+- [[Manager de QA]] — defines metrics and KPIs, supervises operators, and presents reports to management.
+- [[Operador de QA]] — monitors status indicators, measures metrics, and issues observations per department.
 
-### [[Ventas/Ventas|Ventas]]
+### [[Ventas/Ventas|Sales]]
 
-Desarrollo de negocio y onboarding de nuevos hoteles clientes.
+Business development and onboarding of new client hotels.
 
-- [[Business Developer Coordinator]] — supervisa BDs en su territorio y da el visto bueno para convertir prospectos en clientes.
-- [[Business Developer]] — gestiona el ciclo comercial con hoteles prospectos.
+- [[Business Developer Coordinator]] — supervises BDs in their territory and approves the conversion of prospects into clients.
+- [[Business Developer]] — manages the commercial cycle with prospect hotels.
 
-Proceso: [[Onboarding-Hotel]]
+Process: [[Onboarding-Hotel]]
 
 ### [[Customer Service/Customer Service|Customer Service]]
 
-Atención post-onboarding al hotel cliente activo: consultas, quejas, seguimiento de incidencias y coordinación interdepartamental.
+Post-onboarding support for active client hotels: inquiries, complaints, incident follow-up, and interdepartmental coordination.
 
-- [[Customer Service/Customer Service Manager|Customer Service Manager]] — supervisa agentes, gestiona escalamientos y reporta métricas de satisfacción.
-- [[Customer Service/Agente de Customer Service|Agente de Customer Service]] — recibe, documenta y da seguimiento a solicitudes del hotel.
+- [[Customer Service/Customer Service Manager|Customer Service Manager]] — supervises agents, manages escalations, and reports satisfaction metrics.
+- [[Customer Service/Agente de Customer Service|Customer Service Agent]] — receives, documents, and follows up on hotel requests.
 
-### Contabilidad
+### Accounting
 
-Validación financiera semanal, gestión de pagos al colaborador y facturación al hotel.
+Weekly financial validation, associate payment management, and hotel billing.
 
-- [[Manager de Contabilidad]] — supervisa, aprueba y autoriza los procesos financieros semanales.
-- [[Contadora]] — ejecuta la validación, configuración y conciliación del ciclo de nómina.
+- [[Manager de Contabilidad]] — supervises, approves, and authorizes weekly financial processes.
+- [[Contadora]] — executes the validation, configuration, and reconciliation of the payroll cycle.
 
-Proceso: [[Contabilidad/Flujo de Nómina|Flujo de Nómina]]
+Process: [[Contabilidad/Flujo de Nómina|Payroll Flow]]
 
-## Entidad Central
+## Central Entity
 
-- [[Colaborador/Colaborador|Colaborador]] — la persona que se recluta, asigna y opera en los hoteles. Su ciclo de vida es el eje del sistema.
+- [[Colaborador/Colaborador|Associate]] — the person who is recruited, assigned, and operates at hotels. Their lifecycle is the system's axis.
 
-## Módulos Core
+## Core Modules
 
-### Procesos
+### Processes
 
-- [[Requisición]] — solicitud formal de personal por parte de un hotel. Ver [[Flujo de Requisición]].
-- [[Contrato]] — acuerdo legal entre Oranje y el colaborador.
-- [[Flujo de Reclutamiento]] — proceso de captación y alta de colaboradores nuevos.
-- [[Flujo de Onboarding]] — proceso de incorporación de un hotel nuevo como cliente.
+- [[Requisición]] — formal personnel request from a hotel. See [[Flujo de Requisición]].
+- [[Contrato]] — legal agreement between Oranje and the associate.
+- [[Flujo de Reclutamiento]] — recruitment and onboarding process for new associates.
+- [[Flujo de Onboarding]] — onboarding process for a new hotel as a client.
 
-### Operación
+### Operations
 
-- [[Core/Módulos/Schedule|Schedule]] — asignación semanal de colaboradores a hoteles.
-- [[Timesheet]] — registro de horas trabajadas mediante ponches QR.
-- [[Pool de Colaboradores]] — repositorio de colaboradores disponibles para asignación.
+- [[Core/Módulos/Schedule|Schedule]] — weekly assignment of associates to hotels.
+- [[Timesheet]] — record of worked hours via QR punches.
+- [[Pool de Colaboradores]] — repository of associates available for assignment.
 
 ### Control
 
-- [[Core/Módulos/Blacklist|Blacklist]] — registro de colaboradores bloqueados.
-- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]] — gestión de incidentes en sitio. Ver [[Flujo de Accidente Laboral]].
-- [[Reglas de Negocio]] — restricciones y condiciones operativas del sistema.
+- [[Core/Módulos/Blacklist|Blacklist]] — registry of blocked associates.
+- [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]] — on-site incident management. See [[Flujo de Accidente Laboral]].
+- [[Reglas de Negocio]] — operational restrictions and conditions of the system.
 
-### Contabilidad
+### Accounting
 
-- [[Consolidado Semanal del Colaborador]] — resumen semanal de timesheets y cálculo de pago.
-- [[Deducciones]] — descuentos automáticos al cheque del colaborador.
-- [[Facturación al Hotel]] — documento fiscal semanal de cobro al hotel.
-- [[Vacaciones]] — cálculo de pago vacacional basado en promedio de 52 semanas.
+- [[Consolidado Semanal del Colaborador]] — weekly timesheet summary and payment calculation.
+- [[Deducciones]] — automatic deductions from the associate's paycheck.
+- [[Facturación al Hotel]] — weekly fiscal billing document to the hotel.
+- [[Vacaciones]] — vacation pay calculation based on 52-week average.
 
-## Catálogos
+## Catalogs
 
-- [[Posiciones]] — tipos de puesto que puede ocupar un colaborador.
-- [[Zonas]] — áreas geográficas de operación.
-- [[Niveles de Inglés]] — escala de competencia lingüística de colaboradores.
-- [[Departamentos del Hotel]] — áreas operativas internas del hotel.
-- [[Modalidades de Contratación]] — formas de contrato disponibles.
+- [[Posiciones]] — types of positions an associate can hold.
+- [[Zonas]] — geographic areas of operation.
+- [[Niveles de Inglés]] — associate language proficiency scale.
+- [[Departamentos del Hotel]] — hotel internal operational areas.
+- [[Modalidades de Contratación]] — available employment types.
 
-## Semáforos
+## Status Indicators
 
-Indicadores de estado que reflejan la situación operativa de cada entidad en tiempo real.
+Status indicators that reflect the real-time operational situation of each entity.
 
-- [[Semáforo del Colaborador]] — estado del colaborador en su ciclo de vida.
-- [[Semáforo de Requisición]] — estado de una requisición en su proceso de cobertura.
-- [[Semáforo de Urgencia de Requisición]] — nivel de urgencia de una requisición abierta.
-- [[Semáforo de Posiciones de la Requisición]] — estado de cada posición dentro de una requisición.
-- [[Semáforo Onboarding]] — estado de la negociación con un hotel prospecto.
-- [[Indicador de Calidad]] — nivel de desempeño de un área supervisada por QA.
-- [[Indicador de Cumplimiento del Timesheet]] — comparación entre horas trabajadas y horas contractuales del colaborador.
+- [[Semáforo del Colaborador]] — associate status in their lifecycle.
+- [[Semáforo de Requisición]] — requisition status in its coverage process.
+- [[Semáforo de Urgencia de Requisición]] — urgency level of an open requisition.
+- [[Semáforo de Posiciones de la Requisición]] — status of each position within a requisition.
+- [[Semáforo Onboarding]] — status of the negotiation with a prospect hotel.
+- [[Indicador de Calidad]] — performance level of an area supervised by QA.
+- [[Indicador de Cumplimiento del Timesheet]] — comparison between worked hours and the associate's contractual hours.
 
-## Simulaciones
+## Simulations
 
-Recorridos narrativos que ilustran cómo opera el sistema desde la perspectiva de cada departamento.
+Narrative walkthroughs that illustrate how the system operates from the perspective of each department.
 
 - [[Simulación - Punto de Vista de Reclutamiento]]
 - [[Simulación - Ciclo de Vida del Colaborador]]

@@ -1,368 +1,368 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Arquitectura del Sistema
-  - Blueprint Oranje
+  - System Architecture
+  - Oranje Blueprint
 ---
-# Arquitectura Organizacional del Vault Oranje Matrix System
-## Blueprint para replicar en un nuevo sistema
+# Organizational Architecture of the Oranje Matrix System Vault
+## Blueprint for replicating in a new system
 
-El vault **oranje-matrix-system** documenta un sistema de staffing para hoteles. Esta es la arquitectura extraída como patrón replicable para cualquier sistema organizacional nuevo.
+The **oranje-matrix-system** vault documents a hotel staffing system. This is the architecture extracted as a replicable pattern for any new organizational system.
 
 ---
 
-## 1. Principio de diseño: Hub-and-Spoke departamental
+## 1. Design Principle: Departmental Hub-and-Spoke
 
 ```
-                    Home.md (hub central)
+                    Home.md (central hub)
                          │
         ┌────────┬───────┼───────┬────────┐
         │        │       │       │        │
-   Departamento Departamento  Core/   Entidad   Simulaciones/
-       A/          B/      │    Central/
+   Department  Department  Core/  Central   Simulations/
+       A/          B/      │    Entity/
                        ┌───┼───┐
-                  Catálogos/ Módulos/ Semáforos/
+                  Catalogs/ Modules/ Status Indicators/
 ```
 
-**Regla:** Todo se accede desde `Home.md`. Cada carpeta de primer nivel es autónoma pero interconectada vía wikilinks.
+**Rule:** Everything is accessed from `Home.md`. Each top-level folder is autonomous but interconnected via wikilinks.
 
 ---
 
-## 2. Estructura de carpetas (patrón replicable)
+## 2. Folder Structure (replicable pattern)
 
 ```
-nuevo-sistema/
+new-system/
 │
-├── Home.md                          ← Índice maestro (hub central)
+├── Home.md                          ← Master index (central hub)
 │
-├── Core/                            ← Módulos transversales compartidos
-│   ├── Catálogos/                   ← Datos de referencia (enums, listas)
-│   │   ├── Catalogo-A.md
-│   │   └── Catalogo-B.md
-│   └── Módulos/                     ← Entidades y procesos del sistema
-│       ├── Semáforos/               ← State-machines visuales (indicadores)
-│       │   ├── Semáforo de X.md
-│       │   └── Indicador de Y.md
-│       ├── [Submodulo-Complejo]/    ← Carpeta propia si tiene flujo + entidad
-│       │   ├── Entidad.md
-│       │   └── Flujo de Entidad.md
-│       ├── Modulo-Simple.md         ← Archivo único si no necesita flujo
-│       └── Reglas de Negocio.md     ← Fuente de verdad centralizada
+├── Core/                            ← Shared cross-cutting modules
+│   ├── Catalogs/                    ← Reference data (enums, lists)
+│   │   ├── Catalog-A.md
+│   │   └── Catalog-B.md
+│   └── Modules/                     ← System entities and processes
+│       ├── Status Indicators/       ← Visual state-machines (indicators)
+│       │   ├── Status Indicator of X.md
+│       │   └── Indicator of Y.md
+│       ├── [Complex-Submodule]/     ← Own folder if it has flow + entity
+│       │   ├── Entity.md
+│       │   └── Entity Flow.md
+│       ├── Simple-Module.md         ← Single file if no flow needed
+│       └── Business Rules.md        ← Centralized source of truth
 │
-├── [Departamento-A]/                ← Un folder por departamento
-│   ├── Departamento-A.md           ← Hub/índice del departamento
-│   ├── Rol-1.md                    ← Un archivo por rol
-│   ├── Rol-2.md
-│   ├── Reglas de Departamento-A.md ← Reglas locales del departamento
-│   └── Flujo de Proceso-A.md      ← Procesos propios del departamento
+├── [Department-A]/                  ← One folder per department
+│   ├── Department-A.md             ← Department hub/index
+│   ├── Role-1.md                   ← One file per role
+│   ├── Role-2.md
+│   ├── Department-A Rules.md       ← Local department rules
+│   └── Process-A Flow.md           ← Department-specific processes
 │
-├── [Departamento-B]/
-│   ├── ...mismo patrón...
-│   └── Subfolder/                   ← Sub-áreas si el departamento es complejo
-│       ├── Subfolder.md            ← Hub del sub-área
-│       ├── Flujo de Sub-Proceso.md
-│       └── Conceptos/             ← Definiciones propias del sub-área
+├── [Department-B]/
+│   ├── ...same pattern...
+│   └── Subfolder/                   ← Sub-areas if department is complex
+│       ├── Subfolder.md            ← Sub-area hub
+│       ├── Sub-Process Flow.md
+│       └── Concepts/               ← Sub-area-specific definitions
 │
-├── [Entidad-Central]/               ← La entidad principal del negocio
-│   ├── Entidad-Central.md
-│   └── Reglas de Entidad.md
+├── [Central-Entity]/                ← The main business entity
+│   ├── Central-Entity.md
+│   └── Entity Rules.md
 │
-├── [Capa-de-Control]/               ← QA, auditoría, supervisión
+├── [Control-Layer]/                 ← QA, auditing, supervision
 │   ├── Control.md
-│   ├── Reglas de Control.md
-│   ├── Métricas y KPIs.md
+│   ├── Control Rules.md
+│   ├── Metrics and KPIs.md
 │   └── Dashboard.md
 │
-├── Simulaciones/                    ← Documentación narrativa
-│   ├── Simulación - Vista de Dept-A.md
-│   └── Simulación - Vista de Dept-B.md
+├── Simulations/                     ← Narrative documentation
+│   ├── Simulation - Dept-A Perspective.md
+│   └── Simulation - Dept-B Perspective.md
 │
-└── .claude/                         ← Agentes IA (opcional)
+└── .claude/                         ← AI agents (optional)
     └── agents/
-        ├── consultor.md             ← Agente de lectura/consulta
-        └── editor.md               ← Agente de escritura
+        ├── consultant.md            ← Read/query agent
+        └── editor.md               ← Write agent
 ```
 
 ---
 
-## 3. Taxonomía de tipos de archivo
+## 3. File Type Taxonomy
 
-Cada archivo en el vault tiene un **tipo** que determina su estructura interna:
+Each file in the vault has a **type** that determines its internal structure:
 
-| Tipo | Convención de nombre | Propósito | Ejemplo |
-|------|---------------------|-----------|---------|
-| **Hub/Índice** | `[Nombre-Departamento].md` | Punto de entrada a una carpeta | `Hotel.md`, `QA.md` |
-| **Rol** | `[Título del Rol].md` | Define responsabilidades de un actor | `Reclutadora.md`, `Inspector.md` |
-| **Reglas** | `Reglas de [Área].md` | Restricciones y políticas | `Reglas del Hotel.md` |
-| **Flujo** | `Flujo de [Proceso].md` | Workflow paso a paso | `Flujo de Nómina.md` |
-| **Semáforo** | `Semáforo de [Entidad].md` | State-machine visual | `Semáforo del Colaborador.md` |
-| **Indicador** | `Indicador de [Métrica].md` | KPI con umbrales | `Indicador de Calidad.md` |
-| **Catálogo** | `[Nombre descriptivo].md` | Datos de referencia (enums) | `Posiciones.md`, `Zonas.md` |
-| **Módulo** | `[Nombre del módulo].md` | Entidad de sistema | `Schedule.md`, `Contrato.md` |
-| **Simulación** | `Simulación - [Perspectiva].md` | Recorrido narrativo | `Simulación - Vista de QA.md` |
-| **Concepto** | `[Nombre del concepto].md` | Definición de un sub-elemento | `Propuesta Personalizada.md` |
+| Type | Naming Convention | Purpose | Example |
+|------|-------------------|---------|---------|
+| **Hub/Index** | `[Department-Name].md` | Entry point for a folder | `Hotel.md`, `QA.md` |
+| **Role** | `[Role Title].md` | Defines an actor's responsibilities | `Recruiter.md`, `Inspector.md` |
+| **Rules** | `[Area] Rules.md` | Restrictions and policies | `Hotel Rules.md` |
+| **Flow** | `[Process] Flow.md` | Step-by-step workflow | `Payroll Flow.md` |
+| **Status Indicator** | `[Entity] Status Indicator.md` | Visual state-machine | `Associate Status Indicator.md` |
+| **Indicator** | `[Metric] Indicator.md` | KPI with thresholds | `Quality Indicator.md` |
+| **Catalog** | `[Descriptive name].md` | Reference data (enums) | `Positions.md`, `Zones.md` |
+| **Module** | `[Module name].md` | System entity | `Schedule.md`, `Contract.md` |
+| **Simulation** | `Simulation - [Perspective].md` | Narrative walkthrough | `Simulation - QA Perspective.md` |
+| **Concept** | `[Concept name].md` | Sub-element definition | `Customized Proposal.md` |
 
 ---
 
-## 4. Plantilla de cada tipo de archivo
+## 4. Template for Each File Type
 
-### Hub/Índice departamental
+### Department Hub/Index
 ```markdown
 ---
 tags:
-  - departamento/[nombre]
+  - department/[name]
 aliases:
-  - [Alias alternativo]
+  - [Alternative alias]
 ---
-# [Nombre del Departamento]
+# [Department Name]
 
-> Descripción en una línea del propósito del departamento.
+> One-line description of the department's purpose.
 
 ## Roles
-- [[Rol-1]]
-- [[Rol-2]]
+- [[Role-1]]
+- [[Role-2]]
 
-## Procesos
-- [[Flujo de X]]
+## Processes
+- [[X Flow]]
 
-## Reglas
-- [[Reglas de Departamento]]
+## Rules
+- [[Department Rules]]
 
-## Relación con otros módulos
-- [[Módulo-Core-Relacionado]]
-- [[Otro-Departamento]]
+## Relationship with Other Modules
+- [[Related-Core-Module]]
+- [[Other-Department]]
 ```
 
-### Rol
+### Role
 ```markdown
 ---
 tags:
-  - rol/[departamento]
+  - role/[department]
 aliases:
-  - [Nombre alternativo del rol]
+  - [Alternative role name]
 ---
-# [Nombre del Rol]
+# [Role Name]
 
-> Descripción breve.
+> Brief description.
 
-## Responsabilidades
-- Responsabilidad 1
-- Responsabilidad 2
+## Responsibilities
+- Responsibility 1
+- Responsibility 2
 
-## Interacciones
-- Con [[Otro Rol]]: descripción de la interacción
-- Con [[Módulo]]: cómo lo usa
+## Interactions
+- With [[Other Role]]: interaction description
+- With [[Module]]: how they use it
 ```
 
-### Flujo
+### Flow
 ```markdown
 ---
 tags:
-  - flujo/[area]
+  - flow/[area]
 aliases:
   - [Alias]
 ---
-# Flujo de [Proceso]
+# [Process] Flow
 
-## Actores involucrados
-| Actor | Rol en el flujo |
-|-------|----------------|
-| [[Rol-1]] | Descripción |
+## Actors Involved
+| Actor | Role in the Flow |
+|-------|-----------------|
+| [[Role-1]] | Description |
 
-## Pasos
-1. **[Actor]** hace X
-2. ¿Condición? → SÍ: paso 3 / NO: paso 4
+## Steps
+1. **[Actor]** does X
+2. Condition? → YES: step 3 / NO: step 4
 3. ...
 
-## Reglas clave
-- Regla aplicable 1
-- Regla aplicable 2
+## Key Rules
+- Applicable rule 1
+- Applicable rule 2
 
-## Relacionado
-- [[Semáforo de X]]
-- [[Módulo Y]]
+## Related
+- [[Status Indicator of X]]
+- [[Module Y]]
 ```
 
-### Semáforo (State-Machine)
+### Status Indicator (State-Machine)
 ```markdown
 ---
 tags:
-  - semaforo/[entidad]
+  - status-indicator/[entity]
 aliases:
-  - Status [Entidad] [Color1]
-  - Status [Entidad] [Color2]
+  - [Entity] Status [Color1]
+  - [Entity] Status [Color2]
 ---
-# Semáforo de [Entidad]
+# [Entity] Status Indicator
 
-| Color | Estado | Responsable | Descripción |
-|-------|--------|-------------|-------------|
-| Verde | Activo | Sistema | ... |
-| Amarillo | En riesgo | [[Rol]] | ... |
-| Rojo | Crítico | [[Rol]] | ... |
+| Color | State | Responsible | Description |
+|-------|-------|-------------|-------------|
+| Green | Active | System | ... |
+| Yellow | At Risk | [[Role]] | ... |
+| Red | Critical | [[Role]] | ... |
 
-## Detalle por estado
+## Detail by State
 
-### Verde — Activo
-- Condición de entrada: ...
-- Acciones permitidas: ...
-- Transiciones posibles: → Amarillo (si...), → Rojo (si...)
+### Green — Active
+- Entry condition: ...
+- Allowed actions: ...
+- Possible transitions: → Yellow (if...), → Red (if...)
 
-## Reglas clave
+## Key Rules
 - ...
 
-## Relacionado
-- [[Flujo de X]]
-- [[Reglas de Negocio]]
+## Related
+- [[X Flow]]
+- [[Business Rules]]
 ```
 
-### Reglas de Negocio (centralizado)
+### Business Rules (centralized)
 ```markdown
 ---
 tags:
-  - modulo/core
+  - module/core
 ---
-# Reglas de Negocio
+# Business Rules
 
-## [Dominio 1: Entidad Central]
-- Regla 1
-- Regla 2
+## [Domain 1: Central Entity]
+- Rule 1
+- Rule 2
 
-> [!important] Regla crítica destacada
+> [!important] Highlighted critical rule
 
-## [Dominio 2: Proceso X]
+## [Domain 2: Process X]
 - ...
 
-> [!warning] Restricción de seguridad
+> [!warning] Security restriction
 ```
 
-### Catálogo
+### Catalog
 ```markdown
 ---
 tags:
-  - catalogo/[nombre]
+  - catalog/[name]
 ---
-# [Nombre del catálogo]
+# [Catalog Name]
 
-- Valor 1
-- Valor 2
-- Valor 3
+- Value 1
+- Value 2
+- Value 3
 
-> [!info] Esta lista no es exhaustiva / es exhaustiva.
+> [!info] This list is non-exhaustive / exhaustive.
 
-## Relacionado
-- [[Módulo que lo consume]]
+## Related
+- [[Module that consumes it]]
 ```
 
 ---
 
-## 5. Sistema de conexiones (wikilinks)
+## 5. Connection System (wikilinks)
 
-### Jerarquía de referencias
+### Reference Hierarchy
 ```
 Home.md
   └─→ [Dept].md (hub)
-        ├─→ Roles (hacia abajo)
-        ├─→ Flujos (hacia abajo)
-        ├─→ Reglas locales (lateral)
-        └─→ Core/Módulos (hacia el centro)
-              ├─→ Semáforos (lateral)
-              ├─→ Catálogos (datos)
-              └─→ Reglas de Negocio (fuente de verdad)
+        ├─→ Roles (downward)
+        ├─→ Flows (downward)
+        ├─→ Local rules (lateral)
+        └─→ Core/Modules (toward the center)
+              ├─→ Status Indicators (lateral)
+              ├─→ Catalogs (data)
+              └─→ Business Rules (source of truth)
 ```
 
-### Regla de conexión
-- **Vertical:** Hub → Roles → Flujos (de lo general a lo específico)
-- **Horizontal:** Departamento ↔ Departamento (cuando interactúan)
-- **Central:** Todo apunta a `Core/Módulos/` para entidades compartidas
-- **Aliases:** Permiten múltiples formas de referenciar el mismo concepto
+### Connection Rule
+- **Vertical:** Hub → Roles → Flows (from general to specific)
+- **Horizontal:** Department ↔ Department (when they interact)
+- **Central:** Everything points to `Core/Modules/` for shared entities
+- **Aliases:** Allow multiple ways to reference the same concept
 
 ---
 
-## 6. Sistema de tags (frontmatter)
+## 6. Tag System (frontmatter)
 
 ```
-Patrón: [tipo]/[área]
+Pattern: [type]/[area]
 
-Tipos usados:
-  - modulo/[nombre]        → Módulos core y departamentales
-  - departamento/[nombre]  → Archivos departamentales
-  - rol/[departamento]     → Roles de cada área
-  - flujo/[area]           → Flujos de proceso
-  - semaforo/[entidad]     → Indicadores de estado
-  - catalogo/[nombre]      → Catálogos de referencia
+Types used:
+  - module/[name]              → Core and departmental modules
+  - department/[name]          → Departmental files
+  - role/[department]          → Roles in each area
+  - flow/[area]                → Process flows
+  - status-indicator/[entity]  → Status indicators
+  - catalog/[name]             → Reference catalogs
 ```
 
 ---
 
-## 7. Capas del sistema (de abajo hacia arriba)
+## 7. System Layers (bottom-up)
 
 ```
-┌─────────────────────────────────────────────┐
-│  CAPA 5: Simulaciones (documentación narrativa) │
-├─────────────────────────────────────────────┤
-│  CAPA 4: QA / Control (transversal)            │
-├─────────────────────────────────────────────┤
-│  CAPA 3: Departamentos operativos              │
-│  (Reclutamiento, Ventas, Inspección, etc.)     │
-├─────────────────────────────────────────────┤
-│  CAPA 2: Módulos Core + Semáforos              │
-│  (Schedule, Pool, Timesheet, Contrato, etc.)   │
-├─────────────────────────────────────────────┤
-│  CAPA 1: Fundamentos                          │
-│  (Catálogos + Reglas de Negocio + Entidad Central) │
-└─────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────┐
+│  LAYER 5: Simulations (narrative documentation)     │
+├─────────────────────────────────────────────────┤
+│  LAYER 4: QA / Control (cross-cutting)              │
+├─────────────────────────────────────────────────┤
+│  LAYER 3: Operational departments                   │
+│  (Recruitment, Sales, Inspection, etc.)             │
+├─────────────────────────────────────────────────┤
+│  LAYER 2: Core Modules + Status Indicators          │
+│  (Schedule, Pool, Timesheet, Contract, etc.)        │
+├─────────────────────────────────────────────────┤
+│  LAYER 1: Foundations                               │
+│  (Catalogs + Business Rules + Central Entity)       │
+└─────────────────────────────────────────────────┘
 ```
 
-- **Capa 1** no depende de nadie. Define los datos base y las reglas.
-- **Capa 2** implementa las reglas como módulos operativos y state-machines.
-- **Capa 3** consume los módulos core para sus procesos departamentales.
-- **Capa 4** observa todas las capas inferiores y mide su desempeño.
-- **Capa 5** documenta recorridos completos a través de todas las capas.
+- **Layer 1** depends on nothing. Defines base data and rules.
+- **Layer 2** implements the rules as operational modules and state-machines.
+- **Layer 3** consumes core modules for their departmental processes.
+- **Layer 4** observes all lower layers and measures their performance.
+- **Layer 5** documents complete walkthroughs across all layers.
 
 ---
 
-## 8. Números del sistema actual (referencia)
+## 8. Current System Numbers (reference)
 
-| Concepto | Cantidad |
-|----------|----------|
-| Departamentos | 8 (+ Core + Entidad Central) |
+| Concept | Count |
+|---------|-------|
+| Departments | 8 (+ Core + Central Entity) |
 | Roles | 14 |
-| Flujos | 6 |
-| Semáforos/Indicadores | 7 |
-| Catálogos | 5 |
-| Módulos Core | ~10 |
-| Simulaciones | 7 |
-| Total archivos .md | ~89 |
+| Flows | 6 |
+| Status Indicators | 7 |
+| Catalogs | 5 |
+| Core Modules | ~10 |
+| Simulations | 7 |
+| Total .md files | ~89 |
 
 ---
 
-## 9. Checklist para replicar esta arquitectura en un nuevo sistema
+## 9. Checklist for Replicating This Architecture in a New System
 
-1. [ ] Definir la **entidad central** del negocio (equivalente a "Colaborador")
-2. [ ] Identificar los **departamentos** que operan sobre esa entidad
-3. [ ] Crear `Home.md` como hub central
-4. [ ] Crear `Core/` con:
-   - [ ] `Catálogos/` — datos de referencia del sistema
-   - [ ] `Módulos/` — entidades compartidas entre departamentos
-   - [ ] `Módulos/Semáforos/` — indicadores de estado por entidad clave
-   - [ ] `Reglas de Negocio.md` — fuente de verdad centralizada
-5. [ ] Por cada departamento crear carpeta con:
-   - [ ] `[Dept].md` — hub/índice
-   - [ ] Un archivo por rol
-   - [ ] `Reglas de [Dept].md`
-   - [ ] `Flujo de [Proceso].md` si tiene procesos propios
-6. [ ] Crear `Simulaciones/` con un recorrido por perspectiva de departamento
-7. [ ] Conectar todo con wikilinks bidireccionales
-8. [ ] Aplicar tags con patrón `[tipo]/[área]`
-9. [ ] (Opcional) Crear agentes Claude en `.claude/agents/`
+1. [ ] Define the **central entity** of the business (equivalent to "Associate")
+2. [ ] Identify the **departments** that operate on that entity
+3. [ ] Create `Home.md` as the central hub
+4. [ ] Create `Core/` with:
+   - [ ] `Catalogs/` — system reference data
+   - [ ] `Modules/` — shared entities across departments
+   - [ ] `Modules/Status Indicators/` — status indicators per key entity
+   - [ ] `Business Rules.md` — centralized source of truth
+5. [ ] For each department create a folder with:
+   - [ ] `[Dept].md` — hub/index
+   - [ ] One file per role
+   - [ ] `[Dept] Rules.md`
+   - [ ] `[Process] Flow.md` if it has its own processes
+6. [ ] Create `Simulations/` with a walkthrough per department perspective
+7. [ ] Connect everything with bidirectional wikilinks
+8. [ ] Apply tags with `[type]/[area]` pattern
+9. [ ] (Optional) Create Claude agents in `.claude/agents/`
 
 ---
 
-## 10. Anti-patrones evitados en este vault
+## 10. Anti-patterns Avoided in This Vault
 
-- **No hay archivos huérfanos** — todo está enlazado desde al menos un hub
-- **No hay reglas duplicadas** — las reglas viven en un solo lugar ([[Reglas de Negocio]] central o `Reglas de [Dept].md` local) y se referencian, no se copian
-- **No hay jerarquía profunda** — máximo 4 niveles de anidación
-- **No hay mezcla de idiomas** — todo en español consistentemente
-- **Los semáforos no definen reglas** — las implementan. La definición está en [[Reglas de Negocio]]
+- **No orphan files** — everything is linked from at least one hub
+- **No duplicated rules** — rules live in a single place ([[Reglas de Negocio]] centralized or `[Dept] Rules.md` local) and are referenced, not copied
+- **No deep hierarchy** — maximum 4 levels of nesting
+- **No language mixing** — everything consistently in English
+- **Status indicators don't define rules** — they implement them. The definition lives in [[Reglas de Negocio]]
