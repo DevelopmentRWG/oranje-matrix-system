@@ -1,209 +1,209 @@
 ---
 tags:
-  - modulo/onboarding-hotel
+  - module/onboarding-hotel
 aliases:
-  - Semáforo Onboarding
-  - Semáforo de Onboarding Hotel
-  - Status Onboarding Gris
-  - Status Onboarding Azul Claro
-  - Status Onboarding Café
-  - Status Onboarding Verde
-  - Status Onboarding Amarillo
-  - Status Onboarding Rosa
-  - Status Onboarding Naranja
-  - Status Onboarding Rojo
-  - Status Onboarding Negro
+  - Onboarding Status Indicator
+  - Hotel Onboarding Status Indicator
+  - Onboarding Status Gray
+  - Onboarding Status Light Blue
+  - Onboarding Status Brown
+  - Onboarding Status Green
+  - Onboarding Status Yellow
+  - Onboarding Status Pink
+  - Onboarding Status Orange
+  - Onboarding Status Red
+  - Onboarding Status Black
 ---
 
-# Semáforo Onboarding
+# Onboarding Status Indicator
 
-Sistema de estados que representa el seguimiento de la negociación comercial con un hotel, desde su identificación como prospecto hasta su activación como cliente (o su pausa/rechazo).
+Status system that represents the tracking of commercial negotiation with a hotel, from its identification as a prospect to its activation as a client (or its pause/rejection).
 
 > [!info]
-> Este semáforo aplica únicamente al módulo de [[Onboarding-Hotel|Onboarding Hotel]]. Una vez el hotel alcanza [[#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]], su operación se rige por los semáforos del módulo [[Hotel/Hotel|Hotel]] ([[Semáforo de Requisición]], [[Semáforo del Colaborador]], etc.).
+> This Status Indicator applies exclusively to the [[Onboarding-Hotel|Hotel Onboarding]] module. Once the hotel reaches [[#Orange — Signed agreement, active hotel client|Orange]], its operation is governed by the Status Indicators in the [[Hotel/Hotel|Hotel]] module ([[Semáforo de Requisición]], [[Semáforo del Colaborador]], etc.).
 
-## Estados
+## States
 
-| Color      | Estado                                                              | Responsable                                                          |
-| ---------- | ------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Gris       | [[#Gris — Hotel identificado\|Hotel identificado]]                  | [[Business Developer\|BD]]                                           |
-| Azul claro | [[#Azul Claro — Contacto y recopilación de datos\|Contacto y recopilación de datos]] | [[Business Developer\|BD]]                          |
-| Café       | [[#Café — Renegociación / desbloqueo\|Renegociación / desbloqueo]]  | [[Business Developer Coordinator\|BDC]]                              |
-| Verde      | [[#Verde — Propuesta enviada\|Propuesta enviada]]                   | [[Business Developer\|BD]]                                           |
-| Amarillo   | [[#Amarillo — En seguimiento tras propuesta\|En seguimiento tras propuesta]] | [[Business Developer\|BD]]                                  |
-| Rosa       | [[#Rosa — Negociación de términos\|Negociación de términos]]        | [[Business Developer\|BD]] + [[Business Developer Coordinator\|BDC]] |
-| Naranja    | [[#Naranja — Acuerdo firmado, hotel cliente activo\|Acuerdo firmado, hotel cliente activo]] | [[Business Developer Coordinator\|BDC]]       |
-| Rojo       | [[#Rojo — Rechazo o no interés\|Rechazo o no interés]]              | [[Business Developer\|BD]]                                           |
-| Negro      | [[#Negro — Cliente pausado o inactivo\|Cliente pausado o inactivo]]  | [[Business Developer Coordinator\|BDC]]                              |
-
----
-
-## Gris — Hotel identificado
-
-**Responsable:** [[Business Developer]]
-
-El BD identifica el hotel dentro de su territorio como posible cliente.
-
-**Avance →** cuando inicia contacto y recopilación de datos, pasa a [[#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
+| Color      | State                                                                                      | Responsible                                                          |
+| ---------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| Gray       | [[#Gray — Hotel identified\|Hotel identified]]                                             | [[Business Developer\|BD]]                                           |
+| Light Blue | [[#Light Blue — Contact and data collection\|Contact and data collection]]                 | [[Business Developer\|BD]]                                           |
+| Brown      | [[#Brown — Renegotiation / unblocking\|Renegotiation / unblocking]]                        | [[Business Developer Coordinator\|BDC]]                              |
+| Green      | [[#Green — Proposal sent\|Proposal sent]]                                                  | [[Business Developer\|BD]]                                           |
+| Yellow     | [[#Yellow — Follow-up after proposal\|Follow-up after proposal]]                           | [[Business Developer\|BD]]                                           |
+| Pink       | [[#Pink — Terms negotiation\|Terms negotiation]]                                           | [[Business Developer\|BD]] + [[Business Developer Coordinator\|BDC]] |
+| Orange     | [[#Orange — Signed agreement, active hotel client\|Signed agreement, active hotel client]] | [[Business Developer Coordinator\|BDC]]                              |
+| Red        | [[#Red — Rejection or no interest\|Rejection or no interest]]                              | [[Business Developer\|BD]]                                           |
+| Black      | [[#Black — Paused or inactive client\|Paused or inactive client]]                          | [[Business Developer Coordinator\|BDC]]                              |
 
 ---
 
-## Azul Claro — Contacto y recopilación de datos
+## Gray — Hotel identified
 
-**Responsable:** [[Business Developer]]
+**Responsible:** [[Business Developer]]
 
-### Acciones durante este status
+The BD identifies the hotel within their territory as a possible client.
 
-- Crea el perfil del hotel en el sistema.
-- Recopila datos: nombre del hotel, email, teléfono, nombre y cargo del contacto, necesidad del negocio.
-- Realiza visita en frío al hotel.
-
-**Avance →** al enviar la [[Propuesta Personalizada|propuesta]], pasa a [[#Verde — Propuesta enviada|Verde]].
-
-> También se llega aquí por reactivación desde [[#Rojo — Rechazo o no interés|Rojo]], [[#Negro — Cliente pausado o inactivo|Negro]] o [[#Café — Renegociación / desbloqueo|Café]].
+**Advance →** when contact and data collection begins, moves to [[#Light Blue — Contact and data collection|Light Blue]].
 
 ---
 
-## Verde — Propuesta enviada
+## Light Blue — Contact and data collection
 
-**Responsable:** [[Business Developer]]
+**Responsible:** [[Business Developer]]
 
-### Acciones durante este status
+### Actions during this status
 
-- Elabora [[Propuesta Personalizada|propuesta personalizada]] (servicios, precios, condiciones).
-- Adjunta y envía la propuesta al hotel.
-- Registra intentos de contacto y respuestas.
-- Hace seguimiento al hotel.
+- Creates the hotel profile in the system.
+- Collects data: hotel name, email, phone, contact name and position, business need.
+- Conducts a cold visit to the hotel.
 
-### Decisión
+**Advance →** upon sending the [[Propuesta Personalizada|proposal]], moves to [[#Green — Proposal sent|Green]].
 
-**¿El hotel responde con interés?**
-
-- **SÍ →** [[#Amarillo — En seguimiento tras propuesta|Amarillo]].
-- **NO →** [[#Rojo — Rechazo o no interés|Rojo]].
-
-**Rama alterna:** si la negociación se estanca → [[#Café — Renegociación / desbloqueo|Café]] (gestionado por [[Business Developer Coordinator]]).
+> Also reached through reactivation from [[#Red — Rejection or no interest|Red]], [[#Black — Paused or inactive client|Black]] or [[#Brown — Renegotiation / unblocking|Brown]].
 
 ---
 
-## Amarillo — En seguimiento tras propuesta
+## Green — Proposal sent
 
-**Responsable:** [[Business Developer]] (con apoyo del [[Business Developer Coordinator]])
+**Responsible:** [[Business Developer]]
 
-### Acciones durante este status
+### Actions during this status
 
-- BD o BDC crea el [[Documento de Términos y Condiciones]], que establece:
+- Drafts [[Propuesta Personalizada|personalized proposal]] (services, prices, conditions).
+- Attaches and sends the proposal to the hotel.
+- Logs contact attempts and responses.
+- Follows up with the hotel.
+
+### Decision
+
+**Does the hotel respond with interest?**
+
+- **YES →** [[#Yellow — Follow-up after proposal|Yellow]].
+- **NO →** [[#Red — Rejection or no interest|Red]].
+
+**Alternate branch:** if the negotiation stalls → [[#Brown — Renegotiation / unblocking|Brown]] (managed by [[Business Developer Coordinator]]).
+
+---
+
+## Yellow — Follow-up after proposal
+
+**Responsible:** [[Business Developer]] (with support from the [[Business Developer Coordinator]])
+
+### Actions during this status
+
+- BD or BDC creates the [[Documento de Términos y Condiciones]], which establishes:
   - Pay rate
   - Bill rate
   - Overtime
-  - Festivos
-  - Calendario
+  - Holidays
+  - Calendar
 
-**Avance →** al iniciar negociación formal, pasa a [[#Rosa — Negociación de términos|Rosa]].
-
----
-
-## Rosa — Negociación de términos
-
-**Responsable:** [[Business Developer]] + [[Business Developer Coordinator]]
-
-### Decisión
-
-**¿Se cierra el acuerdo?**
-
-- **NO →** vuelve al flujo (renegociación / [[#Café — Renegociación / desbloqueo|Café]] / Fin).
-- **SÍ →** el [[Business Developer Coordinator|BDC]] aprueba la conversión y se crea el [[Usuario del Hotel]] en el sistema.
-
-### Al aprobarse la conversión
-
-Se dispara el [[Trigger Automático de Conversión]] (en paralelo):
-
-- Sistema envía email de bienvenida al hotel.
-- Sistema notifica al [[Business Developer|BD]] asignado.
-- Hotel desaparece de la lista de prospectos.
-
-**Avance →** pasa a [[#Naranja — Acuerdo firmado, hotel cliente activo|Naranja]].
+**Advance →** when formal negotiation begins, moves to [[#Pink — Terms negotiation|Pink]].
 
 ---
 
-## Naranja — Acuerdo firmado, hotel cliente activo
+## Pink — Terms negotiation
 
-**Responsable operativo:** [[Inspector]] + [[Reclutadora|Reclutadores]]
-**Responsable comercial:** [[Business Developer Coordinator]] (referente) · [[Business Developer]] (asignado)
+**Responsible:** [[Business Developer]] + [[Business Developer Coordinator]]
+
+### Decision
+
+**Is the agreement closed?**
+
+- **NO →** returns to the flow (renegotiation / [[#Brown — Renegotiation / unblocking|Brown]] / End).
+- **YES →** the [[Business Developer Coordinator|BDC]] approves the conversion and the [[Usuario del Hotel|Hotel User]] is created in the system.
+
+### Upon conversion approval
+
+The [[Trigger Automático de Conversión|Automatic Conversion Trigger]] fires (in parallel):
+
+- System sends welcome email to the hotel.
+- System notifies the assigned [[Business Developer|BD]].
+- Hotel disappears from the prospects list.
+
+**Advance →** moves to [[#Orange — Signed agreement, active hotel client|Orange]].
+
+---
+
+## Orange — Signed agreement, active hotel client
+
+**Operational Responsible:** [[Inspector]] + [[Reclutadora|Recruiters]]
+**Commercial Responsible:** [[Business Developer Coordinator]] (reference) · [[Business Developer]] (assigned)
 
 > [!important]
-> **Naranja es el único status que habilita al hotel para generar [[Requisición|requisiciones]].**
+> **Orange is the only status that enables the hotel to generate [[Requisición|requisitions]].**
 
-### Estado operativo
+### Operational state
 
-- El hotel ya tiene [[Usuario del Hotel|usuario creado]] en el sistema.
-- Pasa a responsabilidad de [[Reclutadora|Reclutadores]].
-- Inicia ciclo operativo: [[Requisición|requisiciones]] → cobertura → [[Core/Módulos/Schedule|Schedule]] → [[Timesheet]].
-- BD y BDC quedan como referentes comerciales de la cuenta.
+- The hotel already has a [[Usuario del Hotel|user created]] in the system.
+- Transfers to responsibility of [[Reclutadora|Recruiters]].
+- Operational cycle begins: [[Requisición|requisitions]] → coverage → [[Core/Módulos/Schedule|Schedule]] → [[Timesheet]].
+- BD and BDC remain as commercial references for the account.
 
-### Decisión
+### Decision
 
-**¿El hotel deja de operar?**
+**Does the hotel stop operating?**
 
-- **NO →** Fin (continúa activo).
-- **SÍ →** pasa a [[#Negro — Cliente pausado o inactivo|Negro]].
+- **NO →** End (continues active).
+- **YES →** moves to [[#Black — Paused or inactive client|Black]].
 
 ---
 
-## Café — Renegociación / desbloqueo
+## Brown — Renegotiation / unblocking
 
-**Responsable:** [[Business Developer Coordinator]]
+**Responsible:** [[Business Developer Coordinator]]
 
 > [!info]
-> Café no es un status terminal: es un **puente de desbloqueo** operado por el BDC cuando una negociación se estanca.
+> Brown is not a terminal status: it is an **unblocking bridge** operated by the BDC when a negotiation stalls.
 
-### Acciones durante este status
+### Actions during this status
 
-- El BDC investiga la causa del estancamiento (precio, condiciones, competencia, momento del hotel).
-- El BDC da solución o ajuste para retomar la propuesta y avanzar a la contratación.
+- The BDC investigates the cause of the stall (price, conditions, competition, hotel timing).
+- The BDC provides a solution or adjustment to resume the proposal and advance toward contracting.
 
-**Avance →** con propuesta ajustada, regresa a [[#Azul Claro — Contacto y recopilación de datos|Azul Claro]].
-
----
-
-## Rojo — Rechazo o no interés
-
-**Responsable:** [[Business Developer]]
-
-El hotel rechazó la propuesta o no está interesado.
-
-### Decisión
-
-**¿Reactivar?**
-
-- **NO →** Fin (hotel archivado como no viable).
-- **SÍ →** regresa a [[#Azul Claro — Contacto y recopilación de datos|Azul Claro]] para reiniciar el contacto.
+**Advance →** with adjusted proposal, returns to [[#Light Blue — Contact and data collection|Light Blue]].
 
 ---
 
-## Negro — Cliente pausado o inactivo
+## Red — Rejection or no interest
 
-**Responsable:** [[Business Developer Coordinator]]
+**Responsible:** [[Business Developer]]
 
-Cliente dejó de operar o se pausó la relación.
+The hotel rejected the proposal or is not interested.
 
-### Motivos frecuentes
+### Decision
 
-- Cierre del hotel.
-- Cambio de administración.
-- Pausa temporal de operación.
-- Disputa comercial.
+**Reactivate?**
 
-### Decisión
-
-**¿Reactivar?**
-
-- **NO →** Fin (archivado como cliente inactivo).
-- **SÍ →** regresa a [[#Azul Claro — Contacto y recopilación de datos|Azul Claro]] para renegociar condiciones de reactivación.
+- **NO →** End (hotel archived as not viable).
+- **YES →** returns to [[#Light Blue — Contact and data collection|Light Blue]] to restart contact.
 
 ---
 
-## Relacionado
+## Black — Paused or inactive client
+
+**Responsible:** [[Business Developer Coordinator]]
+
+Client stopped operating or the relationship was paused.
+
+### Frequent reasons
+
+- Hotel closure.
+- Change of management.
+- Temporary operational pause.
+- Commercial dispute.
+
+### Decision
+
+**Reactivate?**
+
+- **NO →** End (archived as inactive client).
+- **YES →** returns to [[#Light Blue — Contact and data collection|Light Blue]] to renegotiate reactivation conditions.
+
+---
+
+## Related
 
 - [[Onboarding-Hotel]]
 - [[Flujo de Onboarding]]

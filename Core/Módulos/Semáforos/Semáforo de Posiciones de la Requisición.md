@@ -1,101 +1,95 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Semáforo de Posiciones de la Requisición
-  - Semáforo de Posiciones
-  - Status Posiciones Dorado
-  - Status Posiciones Naranja
-  - Status Posiciones Verde
-  - Status Posiciones Amarillo
-  - Status Posiciones Rojo
-  - Status Posiciones Morado
-  - Status Posiciones Gold
-  - Status Posiciones Orange
-  - Status Posiciones Green
-  - Status Posiciones Yellow
-  - Status Posiciones Red
-  - Status Posiciones Purple
+  - Requisition Positions Status Indicator
+  - Positions Status Indicator
+  - Positions Status Gold
+  - Positions Status Orange
+  - Positions Status Green
+  - Positions Status Yellow
+  - Positions Status Red
+  - Positions Status Purple
 ---
 
-# Semáforo de Posiciones de la Requisición
+# Requisition Positions Status Indicator
 
-Estado visual del porcentaje de cobertura de cada posición dentro de una [[Requisición]]. Indica qué tan cerca está cada posición de haber sido completamente cubierta por la [[Reclutadora]].
+Visual state of the coverage percentage of each position within a [[Requisición]]. Indicates how close each position is to being fully covered by the [[Reclutadora]].
 
 > [!info]
-> Este es uno de los semáforos de la requisición. Ver también: [[Semáforo de Requisición]], [[Semáforo de Urgencia de Requisición]] y el [[Semáforo del Colaborador]].
+> This is one of the requisition Status Indicators. See also: [[Semáforo de Requisición]], [[Semáforo de Urgencia de Requisición]] and [[Semáforo del Colaborador]].
 
-> [!note] Equivalencia con el sistema técnico
-> La documentación usa colores en español, mientras que el sistema interno los nombra en inglés: Dorado=Gold · Naranja=Orange · Verde=Green · Amarillo=Yellow · Rojo=Red · Morado=Purple. Ambos nombres son alias válidos.
+> [!note] Equivalence with the technical system
+> The documentation uses color names in Spanish, while the internal system names them in English: Dorado=Gold · Naranja=Orange · Verde=Green · Amarillo=Yellow · Rojo=Red · Morado=Purple. Both names are valid aliases.
 
-## Estados
+## States
 
-| Color    | Estado              | Responsable                                                           | Descripción                                                                                         |
-| -------- | ------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Dorado   | En preparación      | [[Hotel/Manager General\|GM]], [[Hotel/Manager de Área\|GH]] o [[Hotel/Supervisor\|SUP]] | Posición en preparación por el hotel.                                                               |
-| Naranja  | Autorizada          | [[Hotel/Manager General\|GM]] o [[Hotel/Manager de Área\|GH]]                                       | Posición autorizada por el hotel. El sistema calcula prioridad ([[Semáforo de Urgencia de Requisición]]). |
-| Verde    | 100% cubierta       | [[Reclutadora]]                                                       | Posición cubierta al 100%.                                                                          |
-| Amarillo | Hasta 25% faltante  | [[Reclutadora]]                                                       | Hasta 25% de personal faltante.                                                                     |
-| Rojo     | Más de 25% faltante | [[Reclutadora]]                                                       | Más del 25% de personal faltante.                                                                   |
-| Morado   | Eliminada           | —                                                                     | Posición eliminada físicamente.                                                                     |
+| Color  | State               | Responsible                                                                    | Description                                                                                          |
+| ------ | ------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Gold   | In preparation      | [[Hotel/Manager General\|GM]], [[Hotel/Manager de Área\|GH]] or [[Hotel/Supervisor\|SUP]] | Position being prepared by the hotel.                                                         |
+| Orange | Authorized          | [[Hotel/Manager General\|GM]] or [[Hotel/Manager de Área\|GH]]                             | Position authorized by the hotel. The system calculates priority ([[Semáforo de Urgencia de Requisición]]). |
+| Green  | 100% covered        | [[Reclutadora]]                                                                | Position covered at 100%.                                                                            |
+| Yellow | Up to 25% missing   | [[Reclutadora]]                                                                | Up to 25% of staff missing.                                                                          |
+| Red    | More than 25% missing | [[Reclutadora]]                                                              | More than 25% of staff missing.                                                                      |
+| Purple | Deleted             | —                                                                              | Position physically deleted.                                                                         |
 
-## Detalle por estado
+## Detail by state
 
-### Dorado — En preparación
-**Responsable:** [[Hotel/Manager General|GM]], [[Hotel/Manager de Área|GH]] o [[Hotel/Supervisor|SUP]]
+### Gold — In preparation
+**Responsible:** [[Hotel/Manager General|GM]], [[Hotel/Manager de Área|GH]] or [[Hotel/Supervisor|SUP]]
 
-La posición se crea junto con la requisición y se prepara con sus datos (perfil, cantidad, fecha de inicio).
+The position is created alongside the requisition and prepared with its data (profile, quantity, start date).
 
-**Avance →** cuando el [[Hotel/Manager General|GM]] o el [[Hotel/Manager de Área|GH]] autoriza la requisición completa, cada posición pasa a [[#Naranja — Autorizada|Naranja]] y el sistema calcula su prioridad.
-
----
-
-### Naranja — Autorizada
-**Responsable:** [[Hotel/Manager General|GM]] o [[Hotel/Manager de Área|GH]]
-
-La posición queda lista para asignación. El sistema asocia automáticamente un nivel de urgencia (ver [[Semáforo de Urgencia de Requisición]]).
-
-**Avance →** según la cobertura gestionada por la [[Reclutadora]]:
-- 100% cubierta → [[#Verde — 100% cubierta|Verde]]
-- Hasta 25% faltante → [[#Amarillo — Hasta 25% faltante|Amarillo]]
-- Más del 25% faltante → [[#Rojo — Más de 25% faltante|Rojo]]
+**Advance →** when the [[Hotel/Manager General|GM]] or the [[Hotel/Manager de Área|GH]] authorizes the complete requisition, each position moves to [[#Orange — Authorized|Orange]] and the system calculates its priority.
 
 ---
 
-### Verde — 100% cubierta
-**Responsable:** [[Reclutadora]]
+### Orange — Authorized
+**Responsible:** [[Hotel/Manager General|GM]] or [[Hotel/Manager de Área|GH]]
 
-Todos los colaboradores asignados a esta posición están confirmados.
+The position is ready for assignment. The system automatically associates an urgency level (see [[Semáforo de Urgencia de Requisición]]).
 
----
-
-### Amarillo — Hasta 25% faltante
-**Responsable:** [[Reclutadora]]
-
-Falta hasta 25% del personal. La reclutadora sigue buscando coberturas.
+**Advance →** based on coverage managed by the [[Reclutadora]]:
+- 100% covered → [[#Green — 100% covered|Green]]
+- Up to 25% missing → [[#Yellow — Up to 25% missing|Yellow]]
+- More than 25% missing → [[#Red — More than 25% missing|Red]]
 
 ---
 
-### Rojo — Más de 25% faltante
-**Responsable:** [[Reclutadora]]
+### Green — 100% covered
+**Responsible:** [[Reclutadora]]
 
-Falta más del 25%. Requiere atención prioritaria.
+All associates assigned to this position are confirmed.
 
 ---
 
-### Morado — Eliminada
+### Yellow — Up to 25% missing
+**Responsible:** [[Reclutadora]]
 
-Estado transversal. Se alcanza desde cualquier estado cuando la posición se elimina físicamente; el sistema registra journal.
+Up to 25% of staff is missing. The recruiter continues searching for coverage.
 
-## Reglas clave
+---
 
-- **Relación con [[Semáforo de Requisición]]:**
-  - La requisición queda **Azul claro** cuando **todas** sus posiciones llegan a `Verde`.
-  - La requisición queda **Rojo** si al menos una posición cierra en `Amarillo` o `Rojo`.
-- **La prioridad** (Urgencia) se calcula automáticamente al pasar a `Naranja`.
-- **Eliminación**: puede suceder en cualquier estado (→ `Morado`).
+### Red — More than 25% missing
+**Responsible:** [[Reclutadora]]
 
-## Relacionado
+More than 25% is missing. Requires priority attention.
+
+---
+
+### Purple — Deleted
+
+Cross-cutting state. Reached from any state when the position is physically deleted; the system logs a journal entry.
+
+## Business Rules
+
+- **Relationship with [[Semáforo de Requisición]]:**
+  - The requisition becomes **Light Blue** when **all** its positions reach `Green`.
+  - The requisition becomes **Red** if at least one position closes in `Yellow` or `Red`.
+- **Priority** (Urgency) is calculated automatically when moving to `Orange`.
+- **Deletion**: can happen in any state (→ `Purple`).
+
+## Related
 
 - [[Requisición]]
 - [[Posiciones]]

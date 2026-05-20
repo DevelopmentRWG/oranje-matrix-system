@@ -1,52 +1,52 @@
 ---
 tags:
-  - modulo/core
-  - departamento/qa
+  - module/core
+  - department/qa
 aliases:
-  - Indicador de Calidad
-  - Calidad Verde
-  - Calidad Amarillo
-  - Calidad Rojo
+  - Quality Indicator
+  - Quality Green
+  - Quality Yellow
+  - Quality Red
 ---
 
-# Indicador de Calidad
+# Quality Indicator
 
-Indicador que refleja el nivel de calidad operativa de cada departamento, alimentado por el [[Operador de QA]] asignado y supervisado por el [[Manager de QA]]. Cada departamento tiene su propio indicador independiente.
+Indicator that reflects the operational quality level of each department, fed by the assigned [[Operador de QA]] and supervised by the [[Manager de QA]]. Each department has its own independent indicator.
 
 > [!info]
-> Este indicador no reemplaza a los semáforos existentes ([[Semáforo del Colaborador]], [[Semáforo de Requisición]], etc.). QA **consulta** esos semáforos como fuente de datos y emite su evaluación en este indicador.
+> This indicator does not replace the existing Status Indicators ([[Semáforo del Colaborador]], [[Semáforo de Requisición]], etc.). QA **consults** those Status Indicators as a data source and issues its evaluation in this indicator.
 
-## Estados
+## States
 
-| Color    | Estado            | Descripción                                                                                        |
-| -------- | ----------------- | -------------------------------------------------------------------------------------------------- |
-| Verde    | Calidad óptima    | Métricas dentro de parámetros esperados, sin observaciones pendientes.                             |
-| Amarillo | Calidad en riesgo | Métricas fuera de rango o existen observaciones pendientes sin atender por parte del departamento. |
-| Rojo     | Calidad crítica   | Métricas muy por debajo del estándar o acumulación de observaciones ignoradas por el departamento. |
+| Color  | State            | Description                                                                                              |
+| ------ | ---------------- | -------------------------------------------------------------------------------------------------------- |
+| Green  | Optimal quality  | Metrics within expected parameters, no pending observations.                                             |
+| Yellow | Quality at risk  | Metrics out of range or pending observations unaddressed by the department.                              |
+| Red    | Critical quality | Metrics well below standard or accumulation of observations ignored by the department.                   |
 
-## Reglas clave
+## Business Rules
 
-### Transiciones
+### Transitions
 
-- **→ Verde**: estado inicial cuando QA comienza a supervisar un departamento, o cuando el departamento atiende todas las observaciones y sus métricas vuelven a parámetros.
-- **Verde → Amarillo**: cuando el [[Operador de QA]] detecta métricas fuera de rango o emite observaciones que el departamento no ha atendido.
-- **Amarillo → Rojo**: cuando las observaciones persisten sin atención o las métricas se deterioran significativamente.
-- **Rojo → Amarillo**: cuando el departamento comienza a atender las observaciones y muestra mejora en métricas.
-- **Amarillo → Verde**: cuando todas las observaciones están resueltas y las métricas regresan a parámetros.
+- **→ Green**: initial state when QA begins supervising a department, or when the department addresses all observations and its metrics return to parameters.
+- **Green → Yellow**: when the [[Operador de QA]] detects out-of-range metrics or issues observations that the department has not addressed.
+- **Yellow → Red**: when observations persist without attention or metrics deteriorate significantly.
+- **Red → Yellow**: when the department begins addressing observations and shows improvement in metrics.
+- **Yellow → Green**: when all observations are resolved and metrics return to parameters.
 
-### Quién actualiza el indicador
+### Who updates the indicator
 
-- El [[Operador de QA]] propone el cambio de estado con base en sus mediciones.
-- El [[Manager de QA]] valida y aprueba el cambio.
+- The [[Operador de QA]] proposes the state change based on their measurements.
+- The [[Manager de QA]] validates and approves the change.
 
 > [!important]
-> Un departamento en estado **Rojo** requiere atención inmediata. El [[Manager de QA]] escala el caso a la dirección si no hay mejora tras la notificación.
+> A department in **Red** state requires immediate attention. The [[Manager de QA]] escalates the case to management if there is no improvement after notification.
 
-### Umbrales cuantitativos
+### Quantitative thresholds
 
-Los umbrales específicos que definen cuándo un KPI está en Meta, En riesgo o nivel Crítico — y cómo eso se traduce en transiciones de este indicador — están documentados en [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
+The specific thresholds that define when a KPI is at Target, At risk or Critical level — and how that translates into transitions of this indicator — are documented in [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
 
-## Relacionado
+## Related
 
 - [[QA/QA|QA]]
 - [[Manager de QA]]

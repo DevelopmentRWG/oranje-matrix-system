@@ -1,82 +1,82 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Semáforo del Colaborador
-  - Status Colaborador Blanco
-  - Status Colaborador Verde manzana
-  - Status Colaborador Azul claro
-  - Status Colaborador Naranja
-  - Status Colaborador Verde fuerte
-  - Status Colaborador Amarillo
-  - Status Colaborador Café
-  - Status Colaborador Rosa
-  - Status Colaborador Morado
-  - Status Colaborador Rojo
-  - Status Colaborador Gris
-  - Status Colaborador Negro
+  - Associate Status Indicator
+  - Associate Status White
+  - Associate Status Apple Green
+  - Associate Status Light Blue
+  - Associate Status Orange
+  - Associate Status Dark Green
+  - Associate Status Yellow
+  - Associate Status Brown
+  - Associate Status Pink
+  - Associate Status Purple
+  - Associate Status Red
+  - Associate Status Gray
+  - Associate Status Black
 ---
 
-# Semáforo del Colaborador
+# Associate Status Indicator
 
-Sistema de estados visuales que representa la situación actual de cada colaborador dentro de Oranje. Cada color corresponde a un estado con reglas propias de transición.
+Visual status system that represents the current situation of each associate within Oranje. Each color corresponds to a state with its own transition rules.
 
 > [!info]
-> Este semáforo describe al **colaborador**. Los estados de la requisición se manejan en otros semáforos: [[Semáforo de Requisición]], [[Semáforo de Urgencia de Requisición]] y [[Semáforo de Posiciones de la Requisición]].
+> This Status Indicator describes the **associate**. Requisition states are managed in other Status Indicators: [[Semáforo de Requisición]], [[Semáforo de Urgencia de Requisición]] and [[Semáforo de Posiciones de la Requisición]].
 
-## Estados
+## States
 
-| Color         | Estado                                | Descripción                                                                                                                 |
-| ------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Blanco        | Pre-asignación                        | Apenas subió sus datos, aún no ha sido asignado a ningún hotel.                                                             |
-| Verde manzana | Día 1-2                               | Colaborador nuevo, primeros días, siempre que esté asistiendo. El [[Inspector]] verifica su llegada el día 1. |
-| Azul claro    | Día 3+                                | Ponchó en la propiedad al tercer día. El [[Inspector]] le entrega su uniforme.                                |
-| Naranja       | Fijo                                  | Pasó una semana, listo para colaborar fijamente en el hotel.                                                                |
-| Verde fuerte  | Disponible                            | Disponible para asignación (o reincorporado tras disputa a su favor).                                                       |
-| Amarillo      | Disponible voluntario                 | En descanso de un hotel, se pone disponible para asignación temporal.                                                       |
-| Café          | Asignación temporal                   | Asignado temporalmente a cubrir la jornada completa o una parte de la jornada.                                              |
-| Rosa          | Stand-by                              | El hotel lo mandó a descansar (vacaciones, temporada baja).                                                                 |
-| Morado        | No regresó                            | No asistió por causa propia.                                                                                                |
-| Rojo          | Reportado                             | El hotel lo reportó; [[Inspector]] revisa el caso.                                                                          |
-| Gris          | Accidentado                           | El colaborador sufrió un [[Core/Módulos/Accidente Laboral/Accidente Laboral\|accidente laboral]] y está en incapacidad médica. Protegido de [[Core/Módulos/Blacklist\|Blacklist]]. |
-| Negro         | [[Core/Módulos/Blacklist\|Blacklist]] | Disputa resuelta a favor del hotel, colaborador bloqueado.                                                                  |
+| Color       | State                    | Description                                                                                                                           |
+| ----------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| White       | Pre-assignment           | Just uploaded their data, has not yet been assigned to any hotel.                                                                     |
+| Apple Green | Day 1-2                  | New associate, first days, as long as they are attending. The [[Inspector]] verifies their arrival on day 1.                          |
+| Light Blue  | Day 3+                   | Clocked in at the property on the third day. The [[Inspector]] delivers their uniform.                                                |
+| Orange      | Fixed                    | Completed one week, ready to work as a fixed associate at the hotel.                                                                  |
+| Dark Green  | Available                | Available for assignment (or reinstated after a dispute ruled in their favor).                                                        |
+| Yellow      | Voluntary available      | On break from a hotel, makes themselves available for temporary assignment.                                                           |
+| Brown       | Temporary assignment     | Temporarily assigned to cover a full shift or part of a shift.                                                                        |
+| Pink        | Stand-by                 | The hotel sent them to rest (vacation, low season).                                                                                   |
+| Purple      | Did not return           | Did not attend due to their own cause.                                                                                                |
+| Red         | Reported                 | The hotel reported them; [[Inspector]] reviews the case.                                                                              |
+| Gray        | Injured                  | The associate suffered a [[Core/Módulos/Accidente Laboral/Accidente Laboral\|work accident]] and is on medical leave. Protected from [[Core/Módulos/Blacklist\|Blacklist]]. |
+| Black       | [[Core/Módulos/Blacklist\|Blacklist]] | Dispute resolved in favor of the hotel, associate blocked.                                                               |
 
-## Reglas clave
+## Business Rules
 
-### Entradas al sistema
+### System entries
 
-- **→ Blanco**: al registrarse el colaborador con sus datos, aún sin asignación.
-- **Blanco → Verde manzana**: al ser asignado y asistir el día 1. El [[Inspector]] verifica su llegada en sitio.
+- **→ White**: when the associate registers their data, not yet assigned.
+- **White → Apple Green**: when assigned and attending on day 1. The [[Inspector]] verifies their arrival on site.
 
-### Progresión como fijo
+### Fixed progression
 
-- **Verde manzana → Azul claro**: cuando poncha en la propiedad al tercer día. En este momento el [[Inspector]] le entrega su uniforme.
-- **Azul claro → Naranja**: al completar 7 días (fijo por sistema).
+- **Apple Green → Light Blue**: when they clock in at the property on the third day. At this point the [[Inspector]] delivers their uniform.
+- **Light Blue → Orange**: upon completing 7 days (fixed by system).
 
-### Disponibilidad y asignaciones temporales
+### Availability and temporary assignments
 
-- **Naranja → Verde fuerte**: cuando el colaborador queda libre (fin de asignación fija o reincorporado).
-- **Amarillo**: lo activa el propio colaborador desde la app, sin aprobación de nadie. Es autoservicio (disponible voluntario durante un descanso). Amarillo es una declaración de disponibilidad, no una asignación; el colaborador no tiene [[Core/Módulos/Schedule|Schedule]] ni [[Timesheet]] y no puede ponchar hasta ser asignado (→ Café).
-- **Verde fuerte → Café**: la [[Reclutadora]] lo asigna temporalmente (→ Café). La [[Reclutadora]] define la duración (días asignados) al momento de la asignación. El estado se cierra automáticamente al vencer esos días; al cerrarse, vuelve a `Verde fuerte` o `Naranja` según su estado previo.
-- **Amarillo → Café**: mismo mecanismo de asignación temporal, pero el colaborador llegó al Pool por disponibilidad voluntaria. Al vencer los días asignados, regresa a `Amarillo` si sigue en periodo de descanso, o a `Verde fuerte` si ya no lo está.
+- **Orange → Dark Green**: when the associate becomes free (end of fixed assignment or reinstated).
+- **Yellow**: activated by the associate themselves from the app, without anyone's approval. It is self-service (voluntarily available during a break). Yellow is a declaration of availability, not an assignment; the associate has no [[Core/Módulos/Schedule|Schedule]] or [[Timesheet]] and cannot punch in until assigned (→ Brown).
+- **Dark Green → Brown**: the [[Reclutadora]] temporarily assigns them (→ Brown). The [[Reclutadora]] defines the duration (assigned days) at the time of assignment. The state closes automatically when those days expire; upon closing, returns to `Dark Green` or `Orange` based on their previous state.
+- **Yellow → Brown**: same temporary assignment mechanism, but the associate reached the Pool through voluntary availability. When the assigned days expire, returns to `Yellow` if still in a rest period, or to `Dark Green` if not.
 
-### Incidencias
+### Incidents
 
-- **→ Morado**: el sistema lo marca cuando el colaborador no asiste sin justificación.
-- **3 inasistencias → Negro**: [[Core/Módulos/Blacklist|Blacklist]] automático por sistema.
-- **Rosa**: lo activa el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] cuando mandan al colaborador a descansar (vacaciones, temporada baja). El colaborador no tiene asignación activa, por lo tanto no tiene [[Core/Módulos/Schedule|Schedule]] ni [[Timesheet]] y no puede ponchar. Al reactivarlo, regresa a **Verde fuerte**.
-- **Rojo**: lo pone el hotel ([[Hotel/Manager General|Manager General]], [[Hotel/Manager de Área|Manager de Área]] o [[Hotel/Supervisor|Supervisor]]). Luego [[Inspector]] investiga el caso y el resultado lo lleva a:
-	- **Negro** ([[Core/Módulos/Blacklist|Blacklist]]), o
-	- **Verde fuerte** (reincorporado).
-- **Casos de [[Core/Módulos/Blacklist|Blacklist]]**: revisados por el [[Manager de Reclutamiento]].
+- **→ Purple**: the system marks this when the associate does not attend without justification.
+- **3 absences → Black**: automatic [[Core/Módulos/Blacklist|Blacklist]] by system.
+- **Pink**: activated by the [[Hotel/Manager General|General Manager]], the [[Hotel/Manager de Área|Area Manager]] or the [[Hotel/Supervisor|Supervisor]] when they send the associate to rest (vacation, low season). The associate has no active assignment, therefore has no [[Core/Módulos/Schedule|Schedule]] or [[Timesheet]] and cannot punch in. Upon reactivation, returns to **Dark Green**.
+- **Red**: set by the hotel ([[Hotel/Manager General|General Manager]], [[Hotel/Manager de Área|Area Manager]] or [[Hotel/Supervisor|Supervisor]]). Then [[Inspector]] investigates the case and the outcome leads to:
+	- **Black** ([[Core/Módulos/Blacklist|Blacklist]]), or
+	- **Dark Green** (reinstated).
+- **[[Core/Módulos/Blacklist|Blacklist]] cases**: reviewed by the [[Manager de Reclutamiento]].
 
-### Accidente laboral
+### Work accident
 
-- **Cualquier estado activo → Gris**: cuando se genera un reporte de [[Core/Módulos/Accidente Laboral/Accidente Laboral|Accidente Laboral]]. El colaborador queda fuera de la operación por causa médica.
-- **Gris → Verde fuerte**: al recibir el alta médica y cerrarse la tarjeta de accidente. El colaborador queda disponible para reasignación.
-- **Protección de Blacklist**: mientras el colaborador esté en estado `Gris`, las inasistencias **no cuentan** para la regla de 3 inasistencias → Negro.
+- **Any active state → Gray**: when a [[Core/Módulos/Accidente Laboral/Accidente Laboral|Work Accident]] report is generated. The associate is removed from operations due to medical cause.
+- **Gray → Dark Green**: upon receiving medical clearance and closing the accident ticket. The associate becomes available for reassignment.
+- **Blacklist protection**: while the associate is in `Gray` state, absences **do not count** toward the 3-absences → Black rule.
 
-## Relacionado
+## Related
 
 - [[Semáforo de Requisición]]
 - [[Semáforo de Urgencia de Requisición]]

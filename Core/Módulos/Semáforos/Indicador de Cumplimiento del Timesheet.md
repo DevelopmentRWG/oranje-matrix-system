@@ -1,70 +1,70 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Indicador de Cumplimiento del Timesheet
-  - Indicador de Cumplimiento
-  - Status Cumplimiento Verde
-  - Status Cumplimiento Amarillo
-  - Status Cumplimiento Rojo
+  - Timesheet Compliance Indicator
+  - Compliance Indicator
+  - Compliance Status Green
+  - Compliance Status Yellow
+  - Compliance Status Red
 ---
 
-# Indicador de Cumplimiento del Timesheet
+# Timesheet Compliance Indicator
 
-Indicador calculado automáticamente que compara el cumplimiento real del colaborador contra los parámetros contractuales del hotel, evaluado por semana.
+Automatically calculated indicator that compares the associate's actual compliance against the hotel's contractual parameters, evaluated on a weekly basis.
 
 > [!info]
-> Este indicador toma como input los parámetros del [[Core/Módulos/Contrato|Contrato]] y los datos del [[Timesheet]]. Ver también: [[Semáforo del Colaborador]].
+> This indicator takes as input the parameters from the [[Core/Módulos/Contrato|Contract]] and the data from the [[Timesheet]]. See also: [[Semáforo del Colaborador]].
 
-## Estructura de navegación
+## Navigation structure
 
-- **Año → Semanas** (numeradas según calendario e inicio/fin de semana del hotel)
-- Al seleccionar una semana, el sistema muestra automáticamente **fecha de inicio y fin** (ej. semana 37 = mié 9 sep 2026 → mar 15 sep 2026)
-- Una matriz interna determina el rango de días disponibles a partir de año + semana + inicio/fin de semana del hotel
+- **Year → Weeks** (numbered according to calendar and hotel's week start/end)
+- When selecting a week, the system automatically displays **start and end date** (e.g. week 37 = Wed Sep 9 2026 → Tue Sep 15 2026)
+- An internal matrix determines the range of available days based on year + week + hotel's week start/end
 
-## Estados
+## States
 
-| Color    | Estado       | Descripción                                                                              |
-| -------- | ------------ | ---------------------------------------------------------------------------------------- |
-| Verde    | Cumplimiento | Todo dentro de lo contractual                                                            |
-| Amarillo | Alerta       | Desviación moderada (ej. 6/5 días trabajados, 43/40 hrs, 1/2 días de descanso)           |
-| Rojo     | Anomalía     | Situación que no debería ocurrir (ej. ponche en día previo al alta del colaborador)       |
-| Gris     | Sin datos    | Días previos al alta del colaborador en esa semana (no puede haber ponche)                |
+| Color  | State       | Description                                                                                  |
+| ------ | ----------- | -------------------------------------------------------------------------------------------- |
+| Green  | Compliance  | Everything within contractual parameters                                                     |
+| Yellow | Alert       | Moderate deviation (e.g. 6/5 days worked, 43/40 hrs, 1/2 rest days)                         |
+| Red    | Anomaly     | Situation that should not occur (e.g. punch on a day prior to the associate's onboarding)    |
+| Gray   | No data     | Days prior to the associate's onboarding in that week (no punch expected)                    |
 
-## Comparación contractual vs. real
+## Contractual vs. actual comparison
 
-El sistema compara automáticamente los siguientes indicadores por semana:
+The system automatically compares the following indicators per week:
 
-| Indicador              | Ejemplo   |
-| ---------------------- | --------- |
-| Días trabajados / requeridos    | 5/5       |
-| Días de descanso / requeridos   | 2/2       |
-| Horas trabajadas / requeridas   | 40/40     |
+| Indicator                           | Example |
+| ----------------------------------- | ------- |
+| Days worked / required              | 5/5     |
+| Rest days / required                | 2/2     |
+| Hours worked / required             | 40/40   |
 
-Diferencias detectadas:
-- Horas de más
-- Horas faltantes
-- Días extra trabajados
-- Días de descanso no tomados
+Detected differences:
+- Extra hours
+- Missing hours
+- Extra days worked
+- Rest days not taken
 
-## Caso de ingreso a media semana
+## Mid-week onboarding case
 
-Si el colaborador inicia a media semana, el sistema **prorratea automáticamente** los días restantes del ciclo semanal.
+If the associate starts mid-week, the system **automatically prorates** the remaining days of the weekly cycle.
 
-- **Ejemplo:** el hotel solicita un colaborador el miércoles para que inicie el jueves → quedan 6 días en esa semana → el sistema calcula **4 de trabajo + 2 de descanso**
-- Los días previos al alta se marcan en **Gris** (no se espera ponche ni actividad)
-- Si existe un ponche en un día previo al alta → **Rojo** (anomalía)
+- **Example:** the hotel requests an associate on Wednesday to start Thursday → 6 days remain in that week → the system calculates **4 working days + 2 rest days**
+- Days prior to onboarding are marked in **Gray** (no punch or activity expected)
+- If a punch exists on a day prior to onboarding → **Red** (anomaly)
 
-> [!important] No puede haber registro de ponche en un día donde el colaborador aún no estaba dado de alta en el hotel.
+> [!important] There cannot be a punch record on a day when the associate had not yet been onboarded at the hotel.
 
-## Reglas clave
+## Business Rules
 
-- **Cálculo automático por sistema**
-- **Input:** parámetros del [[Core/Módulos/Contrato|Contrato]] + datos del [[Timesheet]]
-- **Sin intervención humana**: el sistema evalúa al cierre de cada semana
-- **Evaluación semanal** (versión actual)
+- **Automatic calculation by system**
+- **Input:** parameters from the [[Core/Módulos/Contrato|Contract]] + [[Timesheet]] data
+- **No human intervention**: the system evaluates at the close of each week
+- **Weekly evaluation** (current version)
 
-## Relacionado
+## Related
 
 - [[Timesheet]]
 - [[Core/Módulos/Contrato|Contrato]]

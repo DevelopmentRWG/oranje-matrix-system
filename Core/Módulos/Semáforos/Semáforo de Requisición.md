@@ -1,100 +1,94 @@
 ---
 tags:
-  - modulo/core
+  - module/core
 aliases:
-  - Semáforo de Requisición
-  - Status Requisición Verde manzana
-  - Status Requisición Verde
-  - Status Requisición Amarillo
-  - Status Requisición Azul claro
-  - Status Requisición Rojo
-  - Status Requisición Morado
-  - Status Requisición Apple Green
-  - Status Requisición Green
-  - Status Requisición Yellow
-  - Status Requisición Light Blue
-  - Status Requisición Red
-  - Status Requisición Purple
+  - Requisition Status Indicator
+  - Requisition Status Apple Green
+  - Requisition Status Green
+  - Requisition Status Yellow
+  - Requisition Status Light Blue
+  - Requisition Status Red
+  - Requisition Status Purple
 ---
 
-# Semáforo de Requisición
+# Requisition Status Indicator
 
-Sistema de estados visuales que representa el ciclo de vida de una [[Requisición]], desde que el [[Hotel/Manager General|Manager General]], el [[Hotel/Manager de Área|Manager de Área]] o el [[Hotel/Supervisor|Supervisor]] comienzan a elaborarla hasta que queda cubierta.
+Visual status system that represents the lifecycle of a [[Requisición]], from when the [[Hotel/Manager General|General Manager]], the [[Hotel/Manager de Área|Area Manager]] or the [[Hotel/Supervisor|Supervisor]] begin drafting it until it is fully covered.
 
 > [!info]
-> Este semáforo describe el **ciclo de vida general** de la requisición. Las otras dimensiones se manejan en semáforos separados: [[Semáforo de Urgencia de Requisición]] (clasificación por tiempo) y [[Semáforo de Posiciones de la Requisición]] (porcentaje de cobertura por posición). Para el estado del colaborador ver [[Semáforo del Colaborador]].
+> This Status Indicator describes the **general lifecycle** of the requisition. The other dimensions are managed in separate Status Indicators: [[Semáforo de Urgencia de Requisición]] (classification by time) and [[Semáforo de Posiciones de la Requisición]] (coverage percentage per position). For the associate's state see [[Semáforo del Colaborador]].
 
-> [!note] Paralelismo con [[Semáforo de Posiciones de la Requisición]]
-> Cada estado de la requisición tiene su espejo a nivel posición: `Verde manzana`↔`Dorado` · `Verde`↔`Naranja` · `Azul claro`↔`Verde` · `Rojo`↔`Amarillo/Rojo` · `Morado`↔`Morado`.
+> [!note] Parallelism with [[Semáforo de Posiciones de la Requisición]]
+> Each requisition state has its mirror at the position level: `Apple Green`↔`Gold` · `Green`↔`Orange` · `Light Blue`↔`Green` · `Red`↔`Yellow/Red` · `Purple`↔`Purple`.
 
-## Estados
+## States
 
-| Color         | Estado                | Responsable                                                 | Descripción                           |
-| ------------- | --------------------- | ----------------------------------------------------------- | ------------------------------------- |
-| Verde manzana | En elaboración        | [[Hotel/Manager General\|GM]], [[Hotel/Manager de Área\|GH]] o [[Hotel/Supervisor\|SUP]] | En elaboración por el hotel.          |
-| Verde         | Autorizada            | [[Hotel/Manager General\|GM]] o [[Hotel/Manager de Área\|GH]]                             | Autorizada por el hotel.  |
-| Amarillo      | En proceso            | [[Reclutadora]] (toma de la bandeja compartida)             | En proceso de asignación de personal. |
-| Azul claro    | Cubierta totalmente   | [[Reclutadora]]                                             | Requisición cubierta totalmente.      |
-| Rojo          | Cubierta parcialmente | [[Reclutadora]]                                             | Requisición cubierta parcialmente.    |
-| Morado        | Eliminada             | —                                                           | Requisición eliminada físicamente.    |
+| Color       | State               | Responsible                                                                 | Description                                  |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | -------------------------------------------- |
+| Apple Green | In preparation      | [[Hotel/Manager General\|GM]], [[Hotel/Manager de Área\|GH]] or [[Hotel/Supervisor\|SUP]] | Being drafted by the hotel.           |
+| Green       | Authorized          | [[Hotel/Manager General\|GM]] or [[Hotel/Manager de Área\|GH]]                            | Authorized by the hotel.              |
+| Yellow      | In progress         | [[Reclutadora]] (taken from the shared tray)                                | In the process of staff assignment.          |
+| Light Blue  | Fully covered       | [[Reclutadora]]                                                             | Requisition fully covered.                   |
+| Red         | Partially covered   | [[Reclutadora]]                                                             | Requisition partially covered.               |
+| Purple      | Deleted             | —                                                                           | Requisition physically deleted.              |
 
-## Detalle por estado
+## Detail by state
 
-### Verde manzana — En elaboración
-**Responsable:** [[Hotel/Manager General|GM]], [[Hotel/Manager de Área|GH]] o [[Hotel/Supervisor|SUP]]
+### Apple Green — In preparation
+**Responsible:** [[Hotel/Manager General|GM]], [[Hotel/Manager de Área|GH]] or [[Hotel/Supervisor|SUP]]
 
-El hotel inicia la creación de la requisición y sus posiciones.
+The hotel begins creating the requisition and its positions.
 
-**Avance →** cuando el [[Hotel/Manager General|GM]] o el [[Hotel/Manager de Área|GH]] autoriza la requisición, pasa a [[#Verde — Autorizada|Verde]]. Solo el GM o GH pueden autorizar; si lo intenta el SUP, el sistema bloquea la acción.
-
----
-
-### Verde — Autorizada
-**Responsable:** [[Hotel/Manager General|GM]] o [[Hotel/Manager de Área|GH]]
-
-La requisición queda lista para asignación. El sistema calcula automáticamente la urgencia (ver [[Semáforo de Urgencia de Requisición]]).
-
-**Avance →** una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] toma la requisición de la bandeja compartida; pasa a [[#Amarillo — En proceso|Amarillo]].
+**Advance →** when the [[Hotel/Manager General|GM]] or the [[Hotel/Manager de Área|GH]] authorizes the requisition, it moves to [[#Green — Authorized|Green]]. Only the GM or GH can authorize; if the SUP attempts it, the system blocks the action.
 
 ---
 
-### Amarillo — En proceso
-**Responsable:** [[Reclutadora]]
+### Green — Authorized
+**Responsible:** [[Hotel/Manager General|GM]] or [[Hotel/Manager de Área|GH]]
 
-La reclutadora busca y asigna colaboradores a las posiciones (ver [[Semáforo de Posiciones de la Requisición]] y [[Semáforo del Colaborador]]).
+The requisition is ready for assignment. The system automatically calculates urgency (see [[Semáforo de Urgencia de Requisición]]).
 
-### Decisión
-
-**¿Se cubren todas las posiciones?**
-
-- **SÍ →** [[#Azul claro — Cubierta totalmente|Azul claro]]
-- **NO →** [[#Rojo — Cubierta parcialmente|Rojo]]
+**Advance →** a [[Reclutadora]] or [[Reclutamiento/Líder de Grupo de Reclutadoras|Recruiter Team Lead]] takes the requisition from the shared tray; moves to [[#Yellow — In progress|Yellow]].
 
 ---
 
-### Azul claro — Cubierta totalmente
-**Responsable:** [[Reclutadora]]
+### Yellow — In progress
+**Responsible:** [[Reclutadora]]
 
-Todas las posiciones llegaron a 100% (ver `Verde` en [[Semáforo de Posiciones de la Requisición]]).
+The recruiter searches for and assigns associates to the positions (see [[Semáforo de Posiciones de la Requisición]] and [[Semáforo del Colaborador]]).
 
-**Fin del ciclo activo** — la requisición queda cerrada satisfactoriamente.
+### Decision
 
----
+**Are all positions covered?**
 
-### Rojo — Cubierta parcialmente
-**Responsable:** [[Reclutadora]]
-
-La requisición cerró con al menos una posición en `Amarillo` o `Rojo` a nivel [[Semáforo de Posiciones de la Requisición|posición]].
-
-**Fin del ciclo activo** — con cobertura incompleta.
+- **YES →** [[#Light Blue — Fully covered|Light Blue]]
+- **NO →** [[#Red — Partially covered|Red]]
 
 ---
 
-### Morado — Eliminada
+### Light Blue — Fully covered
+**Responsible:** [[Reclutadora]]
 
-Estado transversal: se alcanza desde cualquier estado anterior cuando se elimina físicamente la requisición. El sistema registra journal.
+All positions reached 100% (see `Green` in [[Semáforo de Posiciones de la Requisición]]).
 
-## Relacionado
+**End of active cycle** — the requisition is closed satisfactorily.
+
+---
+
+### Red — Partially covered
+**Responsible:** [[Reclutadora]]
+
+The requisition closed with at least one position in `Yellow` or `Red` at the [[Semáforo de Posiciones de la Requisición|position]] level.
+
+**End of active cycle** — with incomplete coverage.
+
+---
+
+### Purple — Deleted
+
+Cross-cutting state: reached from any previous state when the requisition is physically deleted. The system logs a journal entry.
+
+## Related
 
 - [[Requisición]]
 - [[Semáforo de Urgencia de Requisición]]
