@@ -1,11 +1,11 @@
 {
   "collapse-filter": false,
-  "search": "hotel",
+  "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "path:Ventas  ",
@@ -71,23 +71,30 @@
       }
     },
     {
-      "query": "path:Contabilidad  ",
+      "query": "path:Contabilidad",
       "color": {
         "a": 1,
         "rgb": 14048348
       }
+    },
+    {
+      "query": "path:\"Customer Service\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 13555292
+      }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": true,
   "textFadeMultiplier": -1.8,
   "nodeSizeMultiplier": 1.50841318449735,
   "lineSizeMultiplier": 1.89048700977971,
-  "collapse-forces": false,
+  "collapse-forces": true,
   "centerStrength": 0,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.8797188758887216,
-  "close": false
+  "scale": 0.5506652579173714,
+  "close": true
 }

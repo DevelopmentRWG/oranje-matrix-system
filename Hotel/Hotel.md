@@ -85,3 +85,4 @@ Ver catálogo completo en [[Departamentos del Hotel]].
 
 - [[Reclutamiento/Reclutamiento|Reclutamiento]] — Recibe las requisiciones aprobadas y asigna personal.
 - [[Ventas/Ventas|Ventas]] — Responsable del onboarding de nuevos hoteles.
+- [[Customer Service/Customer Service|Customer Service]] — Canal de atención post-onboarding para consultas, quejas y seguimiento de incidencias.

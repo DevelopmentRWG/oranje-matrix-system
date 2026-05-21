@@ -131,6 +131,13 @@ Operador asignado: Operador 5. Departamento supervisado: [[Reclutamiento/Recluta
 - KPI 5 es una métrica de cumplimiento — la consulta de Blacklist es una obligación documentada.
 - KPI 6 mide la salud del embudo de reclutamiento — valores muy bajos indican mala selección de fuentes o filtrado excesivo.
 
+## Customer Service
+
+Operador asignado: Operador 6. Departamento supervisado: [[Customer Service/Customer Service|Customer Service]].
+
+> [!note]
+> Los KPIs específicos de Customer Service se definirán tras un periodo inicial de operación. El [[Manager de QA]] establecerá los umbrales una vez que existan datos reales de volumen de casos, tiempos de resolución y satisfacción del hotel.
+
 ## Relacionado
 
 - [[QA/QA|QA]]
