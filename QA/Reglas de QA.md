@@ -22,7 +22,7 @@ Consolidación de todas las reglas de negocio que aplican al departamento de QA 
 
 ## Asignación de operadores
 
-Existen **5 Operadores de QA**, cada uno asignado de forma fija a un departamento:
+Existen **6 Operadores de QA**, cada uno asignado de forma fija a un departamento:
 
 | Operador | Departamento supervisado |
 |---|---|
@@ -31,6 +31,7 @@ Existen **5 Operadores de QA**, cada uno asignado de forma fija a un departament
 | Operador 3 | [[Colaborador/Colaborador\|Colaborador]] |
 | Operador 4 | [[Ventas/Ventas\|Ventas]] |
 | Operador 5 | [[Reclutamiento/Reclutamiento\|Reclutamiento]] |
+| Operador 6 | [[Customer Service/Customer Service\|Customer Service]] |
 
 > [!note] La asignación es fija: cada operador conoce a fondo la operación del departamento que supervisa.
 

@@ -41,3 +41,4 @@ Departamento encargado de la supervisión de colaboradores en sitio. Los inspect
 - [[Hotel/Hotel|Hotel]] — Los inspectores verifican colaboradores asignados a hoteles.
 - [[Reclutamiento/Reclutamiento|Reclutamiento]] — Inspección valida en sitio el resultado del proceso de reclutamiento.
 - [[QA/QA|QA]] — Un Operador de QA supervisa las métricas de desempeño de Inspección.
+- [[Customer Service/Customer Service|Customer Service]] — Customer Service coordina con el [[Inspección/Coordinador|Coordinador]] para incidencias del hotel que requieran verificación en sitio.

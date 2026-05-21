@@ -40,6 +40,7 @@ Departamento encargado de supervisar la calidad operativa de todos los departame
 - [[Colaborador/Colaborador|Colaborador]]
 - [[Ventas/Ventas|Ventas]]
 - [[Reclutamiento/Reclutamiento|Reclutamiento]]
+- [[Customer Service/Customer Service|Customer Service]]
 
 ## Conceptos Core relacionados
 

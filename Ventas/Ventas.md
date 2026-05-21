@@ -25,3 +25,4 @@ Módulo responsable de la incorporación de nuevos hoteles a la plataforma Oranj
 
 - [[Hotel/Hotel|Hotel]]
 - [[Requisición]]
+- [[Customer Service/Customer Service|Customer Service]] — Continuación del ciclo comercial post-conversión; atiende al hotel una vez activo en Naranja.
