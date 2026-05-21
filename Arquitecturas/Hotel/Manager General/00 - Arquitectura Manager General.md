@@ -202,7 +202,25 @@ SIDEBAR
 - Rango de fechas
 
 ### Detalle
-- Misma información que ven los Gerentes de Departamento + Supervisor que la creó + Gerente que la autorizó/rechazó + tiempo de procesamiento.
+- **Cabecera:**
+    - ID requisición.
+    - Número.
+    - Supervisor que la creó.
+    - Fecha.
+    - Estado.
+- **Posiciones solicitadas:**
+    - Cantidad.
+    - Posición.
+    - Modalidad.
+    - Nivel de inglés.
+    - Horario.
+    - Fecha de inicio.
+- **Notas adicionales** del Supervisor.
+- **Cobertura actual** ([[Semáforo de Posiciones de la Requisición]]).
+- **Colaboradores asignados** (cuando Reclutamiento ya empezó).
+- **Información adicional para supervisión global** *(exclusivo del Manager General)*:
+    - Gerente que la autorizó/rechazó.
+    - Tiempo de procesamiento.
 
 ### Acciones (perfil supervisor)
 - 👁️ **Ver detalle completo** de cualquier requisición del hotel.
@@ -223,10 +241,19 @@ SIDEBAR
 - 🦺 **Supervisores** — listado consolidado por depto.
 
 ### Lista de Gerentes de Departamento
-- Nombre · depto · n° de Supervisores a cargo · n° de colaboradores activos · % cobertura · tiempo promedio de autorización.
+- Nombre.
+- Depto.
+- N° de Supervisores a cargo.
+- N° de colaboradores activos.
+- % cobertura.
+- Tiempo promedio de autorización.
 
 ### Lista de Supervisores
-- Nombre · depto · Gerente al que reporta · n° de requisiciones creadas (mes) · n° de accidentes reportados.
+- Nombre.
+- Depto.
+- Gerente al que reporta.
+- N° de requisiciones creadas (mes).
+- N° de accidentes reportados.
 
 ### Filtros
 - Departamento

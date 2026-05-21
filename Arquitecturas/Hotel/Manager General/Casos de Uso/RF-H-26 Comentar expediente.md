@@ -22,4 +22,4 @@ El comentario debe tener al menos 20 caracteres. Aparece en el journal de la req
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Detalle de requisición (vista global)` → MANUAL → `Click "Comentar"` → `Escribe comentario (mín. 20 caracteres)` → `Selecciona destinatarios adicionales opcional` → `Adjunta archivo opcional` → `Confirmar` → AUTOMATICO → `Comentario aparece en journal + Notifica al Gerente de Departamento + Notifica a destinatarios adicionales si aplica + Queda en log con autor y fecha`
+`Sidebar → Requisiciones → Detalle de requisición (vista global)` → MANUAL → `Click "Comentar"` → `Escribe comentario (mín. 20 caracteres)` → `Selecciona destinatarios adicionales opcional` → `Adjunta archivo opcional` → `Confirmar` → AUTOMATICO → `Comentario aparece en journal + Notifica al Gerente de Departamento + Notifica a destinatarios adicionales si aplica + Queda en log con autor y fecha`

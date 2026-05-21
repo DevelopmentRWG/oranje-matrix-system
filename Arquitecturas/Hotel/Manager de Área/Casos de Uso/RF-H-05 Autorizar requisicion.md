@@ -22,4 +22,4 @@ Solo el Manager de Área puede autorizar (RR-H-02). La requisición debe tener a
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Bandeja "Pendientes de autorización"` → MANUAL → `Click en requisición` → `Revisa cabecera + posiciones + notas + Supervisor que la creó` → MANUAL → `Click "Autorizar"` → AUTOMATICO → `Valida que tenga ≥1 posición` → Si OK → `Cambia estado a Autorizada + Calcula urgencia (RF-H-08) + Asigna Inspector por zona (RF-H-09) + Refleja en Schedule (RF-H-10) + Envía a bandeja de Reclutamiento (RI-H-01) + Notifica al Supervisor` / Si no tiene posiciones → `Bloquea con mensaje "No tiene posiciones registradas..."`
+`Sidebar → Requisiciones → Bandeja "Pendientes de autorización"` → MANUAL → `Click en requisición` → `Revisa cabecera + posiciones + notas + Supervisor que la creó` → MANUAL → `Click "Autorizar"` → AUTOMATICO → `Valida que tenga ≥1 posición` → Si OK → `Cambia estado a Autorizada + Calcula urgencia (RF-H-08) + Asigna Inspector por zona (RF-H-09) + Refleja en Schedule (RF-H-10) + Envía a bandeja de Reclutamiento (RI-H-01) + Notifica al Supervisor` / Si no tiene posiciones → `Bloquea con mensaje "No tiene posiciones registradas..."`

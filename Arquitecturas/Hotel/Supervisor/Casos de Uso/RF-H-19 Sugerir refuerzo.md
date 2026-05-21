@@ -22,4 +22,4 @@ La sugerencia se activa desde el módulo Schedule. El sistema pre-llena: posici�
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Módulo Schedule` → MANUAL → `Detecta posición vacante / parcial` → `Click "Sugerir refuerzo"` → AUTOMATICO → `Pre-llena formulario de Nueva Requisición con posición, días vacantes, modalidad estándar` → MANUAL → `Agrega justificación (mín. 20 caracteres)` → `Completa campos restantes (cantidad / inglés / horario / fecha de inicio)` → `Click "Continuar a Nueva Requisición"` → Sigue flujo de RF-H-01 → RF-H-03
+`Sidebar → Schedule (consulta)` → MANUAL → `Detecta posición vacante / parcial` → `Click "Sugerir refuerzo"` → AUTOMATICO → `Pre-llena formulario de Nueva Requisición con posición, días vacantes, modalidad estándar` → MANUAL → `Agrega justificación (mín. 20 caracteres)` → `Completa campos restantes (cantidad / inglés / horario / fecha de inicio)` → `Click "Continuar a Nueva Requisición"` → Sigue flujo de RF-H-01 → RF-H-03

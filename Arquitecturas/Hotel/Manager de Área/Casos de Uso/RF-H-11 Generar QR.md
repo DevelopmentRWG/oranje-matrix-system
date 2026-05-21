@@ -22,4 +22,4 @@ Solo el Manager de Área puede generar / renovar el QR (RR-H-09). El QR es váli
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Módulo Timesheet` → MANUAL → `Click "Generar / Renovar QR"` → `Confirmar` → AUTOMATICO → `Sistema genera nuevo QR + Invalida QR anterior + Muestra QR en pantalla y como descarga PDF + Notifica a colaboradores asignados al depto + Registra en log con autor y fecha`
+`Sidebar → Timesheet` → MANUAL → `Click "Generar / Renovar QR"` → `Confirmar` → AUTOMATICO → `Sistema genera nuevo QR + Invalida QR anterior + Muestra QR en pantalla y como descarga PDF + Notifica a colaboradores asignados al depto + Registra en log con autor y fecha`

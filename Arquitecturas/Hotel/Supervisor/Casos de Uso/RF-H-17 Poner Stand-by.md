@@ -22,4 +22,4 @@ Compartido con Manager de Área (RR-H-11). El motivo es obligatorio (catálogo: 
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Módulo Mi Personal → Detalle del colaborador` → MANUAL → `Click "Poner en Stand-by"` → `Selecciona motivo (catálogo)` → `Notas opcional` → `Confirmar` → AUTOMATICO → Si OK → `Estado del colaborador a Rosa + Sin Schedule ni Timesheet + Notifica al colaborador y al Manager de Área + Log auditable` / Si ya en Stand-by → `Bloquea con mensaje`
+`Sidebar → Mi Personal → Detalle del colaborador` → MANUAL → `Click "Poner en Stand-by"` → `Selecciona motivo (catálogo)` → `Notas opcional` → `Confirmar` → AUTOMATICO → Si OK → `Estado del colaborador a Rosa + Sin Schedule ni Timesheet + Notifica al colaborador y al Manager de Área + Log auditable` / Si ya en Stand-by → `Bloquea con mensaje`

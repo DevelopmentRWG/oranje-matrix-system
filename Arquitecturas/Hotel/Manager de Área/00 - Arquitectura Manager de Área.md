@@ -149,8 +149,19 @@ SIDEBAR
 - Buscar por ID o número de requisición
 
 ### Detalle
-- **Cabecera:** ID requisición + número + Supervisor que la creó + fecha + estado.
-- **Posiciones solicitadas:** cantidad, posición, modalidad, nivel de inglés, horario, fecha de inicio.
+- **Cabecera:**
+    - ID requisición.
+    - Número.
+    - Supervisor que la creó.
+    - Fecha.
+    - Estado.
+- **Posiciones solicitadas:**
+    - Cantidad.
+    - Posición.
+    - Modalidad.
+    - Nivel de inglés.
+    - Horario.
+    - Fecha de inicio.
 - **Notas adicionales** del Supervisor.
 - **Cobertura actual** ([[Semáforo de Posiciones de la Requisición]]).
 - **Colaboradores asignados** (cuando Reclutamiento ya empezó).

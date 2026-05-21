@@ -22,4 +22,4 @@ Solo el Supervisor que creó la requisición puede editarla en estado borrador o
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Mis Requisiciones → Borradores o Rechazadas` → MANUAL → `Click en requisición` → `Click "Editar"` → `Modifica campos (posiciones / horarios / modalidad / notas)` → Si era rechazada → `Lee observaciones del Manager visible en el detalle` → MANUAL → `Guardar cambios` → AUTOMATICO → `Cambios persisten + Estado se mantiene` → MANUAL → `Reenviar a autorización` (dispara RF-H-03)
+`Sidebar → Requisiciones → Mis Requisiciones → Borradores o Rechazadas` → MANUAL → `Click en requisición` → `Click "Editar"` → `Modifica campos (posiciones / horarios / modalidad / notas)` → Si era rechazada → `Lee observaciones del Manager visible en el detalle` → MANUAL → `Guardar cambios` → AUTOMATICO → `Cambios persisten + Estado se mantiene` → MANUAL → `Reenviar a autorización` (dispara RF-H-03)

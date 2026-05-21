@@ -22,4 +22,4 @@ El Manager de Área ve el calendario semanal del depto (Lunes → Domingo) con f
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Módulo Schedule` → MANUAL → `Selecciona semana` → `Click en celda (colaborador × día × posición)` → `Edita horario / mueve colaborador / marca descanso` → `Confirmar` → AUTOMATICO → `Valida que no haya cruces` → Si OK → `Persiste cambio + Notifica al colaborador + Recalcula Indicador de Cumplimiento` / Si cruce → `Bloquea con mensaje "El colaborador ya está asignado en este horario en otra posición"`
+`Sidebar → Schedule` → MANUAL → `Selecciona semana` → `Click en celda (colaborador × día × posición)` → `Edita horario / mueve colaborador / marca descanso` → `Confirmar` → AUTOMATICO → `Valida que no haya cruces` → Si OK → `Persiste cambio + Notifica al colaborador + Recalcula Indicador de Cumplimiento` / Si cruce → `Bloquea con mensaje "El colaborador ya está asignado en este horario en otra posición"`

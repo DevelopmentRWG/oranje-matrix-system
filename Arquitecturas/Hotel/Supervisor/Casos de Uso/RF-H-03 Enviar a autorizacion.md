@@ -22,4 +22,4 @@ La requisición debe tener al menos 1 posición registrada (RR-H-03). Si no la t
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Detalle de requisición (borrador o rechazada)` → MANUAL → `Click "Enviar a autorización"` → AUTOMATICO → `Valida que tenga ≥1 posición` → Si OK → `Estado pasa a Verde manzana — pendiente de autorización + Notifica al Manager de Área + Aparece en su bandeja "Pendientes de autorización" + Bloquea edición del Supervisor` / Si sin posiciones → `Bloquea con mensaje "No tiene posiciones registradas..."`
+`Sidebar → Requisiciones → Detalle de requisición (borrador o rechazada)` → MANUAL → `Click "Enviar a autorización"` → AUTOMATICO → `Valida que tenga ≥1 posición` → Si OK → `Estado pasa a Verde manzana — pendiente de autorización + Notifica al Manager de Área + Aparece en su bandeja "Pendientes de autorización" + Bloquea edición del Supervisor` / Si sin posiciones → `Bloquea con mensaje "No tiene posiciones registradas..."`

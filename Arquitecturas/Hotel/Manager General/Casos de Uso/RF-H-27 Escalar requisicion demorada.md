@@ -22,4 +22,4 @@ Acción exclusiva del Manager General. Motivo obligatorio (catálogo: Tiempo en 
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Detalle de requisición autorizada (sin tomar por mucho tiempo)` → MANUAL → `Click "Escalar a Reclutamiento"` → `Selecciona motivo (catálogo)` → `Escribe mensaje al Manager de Reclutamiento (mín. 30 caracteres)` → `Confirmar` → AUTOMATICO → `Notifica al Manager de Reclutamiento con link al expediente + Cambia indicador a "Escalado" + Queda en log auditable + Notifica al Gerente de Departamento responsable`
+`Sidebar → Requisiciones → Detalle de requisición autorizada (sin tomar por mucho tiempo)` → MANUAL → `Click "Escalar a Reclutamiento"` → `Selecciona motivo (catálogo)` → `Escribe mensaje al Manager de Reclutamiento (mín. 30 caracteres)` → `Confirmar` → AUTOMATICO → `Notifica al Manager de Reclutamiento con link al expediente + Cambia indicador a "Escalado" + Queda en log auditable + Notifica al Gerente de Departamento responsable`

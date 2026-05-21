@@ -22,4 +22,4 @@ Solo el Manager de Área puede eliminar requisiciones con posiciones. La justifi
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Detalle de requisición` → MANUAL → `Click "Eliminar requisición"` → `Justificación obligatoria (mín. 20 caracteres)` → `Marca checkbox de confirmación` → `Confirmar` → AUTOMATICO → `Estado de cada posición a Morado + Journal individual por posición + Estado de requisición a Morado + Notifica al Supervisor + Registra en log auditable`
+`Sidebar → Requisiciones → Detalle de requisición` → MANUAL → `Click "Eliminar requisición"` → `Justificación obligatoria (mín. 20 caracteres)` → `Marca checkbox de confirmación` → `Confirmar` → AUTOMATICO → `Estado de cada posición a Morado + Journal individual por posición + Estado de requisición a Morado + Notifica al Supervisor + Registra en log auditable`

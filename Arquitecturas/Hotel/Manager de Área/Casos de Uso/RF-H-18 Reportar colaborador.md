@@ -22,4 +22,4 @@ Solo el Manager de Área puede reportar (RR-H-10). El motivo es obligatorio (cat
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Módulo Mi Personal → Detalle del colaborador` → MANUAL → `Click "Reportar"` → `Selecciona motivo (catálogo)` → `Escribe descripción detallada (mín. 50 caracteres)` → `Adjunta evidencia opcional` → `Agrega testigos opcional` → `Confirmar` → AUTOMATICO → Si validaciones OK → `Estado del colaborador a Rojo + Notifica al Inspector de zona + Inicia investigación + Registra en log auditable + Notifica al Supervisor del depto` / Si descripción <50 caracteres → `Bloquea con mensaje`
+`Sidebar → Mi Personal → Detalle del colaborador` → MANUAL → `Click "Reportar"` → `Selecciona motivo (catálogo)` → `Escribe descripción detallada (mín. 50 caracteres)` → `Adjunta evidencia opcional` → `Agrega testigos opcional` → `Confirmar` → AUTOMATICO → Si validaciones OK → `Estado del colaborador a Rojo + Notifica al Inspector de zona + Inicia investigación + Registra en log auditable + Notifica al Supervisor del depto` / Si descripción <50 caracteres → `Bloquea con mensaje`

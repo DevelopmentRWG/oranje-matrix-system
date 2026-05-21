@@ -146,8 +146,18 @@ SIDEBAR
 - Buscar por ID
 
 ### Detalle de requisición
-- **Cabecera:** ID, número (auto-generado: `AAAAMMDDHHMMxx`), fecha, estado.
-- **Posiciones:** cantidad, posición, modalidad, nivel de inglés, horario, fecha de inicio.
+- **Cabecera:**
+    - ID.
+    - Número (auto-generado: `AAAAMMDDHHMMxx`).
+    - Fecha.
+    - Estado.
+- **Posiciones:**
+    - Cantidad.
+    - Posición.
+    - Modalidad.
+    - Nivel de inglés.
+    - Horario.
+    - Fecha de inicio.
 - **Notas adicionales.**
 - **Observaciones del Manager de Área** *(visible solo si fue rechazada)*.
 

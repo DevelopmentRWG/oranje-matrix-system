@@ -6,7 +6,7 @@ tags:
 aliases:
   - CU RF-H-06
 ---
-
+H
 # 🪪 ID: RF-H-06
 🏷️ **Nombre:** Rechazar requisición con observaciones
 
@@ -22,4 +22,4 @@ El motivo y las observaciones son obligatorios (mín. 20 caracteres). Al rechaza
 - Prototipo: (link de Figma)
 
 **Flujo:**
-`Bandeja "Pendientes de autorización"` → MANUAL → `Click en requisición` → `Revisa contenido` → MANUAL → `Click "Rechazar"` → `Selecciona motivo (Posiciones erróneas / Modalidad incorrecta / Datos incompletos / Falta justificación / Otro)` → `Escribe observaciones obligatorias (mín. 20 caracteres)` → `Adjunta evidencia opcional` → `Confirmar` → AUTOMATICO → `Cambia estado a En elaboración + Notifica al Supervisor + Registra en log con autor/fecha/motivo`
+`Sidebar → Requisiciones → Bandeja "Pendientes de autorización"` → MANUAL → `Click en requisición` → `Revisa contenido` → MANUAL → `Click "Rechazar"` → `Selecciona motivo (Posiciones erróneas / Modalidad incorrecta / Datos incompletos / Falta justificación / Otro)` → `Escribe observaciones obligatorias (mín. 20 caracteres)` → `Adjunta evidencia opcional` → `Confirmar` → AUTOMATICO → `Cambia estado a En elaboración + Notifica al Supervisor + Registra en log con autor/fecha/motivo`
