@@ -19,27 +19,27 @@ aliases:
 
 ## Personajes de la simulación
 
-| Personaje | Rol | Departamento |
-|---|---|---|
-| Daniela Ríos | [[Reclutamiento/Reclutadora\|Reclutadora]] | Reclutamiento — Oranje (Grupo A) |
-| Valeria Soto | [[Reclutamiento/Reclutadora\|Reclutadora]] | Reclutamiento — Oranje (Grupo A) |
-| Lucía Méndez | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] | Reclutamiento — Oranje (Grupo A) |
-| Fernando Ortiz | [[Reclutamiento/Manager de Reclutamiento\|Manager de Reclutamiento]] | Reclutamiento — Oranje |
-| Operador 5 | [[Operador de QA]] (asignado fijo a Reclutamiento) | QA — Oranje |
-| Marco Duarte | [[Hotel/Supervisor\|Supervisor]] | Hotel Coral Bay · Zona Sur |
-| Andrea Fuentes | [[Hotel/Manager de Área\|Manager de Área]] | Hotel Coral Bay · Zona Sur |
-| Roberto Lara | [[Hotel/Manager General\|Manager General]] | Hotel Coral Bay · Zona Sur |
-| Patricia Nava | [[Hotel/Supervisor\|Supervisor]] | Hotel Sierra Alta · Zona Centro |
-| Carmen López | [[Hotel/Manager de Área\|Manager de Área]] | Hotel Sierra Alta · Zona Centro |
-| Javier Torres | [[Inspección/Inspector\|Inspector]] | Zona Sur |
-| Elena Rojas | [[Inspección/Inspector\|Inspector]] | Zona Centro |
-| Sofía Cruz | Candidata nueva | — |
-| Miguel Ángel Paredes | Candidato nuevo | — |
-| Luis Gerardo Vega | Candidato en [[Core/Módulos/Blacklist\|Blacklist]] | — |
-| Ana Belén Herrera | Colaboradora existente (Verde fuerte) | Zona Sur |
-| Carlos Rivera | Colaborador existente (Amarillo) | Zona Centro |
-| Diana Morales | Colaboradora existente (Naranja, fija) | Zona Sur |
-| Pedro Jiménez | Colaborador existente (incidencia posterior) | Zona Sur |
+| Personaje            | Rol                                                                  | Departamento                     |
+| -------------------- | -------------------------------------------------------------------- | -------------------------------- |
+| Daniela Ríos         | [[Reclutamiento/Reclutadora\|Reclutadora]]                           | Reclutamiento — Oranje (Grupo A) |
+| Valeria Soto         | [[Reclutamiento/Reclutadora\|Reclutadora]]                           | Reclutamiento — Oranje (Grupo A) |
+| Lucía Méndez         | [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]]     | Reclutamiento — Oranje (Grupo A) |
+| Fernando Ortiz       | [[Reclutamiento/Manager de Reclutamiento\|Manager de Reclutamiento]] | Reclutamiento — Oranje           |
+| Operador 5           | [[Operador de QA]] (asignado fijo a Reclutamiento)                   | QA — Oranje                      |
+| Marco Duarte         | [[Hotel/Supervisor\|Supervisor]]                                     | Hotel Coral Bay · Zona Sur       |
+| Andrea Fuentes       | [[Hotel/Manager de Área\|Manager de Área]]                           | Hotel Coral Bay · Zona Sur       |
+| Roberto Lara         | [[Hotel/Manager General\|Manager General]]                           | Hotel Coral Bay · Zona Sur       |
+| Patricia Nava        | [[Hotel/Supervisor\|Supervisor]]                                     | Hotel Sierra Alta · Zona Centro  |
+| Carmen López         | [[Hotel/Manager de Área\|Manager de Área]]                           | Hotel Sierra Alta · Zona Centro  |
+| Javier Torres        | [[Inspección/Inspector\|Inspector]]                                  | Zona Sur                         |
+| Elena Rojas          | [[Inspección/Inspector\|Inspector]]                                  | Zona Centro                      |
+| Sofía Cruz           | Candidata nueva                                                      | —                                |
+| Miguel Ángel Paredes | Candidato nuevo                                                      | —                                |
+| Luis Gerardo Vega    | Candidato en [[Core/Módulos/Blacklist\|Blacklist]]                   | —                                |
+| Ana Belén Herrera    | Colaboradora existente (Verde fuerte)                                | Zona Sur                         |
+| Carlos Rivera        | Colaborador existente (Amarillo)                                     | Zona Centro                      |
+| Diana Morales        | Colaboradora existente (Naranja, fija)                               | Zona Sur                         |
+| Pedro Jiménez        | Colaborador existente (incidencia posterior)                         | Zona Sur                         |
 
 ---
 
@@ -53,27 +53,27 @@ aliases:
 
 ### Pool de Colaboradores
 
-| Estado en [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] | Cantidad | Ejemplo |
-|---|---|---|
-| Blanco (Pre-asignación) | 0 | — |
-| Verde fuerte (Disponible) | 12 | Ana Belén Herrera + 11 más |
-| Amarillo (Disponible voluntario) | 3 | Carlos Rivera + 2 más |
-| Naranja (Fijo) | 8 | Diana Morales + 7 más |
-| Rosa (Stand-by) | 2 | — |
-| Café (Asignación temporal) | 1 | — |
+| Estado en [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] | Cantidad | Ejemplo                    |
+| --------------------------------------------------------------------------------------- | -------- | -------------------------- |
+| Blanco (Pre-asignación)                                                                 | 0        | —                          |
+| Verde fuerte (Disponible)                                                               | 12       | Ana Belén Herrera + 11 más |
+| Amarillo (Disponible voluntario)                                                        | 3        | Carlos Rivera + 2 más      |
+| Naranja (Fijo)                                                                          | 8        | Diana Morales + 7 más      |
+| Rosa (Stand-by)                                                                         | 2        | —                          |
+| Café (Asignación temporal)                                                              | 1        | —                          |
 
 ### KPIs de la semana anterior
 
 Todos dentro de meta según [[QA/Métricas y KPIs por Departamento|Métricas y KPIs por Departamento]].
 
-| KPI | Meta | Resultado semana anterior |
-|---|---|---|
-| Cobertura total de requisiciones | ≥ 85% | 90% |
-| Tiempo promedio de toma | ≤ 8h | 4h |
-| Tasa de auto-asignación | ≤ 5% | 0% |
-| Tasa de escalación | ≤ 10% | 5% |
-| Consulta de Blacklist | 100% | 100% |
-| Tasa de ingreso al Pool | ≥ 60% | 75% |
+| KPI                              | Meta  | Resultado semana anterior |
+| -------------------------------- | ----- | ------------------------- |
+| Cobertura total de requisiciones | ≥ 85% | 90%                       |
+| Tiempo promedio de toma          | ≤ 8h  | 4h                        |
+| Tasa de auto-asignación          | ≤ 5%  | 0%                        |
+| Tasa de escalación               | ≤ 10% | 5%                        |
+| Consulta de Blacklist            | 100%  | 100%                      |
+| Tasa de ingreso al Pool          | ≥ 60% | 75%                       |
 
 ### Bandeja de requisiciones
 
@@ -93,20 +93,20 @@ El [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] es continuo: 
 
 Daniela recibe a Sofía Cruz como candidata. Antes de iniciar cualquier proceso:
 
-1. Daniela **consulta la [[Core/Módulos/Blacklist|Blacklist]]** → Sofía **no aparece** (resultado negativo).
+1. Daniela **consulta la [[Core/Módulos/Blacklist|Blacklist]]** → Sofía **no aparece** (resultado negativo). - ESTO LO HACE AUTOMATICAMENTE DESPUES DE LA FASE 1 (ENTREVISTA) EN EL SISTEMA
 
 > [!warning] Regla de negocio
 > [[Reclutamiento/Reglas de Reclutamiento|Reglas de Reclutamiento]] — "La Reclutadora debe consultar la Blacklist antes de reclutar a cualquier candidato."
 
 2. Daniela procede con la entrevista inicial y captura los datos de la Fase 1:
 
-| Campo | Valor |
-|---|---|
+| Campo           | Valor              |
+| --------------- | ------------------ |
 | Nombre completo | Sofía Cruz Mendoza |
-| Edad | 24 años |
-| Género | Femenino |
-| Domicilio | Zona Sur |
-| Teléfono | (555) 012-3456 |
+| Edad            | 24 años            |
+| Género          | Femenino           |
+| Domicilio       | Zona Sur           |
+| Teléfono        | (555) 012-3456     |
 
 > [!warning] Regla de negocio
 > [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] — Fase 1: Entrevista inicial. Responsable: Reclutadora.
@@ -115,15 +115,15 @@ Daniela recibe a Sofía Cruz como candidata. Antes de iniciar cualquier proceso:
 
 Sofía descarga la app y completa sus datos:
 
-| Campo | Valor | Catálogo |
-|---|---|---|
-| SSN | XXX-XX-1234 | — |
-| ITIN | — | — |
-| Posición | Housekeeper | [[Core/Catálogos/Posiciones\|Posiciones]] |
-| Nivel de inglés | Intermedio | [[Core/Catálogos/Niveles de Inglés\|Niveles de Inglés]] |
-| Nivel de experiencia | 2 años | — |
-| Tipo de transporte | Auto propio | — |
-| Modalidad | Tiempo completo | [[Core/Catálogos/Modalidades de Contratación\|Modalidades de Contratación]] |
+| Campo                | Valor           | Catálogo                                                                    |
+| -------------------- | --------------- | --------------------------------------------------------------------------- |
+| SSN                  | XXX-XX-1234     | —                                                                           |
+| ITIN                 | —               | —                                                                           |
+| Posición             | Housekeeper     | [[Core/Catálogos/Posiciones\|Posiciones]]                                   |
+| Nivel de inglés      | Intermedio      | [[Core/Catálogos/Niveles de Inglés\|Niveles de Inglés]]                     |
+| Nivel de experiencia | 2 años          | —                                                                           |
+| Tipo de transporte   | Auto propio     | —                                                                           |
+| Modalidad            | Tiempo completo | [[Core/Catálogos/Modalidades de Contratación\|Modalidades de Contratación]] |
 
 > [!warning] Regla de negocio
 > [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]] — Fase 2: Alta en la app. Responsable: el propio Colaborador.
@@ -174,7 +174,7 @@ Daniela revisa toda la información capturada en las tres fases. Todo es correct
 
 Luis Gerardo Vega se presenta como candidato. Daniela inicia el protocolo estándar:
 
-1. **Consulta la [[Core/Módulos/Blacklist|Blacklist]]** → Luis Gerardo **aparece en estado Negro**.
+1. **Consulta la [[Core/Módulos/Blacklist|Blacklist]]** → Luis Gerardo **aparece en estado Negro**. - ESTO LO HACE EL SISTEMA AUTOMATICO EN FASE 1
    - Motivo registrado: 3 inasistencias (Blacklist automático por sistema).
 
 > [!warning] Resultado
@@ -215,10 +215,13 @@ Marco Duarte (Supervisor) crea una requisición en el sistema:
 
 Posición solicitada:
 
-| Posición | Modalidad | Cantidad | Fecha de inicio | Preferencia de idioma |
-|---|---|---|---|---|
-| Housekeeper | Tiempo completo | 4 | Miércoles 21 de mayo | Intermedio |
+| Posición    | Modalidad       | Cantidad | Fecha de inicio      | Preferencia de idioma | Tipo Contrato |
+| ----------- | --------------- | -------- | -------------------- | --------------------- | ------------- |
+| Housekeeper | Tiempo completo | 4        | Miércoles 21 de mayo | Ingles - Intermedio   | Fijo          |
 
+| Posición    | Modalidad       | Cantidad | Fecha de inicio      | Fecha finalizacion | Preferencia de idioma | Tipo Contrato |
+| ----------- | --------------- | -------- | -------------------- | ------------------ | --------------------- | ------------- |
+| Housekeeper | Tiempo Completo | 4        | Miércoles 21 de mayo | Jueves 22 de mayo  | Ingles - Intermedio   | Temporal      |
 > [!warning] Regla de negocio
 > [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]] — "GM, GH o SUP crea la requisición con al menos una posición."
 
@@ -446,11 +449,11 @@ Valeria Soto toma la requisición de la bandeja compartida.
 
 Valeria busca en la [[Core/Módulos/Pool de Colaboradores|Pool de Colaboradores]] filtrando por Zona Centro:
 
-| Posición | Requeridos | Encontrados en Pool | Asignados | Cobertura |
-|---|---|---|---|---|
-| Housekeeper | 6 | 4 | 4 | 67% |
-| Houseman | 2 | 2 | 2 | 100% |
-| Chef | 1 | 0 | 0 | 0% |
+| Posición    | Requeridos | Encontrados en Pool | Asignados | Cobertura |
+| ----------- | ---------- | ------------------- | --------- | --------- |
+| Housekeeper | 6          | 4                   | 4         | 67%       |
+| Houseman    | 2          | 2                   | 2         | 100%      |
+| Chef        | 1          | 0                   | 0         | 0%        |
 
 Valeria asigna a los 6 colaboradores encontrados y **busca activamente fuera del sistema** (redes sociales, grupos de WhatsApp) para cubrir las 2 posiciones de Housekeeper y 1 de Chef faltantes.
 
@@ -763,14 +766,14 @@ El [[Operador de QA]] (Operador 5), asignado de forma fija al departamento de [[
 
 ### Resumen de KPIs medidos (semana del 19–25 mayo 2026)
 
-| # | KPI | Resultado en esta simulación | Meta | Estado |
-|---|---|---|---|---|
-| 1 | **Cobertura total de requisiciones** (Azul claro / cerradas) | 2 de 3 = 67% | ≥ 85% | Crítico (< 70%) |
-| 2 | **Tiempo promedio de toma de requisición** | ≈ 3h promedio | ≤ 8h | En meta |
-| 3 | **Tasa de auto-asignación por timeout** | 1 de 3 = 33% | ≤ 5% | Crítico (> 15%) |
-| 4 | **Tasa de escalación por timeout al Líder** | 1 de 3 = 33% | ≤ 10% | Crítico (> 20%) |
-| 5 | **Cumplimiento de consulta de Blacklist** | 2 de 2 = 100% | 100% | En meta |
-| 6 | **Tasa de ingreso al Pool** (aprobados / entrevistados) | 2 de 3 = 67% | ≥ 60% | En meta |
+| #   | KPI                                                          | Resultado en esta simulación | Meta  | Estado          |
+| --- | ------------------------------------------------------------ | ---------------------------- | ----- | --------------- |
+| 1   | **Cobertura total de requisiciones** (Azul claro / cerradas) | 2 de 3 = 67%                 | ≥ 85% | Crítico (< 70%) |
+| 2   | **Tiempo promedio de toma de requisición**                   | ≈ 3h promedio                | ≤ 8h  | En meta         |
+| 3   | **Tasa de auto-asignación por timeout**                      | 1 de 3 = 33%                 | ≤ 5%  | Crítico (> 15%) |
+| 4   | **Tasa de escalación por timeout al Líder**                  | 1 de 3 = 33%                 | ≤ 10% | Crítico (> 20%) |
+| 5   | **Cumplimiento de consulta de Blacklist**                    | 2 de 2 = 100%                | 100%  | En meta         |
+| 6   | **Tasa de ingreso al Pool** (aprobados / entrevistados)      | 2 de 3 = 67%                 | ≥ 60% | En meta         |
 
 ### Observación formal del Operador 5
 
@@ -785,20 +788,20 @@ El [[Indicador de Calidad]] del departamento de Reclutamiento se mantiene bajo o
 
 ## Resumen consolidado de transiciones de semáforo
 
-| Entidad | Semáforo | Transición | Día | Regla fuente |
-|---|---|---|---|---|
-| Sofía Cruz | Colaborador | — → Blanco | Lun 19 | [[Reclutamiento/Flujo de Reclutamiento\|Flujo de Reclutamiento]] |
-| Sofía Cruz | Colaborador | Blanco → Verde manzana | Mié 21 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Sofía Cruz | Colaborador | Verde manzana → Azul claro | Vie 23 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Sofía Cruz | Colaborador | Azul claro → Naranja | Mié 28 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| REQ 202605191400K3 | Requisición | Vm → V → Am → Ac | Lun 19 | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] |
-| REQ 202605191400K3 | Urgencia | Rojo | Lun 19 | [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] |
-| REQ 202605201000M7 | Requisición | Vm → V → Am → Rojo | Mar 20 – Vie 23 | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] |
-| REQ 202605201600P2 | Requisición | V → Am (auto) → Ac | Mar – Mié | [[Reclutamiento/Self-Pick de Requisiciones\|Self-Pick]] |
-| Carlos Rivera | Colaborador | Am → Café → Am | Jue 22 – Dom 25 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Diana Morales | Colaborador | Na → Mo ×3 → Negro | Jue 22 – Lun 26 | [[Core/Módulos/Blacklist\|Blacklist]] |
-| Pedro Jiménez | Colaborador | [previo] → Rojo → Vf | Vie 23 – Lun 26 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]] |
-| Luis G. Vega | Blacklist | Consulta: Negro (bloqueado) | Lun 19 | [[Core/Módulos/Blacklist\|Blacklist]] |
+| Entidad            | Semáforo    | Transición                  | Día             | Regla fuente                                                                         |
+| ------------------ | ----------- | --------------------------- | --------------- | ------------------------------------------------------------------------------------ |
+| Sofía Cruz         | Colaborador | — → Blanco                  | Lun 19          | [[Reclutamiento/Flujo de Reclutamiento\|Flujo de Reclutamiento]]                     |
+| Sofía Cruz         | Colaborador | Blanco → Verde manzana      | Mié 21          | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]]        |
+| Sofía Cruz         | Colaborador | Verde manzana → Azul claro  | Vie 23          | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]]        |
+| Sofía Cruz         | Colaborador | Azul claro → Naranja        | Mié 28          | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]]        |
+| REQ 202605191400K3 | Requisición | Vm → V → Am → Ac            | Lun 19          | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]]          |
+| REQ 202605191400K3 | Urgencia    | Rojo                        | Lun 19          | [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] |
+| REQ 202605201000M7 | Requisición | Vm → V → Am → Rojo          | Mar 20 – Vie 23 | [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]]          |
+| REQ 202605201600P2 | Requisición | V → Am (auto) → Ac          | Mar – Mié       | [[Reclutamiento/Self-Pick de Requisiciones\|Self-Pick]]                              |
+| Carlos Rivera      | Colaborador | Am → Café → Am              | Jue 22 – Dom 25 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]]        |
+| Diana Morales      | Colaborador | Na → Mo ×3 → Negro          | Jue 22 – Lun 26 | [[Core/Módulos/Blacklist\|Blacklist]]                                                |
+| Pedro Jiménez      | Colaborador | [previo] → Rojo → Vf        | Vie 23 – Lun 26 | [[Core/Módulos/Semáforos/Semáforo del Colaborador\|Semáforo del Colaborador]]        |
+| Luis G. Vega       | Blacklist   | Consulta: Negro (bloqueado) | Lun 19          | [[Core/Módulos/Blacklist\|Blacklist]]                                                |
 
 **Abreviaturas:** Vm = Verde manzana, V = Verde, Am = Amarillo, Ac = Azul claro, Na = Naranja, Mo = Morado, Vf = Verde fuerte.
 

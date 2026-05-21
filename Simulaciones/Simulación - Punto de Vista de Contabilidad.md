@@ -45,33 +45,33 @@ Patricia Solano, [[Contadora]] de Oranje, es la responsable de ejecutar toda la 
 
 ### 0.2 — Términos contractuales del Hotel Costa Esmeralda
 
-| Campo | Valor |
-|---|---|
-| Pay rate (Housekeeper) | $12.50/hr |
-| Pay rate (Houseman) | $11.00/hr |
-| Pay rate (Laundry) | $11.50/hr |
-| Bill rate (Housekeeper) | $18.25/hr |
-| Bill rate (Houseman) | $16.50/hr |
-| Bill rate (Laundry) | $17.00/hr |
-| Overtime | 1.5x después de 40 hrs brutas semanales por hotel |
-| Festivos | 2x bill rate en días festivos federales |
-| Inicio de semana | Lunes |
-| Fin de semana | Domingo |
-| Deduce comida | Sí ($3 USD/día laborado) |
-| Factura partida por mes | Sí |
+| Campo                   | Valor                                             |
+| ----------------------- | ------------------------------------------------- |
+| Pay rate (Housekeeper)  | $12.50/hr                                         |
+| Pay rate (Houseman)     | $11.00/hr                                         |
+| Pay rate (Laundry)      | $11.50/hr                                         |
+| Bill rate (Housekeeper) | $18.25/hr                                         |
+| Bill rate (Houseman)    | $16.50/hr                                         |
+| Bill rate (Laundry)     | $17.00/hr                                         |
+| Overtime                | 1.5x después de 40 hrs brutas semanales por hotel |
+| Festivos                | 2x bill rate en días festivos federales           |
+| Inicio de semana        | Lunes                                             |
+| Fin de semana           | Domingo                                           |
+| Deduce comida           | Sí ($3 USD/día laborado)                          |
+| Factura partida por mes | Sí                                                |
 
 > [!warning] Regla de negocio
 > El overtime se calcula **por hotel**, no de forma global. Si un colaborador trabaja en dos hoteles, cada hotel tiene su umbral de 40 horas brutas semanales independiente. — [[Consolidado Semanal del Colaborador#Cálculo]]
 
 ### 0.3 — Colaboradores y sus condiciones
 
-| Colaborador | Posición | Hotel(es) | Pay rate | Escenario contable |
-|---|---|---|---|---|
-| María López | HK | Costa Esmeralda | $12.50 | Estándar + deducción uniforme |
-| Juan Hernández | HM | Costa Esmeralda | $11.00 | Overtime parcial (5 OT, hotel autoriza 3) |
-| Elena Cruz | HK | Costa Esmeralda + Playa del Sol | $12.50 / $13.00 | Multi-hotel, cheque al hotel con más horas |
-| Roberto Fuentes | HK | Costa Esmeralda | $14.00 (rate interno) | Rate interno + retención 16% (sin SSN) |
-| Ana Castillo | LN | Costa Esmeralda | $11.50 | Deducción de comida |
+| Colaborador     | Posición | Hotel(es)                       | Pay rate              | Escenario contable                         |
+| --------------- | -------- | ------------------------------- | --------------------- | ------------------------------------------ |
+| María López     | HK       | Costa Esmeralda                 | $12.50                | Estándar + deducción uniforme              |
+| Juan Hernández  | HM       | Costa Esmeralda                 | $11.00                | Overtime parcial (5 OT, hotel autoriza 3)  |
+| Elena Cruz      | HK       | Costa Esmeralda + Playa del Sol | $12.50 / $13.00       | Multi-hotel, cheque al hotel con más horas |
+| Roberto Fuentes | HK       | Costa Esmeralda                 | $14.00 (rate interno) | Rate interno + retención 16% (sin SSN)     |
+| Ana Castillo    | LN       | Costa Esmeralda                 | $11.50                | Deducción de comida                        |
 
 > [!tip] Rate interno — Roberto Fuentes
 > Roberto tiene un acuerdo interno con Oranje por experiencia previa: su pay rate real es **$14.00/hr**, mayor al rate contractual del hotel ($12.50/hr). Este rate interno es visible **solo** para Contabilidad. La [[Facturación al Hotel|Factura al Hotel]] siempre usa el bill rate del [[Core/Módulos/Contrato|Contrato]] ($18.25/hr). La diferencia la absorbe Oranje. — [[Consolidado Semanal del Colaborador#Rate interno]]

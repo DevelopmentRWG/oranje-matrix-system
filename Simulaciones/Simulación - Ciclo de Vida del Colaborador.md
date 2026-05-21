@@ -19,38 +19,38 @@ aliases:
 
 ## Personajes de la simulación
 
-| Personaje | Rol | Departamento |
-|---|---|---|
-| Carlos Méndez | Colaborador ([[Posiciones\|Housekeeper]]) | — |
-| Operador 3 | [[Operador de QA]] (asignado fijo a Colaborador) | QA — Oranje |
-| (Reclutadora) | [[Reclutadora]] | Reclutamiento — Oranje |
-| (Inspector zona Centro) | [[Inspector]] | Inspección — Oranje |
-| (Inspector zona Este) | [[Inspector]] | Inspección — Oranje |
-| (Supervisor Hotel Riviera) | [[Supervisor]] | Hotel Riviera · Zona Centro |
-| (Manager de Área Hotel Riviera) | [[Manager de Área]] | Hotel Riviera · Zona Centro |
-| (Supervisor Hotel Costa Azul) | [[Supervisor]] | Hotel Costa Azul · Zona Este |
-| [[Contadora]] | [[Contadora]] | Contabilidad — Oranje |
-| [[Manager de Contabilidad]] | [[Manager de Contabilidad]] | Contabilidad — Oranje |
-| María Méndez | Contacto de emergencia (madre) | — |
-| María González | Testigo (compañera de turno) | Hotel Riviera |
+| Personaje                       | Rol                                              | Departamento                 |
+| ------------------------------- | ------------------------------------------------ | ---------------------------- |
+| Carlos Méndez                   | Colaborador ([[Posiciones\|Housekeeper]])        | —                            |
+| Operador 3                      | [[Operador de QA]] (asignado fijo a Colaborador) | QA — Oranje                  |
+| (Reclutadora)                   | [[Reclutadora]]                                  | Reclutamiento — Oranje       |
+| (Inspector zona Centro)         | [[Inspector]]                                    | Inspección — Oranje          |
+| (Inspector zona Este)           | [[Inspector]]                                    | Inspección — Oranje          |
+| (Supervisor Hotel Riviera)      | [[Supervisor]]                                   | Hotel Riviera · Zona Centro  |
+| (Manager de Área Hotel Riviera) | [[Manager de Área]]                              | Hotel Riviera · Zona Centro  |
+| (Supervisor Hotel Costa Azul)   | [[Supervisor]]                                   | Hotel Costa Azul · Zona Este |
+| [[Contadora]]                   | [[Contadora]]                                    | Contabilidad — Oranje        |
+| [[Manager de Contabilidad]]     | [[Manager de Contabilidad]]                      | Contabilidad — Oranje        |
+| María Méndez                    | Contacto de emergencia (madre)                   | —                            |
+| María González                  | Testigo (compañera de turno)                     | Hotel Riviera                |
 
 ### Perfil del colaborador
 
-| Campo | Valor |
-|---|---|
-| Nombre | Carlos Méndez |
-| Edad | 28 años |
-| Género | Masculino |
-| Domicilio | Zona Centro |
-| Teléfono | (555) 123-4567 |
-| Posición | Housekeeper |
-| Nivel de inglés | Intermedio |
-| Experiencia | 2 años |
-| Transporte | Vehículo propio |
-| Modalidad | Tiempo completo |
-| SSN/TaxID | No tiene al inicio |
-| Tipo de sangre | O+ |
-| Alergias | Ninguna |
+| Campo                  | Valor                |
+| ---------------------- | -------------------- |
+| Nombre                 | Carlos Méndez        |
+| Edad                   | 28 años              |
+| Género                 | Masculino            |
+| Domicilio              | Zona Centro          |
+| Teléfono               | (555) 123-4567       |
+| Posición               | Housekeeper          |
+| Nivel de inglés        | Intermedio           |
+| Experiencia            | 2 años               |
+| Transporte             | Vehículo propio      |
+| Modalidad              | Tiempo completo      |
+| SSN/TaxID              | No tiene al inicio   |
+| Tipo de sangre         | O+                   |
+| Alergias               | Ninguna              |
 | Contacto de emergencia | María Méndez (madre) |
 
 ---
@@ -80,12 +80,13 @@ Carlos completa su perfil directamente desde la app de Oranje. Registra los sigu
 Carlos completa la sección de datos de emergencia y salud:
 
 - Contacto de emergencia: María Méndez (madre)
+- Telefono de emergencia: 313xxxxxxxxxx
 - Tipo de sangre: O+
 - Alergias: ninguna
 
 ### 1.4 — Validación y aprobación
 
-La [[Reclutadora]] revisa el perfil de Carlos, lo aprueba y habilita su acceso a los paneles del sistema. Antes de proceder, consulta la [[Blacklist]] — Carlos no aparece registrado.
+La [[Reclutadora]] revisa el perfil de Carlos, lo aprueba y habilita su acceso a los paneles del sistema. Antes de proceder, consulta la [[Blacklist]] — Carlos no aparece registrado. ----------
 
 Carlos ingresa al [[Pool de Colaboradores]].
 
@@ -157,14 +158,14 @@ Un día típico de Carlos en Hotel Riviera. Poncha vía QR generado por el [[Man
 
 ### 3.1 — Registro de ponches
 
-| Ponche | Hora | Evento |
-|---|---|---|
-| Entrada | 7:00 AM | Inicio de jornada |
-| Salida Lunch | 12:00 PM | Sale a comer |
-| Entrada Lunch | 12:35 PM | Regresa de comer |
-| Salida Break | 3:00 PM | Sale a descanso |
-| Entrada Break | 3:15 PM | Regresa de descanso |
-| Salida | 5:00 PM | Fin de jornada |
+| Ponche        | Hora     | Evento              |
+| ------------- | -------- | ------------------- |
+| Entrada       | 7:00 AM  | Inicio de jornada   |
+| Salida Lunch  | 12:00 PM | Sale a comer        |
+| Entrada Lunch | 12:30 PM | Regresa de comer    |
+| Salida Break  | 3:00 PM  | Sale a descanso     |
+| Entrada Break | 3:15 PM  | Regresa de descanso |
+| Salida        | 5:00 PM  | Fin de jornada      |
 
 ### 3.2 — Cálculo de horas
 
@@ -186,11 +187,12 @@ Un día típico de Carlos en Hotel Riviera. Poncha vía QR generado por el [[Man
 
 Si Carlos hubiera tomado solo 25 minutos de lunch:
 
-| Concepto | Cálculo | Resultado |
-|---|---|---|
-| Lunch real | 25 min | 25 min |
-| Deducción de lunch | Lunch real (25 min) < 30 min → se deduce el **mínimo de 30 min** | 30 min |
-| **Horas netas** | 10h 00min − 30min − 15min | **9h 15min** |
+| Concepto           | Cálculo                                                          | Resultado    |
+| ------------------ | ---------------------------------------------------------------- | ------------ |
+| Lunch real         | 25 min                                                           | 25 min       |
+| Deducción de lunch | Lunch real (25 min) < 30 min → se deduce el **mínimo de 30 min** | 30 min       |
+| **Horas netas**    | 10h 00min − 30min − 15min                                        | **9h 15min** |
+|                    |                                                                  |              |
 
 > [!warning] Regla de negocio
 > La deducción de lunch aplica a todos sin excepción:

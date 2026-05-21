@@ -26,20 +26,20 @@ Sistema de estados visuales que representa la situación actual de cada colabora
 
 ## Estados
 
-| Color         | Estado                                | Descripción                                                                                                                 |
-| ------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Blanco        | Pre-asignación                        | Apenas subió sus datos, aún no ha sido asignado a ningún hotel.                                                             |
-| Verde manzana | Día 1-2                               | Colaborador nuevo, primeros días, siempre que esté asistiendo. El [[Inspector]] verifica su llegada el día 1. |
-| Azul claro    | Día 3+                                | Ponchó en la propiedad al tercer día. El [[Inspector]] le entrega su uniforme.                                |
-| Naranja       | Fijo                                  | Pasó una semana, listo para colaborar fijamente en el hotel.                                                                |
-| Verde fuerte  | Disponible                            | Disponible para asignación (o reincorporado tras disputa a su favor).                                                       |
-| Amarillo      | Disponible voluntario                 | En descanso de un hotel, se pone disponible para asignación temporal.                                                       |
-| Café          | Asignación temporal                   | Asignado temporalmente a cubrir la jornada completa o una parte de la jornada.                                              |
-| Rosa          | Stand-by                              | El hotel lo mandó a descansar (vacaciones, temporada baja).                                                                 |
-| Morado        | No regresó                            | No asistió por causa propia.                                                                                                |
-| Rojo          | Reportado                             | El hotel lo reportó; [[Inspector]] revisa el caso.                                                                          |
+| Color         | Estado                                | Descripción                                                                                                                                                                        |
+| ------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Blanco        | Pre-asignación                        | Apenas subió sus datos, esta ingresando apenas al sistema                                                                                                                          |
+| Verde manzana | Día 1-2                               | Colaborador nuevo, primeros días, siempre que esté asistiendo. El [[Inspector]] verifica su llegada el día 1.                                                                      |
+| Azul claro    | Día 3+                                | Ponchó en la propiedad al tercer día. El [[Inspector]] le entrega su uniforme.                                                                                                     |
+| Naranja       | Fijo                                  | Pasó una semana, listo para colaborar fijamente en el hotel.                                                                                                                       |
+| Verde fuerte  | Disponible                            | Disponible para asignación (o reincorporado tras disputa a su favor). - Ya tuvo onboarding y entrega de uniforme                                                                   |
+| Amarillo      | Disponible voluntario                 | En descanso de un hotel, se pone disponible para asignación temporal.                                                                                                              |
+| Café          | Asignación temporal                   | Asignado temporalmente a cubrir la jornada completa o una parte de la jornada.                                                                                                     |
+| Rosa          | Stand-by                              | El hotel lo mandó a descansar (vacaciones, temporada baja).                                                                                                                        |
+| Morado        | No regresó                            | No asistió por causa propia.                                                                                                                                                       |
+| Rojo          | Reportado                             | El hotel lo reportó; [[Inspector]] revisa el caso.                                                                                                                                 |
 | Gris          | Accidentado                           | El colaborador sufrió un [[Core/Módulos/Accidente Laboral/Accidente Laboral\|accidente laboral]] y está en incapacidad médica. Protegido de [[Core/Módulos/Blacklist\|Blacklist]]. |
-| Negro         | [[Core/Módulos/Blacklist\|Blacklist]] | Disputa resuelta a favor del hotel, colaborador bloqueado.                                                                  |
+| Negro         | [[Core/Módulos/Blacklist\|Blacklist]] | Disputa resuelta a favor del hotel, colaborador bloqueado.                                                                                                                         |
 
 ## Reglas clave
 

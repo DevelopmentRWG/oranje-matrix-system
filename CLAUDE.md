@@ -15,7 +15,7 @@ roles, procesos, reglas de negocio, semáforos (máquinas de estado) y módulos
 operativos, desde el reclutamiento del personal hasta su asignación y seguimiento en
 hoteles clientes.
 
-- **Naturaleza:** ~250 archivos `.md` en Obsidian Flavored Markdown. No hay build, no
+- **Naturaleza:** ~270 archivos `.md` en Obsidian Flavored Markdown. No hay build, no
   hay tests, no hay código ejecutable. El "producto" es la documentación misma.
 - **Entidad central:** el **Colaborador** — la persona que se recluta, asigna y opera
   en los hoteles. Su ciclo de vida es el eje del sistema.
@@ -40,6 +40,7 @@ oranje-matrix-system/
 ├── CLAUDE.md                    # Este archivo
 │
 ├── Core/                        # Núcleo transversal del sistema
+│   ├── Blueprint.md             # Patrón replicable del sistema organizacional
 │   ├── Catálogos/               # Posiciones, Zonas, Niveles de Inglés,
 │   │                            #   Departamentos del Hotel, Modalidades de Contratación
 │   └── Módulos/
@@ -56,7 +57,12 @@ oranje-matrix-system/
 ├── Inspección/                  # Coordinador, Inspector
 ├── QA/                          # Manager de QA, Operador de QA, Dashboard, KPIs
 ├── Ventas/                      # BD, BDC + Onboarding-Hotel (flujo y conceptos)
-├── Contabilidad/                # Consolidado Semanal del Colaborador
+├── Customer Service/            # CS Manager, Agente de CS + Flujo y Reglas de CS
+├── Contabilidad/                # Manager de Contabilidad, Contadora + Flujo de Nómina,
+│                                #   Consolidado, Deducciones, Facturación, Vacaciones
+├── Simulaciones/                # Recorridos narrativos: 7 puntos de vista
+│                                #   (Colaborador, Hotel, Reclutamiento, QA,
+│                                #    Inspección, Ventas, Contabilidad)
 │
 ├── Arquitecturas/               # Arquitectura de software por departamento
 │   ├── _GUIA - Plantilla de Arquitectura de Departamento.md  # ★ Metodología (§7)
@@ -85,6 +91,8 @@ de cada departamento.
 | **Inspección** | Coordinador · Inspector |
 | **QA** | Manager de QA · Operador de QA (5, uno por depto supervisado) |
 | **Ventas** | Business Developer Coordinator (BDC) · Business Developer (BD) |
+| **Customer Service** | Customer Service Manager · Agente de Customer Service |
+| **Contabilidad** | Manager de Contabilidad · Contadora |
 
 QA **observa, mide y retroalimenta**; no ejecuta la operación de ningún departamento.
 
@@ -107,6 +115,8 @@ significado por semáforo** (los colores sí se reutilizan entre semáforos dist
 - [Flujo de Reclutamiento](Reclutamiento/Flujo%20de%20Reclutamiento.md) — continuo
 - [Flujo de Onboarding](Ventas/Onboarding-Hotel/Flujo%20de%20Onboarding.md)
 - [Flujo de Accidente Laboral](Core/Módulos/Accidente%20Laboral/Flujo%20de%20Accidente%20Laboral.md)
+- [Flujo de Customer Service](Customer%20Service/Flujo%20de%20Customer%20Service.md)
+- [Flujo de Nómina](Contabilidad/Flujo%20de%20Nómina.md)
 
 ## 5. Jerarquía documental (fuente de verdad)
 
@@ -231,6 +241,7 @@ entregar el resultado:
 | 2026-05-18 | Reestructurados los `07 - Feature Map` de Reclutamiento/Líder de Grupo y de los 3 roles de Hotel al formato PRIMARIAS/SECUNDARIAS del _GUIA. | Claude |
 | 2026-05-18 | Eliminado el módulo Blacklist del depto Hotel (RF-H-29, RI-H-07 y referencias en 26 archivos de Arquitecturas/Hotel); arquitectura alineada con la fuente de verdad. `Core/` y Reclutamiento/Inspección sin cambios. | Claude |
 | 2026-05-18 | Unificados los 20 Casos de Uso del depto Hotel para que toda línea `**Flujo:**` empiece con `Sidebar → [Módulo] → ...` (módulo del sidebar del rol). 16 archivos modificados; los 4 que ya lo cumplían se respetaron. | Claude |
+| 2026-05-21 | Vault: nuevo depto **Customer Service** (CS Manager + Agente + Flujo + Reglas); **Contabilidad** refactorizada (rol Contabilista eliminado → **Manager de Contabilidad** + **Contadora**, módulos Deducciones/Facturación/Vacaciones/Flujo de Nómina); nueva carpeta raíz **Simulaciones/** con 7 puntos de vista; nuevo **Core/Blueprint.md** (patrón replicable). CLAUDE.md sincronizado con el estado del vault (§1, §3, §4, §12). | Claude |
 
 <!--
 Mantén esta tabla en orden cronológico inverso o directo (directo aquí).
