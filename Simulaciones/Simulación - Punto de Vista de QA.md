@@ -196,7 +196,7 @@ Operador 5 prepara y envía una observación formal al departamento de Reclutami
 > | Emite | Operador 5 ([[Operador de QA]]) |
 > | KPIs afectados | #1 Cobertura (67%), #3 Auto-asignación (67%), #4 Escalación (33%) |
 > | Hallazgo | Fallo persistente en el sistema de [[Self-Pick de Requisiciones]]. Las reclutadoras no están tomando requisiciones de forma proactiva. Las tasas de auto-asignación y escalación superan ampliamente los umbrales por dos semanas consecutivas. |
-> | Impacto | La requisición 202608110800A3 del Hotel Costa Esmeralda cerró en Rojo con solo 67% de cobertura. El hotel no recibió el staffing completo solicitado. |
+> | Impacto | La requisición 202608110800A3 del Hotel Costa Esmeralda cerró en Rojo con solo 67% de cobertura. El hotel no recibió el personal completo solicitado. |
 > | Recomendación | Revisar la distribución de carga del equipo de reclutamiento. Evaluar si el equipo está subdimensionado. Reforzar la disciplina del modelo Self-Pick. |
 
 > [!warning] Regla de negocio
@@ -247,7 +247,7 @@ Operador 1 propone transición del Indicador de Calidad a Amarillo. Alejandra re
 
 ### 2.5 — Hotel, Ventas y Colaborador se mantienen estables
 
-**Operador 2 — Hotel:** El cumplimiento de ponchado del Hotel Costa Esmeralda baja a 88% esta semana — consecuencia indirecta del staffing incompleto por la requisición fallida de Reclutamiento. Esto ubica el KPI 3 en "En riesgo" (75–89%), pero no en Crítico. Operador 2 registra la nota sin emitir observación formal. Los demás KPIs se mantienen en meta.
+**Operador 2 — Hotel:** El cumplimiento de ponchado del Hotel Costa Esmeralda baja a 88% esta semana — consecuencia indirecta de la dotación incompleta de personal por la requisición fallida de Reclutamiento. Esto ubica el KPI 3 en "En riesgo" (75–89%), pero no en Crítico. Operador 2 registra la nota sin emitir observación formal. Los demás KPIs se mantienen en meta.
 
 **Operador 3 — Colaborador:** La salud del Pool baja a 58% ("En riesgo": 40–59%) porque varios colaboradores pasaron a Stand-by. La tasa de inasistencia sube a 6% ("En riesgo": 6–10%). Operador 3 registra ambas tendencias. Ningún KPI llega a Crítico, así que no emite observación formal aún.
 
@@ -323,9 +323,9 @@ El reporte incluye:
 |---|---|
 | Tendencia histórica | Gráfica del Dashboard mostrando la caída de Verde → Amarillo → Rojo en 5 días |
 | KPIs afectados | 3 en Crítico (#1, #3, #4), 2 en Riesgo (#2, #6) |
-| Impacto operativo | Hotel Costa Esmeralda recibió staffing parcial (67%), forzando reducción temporal de estándares de limpieza. Otro hotel recibió 60% de cobertura. |
+| Impacto operativo | Hotel Costa Esmeralda recibió cobertura parcial de personal (67%), forzando reducción temporal de estándares de limpieza. Otro hotel recibió 60% de cobertura. |
 | Observaciones emitidas | QA-REC-2026-08-001 (2026-08-14) — sin respuesta |
-| Acciones correctivas recomendadas | Revisar niveles de staffing del equipo de reclutamiento. Implementar SLAs obligatorios de toma de requisiciones. Redistribuir carga temporalmente. |
+| Acciones correctivas recomendadas | Revisar la dotación de personal del equipo de reclutamiento. Implementar SLAs obligatorios de toma de requisiciones. Redistribuir carga temporalmente. |
 
 El Director de Operaciones convoca una reunión urgente con Fernando Ortiz ([[Reclutamiento/Manager de Reclutamiento|Manager de Reclutamiento]]) y Alejandra Duarte.
 
@@ -451,7 +451,7 @@ Alejandra revisa el panel global del Dashboard. Estado final del periodo:
 | Departamento | Indicador de Calidad | Tendencia | Notas |
 |---|---|---|---|
 | Inspección | **Verde** | Recuperado | Estuvo en Amarillo 5 días. Corregido. |
-| Hotel | **Verde** | Estable | KPI de ponchado se normalizó al mejorar el staffing. |
+| Hotel | **Verde** | Estable | KPI de ponchado se normalizó al mejorar la dotación de personal. |
 | Colaborador | **Verde** | Vigilancia | 2 KPIs en "En riesgo" (Salud del Pool 58%, Inasistencia 6%). |
 | Ventas | **Verde** | Estable | Todos los KPIs en meta. |
 | Reclutamiento | **Amarillo** | Recuperándose | Estuvo en Rojo 3 días. Mejorando tras escalación. |
@@ -618,5 +618,5 @@ graph TD
 - [[Simulación - Punto de Vista de Inspección]] — Narra la semana operativa del Inspector Daniel Ortega en la zona Noroeste. En esta simulación de QA, una falla en la cobertura por ausencia de Daniel dispara la transición del Indicador a Amarillo y su rápida corrección.
 - [[Simulación - Punto de Vista del Hotel]] — Muestra el ciclo del hotel como cliente. QA monitorea KPIs del departamento Hotel (autorización, ponchado, QR, Stand-by) que en esta simulación se mantienen estables.
 - [[Simulación - Punto de Vista de Ventas]] — Detalla el proceso comercial narrado desde Ventas. QA supervisa tasas de conversión, ciclo de onboarding y reactivación, todos en meta durante esta simulación.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Cubre el proceso de staffing. En esta simulación de QA, los fallos persistentes de Reclutamiento (requisiciones sin tomar, auto-asignaciones, cobertura parcial) disparan la crisis que lleva al departamento a Rojo y requiere escalación a dirección.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Cubre el proceso de reclutamiento y asignación de personal. En esta simulación de QA, los fallos persistentes de Reclutamiento (requisiciones sin tomar, auto-asignaciones, cobertura parcial) disparan la crisis que lleva al departamento a Rojo y requiere escalación a dirección.
 - [[Simulación - Ciclo de Vida del Colaborador]] — Recorre los estados del colaborador. QA monitorea métricas agregadas del Pool (inasistencia, Blacklist, salud del Pool) que aquí aparecen como señales preventivas bajo vigilancia.

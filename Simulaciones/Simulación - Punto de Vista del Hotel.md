@@ -41,7 +41,7 @@ aliases:
 
 ### 1.1 — Identificación del hotel
 
-Sofía Vega, [[Business Developer]] asignada a la zona Sureste, identifica al **Hotel Riviera Maya Beach Resort** como un hotel con alta rotación de personal de housekeeping y potencial interés en servicios de staffing.
+Sofía Vega, [[Business Developer]] asignada a la zona Sureste, identifica al **Hotel Riviera Maya Beach Resort** como un hotel con alta rotación de personal de housekeeping y potencial interés en servicios de operación hotelera.
 
 Sofía crea el perfil del hotel en el sistema.
 
@@ -59,7 +59,7 @@ Registra todo en el perfil del sistema.
 
 ### 1.3 — Propuesta enviada
 
-Sofía elabora una [[Propuesta Personalizada]] para el Hotel Riviera Maya: servicios de staffing para el departamento de Housekeeping, con cobertura de Housekeepers, Housemen y personal de lavandería. Incluye descripción de servicios, modelo de operación y propuesta de precios preliminar.
+Sofía elabora una [[Propuesta Personalizada]] para el Hotel Riviera Maya: servicios de operación hotelera para el departamento de Housekeeping, con cobertura de Housekeepers, Housemen y personal de lavandería. Incluye descripción de servicios, modelo de operación y propuesta de precios preliminar.
 
 Envía la propuesta por correo al GM Carlos Méndez y da seguimiento.
 
@@ -497,7 +497,7 @@ Al cierre de la semana del 26 mayo al 1 junio, el sistema genera automáticament
 
 ### 10.1 — Monitoreo continuo
 
-Un [[Operador de QA]] está asignado de forma fija al departamento Hotel. Este operador monitorea continuamente los indicadores de calidad del servicio de staffing que Oranje proporciona al Hotel Riviera Maya y a todos los hoteles clientes.
+Un [[Operador de QA]] está asignado de forma fija al departamento Hotel. Este operador monitorea continuamente los indicadores de calidad del servicio de operación que Oranje proporciona al Hotel Riviera Maya y a todos los hoteles clientes.
 
 El [[Indicador de Calidad]] del departamento Hotel se mantiene en **Verde** (Calidad óptima) durante las primeras semanas de operación.
 

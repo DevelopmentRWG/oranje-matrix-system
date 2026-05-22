@@ -36,13 +36,13 @@ aliases:
 
 ### 1.1 — Identificación del hotel (Gris)
 
-Es lunes 2 de junio de 2026. Sofía Méndez, [[Business Developer]] asignada a la zona Noroeste, revisa su ruta de territorio. Identifica al **Hotel Costa Esmeralda** como un hotel de 120 habitaciones con alta ocupación en temporada y sin proveedor de staffing externo.
+Es lunes 2 de junio de 2026. Sofía Méndez, [[Business Developer]] asignada a la zona Noroeste, revisa su ruta de territorio. Identifica al **Hotel Costa Esmeralda** como un hotel de 120 habitaciones con alta ocupación en temporada y sin operador hotelero externo.
 
 Sofía crea el registro del hotel como prospecto en el sistema.
 
 > [!info] Semáforo Onboarding
 > → **Gris** — Hotel identificado
-> **Fecha:** 2026-06-02 · **Responsable:** Sofía Méndez (BD) · **Comentario:** "Hotel identificado en ruta de Zona Noroeste. 120 habitaciones, sin proveedor de staffing actual."
+> **Fecha:** 2026-06-02 · **Responsable:** Sofía Méndez (BD) · **Comentario:** "Hotel identificado en ruta de Zona Noroeste. 120 habitaciones, sin operador hotelero actual."
 
 > [!tip] QA — Operador 4 observa
 > El Operador 4 registra el inicio del ciclo de onboarding para el Hotel Costa Esmeralda. A partir de este momento comienza a contar el **Ciclo promedio de onboarding** (meta: ≤ 45 días). — [[Métricas y KPIs por Departamento#Ventas|KPI 2]]
@@ -92,13 +92,13 @@ Sofía crea el perfil del hotel en el sistema con los datos recopilados:
 
 Viernes 6 de junio. Sofía elabora la [[Propuesta Personalizada]] para el Hotel Costa Esmeralda:
 
-| Componente | Detalle |
-|---|---|
-| Servicios ofrecidos | Staffing de Housekeeping: Housekeepers y Housemen |
-| Modelo de operación | Oranje recluta, asigna y supervisa. Inspector de zona presente en Día 1 y Día 3 |
-| Precios tentativos (pay rate) | $12.00/hr (HK), $10.50/hr (HM) |
-| Precios tentativos (bill rate) | $18.00/hr (HK), $16.00/hr (HM) |
-| Condiciones generales | Overtime a 1.5x, festivos a 2x, uniformes incluidos |
+| Componente                     | Detalle                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------- |
+| Servicios ofrecidos            | Operación de Housekeeping: Housekeepers y Housemen                               |
+| Modelo de operación            | Oranje recluta, asigna y supervisa. Inspector de zona presente en Día 1 y Día 3 |
+| Precios tentativos (pay rate)  | $12.00/hr (HK), $10.50/hr (HM)                                                  |
+| Precios tentativos (bill rate) | $18.00/hr (HK), $16.00/hr (HM)                                                  |
+| Condiciones generales          | Overtime a 1.5x, festivos a 2x, uniformes incluidos                             |
 
 Sofía envía la propuesta por email a Mariana Vega y entrega una copia física durante una breve visita al hotel.
 
@@ -149,13 +149,13 @@ Sofía evalúa el caso: el hotel mostró interés genuino durante la visita, la 
 
 ### 5.1 — Cambio de circunstancias
 
-Miércoles 25 de junio. Han pasado 14 días. Sofía recibe información por un contacto en la zona de que el Director General del Hotel Costa Esmeralda fue reemplazado. El nuevo director, **Carlos Navarro**, viene de una cadena hotelera que ya trabajaba con servicios de staffing y está abierto a explorar la propuesta.
+Miércoles 25 de junio. Han pasado 14 días. Sofía recibe información por un contacto en la zona de que el Director General del Hotel Costa Esmeralda fue reemplazado. El nuevo director, **Carlos Navarro**, viene de una cadena hotelera que ya trabajaba con operadoras hoteleras y está abierto a explorar la propuesta.
 
 Sofía decide reactivar el prospecto.
 
 > [!info] Semáforo Onboarding
 > Rojo → **Azul Claro** — Reactivación
-> **Fecha:** 2026-06-25 · **Responsable:** Sofía Méndez (BD) · **Comentario:** "Nuevo director (Carlos Navarro) abierto a servicios de staffing. Reiniciando contacto."
+> **Fecha:** 2026-06-25 · **Responsable:** Sofía Méndez (BD) · **Comentario:** "Nuevo director (Carlos Navarro) abierto a servicios de operación hotelera. Reiniciando contacto."
 
 > [!warning] Regla de negocio
 > Rojo, Negro y Café **siempre** reactivan hacia Azul Claro. Responsable de la reactivación desde Rojo: [[Business Developer]]. — [[Reglas de Ventas#Reactivaciones]]
@@ -187,7 +187,7 @@ Sábado 28 de junio. Sofía elabora una nueva [[Propuesta Personalizada]] con la
 
 | Componente | Detalle |
 |---|---|
-| Servicios ofrecidos | Staffing de Housekeeping y Lavandería |
+| Servicios ofrecidos | Operación de Housekeeping y Lavandería |
 | Posiciones | 8 [[Posiciones\|Housekeeper]], 3 [[Posiciones\|Houseman]], 2 [[Posiciones\|Laundry]] |
 | Modelo de operación | Reclutamiento, asignación, supervisión por Oranje |
 | Precios tentativos (pay rate) | $12.50/hr (HK), $11.00/hr (HM), $11.50/hr (LN) |
@@ -214,19 +214,19 @@ Sofía envía la propuesta. Carlos responde el martes 1 de julio: **"Nos interes
 
 Miércoles 2 de julio. Sofía, con apoyo de Ricardo Fuentes ([[Business Developer Coordinator]]), crea el [[Documento de Términos y Condiciones]] con los parámetros comerciales propuestos:
 
-| Campo | Valor propuesto |
-|---|---|
-| Pay rate (Housekeeper) | $12.50/hr |
-| Pay rate (Houseman) | $11.00/hr |
-| Pay rate (Laundry) | $11.50/hr |
-| Bill rate (Housekeeper) | $19.00/hr |
-| Bill rate (Houseman) | $16.50/hr |
-| Bill rate (Laundry) | $17.00/hr |
-| Overtime | 1.5x bill rate después de 40 horas brutas semanales |
-| Festivos | 2x bill rate en días festivos federales |
-| Inicio de semana | Lunes |
-| Fin de semana | Domingo |
-| Fecha tentativa de inicio | 21 julio 2026 |
+| Campo                     | Valor propuesto                                     |
+| ------------------------- | --------------------------------------------------- |
+| Pay rate (Housekeeper)    | $12.50/hr                                           |
+| Pay rate (Houseman)       | $11.00/hr                                           |
+| Pay rate (Laundry)        | $11.50/hr                                           |
+| Bill rate (Housekeeper)   | $19.00/hr                                           |
+| Bill rate (Houseman)      | $16.50/hr                                           |
+| Bill rate (Laundry)       | $17.00/hr                                           |
+| Overtime                  | 1.5x bill rate después de 40 horas brutas semanales |
+| Festivos                  | 2x bill rate en días festivos federales             |
+| Inicio de semana          | Lunes                                               |
+| Fin de semana             | Domingo                                             |
+| Fecha tentativa de inicio | 21 julio 2026                                       |
 
 > [!info] Semáforo Onboarding
 > Verde → **Amarillo** — En seguimiento tras propuesta
@@ -457,5 +457,5 @@ graph LR
 
 - [[Simulación - Punto de Vista de Inspección]] — Continúa la historia del Hotel Costa Esmeralda desde la perspectiva del Inspector Daniel Ortega, quien recibe el handoff operativo tras la conversión a cliente.
 - [[Simulación - Punto de Vista del Hotel]] — Narra el ciclo completo de un hotel como cliente, incluyendo las fases comerciales que aquí se detallan desde Ventas.
-- [[Simulación - Punto de Vista de Reclutamiento]] — Cubre el proceso de staffing que se activa una vez que el hotel genera su primera requisición en status Naranja.
+- [[Simulación - Punto de Vista de Reclutamiento]] — Cubre el proceso de reclutamiento y asignación que se activa una vez que el hotel genera su primera requisición en status Naranja.
 - [[Simulación - Ciclo de Vida del Colaborador]] — Recorre los estados del colaborador asignado al hotel, desde su ingreso al Pool hasta su operación diaria.

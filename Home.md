@@ -7,7 +7,7 @@ aliases:
 ---
 # Oranje Matrix System
 
-Sistema de gestión organizacional para staffing de hoteles. Documenta los roles, procesos, reglas de negocio y módulos operativos que estructuran la operación de Oranje, desde el reclutamiento de personal hasta su asignación y seguimiento en hoteles clientes.
+Sistema de gestión organizacional para operación hotelera. Documenta los roles, procesos, reglas de negocio y módulos operativos que estructuran la operación de Oranje, desde el reclutamiento de personal hasta su asignación y seguimiento en hoteles clientes.
 
 ## Departamentos y Roles
 

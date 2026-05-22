@@ -8,7 +8,7 @@ aliases:
 # Arquitectura Organizacional del Vault Oranje Matrix System
 ## Blueprint para replicar en un nuevo sistema
 
-El vault **oranje-matrix-system** documenta un sistema de staffing para hoteles. Esta es la arquitectura extraída como patrón replicable para cualquier sistema organizacional nuevo.
+El vault **oranje-matrix-system** documenta un sistema de operación hotelera. Esta es la arquitectura extraída como patrón replicable para cualquier sistema organizacional nuevo.
 
 ---
 
