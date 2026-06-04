@@ -21,25 +21,25 @@ Consolidación de todas las reglas de negocio que aplican al área de Reclutamie
 
 El proceso de reclutamiento de un colaborador consta de fases definidas en el [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]].
 
-| Fase | Descripción | Responsable |
-|---|---|---|
-| 1 — Entrevista inicial | Captura de nombre completo, edad, género, domicilio y teléfono | [[Reclutadora]] |
-| 2 — Alta en la app | Colaborador completa SSN, ITIN, Posición, Nivel de inglés, Nivel de experiencia, Tipo de transporte, Modalidad | Colaborador |
-| 3 — Validación y aprobación | Reclutamiento revisa los datos y aprueba o rechaza al colaborador | [[Reclutadora]] |
-| 4 — Habilitación de acceso | Se habilita el acceso del colaborador a los paneles | [[Reclutadora]] |
+| Fase                        | Descripción                                                                                                    | Responsable     |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------- | --------------- |
+| 1 — Entrevista inicial      | Captura de nombre completo, edad, género, domicilio y teléfono                                                 | [[Reclutadora]] |
+| 2 — Alta en la app          | Colaborador completa SSN, ITIN, Posición, Nivel de inglés, Nivel de experiencia, Tipo de transporte, Modalidad | Colaborador     |
+| 3 — Validación y aprobación | Reclutamiento revisa los datos y aprueba o rechaza al colaborador                                              | [[Reclutadora]] |
+| 4 — Habilitación de acceso  | Se habilita el acceso del colaborador a los paneles                                                            | [[Reclutadora]] |
 
 - Colaborador aprobado ingresa al [[Pool de Colaboradores]] con [[Semáforo del Colaborador]] en estado **Blanco**.
 
 ## Requisiciones — recepción y asignación (Self-Pick)
 
-| Paso | Acción | Responsable |
-|---|---|---|
-| 1 | La requisición autorizada por el [[Hotel/Manager General\|Manager General]] o el [[Hotel/Manager de Área\|Manager de Área]] queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] | Sistema |
-| 2 | Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] toma la requisición de la bandeja | [[Reclutadora]] / [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder]] |
-| 3 | La requisición pasa a **Amarillo** (En proceso) en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]] | Sistema |
-| 4 | La [[Reclutadora]] consulta el [[Core/Módulos/Schedule\|Schedule]] del hotel para ver posiciones pendientes | [[Reclutadora]] |
-| 5 | Si hay match → asigna al colaborador y lo registra en el Schedule | [[Reclutadora]] |
-| 6 | Si no hay match → la [[Reclutadora]] busca activamente fuera del sistema (redes sociales, grupos externos, etc.) | [[Reclutadora]] |
+| Paso | Acción                                                                                                                                                                                                                                                                        | Responsable                                                               |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| 1    | La requisición autorizada por el [[Hotel/Manager General\|Manager General]] o el [[Hotel/Manager de Área\|Manager de Área]] queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición\|Semáforo de Urgencia]] | Sistema                                                                   |
+| 2    | Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] toma la requisición de la bandeja                                                                                                                                                      | [[Reclutadora]] / [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder]] |
+| 3    | La requisición pasa a **Amarillo** (En proceso) en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]]                                                                                                                                             | Sistema                                                                   |
+| 4    | La [[Reclutadora]] consulta el [[Core/Módulos/Schedule\|Schedule]] del hotel para ver posiciones pendientes                                                                                                                                                                   | [[Reclutadora]]                                                           |
+| 5    | Si hay match → asigna al colaborador y lo registra en el Schedule                                                                                                                                                                                                             | [[Reclutadora]]                                                           |
+| 6    | Si no hay match → la [[Reclutadora]] busca activamente fuera del sistema (redes sociales, grupos externos, etc.)                                                                                                                                                              | [[Reclutadora]]                                                           |
 
 > [!important] **Bandeja global con filtros** — todas las Reclutadoras ven todas las requisiciones disponibles. Pueden filtrar por zona, urgencia, posición y otros criterios. La bandeja no está segmentada por grupo ni por Reclutadora.
 

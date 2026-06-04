@@ -401,8 +401,13 @@ SIDEBAR
 - Fecha de ingreso
 - Quién lo propuso
 
+### Acciones
+- ➕ **Agregar a Blacklist** (con motivo y evidencia obligatorios) — disponible para **cualquier rol del depto de Reclutamiento** (regla RR-03).
+- 👁️ **Consultar** antes de cada asignación (obligatorio).
+
 > [!warning]
-> El Líder **NO** puede agregar/remover de Blacklist — esa acción es exclusiva del [[Manager de Reclutamiento]].
+> El Líder **SÍ puede agregar** a Blacklist (con motivo y evidencia), igual que la Reclutadora y el Manager.
+> Lo que **NO** puede es **remover ni resolver disputas** — esa acción es exclusiva del [[Manager de Reclutamiento]].
 > La consulta es **obligatoria** antes de cada reclutamiento (regla del [[Flujo de Reclutamiento]]).
 
 ---
@@ -442,7 +447,8 @@ Reclutadora (o Líder) cubre con colaboradores del Pool
 | Tomar requisición para sí | ✅ (única opción) | ✅ (caso especial) |
 | Mi Grupo de Reclutadoras | ❌ | ✅ módulo exclusivo |
 | Reportes formales | ❌ | ✅ módulo exclusivo |
-| Aprobación de blacklist | ❌ | ❌ (exclusivo del Manager) |
+| Agregar a Blacklist | ✅ | ✅ (con motivo y evidencia) |
+| Remover / resolver disputa de Blacklist | ❌ | ❌ (exclusivo del Manager) |
 
 ---
 

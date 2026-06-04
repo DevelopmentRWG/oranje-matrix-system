@@ -38,6 +38,7 @@ Captura de información inicial del colaborador:
 - Nivel de experiencia
 - Tipo de transporte
 - Modalidad (ver [[Modalidades de Contratación]])
+- Comprobante de domicilio (Certificado de donde esta viviendo)
 
 ### Fase 3 — Validación y aprobación
 
