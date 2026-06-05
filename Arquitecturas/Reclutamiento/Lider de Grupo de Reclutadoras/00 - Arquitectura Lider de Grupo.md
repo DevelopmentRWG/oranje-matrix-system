@@ -334,9 +334,8 @@ SIDEBAR
 
 ### Acciones
 - Ver carga detallada
-- Reasignar requisición a otra reclutadora
-- Comunicar (chat / nota interna)
-- Marcar disponibilidad (vacaciones / vuelta)
+- Reasignar requisición a otra reclutadora (RF-37)
+- Marcar disponibilidad (vacaciones / vuelta) (RF-38)
 - Generar reporte individual (vincula al módulo Reportes)
 
 ---
@@ -479,7 +478,6 @@ Reclutadora (o Líder) cubre con colaboradores del Pool
 │ 📋 Requisic. │  Distribuir · Tomar · Asignar                 │
 │ 👥 Mi Grupo  │  Reclutadoras · Métricas · Reasignar          │
 │ 📈 Reportes  │  Generar · Enviar Manager · Histórico         │
-│ 📅 Schedule  │  Consulta del Schedule del hotel              │
 │ ⚫ Blacklist │  Consulta · Motivos · Histórico               │
 └──────────────┴───────────────────────────────────────────────┘
 ```

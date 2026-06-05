@@ -22,7 +22,9 @@ aliases:
 | Marcar requisición como cubierta | Solicita cierre al Manager (si 100%)                         |
 | Ver Reclutadoras del grupo       | Lista con métricas individuales                              |
 | Click en Reclutadora del grupo   | Abre detalle con KPIs, carga, historial                      |
-| Comunicar con Reclutadora        | Abre chat / nota interna                                     |
+| Ver carga detallada (RF-36)      | Modal con las requisiciones en proceso de la Reclutadora     |
+| Reasignar requisición (RF-37)    | Pasa una requisición a otra Reclutadora del grupo            |
+| Marcar disponibilidad (RF-38)    | Cambia el estado de la Reclutadora (Activa ↔ Vacaciones)     |
 | Generar reporte del grupo        | Vista previa con métricas y gráficos                         |
 | Enviar reporte al Manager        | Envío formal con notificación al Manager                     |
 | Exportar reporte (CSV/PDF)       | Descarga el archivo                                          |

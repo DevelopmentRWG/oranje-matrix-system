@@ -34,6 +34,9 @@ aliases:
 | RF-25  | Enviar reporte al Manager             | 🟡 Media  |
 | RF-26  | Ver cobertura individual              | 🟢 Baja   |
 | RF-27  | Ver cobertura por zona                | 🟡 Media  |
+| RF-36  | Ver carga detallada de la Reclutadora | 🟡 Media  |
+| RF-37  | Reasignar requisición a otra Reclutadora | 🟡 Media  |
+| RF-38  | Marcar disponibilidad de la Reclutadora | 🟢 Baja   |
 | RNF-04 | Compatibilidad multi-dispositivo      | 🟡 Media  |
 | RR-01  | Modelo Self-Pick                      | 🔴 Alta   |
 | RR-02  | Consulta obligatoria de Blacklist     | 🔴 Alta   |

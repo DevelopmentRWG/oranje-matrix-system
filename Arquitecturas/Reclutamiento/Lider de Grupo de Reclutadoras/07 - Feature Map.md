@@ -46,7 +46,8 @@ RECLUTAMIENTO — LÍDER DE GRUPO DE RECLUTADORAS
 │       ├── Detalle por Reclutadora
 │       ├── Métricas individuales
 │       ├── Carga actual por persona
-│       └── Comunicar (chat / nota interna)
+│       ├── Reasignar requisición a otra Reclutadora
+│       └── Marcar disponibilidad (vacaciones / vuelta)
 │
 └── SECUNDARIAS
     │

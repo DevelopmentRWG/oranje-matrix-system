@@ -30,7 +30,7 @@ aliases:
 | ----------------------------------------- | ---------------------------------------------------------------------------- |
 | Generar reporte sin rango de fechas       | Bloquea generación; muestra "Debe seleccionar rango de fechas"               |
 | Enviar reporte sin métricas válidas       | Muestra "El reporte no contiene datos para el periodo seleccionado"          |
-| Comunicar con Reclutadora fuera del grupo | Bloquea acción; muestra "Solo puedes comunicar con Reclutadoras de tu grupo" |
+| Reasignar requisición a Reclutadora fuera del grupo | Bloquea acción; muestra "Solo puedes reasignar entre Reclutadoras de tu grupo" |
 | Atender incidencia sin justificación      | Bloquea cierre; solicita comentario obligatorio                              |
 | Acceso a métricas de otro grupo           | Bloquea acceso; muestra "Solo puedes ver métricas de tu grupo"               |
 | Exportar reporte vacío                    | Bloquea exportación                                                          |

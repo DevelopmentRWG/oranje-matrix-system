@@ -45,7 +45,9 @@ aliases:
 | | 📝 Remover de Blacklist | — | — | C · E | — | ⏸️ |
 | **MI GRUPO** *(Líder)* | 👁️ Ver Reclutadoras del grupo | — | Ver | — | — | ⏸️ |
 | | 👁️ Ver métricas individuales | — | Ver | Ver | Auto | ⏸️ |
-| | 📝 Comunicar con Reclutadora | — | C · E | C · E | — | ⏸️ |
+| | 👁️ Ver carga detallada de Reclutadora | — | Ver | — | — | ⏸️ |
+| | 📝 Reasignar requisición a Reclutadora | — | C · E | — | — | ⏸️ |
+| | 📝 Marcar disponibilidad de Reclutadora | — | C · E | — | — | ⏸️ |
 | **MI EQUIPO** *(Manager)* | 👁️ Ver Líderes + Reclutadoras | — | — | Ver | — | ⏸️ |
 | | ➕ Dar de alta Líder/Reclutadora | — | — | Crear | — | ⏸️ |
 | | 📝 Editar usuario del depto | — | — | C · E | — | ⏸️ |

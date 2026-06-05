@@ -34,7 +34,9 @@ aliases:
 | Blacklist     | Agregar a Blacklist             | ➕ Crear   | Cualquier rol del depto puede vetar con motivo y evidencia |
 | **Mi Grupo**  | Ver Reclutadoras del grupo      | 👁️ Ver   | Lista con métricas                                         |
 | **Mi Grupo**  | Ver métricas individuales       | 👁️ Ver   | Detalle de desempeño por Reclutadora                       |
-| **Mi Grupo**  | Comunicar con Reclutadora       | 📝 Editar | Chat / nota interna                                        |
+| **Mi Grupo**  | Ver carga detallada (RF-36)     | 👁️ Ver   | Requisiciones en proceso de la Reclutadora                 |
+| **Mi Grupo**  | Reasignar requisición (RF-37)   | 📝 Editar | Pasa una requisición a otra Reclutadora del grupo          |
+| **Mi Grupo**  | Marcar disponibilidad (RF-38)   | 📝 Editar | Toggle Activa ↔ Vacaciones de la Reclutadora               |
 | **Reportes**  | Generar reporte del grupo       | ➕ Crear   | Cobertura, desempeño, casos escalados                      |
 | **Reportes**  | Enviar reporte al Manager       | ✓ Aprobar | Envío formal con notificación                              |
 | **Reportes**  | Exportar reporte                | 👁️ Ver   | CSV / PDF                                                  |

@@ -406,7 +406,6 @@ SIDEBAR
 │ 📊 Dashboard │  KPIs personales · Pool · Mis req · Bandeja  │
 │ 🧑 Reclutam. │  Pool · Entrevistas · Nuevo Colaborador (F1)  │
 │ 📋 Requisic. │  Bandeja Autorizadas · Mis tomadas · Asignar  │
-│ 📅 Schedule  │  Consulta del Schedule del hotel              │
 │ ⚫ Blacklist │  Consulta · Motivos · Histórico               │
 └──────────────┴───────────────────────────────────────────────┘
 ```
