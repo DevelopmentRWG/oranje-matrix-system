@@ -50,6 +50,9 @@ Incluye recepción, toma libre (Self-Pick), gestión del estado de la requisici�
 | RF-19 | Calcular Semáforo de Urgencia    | 🔴 Alta   | ⬜ Pendiente |
 | RF-20 | Calcular Semáforo de Posiciones  | 🔴 Alta   | ⬜ Pendiente |
 | RF-21 | Forzar cambio de semáforo        | 🟢 Baja   | ⬜ Pendiente |
+| RF-39 | Tomar / Unirse a requisición ya tomada (colaborativo) | 🔴 Alta   | ⬜ Pendiente |
+| RF-40 | Ver reclutadores activos de la requisición | 🟡 Media  | ⬜ Pendiente |
+| RF-41 | Ver Historial de la requisición  | 🔴 Alta   | ⬜ Pendiente |
 
 ---
 
@@ -138,10 +141,12 @@ Incluye recepción, toma libre (Self-Pick), gestión del estado de la requisici�
 
 | ID    | Requerimiento                                 | Prioridad | Estado      |
 | ----- | --------------------------------------------- | --------- | ----------- |
-| RR-01 | Modelo Self-Pick                              | 🔴 Alta   | ⬜ Pendiente |
+| RR-01 | Modelo Self-Pick colaborativo                 | 🔴 Alta   | ⬜ Pendiente |
 | RR-02 | Consulta obligatoria de Blacklist             | 🔴 Alta   | ⬜ Pendiente |
 | RR-03 | Manager resuelve disputas y remueve Blacklist | 🔴 Alta   | ⬜ Pendiente |
 | RR-04 | Cobertura 100% para cierre                    | 🔴 Alta   | ⬜ Pendiente |
+| RR-15 | Modelo colaborativo de requisición            | 🔴 Alta   | ⬜ Pendiente |
+| RR-16 | Historial / trazabilidad de la requisición    | 🔴 Alta   | ⬜ Pendiente |
 
 ---
 

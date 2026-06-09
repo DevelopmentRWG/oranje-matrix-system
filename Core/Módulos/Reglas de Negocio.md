@@ -120,10 +120,14 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Si alguna posición está en Amarillo o Rojo → Requisición en Rojo
 - Referencia: [[Semáforo de Posiciones de la Requisición]]
 
-### Asignación (Self-Pick)
+### Asignación (Self-Pick colaborativo)
+- **Modelo colaborativo (RR-15):** una requisición puede tener **N reclutadores participantes** trabajándola a la vez; no hay dueño único. Tomar una requisición ya tomada **no la transfiere ni la bloquea**: el reclutador se **une** como participante adicional (acción "Unirme") sin desplazar a los existentes ni retroceder el semáforo
 - La requisición autorizada queda en la bandeja compartida; una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la toma → la requisición pasa a Amarillo (En proceso)
+- **Salir (no liberar):** un reclutador participante puede **salir**; se retira solo a él. La requisición sigue en Amarillo (En proceso) si quedan otros reclutadores y **no se resetea** lo que otros ya asignaron; solo vuelve a Verde (Autorizada) cuando sale el **último** reclutador
+- **Avance compartido + lock por posición/slot:** el avance de cobertura se comparte entre todos los reclutadores participantes; cada uno puede buscar en el [[Pool de Colaboradores]] y asignar colaboradores. El lock de concurrencia opera a nivel de **posición/slot** (dos reclutadores no asignan el mismo colaborador a la misma posición; gana el primero, el segundo ve "posición ya cubierta"), **no** a nivel de la requisición completa
 - Si lleva >24h sin ser tomada, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El proceso es transparente (el [[Manager de Reclutamiento]] no recibe notificación)
 - Si no hay match en el [[Pool de Colaboradores]], la requisición queda en espera; el Flujo de Reclutamiento ya está siempre activo
+- **Historial (RR-16):** cada acción (tomar, unirse, salir, asignar/desasignar colaborador, cambio de status, cierre) se registra en un timeline cronológico inmutable con actor y timestamp, visible para los reclutadores participantes, el Líder de Grupo y el Manager de Reclutamiento
 
 ### Ciclo de vida de la posición
 - La posición tiene fecha de inicio pero no fecha de fin definida
@@ -136,8 +140,9 @@ Documento centralizado con las reglas de negocio que gobiernan el sistema Oranje
 - Al eliminar una requisición con posiciones → cada posición también pasa a Morado con journal individual
 
 ### Journals automáticos
-- **RUTINA Journal Requisición:** registra Requisición, Hotel, Manager General / Manager de Área, Reclutador, Inspector, Status, Nota, Fecha y hora del status
-- **RUTINA Journal Posición:** registra Número de requisición, Número de posición, Posición, Cantidad de personas, Fecha de inicio, Fecha fin, Status, Fecha y hora del status
+- Los journals registran un **evento por acción con actor** (rol y nombre) y timestamp, no solo cambios de status. Son **inmutables** y alimentan el [[Core/Módulos/Requisicion/Requisición#Historial de la Requisición|Historial de la Requisición]] (RR-16)
+- **RUTINA Journal Requisición:** registra Requisición, Hotel, Manager General / Manager de Área, **Reclutadores** (lista de participantes), Inspector, **Tipo de evento** (`TOMO` / `SE_UNIO` / `SALIO` / `CAMBIO_STATUS`), **Actor**, Status, Nota, Fecha y hora del evento
+- **RUTINA Journal Posición:** registra Número de requisición, Número de posición, Posición, Cantidad de personas, Fecha de inicio, Fecha fin, **Tipo de evento** (`ASIGNO_COLAB` / `REASIGNO` / `CAMBIO_STATUS`), **Actor**, **Colaborador** (cuando aplica), Status, Fecha y hora del evento
 
 ## Blacklist
 

@@ -17,7 +17,7 @@ Ciclo de vida operativo de una [[Requisición]] y sus posiciones: desde que el [
 - **GM — [[Hotel/Manager General|Manager General]]**: máxima autoridad del hotel. Puede crear, autorizar y rechazar requisiciones.
 - **GH — [[Hotel/Manager de Área|Manager de Área]]**: puede crear, autorizar y rechazar requisiciones.
 - **SUP — [[Hotel/Supervisor|Supervisor]]**: puede crear, modificar y preparar la requisición. No puede autorizar.
-- **Reclutador — [[Reclutadora]]**: ejecuta la asignación de personal tras la autorización.
+- **Reclutadores — [[Reclutadora|Reclutadoras]] / [[Reclutamiento/Líder de Grupo de Reclutadoras|Líderes de Grupo]]**: varios **reclutadores participantes** pueden trabajar la misma requisición a la vez (modelo colaborativo, RR-15) y ejecutan la asignación de personal tras la autorización. No hay dueño único.
 
 ## Validación de acceso
 
@@ -112,15 +112,24 @@ Si se confirma:
 
 ## 5. Entrega a Reclutamiento (post-autorización)
 
-Una vez autorizada (Status Green), las posiciones de la requisición quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de la semana correspondiente a su fecha de inicio. La requisición queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]]. Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la toma de la bandeja y el status pasa a **Yellow** (En proceso de asignación de personal por el reclutador). Si ninguna la toma en 24 horas, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas.
+Una vez autorizada (Status Green), las posiciones de la requisición quedan reflejadas en el [[Core/Módulos/Schedule|Schedule]] de la semana correspondiente a su fecha de inicio. La requisición queda disponible en la bandeja compartida, priorizada por el [[Core/Módulos/Semáforos/Semáforo de Urgencia de Requisición|Semáforo de Urgencia]].
 
-La reclutadora consulta el [[Core/Módulos/Schedule|Schedule]] del hotel para ver la demanda y las posiciones pendientes de cubrir, y busca match en la [[Pool de Colaboradores]]:
-- **Si hay match** → asigna el colaborador al hotel y lo registra en el [[Core/Módulos/Schedule|Schedule]].
+**Toma colaborativa (modelo colaborativo, RR-15):** la requisición puede tener **varios reclutadores participantes** trabajándola a la vez; no hay dueño único.
+- Una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] la **toma** de la bandeja y el status pasa a **Yellow** (En proceso). Se ejecuta [[#RUTINA - Journal Requisición]] con evento `TOMO` + actor.
+- Cuando ya hay reclutadores trabajándola, otro reclutador puede **unirse** (acción "Unirme"): se agrega como reclutador participante adicional **sin desplazar** a los existentes y **sin retroceder** el semáforo. Se ejecuta journal con evento `SE_UNIO` + actor. Nadie "pierde" la requisición.
+- Cualquier reclutador participante puede **salir** (acción "Salir"): se retira solo a él. Si quedan otros reclutadores, la requisición sigue en **Yellow** (En proceso) y **no se resetea** lo que otros ya asignaron. Solo cuando sale el **último** reclutador la requisición vuelve a **Green** (Autorizada). Se ejecuta journal con evento `SALIO` + actor.
+- Si ninguna la toma en 24 horas, el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas (queda como reclutador participante inicial).
+
+El avance de cobertura es **compartido** entre todos los reclutadores participantes. Cada uno consulta el [[Core/Módulos/Schedule|Schedule]] del hotel para ver la demanda y las posiciones pendientes de cubrir, y busca match en la [[Pool de Colaboradores]]:
+- **Si hay match** → asigna el [[Pool de Colaboradores|colaborador]] al hotel y lo registra en el [[Core/Módulos/Schedule|Schedule]]. Se ejecuta [[#RUTINA - Journal Posición]] con evento `ASIGNO_COLAB` + actor.
 - **Si no hay match** → la requisición queda en espera. El [[Flujo de Reclutamiento]] corre de forma continua alimentando la pool; puede escalarse prioridad por zona/posición, pero no se "lanza" el reclutamiento — ya está siempre activo.
 
+> [!important] Lock a nivel posición/slot (no a nivel requisición)
+> El bloqueo de concurrencia opera a nivel de **posición/slot**, no de la requisición completa: dos reclutadores no pueden asignar el mismo colaborador al mismo slot. Si dos intentan cubrir la misma posición, **gana el primero** y el segundo recibe "posición ya cubierta". Tomar una requisición ya tomada **no bloquea** — te unes como reclutador participante.
+
 Cierre:
-- **Status Light Blue** — Cubierta totalmente por el reclutador.
-- **Status Red** — Cubierta parcialmente por el reclutador.
+- **Status Light Blue** — Cubierta totalmente. Journal con evento `CAMBIO_STATUS` + actor (quién la cerró).
+- **Status Red** — Cubierta parcialmente. Journal con evento `CAMBIO_STATUS` + actor (quién la cerró).
 
 ---
 
@@ -161,10 +170,14 @@ Parámetros: Fecha de autorización de la requisición + Fecha de inicio de la p
 - `< 72 horas` → **Red**.
 
 ### RUTINA - Journal Requisición
-Registra en el journal de requisiciones: Requisición, Hotel, Manager General / Manager de Área, Reclutador, Inspector, Status, Nota, Fecha y hora del status.
+Registra en el journal de requisiciones un **evento por acción** (no solo cambios de status), cada uno con su **actor** (rol y nombre) y timestamp. Campos: Requisición, Hotel, Manager General / Manager de Área, **Reclutadores** (lista de reclutadores participantes), Inspector, **Tipo de evento**, **Actor (rol y nombre)**, Status, Nota, Fecha y hora del evento.
+
+Tipos de evento registrados: `TOMO` (primer reclutador toma la requisición), `SE_UNIO` (un reclutador se une como participante adicional), `SALIO` (un reclutador se retira), `CAMBIO_STATUS` (cambio de semáforo, incluye cierre). El journal es **inmutable** y alimenta el [[Requisición#Historial de la Requisición|Historial de la Requisición]] (RR-16).
 
 ### RUTINA - Journal Posición
-Registra en el journal de posiciones: Número de requisición, Número de posición, Posición, Cantidad de personas, Fecha de inicio, Fecha fin, Status, Fecha y hora del status.
+Registra en el journal de posiciones un **evento por acción** sobre la posición/slot, cada uno con su **actor** (rol y nombre) y timestamp. Campos: Número de requisición, Número de posición, Posición, Cantidad de personas, Fecha de inicio, Fecha fin, **Tipo de evento**, **Actor (rol y nombre)**, **Colaborador** (cuando aplica), Status, Fecha y hora del evento.
+
+Tipos de evento registrados: `ASIGNO_COLAB` (un reclutador asigna un colaborador a la posición/slot), `REASIGNO` (desasigna/reasigna un colaborador), `CAMBIO_STATUS` (cambio de cobertura). El journal es **inmutable** y alimenta el [[Requisición#Historial de la Requisición|Historial de la Requisición]] (RR-16).
 
 ---
 

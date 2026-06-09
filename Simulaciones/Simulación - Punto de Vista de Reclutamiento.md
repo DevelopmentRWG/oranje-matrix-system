@@ -268,7 +268,7 @@ La requisición aparece en la bandeja compartida "Autorizadas", visible a todo e
 Daniela Ríos la ve y **la toma** (primera en confirmar).
 
 > [!warning] Regla de negocio
-> [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] — "Concurrencia: primera en confirmar gana. Si dos Reclutadoras toman la misma al mismo tiempo, el sistema la bloquea para la primera en confirmar."
+> [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]] — "Self-Pick colaborativo (RR-15): tomar una requisición NO la bloquea para los demás. Si otra Reclutadora la toma, se **une** como reclutadora participante; varias pueden trabajarla a la vez con avance compartido. El lock de concurrencia baja a nivel de posición/slot (no se asigna el mismo colaborador a la misma posición dos veces). Cada toma/unión/asignación queda en el **Historial de la requisición** (RR-16)."
 
 > [!info] Semáforo de Requisición
 > **Verde** → **Amarillo** — En proceso

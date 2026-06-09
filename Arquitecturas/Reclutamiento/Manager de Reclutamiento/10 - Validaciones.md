@@ -15,6 +15,10 @@ aliases:
 | Tomar requisición sin justificación     | Solicita comentario obligatorio (es excepcional)                          |
 | Asignar manual sin comentario           | Bloquea acción; muestra "La asignación manual requiere justificación"     |
 | Forzar cambio de semáforo sin motivo    | Bloquea cambio; solicita comentario obligatorio                           |
+| Agregar reclutador ya participante      | Bloquea; muestra "El reclutador ya es participante de esta requisición"   |
+| Dos reclutadores asignan el mismo colaborador a la misma posición | Gana la primera asignación; a la segunda muestra "Posición ya cubierta" (lock a nivel de posición/slot) |
+| Cerrar requisición con varios participantes activos | Solicita confirmación; al cerrar registra el cierre en el Historial con autor |
+| Salir (último reclutador) con cobertura incompleta | Permite salir; la requisición vuelve a "Autorizada" (no resetea lo ya asignado) |
 | Aprobar Blacklist sin evidencia adjunta | Bloquea creación; muestra "Debe adjuntar al menos una evidencia"          |
 | Aprobar Blacklist sin descripción       | Bloquea creación; muestra "Debe describir el motivo (mín. 30 caracteres)" |
 | Remover de Blacklist sin justificación  | Bloquea acción; solicita comentario                                       |

@@ -16,7 +16,7 @@ Wireframe de la plataforma Oranje para el rol [[Reclutadora]]. Define el flujo d
 > La Reclutadora es el **rol operativo base** del módulo de [[Reclutamiento/Reclutamiento|Reclutamiento]]. Ejecuta todo el ciclo de reclutamiento, validación y asignación de colaboradores a hoteles.
 
 > [!important]
-> **Modelo self-pick:** las requisiciones llegan al sistema y la Reclutadora las **toma libremente** desde la bandeja de Autorizadas. Nadie le asigna requisiciones — ella decide qué toma y cuándo, según su capacidad.
+> **Modelo Self-Pick colaborativo (RR-15):** las requisiciones llegan al sistema y la Reclutadora las **toma libremente** desde la bandeja de Autorizadas. Nadie le asigna requisiciones — ella decide qué toma y cuándo. Tomar una requisición **NO bloquea a las demás**: una misma requisición puede tener **varios reclutadores participantes** trabajándola a la vez. Tomar una ya tomada significa **unirse** como reclutador participante adicional; nadie pierde la requisición.
 
 ## N0 — Inicio
 
@@ -253,14 +253,16 @@ SIDEBAR
 ### Sub-vistas
 
 **🟢 Bandeja de Autorizadas (disponibles para tomar)**
-- Listado de todas las requisiciones que el [[Hotel/Manager de Área|Manager de Área]] aprobó y aún nadie ha tomado.
-- Cualquier Reclutadora o Líder puede tomar la que quiera (modelo self-pick).
+- Listado de todas las requisiciones que el [[Hotel/Manager de Área|Manager de Área]] aprobó.
+- Cualquier Reclutadora o Líder puede **tomar** la que quiera (Self-Pick colaborativo, RR-15). Tomar **NO bloquea a las demás**.
+- Una requisición ya tomada sigue visible aquí con la etiqueta **"Compartida · N reclutadores"**: tomarla significa **Unirme** como reclutador participante adicional.
 - Ordenadas por urgencia (Red primero) y antigüedad en cola.
 
-**🟡 Mis Requisiciones (tomadas y en proceso)**
-- Solo las que **yo** tomé y estoy trabajando.
+**🟡 Mis Requisiciones (las que tomé o en las que participo)**
+- Las requisiciones que **yo tomé** O en las que **participo** junto a otros reclutadores (modelo colaborativo — no hay dueño único).
+- Las compartidas muestran la etiqueta **"Compartida · N reclutadores"**.
 - Por sub-estado:
-  - 🟡 En proceso (asignando colaboradores)
+  - 🟡 En proceso (uno o varios reclutadores asignando colaboradores)
   - 🔵 Cubiertas (100%)
   - 🔴 Parciales (cerradas con faltantes)
   - 📂 Toda
@@ -275,18 +277,26 @@ SIDEBAR
 
 ### Detalle
 - Cabecera (hotel, fechas, urgencia)
+- **Reclutadores activos en esta requisición** (RF-40) — lista de todos los reclutadores participantes que la están trabajando ahora mismo (rol + nombre), con etiqueta "Compartida · N reclutadores". El avance de cobertura es compartido entre todos.
 - Posiciones solicitadas (con [[Semáforo de Posiciones de la Requisición]])
 - Schedule del hotel (contexto)
-- Colaboradores ya asignados (los que yo asigné)
+- Colaboradores ya asignados (los asignados por **cualquier** reclutador participante, con quién lo asignó)
+
+### Historial de la requisición (RF-41)
+- Timeline cronológico **inmutable** con el **actor** de cada evento (rol + nombre) y timestamp.
+- Registra: quién la tomó / se unió, quién salió, quién asignó/desasignó qué colaborador a qué posición, quién la cerró.
+- Visible para todos los reclutadores participantes, el [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] y el [[Hotel/Manager de Área|Manager de Área]].
 
 ### Acciones
 - **🎯 Tomar requisición** *(desde bandeja de Autorizadas — pasa a Mis Requisiciones)*
-- **👤 Asignar colaborador** (abre Pool filtrado por posición/zona/inglés)
+- **🤝 Unirme a la requisición** *(cuando ya hay otros reclutadores participantes — me uno como reclutador adicional sin desplazar a nadie, RF-39)*
+- **👤 Asignar colaborador** (abre Pool filtrado por posición/zona/inglés; el lock es a nivel de posición/slot: dos reclutadores no asignan el mismo colaborador a la misma posición)
 - **🔄 Asignación temporal** (transición Verde fuerte/Amarillo → Café)
+- **📜 Ver historial** de la requisición (timeline cronológico con actor — RF-41)
 - Marcar como cubierta (cuando todas las posiciones están al 100%)
 - Marcar como parcial (cierre con faltantes)
 - Reportar problema (escala al [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]])
-- Liberar requisición (devolver a la bandeja de Autorizadas si no puedo cubrirla)
+- Salir de la requisición (me retira solo a mí; sigue **En proceso** si quedan otros reclutadores; no resetea lo que otros asignaron; vuelve a **Autorizada** solo cuando sale el **último** reclutador)
 
 > [!important]
 > Diferencia clave: la Reclutadora **toma** requisiciones libremente y **trabaja** ella misma. NO distribuye a nadie (no tiene grupo a su cargo).

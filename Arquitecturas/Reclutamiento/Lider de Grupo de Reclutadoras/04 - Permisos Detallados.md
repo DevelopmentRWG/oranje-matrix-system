@@ -15,8 +15,11 @@ aliases:
 | Módulo        | Funcionalidad                   | Permiso   | Descripción                                                |
 | ------------- | ------------------------------- | --------- | ---------------------------------------------------------- |
 | Requisición   | Ver cola de Autorizadas         | 👁️ Ver   | Cola de requisiciones disponibles                          |
-| Requisición   | Tomar requisición (Self-Pick)   | ➕ Crear   | Toma libremente igual que Reclutadora                      |
-| Requisición   | Liberar requisición             | 📝 Editar | Devuelve a la cola si no puede cubrirla                    |
+| Requisición   | Tomar requisición (Self-Pick colaborativo) | ➕ Crear | Toma libremente igual que Reclutadora; no bloquea a otros (RR-15) |
+| Requisición   | Unirse a requisición (RF-39)    | ➕ Crear   | Se une como reclutador participante a una ya tomada (RR-15) |
+| Requisición   | Ver reclutadores activos (RF-40)| 👁️ Ver   | Lista de reclutadores participantes que la trabajan ahora  |
+| Requisición   | Ver historial de la requisición (RF-41) | 👁️ Ver | Timeline inmutable con actor de cada evento (RR-16)      |
+| Requisición   | Salir de la requisición (RF-03) | 📝 Editar | Te retira solo a ti; sigue activa si quedan otros reclutadores |
 | Requisición   | Marcar como en proceso          | 📝 Editar | Cambia estado a "en proceso"                               |
 | Requisición   | Marcar como cubierta            | 📝 Editar | Cuando él/ella tomó la requisición y posiciones al 100%    |
 | Requisición   | **Aprobar cierre de cobertura** | ✓ Aprobar | **Aprueba cierres marcados por sus Reclutadoras** (semáforo Azul claro) |

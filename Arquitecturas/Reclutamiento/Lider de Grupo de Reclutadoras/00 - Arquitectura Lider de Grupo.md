@@ -14,6 +14,9 @@ Wireframe de la plataforma Oranje para el rol [[Reclutamiento/Líder de Grupo de
 > [!info]
 > El Líder de Grupo **ejecuta todas las funciones operativas de una [[Reclutadora]]** y además supervisa al grupo y reporta al [[Manager de Reclutamiento]]. Su arquitectura es la de Reclutadora + módulos de supervisión y reporte.
 
+> [!important]
+> **Modelo Self-Pick colaborativo (RR-15):** las requisiciones llegan al sistema y el Líder (como cualquier Reclutadora) las **toma libremente** desde la bandeja de Autorizadas. Tomar una requisición **NO bloquea a las demás**: una misma requisición puede tener **varios reclutadores participantes** trabajándola a la vez. Tomar una ya tomada significa **unirse** como reclutador participante adicional; nadie pierde la requisición. El avance de cobertura es **compartido** entre todos los reclutadores participantes.
+
 ## N0 — Inicio
 
 ```
@@ -106,7 +109,7 @@ MÓDULOS / SIDEBAR
 SIDEBAR
    ├─ DASHBOARD
    ├─ RECLUTAMIENTO   (Pool + Entrevistas — propias + del grupo)
-   ├─ REQUISICIÓN     (Cola de Autorizadas + Mis Tomadas — Self-Pick)
+   ├─ REQUISICIÓN     (Cola de Autorizadas + Mis Requisiciones tomadas/participadas — Self-Pick colaborativo)
    ├─ BLACKLIST       (consulta + agregar)
    ├─ MI GRUPO        ← exclusivo del Líder (supervisión)
    └─ REPORTES        ← módulo formal con su propia pantalla
@@ -270,14 +273,16 @@ SIDEBAR
 ### Sub-vistas
 
 **🟢 Bandeja de Autorizadas (disponibles para tomar)**
-- Listado de todas las requisiciones que el [[Hotel/Manager de Área|Manager de Área]] aprobó y aún nadie ha tomado.
-- Cualquier Reclutadora o Líder puede tomar la que quiera (modelo Self-Pick).
+- Listado de todas las requisiciones que el [[Hotel/Manager de Área|Manager de Área]] aprobó.
+- Cualquier Reclutadora o Líder puede **tomar** la que quiera (Self-Pick colaborativo, RR-15). Tomar **NO bloquea a las demás**.
+- Una requisición ya tomada sigue visible aquí con la etiqueta **"Compartida · N reclutadores"**: tomarla significa **Unirme** como reclutador participante adicional.
 - Ordenadas por urgencia (Red primero) y antigüedad en cola.
 
-**🟡 Mis Requisiciones (tomadas y en proceso)**
-- Solo las que el Líder tomó y está trabajando.
+**🟡 Mis Requisiciones (las que tomé o en las que participo)**
+- Las requisiciones que el Líder **tomó** O en las que **participa** junto a otros reclutadores (modelo colaborativo — no hay dueño único).
+- Las compartidas muestran la etiqueta **"Compartida · N reclutadores"**.
 - Por sub-estado:
-  - 🟡 En proceso (asignando colaboradores)
+  - 🟡 En proceso (uno o varios reclutadores asignando colaboradores)
   - 🔵 Cubiertas (100%)
   - 🔴 Parciales (cerradas con faltantes)
   - 📂 Toda
@@ -292,21 +297,29 @@ SIDEBAR
 
 ### Detalle
 - Cabecera (hotel, fechas, urgencia)
+- **Reclutadores activos en esta requisición** (RF-40) — lista de todos los reclutadores participantes que la están trabajando ahora mismo (rol + nombre), con etiqueta "Compartida · N reclutadores". El avance de cobertura es compartido entre todos.
 - Posiciones solicitadas (con [[Semáforo de Posiciones de la Requisición]])
 - Schedule del hotel (contexto)
-- Colaboradores ya asignados
+- Colaboradores ya asignados (los asignados por **cualquier** reclutador participante, con quién lo asignó)
 
-### Acciones (Self-Pick)
-- **🎯 Tomar requisición** *(desde bandeja de Autorizadas — pasa a Mis Requisiciones)*
+### Historial de la requisición (RF-41)
+- Timeline cronológico **inmutable** con el **actor** de cada evento (rol + nombre) y timestamp.
+- Registra: quién la tomó / se unió, quién salió, quién asignó/desasignó qué colaborador a qué posición, quién la cerró.
+- Visible para todos los reclutadores participantes, el Líder de Grupo y el [[Manager de Reclutamiento]].
+
+### Acciones (Self-Pick colaborativo)
+- **🎯 Tomar requisición** *(desde bandeja de Autorizadas — pasa a Mis Requisiciones)*. Si ya hay otros reclutadores, la acción es **Unirme** como reclutador participante adicional.
+- **👥 Ver reclutadores activos** (RF-40) — quién está trabajando la requisición ahora mismo.
+- **🕓 Ver historial** (RF-41) — timeline cronológico con actor de cada evento.
 - **👤 Asignar colaborador** (abre Pool filtrado por posición/zona/inglés)
 - **🔄 Asignación temporal** (transición Verde fuerte/Amarillo → Café)
 - Marcar como cubierta (cuando todas las posiciones están al 100%)
 - Marcar como parcial (cierre con faltantes)
 - Reportar problema (escala al Manager)
-- Liberar requisición (devuelve a bandeja de Autorizadas)
+- **🚪 Salir de la requisición** — te retira solo a ti; la requisición sigue **En proceso** si quedan otros reclutadores y NO resetea lo ya asignado. Solo vuelve a **Autorizada** cuando sale el **último** reclutador.
 
 > [!important]
-> El Líder de Grupo opera con el mismo modelo Self-Pick que la Reclutadora: **toma libremente** las requisiciones que pueda cubrir. La diferencia con la Reclutadora es que **además supervisa al grupo** (módulo "Mi Grupo") y **envía reportes formales al Manager** (módulo "Reportes").
+> El Líder de Grupo opera con el mismo modelo Self-Pick colaborativo (RR-15) que la Reclutadora: **toma libremente** las requisiciones que pueda cubrir y puede **unirse** a las que ya trabajan otros reclutadores. La diferencia con la Reclutadora es que **además supervisa al grupo** (módulo "Mi Grupo") y **envía reportes formales al Manager** (módulo "Reportes").
 
 ---
 

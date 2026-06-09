@@ -43,7 +43,7 @@ El proceso de reclutamiento de un colaborador consta de fases definidas en el [[
 
 > [!important] **Bandeja global con filtros** — todas las Reclutadoras ven todas las requisiciones disponibles. Pueden filtrar por zona, urgencia, posición y otros criterios. La bandeja no está segmentada por grupo ni por Reclutadora.
 
-> [!important] **Concurrencia: primera en confirmar gana** — si dos Reclutadoras intentan tomar la misma requisición simultáneamente, el sistema la bloquea para la primera en confirmar. La segunda recibe un mensaje indicando que la requisición ya fue tomada.
+> [!important] **Modelo colaborativo (RR-15)** — una requisición puede tener **varios reclutadores participantes** trabajándola a la vez; no hay dueño único. Tomar una requisición **ya tomada NO la transfiere ni la bloquea**: el reclutador se **une** (acción "Unirme") como participante adicional, sin desplazar a los existentes ni retroceder el semáforo. Un reclutador puede **salir** (acción "Salir") y se retira solo a él; la requisición sigue **Amarillo** si quedan otros y solo vuelve a **Autorizada** cuando sale el **último**. El avance es **compartido** y el lock de concurrencia opera solo a nivel **posición/slot**: si dos asignan la misma posición, gana el primero y el segundo ve "posición ya cubierta". Ver [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]].
 
 > [!important] **Auto-asignación a las 24 horas** — si una requisición lleva más de **24 horas** sin ser tomada (contadas desde la autorización), el sistema la asigna automáticamente a la [[Reclutadora]] con menor carga de requisiciones activas. El [[Manager de Reclutamiento]] no recibe notificación; el proceso es transparente.
 
@@ -56,6 +56,8 @@ El proceso de reclutamiento de un colaborador consta de fases definidas en el [[
 > | Verde fuerte | Más de 120h para inicio | 72h sin cubrir |
 >
 > Durante todo este proceso la requisición permanece en estado **Amarillo** en el [[Core/Módulos/Semáforos/Semáforo de Requisición\|Semáforo de Requisición]].
+
+> [!note] **Historial de la requisición (RR-16)** — cada acción (tomar, unirse, salir, asignar/desasignar colaborador a una posición, cambio de status, cierre) se registra en un timeline cronológico **inmutable** con **actor** (rol y nombre) y timestamp. Es visible para todos los reclutadores participantes, el [[Reclutamiento/Líder de Grupo de Reclutadoras\|Líder de Grupo]] y el [[Manager de Reclutamiento]]. Ver RF-41 y [[Reclutamiento/Self-Pick de Requisiciones\|Self-Pick de Requisiciones]].
 
 ## Cobertura de posiciones
 
@@ -115,6 +117,8 @@ Al asignar colaboradores del [[Pool de Colaboradores]] a las posiciones de una r
 | Validar y aprobar colaborador | Sí | Sí (hereda) | No |
 | Habilitar acceso a paneles | Sí | Sí (hereda) | No |
 | Tomar requisiciones de la bandeja | Sí | Sí (hereda) | Solo excepciones (balanceo, líder ausente, error de asignación) |
+| Unirse a requisición (ya tomada por otro) | Sí | Sí (hereda) | Solo excepciones |
+| Ver historial de la requisición | Sí (Ver) | Sí (Ver) | Sí (Ver) |
 | Consultar Blacklist | Sí (obligatorio) | Sí (hereda) | — |
 | Revisar casos de Blacklist | No | No | Sí |
 | Asignación temporal (Café) | Sí | Sí (hereda) | No |
@@ -131,7 +135,9 @@ Al asignar colaboradores del [[Pool de Colaboradores]] a las posiciones de una r
 - [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo de Reclutadoras]]
 - [[Manager de Reclutamiento]]
 - [[Reclutamiento/Flujo de Reclutamiento|Flujo de Reclutamiento]]
+- [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]]
 - [[Core/Módulos/Requisicion/Flujo de Requisición|Flujo de Requisición]]
+- [[Core/Módulos/Requisicion/Requisición|Requisición]]
 - [[Pool de Colaboradores]]
 - [[Core/Módulos/Blacklist|Blacklist]]
 - [[Semáforo del Colaborador]]

@@ -55,7 +55,10 @@ La posición se crea junto con la requisición y se prepara con sus datos (perfi
 
 La posición queda lista para asignación. El sistema asocia automáticamente un nivel de urgencia (ver [[Semáforo de Urgencia de Requisición]]).
 
-**Avance →** según la cobertura gestionada por la [[Reclutadora]]:
+> [!note] Granularidad colaborativa
+> Bajo el modelo colaborativo (RR-15), **cada posición/slot puede tener su propio reclutador asignado**: varios reclutadores participantes trabajan la misma requisición y cada uno cubre las posiciones que toma. **Asignar** o **quitar** un colaborador de una posición registra al **actor** (rol y nombre) en el [[Core/Módulos/Requisicion/Requisición#Historial de la Requisición|Historial de la Requisición]] (RR-16). El lock de concurrencia opera a este nivel: dos reclutadores no asignan el mismo colaborador al mismo slot — gana el primero, el segundo ve "posición ya cubierta".
+
+**Avance →** según la cobertura gestionada por los reclutadores participantes:
 - 100% cubierta → [[#Verde — 100% cubierta|Verde]]
 - Hasta 25% faltante → [[#Amarillo — Hasta 25% faltante|Amarillo]]
 - Más del 25% faltante → [[#Rojo — Más de 25% faltante|Rojo]]
@@ -94,6 +97,8 @@ Estado transversal. Se alcanza desde cualquier estado cuando la posición se eli
   - La requisición queda **Rojo** si al menos una posición cierra en `Amarillo` o `Rojo`.
 - **La prioridad** (Urgencia) se calcula automáticamente al pasar a `Naranja`.
 - **Eliminación**: puede suceder en cualquier estado (→ `Morado`).
+- **Granularidad colaborativa (RR-15):** cada posición/slot puede tener su reclutador asignado; el lock de concurrencia es por posición/slot, no por requisición completa.
+- **Trazabilidad (RR-16):** asignar/quitar un colaborador de una posición registra al **actor** en el [[Core/Módulos/Requisicion/Requisición#Historial de la Requisición|Historial de la Requisición]].
 
 ## Relacionado
 

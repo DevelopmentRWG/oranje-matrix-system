@@ -18,8 +18,11 @@ aliases:
 | Módulo | Funcionalidad / Acción | ROL-01 Reclutadora | ROL-02 Líder de Grupo | ROL-03 Manager | ROL-04 Sistema | ROL-05 Admin |
 |---|---|---|---|---|---|---|
 | **REQUISICIÓN** | 👁️ Ver cola de Autorizadas | Ver | Ver | Ver | Auto | ⏸️ |
-| | 🎯 Tomar requisición (Self-Pick) | Crear | Crear | Crear | Auto | ⏸️ |
-| | 📝 Liberar requisición tomada | C · E | C · E | C · E | Auto | ⏸️ |
+| | 🎯 Tomar requisición (Self-Pick colaborativo) | Crear (agrega participante) | Crear (agrega participante) | Crear | Auto | ⏸️ |
+| | 🤝 Tomar/Unirse a requisición ya tomada | Crear | Crear | — | Auto | ⏸️ |
+| | 📝 Liberar requisición tomada (Salir) | C · E | C · E | C · E | Auto | ⏸️ |
+| | 👁️ Ver reclutadores activos | Ver | Ver | Ver | Auto | ⏸️ |
+| | 👁️ Ver Historial de la requisición | Ver | Ver | Ver | Auto | ⏸️ |
 | | 📝 Marcar requisición en proceso | C · E | C · E | — | Auto | ⏸️ |
 | | ✅ Marcar requisición como cubierta | C · E (solicita) | ✓ Aprobar (cierre) | Ver | Auto | ⏸️ |
 | | 👁️ Ver vista global | — | Ver | Ver | Auto | ⏸️ |
@@ -72,6 +75,7 @@ aliases:
 
 ## Cambios respecto a la versión anterior
 
+- **Requisición colaborativa** — `Tomar requisición (Self-Pick colaborativo)` ahora agrega un reclutador participante (no es exclusivo) y `Liberar` pasa a ser `Salir`. Se añaden `Tomar/Unirse a requisición ya tomada` (Reclutadora/Líder), `Ver reclutadores activos` y `Ver Historial de la requisición` (RR-15 y RR-16).
 - **Blacklist** — La columna `Agregar a Blacklist` ahora es `Crear` para los 3 roles del depto (Reclutadora, Líder, Manager). Antes solo el Manager podía. La regla actualizada (RR-03) deja al Manager como único que **resuelve disputas** y **remueve**.
 - **Submódulos reorganizados** — Pool, Entrevistas y Asignación quedan dentro del módulo **RECLUTAMIENTO**. La toma de requisición y los semáforos quedan dentro del módulo **REQUISICIÓN**.
 - **Notificaciones** ya no es módulo del sidebar — pasó a sección "Sistema (transversal)".

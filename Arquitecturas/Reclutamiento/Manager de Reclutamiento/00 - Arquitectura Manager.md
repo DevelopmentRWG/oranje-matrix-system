@@ -185,10 +185,16 @@ Mismo formulario que Reclutadora / Líder. El Manager solo lo usa cuando intervi
 
 - Lista por estado (Autorizadas / En proceso / Cubiertas / Parciales)
 - Filtros por urgencia, posición, hotel, zona, tiempo en cola
+
+> [!info]
+> **Modelo colaborativo (RR-15).** Una requisición puede tener **varios reclutadores participantes** trabajándola a la vez (no hay dueño único). Tomar una requisición ya tomada NO la transfiere ni la bloquea: el reclutador se **une como participante adicional** y el avance de cobertura es **compartido**. El Manager ve a todos los reclutadores activos de cada requisición y puede agregar uno sin desplazar a los existentes.
+
 - Acciones excepcionales:
-  - 🎯 Tomar requisición personalmente (caso especial)
+  - 🎯 Tomar requisición personalmente (caso especial — se registra como participante; otros pueden unirse)
   - 👤 Asignar manualmente (VIP, balanceo, ausencia) — con justificación
-  - Reasignar a otra Reclutadora
+  - ➕ Agregar reclutador a requisición (lo suma como participante sin desplazar a los existentes — modelo colaborativo)
+  - Reasignar a otra Reclutadora (transferencia) o mantener a la original como participante de apoyo
+  - 📜 Ver historial de la requisición (timeline cronológico: quién tomó / se unió / salió, quién asignó/desasignó cada colaborador, con fecha y autor — RR-16)
   - Forzar cambio de semáforo (con log)
 
 ---

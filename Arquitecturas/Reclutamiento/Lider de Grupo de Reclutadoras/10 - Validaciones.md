@@ -20,7 +20,9 @@ aliases:
 | Asignar colaborador no validado                         | Bloquea asignación                                          |
 | Asignar colaborador ya activo en otro hotel             | Bloquea (regla RR-05 de exclusividad)                       |
 | Marcar requisición cubierta sin 100%                    | Bloquea acción                                              |
-| Tomar requisición ya tomada                             | Muestra "Esta requisición ya fue tomada por [usuario]"      |
+| Tomar requisición ya tomada                             | No bloquea; pregunta "Esta requisición ya la trabajan N reclutadores. ¿Unirte como participante?" (RR-15) |
+| Asignar un colaborador a una posición que otro reclutador ya cubrió | Bloquea solo ese slot; muestra "Posición ya cubierta" (gana la primera asignación; AC-23) |
+| Unirse / asignar en una requisición ya cerrada (cubierta o parcial) | Bloquea acción; muestra "La requisición está cerrada"       |
 
 ---
 

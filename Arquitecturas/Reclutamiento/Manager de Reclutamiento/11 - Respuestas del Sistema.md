@@ -15,6 +15,10 @@ aliases:
 | Manager toma requisición personal             | Registra intervención excepcional en log; mueve a "Mis Requisiciones"           |
 | Manager asigna manualmente a Reclutadora      | Notifica a la Reclutadora con contexto; queda en log con motivo                 |
 | Manager fuerza cambio de semáforo             | Aplica cambio con log auditable; notifica a involucrados                        |
+| Manager agrega reclutador a requisición       | Lo suma como participante sin desplazar a otros; notifica a los participantes activos; registra el evento en el Historial |
+| Reclutador participante asigna colaborador a una posición | Marca la posición como cubierta (lock de posición/slot); registra la asignación como evento del timeline con autor y fecha |
+| Reclutador participante desasigna colaborador | Libera la posición para reasignar; registra la desasignación como evento del timeline con autor y fecha |
+| Reclutador sale de la requisición             | Lo retira solo a él; sigue "En proceso" si quedan otros reclutadores; vuelve a "Autorizada" solo al salir el último; registra el evento en el Historial |
 | Manager aprueba Blacklist                     | Colaborador pasa a Negro; notifica al colaborador; bloquea futuras asignaciones |
 | Manager resuelve disputa                      | Cierra caso con decisión; notifica a Inspector y a colaborador                  |
 | Manager remueve de Blacklist                  | Reactiva colaborador en Pool; queda registro                                    |

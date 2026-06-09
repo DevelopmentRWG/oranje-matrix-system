@@ -15,8 +15,10 @@ aliases:
 | Módulo        | Funcionalidad                 | Permiso   | Descripción                                                              |
 | ------------- | ----------------------------- | --------- | ------------------------------------------------------------------------ |
 | Requisición   | Ver cola de Autorizadas       | 👁️ Ver   | Cola de requisiciones disponibles para tomar                             |
-| Requisición   | Tomar requisición (Self-Pick) | ➕ Crear   | Toma libremente la requisición a trabajar                                |
-| Requisición   | Liberar requisición           | 📝 Editar | Devuelve la requisición a la cola si no puede cubrirla                   |
+| Requisición   | Tomar / Unirme a requisición (Self-Pick colaborativo) | ➕ Crear   | Toma libremente la requisición; si ya hay otros, se une como reclutador participante adicional (RR-15) |
+| Requisición   | Ver reclutadores activos      | 👁️ Ver   | Lista de los reclutadores participantes que trabajan la requisición      |
+| Requisición   | Ver historial de la requisición | 👁️ Ver   | Timeline cronológico inmutable con actor (RR-16)                         |
+| Requisición   | Salir de la requisición       | 📝 Editar | Se retira solo a sí misma; vuelve a Autorizada solo cuando sale el último reclutador |
 | Requisición   | Marcar como en proceso        | 📝 Editar | Cambia estado a "en proceso"                                             |
 | Requisición   | Marcar como cubierta          | 📝 Editar | Solicita cierre al **Líder de Grupo** cuando posiciones al 100%          |
 | Reclutamiento | Buscar candidatos en Pool     | 👁️ Ver   | Filtros por posición, zona, modalidad, inglés                            |

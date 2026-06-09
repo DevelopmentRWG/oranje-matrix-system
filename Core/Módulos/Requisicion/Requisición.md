@@ -27,7 +27,7 @@ Datos generales que identifican la requisición:
 | Hotel                | Hotel que solicita el personal.                                                              |
 | SUP                  | [[Hotel/Supervisor\|Supervisor]] que creó la requisición.              |
 | GH (Manager de Área) | [[Hotel/Manager de Área\|Manager de Área]] responsable.                                             |
-| Reclutador           | [[Reclutadora]] asignada a atender la requisición.                                           |
+| Reclutadores         | Lista de [[Reclutadora\|reclutadores participantes]] que trabajan la requisición a la vez (modelo colaborativo). No hay dueño único; varios reclutadores pueden estar activos simultáneamente. Ver [[Reclutamiento/Self-Pick de Requisiciones\|Self-Pick de Requisiciones]] y RR-15. |
 | Inspector            | [[Inspector]] correspondiente a la [[Zonas\|zona]] del hotel.                             |
 | Status (color)       | Estado actual según el [[Semáforo de Requisición]].                                          |
 
@@ -65,6 +65,18 @@ Una requisición tiene varios estados visuales que aplican a distintas dimension
 - **[[Semáforo de Urgencia de Requisición]]** — nivel de urgencia basado en el tiempo.
 - **[[Semáforo de Posiciones de la Requisición]]** — porcentaje de cobertura por cada posición solicitada.
 
+## Historial de la Requisición
+
+Cada requisición mantiene un **timeline cronológico inmutable** de todas las acciones que ocurren sobre ella, con **actor** (rol y nombre) y **timestamp** de cada evento. El historial registra, entre otros:
+
+- Quién **tomó** la requisición (primer reclutador) y quién **se unió** después como reclutador participante.
+- Quién **salió** de la requisición.
+- Quién **asignó** o **desasignó** qué [[Pool de Colaboradores\|colaborador]] a qué posición/slot.
+- Cambios de status (semáforo) con su actor.
+- Quién **cerró** la requisición.
+
+El historial es **inmutable** (no se edita ni se borra) y es **visible para todos los reclutadores participantes, el [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] y el [[Manager de Reclutamiento]]**. Es la fuente de trazabilidad del trabajo colaborativo. Ver RF-41 y RR-16.
+
 ## Flujo
 
 Ver [[Flujo de Requisición]].
@@ -84,4 +96,7 @@ Ver [[Flujo de Requisición]].
 - [[Hotel/Manager de Área|Manager de Área]]
 - [[Hotel/Supervisor|Supervisor]]
 - [[Reclutadora]]
+- [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo de Reclutadoras]]
 - [[Manager de Reclutamiento]]
+- [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]]
+- [[Pool de Colaboradores]]

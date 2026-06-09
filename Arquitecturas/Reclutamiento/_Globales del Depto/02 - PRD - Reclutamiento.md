@@ -18,7 +18,7 @@ aliases:
 | **ID del PRD** | PRD-RECL-01 |
 | **Historia de Usuario** | HU-RECL-01 |
 | **Departamento** | Reclutamiento |
-| **Funcionalidad** | Gestionar el ciclo completo de reclutamiento bajo modelo Self-Pick |
+| **Funcionalidad** | Gestionar el ciclo completo de reclutamiento bajo modelo Self-Pick colaborativo |
 | **Actor Principal** | Reclutadora · Líder de Grupo de Reclutadoras |
 | **Dispositivo** | Web – Desktop |
 | **Estado** | En definición |
@@ -28,7 +28,7 @@ aliases:
 
 ## Objetivo
 
-Permitir al equipo de Reclutamiento captar, validar y habilitar colaboradores para integrarlos al Pool de Colaboradores, y cubrir las requisiciones autorizadas por los hoteles bajo un **modelo Self-Pick** donde Reclutadoras y Líderes de Grupo toman libremente las requisiciones de la bandeja según su capacidad.
+Permitir al equipo de Reclutamiento captar, validar y habilitar colaboradores para integrarlos al Pool de Colaboradores, y cubrir las requisiciones autorizadas por los hoteles bajo un **modelo Self-Pick colaborativo** donde Reclutadoras y Líderes de Grupo toman libremente las requisiciones de la bandeja según su capacidad. Tomar una requisición ya tomada no la bloquea ni la transfiere: el reclutador se une como participante adicional, de modo que varios reclutadores participantes pueden trabajar una misma requisición a la vez con cobertura compartida.
 
 ---
 
@@ -36,7 +36,8 @@ Permitir al equipo de Reclutamiento captar, validar y habilitar colaboradores pa
 
 **Incluye:**
 - Recepción de requisiciones autorizadas por los hoteles.
-- Toma libre de requisiciones por Reclutadoras y Líderes de Grupo (Self-Pick).
+- Toma libre y colaborativa de requisiciones por Reclutadoras y Líderes de Grupo (Self-Pick colaborativo): varios reclutadores participantes por requisición, con cobertura compartida.
+- Historial/trazabilidad de la requisición: timeline cronológico inmutable con actor (quién tomó/se unió/salió y quién asignó/desasignó cada colaborador, con fecha y autor).
 - Búsqueda de candidatos en el Pool de Colaboradores.
 - Alta de nuevos colaboradores en 3 fases (entrevista, app, datos de emergencia).
 - Validación de colaboradores tras alta en app.

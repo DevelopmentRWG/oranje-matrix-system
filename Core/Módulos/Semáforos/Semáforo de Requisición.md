@@ -33,9 +33,9 @@ Sistema de estados visuales que representa el ciclo de vida de una [[Requisició
 | ------------- | --------------------- | ----------------------------------------------------------- | ------------------------------------- |
 | Verde manzana | En elaboración        | [[Hotel/Manager General\|GM]], [[Hotel/Manager de Área\|GH]] o [[Hotel/Supervisor\|SUP]] | En elaboración por el hotel.          |
 | Verde         | Autorizada            | [[Hotel/Manager General\|GM]] o [[Hotel/Manager de Área\|GH]]                             | Autorizada por el hotel.  |
-| Amarillo      | En proceso            | [[Reclutadora]] (toma de la bandeja compartida)             | En proceso de asignación de personal. |
-| Azul claro    | Cubierta totalmente   | [[Reclutadora]]                                             | Requisición cubierta totalmente.      |
-| Rojo          | Cubierta parcialmente | [[Reclutadora]]                                             | Requisición cubierta parcialmente.    |
+| Amarillo      | En proceso            | Reclutadores activos (varios)                               | En proceso de asignación de personal. |
+| Azul claro    | Cubierta totalmente   | Reclutadores activos (varios)                               | Requisición cubierta totalmente.      |
+| Rojo          | Cubierta parcialmente | Reclutadores activos (varios)                               | Requisición cubierta parcialmente.    |
 | Morado        | Eliminada             | —                                                           | Requisición eliminada físicamente.    |
 
 ## Detalle por estado
@@ -54,14 +54,17 @@ El hotel inicia la creación de la requisición y sus posiciones.
 
 La requisición queda lista para asignación. El sistema calcula automáticamente la urgencia (ver [[Semáforo de Urgencia de Requisición]]).
 
-**Avance →** una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] toma la requisición de la bandeja compartida; pasa a [[#Amarillo — En proceso|Amarillo]].
+**Avance →** una [[Reclutadora]] o [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] toma la requisición de la bandeja compartida; pasa a [[#Amarillo — En proceso|Amarillo]]. El cambio de status registra al **actor** en el [[Core/Módulos/Requisicion/Requisición#Historial de la Requisición|Historial de la Requisición]].
+
+> [!note] Retorno desde Amarillo
+> Bajo el modelo colaborativo (RR-15), la requisición solo regresa a **Verde** (Autorizada) cuando **sale el último** reclutador participante. Mientras quede al menos un reclutador activo, permanece en Amarillo.
 
 ---
 
 ### Amarillo — En proceso
-**Responsable:** [[Reclutadora]]
+**Responsable:** Reclutadores activos (varios)
 
-La reclutadora busca y asigna colaboradores a las posiciones (ver [[Semáforo de Posiciones de la Requisición]] y [[Semáforo del Colaborador]]).
+**Varios reclutadores participantes** pueden trabajar la requisición a la vez (modelo colaborativo, RR-15); no hay dueño único. El avance que muestra el semáforo **consolida el trabajo de todos** los reclutadores activos. Cada uno busca y asigna colaboradores a las posiciones (ver [[Semáforo de Posiciones de la Requisición]] y [[Semáforo del Colaborador]]). Cada cambio de status registra al **actor** en el [[Core/Módulos/Requisicion/Requisición#Historial de la Requisición|Historial de la Requisición]].
 
 ### Decisión
 
@@ -73,18 +76,18 @@ La reclutadora busca y asigna colaboradores a las posiciones (ver [[Semáforo de
 ---
 
 ### Azul claro — Cubierta totalmente
-**Responsable:** [[Reclutadora]]
+**Responsable:** Reclutadores activos (varios)
 
-Todas las posiciones llegaron a 100% (ver `Verde` en [[Semáforo de Posiciones de la Requisición]]).
+Todas las posiciones llegaron a 100% (ver `Verde` en [[Semáforo de Posiciones de la Requisición]]); el resultado consolida el trabajo de todos los reclutadores participantes. El cierre registra al **actor** (quién la cerró) en el [[Core/Módulos/Requisicion/Requisición#Historial de la Requisición|Historial de la Requisición]].
 
 **Fin del ciclo activo** — la requisición queda cerrada satisfactoriamente.
 
 ---
 
 ### Rojo — Cubierta parcialmente
-**Responsable:** [[Reclutadora]]
+**Responsable:** Reclutadores activos (varios)
 
-La requisición cerró con al menos una posición en `Amarillo` o `Rojo` a nivel [[Semáforo de Posiciones de la Requisición|posición]].
+La requisición cerró con al menos una posición en `Amarillo` o `Rojo` a nivel [[Semáforo de Posiciones de la Requisición|posición]]; el resultado consolida el trabajo de todos los reclutadores participantes. El cierre registra al **actor** (quién la cerró) en el [[Core/Módulos/Requisicion/Requisición#Historial de la Requisición|Historial de la Requisición]].
 
 **Fin del ciclo activo** — con cobertura incompleta.
 
@@ -101,7 +104,9 @@ Estado transversal: se alcanza desde cualquier estado anterior cuando se elimina
 - [[Semáforo de Posiciones de la Requisición]]
 - [[Semáforo del Colaborador]]
 - [[Flujo de Reclutamiento]]
+- [[Reclutamiento/Self-Pick de Requisiciones|Self-Pick de Requisiciones]]
 - [[Reclutadora]]
+- [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo de Reclutadoras]]
 - [[Manager de Reclutamiento]]
 - [[Hotel/Manager General|Manager General]]
 - [[Hotel/Manager de Área|Manager de Área]]

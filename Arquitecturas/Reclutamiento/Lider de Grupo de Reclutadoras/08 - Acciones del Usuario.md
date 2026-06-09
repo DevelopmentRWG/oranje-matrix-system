@@ -12,8 +12,11 @@ aliases:
 
 | Acción                           | Resultado                                                    |
 | -------------------------------- | ------------------------------------------------------------ |
-| Tomar requisición de la bandeja  | La requisición pasa a Mis Requisiciones; semáforo a Amarillo |
-| Liberar requisición              | Vuelve a la bandeja de Autorizadas                           |
+| Tomar requisición de la bandeja  | La requisición pasa a Mis Requisiciones; semáforo a Amarillo (En proceso) |
+| Unirme a requisición ya tomada (RF-39) | Te agregas como reclutador participante; no desplaza a los existentes ni retrocede el semáforo |
+| Ver reclutadores activos (RF-40) | Lista los reclutadores participantes que trabajan la requisición ahora mismo (rol + nombre) |
+| Ver historial de la requisición (RF-41) | Abre el timeline cronológico inmutable con el actor de cada evento (fecha + autor) |
+| Salir de la requisición          | Te retira solo a ti; sigue En proceso si quedan otros reclutadores; vuelve a Autorizada al salir el último |
 | Crear nuevo colaborador (Fase 1) | Registro creado con estado 'Pendiente de validación'         |
 | Validar alta en App              | Colaborador aprobado e ingresa al Pool                       |
 | Habilitar accesos                | Sistema propaga accesos a paneles del colaborador            |
