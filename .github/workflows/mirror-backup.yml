@@ -1,0 +1,33 @@
+name: Mirror to backup repo
+
+# Espeja  DevelopmentRWG/oranje-matrix-system  ->  oranje-matrix-system-backup
+# Disparadores: cada hora (UTC) + ejecucion manual desde la pestana Actions.
+# Mecanismo: clona origin en modo --mirror y hace push de heads y tags al
+# backup con --prune (espejo exacto: crea, actualiza y borra ramas/tags).
+
+on:
+  schedule:
+    - cron: '0 * * * *'      # cada hora en punto (UTC)
+  workflow_dispatch:          # boton "Run workflow" para correrlo manualmente
+
+concurrency:
+  group: mirror-backup
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configurar deploy key (SSH)
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.MIRROR_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Clonar origin y espejar al backup
+        run: |
+          git clone --mirror https://github.com/DevelopmentRWG/oranje-matrix-system.git repo
+          cd repo
+          git push --prune git@github.com:DevelopmentRWG/oranje-matrix-system-backup.git \
+            '+refs/heads/*:refs/heads/*' '+refs/tags/*:refs/tags/*'
