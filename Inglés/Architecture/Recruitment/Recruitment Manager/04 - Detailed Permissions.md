@@ -25,8 +25,6 @@ aliases:
 | Recruitment   | Assign to hotel (support)         | ➕ Create      | When intervening exceptionally                   |
 | **Blacklist** | Consult Blacklist                 | 👁️ View       | Full view                                        |
 | **Blacklist** | Add to Blacklist                  | ➕ Create      | Same as any department role                      |
-| **Blacklist** | Resolve dispute                   | 🔍 Investigate | Final decision — Manager exclusive               |
-| **Blacklist** | Remove from Blacklist             | 📝 Edit        | With justification — Manager exclusive           |
 | **My Team**   | View Group Leaders                | 👁️ View       | Nested view                                      |
 | **My Team**   | View Recruiters                   | 👁️ View       | Filter by Leader                                 |
 | **My Team**   | Create Leader                     | ➕ Create      | Creation modal                                   |
@@ -39,7 +37,7 @@ aliases:
 | Incidents     | Resolve case                      | ✓ Approve      | Final decision with comment                      |
 | Incidents     | Escalate to Management            | 📝 Edit        | Critical cases                                   |
 | Reports       | View received reports             | 👁️ View       | From Leaders                                     |
-| Reports       | Generate global report            | ➕ Create      | For Management                                   |
+| Reports       | Generate global report            | ➕ Create      | For Manager's own tracking and supervision        |
 | Reports       | Export                            | 👁️ View       | CSV/PDF/Excel                                    |
 | Dashboard     | View global KPIs                  | 👁️ View       | Department coverage                              |
 | System        | Receive notification              | 👁️ View       | Critical alerts                                  |

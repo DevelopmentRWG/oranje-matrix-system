@@ -18,7 +18,7 @@ aliases:
 | **Schedule Module**              | On assigning a collaborator, the entry in the hotel's Schedule is automatically generated. Bidirectional: Recruitment writes, Schedule queries. |
 | **Timesheet Module**             | The Timesheet reads the assigned collaborators. The Recruitment Manager sees the Extended Lunch indicator.                                    |
 | **Collaborator Pool Module** | It is the central repository where Recruitment feeds new collaborators and from where it consumes to cover requisitions.                       |
-| **Blacklist Module**             | Mandatory check before each assignment. Only the Manager can manage (CRUD).                                                             |
+| **Blacklist Module**             | Mandatory check before each assignment. All three dept roles (Recruiter, Group Leader, Recruitment Manager) can consult and add (serious offense · with reason and evidence, auditable record). No one removes (permanent ban). Disputes are resolved by the Inspector.                                                             |
 | **Inspection Module**            | The Inspector investigates Blacklist disputes and Red cases of the Collaborator Status Light. Receives escalations from the Manager.                          |
 | **Onboarding-Hotel Module**      | Receives escalations from the Manager when an incident affects the commercial relationship with the hotel.                                                  |
 | **QA Module**                    | Supervises the Recruitment department through the Quality Indicator. The QA Operator issues formal observations.                       |

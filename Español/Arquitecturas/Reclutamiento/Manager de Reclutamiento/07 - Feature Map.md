@@ -34,11 +34,9 @@ MANAGER DE RECLUTAMIENTO
 │   ├── Editar colaborador
 │   └── Asignar a hotel (excepcional)
 │
-├── ⚫ Blacklist (CRUD COMPLETO)
-│   ├── Consulta
-│   ├── Agregar (igual que cualquier rol)
-│   ├── Resolver disputa (Manager exclusivo)
-│   └── Remover (Manager exclusivo)
+├── ⚫ Blacklist (consulta + agregar)
+│   ├── Consulta global
+│   └── Agregar (igual que cualquier rol de Reclutamiento)
 │
 ├── 👥 Mi Equipo (EXCLUSIVO del Manager)
 │   ├── Vista de Líderes con métricas
@@ -70,10 +68,8 @@ MANAGER DE RECLUTAMIENTO
 |---|---|---|---|
 | Tomar requisición (Self-Pick) | ✅ | ✅ | ⚠️ excepcional |
 | Agregar a Blacklist | ✅ | ✅ | ✅ |
-| Resolver disputa de Blacklist | ❌ | ❌ | ✅ exclusivo |
-| Remover de Blacklist | ❌ | ❌ | ✅ exclusivo |
 | Mi Equipo (gestión completa) | ❌ | ❌ | ✅ exclusivo |
 | Incidencias (decisión final) | ❌ | ❌ | ✅ exclusivo |
 | Forzar cambio semáforo | ❌ | ❌ | ✅ con justificación |
-| Reportes globales para Dirección | ❌ | ❌ | ✅ exclusivo |
+| Reportes del departamento (seguimiento propio) | ❌ | ❌ | ✅ exclusivo |
 | Escalar a Dirección | ❌ | ❌ | ✅ exclusivo |

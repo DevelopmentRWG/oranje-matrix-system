@@ -28,6 +28,7 @@ A las [[Reclutadora|reclutadoras]] les sirve saber quién está en blacklist par
 
 Un colaborador pasa a estado **Negro** en el [[Semáforo del Colaborador]] por:
 
+- **Falta grave (manual)** → cualquier rol del departamento de Reclutamiento ([[Reclutadora]], [[Reclutamiento/Líder de Grupo de Reclutadoras|Líder de Grupo]] o [[Manager de Reclutamiento]]) puede agregarlo con **motivo y evidencia** obligatorios; queda registro auditable.
 - **3 inasistencias** → blacklist automático por sistema.
 - **Disputa resuelta a favor del hotel** → tras un reporte del hotel (estado Rojo) e investigación del [[Inspector]].
 

@@ -22,7 +22,7 @@ RECRUITMENT — RECRUITERS GROUP LEADER
 │   │   ├── My Requisitions (taken)
 │   │   ├── Take requisition
 │   │   ├── Mark covered / partial
-│   │   ├── Release requisition
+│   │   ├── Leave the requisition
 │   │   ├── Urgency Status Light (read)
 │   │   └── Positions Status Light (read)
 │   │
@@ -76,7 +76,7 @@ RECRUITMENT — RECRUITERS GROUP LEADER
 | Take requisitions (Self-Pick) | ✅ | ✅ | ⚠️ exceptional |
 | Create collaborators | ✅ | ✅ | ✅ |
 | Add to Blacklist | ✅ | ✅ | ✅ |
-| Resolve dispute / Remove from Blacklist | ❌ | ❌ | ✅ exclusive |
+| Resolve Blacklist dispute (Inspector) | ❌ | ❌ | ❌ |
 | My Group | ❌ | ✅ exclusive | ❌ |
 | Formal reports | ❌ | ✅ sends to Manager | ✅ receives + generates |
 | My Team (user management) | ❌ | ❌ | ✅ exclusive |

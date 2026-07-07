@@ -62,8 +62,8 @@ Includes reception, free take (Self-Pick), management of the requisition status 
 | ----- | ----------------------------------------------- | --------- | ----------- |
 | RF-11 | Check Blacklist                             | 🔴 High   | ⬜ Pending |
 | RF-12 | Add to Blacklist (all dept roles) | 🔴 High   | ⬜ Pending |
-| RF-13 | Resolve Blacklist dispute (Manager)         | 🟡 Medium  | ⬜ Pending |
-| RF-14 | Remove from Blacklist (Manager)                  | 🟢 Low   | ⬜ Pending |
+| RF-13 | Resolve collaborator dispute (Zone Inspector) | 🟡 Medium  | ⬜ Pending — see [[RF-13 Resolve collaborator dispute]] in Architecture/Inspection |
+| ~~RF-14~~ | ~~Remove from Blacklist~~ — action does not exist (Black ban is permanent) | — | Deleted |
 
 ---
 
@@ -143,7 +143,7 @@ Includes reception, free take (Self-Pick), management of the requisition status 
 | ----- | --------------------------------------------- | --------- | ----------- |
 | RR-01 | Collaborative Self-Pick model                 | 🔴 High   | ⬜ Pending |
 | RR-02 | Mandatory Blacklist check             | 🔴 High   | ⬜ Pending |
-| RR-03 | Manager resolves disputes and removes from Blacklist | 🔴 High   | ⬜ Pending |
+| RR-03 | Any role adds to Blacklist; Black ban is permanent | 🔴 High   | ⬜ Pending |
 | RR-04 | 100% coverage for closure                    | 🔴 High   | ⬜ Pending |
 | RR-15 | Collaborative requisition model            | 🔴 High   | ⬜ Pending |
 | RR-16 | Requisition history / traceability    | 🔴 High   | ⬜ Pending |

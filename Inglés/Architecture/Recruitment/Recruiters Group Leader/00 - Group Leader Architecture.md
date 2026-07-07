@@ -420,7 +420,7 @@ SIDEBAR
 
 > [!warning]
 > The Leader **CAN add** to the Blacklist (with reason and evidence), just like the Recruiter and the Manager.
-> What they **CANNOT** do is **remove or resolve disputes** — that action is exclusive to the [[Recruitment Manager|Recruitment Manager]].
+> What they **CANNOT** do is **remove or resolve disputes** — that action is exclusive to the [[Zone Inspector]].
 > The check is **mandatory** before each recruitment (rule of the [[Recruitment Flow|Recruitment Flow]]).
 
 ---
@@ -461,7 +461,7 @@ Recruiter (or Leader) covers it with collaborators from the Pool
 | My Recruiters Group | ❌ | ✅ exclusive module |
 | Formal reports | ❌ | ✅ exclusive module |
 | Add to Blacklist | ✅ | ✅ (with reason and evidence) |
-| Remove / resolve Blacklist dispute | ❌ | ❌ (exclusive to the Manager) |
+| Resolve Blacklist dispute | ❌ | ❌ (Zone Inspector) |
 
 ---
 

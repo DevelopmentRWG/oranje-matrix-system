@@ -35,6 +35,9 @@ Completada por el propio Colaborador:
 | Tipo de transporte | — |
 | Modalidad | [[Modalidades de Contratación]] |
 
+> [!info]
+> SSN e ITIN son **opcionales**. Si el colaborador no proporciona ni SSN ni ITIN, el sistema activa automáticamente la **retención del 16%** sobre su pago (reembolsable). Ver [[Deducciones]].
+
 ### Fase 3 — Datos de emergencia
 Completada por el propio Colaborador desde la app:
 

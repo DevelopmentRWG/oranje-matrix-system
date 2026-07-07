@@ -16,8 +16,6 @@ aliases:
 | ------ | --------------------------------------------- | --------- |
 | RF-06  | Search candidates in Pool                     | 🔴 High   |
 | RF-12  | Add to Blacklist                              | 🔴 High   |
-| RF-13  | Approve Blacklist dispute                     | 🟡 Medium |
-| RF-14  | Remove from Blacklist                         | 🟢 Low    |
 | RF-21  | Force status light change                     | 🟢 Low    |
 | RF-23  | Individual metrics by Recruiter               | 🟡 Medium |
 | RF-24  | Generate global report                        | 🟡 Medium |
@@ -28,7 +26,7 @@ aliases:
 | RF-31  | Escalate to commercial                        | 🟡 Medium |
 | RNF-02 | Availability 99.5%                            | 🔴 High   |
 | RR-01  | Self-Pick model (exceptional intervention)    | 🔴 High   |
-| RR-03  | Manager resolves disputes and removes Blacklist | 🔴 High |
+| RR-03  | Any role can add to Blacklist; Black ban is permanent | 🔴 High |
 | RR-04  | 100% coverage for closure                     | 🔴 High   |
 | RR-10  | Supervision hierarchy                         | 🔴 High   |
 | RR-11  | Extended Lunch Indicator                      | 🟡 Medium |

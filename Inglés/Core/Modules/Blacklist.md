@@ -28,6 +28,7 @@ For [[Recruiter|recruiters]], knowing who is on the blacklist serves to:
 
 A collaborator transitions to the **Black** state in the [[Collaborator Status Light|Collaborator Status Light]] due to:
 
+- **Serious offense (manual)** → any role in the Recruitment department ([[Recruiter|Recruiter]], [[Recruitment/Recruiters Group Leader|Group Leader]] or [[Recruitment Manager|Recruitment Manager]]) can add them with mandatory **reason and evidence**; an auditable record is kept.
 - **3 absences** → automatic blacklist by the system.
 - **Dispute resolved in favor of the hotel** → after a hotel report (Red state) and investigation by the [[Inspector]].
 

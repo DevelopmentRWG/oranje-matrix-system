@@ -19,7 +19,7 @@ Wireframe of the Oranje platform for the [[Recruitment Manager|Recruitment Manag
 > 1. Manage the team (create Group Leaders and Recruiters).
 > 2. Resolve problems and escalations.
 > 3. Supervise the Group Leaders.
-> 4. Approve/remove Blacklist.
+> 4. Consult and add to the Blacklist (the Black ban is permanent; disputes are resolved by the Zone Inspector).
 > 5. View global metrics of the Recruitment module.
 > 6. Take requisitions exceptionally (special case).
 
@@ -89,7 +89,7 @@ SIDEBAR
    ├─ DASHBOARD
    ├─ RECLUTAMIENTO            (Pool + Entrevistas global del depto + apoyo operativo)
    ├─ REQUISICIÓN              (vista global + intervención excepcional + semáforos)
-   ├─ BLACKLIST                (consulta + agregar + resolver disputa + remover)
+   ├─ BLACKLIST                (global consult + add)
    ├─ MI EQUIPO                ← exclusivo (Líderes + Reclutadoras: gestión + supervisión)
    ├─ INCIDENCIAS              ← exclusivo (recibe escalamientos)
    └─ REPORTES                 (recibe de Líderes + genera globales)
@@ -164,7 +164,7 @@ SIDEBAR
 - ✅ **Validate sign-up under intervention** (exceptional — RF-EXC, kept in an auditable log).
 - ❌ **Reject sign-up** with reason (exceptional).
 - 🚫 **Mark as abandoned** (exceptional — normally done by the Recruiter or Leader).
-- 📥 **Export** filtered list (CSV / PDF) for reports to Management.
+- 📥 **Export** filtered list (CSV / PDF) for the Manager's own tracking and supervision.
 
 **KPIs visible in the header (global view)**
 - Total candidates in process (department).
@@ -199,11 +199,13 @@ Same form as Recruiter / Leader. The Manager only uses it when intervening direc
 
 ---
 
-## ⚫ BLACKLIST Module (full CRUD — only role)
+## ⚫ BLACKLIST Module (global consult + add)
 
-- ✅ Approve inclusion in the Blacklist (with reason and evidence)
-- ✅ Resolve dispute (final decision)
-- ❌ Remove from the Blacklist (with justification)
+- 👁️ Consult the full department Blacklist
+- ✅ Add to Blacklist (with reason and evidence — same as any Recruitment role)
+
+> [!note]
+> The ban (Black status) is **permanent**: there is no removal or rehabilitation. Disputes (Red status of the collaborator) are resolved by the **Zone Inspector**, not the Manager.
 
 ---
 
@@ -250,9 +252,9 @@ Supervision actions:
 |---|---|---|
 | Takes requisitions (Self-Pick) | Yes | Yes but exceptional |
 | Recruitment (Pool + Assignment) | Operational access | Full access |
-| Blacklist | Consult + Add | Full CRUD + final decision |
+| Blacklist | Consult + Add | Global consult + Add (same as any role) |
 | My Group / My Team | Sees Recruiters in the group | Sees Leaders + Recruiters + management |
-| Resolve disputes | ❌ | ✅ final decision |
+| Resolve disputes (Inspector) | ❌ | ❌ (resolved by the Zone Inspector) |
 | Reports | Generates and sends | Receives + generates global |
 
 ---

@@ -11,7 +11,7 @@ aliases:
 🏷️ **Name:** Generate global report
 
 **Story:**
-The Manager generates consolidated reports of the Recruitment department for Management or other areas. It includes global coverage, performance by Leader, escalated cases, distribution by zone and trends for the period. The report can be exported or scheduled for recurring delivery (weekly/monthly).
+The Manager generates consolidated reports of the Recruitment department for their own tracking and supervision of the department. It includes global coverage, performance by Leader, escalated cases, distribution by zone and trends for the period. The report can be exported or scheduled for recurring delivery (weekly/monthly). Note: reporting to Management is QA's responsibility, not the Recruitment Manager's.
 
 **Acceptance criteria:**
 The report is generated with data updated as of the previous day's close. It includes filters by date range, zone, position and hotel. It supports CSV / PDF / Excel export. It allows scheduling recurring delivery with configurable recipients. A history of sent reports is kept.
@@ -22,4 +22,4 @@ The report is generated with data updated as of the previous day's close. It inc
 - Prototype: (Figma link)
 
 **Flow:**
-`Módulo Reportes` → MANUAL → `Click "Nuevo reporte"` → `Tipo: Global` → `Selecciona rango de fechas + filtros (zona / posición / hotel)` → AUTOMATICO → `Sistema compila datos del periodo` → MANUAL → `Vista previa del reporte` → `Acción: Exportar (CSV/PDF/Excel) / Enviar a Dirección / Programar envío recurrente`
+`Módulo Reportes` → MANUAL → `Click "Nuevo reporte"` → `Tipo: Global` → `Selecciona rango de fechas + filtros (zona / posición / hotel)` → AUTOMATICO → `Sistema compila datos del periodo` → MANUAL → `Vista previa del reporte` → `Acción: Exportar (CSV/PDF/Excel) / Enviar a destinatario (My tracking / Sales / Only me) / Programar envío recurrente`

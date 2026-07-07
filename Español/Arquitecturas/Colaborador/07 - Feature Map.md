@@ -70,9 +70,9 @@ PLATAFORMA COLABORADOR — MÓVIL + WEB (COL)
     │   └── Total horas netas de la semana
     │
     ├── Mi Pago
-    │   ├── Monto total a cobrar esta semana
-    │   ├── Desglose por hotel (si trabajó en más de uno)
-    │   └── Semana y rango de fechas del consolidado
+    │   ├── Historial de pagos liberados (semana · hotel · horas · monto · fecha)
+    │   ├── Semana en curso → "En cálculo" (sin monto)
+    │   └── Próximo pago NO visible (RR-C-05)
     │
     ├── Notificaciones
     │   ├── Alta validada (Reclutadora aprobó → Verde fuerte)

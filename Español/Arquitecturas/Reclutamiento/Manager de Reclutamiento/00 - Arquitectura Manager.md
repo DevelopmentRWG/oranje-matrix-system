@@ -19,7 +19,7 @@ Wireframe de la plataforma Oranje para el rol [[Manager de Reclutamiento]]. Defi
 > 1. Gestionar el equipo (dar de alta Líderes de Grupo y Reclutadoras).
 > 2. Resolver problemas y escalamientos.
 > 3. Supervisar a los Líderes de Grupo.
-> 4. Aprobar/remover Blacklist.
+> 4. Consultar y agregar a Blacklist (el veto Negro es permanente; las disputas las resuelve el Inspector de zona).
 > 5. Ver métricas globales del módulo Reclutamiento.
 > 6. Tomar requisiciones excepcionalmente (caso especial).
 
@@ -89,7 +89,7 @@ SIDEBAR
    ├─ DASHBOARD
    ├─ RECLUTAMIENTO            (Pool + Entrevistas global del depto + apoyo operativo)
    ├─ REQUISICIÓN              (vista global + intervención excepcional + semáforos)
-   ├─ BLACKLIST                (consulta + agregar + resolver disputa + remover)
+   ├─ BLACKLIST                (consulta global + agregar)
    ├─ MI EQUIPO                ← exclusivo (Líderes + Reclutadoras: gestión + supervisión)
    ├─ INCIDENCIAS              ← exclusivo (recibe escalamientos)
    └─ REPORTES                 (recibe de Líderes + genera globales)
@@ -164,7 +164,7 @@ SIDEBAR
 - ✅ **Validar alta en intervención** (excepcional — RF-EXC, queda en log auditable).
 - ❌ **Rechazar alta** con motivo (excepcional).
 - 🚫 **Marcar como abandonado** (excepcional — normalmente lo hace la Reclutadora o Líder).
-- 📥 **Exportar** lista filtrada (CSV / PDF) para reportes a Dirección.
+- 📥 **Exportar** lista filtrada (CSV / PDF) para seguimiento y supervisión del Manager.
 
 **KPIs visibles en cabecera (vista global)**
 - Total candidatos en proceso (depto).
@@ -199,11 +199,13 @@ Mismo formulario que Reclutadora / Líder. El Manager solo lo usa cuando intervi
 
 ---
 
-## ⚫ Módulo BLACKLIST (CRUD completo — único rol)
+## ⚫ Módulo BLACKLIST (consulta global + agregar)
 
-- ✅ Aprobar inclusión en Blacklist (con motivo y evidencia)
-- ✅ Resolver disputa (decisión final)
-- ❌ Remover de Blacklist (con justificación)
+- 👁️ Consultar Blacklist completa del departamento
+- ✅ Agregar a Blacklist (con motivo y evidencia — igual que cualquier rol de Reclutamiento)
+
+> [!note]
+> El veto (estado Negro) es **permanente**: no existe remoción ni rehabilitación. Las disputas (estado Rojo del colaborador) las resuelve el **Inspector de zona**, no el Manager.
 
 ---
 
@@ -250,9 +252,9 @@ Acciones de supervisión:
 |---|---|---|
 | Toma requisiciones (Self-Pick) | Sí | Sí pero excepcional |
 | Reclutamiento (Pool + Asignación) | Acceso operativo | Acceso completo |
-| Blacklist | Consultar + Agregar | CRUD completo + decisión final |
+| Blacklist | Consultar + Agregar | Consultar global + Agregar (igual que cualquier rol) |
 | Mi Grupo / Mi Equipo | Ve Reclutadoras del grupo | Ve Líderes + Reclutadoras + gestión |
-| Resolver disputas | ❌ | ✅ decisión final |
+| Resolver disputas (Inspector) | ❌ | ❌ (lo resuelve el Inspector de zona) |
 | Reportes | Genera y envía | Recibe + genera globales |
 
 ---

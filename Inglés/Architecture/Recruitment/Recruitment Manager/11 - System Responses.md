@@ -19,9 +19,7 @@ aliases:
 | Participating recruiter assigns collaborator to a position | Marks the position as covered (position/slot lock); records the assignment as a timeline event with author and date |
 | Participating recruiter unassigns collaborator | Frees the position for reassignment; records the unassignment as a timeline event with author and date |
 | Recruiter leaves the requisition              | Removes only them; remains "In process" if other recruiters remain; returns to "Authorized" only when the last one leaves; records the event in the History |
-| Manager approves Blacklist                    | Collaborator moves to Black; notifies the collaborator; blocks future assignments |
-| Manager resolves dispute                      | Closes case with decision; notifies the Inspector and the collaborator          |
-| Manager removes from Blacklist                | Reactivates collaborator in Pool; record is kept                                |
+| Manager adds to Blacklist                     | Collaborator moves to Black (permanent); notifies the collaborator; blocks future assignments |
 | Manager creates Leader                        | Creates account; sends credentials by email; appears in My Team                 |
 | Manager creates Recruiter                     | Creates account and assigns to the Leader; notifies the assigned Leader         |
 | Manager moves Recruiter to another Leader     | Notifies both Leaders; updates the relationship                                 |

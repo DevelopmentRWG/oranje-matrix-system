@@ -420,7 +420,7 @@ SIDEBAR
 
 > [!warning]
 > El Líder **SÍ puede agregar** a Blacklist (con motivo y evidencia), igual que la Reclutadora y el Manager.
-> Lo que **NO** puede es **remover ni resolver disputas** — esa acción es exclusiva del [[Manager de Reclutamiento]].
+> Lo que **NO** puede es **remover ni resolver disputas** — esa acción es exclusiva del [[Inspector de zona]].
 > La consulta es **obligatoria** antes de cada reclutamiento (regla del [[Flujo de Reclutamiento]]).
 
 ---
@@ -461,7 +461,7 @@ Reclutadora (o Líder) cubre con colaboradores del Pool
 | Mi Grupo de Reclutadoras | ❌ | ✅ módulo exclusivo |
 | Reportes formales | ❌ | ✅ módulo exclusivo |
 | Agregar a Blacklist | ✅ | ✅ (con motivo y evidencia) |
-| Remover / resolver disputa de Blacklist | ❌ | ❌ (exclusivo del Manager) |
+| Resolver disputa de Blacklist | ❌ | ❌ (Inspector de zona) |
 
 ---
 

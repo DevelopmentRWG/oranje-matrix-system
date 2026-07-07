@@ -28,10 +28,10 @@ aliases:
 
 ## Objetivo
 
-Permitir al Manager supervisar el funcionamiento del departamento de Reclutamiento mediante gestión de Blacklist, resolución de disputas, supervisión del equipo (Líderes y Reclutadoras), generación de reportes globales y manejo de casos especiales de requisiciones cuando el modelo Self-Pick requiere intervención excepcional.
+Permitir al Manager supervisar el funcionamiento del departamento de Reclutamiento mediante consulta y alta en Blacklist (igual que cualquier rol del depto), supervisión del equipo (Líderes y Reclutadoras), generación de reportes globales y manejo de casos especiales de requisiciones cuando el modelo Self-Pick requiere intervención excepcional.
 
 ---
 
 ## Flujo General
 
-**Monitorear KPIs → Recibir escalamiento / alerta → Investigar → Decidir / Aprobar / Reasignar → Cerrar caso → Reportar a Dirección**
+**Monitorear KPIs → Recibir escalamiento / alerta → Investigar → Decidir / Aprobar / Reasignar → Cerrar caso → Escalar a Dirección (si aplica) / Generar reporte del departamento (seguimiento propio)**

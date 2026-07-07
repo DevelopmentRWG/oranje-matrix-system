@@ -28,10 +28,10 @@ aliases:
 
 ## Objective
 
-Allow the Manager to supervise the functioning of the Recruitment department through Blacklist management, dispute resolution, team supervision (Leaders and Recruiters), generation of global reports and handling of special requisition cases when the Self-Pick model requires exceptional intervention.
+Allow the Manager to supervise the functioning of the Recruitment department through Blacklist lookup and entry (same as any department role), team supervision (Leaders and Recruiters), generation of global reports and handling of special requisition cases when the Self-Pick model requires exceptional intervention.
 
 ---
 
 ## General Flow
 
-**Monitor KPIs → Receive escalation / alert → Investigate → Decide / Approve / Reassign → Close case → Report to Management**
+**Monitor KPIs → Receive escalation / alert → Investigate → Decide / Approve / Reassign → Close case → Escalate to Management (if applicable) / Generate department report (Manager's own tracking)**

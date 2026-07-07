@@ -38,7 +38,7 @@ aliases:
 - **Reportar accidente:** crea la tarjeta inicial de accidente laboral desde la app cuando es él quien detecta o sufre el accidente (Escenario A).
 - **Consultar Mi Schedule:** visualiza sus turnos asignados de la semana en curso y la siguiente (solo lectura).
 - **Consultar Mi Timesheet:** visualiza sus horas brutas, deducción de lunch, horas netas y estado de cumplimiento (solo lectura).
-- **Consultar Mi Pago:** visualiza el resumen de su consolidado semanal (monto a cobrar, horas por hotel si aplica) (solo lectura).
+- **Consultar Mi Pago:** consulta el **historial de sus pagos ya liberados** (semana, hotel, horas, monto pagado, fecha); el monto del pago en curso/próximo **no es visible** (RR-C-05) (solo lectura).
 - **Ver notificaciones:** recibe alertas del sistema sobre cambios de estado, asignaciones, validaciones de alta y resultados de reportes.
 - **Ver Mi Perfil:** consulta su perfil completo, estado actual del semáforo y datos registrados.
 

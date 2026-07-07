@@ -23,20 +23,20 @@ aliases:
 
 ## Description
 
-Coordinates the Recruitment department, supervises the Group Leaders, manages the Blacklist (only role with permissions), resolves escalated incidents and handles special requisition cases (does not distribute in the normal flow due to the Self-Pick model).
+Coordinates the Recruitment department, supervises the Group Leaders, consults and adds to the Blacklist (same as any department role), resolves escalated incidents and handles special requisition cases (does not distribute in the normal flow due to the Self-Pick model).
 
 ---
 
 ## Objective in the System
 
-Ensure the functioning of the Recruitment department through team supervision, Blacklist management, dispute resolution and global reports for Management.
+Ensure the functioning of the Recruitment department through team supervision, Blacklist use (consult + add), resolution of escalated incidents and global department reports for the Manager's own tracking and supervision.
 
 ---
 
 ## Main Actions
 
-- Approve / remove Blacklist
-- Resolve disputes and escalated cases
+- Consult and add to Blacklist
+- Resolve escalated incidents and special cases
 - Create Leaders and Recruiters
 - Generate global reports
 - Take requisitions exceptionally
@@ -47,7 +47,7 @@ Ensure the functioning of the Recruitment department through team supervision, B
 
 ## Key Permissions
 
-Full CRUD on Blacklist · Total supervision · Approve / Reject · Investigate
+Consult + Add Blacklist · Total supervision · Approve / Reject · Investigate
 
 ---
 

@@ -16,9 +16,7 @@ aliases:
 | Asignar manual a Reclutadora                     | Sistema notifica a la Reclutadora; queda en log con justificación    |
 | Reasignar requisición                            | Reclutadora original pierde acceso; nueva la recibe con notificación |
 | Forzar cambio de semáforo                        | Cambio aplicado con log auditable; notifica a involucrados           |
-| Aprobar inclusión en Blacklist                   | Colaborador queda vetado; notifica al colaborador y a Reclutadora    |
-| Resolver disputa de Blacklist                    | Decisión final aplicada; cierra caso con comentario                  |
-| Remover de Blacklist                             | Colaborador reactivado en Pool; queda registro de la remoción        |
+| Agregar a Blacklist                              | Colaborador queda vetado (Negro permanente); notifica al colaborador y a Reclutadora |
 | Dar de alta Líder de Grupo                       | Sistema crea cuenta con rol asignado; envía credenciales             |
 | Dar de alta Reclutadora                          | Sistema crea cuenta y asigna al Líder seleccionado                   |
 | Editar usuario                                   | Sistema aplica cambios; queda registro                               |

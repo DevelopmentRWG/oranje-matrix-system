@@ -27,14 +27,17 @@ aliases:
 
 ---
 
-## Formulario de comunicación con Reclutadora (chat/nota)
+## Solicitud de acción / Nota al log (comunicación con Reclutadora)
 
-| Campo       | Tipo de Input | Obligatorio | Validación                    | Descripción              |
-| ----------- | ------------- | ----------- | ----------------------------- | ------------------------ |
-| Reclutadora | Auto          | SÍ          | Solo Reclutadoras del grupo   | Destinataria del mensaje |
-| Asunto      | Text          | SÍ          | Mín. 5 caracteres             | Resumen del mensaje      |
-| Mensaje     | Textarea      | SÍ          | Mín. 10 caracteres, máx. 2000 | Contenido del mensaje    |
-| Adjuntos    | File          | NO          | PDF/JPG/PNG, máx. 10 MB c/u   | Archivos relacionados    |
+> [!info]
+> Este formulario NO es un chat. Genera una solicitud estructurada o una nota que queda registrada en el **log auditable** de la requisición o del colaborador. No hay conversación bidireccional: el Líder emite la acción/nota y el sistema la registra.
+
+| Campo                       | Tipo de Input | Obligatorio | Validación                                                                                      | Descripción                                       |
+| --------------------------- | ------------- | ----------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| Reclutadora                 | Auto          | SÍ          | Solo Reclutadoras del grupo                                                                     | Destinataria de la solicitud                      |
+| Tipo de solicitud / acción  | Select        | SÍ          | Reasignar requisición / Revisar colaborador / Actualizar estado / Escalar incidencia / Otro     | Naturaleza de la acción (no texto libre de chat)  |
+| Contexto / justificación    | Textarea      | SÍ          | Mín. 10 caracteres, máx. 1000                                                                   | Nota que queda registrada en el log auditable     |
+| Adjunto                     | File          | NO          | PDF/JPG/PNG, máx. 10 MB c/u                                                                    | Archivo de soporte (opcional)                     |
 
 ---
 

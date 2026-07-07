@@ -35,6 +35,9 @@ Completed by the Collaborator themselves:
 | Type of transport | — |
 | Modality | [[Employment Types|Hiring Modalities]] |
 
+> [!info]
+> SSN and ITIN are **optional**. If the collaborator provides neither SSN nor ITIN, the system activates a 16% retention on their payment (refundable). If they provide an ITIN, the retention is not applied (ITIN is a TaxID). See [[Deductions]] for details.
+
 ### Phase 3 — Emergency data
 Completed by the Collaborator themselves from the app:
 
@@ -183,3 +186,5 @@ The [[Collaborator Status Light|Collaborator Status Light]] defines 12 states. T
 - [[Hotel/Supervisor|Supervisor]]
 - [[Inspector|Inspector]]
 - [[Inspection/Coordinator|Coordinator]]
+- [[Deductions|Deductions]]
+- [[00 - Collaborator Architecture]]

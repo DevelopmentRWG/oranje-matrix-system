@@ -42,6 +42,9 @@ Completed by the Collaborator themselves:
 | Type of transport | — |
 | Modality | [[Employment Types|Hiring Modalities]] |
 
+> [!info]
+> SSN and ITIN are **optional**. If the collaborator provides neither, the system activates a 16% retention on their payment (refundable). See [[Deductions]] for details.
+
 ### Phase 3 — Emergency data
 
 Completed by the Collaborator themselves from the app:
@@ -81,3 +84,4 @@ The Collaborator's state is managed through the [[Collaborator Status Light|Coll
 - [[Recruitment/Recruitment Flow|Recruitment Flow]]
 - [[Core/Modules/Requisition/Requisition|Requisition]]
 - [[Core/Modules/Workplace Accident/Workplace Accident|Work Accident]]
+- [[00 - Collaborator Architecture]]

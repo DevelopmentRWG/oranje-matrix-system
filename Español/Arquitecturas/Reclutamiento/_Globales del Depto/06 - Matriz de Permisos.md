@@ -20,7 +20,7 @@ aliases:
 | **REQUISICIÓN** | 👁️ Ver cola de Autorizadas | Ver | Ver | Ver | Auto | ⏸️ |
 | | 🎯 Tomar requisición (Self-Pick colaborativo) | Crear (agrega participante) | Crear (agrega participante) | Crear | Auto | ⏸️ |
 | | 🤝 Tomar/Unirse a requisición ya tomada | Crear | Crear | — | Auto | ⏸️ |
-| | 📝 Liberar requisición tomada (Salir) | C · E | C · E | C · E | Auto | ⏸️ |
+| | 📝 Salir de requisición tomada | C · E | C · E | C · E | Auto | ⏸️ |
 | | 👁️ Ver reclutadores activos | Ver | Ver | Ver | Auto | ⏸️ |
 | | 👁️ Ver Historial de la requisición | Ver | Ver | Ver | Auto | ⏸️ |
 | | 📝 Marcar requisición en proceso | C · E | C · E | — | Auto | ⏸️ |
@@ -44,8 +44,8 @@ aliases:
 | | 📝 Desasignar colaborador | C · E | C · E | C · E | — | ⏸️ |
 | **BLACKLIST** | 👁️ Consultar Blacklist | Ver | Ver | Ver | Auto | ⏸️ |
 | | ➕ Agregar a Blacklist | Crear | Crear | Crear | — | ⏸️ |
-| | 🔍 Resolver disputa | — | — | Investigar | — | ⏸️ |
-| | 📝 Remover de Blacklist | — | — | C · E | — | ⏸️ |
+| | 🔍 Resolver disputa | — | — | — (Inspector de zona) | — | ⏸️ |
+| | 📝 Remover de Blacklist | — | — | — (Negro es permanente) | — | ⏸️ |
 | **MI GRUPO** *(Líder)* | 👁️ Ver Reclutadoras del grupo | — | Ver | — | — | ⏸️ |
 | | 👁️ Ver métricas individuales | — | Ver | Ver | Auto | ⏸️ |
 | | 👁️ Ver carga detallada de Reclutadora | — | Ver | — | — | ⏸️ |
@@ -76,7 +76,7 @@ aliases:
 ## Cambios respecto a la versión anterior
 
 - **Requisición colaborativa** — `Tomar requisición (Self-Pick colaborativo)` ahora agrega un reclutador participante (no es exclusivo) y `Liberar` pasa a ser `Salir`. Se añaden `Tomar/Unirse a requisición ya tomada` (Reclutadora/Líder), `Ver reclutadores activos` y `Ver Historial de la requisición` (RR-15 y RR-16).
-- **Blacklist** — La columna `Agregar a Blacklist` ahora es `Crear` para los 3 roles del depto (Reclutadora, Líder, Manager). Antes solo el Manager podía. La regla actualizada (RR-03) deja al Manager como único que **resuelve disputas** y **remueve**.
+- **Blacklist** — La columna `Agregar a Blacklist` es `Crear` para los 3 roles del depto (Reclutadora, Líder, Manager). El veto (Negro) es **permanente** (sin remoción). Las disputas (estado Rojo) las resuelve el **Inspector de zona**, no el Manager. Las filas "Resolver disputa" y "Remover de Blacklist" quedan sin permiso para el Manager (RR-03 actualizado).
 - **Submódulos reorganizados** — Pool, Entrevistas y Asignación quedan dentro del módulo **RECLUTAMIENTO**. La toma de requisición y los semáforos quedan dentro del módulo **REQUISICIÓN**.
 - **Notificaciones** ya no es módulo del sidebar — pasó a sección "Sistema (transversal)".
 - **Schedule** ya no es módulo aparte — es vista contextual dentro del proceso de asignar.

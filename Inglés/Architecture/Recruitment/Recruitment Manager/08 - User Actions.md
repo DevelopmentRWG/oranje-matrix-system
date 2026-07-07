@@ -16,9 +16,7 @@ aliases:
 | Assign manually to Recruiter                     | System notifies the Recruiter; kept in log with justification        |
 | Reassign requisition                             | Original Recruiter loses access; new one receives it with notification |
 | Force status light change                        | Change applied with auditable log; notifies those involved           |
-| Approve inclusion in Blacklist                   | Collaborator is banned; notifies the collaborator and Recruiter      |
-| Resolve Blacklist dispute                        | Final decision applied; closes case with comment                     |
-| Remove from Blacklist                            | Collaborator reactivated in Pool; record of the removal is kept      |
+| Add to Blacklist                                 | Collaborator is permanently banned (Black); notifies the collaborator and Recruiter |
 | Create Group Leader                              | System creates account with assigned role; sends credentials         |
 | Create Recruiter                                 | System creates account and assigns to the selected Leader            |
 | Edit user                                        | System applies changes; record is kept                               |

@@ -23,20 +23,20 @@ aliases:
 
 ## Descripción
 
-Coordina el departamento de Reclutamiento, supervisa a los Líderes de Grupo, gestiona Blacklist (único rol con permisos), resuelve incidencias escaladas y maneja casos especiales de requisiciones (no distribuye en el flujo normal por el modelo Self-Pick).
+Coordina el departamento de Reclutamiento, supervisa a los Líderes de Grupo, consulta y agrega a Blacklist (igual que cualquier rol del depto), resuelve incidencias escaladas y maneja casos especiales de requisiciones (no distribuye en el flujo normal por el modelo Self-Pick).
 
 ---
 
 ## Objetivo en el Sistema
 
-Garantizar el funcionamiento del depto Reclutamiento mediante supervisión del equipo, gestión de Blacklist, resolución de disputas y reportes globales para Dirección.
+Garantizar el funcionamiento del depto Reclutamiento mediante supervisión del equipo, uso de Blacklist (consulta + agregar), resolución de incidencias escaladas y reportes globales del departamento para seguimiento y supervisión propios.
 
 ---
 
 ## Acciones Principales
 
-- Aprobar / remover Blacklist
-- Resolver disputas y casos escalados
+- Consultar y agregar a Blacklist
+- Resolver incidencias escaladas y casos especiales
 - Dar de alta Líderes y Reclutadoras
 - Generar reportes globales
 - Tomar requisiciones excepcionalmente
@@ -47,7 +47,7 @@ Garantizar el funcionamiento del depto Reclutamiento mediante supervisión del e
 
 ## Permisos Clave
 
-CRUD completo en Blacklist · Supervisión total · Aprobar / Rechazar · Investigar
+Consultar + Agregar Blacklist · Supervisión total · Aprobar / Rechazar · Investigar
 
 ---
 

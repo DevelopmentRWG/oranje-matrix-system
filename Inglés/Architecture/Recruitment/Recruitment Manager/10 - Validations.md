@@ -19,10 +19,8 @@ aliases:
 | Two recruiters assign the same collaborator to the same position | First assignment wins; the second is shown "Position already covered" (lock at position/slot level) |
 | Close requisition with several active participants | Requests confirmation; on closing, records the closure in the History with author |
 | Leave (last recruiter) with incomplete coverage | Allows leaving; the requisition returns to "Authorized" (does not reset what was already assigned) |
-| Approve Blacklist without attached evidence | Blocks creation; shows "You must attach at least one piece of evidence"  |
-| Approve Blacklist without description    | Blocks creation; shows "You must describe the reason (min. 30 characters)" |
-| Remove from Blacklist without justification | Blocks action; requests comment                                        |
-| Resolve dispute without comment          | Blocks closure; requests justification                                   |
+| Add to Blacklist without attached evidence | Blocks creation; shows "You must attach at least one piece of evidence"  |
+| Add to Blacklist without description    | Blocks creation; shows "You must describe the reason (min. 30 characters)" |
 | Create Leader with duplicate email       | Blocks creation; shows "Email already exists in the system"              |
 | Create Recruiter without assigned Leader | Blocks creation; shows "You must assign a Leader"                        |
 | Edit own role                            | Blocks action; shows "You cannot edit your own role"                     |

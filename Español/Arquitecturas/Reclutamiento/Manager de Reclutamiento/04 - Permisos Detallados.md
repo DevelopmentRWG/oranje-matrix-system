@@ -25,8 +25,6 @@ aliases:
 | Reclutamiento | Asignar a hotel (apoyo)           | ➕ Crear       | Cuando interviene excepcionalmente               |
 | **Blacklist** | Consultar Blacklist               | 👁️ Ver       | Vista completa                                   |
 | **Blacklist** | Agregar a Blacklist               | ➕ Crear       | Igual que cualquier rol del depto                |
-| **Blacklist** | Resolver disputa                  | 🔍 Investigar | Decisión final — Manager exclusivo               |
-| **Blacklist** | Remover de Blacklist              | 📝 Editar     | Con justificación — Manager exclusivo            |
 | **Mi Equipo** | Ver Líderes de Grupo              | 👁️ Ver       | Vista anidada                                    |
 | **Mi Equipo** | Ver Reclutadoras                  | 👁️ Ver       | Filtro por Líder                                 |
 | **Mi Equipo** | Dar de alta Líder                 | ➕ Crear       | Modal de alta                                    |
@@ -39,7 +37,7 @@ aliases:
 | Incidencias   | Resolver caso                     | ✓ Aprobar     | Decisión final con comentario                    |
 | Incidencias   | Escalar a Dirección               | 📝 Editar     | Casos críticos                                   |
 | Reportes      | Ver reportes recibidos            | 👁️ Ver       | De Líderes                                       |
-| Reportes      | Generar reporte global            | ➕ Crear       | Para Dirección                                   |
+| Reportes      | Generar reporte global            | ➕ Crear       | Para seguimiento y supervisión del Manager        |
 | Reportes      | Exportar                          | 👁️ Ver       | CSV/PDF/Excel                                    |
 | Dashboard     | Ver KPIs globales                 | 👁️ Ver       | Cobertura del depto                              |
 | Sistema       | Recibir notificación              | 👁️ Ver       | Alertas críticas                                 |

@@ -11,7 +11,7 @@ aliases:
 🏷️ **Nombre:** Ver cobertura global
 
 **Historia:**
-El Manager consulta el indicador maestro del depto Reclutamiento: % cobertura total, requisiciones cubiertas / pendientes / parciales, ranking de Líderes por desempeño, alertas críticas (semáforos rojos, casos escalados). Es el dashboard de mando para tomar decisiones del depto y reportar a Dirección.
+El Manager consulta el indicador maestro del depto Reclutamiento: % cobertura total, requisiciones cubiertas / pendientes / parciales, ranking de Líderes por desempeño, alertas críticas (semáforos rojos, casos escalados). Es el dashboard de mando para tomar decisiones del depto y para su propio seguimiento y supervisión.
 
 **Criterios de aceptación:**
 Vista exclusiva del Manager. KPIs globales del mes en curso actualizados al cierre del día anterior. Permite drill-down por zona, Líder o Reclutadora. Alertas visibles para semáforos rojos y casos escalados pendientes. Comparativa contra mes anterior.

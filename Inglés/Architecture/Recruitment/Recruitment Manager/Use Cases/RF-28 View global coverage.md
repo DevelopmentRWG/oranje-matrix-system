@@ -11,7 +11,7 @@ aliases:
 🏷️ **Name:** View global coverage
 
 **Story:**
-The Manager consults the master indicator of the Recruitment department: % total coverage, covered / pending / partial requisitions, ranking of Leaders by performance, critical alerts (red status lights, escalated cases). It is the command dashboard for making department decisions and reporting to Management.
+The Manager consults the master indicator of the Recruitment department: % total coverage, covered / pending / partial requisitions, ranking of Leaders by performance, critical alerts (red status lights, escalated cases). It is the command dashboard for making department decisions and for the Manager's own tracking and supervision.
 
 **Acceptance criteria:**
 View exclusive to the Manager. Global KPIs for the current month updated as of the previous day's close. Allows drill-down by zone, Leader or Recruiter. Visible alerts for red status lights and pending escalated cases. Comparison against the previous month.

@@ -27,14 +27,17 @@ aliases:
 
 ---
 
-## Recruiter communication form (chat/note)
+## Action request / Log note (Recruiter communication)
 
-| Field     | Input Type | Required | Validation                    | Description              |
-| --------- | ---------- | -------- | ----------------------------- | ------------------------ |
-| Recruiter | Auto       | YES      | Group Recruiters only         | Message recipient        |
-| Subject   | Text       | YES      | Min. 5 characters             | Message summary          |
-| Message   | Textarea   | YES      | Min. 10 characters, max. 2000 | Message content          |
-| Attachments | File     | NO       | PDF/JPG/PNG, max. 10 MB each  | Related files            |
+> [!info]
+> This form is NOT a chat. It generates a structured request or a note that is recorded in the **auditable log** of the requisition or collaborator. There is no two-way conversation: the Leader issues the action/note and the system logs it.
+
+| Field                        | Input Type | Required | Validation                                                                                        | Description                                          |
+| ---------------------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Recruiter                    | Auto       | YES      | Group Recruiters only                                                                             | Request recipient                                    |
+| Request type / action        | Select     | YES      | Reassign requisition / Review collaborator / Update status / Escalate incident / Other            | Nature of the action (not free-form chat text)       |
+| Context / justification      | Textarea   | YES      | Min. 10 characters, max. 1000                                                                     | Note recorded in the auditable log                   |
+| Attachment                   | File       | NO       | PDF/JPG/PNG, max. 10 MB each                                                                      | Supporting file (optional)                           |
 
 ---
 

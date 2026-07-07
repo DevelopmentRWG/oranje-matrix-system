@@ -20,7 +20,7 @@ aliases:
 | **REQUISITION** | 👁️ View Authorized queue | View | View | View | Auto | ⏸️ |
 | | 🎯 Take requisition (Collaborative Self-Pick) | Create (adds participant) | Create (adds participant) | Create | Auto | ⏸️ |
 | | 🤝 Take/Join an already-taken requisition | Create | Create | — | Auto | ⏸️ |
-| | 📝 Release taken requisition (Leave) | C · E | C · E | C · E | Auto | ⏸️ |
+| | 📝 Leave taken requisition | C · E | C · E | C · E | Auto | ⏸️ |
 | | 👁️ View active recruiters | View | View | View | Auto | ⏸️ |
 | | 👁️ View Requisition History | View | View | View | Auto | ⏸️ |
 | | 📝 Mark requisition in progress | C · E | C · E | — | Auto | ⏸️ |
@@ -44,8 +44,8 @@ aliases:
 | | 📝 Unassign collaborator | C · E | C · E | C · E | — | ⏸️ |
 | **BLACKLIST** | 👁️ Check Blacklist | View | View | View | Auto | ⏸️ |
 | | ➕ Add to Blacklist | Create | Create | Create | — | ⏸️ |
-| | 🔍 Resolve dispute | — | — | Investigate | — | ⏸️ |
-| | 📝 Remove from Blacklist | — | — | C · E | — | ⏸️ |
+| | 🔍 Resolve dispute | — | — | — (Zone Inspector) | — | ⏸️ |
+| | 📝 Remove from Blacklist | — | — | — (Black is permanent) | — | ⏸️ |
 | **MY GROUP** *(Leader)* | 👁️ View group Recruiters | — | View | — | — | ⏸️ |
 | | 👁️ View individual metrics | — | View | View | Auto | ⏸️ |
 | | 👁️ View detailed Recruiter workload | — | View | — | — | ⏸️ |
@@ -76,7 +76,7 @@ aliases:
 ## Changes from the previous version
 
 - **Collaborative requisition** — `Take requisition (Collaborative Self-Pick)` now adds a participating recruiter (it is not exclusive) and `Release` becomes `Leave`. `Take/Join an already-taken requisition` (Recruiter/Leader), `View active recruiters` and `View Requisition History` are added (RR-15 and RR-16).
-- **Blacklist** — The `Add to Blacklist` column is now `Create` for the 3 dept roles (Recruiter, Leader, Manager). Before, only the Manager could. The updated rule (RR-03) leaves the Manager as the only one who **resolves disputes** and **removes**.
+- **Blacklist** — The `Add to Blacklist` column is `Create` for the 3 dept roles (Recruiter, Leader, Manager). The ban (Black) is **permanent** (no removal). Disputes (Red status) are resolved by the **Zone Inspector**, not the Manager. The "Resolve dispute" and "Remove from Blacklist" rows have no Manager permission (RR-03 updated).
 - **Reorganized submodules** — Pool, Interviews and Assignment now sit inside the **RECRUITMENT** module. Requisition taking and the status lights sit inside the **REQUISITION** module.
 - **Notifications** is no longer a sidebar module — it moved to the "System (cross-cutting)" section.
 - **Schedule** is no longer a separate module — it is a contextual view inside the assignment process.

@@ -22,7 +22,7 @@ RECLUTAMIENTO — LÍDER DE GRUPO DE RECLUTADORAS
 │   │   ├── Mis Requisiciones (tomadas)
 │   │   ├── Tomar requisición
 │   │   ├── Marcar cubierta / parcial
-│   │   ├── Liberar requisición
+│   │   ├── Salir de la requisición
 │   │   ├── Semáforo de Urgencia (lectura)
 │   │   └── Semáforo de Posiciones (lectura)
 │   │
@@ -76,7 +76,7 @@ RECLUTAMIENTO — LÍDER DE GRUPO DE RECLUTADORAS
 | Tomar requisiciones (Self-Pick) | ✅ | ✅ | ⚠️ excepcional |
 | Crear colaboradores | ✅ | ✅ | ✅ |
 | Agregar a Blacklist | ✅ | ✅ | ✅ |
-| Resolver disputa / Remover Blacklist | ❌ | ❌ | ✅ exclusivo |
+| Resolver disputa de Blacklist (Inspector) | ❌ | ❌ | ❌ |
 | Mi Grupo | ❌ | ✅ exclusivo | ❌ |
 | Reportes formales | ❌ | ✅ envía al Manager | ✅ recibe + genera |
 | Mi Equipo (gestión usuarios) | ❌ | ❌ | ✅ exclusivo |

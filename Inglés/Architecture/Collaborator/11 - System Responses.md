@@ -1,0 +1,41 @@
+---
+tags:
+  - architecture
+  - role/collaborator
+aliases:
+  - Collaborator System Responses
+---
+
+# 7. SYSTEM RESPONSES — COLLABORATOR
+
+---
+
+| Event                                                                 | System Response                                                                                                                                                                                         |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Collaborator completes Phase 2 and submits sign-up                    | Status transitions to → White (pre-validation) · System notifies the Recruiter that a sign-up is pending review · Collaborator sees confirmation: *"Your sign-up was submitted. We'll let you know once it's reviewed"* |
+| Recruiter approves sign-up validation (RF-08)                         | Status transitions White → Strong Green · System notifies the collaborator: *"Your sign-up was approved. You are now part of the collaborator pool"* · Access enabled                                    |
+| Recruiter rejects or requests sign-up correction                      | System notifies the collaborator: *"Your sign-up needs corrections. Please review and update your information"* · Status remains White                                                                   |
+| Collaborator completes Phase 3 (emergency data)                       | System saves the data · Confirmation: *"Emergency data saved"* · No status light change (complementary to sign-up)                                                                                      |
+| Collaborator scans QR and clocks in                                   | System records punch with time and date · Visual confirmation: *"Clock-in registered at HH:MM"* · Shift Timesheet updated                                                                               |
+| Collaborator punches Lunch Out                                        | System records punch · Confirms: *"Lunch departure registered at HH:MM"* · Starts computing lunch time                                                                                                  |
+| Collaborator punches Lunch In                                         | System records punch · Closes lunch computation · If lunch < 30 min: applies 30-min minimum automatically with no additional notification to the collaborator · Confirms: *"Return from lunch registered at HH:MM"* |
+| Collaborator punches Break Out                                        | System records punch · Confirms: *"Break departure registered at HH:MM"*                                                                                                                               |
+| Collaborator punches Break In                                         | System records punch · Confirms: *"Return from break registered at HH:MM"*                                                                                                                             |
+| Collaborator punches Clock-out (end of shift)                         | System records punch · Calculates gross hours (Clock-out − Clock-in) · Applies lunch deduction · Calculates net hours · Confirms: *"Clock-out registered. Net hours today: X.X hrs"*                   |
+| Shift closed with no Lunch punch                                      | System applies auto-deduction of 30 min · Timesheet shows the automatic deduction · No special notification to the collaborator (per [[Collaborator Rules#Lunch Deduction]])                            |
+| Collaborator attempts to clock in without active Timesheet            | Blocks action · Displays: *"You don't have an active shift. Contact your supervisor"* (RR-C-03)                                                                                                         |
+| Collaborator activates Yellow (voluntary availability)                | Status light transitions to Yellow · Confirmation: *"You are now registered as available. Recruitment may assign you"* · Collaborator appears in the Pool as voluntarily available (RR-C-02)            |
+| Collaborator deactivates Yellow                                       | Status returns to Strong Green · Confirmation: *"You are no longer shown as voluntarily available"*                                                                                                     |
+| Recruiter assigns the collaborator (→ Café)                           | System notifies the collaborator: *"You have been assigned to [Hotel] from [Start Date] to [End Date]. Check your schedule"* · Status transitions to Café · Schedule and Timesheet enabled              |
+| Temporary assignment ends (Café → Strong Green / Yellow)              | System notifies the collaborator: *"Your temporary assignment has ended. Your status returned to [Strong Green / Yellow]"* · Hotel schedule updated                                                     |
+| Collaborator reports workplace accident                               | System creates accident card · Collaborator status transitions to Gray (Injured) · System simultaneously notifies the hotel Supervisor and Zone Inspector · Collaborator sees confirmation: *"Your report was submitted. The Zone Inspector will receive the case"* · Protection against 3-absences rule activated |
+| Inspector closes accident card and medical clearance is issued        | Collaborator status transitions Gray → Strong Green · System notifies the collaborator: *"Your accident card has been closed. You can now receive assignments"*                                          |
+| Collaborator placed in Pink (Stand-by) by hotel                       | System notifies the collaborator: *"The hotel has put you on rest. Your status is Stand-by"* · No active Schedule or Timesheet · Cannot clock in                                                        |
+| Collaborator marked Purple (did not show up)                          | System notifies the collaborator: *"An absence has been recorded on your file"* · If it is the third absence: status automatically goes to Black (Blacklist)                                            |
+| Collaborator moved to Black (Blacklist)                               | Access blocked · System displays: *"Your account has been suspended. Contact Oranje for more information"* · Case visible to Recruitment Manager                                                        |
+| System loads My Schedule (RF-C-06)                                   | Shows weekly view of assigned shifts: hotel, position, schedule, dates · Read-only                                                                                                                      |
+| System loads My Timesheet (RF-C-07)                                  | Shows weekly table: registered punches, gross hours, lunch deduction, net hours · Read-only                                                                                                             |
+| System loads My Pay (RF-C-08)                                        | Shows the **history of released payments**; the current week appears as "In calculation" without an amount. The upcoming payment amount is not revealed until Accounting releases it (RR-C-05).         |
+| Session started                                                       | Redirects to Dashboard with status light state visible and next shift (if there is an active assignment)                                                                                                |
+| Session expired                                                       | Redirects to login; displays: *"Your session has expired, please sign in again"*                                                                                                                        |
+| Form validation error                                                 | Shows clear error messages next to each invalid field · Without interrupting progress in already-completed fields                                                                                        |
